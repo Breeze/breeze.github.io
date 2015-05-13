@@ -15,13 +15,9 @@ $(window).on('load', function() {
     
     // scroll the current li to the top if not visible.
     var $leftnav = $('#leftnav');
-    
-    var offset = $li.offset().top;
-    var visible_area_start = $leftnav.scrollTop();
-    var visible_area_end = visible_area_start + $leftnav.innerHeight;
-
-    if(offset < visible_area_start || offset > visible_area_end ) {
-       $leftnav.scrollTop($li.offset().top);
+    var offset = $li.offset().top - $leftnav.scrollTop();
+    if(offset > $leftnav.innerHeight){
+       $leftnav.scrollTop(offset);
     }
     
 });
