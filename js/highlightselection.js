@@ -7,7 +7,7 @@ $(window).on('load', function() {
     li.addClass("active");
 
     var dropdowns = li.parents('.dropdown-menu');
-    dropdowns.each(function(dd) {
+    dropdowns.each(function(ix, dd) {
         dd.prev().dropdown('toggle');
     });
     
