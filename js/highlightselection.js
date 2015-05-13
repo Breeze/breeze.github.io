@@ -12,5 +12,6 @@ $(window).on('load', function() {
     if (dropdowns.length > 0) {
         dropdowns.first().prev().dropdown('toggle');
     }
+    li.scrollTop();
 });
 
