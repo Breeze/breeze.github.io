@@ -4,20 +4,25 @@ $(window).on('load', function() {
     var pathParts = pathName.split("/");
     var lastPart = pathParts[pathParts.length-1];
     $("li.active").removeClass("active");
-    var li = $('a[href="' + lastPart + '"]').parent();
-    li.addClass("active");
+    var $li = $('a[href="' + lastPart + '"]').parent();
+    $li.addClass("active");
     
     // force any parents that are dropdowns to drop down.
-    var dropdowns = li.parents('.dropdown-menu');
-    dropdowns.each(function(ix, dd) {
+    var $dropdowns = $li.parents('.dropdown-menu');
+    $dropdowns.each(function(ix, dd) {
         $(dd).prev().dropdown('toggle');
     });
     
-    // scroll the current li to the top.
-    $('#leftnav').scrollTop(li.offset().top);
-//    $('#leftnav').animate({
-//       scrollTop: li.offset().top
-//    });
+    // scroll the current li to the top if not visible.
+    var $leftnav = $('#leftnav');
+    
+    var offset = $li.offset().top;
+    var visible_area_start = $leftnav.scrollTop();
+    var visible_area_end = visible_area_start + $leftnav.innerHeight;
+
+    if(offset < visible_area_start || offset > visible_area_end ) {
+       $leftnav.scrollTop($li.offset().top);
+    }
     
 });
 
