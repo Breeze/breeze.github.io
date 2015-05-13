@@ -9,7 +9,7 @@ $(window).on('load', function() {
 });
 
 $("a:not('.dropdown-toggle')").click(function(event) {
-    return true;
+    return false;
     // var url = event.target.pathname;
     // if (url == location.pathname) return false;
 
