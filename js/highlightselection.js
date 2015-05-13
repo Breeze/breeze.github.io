@@ -17,7 +17,7 @@ $(window).on('load', function() {
     var $leftnav = $('#leftnav');
     var offset = $li.offset().top - $leftnav.scrollTop();
     if(offset > $leftnav.innerHeight()){
-       $leftnav.scrollTop(offset);
+       $leftnav.scrollTop($li.offset().top);
     }
     
 });
