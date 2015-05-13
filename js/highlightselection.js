@@ -5,7 +5,7 @@ $(window).on('load', function() {
     $("li.active").removeClass("active");
     var li = $('a[href="' + lastPart + '"]').parent();
     li.addClass("active");
-    $(".dropdown-toggle").dropdown('toggle');
-    
+    // $(".dropdown-toggle").dropdown('toggle');
+    li.parent().dropdown('toggle');
 });
 
