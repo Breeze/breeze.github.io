@@ -208,10 +208,10 @@
 }
 .navmenu-brand {
   display: block;
-  padding: 10px 15px;
+  padding: 5px 7px;
   margin: 10px 0;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 10px;
+  line-height: 12px;
 }
 .navmenu-brand:hover,
 .navmenu-brand:focus {
