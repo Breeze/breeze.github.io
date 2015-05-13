@@ -14,9 +14,10 @@ $(window).on('load', function() {
     });
     
     // scroll the current li to the top.
-    $('#leftnav').animate({
-       scrollTop: li.offset().top
-    });
+    $('#leftnav').scrollTop(li.offset().top);
+//    $('#leftnav').animate({
+//       scrollTop: li.offset().top
+//    });
     
 });
 
