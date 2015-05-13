@@ -1,6 +1,7 @@
 ﻿---
 foo: bar
 ---
+
 <div class="content">
     <div class="field field-name-body field-type-text-with-summary field-label-hidden">
         <div class="field-items">
