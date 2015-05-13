@@ -5,15 +5,13 @@ $(window).on('load', function() {
     $("li.active").removeClass("active");
     var li = $('a[href="' + lastPart + '"]').parent();
     li.addClass("active");
-    // $(".dropdown-toggle").dropdown('toggle');
-    
-    // var dropdowns = li.parents('ul[class="' + "dropdown-menu" + '"]');
+
     var dropdowns = li.parents('.dropdown-menu');
-    if (dropdowns.length > 0) {
-        dropdowns.first().prev().dropdown('toggle');
-    }
+    dropdowns.forEach(function(dd) {
+        dd.prev().dropdown('toggle');
+    });
     
-    $('html, body').animate({
+    $('#leftnav').animate({
        scrollTop: li.offset().top
     });
     
