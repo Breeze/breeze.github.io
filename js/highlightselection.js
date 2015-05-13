@@ -12,6 +12,10 @@ $(window).on('load', function() {
     if (dropdowns.length > 0) {
         dropdowns.first().prev().dropdown('toggle');
     }
-    li.scrollTop(li.scrollTop());
+    
+    $('html, body').animate({
+       scrollTop: li.offset().top
+    });
+    
 });
 
