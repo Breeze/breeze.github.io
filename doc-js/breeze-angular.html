@@ -1,8 +1,11 @@
-﻿<div class="content">
+﻿---
+foo: bar
+---
+<div class="content">
     <div class="field field-name-body field-type-text-with-summary field-label-hidden">
         <div class="field-items">
             <div class="field-item even">
-                <h1>Breeze Angular Service</h1>
+                <h1>Breeze Angular Service - {{page.foo}}</h1>
 
                 <p>Breeze and Angular work well together. They work <em>better</em> together when you configure Breeze to use Angular promises (<code>$q</code>) and Angular's ajax component (<code>$http</code>).</p>
 
