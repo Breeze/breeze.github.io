@@ -7,8 +7,8 @@ $(window).on('load', function() {
     li.addClass("active");
     // $(".dropdown-toggle").dropdown('toggle');
     
-    var dropdowns = li.parents('ul[class="dropdown-menu"]');
-    if (dropdowns) {
+    var dropdowns = li.parents('ul[class="' + 'dropdown-menu' + '"]');
+    if (dropdowns.length > 0) {
         dropdowns.first().prev().dropdown('toggle');
     }
 });
