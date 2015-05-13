@@ -9,7 +9,7 @@ $(window).on('load', function() {
     // li.parent().dropdown('toggle');
     var dropdowns = li.parents('a[class="dropdown-toggle"]');
     if (dropdowns) {
-        dropdowns.first().toggle();
+        dropdowns.first().dropdown('toggle');
     }
 });
 
