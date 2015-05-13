@@ -2,10 +2,14 @@
 layout: javaserver
 ---
 
-### Java 04 - Test
+### Java 05 - Test
 
-| Test Table Col1 | Column 2 | Column 3
-| ----
-| 2243 | 234234 | 234234
-| sdd | asdf | asdfasdf
- 
+Here's an code frag
+
+    function test() {
+      console.log("notice the blank line before this function?");
+      test("xxx");
+    }
+
+
+
