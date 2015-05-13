@@ -6,10 +6,10 @@ $(window).on('load', function() {
     var li = $('a[href="' + lastPart + '"]').parent();
     li.addClass("active");
     // $(".dropdown-toggle").dropdown('toggle');
-    // li.parent().dropdown('toggle');
-    var dropdowns = li.parents('a[class="dropdown-toggle"]');
+    
+    var dropdowns = li.parents('ul[class="dropdown-menu"]');
     if (dropdowns) {
-        dropdowns.first().dropdown('toggle');
+        dropdowns.first().prev().dropdown('toggle');
     }
 });
 
