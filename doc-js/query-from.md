@@ -1,4 +1,5 @@
----
+--
+layout: jsclient
 ---
 
 #Query *.from(resource)*

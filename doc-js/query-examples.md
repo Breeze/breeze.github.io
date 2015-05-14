@@ -1,7 +1,6 @@
+--
+layout: jsclient
 ---
-title: Foo
----
-
 ### Query Examples - Markdown doc ###
 Title: {{ page.title }}
 

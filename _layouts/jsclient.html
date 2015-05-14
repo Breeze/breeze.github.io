@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+    <div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+        <a class="navmenu-brand visible-sm visible-xs" href="/"><strong>Breeze</strong></a>
+        <a class="navmenu-brand" href="/doc-js/">BreezeJS Client</a>
+		<ul class="nav navmenu-nav">
+			<li><a href="introduction.html">Introduction</a></li>
+			<li><a href="features.html">Features</a></li>
+   		    <li><a href="breeze-angular.html">Breeze + Angular</a></li>
+			<li><a href="query-examples.html">Query examples</a></li>
+			<li><a href="query-from.html">Query from</a></li>
+			<li><a href="dummy.html">Query using JSON</a></li>
+			<li><a href="#">Querying in depth</a></li>
+			<li><a href="#">Querying locally</a></li>
+			<li><a href="#">Projection queries</a></li>
+			<li><a href="#">Query Result Debugging</a></li>
+			<li><a href="#">Navigation properties</a></li>
+			<li><a href="#">ComplexType properties</a></li>
+			<li><a href="#">Creating entities</a></li>
+			<li><a href="#">Inside the Entity</a></li>
+			<li><a href="#">Validation</a></li>
+			<li><a href="#">EntityManager and caching</a></li>
+			<li><a href="#">Saving changes</a></li>
+			<li><a href="#">Export/Import</a></li>
+			<li><a href="#">Entity Serialization</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Metadata <b class="caret"></b></a>
+				<ul class="dropdown-menu navmenu-nav">
+					<li><a href="#">Basics</a></li>
+					<li><a href="#">Details</a></li>
+					<li><a href="#">Load metadata from script</a></li>
+					<li><a href="#">Metadata By hand</a></li>
+					<li><a href="#">Metadata by hand (in depth)</a></li>
+					<li><a href="#">EF as a design tool</a></li>
+					<li><a href="#">Custom Metadata</a></li>
+					<li><a href="#">Schema</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Extending entities</a></li>
+			<li><a href="#">Date & Time</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Talking to the Server <b class="caret"></b></a>
+				<ul class="dropdown-menu navmenu-nav">
+					<li><a>Basics</a></li>
+					<li><a>DataServiceAdapters</a></li>
+					<li><a>AbstractDataService Adapter</a></li>
+					<li><a href="#">JsonResultsAdapters</a></li>
+					<li><a href="#">NamingConvention</a></li>
+					<li><a href="#">Controlling AJAX calls</a></li>
+					<li><a href="#">Open Data (OData)</a></li>
+				</ul>
+			</li>
+			
+			<li><a href="#">Testing</a></li>
+			<li><a href="coding-conventions.html">Coding conventions</a></li>
+		</ul>
+		<ul class="nav navmenu-nav">
+			<li><a href="#">Link</a></li>
+			<li><a href="#">Link</a></li>
+			<li><a href="#">Link</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+				<ul class="dropdown-menu navmenu-nav">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+					<li><a href="#">One more separated link</a></li>
+				</ul>
+			</li>
+		</ul>
+    </div>
+    {% include mainbody.html %}
+</body>
+</html>
