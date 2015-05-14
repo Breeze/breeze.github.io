@@ -6,7 +6,8 @@ body {
 }
 
 #docpage {
-  top: 50px;
+  position: fixed;
+  top: 70px;
 }
 
 #leftnav {
@@ -20,7 +21,6 @@ body {
 .navbar {
   display: block;
   text-align: center;
-  margin-bottom: 0;
 }
 .navbar-brand {
   display: inline-block;
