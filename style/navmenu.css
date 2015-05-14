@@ -20,8 +20,8 @@ body {
 .navbar-brand {
   display: inline-block;
   float: none;
-  padding: 15px 5px 10px 15px;
 }
+
 .navbar-toggle {
   position: absolute;
   float: left;
