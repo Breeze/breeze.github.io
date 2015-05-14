@@ -1,10 +1,18 @@
 $(window).on('load', function() {
     // select the current li
     var pathName = location.pathname;
+    var hash = location.hash;
+    
     var pathParts = pathName.split("/");
     var lastPart = pathParts[pathParts.length-1];
+    var hrefVal =  (hash != "") ? lastPart+hash : lastPart;
+    var $anchor =  $('a[href="' + hrefVal + '"]');
+    // fallback to just the html page name if we can't find the page with hash ref.
+    if (!$anchor.length) {
+        $anchor =  $('a[href="' + lastPart + '"]');
+    } 
+    var $li = $anchor.parent();
     $("li.active").removeClass("active");
-    var $li = $('a[href="' + lastPart + '"]').parent();
     $li.addClass("active");
     
     // force any parents that are dropdowns to drop down.
