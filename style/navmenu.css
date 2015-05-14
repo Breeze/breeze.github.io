@@ -5,8 +5,12 @@ body {
   padding-top: 50px;
 }
 
+#docpage {
+  top: 50px;
+}
+
 #leftnav {
-  padding-top: 25px;
+  padding-top: 50px;
 }
 
 .nav > li > a {
@@ -20,6 +24,7 @@ body {
 .navbar-brand {
   display: inline-block;
   float: none;
+  padding: 15px 5px 10px 15px;
 }
 .navbar-toggle {
   position: absolute;
