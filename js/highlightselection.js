@@ -21,6 +21,7 @@ $(window).on('load', function() {
 
 $(window).on('hashchange', function() {
     selectHrefLi();
+    
 });
 
 function selectHrefLi() {
@@ -39,5 +40,16 @@ function selectHrefLi() {
     var $li = $anchor.parent();
     $("li.active").removeClass("active");
     $li.addClass("active");
+    // scroll to hash - needed because header isn't taken into consideration
+    // by nav to hash tag.
+    if (hash != "") {
+        var $hash = $(hash);
+        var $docPage = $('#docPage');
+        var offset = $hash.offset().top;
+    
+        if(offset > ($docPage.innerHeight() - $('#header').height())) {
+           $docPage.scrollTop(offset);
+        }
+    }    
     return $li;
 }
