@@ -1,5 +1,7 @@
 ---
 layout: javaserver
+oldlink: asdfasd
+
 ---
 
 ### Java 04 - Test
