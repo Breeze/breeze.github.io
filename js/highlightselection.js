@@ -43,8 +43,8 @@ function selectHrefLi() {
     // scroll to hash - needed because header isn't taken into consideration
     // by nav to hash tag.
     if (hash != "") {
-        var $hash = $(hash);
-        var $docPage = $('#docPage');
+        var $hash = $('a[name=' + hash.substr(1) + ']');
+        var $docPage = $('#docpage');
         var offset = $hash.offset().top;
     
         if(offset > ($docPage.innerHeight() - $('#header').height())) {
