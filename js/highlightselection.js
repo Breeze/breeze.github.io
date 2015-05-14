@@ -13,7 +13,7 @@ $(window).on('load', function() {
     var $leftnav = $('#leftnav');
     var offset = $li.offset().top;
     // 30 is approx height of top menu
-    if(offset > ($leftnav.innerHeight() - 30)) {
+    if(offset > ($leftnav.innerHeight() - $('#header').height())) {
        $leftnav.scrollTop(offset);
     }
     
