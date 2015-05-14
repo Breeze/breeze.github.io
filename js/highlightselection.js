@@ -1,6 +1,8 @@
 $(window).on('load', function() {
     $li = selectHrefLi();
     
+    if (!$li.length) return;
+    
     // force any parents that are dropdowns to drop down.
     var $dropdowns = $li.parents('.dropdown-menu');
     $dropdowns.each(function(ix, dd) {
