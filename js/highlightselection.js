@@ -44,12 +44,13 @@ function selectHrefLi() {
     // by nav to hash tag.
     if (hash != "") {
         var $hash = $('a[name=' + hash.substr(1) + ']');
-        var $docPage = $('#docpage');
-        var offset = $hash.offset().top;
-    
-        if(offset > ($docPage.innerHeight() - $('#header').height())) {
-           $docPage.scrollTop(offset);
-        }
+        $hash[0].scrollIntoView();
+//        var $docPage = $('#docpage');
+//        var offset = $hash.offset().top;
+//    
+//        if(offset > ($docPage.innerHeight() - $('#header').height())) {
+//           $docPage.scrollTop(offset);
+//        }
     }    
     return $li;
 }
