@@ -41,8 +41,10 @@ function selectHrefLi() {
     $("li.active").removeClass("active");
     $li.addClass("active");
     
+    // hack to accomodate header + padding (50 + 20)
     if (hash) {
-        scrollBy(0, -70) ; // hack to accomodate header + padding (50 + 20)
+        setTimeout(function() { window.scrollBy(0, -70) }); 
+        // scrollBy(0, -70) ; 
     }
     
     return $li;
