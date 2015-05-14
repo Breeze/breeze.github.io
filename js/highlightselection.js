@@ -40,11 +40,10 @@ function selectHrefLi() {
     var $li = $anchor.parent();
     $("li.active").removeClass("active");
     $li.addClass("active");
-    // scroll to hash - needed because header isn't taken into consideration
-    // by nav to hash tag.
-//    if (hash != "") {
-//        var $hash = $('a[name=' + hash.substr(1) + ']');
-//        $hash[0].scrollIntoView();
-//    }    
+    
+    if (hash) {
+        scrollBy(0, -50) ;
+    }
+    
     return $li;
 }
