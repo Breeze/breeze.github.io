@@ -42,7 +42,7 @@ function selectHrefLi() {
     $li.addClass("active");
     
     if (hash) {
-        scrollBy(0, -50) ;
+        scrollBy(0, -70) ; // hack to accomodate header + padding (50 + 20)
     }
     
     return $li;
