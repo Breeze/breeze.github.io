@@ -1,19 +1,5 @@
 $(window).on('load', function() {
-    // select the current li
-    var pathName = location.pathname;
-    var hash = location.hash;
-    
-    var pathParts = pathName.split("/");
-    var lastPart = pathParts[pathParts.length-1];
-    var hrefVal =  (hash != "") ? lastPart+hash : lastPart;
-    var $anchor =  $('a[href="' + hrefVal + '"]');
-    // fallback to just the html page name if we can't find the page with hash ref.
-    if (!$anchor.length) {
-        $anchor =  $('a[href="' + lastPart + '"]');
-    } 
-    var $li = $anchor.parent();
-    $("li.active").removeClass("active");
-    $li.addClass("active");
+    $li = selectHrefLi();
     
     // force any parents that are dropdowns to drop down.
     var $dropdowns = $li.parents('.dropdown-menu');
@@ -30,3 +16,25 @@ $(window).on('load', function() {
     
 });
 
+(window).on('hashchange', function() {
+    selectHrefLi();
+});
+
+function selectHrefLi() {
+     // select the current li
+    var pathName = location.pathname;
+    var hash = location.hash;
+    
+    var pathParts = pathName.split("/");
+    var lastPart = pathParts[pathParts.length-1];
+    var hrefVal =  (hash != "") ? lastPart+hash : lastPart;
+    var $anchor =  $('a[href="' + hrefVal + '"]');
+    // fallback to just the html page name if we can't find the page with hash ref.
+    if (!$anchor.length) {
+        $anchor =  $('a[href="' + lastPart + '"]');
+    } 
+    var $li = $anchor.parent();
+    $("li.active").removeClass("active");
+    $li.addClass("active");
+    return $li;
+}
