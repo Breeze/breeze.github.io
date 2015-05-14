@@ -16,7 +16,7 @@ $(window).on('load', function() {
     
 });
 
-(window).on('hashchange', function() {
+$(window).on('hashchange', function() {
     selectHrefLi();
 });
 
