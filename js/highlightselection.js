@@ -10,6 +10,7 @@ $(window).on('load', function() {
     // scroll the current li to the top if not visible.
     var $leftnav = $('#leftnav');
     var offset = $li.offset().top;
+    // 30 is approx height of top menu
     if(offset > ($leftnav.innerHeight() - 30)) {
        $leftnav.scrollTop(offset);
     }
