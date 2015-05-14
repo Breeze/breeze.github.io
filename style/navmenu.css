@@ -5,12 +5,16 @@ body {
   padding: 50px 0 0 0;
 }
 
-.nav > li > a {
-   padding: 3px 5px 3px 15px;
+#docpage {
+  padding-top: 50px;
 }
 
-.navmenu {
+#leftnav {
   padding-top: 50px;
+}
+
+.nav > li > a {
+   padding: 3px 5px 3px 15px;
 }
 
 .navbar {

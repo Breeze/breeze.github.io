@@ -42,15 +42,9 @@ function selectHrefLi() {
     $li.addClass("active");
     // scroll to hash - needed because header isn't taken into consideration
     // by nav to hash tag.
-    if (hash != "") {
-        var $hash = $('a[name=' + hash.substr(1) + ']');
-        $hash[0].scrollIntoView();
-//        var $docPage = $('#docpage');
-//        var offset = $hash.offset().top;
-//    
-//        if(offset > ($docPage.innerHeight() - $('#header').height())) {
-//           $docPage.scrollTop(offset);
-//        }
-    }    
+//    if (hash != "") {
+//        var $hash = $('a[name=' + hash.substr(1) + ']');
+//        $hash[0].scrollIntoView();
+//    }    
     return $li;
 }
