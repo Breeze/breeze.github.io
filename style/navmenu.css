@@ -32,6 +32,12 @@ body {
   max-width: 100%;
 }
 
+.dropdown-header {
+  font-size: 14px;
+  font-weight: bold; 
+  font-style: italic;
+}
+
 @media (min-width: 1px) {
   .navbar-toggle {
     display: block !important;

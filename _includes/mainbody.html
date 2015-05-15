@@ -8,23 +8,25 @@
 
     <div id="header" class="navbar navbar-default navbar-fixed-top hidden-sm hidden-xs">
         <a class="navbar-brand pull-left" href="/"><strong>Breeze</strong></a>
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger">Technology options:</button>
-          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li role="presentation" class="dropdown-header">Client technologies</li>
-            <li><a href="/doc-js">Javascript client - BreezeJS</a></li>
-            <li><a href="/doc-cs">C# client - BreezeJS</a></li>                
-            <li role="presentation" class="dropdown-header">Server technologies</li>
-            <li><a href="/doc-node">Node server (Sequelize/MongoDB)</a></li>    
-            <li><a href="/doc-java">Java server (Hibernate)</a></li>
-            <li><a href="/doc-net">.NET server (Entity Framework/NHibernate)</a></li>
-          </ul>     
-       </div>
-       <form id="searchform" class="form-inline navbar-brand pull-right">
+        <a class="navbar-brand"><strong>Technology: </strong></a>
+        <div class="btn-group">            
+            <button id="selected-menu" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Summary<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="/">&nbsp;&nbsp;&nbsp Introduction</a></li> 
+                <li role="presentation" class="dropdown-header">Client technologies</li>
+                <li><a href="/doc-js">&nbsp;&nbsp;&nbsp Javascript client - BreezeJS</a></li>
+                <li><a href="/doc-cs">&nbsp;&nbsp;&nbsp C# client - Breeze#</a></li>                
+                <li role="presentation" class="dropdown-header">Server technologies</li>
+                <li><a href="/doc-node">&nbsp;&nbsp;&nbsp Node server (Sequelize/MongoDB)</a></li>    
+                <li><a href="/doc-java">&nbsp;&nbsp;&nbsp Java server (Hibernate)</a></li>
+                <li><a href="/doc-net">&nbsp;&nbsp;&nbsp .NET server (Entity Framework/NHibernate)</a></li>
+            </ul>
+        </div>
+        
+        
+        <form id="searchform" class="form-inline navbar-brand pull-right">
             <div class="input-group">
                 <input type="text" class="form-control input-sm" id="searchterm" name="searchterm" placeholder="Search for...">
                 <span class="input-group-btn">

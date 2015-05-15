@@ -47,5 +47,11 @@ function selectHrefLi() {
         // scrollBy(0, -70) ; 
     }
     
+    var $menu = $('#menuname');
+    var $selectedMenu = $('#selected-menu');
+    if ($menu.length && $selectedMenu.length) {
+        $selectedMenu.html($menu.text() + '<span class="caret"></span>');
+    }
+    
     return $li;
 }
