@@ -1,8 +1,8 @@
 ---
-layout: javaserver
+layout: doc-java-hib
 ---
 
-### Java 08 - Test
+### Java 09 - Test
 
 Here's an code frag
 

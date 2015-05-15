@@ -1,5 +1,5 @@
 ---
-layout: javaserver
+layout: doc-java-nhib
 ---
 
 ### Java DropDown summary page

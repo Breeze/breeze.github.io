@@ -1,5 +1,5 @@
 ---
-layout: jsclient
+layout: doc-js
 ---
 
 ## Testing testing testing

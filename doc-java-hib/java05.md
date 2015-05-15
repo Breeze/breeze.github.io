@@ -1,5 +1,5 @@
 ---
-layout: javaserver
+layout: doc-java-hib
 ---
 
 ### Java 05 - Test

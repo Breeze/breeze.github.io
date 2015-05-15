@@ -1,6 +1,5 @@
 ---
-layout: javaserver
-oldlink: asdfasd
+layout: doc-java-hib
 ---
 ### Java 04 - Test
 
