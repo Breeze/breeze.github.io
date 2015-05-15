@@ -1,5 +1,5 @@
 ---
-layout: jsclient
+layout: javaserver
 oldlink: asdfasd
 ---
 
