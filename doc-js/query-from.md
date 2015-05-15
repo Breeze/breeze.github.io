@@ -1,8 +1,8 @@
---
+---
 layout: jsclient
 ---
 
-#Query *.from(resource)*
+# Query *.from(resource)*
 
 Every Breeze query needs a target **resource** that identifies the destination of the query.
 
@@ -15,7 +15,7 @@ This topic covers how Breeze
 - turns that resource string value into a URI for remote queries
 - determines the root `EntityType` of the query ... if it has one
 
-##From resource name to URI
+## From resource name to URI
 
 "Orders" in that example is a **resource name**. When you execute the query targeting a remote service as we do here ... 
 

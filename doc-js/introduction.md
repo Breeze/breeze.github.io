@@ -1,9 +1,11 @@
-﻿---
-layout: "jsclient"
 ---
+layout: jsclient
+title: BreezeJS introduction
+---
+
 **Breeze is a JavaScript library that helps you manage data in rich client applications**. If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
 
-# Headline features
+# Headline features -
 
 **Business data objects** mirror your server-side model. Breeze creates them dynamically. Their properties bind to UI controls so the UI updates when your data model changes. Each object knows when it has changed and what has changed.
 
