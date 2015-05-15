@@ -1,0 +1,17 @@
+title: Java server w/ Hibernate
+menuitems: 
+  - { link: java01.html, title: Java page 1 }
+  - { link: java02.html, title: Java page 2 }
+  - { link: java03.html, title: Java page 3a }
+  - { link: java03.html#part1, title: Java page 3 - part 1 }
+  - { link: java03.html#part2, title: Java page 3 - part 2 }
+  - { link: java03.html#part3, title: Java page 3 - part 3 }
+  - { link: "#", title: Dropdown 1, isparent: true }
+  - { link: java04.html, title: Java page 4, ischild: true }
+  - { link: java05.html, title: Java page 5, ischild: true }
+  - { link: "#", title: Menu placeholder }																
+  - { link: "#", title: Dropdown 2, isparent: true }
+  - { link: java06.html, title: Java page 6, ischild: true }
+  - { link: java07.html, title: Java page 7, ischild: true }
+  - { link: java08.html, title: Java page 8, ischild: true }
+  - { link: java09.html, title: Java page 9, ischild: true }

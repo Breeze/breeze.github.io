@@ -1,0 +1,23 @@
+<div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+    <a class="navmenu-brand visible-sm visible-xs" href="/"><strong>Breeze</strong></a>
+    <a id="menuname" class="navmenu-brand" href="/{{page.layout}}/">{{menu.title}}</a>
+	<ul class="nav navmenu-nav">
+        {% for menuitem in menu.menuitems %}
+            {% if menuitem.isparent %}
+            <li class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{menuitem.title}}<b class="caret"></b></a>
+				<ul class="dropdown-menu navmenu-nav">
+                {% assign indropdown = true %}
+            {% elsif indropdown == true and menuitem.ischild == null %}
+                {% assign indropdown = false %}
+                </ul>
+            </li>
+            {% endif %}
+            {% if menuitem.isparent == null %}
+                <li>
+                    <a href="{{menuitem.link}}">{{menuitem.title}}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+	</ul>
+</div>

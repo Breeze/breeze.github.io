@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include head.html %}
-<body>
-    <div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-        <a class="navmenu-brand visible-sm visible-xs" href="/"><strong>Breeze</strong></a>
-        <a id="menuname" class="navmenu-brand" href="/doc-js/">Javascript client</a>
-		<ul class="nav navmenu-nav">
-			<li><a href="features.html">Features</a></li>
-   		    <li><a href="prerequisites.html">Prerequisites</a></li>
+{% assign menu = {{site.data.menu-js}} %}
+{% include default.html %}
 
-		</ul>
-    </div>
-    {% include mainbody.html %}
-</body>
-</html>

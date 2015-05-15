@@ -1,0 +1,7 @@
+title: Javascript client
+menuitems: 
+  - { link: features.html, title: Features }
+  - { link: prerequisites.html, title: Prerequisites }
+  - { link: '#', title: Parent, isparent: true }
+  - { link: "#", title: Child 1, ischild: true }
+  - { link: "#", title: Child 2, ischild: true }
