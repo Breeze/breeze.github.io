@@ -1,7 +1,6 @@
 ---
-layout: javaserver
+layout: jsclient
 oldlink: asdfasd
-
 ---
 
 ### Java 04 - Test
