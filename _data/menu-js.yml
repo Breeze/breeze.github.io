@@ -2,6 +2,10 @@ title: Javascript client
 menuitems: 
   - { link: features.html, title: Features }
   - { link: prerequisites.html, title: Prerequisites }
-  - { link: '#', title: Parent, isparent: true }
-  - { link: "#", title: Child 1, ischild: true }
-  - { link: "#", title: Child 2, ischild: true }
+  - { link: "#", title: Querying, isparent: true }   
+  - { link: query-examples.html, title: Query Examples, ischild: true }
+  - { link: query-from.html, title: Query From, ischild: true }
+  - { link: query-using-json.html, title: Query using json, ischild: true }
+  - { link: query-in-depth.html, title: Querying in depth, ischild: true }
+  - { link: query-locally.html, title: Querying locally, ischild: true }  
+  - { link: query-projections.html, title: Query projections, ischild: true }
