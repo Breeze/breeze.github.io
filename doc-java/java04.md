@@ -2,7 +2,6 @@
 layout: javaserver
 oldlink: asdfasd
 ---
-
 ### Java 04 - Test
 
 | Test Table Col1 | Column 2 | Column 3
