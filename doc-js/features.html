@@ -2,174 +2,123 @@
 layout: doc-js
 ---
 
-<div class="content">
-    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
-        <div class="field-items">
-            <div class="field-item even">
-                <h1>
-                    Features
-                </h1>
-                <p>Breeze is a library for rich client applications written in HTML and JavaScript.</p>
-                <p>It concentrates on the challenge of building and maintaining highly responsive, data-intensive applications in which users search, add, update, and view complex data from different angles as they pursue solutions to real problems in real time.</p>
-                <p>Features include:</p>
-                <p><strong>Rich queries</strong></p>
-                <ul>
-                    <li>
-                        Write simple and complex queries using a&nbsp;LINQ-like query syntax:
-                        <ul style="list-style-type: circle;">
-                            <li>
-                                Simple conditions (id == 42, amount &gt; 100, name starts with “Bob”)
-                            </li>
-                            <li>
-                                Compound conditions (name is “Bob” or “Robert”)
-                            </li>
-                            <li>
-                                Conditions with functions (length(name) &gt; 30)
-                            </li>
-                            <li>
-                                Conditions on related entities (customers with orders shipped to California)
-                            </li>
-                            <li>
-                                Sort, page, take first ‘n’
-                            </li>
-                            <li>
-                                Expand the query result to include related entities in the payload (eager loading)
-                            </li>
-                            <li>
-                                Select a subset of properties; flatten complex object graphs with projections
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        Query a remote service with a full OData-compliant URL.
-                    </li>
-                    <li>
-                        Merges query results into cache, adding new entities and updating others while preserving unsaved changes.
-                    </li>
-                    <li>
-                        Use the same query object and query language to filter entities in the local cache.
-                    </li>
-                </ul>
-                <p><strong>Client-side caching</strong></p>
-                <ul>
-                    <li>
-                        Caching entities locally on the JavaScript client.
-                    </li>
-                    <li>
-                        Navigation among entities in cache, e.g., <em>Customer </em>to <em>Orders </em>to <em>OrderDetails </em>to <em>Product </em>… and back.
-                    </li>
-                </ul>
-                <p><strong>Change tracking</strong></p>
-                <ul>
-                    <li>
-                        Entities are self-tracking; they know when they are new, changed, marked-for-delete, or unchanged.
-                    </li>
-                    <li>
-                        Refresh an entity to its current state on the server or revert changed entities to their original values with a single command.
-                    </li>
-                    <li>
-                        Publishes property-changed and other notifications about the entities that enter, leave, and change in cache.
-                    </li>
-                </ul>
-                <p><strong>Validation</strong></p>
-                <ul>
-                    <li>
-                        Validates entire entities and individual property values, automatically or on-demand, with a combination of discovered and custom rules.
-                    </li>
-                    <li>
-                        Validation error messages can be customized or localized.
-                    </li>
-                </ul>
-                <p><strong>Pluggable back-end</strong></p>
-                <ul>
-                    <li>
-                        Full integration with the Entity Framework.
-                    </li>
-                    <li>
-                        Supports WebAPI and OData back-ends.
-                    </li>
-                    <li>
-                        Works with NoSQL, non-.NET, and SOA back-ends. <em>(Samples under development.)</em>
-                    </li>
-                </ul>
-                <p><strong>Data management</strong></p>
-                <ul>
-                    <li>
-                        Create entities dynamically based on metadata that you control and extend.
-                    </li>
-                    <li>
-                        Id generation strategies handle a wide variety of client and store-generated key schemes; use ours or write your own.
-                    </li>
-                    <li>
-                        Export and reimport entities to device local storage to meet offline and reliability requirements.
-                    </li>
-                    <li>
-                        Create multiple caches to segment and isolate data changes in “sandboxes”.
-                    </li>
-                    <li>
-                        Combine entities from multiple remote services in the same cache.
-                    </li>
-                    <li>
-                        All service operations return JavaScript promises.
-                    </li>
-                    <li>
-                        Entities&nbsp;support Complex Types and Enumerations as properties.
-                    </li>
-                </ul>
-                <p><strong>Batched saves</strong></p>
-                <ul>
-                    <li>
-                        Save pending changes to a remote service in a single request.
-                    </li>
-                    <li>
-                        Mix entities of different types in the same change-set (Customers, Orders, OrderDetails).
-                    </li>
-                    <li>
-                        Mix operations (add, update, delete) in the same change-set.
-                    </li>
-                    <li>
-                        Save the change-set as a single transaction.
-                    </li>
-                    <li>
-                        Detect and resolve concurrency conflicts.
-                    </li>
-                </ul>
-                <p><strong>Library and Tooling support</strong></p>
-                <ul>
-                    <li>
-                        Out-of-box support for Knockout, Angular, and Backbone.
-                    </li>
-                    <li>
-                        TypeScript support for compile-time type checking, classes, interfaces, and inheritance.
-                    </li>
-                    <li>
-                        IntelliSense support for Visual Studio 2012.
-                    </li>
-                    <li>
-                        RequireJS-enabled for modular applications.
-                    </li>
-                    <li>
-                        Open API that allows additional front or back-ends to be plugged in.
-                    </li>
-                </ul>
-                <p><strong>Supported by IdeaBlade</strong></p>
-                <ul>
-                    <li>
-                        Developed and supported by IdeaBlade, since 2001 a leader in rich client application libraries.
-                    </li>
-                    <li>
-                        Extensive API documentation with examples and links to source code.
-                    </li>
-                    <li>
-                        Quality control through QUnit automated tests.
-                    </li>
-                    <li>
-                        Paid support options, training,&nbsp;and consulting services to ensure that you succeed.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+<h1>Features</h1>
+<p>Breeze is a library for rich client applications written in HTML and JavaScript.</p>
+<p>It concentrates on the challenge of building and maintaining highly responsive, data-intensive applications in which users search, add, update, and view complex data from different angles as they pursue solutions to real problems in real time.</p>
+<p>Features include:</p>
+<p><strong>Rich queries</strong></p>
+<ul>
+	<li>
+		Write simple and complex queries using a&nbsp;LINQ-like query syntax:
+		<ul style="list-style-type: circle;">
+			<li>
+				Simple conditions (id == 42, amount &gt; 100, name starts with &ldquo;Bob&rdquo;)</li>
+			<li>
+				Compound conditions (name is &ldquo;Bob&rdquo; or &ldquo;Robert&rdquo;)</li>
+			<li>
+				Conditions with functions (length(name) &gt; 30)</li>
+			<li>
+				Conditions on related entities (customers with orders shipped to California)</li>
+			<li>
+				Sort, page, take first &lsquo;n&rsquo;</li>
+			<li>
+				Expand the query result to include related entities in the payload (eager loading)</li>
+			<li>
+				Select a subset of properties; flatten complex object graphs with projections</li>
+		</ul>
+	</li>
+</ul>
+<ul>
+	<li>
+		Query a remote service with a full OData-compliant URL.</li>
+	<li>
+		Merges query results into cache, adding new entities and updating others while preserving unsaved changes.</li>
+	<li>
+		Use the same query object and query language to filter entities in the local cache.</li>
+</ul>
+<p><strong>Client-side caching</strong></p>
+<ul>
+	<li>
+		Caching entities locally on the JavaScript client.</li>
+	<li>
+		Navigation among entities in cache, e.g., <em>Customer </em>to <em>Orders </em>to <em>OrderDetails </em>to <em>Product </em>&hellip; and back.</li>
+</ul>
+<p><strong>Change tracking</strong></p>
+<ul>
+	<li>
+		Entities are self-tracking; they know when they are new, changed, marked-for-delete, or unchanged.</li>
+	<li>
+		Refresh an entity to its current state on the server or revert changed entities to their original values with a single command.</li>
+	<li>
+		Publishes property-changed and other notifications about the entities that enter, leave, and change in cache.</li>
+</ul>
+<p><strong>Validation</strong></p>
+<ul>
+	<li>
+		Validates entire entities and individual property values, automatically or on-demand, with a combination of discovered and custom rules.</li>
+	<li>
+		Validation error messages can be customized or localized.</li>
+</ul>
+<p><strong>Pluggable back-end</strong></p>
+<ul>
+	<li>
+		Full integration with the Entity Framework.</li>
+	<li>
+		Supports WebAPI and OData back-ends.</li>
+	<li>
+		Works with NoSQL, non-.NET, and SOA back-ends. <em>(Samples under development.)</em></li>
+</ul>
+<p><strong>Data management</strong></p>
+<ul>
+	<li>
+		Create entities dynamically based on metadata that you control and extend.</li>
+	<li>
+		Id generation strategies handle a wide variety of client and store-generated key schemes; use ours or write your own.</li>
+	<li>
+		Export and reimport entities to device local storage to meet offline and reliability requirements.</li>
+	<li>
+		Create multiple caches to segment and isolate data changes in &ldquo;sandboxes&rdquo;.</li>
+	<li>
+		Combine entities from multiple remote services in the same cache.</li>
+	<li>
+		All service operations return JavaScript promises.</li>
+	<li>
+		Entities&nbsp;support Complex Types and Enumerations as properties.</li>
+</ul>
+<p><strong>Batched saves</strong></p>
+<ul>
+	<li>
+		Save pending changes to a remote service in a single request.</li>
+	<li>
+		Mix entities of different types in the same change-set (Customers, Orders, OrderDetails).</li>
+	<li>
+		Mix operations (add, update, delete) in the same change-set.</li>
+	<li>
+		Save the change-set as a single transaction.</li>
+	<li>
+		Detect and resolve concurrency conflicts.</li>
+</ul>
+<p><strong>Library and Tooling support</strong></p>
+<ul>
+	<li>
+		Out-of-box support for Knockout, Angular, and Backbone.</li>
+	<li>
+		TypeScript support for compile-time type checking, classes, interfaces, and inheritance.</li>
+	<li>
+		IntelliSense support for Visual Studio 2012.</li>
+	<li>
+		RequireJS-enabled for modular applications.</li>
+	<li>
+		Open API that allows additional front or back-ends to be plugged in.</li>
+</ul>
+<p><strong>Supported by IdeaBlade</strong></p>
+<ul>
+	<li>
+		Developed and supported by IdeaBlade, since 2001 a leader in rich client application libraries.</li>
+	<li>
+		Extensive API documentation with examples and links to source code.</li>
+	<li>
+		Quality control through QUnit automated tests.</li>
+	<li>
+		Paid support options, training,&nbsp;and consulting services to ensure that you succeed.</li>
+</ul>

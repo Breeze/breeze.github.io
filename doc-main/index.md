@@ -1,6 +1,7 @@
 ---
-layout: main
+layout: doc-main
 title: Introduction
+redirect_from: "/"
 ---
 
 ### Rich Data Management for the JavaScript Client
