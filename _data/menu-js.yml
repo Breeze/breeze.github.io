@@ -9,3 +9,24 @@ menuitems:
   - { link: query-in-depth.html, title: Querying in depth, ischild: true }
   - { link: query-locally.html, title: Querying locally, ischild: true }  
   - { link: query-projections.html, title: Query projections, ischild: true }
+  - { link: query-debugging.html, title: Debugging query results, ischild: true }  
+  - { link: navigation-properties.html, title: Navigation properties }
+  - { link: complex-properties.html, title: Complex properties }  
+  - { link: creating-entities.html, title: Creating entities }
+  - { link: inside-entity.html, title: Inside the entity }
+  - { link: validation.html, title: Validation }
+  - { link: entitymanager-and-caching.html, title: EntityManager and caching }
+  - { link: saving-changes.html, title: Saving changes }
+  - { link: export-import.html, title: Export/Import }    
+  - { link: entity-serialization.html, title: Entity serialization }  
+  - { link: "#", title: Metadata, isparent: true }
+  - { link: metadata-details.html, title: Metadata-details, ischild: true }
+  - { link: metadata-load-from-script.html, title: Load metadata from script, ischild: true }
+  - { link: metadata-by-hand.html, title: Metadata by hand, ischild: true }
+  - { link: metadata-by-hand-details.html, title: Metadata by hand (in depth), ischild: true }
+  - { link: metadata-with-ef.html, title: EF as a design tool, ischild: true }
+  - { link: metadata-custom.html, title: Custom metadata, ischild: true }
+  - { link: metadata-schema.html, title: Metadata schema, ischild: true }  
+    
+    
+  
