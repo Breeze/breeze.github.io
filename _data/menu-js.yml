@@ -19,14 +19,27 @@ menuitems:
   - { link: saving-changes.html, title: Saving changes }
   - { link: export-import.html, title: Export/Import }    
   - { link: entity-serialization.html, title: Entity serialization }  
-  - { link: "#", title: Metadata, isparent: true }
+  - { link: metadata-html, title: Metadata, isparent: true }
   - { link: metadata-details.html, title: Metadata-details, ischild: true }
   - { link: metadata-load-from-script.html, title: Load metadata from script, ischild: true }
   - { link: metadata-by-hand.html, title: Metadata by hand, ischild: true }
   - { link: metadata-by-hand-details.html, title: Metadata by hand (in depth), ischild: true }
   - { link: metadata-with-ef.html, title: EF as a design tool, ischild: true }
   - { link: metadata-custom.html, title: Custom metadata, ischild: true }
-  - { link: metadata-schema.html, title: Metadata schema, ischild: true }  
+  - { link: extending-entities.html, title: Extending entities }  
+  - { link: date-and-time.html, title: Date & Time }
+  - { link: server.html, title: Talking to the server, isparent: true }
+  - { link: server-dataserviceadapter.html, title: DataServiceAdapter, ischild: true }
+  - { link: server-abstractdataserviceadapter.html, title: AbstractDataServiceAdapter, ischild: true }
+  - { link: server-jsonresultsadapter.html, title: Transforming json results, ischild: true }
+  - { link: server-namingconvention.html, title: Configuring naming conventions, ischild: true }
+  - { link: server-ajaxadapter.html, title: Controlling AJAX calls, ischild: true }
+  - { link: server-odata.html, title: OData, ischild: true }
+  - { link: breeze-angular.html, title: Breeze + Angular }
+  - { link: testing.html, title: Testing }
+  - { link: coding-conventions.html, title: Coding conventions }  
+    
+  
     
     
   
