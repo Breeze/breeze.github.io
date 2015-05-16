@@ -21,6 +21,10 @@ body {
   margin: 16px 0px;
 }
 
+.navmenu {
+  width: 220px;
+}
+
 .nav > li > a {
    padding: 3px 5px 3px 15px;
 }

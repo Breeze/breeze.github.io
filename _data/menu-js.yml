@@ -1,7 +1,15 @@
 title: Javascript client
-menuitems: 
+menuitems:
+  - { link: download.html, title: Download } 
   - { link: features.html, title: Features }
   - { link: prerequisites.html, title: Prerequisites }
+  - { link: lap-around-breeze.html, title: A lap around Breeze, isparent: true }
+  - { link: lap-first-query.html, title: First query, ischild: true }
+  - { link: lap-query-filter.html, title: Query with a filter, ischild: true }
+  - { link: lap-add-entity.html, title: Add a new entity, ischild: true }
+  - { link: lap-changetracking.html, title: Change Tracking, ischild: true }
+  - { link: lap-savechanges.html, title: Save changes, ischild: true }
+  - { link: lap-knockout.html, title: Databinding w/ knockout, ischild: true } 
   - { link: query.html, title: Querying, isparent: true }   
   - { link: query-examples.html, title: Query Examples, ischild: true }
   - { link: query-from.html, title: Query From, ischild: true }
