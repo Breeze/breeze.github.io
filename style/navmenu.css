@@ -9,6 +9,12 @@ body {
   padding-top: 50px;
 }
 
+#selected-menu {
+  font-size: 14px;
+  padding: 3px 5px;
+  margin: 16px 0px;
+}
+
 .nav > li > a {
    padding: 3px 5px 3px 15px;
 }
@@ -29,6 +35,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: 18px;
 }
+
 
 .navbar {
   display: block;
