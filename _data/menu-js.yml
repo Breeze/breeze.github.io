@@ -2,7 +2,7 @@ title: Javascript client
 menuitems: 
   - { link: features.html, title: Features }
   - { link: prerequisites.html, title: Prerequisites }
-  - { link: "#", title: Querying, isparent: true }   
+  - { link: query.html, title: Querying, isparent: true }   
   - { link: query-examples.html, title: Query Examples, ischild: true }
   - { link: query-from.html, title: Query From, ischild: true }
   - { link: query-using-json.html, title: Query using json, ischild: true }
@@ -19,7 +19,7 @@ menuitems:
   - { link: saving-changes.html, title: Saving changes }
   - { link: export-import.html, title: Export/Import }    
   - { link: entity-serialization.html, title: Entity serialization }  
-  - { link: metadata-html, title: Metadata, isparent: true }
+  - { link: metadata.html, title: Metadata, isparent: true }
   - { link: metadata-details.html, title: Metadata-details, ischild: true }
   - { link: metadata-load-from-script.html, title: Load metadata from script, ischild: true }
   - { link: metadata-by-hand.html, title: Metadata by hand, ischild: true }
