@@ -50,7 +50,7 @@ function selectHrefLi() {
     var $menu = $('#menuname');
     var $selectedMenu = $('#selected-menu');
     if ($menu.length && $selectedMenu.length) {
-        $selectedMenu.html($menu.text() + '<span class="caret"></span>');
+        $selectedMenu.html($menu.text() + '      <span class="caret"></span>');
     }
     
     return $li;
