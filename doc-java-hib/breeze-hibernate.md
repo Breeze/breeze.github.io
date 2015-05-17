@@ -14,7 +14,7 @@ Note: There is a separate `breeze-webserver` library (discussed later) that refe
 
 ### Features:
 
-- Generates [Breeze metadata](http://www.breezejs.com/documentation/metadata) from Hibernate mappings
+- Generates [Breeze metadata](http://doc-js/metadata.html) from Hibernate mappings
 - Parses breeze client EntityQuery instances encoded as json into [Criteria](http://docs.jboss.org/hibernate/core/3.6/javadocs/org/hibernate/Criteria.html) queries
 - Executes these queries using Hibernate Sessions
 - Expands graphs of related entites using lazy loading.

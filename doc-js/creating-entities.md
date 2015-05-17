@@ -15,9 +15,9 @@ layout: doc-js
 <pre class="brush:jscript;">
   var newCust = new Customer(); // rarely done in Breeze</pre>
 
-<p>You can do it this way ... if you&#39;ve defined a <em>Customer </em>constructor and registered it with Breeze. But most Breeze developers don&#39;t define entity constructors or, if they do, they define only a subset of the entity&#39;s properties and methods (see the &quot;<a href="/documentation/extending-entities" target="_blank">Extending entities</a>&quot; topic).</p>
+<p>You can do it this way ... if you&#39;ve defined a <em>Customer </em>constructor and registered it with Breeze. But most Breeze developers don&#39;t define entity constructors or, if they do, they define only a subset of the entity&#39;s properties and methods (see the &quot;<a href="/doc-js/extending-entities.html" target="_blank">Extending entities</a>&quot; topic).</p>
 
-<p>It&#39;s preferable to let Breeze create the entity based on entity type information gleaned from <a href="/documentation/extending-entities" target="_blank">metadata acquired from the remote data service</a> ... in which case there is no constructor to &quot;<em>new up</em>&quot;.</p>
+<p>It&#39;s preferable to let Breeze create the entity based on entity type information gleaned from <a href="/doc-js/extending-entities.html" target="_blank">metadata acquired from the remote data service</a> ... in which case there is no constructor to &quot;<em>new up</em>&quot;.</p>
 
 <h2>EntityManager.createEntity</h2>
 
