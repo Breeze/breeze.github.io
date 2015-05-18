@@ -1,7 +1,6 @@
 ---
 layout: doc-node-mongodb
-
-redirect_from: "/old/documentation/mongodb-beta-notes"
+redirect_from: "/old/documentation/mongodb-beta-notes.html"
 ---
 
 # MongoDB (beta notes)
