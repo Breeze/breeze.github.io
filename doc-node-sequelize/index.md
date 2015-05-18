@@ -3,7 +3,7 @@ layout: doc-node-sequelize
 title: Server - Node w/ Sequelize
 ---
 
-# Breeze/Node/Sequelize - implementing a server side Breeze DataService.
+# Breeze/Node/Sequelize - implementing a server side Breeze DataService. -
 
 Breeze client applications make three basic kinds of HTTP ajax calls:
 
