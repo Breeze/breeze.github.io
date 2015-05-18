@@ -1,7 +1,7 @@
 ---
 layout: doc-main
 title: Introduction
-redirect_from: "/old/documentation/introduction.html"
+redirect_from: "/" 
 ---
 
 ### Rich Data Management for the JavaScript Client

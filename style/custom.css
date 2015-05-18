@@ -1,0 +1,155 @@
+.learn-cards{
+	padding:0
+}
+
+.learn-cards:before,.learn-cards:after{
+	content:" ";
+	display:table
+}
+
+.learn-cards:after{
+	clear:both
+}
+
+.learn-cards li:last-child{
+	margin-right:0
+}
+
+.learn-card a{
+	height:100%;
+	color:#fff
+}
+
+.leard-card p{
+	margin-bottom:0
+}
+
+.learn-cards.are-centered{
+	display:table;
+	margin-left:auto;
+	margin-right:auto
+}
+
+.learn-card{
+	width:130px;
+	height:230px;
+	display:inline-block;
+	float:left;
+	margin-right:37px;
+	padding:10px;
+	border-radius:6px;
+	background:#a4afb6;
+	-moz-transition-duration:0.25s;
+	-o-transition-duration:0.25s;
+	-webkit-transition-duration:0.25s;
+	transition-duration:0.25s;
+	-moz-transition-timing-function:ease-in-out;
+	-o-transition-timing-function:ease-in-out;
+	-webkit-transition-timing-function:ease-in-out;
+	transition-timing-function:ease-in-out
+}
+
+.learn-card:hover{
+	background:#379ad3
+}
+
+.learn-card.large-cards{
+	width:175px;
+	height:275px
+}
+
+.learn-card__inner{
+	display:block;
+	color:#fff;
+	text-decoration:none
+}
+
+.learn-card__icon{
+	margin-top:12px;
+	margin-bottom:12px;
+	text-align:center
+}
+
+.learn-card__icon i{
+	font-size:82px
+}
+
+.learn-card__title{
+	margin-bottom:5px;
+	font-size:18px;
+	font-family:"Arvo","Courier Bold",Courier,serif;
+	color:#fff
+}
+
+.icons-sprite,.icons-about,.icons-api,.icons-breeze-js-logo,.icons-breeze-logo-sm,.icons-breeze-logo,.icons-breeze-sharp-logo,.icons-download,.icons-feedback,.icons-ideablade-logo,.icons-mit-logo-small,.icons-pause,.views-slideshow-controls-text-status-pause,.icons-play,.views-slideshow-controls-text-status-play,.icons-samples,.icons-so-logo,.icons-uv-logo,.icons-white-envelope,.sidebar-email-signup-submit,.icons-youtube{
+	background-image:url(/sites/all/themes/custom/bjs2014/assets/img/icons-s6c1a3686fe.png);
+	background-repeat:no-repeat
+}
+
+.icons-about{
+	background-position:0 0
+}
+
+.icons-api{
+	background-position:0 -100px
+}
+
+.icons-breeze-js-logo{
+	background-position:0 -200px
+}
+
+.icons-breeze-logo-sm{
+	background-position:0 -256px
+}
+
+.icons-breeze-logo{
+	background-position:0 -286px
+}
+
+.icons-breeze-sharp-logo{
+	background-position:0 -342px
+}
+
+.icons-download{
+	background-position:0 -398px
+}
+
+.icons-feedback{
+	background-position:0 -498px
+}
+
+.icons-ideablade-logo{
+	background-position:0 -517px
+}
+
+.icons-mit-logo-small{
+	background-position:0 -535px
+}
+
+.icons-pause,.views-slideshow-controls-text-status-pause{
+	background-position:0 -560px
+}
+
+.icons-play,.views-slideshow-controls-text-status-play{
+	background-position:0 -581px
+}
+
+.icons-samples{
+	background-position:0 -602px
+}
+
+.icons-so-logo{
+	background-position:0 -702px
+}
+
+.icons-uv-logo{
+	background-position:0 -791px
+}
+
+.icons-white-envelope,.sidebar-email-signup-submit{
+	background-position:0 -865px
+}
+
+.icons-youtube{
+	background-position:0 -897px
+}
