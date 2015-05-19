@@ -2,8 +2,7 @@
 layout: doc-cs
 ---
 
-Handling Mismatched Metadata
-============================
+# Handling Mismatched Metadata
 
 In some applications, the metadata used on the client may not match exactly that provided by the server.  This might occur for example, if the client uses entities that do not define all of the properties of the corresponding server entities.  By default, Breeze requires that client and server metadata match *exactly* and throws if a mismatch is detected, but it also provides options to selectively allow several types of mismatches.
 

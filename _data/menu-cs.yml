@@ -1,3 +1,43 @@
 title: .NET C# Client
 menuitems: 
-  - { link: "#", title: In Progress }
+  - { link: "introduction.html", title: Introduction }
+  - { link: "features.html", title: Features }
+  - { link: "prerequisites.html", title: Prerequisites }
+  - { link: "nuget.html", title: Start with Nuget }
+  - { link: "release-notes.html", title: Release notes }
+  - { link: "get-feet-wet.html", title: Get your feet wet }
+  - { link: "lap-around-breeze.html", title: A lap around Breeze, isparent: true }
+  - { link: "lap-first-query.html", title: First query, ischild: true }
+  - { link: "lap-query-with-filter.html", title: Query with a filter, ischild: true }
+  - { link: "lap-add-entity.html", title: Add a new entity, ischild: true }
+  - { link: "lap-change-tracking.html", title: Change tracking, ischild: true }
+  - { link: "lap-save-changes.html#", title: Save Changes, ischild: true }
+  - { link: "query.html", title: Querying, isparent: true }
+  - { link: "query-in-depth.html", title: Querying in depth, ischild: true }
+  - { link: "query-locally.html", title: Querying locally, ischild: true }
+  - { link: "query-projections.html", title: Projection queries, ischild: true }
+  - { link: "query-debugging.html", title: Query debugging, ischild: true }
+  - { link: "entities-and-complexobjects.html", title: Entities and ComplexObjects }
+  - { link: "navigation-properties.html", title: Navigation properties }
+  - { link: "complextype-properties.html", title: ComplexType properties }
+  - { link: "creating-entities.html", title: Creating entities }
+  - { link: "inside-the-entity.html", title: Inside the entity }
+  - { link: "validation.html", title: Validation }
+  - { link: "entitymanager.html", title: EntityManager and caching }
+  - { link: "saving-changes.html", title: Saving changes }
+  - { link: "export-import.html", title: Export/Import }
+  - { link: "metadata.html", title: Metadata, isparent: true }
+  - { link: "metadata-details.html", title: Metadata-details, ischild: true }
+  - { link: "metadata-by-hand.html", title: Metadata by hand, ischild: true }
+  - { link: "metadata-from-script.html", title: Load metadata from script, ischild: true }
+  - { link: "metadata-ef-design.html", title: EF as a metadata design tool, ischild: true }
+  - { link: "metadata-mismatch.html", title: Handling mismatched metadata, ischild: true }
+  - { link: "metadata-custom.html", title: Custom metadata, ischild: true }
+  - { link: "metadata-schema.html", title: Metadata Schema, ischild: true }
+  - { link: "naming-convention.html", title: Naming Convention }
+  - { link: "extending-entities.html", title: Extending entities }
+  - { link: "webservice-data-mapping.html", title: Web Service data mapping }
+  - { link: "testing.html", title: Testing }
+
+  
+  

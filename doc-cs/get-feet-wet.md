@@ -2,8 +2,8 @@
 layout: doc-cs
 ---
 
-Get Your Feet Wet with Breeze.sharp
------------------------------------
+# Get Your Feet Wet with Breeze.sharp
+
 
 If you're a .NET developer familiar with Visual Studio, here's the quickest way to get your feet wet with Breeze.sharp.  We'll build a WPF client application from scratch that accesses IdeaBlade's public **SampleService**.  <!--break--> This service supplies **TodoItem** entities used by our **Todo** sample application, each containing a **Description** field along with the date created and some other flags.  To keep thinks simple, we'll only retrieve the **Description** fields and display them in a WPF window.
 

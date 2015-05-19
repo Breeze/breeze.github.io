@@ -1,51 +1,46 @@
 ---
 layout: doc-cs
 ---
+#Breeze NuGet packages
+Breeze offers several <a href="http://nuget.org/" target="_blank">NuGet</a> packages for the .NET developer. 
 
-Skip to main content
-Options for the administrative overlayIf you have problems accessing administrative pages on this site, disable the overlay on your profile page.Dismiss this message.
-Edit Book page Start with NuGetClose overlayPrimary tabsVIEW CURRENT EDIT CURRENT(ACTIVE TAB) OUTLINE REVISION OPERATIONS TRACK
-You are hereHome » Breeze Sharp Documentation » Getting started » Start with NuGet
-Title *
+## Visual Studio 2013 and .NET 4.5
 
-Body (Edit summary)
-Insert/edit image(M)Insert/edit link(L)Bold(B)Italic(I)Underline(U)Strikethrough(S)Ordered list. Converts selected lines to a numbered list.(O)Unordered list. Converts selected lines to a bulleted list.(N)Headings(H)Quote(Q)Code(D)Teaser break(T)Preview(P)Help(1)
+### *Client side*
+- *Breeze.Sharp* - The Breeze.Sharp portable class library and its immediate dependencies. 
 
-Insert Syntaxhighlighter tag
-Switch to rich text editor
-More information about text formats
-Text format  
-Quick Tips:
-Two or more spaces at a line's end = Line break
-Double returns = Paragraph
-*Single asterisks* or _single underscores_ = Emphasis
-**Double** or __double__ = Strong
-This is [a link](http://the.link.example.com "The optional title text")
-For complete details on the Markdown syntax, see the Markdown documentation and Markdown Extra documentation for tables, footnotes, and more.
-Vertical Tabs
-Revision information
-New revision
-(active tab)
-Menu settings
-Not in menu
-Book outline
-Breeze Sharp Documentation
-URL path settings
-Automatic alias
-Comment settings
-Closed
-URL redirects
-No redirects
-Authoring information
-By Justin-Emond on 2014-04-21 15:03:41 -0700
-Publishing options
-Not published
+### *Server side* 
+- *Breeze.Server.WebApi2* - Base support for Web API 2 (aka v.5)
 
-Revision log message
+- *Breeze.Server.ContextProvider.EF6* - If you manage data access with Entity Framework 6.
 
-Provide an explanation of the changes you are making. This will help other authors understand your motivations.
-Revision creation and moderation options
- Modify current revision, no moderation
- Create new revision, no moderation
- Create new revision and moderate
-Moderation means that the new revision is not publicly visible until approved by someone with the appropriate permissions.
+- *Breeze.Server.ContextProvider.NH* - If you manage data access with NHibernate.
+
+- *Breeze.Server.ContextProvider* - If you manage data access by some means other than Entity Framework or NHibernate. The EF and NH packages depend upon this one.
+
+>Note that these server side nugets are actually EXACTLY the same nugets used by the Breeze.Js (javascript) client.  Any Breeze client (.NET or Javascript) should be able to talk to any Breeze server, regardless of technology.  
+
+### Which projects use which Nugets? 
+
+
+A Breeze.sharp application will often have separate projects for separate concerns within your application. One possible organization is shown below:
+
+#### Client side - Application project(s) will need the following nugets
+
+- *Breeze.Sharp* - There may be multiple projects that support the client side application, the Breeze.sharp nuget should be the only Breeze dependency required. 
+#### Server side - Your Web Application Project will need the following nugets
+
+- *Breeze.Server.WebApi2* -  This will contain all of your WebApi Controller logic. 
+
+#### Server side - Any Data Access Project(s) will need the following nugets
+
+- *Breeze.Server.ContextProvider.EF6* - If you manage data access with Entity Framework 6.
+
+- *Breeze.Server.ContextProvider.NH* - If you manage data access with NHibernate.
+
+- *Breeze.Server.ContextProvider* - If you manage data access by some means other than Entity Framework or NHibernate. The EF and NH packages depend upon this one.
+
+
+####Next steps
+
+The Basic Breeze series guides you toward a more sustainable application structure with greater attention to modularity and separation of concerns while introducing fundamental Breeze concepts and techniques.

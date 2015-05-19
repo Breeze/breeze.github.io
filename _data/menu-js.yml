@@ -34,6 +34,7 @@ menuitems:
   - { link: metadata-by-hand-details.html, title: Metadata by hand (in depth), ischild: true }
   - { link: metadata-with-ef.html, title: EF as a design tool, ischild: true }
   - { link: metadata-custom.html, title: Custom metadata, ischild: true }
+  - { link: metadata-schema.html, title: Metadata Schema, ischild: true }
   - { link: extending-entities.html, title: Extending entities }  
   - { link: date-and-time.html, title: Date & Time }
   - { link: server.html, title: Talking to the server, isparent: true }

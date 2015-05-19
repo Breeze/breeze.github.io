@@ -2,8 +2,7 @@
 layout: doc-cs
 ---
 
-Entities and Complex Objects  
-============================
+# Entities and Complex Objects  
 
 Breeze manages two types of business objects, called Entities and Complex Objects. These are both represented by instances of .NET CLR types that implement either the *IEntity* or the *IComplexObject* interfaces.  One of the requirements of Breeze.Sharp is that it be able to locate a CLR type that implements one of these interfaces before it resolves any data returned by a remote web service that represents instances of these types. 
 

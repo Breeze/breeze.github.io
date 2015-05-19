@@ -2,7 +2,7 @@
 layout: doc-cs
 ---
 
-#NamingConvention#
+# NamingConvention
 
 Breeze moves entity data between client and server as JSON values.  The property names is the JSON matter.
 

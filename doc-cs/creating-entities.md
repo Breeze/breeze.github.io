@@ -2,47 +2,86 @@
 layout: doc-cs
 ---
 
-# Complex Type properties
+#Creating a new entity
 
-Breeze supports the concept that any data property of an Entity can be an instance of a complex type. A complexType property is a data property that represents a defined collection of other data Properties and possibly nested complex type properties. An example might be a location property on a Customer class, where the location consists of an address, city, state, and zip code. In this case, the location property on the Customer type is termed a complex property, and the data type of this property would be a complex type of type location. The path to a city in this case would be 
+Breeze creates new entity instances on two primary occasions:
 
-      aCustomer.Location.City.
+1. When it "materializes" entities from query results and 
+2. when you ask it to create a brand new entity.
 
-Complex types in Breeze are much like entity type’s but with some key differences.
+Entity materialization is largely hidden from the developer. You issue a query; you get entities back. Behind the scenes Breeze converts the stream of model object data into entities in cache. The developer only becomes aware of entity creation details when making new model objects.
 
-- Complex types do not have identities (key properties in breeze) and therefore cannot exist independently. Complex types can only exist as properties on entity types or other complex types.
-    - This is actually slightly incorrect, you can create an ‘unbound’ instance of a complexType with the complexType.createInstance method but when you assign it, you are simply copying its values onto an existing instance.
-- Complex types cannot contain navigation properties or foreign key data properties.
-- Complex type properties, aCustomer.Location in the example above, are **not** nullable and are automatically created when their parent entity or complex object is created. Note that any of the properties of the complex type instance itself ( that are not themselves complex types) may be nullable.
-- When instances of a complex type are assigned, the contents of the complexType instance are copied to the target.  Complex types are not assigned by reference. 
+### *new* vs *CreateEntity*
 
-Every instance of a complex type object has a ComplexAspect property automatically added by Breeze:
+As you might expect, you can create a new entity by calling its constructor.
 
-- The ComplexAspect property  – This contains information about the ‘parentage’ of this instance and any original values for change tracking purposes. The ComplexAspect is analogous to the EntityAspect property on every Breeze entity.
+	var newCustomer = new Customer();
 
-### Interactions involving Complex types
+And once you've created the entity and possibly set some of its properties, you can then add it to the EntityManager.
 
-#### Query/Save
+    manager.AddEntity(newCustomer); // newCustomer is in an Added state.
+ 
+Alternatively you can use the *EntityManager.CreateEntity* method. 
+ 
+###The EntityManager.CreateEntity Method
 
-Queries can return ComplexTypes and ComplexType properties can be queried, i.e.
+Breeze provides a **CreateEntity()** factory function on an EntityManager.
 
-     EntityQuery.From<Customer>().Where(c => c.Location.City.StartsWith("A");
+	var manager = new EntityManager(_serviceName);
+	
+	// Metadata should be fetched before CreateEntity() can be called
+	await manager.FetchMetadata();
 
-Entities containing complex types may be saved.
+	// Order uses an auto-generated key value
+	var order = manager.CreateEntity<Order>();
 
-#### Property paths
+In this example, the Order entity's key is initialized automatically.  It is also possible to pass an anonymous initializer object to the constructor.  If the entity key is client generated, then you *must* specify the key in the initializer ... or you'll likely get an exception.
 
-IEntity.PropertyChanged and EntityManager.EntityChanged events return "property paths" whenever a property of an embedded complex type is modified. i.e. Location.City.
+	// If the key is not auto generated, it must be initialized by CreateEntity()
+	var alpha = manager.CreateEntity<Customer>(new { CustomerID = Guid.NewGuid(), CompanyName = "Alpha" });
 
-#### MetadataStore methods
+The **CreateEntity()** method adds the entity to the manager because that's what you usually want to do with a newly created entity. Alternatively, you can provide the optional third parameter specifying the *EntityState* to keep the entity detached or maybe attach it in some other state.
 
-Analagous to the *EntityTypes* property and the *GetEntityType* method, the MetadataStore also has a *ComplexTypes* property and a *GetComplexType* method. 
+	// Unattached new customer so you can keep configuring it and add/attach it later
+	// Key value initializer not required because new entity is not attached to entity manager
+	var beta = manager.CreateEntity<Customer>(new { CompanyName = "Beta" }, EntityState.Detached);
+	
+	// Attached customer, but "unmodified", as if retrieved from the database
+	// Note that the key must be initialized when new entity will be in an attached state
+	var gamma = manager.CreateEntity<Customer>(new { CustomerID = Guid.NewGuid(), CompanyName = "Gamma" }, EntityState.Unchanged);
 
-Both *EntityType* and *ComplexType* classes extend the *StructuralType* abstract class.  The *StructuralType* class implements an *IsEntityType* property that will return 'true' for EntityTypes and 'false' for ComplexTypes.
+###The EntityType.CreateEntity Method
 
-#### Validation 
+The **CreateEntity()** method of the EntityManager is shorthand for something like:
 
-Validating an entity validates all of the properties, including complex type properties of an entity
+	// Only need to do this once
+	var metadataStore = manager.MetadataStore;                           // The model metadata known to this EntityManager instance
+	var customerType = metadataStore.GetEntityType(typeof(Customer));    // Metadata about the Customer type
+	
+	// Do this for each customer to be created
+	var acme = customerType.CreateEntity() as Customer;  // Returns Customer as IEntity
+	acme.CompanyName = "Acme";                                  // CompanyName is a required field
+	acme.CustomerID = Guid.NewGuid();                           // Must set the key field before attaching to entity manager
+	manager.AddEntity(acme);                                          // Attach the entity as a new entity; it's EntityState is "Added"
 
-Validating a complex type property involves validating all of its properties.
-Property level validation errors involving complex type properties include the "property path" to the errant property.
+
+Why would you ever want to write that? Perhaps if you are creating many new customer entities all at once. With this longhand version, you can avoid the cost of finding the Customer **EntityType** for each new customer.
+
+Four important facts about this approach:
+
+1. Breeze creates the data properties and entity navigation properties based on metadata,
+2. Breeze defines these properties in the manner appropriate for .Net and WPF,
+3. The new object is "wired up" as a Breeze entity,
+4. The new object is "detached" and does not belong to any EntityManager cache until you attach it explicitly.
+
+The first fact means you don't have to worry about keeping your client-side Customer definition aligned with the server-side Customer definition if you're getting your metadata from the server. Change the server-side definition and the client-side definition updates automatically.
+
+The second fact means that the new entity is shaped to match the needs of WPF binding.  **INotifyPropertyChanged**, **INotifyDataErrorInfo**, and several other interfaces discovered and used by WPF are defined and implemented by all Breeze entities.
+
+The third fact means the new customer has embedded Breeze capabilities you can tap via the **EntityAspect** property present on all entities. We'll talk about **EntityAspect** in the next topic.
+
+The fourth fact means some of the new customer's Breeze capabilities are temporarily disabled until you attach it to the entity manager. For example, if we stopped before the **AddEntity()** call, the new customer couldn't navigate to related entities in cache because it's not in a cache. Only after the fourth line ...
+
+	manager.AddEntity(acme);
+
+... is the new Acme customer ready to behave both as a Customer and as an Entity.

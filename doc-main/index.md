@@ -27,8 +27,10 @@ Learn more about these technology opportunities:
 </p>
 <hr/>
 
-<h2 class="banner__subheader"><span class="orange">Breeze</span> live tutorial:</h2>
-<a href="http://learn.breezejs.com/" class="banner__button button--large information" target="_blank">Try it now</a>
+
+<div class="banner__subheader"><span class="orange">Breeze</span> live tutorial:
+  <a href="http://learn.breezejs.com/" style="float:none" class="banner__button button--small information" target="_blank">Try it now</a>
+</div>
 <hr/>
 
 <div class="container">

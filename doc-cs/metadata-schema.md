@@ -1,4 +1,4 @@
 ---
-layout: doc-js
+layout: doc-cs
 ---
 {% include metadata-schema.md %}
