@@ -25,14 +25,15 @@ Learn more about these technology opportunities:
 <p style="text-align:left;padding-top:15px">
   <a class="button--small information" href="/doc-main">More Information </a>
 </p>
+<hr/>
 
-
-<h2 class="banner__header">Try the <span class="orange">Breeze</span> live tutorial:</h2>
+<h2 class="banner__subheader"><span class="orange">Breeze</span> live tutorial:</h2>
 <a href="http://learn.breezejs.com/" class="banner__button button--large information" target="_blank">Try it now</a>
-<hr>
+<hr/>
+
 <div class="container">
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-6">
     Get Started
     <ol>
       <li>
@@ -52,7 +53,7 @@ Learn more about these technology opportunities:
       </li>
     </ol>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-6">
     
       <a href="/samples/todo">Breeze Todo</a>
     
@@ -60,5 +61,5 @@ Learn more about these technology opportunities:
   </div>
 </div>
 </div>
-<hr>
+<hr/>
 <h2 class="banner__subheader"><a href="https://www.ideablade.com/services">Get help with Breeze and your technologies</a></h2>
