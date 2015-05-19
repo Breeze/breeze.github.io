@@ -1,0 +1,10 @@
+---
+layout: doc-main
+---
+<h1>
+	Mobile applications with one code base</h1>
+<p>Breeze&#39;s support for client-side caching and offline execution enables great mobile experiences. When used in conjunction with&nbsp;<a href="http://www.breezejs.com/bridging-phone-gap">PhoneGap</a>, you can write applications that execute natively on any device. These applications take advantage of device hardware such as GPS, cameras, and microphones, and you can deploy them through the app store.</p>
+<p>Since Breeze and PhoneGap run on all modern devices, you don&#39;t have to build and maintain three separate applications - one for iOS, one for Android, and one for Windows Phone 8. You just have one code base in JavaScript that supports desktops, tablets, and phones, regardless of which platform they are running on.</p>
+<p><a href="http://www.breezejs.com/bridging-phone-gap"><img alt="" src="http://www.breezejs.com/sites/all/themes/breeze/images/phonegap.png" style="width: 100%; max-width: 800px; border: 1px solid rgb(63, 200, 244); " /></a></p>
+<p>Build your app with Breeze, package it with PhoneGap, and deploy your app to your customer&#39;s favorite devices.</p>
+<p>Want to learn more about deploying apps to mobile devices? Read our step-by-step instructions for <a href="http://www.breezejs.com/bridging-phone-gap">bridging the phone gap</a>.</p>

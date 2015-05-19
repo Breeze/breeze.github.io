@@ -1,3 +1,187 @@
+.hr {
+	display: block;
+	position: relative;
+	padding: 0;
+	margin: 8px auto;
+	width: 100%;
+	clear: both;
+	border: none;
+	border-top: 1px solid #AAA;
+	border-bottom: 1px solid #FFF;
+	font-size: 1px;
+	line-height: 0;
+	overflow: visible;
+}
+
+.getting-started .inner{
+	border-right:2px solid #a4afb6;
+	margin-right:30px
+}
+
+
+.information{
+	background-color:#f90
+}
+
+.information:hover{
+	background-color:#f90
+}
+
+.button--small{
+	font-size:12px;
+	padding:0.5em 1.5em;
+	display:inline-block;
+	cursor:pointer;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	*zoom:1;
+	filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr='#FF0B99C2',endColorstr='#FF064D61');
+	background-color:#0b99c2;
+	border:0;
+	color:#fff;
+	text-shadow:#043a49 0 -1px 0;
+	color:#fff;
+	font-family:"Montserrat",Helvetica,Arial,sans-serif;
+	text-shadow:none;
+	text-decoration:none
+}
+
+.button--small:hover{
+	text-decoration:none
+}
+
+.button--small:hover{
+	background-color:#0a86aa
+}
+
+.button--small:active{
+	background-color:#097b9b
+}
+
+.button--small.disabled,.button--small[disabled]{
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	opacity:0.6;
+	background:false;
+	cursor:default;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none
+}
+
+.button--small::-moz-focus-inner{
+	padding:0 !important;
+	margin:-1px !important
+}
+
+.button--small:hover{
+	color:#fff
+}
+
+.button--large{
+	font-size:16px;
+	padding:0.5em 1.5em;
+	display:inline-block;
+	cursor:pointer;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	*zoom:1;
+	filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr='#FF0B99C2',endColorstr='#FF064D61');
+	background-color:#0b99c2;
+	border:0;
+	color:#fff;
+	text-shadow:#043a49 0 -1px 0;
+	padding:0.25em 4.5em;
+	color:#fff;
+	font-family:"Montserrat",Helvetica,Arial,sans-serif;
+	text-shadow:none;
+	text-decoration:none
+}
+
+.button--large:hover{
+	text-decoration:none
+}
+
+.button--large:hover{
+	background-color:#0a86aa
+}
+
+.button--large:active{
+	background-color:#097b9b
+}
+
+.button--large.disabled,.button--large[disabled]{
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	opacity:0.6;
+	background:false;
+	cursor:default;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none
+}
+
+.button--large::-moz-focus-inner{
+	padding:0 !important;
+	margin:-1px !important
+}
+
+.button--large:hover{
+	color:#fff
+}
+
+.button--xlarge{
+	font-size:28px;
+	padding:0.5em 1.5em;
+	display:inline-block;
+	cursor:pointer;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	*zoom:1;
+	filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr='#FF0B99C2',endColorstr='#FF064D61');
+	background-color:#0b99c2;
+	border:0;
+	color:#fff;
+	text-shadow:#043a49 0 -1px 0;
+	padding:0.25em 2.5em;
+	color:#fff;
+	font-family:"Montserrat",Helvetica,Arial,sans-serif;
+	text-shadow:none;
+	text-decoration:none
+}
+
+.button--xlarge:hover{
+	text-decoration:none
+}
+
+.button--xlarge:hover{
+	background-color:#0a86aa
+}
+
+.button--xlarge:active{
+	background-color:#097b9b
+}
+
+.button--xlarge.disabled,.button--xlarge[disabled]{
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	opacity:0.6;
+	background:false;
+	cursor:default;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none
+}
+
+.button--xlarge::-moz-focus-inner{
+	padding:0 !important;
+	margin:-1px !important
+}
+
+.button--xlarge:hover{
+	color:#fff
+}
+
 .learn-cards{
 	padding:0
 }
@@ -81,8 +265,146 @@
 	color:#fff
 }
 
+.marketing-panel{
+	-moz-box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+	box-sizing:content-box;
+	margin-left:-49px;
+	padding-left:49px;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-right:20px;
+	-moz-box-shadow:rgba(0,0,0,0.15) 0 -25px 12px -15px inset;
+	-webkit-box-shadow:rgba(0,0,0,0.15) 0 -25px 12px -15px inset;
+	box-shadow:rgba(0,0,0,0.15) 0 -25px 12px -15px inset
+}
+
+.marketing-panel:before,.marketing-panel:after{
+	content:" ";
+	display:table
+}
+
+.marketing-panel:after{
+	clear:both
+}
+
+.marketing-panel .pane-title{
+	margin-bottom:0
+}
+
+.marketing-panel .inner{
+	padding-top:15px;
+	padding-bottom:15px
+}
+
+.marketing-panel--half{
+	width:50%;
+	float:left
+}
+
+.marketing-panel--half:before,.marketing-panel--half:after{
+	content:" ";
+	display:table
+}
+
+.marketing-panel--half:after{
+	clear:both
+}
+
+.marketing-panel--half .inner{
+	padding:10px
+}
+
+.marketing-panel--half-1{
+	width:48%;
+	float:left;
+	margin-right:4%;
+	margin-bottom:24px
+}
+
+.marketing-panel--half-1:before,.marketing-panel--half-1:after{
+	content:" ";
+	display:table
+}
+
+.marketing-panel--half-1:after{
+	clear:both
+}
+
+.marketing-panel--half-1 .inner{
+	padding:10px
+}
+
+.marketing-panel--half-2{
+	width:48%;
+	float:left;
+	margin-bottom:24px
+}
+
+.marketing-panel--half-2:before,.marketing-panel--half-2:after{
+	content:" ";
+	display:table
+}
+
+.marketing-panel--half-2:after{
+	clear:both
+}
+
+.marketing-panel--half-2 .inner{
+	padding:10px
+}
+
+.marketing-panel--full-width{
+	padding:40px 0
+}
+
+.marketing-panel--full-width:before,.marketing-panel--full-width:after{
+	content:" ";
+	display:table
+}
+
+.marketing-panel--full-width:after{
+	clear:both
+}
+
+
+.banner:before,.banner:after{
+	content:" ";
+	display:table
+}
+
+.banner:after{
+	clear:both
+}
+
+.banner__button{
+	float:left;
+	margin-left:30px
+}
+
+.banner__header{
+	float:left;
+	margin-bottom:12px;
+	font-size:24px;
+	font-weight:normal;
+	text-transform:uppercase;
+	color:#5a6771
+}
+
+.banner__subheader{
+	margin-bottom:0;
+	font-size:18px;
+	text-transform:uppercase;
+	font-weight:normal
+}
+
+.banner__callout-with-button{
+	float:left;
+	margin-bottom:0
+}
+
 .icons-sprite,.icons-about,.icons-api,.icons-breeze-js-logo,.icons-breeze-logo-sm,.icons-breeze-logo,.icons-breeze-sharp-logo,.icons-download,.icons-feedback,.icons-ideablade-logo,.icons-mit-logo-small,.icons-pause,.views-slideshow-controls-text-status-pause,.icons-play,.views-slideshow-controls-text-status-play,.icons-samples,.icons-so-logo,.icons-uv-logo,.icons-white-envelope,.sidebar-email-signup-submit,.icons-youtube{
-	background-image:url(/sites/all/themes/custom/bjs2014/assets/img/icons-s6c1a3686fe.png);
+	background-image:url(/images/logos/icons-s6c1a3686fe.png);
 	background-repeat:no-repeat
 }
 

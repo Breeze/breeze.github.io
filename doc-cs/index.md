@@ -1,7 +1,8 @@
 ---
 layout: doc-cs
-title: C# client (Breeze#)
 ---
+
+# Breeze Sharp
 
 Love writing C# apps? BreezeSharp brings rich data management to .NET clients. BreezeSharp communicates 
 with any service that speaks HTTP and JSON and runs natively on any .NET client (all 2.5 billion of them).
