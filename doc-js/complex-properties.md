@@ -23,9 +23,9 @@ layout: doc-js
 <p>Every instance of a complex type object has two properties automatically added by Breeze:</p>
 <ol>
 	<li>
-		A <a href="http://www.breezejs.com/sites/all/apidocs/classes/ComplexType.html" target="_blank">complexType </a>property&nbsp; &ndash; This is the type metadata for the specific complex type that describes this object. A <span class="codeword">complexType</span> property is analogous to the <span class="codeword">entityType</span> property on Breeze entities.</li>
+		A <a href="/doc-js/api-docs/classes/ComplexType.html" target="_blank">complexType </a>property&nbsp; &ndash; This is the type metadata for the specific complex type that describes this object. A <span class="codeword">complexType</span> property is analogous to the <span class="codeword">entityType</span> property on Breeze entities.</li>
 	<li>
-		A <a href="http://www.breezejs.com/sites/all/apidocs/classes/ComplexAspect.html" target="_blank">complexAspect </a>property&nbsp; &ndash; This contains information about the &lsquo;parentage&rsquo; of this instance and any original values for change tracking purposes. The <span class="codeword">complexAspect</span> is analogous to the <span class="codeword">entityAspect</span> property on every Breeze entities.</li>
+		A <a href="/doc-js/api-docs/classes/ComplexAspect.html" target="_blank">complexAspect </a>property&nbsp; &ndash; This contains information about the &lsquo;parentage&rsquo; of this instance and any original values for change tracking purposes. The <span class="codeword">complexAspect</span> is analogous to the <span class="codeword">entityAspect</span> property on every Breeze entities.</li>
 </ol>
 <h2>
 	Interactions involving Complex types</h2>

@@ -184,7 +184,7 @@ Here's how you might add the "url" and "required" validators to a `Person` prope
 ### Regular Expression validators ###
 
 Many real world validations can be implemented with the `regularExpression` validator and a well crafted regular expression. The
-[`breeze.Validator.makeRegExpValidator`](http://www.breezejs.com/sites/all/apidocs/classes/Validator.html#method_makeRegExpValidator) static helper makes that a little easier and also encapsulates the regular expression within the validator it creates. For example, we can make a U.S. zipcode validator and apply it to one of the `Customer` properties.
+[`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Validator.html#method_makeRegExpValidator) static helper makes that a little easier and also encapsulates the regular expression within the validator it creates. For example, we can make a U.S. zipcode validator and apply it to one of the `Customer` properties.
 
     // Make a zipcode validator
     function zipValidator = breeze.Validator.makeRegExpValidator(

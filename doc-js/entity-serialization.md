@@ -34,7 +34,7 @@ Your custom ***unmapped*** properties present a greater challenge. Breeze serial
 
 You can set an optional `serializerFn` property of the `MetadataStore` and `EntityType` classes with your own serialization function. Breeze calls your function first when serializing entity property values. Then Breeze applies its own serialization to your function's return values, applying the techniques discussed previously. 
 
-The `serializerFn` has two parameters: the <a href="http://www.breezejs.com/sites/all/apidocs/classes/DataProperty.html" title="DataProperty API" target="_blank">`DataProperty`</a>  to serialize and the object's current value for that property.  If the `serializerFn` returns `undefined`, the serialization of that property is suppressed.
+The `serializerFn` has two parameters: the <a href="/doc-js/api-docs/classes/DataProperty.html" title="DataProperty API" target="_blank">`DataProperty`</a>  to serialize and the object's current value for that property.  If the `serializerFn` returns `undefined`, the serialization of that property is suppressed.
 
 Use *MetadataStore.setProperties* and  *EntityType.setProperties* methods to set the `serializerFn` property.
 

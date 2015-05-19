@@ -64,7 +64,7 @@ title: FAQ
 
 <ul>
 	<li><strong>Documentation</strong><br />
-	Not to brag, but the <a href="http://www.breezejs.com/documentation/introduction">documentation here on the Breeze website</a> is pretty good. Same goes for the <a href="http://www.breezejs.com/sites/all/apidocs/index.html" target="_blank">Breeze API</a>. Both are indexed and searchable.</li>
+	Not to brag, but the <a href="http://www.breezejs.com/documentation/introduction">documentation here on the Breeze website</a> is pretty good. Same goes for the <a href="/doc-js/api-docs/index.html" target="_blank">Breeze API</a>. Both are indexed and searchable.</li>
 	<li><strong>Troubleshooting</strong><br />
 	Community support for Breeze can be found on Stack Overflow. We look for <a href="http://stackoverflow.com/questions/tagged/breeze" target="_blank">questions using the Breeze tag</a>.</li>
 	<li><strong>Feature suggestions</strong><br />

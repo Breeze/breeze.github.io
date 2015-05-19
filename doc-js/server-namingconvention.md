@@ -151,7 +151,7 @@ From the property definition you can learn a lot about the property whose name y
         propDef.isDataProperty;       // is it a Data prop or Nav prop?
     }
 
->See the <a href="http://www.breezejs.com/sites/all/apidocs/classes/DataProperty.html" title="API: DataProperty" target="_blank">DataProperty API</a> for details of likely property definition members. Remember that this parameter may be null or deficient so always be ready for missing information.
+>See the <a href="/doc-js/api-docs/classes/DataProperty.html" title="API: DataProperty" target="_blank">DataProperty API</a> for details of likely property definition members. Remember that this parameter may be null or deficient so always be ready for missing information.
 
 The following convention performs BOTH a camelCase translation AND prefixes `Boolean` properties with the word particle, 'is'.  If your `VendingMachine` server-side class has a `Boolean` property called '*Enabled*', this convention turns it into 'VendingMachine.*isEnabled*' on the client:
 

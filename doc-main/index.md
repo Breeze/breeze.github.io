@@ -26,14 +26,14 @@ Learn more about these technology opportunities:
   <a class="button--small information" href="/doc-main">More Information </a>
 </p>
 
-<div class="panel">
-  <h2 class="banner__header">Try the <span class="orange">Breeze</span> live tutorial:</h2>
-  <a href="http://learn.breezejs.com/" class="banner__button button--large information" target="_blank">Try it now</a>
-</div>
 
+<h2 class="banner__header">Try the <span class="orange">Breeze</span> live tutorial:</h2>
+<a href="http://learn.breezejs.com/" class="banner__button button--large information" target="_blank">Try it now</a>
+<hr>
+<div class="container">
 <div class="row">
-  <div class="span6">
-    <h2>Get Started</h2>
+  <div class="col-sm-4">
+    Get Started
     <ol>
       <li>
         <a href="/doc-main">Learn how it works</a>
@@ -52,12 +52,13 @@ Learn more about these technology opportunities:
       </li>
     </ol>
   </div>
-  <div class="span6">
-    <h2>
+  <div class="col-sm-4">
+    
       <a href="/samples/todo">Breeze Todo</a>
-    </h2>
+    
     <p>Todo demonstrates Breeze&#39;s ability to query; create, modify, and delete entities; validate, and save.</p>
   </div>
+</div>
 </div>
 <hr>
 <h2 class="banner__subheader"><a href="https://www.ideablade.com/services">Get help with Breeze and your technologies</a></h2>

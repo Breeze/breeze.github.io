@@ -182,7 +182,7 @@ The *DataServiceAdapters* in the [breeze core](https://github.com/Breeze/breeze.
 
 ## JsonResultsAdapter interface
 
-Every *JsonResultsAdapter* is an instance of the [**breeze.JsonResultsAdapter**](http://www.breezejs.com/sites/all/apidocs/classes/JsonResultsAdapter.html#method_%3Cctor%3E%20JsonResultsAdapter "API Doc: JsonResultsAdapter").
+Every *JsonResultsAdapter* is an instance of the [**breeze.JsonResultsAdapter**](/doc-js/api-docs/classes/JsonResultsAdapter.html#method_%3Cctor%3E%20JsonResultsAdapter "API Doc: JsonResultsAdapter").
 
     var myJsonResultsAdapter = new breeze.JsonResultsAdapter(config);
 
@@ -262,12 +262,12 @@ The `visitNode` method takes 3 parameters and returns a single object hash. Bree
 			<tr>
 				<td>&quot;navProp&quot;</td>
 				<td>node returned by an entity node's scalar navigation property.</td>
-				<td><strong>navigationProperty</strong>: The <code><a href="http://www.breezejs.com/sites/all/apidocs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.</td>
+				<td><strong>navigationProperty</strong>: The <code><a href="/doc-js/api-docs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.</td>
 			</tr>
 			<tr>
 				<td>&quot;navPropItem&quot;</td>
 				<td>node in the array returned by an entity node's navigation array property.</td>
-				<td><strong>navigationProperty</strong>: The <code><a href="http://www.breezejs.com/sites/all/apidocs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.</td>
+				<td><strong>navigationProperty</strong>: The <code><a href="/doc-js/api-docs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.</td>
 			</tr>
 		</tbody>
 	</table>

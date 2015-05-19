@@ -167,18 +167,18 @@ You can remove an existing `take` or `skip` from the query by appending `.take()
 
 <a name="QueryOptions"></a>
 ### Query Options ###
-The [**`QueryOptions`**](http://www.breezejs.com/sites/all/apidocs/classes/QueryOptions.html) object defines two strategies that guide the EntityManager's processing of a query.
+The [**`QueryOptions`**](/doc-js/api-docs/classes/QueryOptions.html) object defines two strategies that guide the EntityManager's processing of a query.
 
-The [**`FetchStrategy`**](http://www.breezejs.com/sites/all/apidocs/classes/FetchStrategy.html) determines the query target (server or cache). 
+The [**`FetchStrategy`**](/doc-js/api-docs/classes/FetchStrategy.html) determines the query target (server or cache). 
 
-The [**`MergeStrategy`**](http://www.breezejs.com/sites/all/apidocs/classes/MergeStrategy.html) tells Breeze how to merge raw entity query data into cache when an entity with that key is already in cache.
+The [**`MergeStrategy`**](/doc-js/api-docs/classes/MergeStrategy.html) tells Breeze how to merge raw entity query data into cache when an entity with that key is already in cache.
 
-The "no tracking" feature is logically another "query option" but is implemented as its own option on the `EntityQuery` itself. [`EntityQuery.noTracking`](http://www.breezejs.com/sites/all/apidocs/classes/EntityQuery.html#method_noTracking) determines if Breeze should attempt (`false`) or should not attempt (`true`) to merge the raw query data into cache, as discussed in the next section.
+The "no tracking" feature is logically another "query option" but is implemented as its own option on the `EntityQuery` itself. [`EntityQuery.noTracking`](/doc-js/api-docs/classes/EntityQuery.html#method_noTracking) determines if Breeze should attempt (`false`) or should not attempt (`true`) to merge the raw query data into cache, as discussed in the next section.
 
 <a name="no-tracking"></a>
 ### "NoTracking" Queries
 
-The [**`EntityQuery.noTracking`**](http://www.breezejs.com/sites/all/apidocs/classes/EntityQuery.html#method_noTracking) method accepts a single optional boolean parameter (defaults to`true` when omitted) that determines whether or not Breeze should transform query results into entities and merged their data into cache.
+The [**`EntityQuery.noTracking`**](/doc-js/api-docs/classes/EntityQuery.html#method_noTracking) method accepts a single optional boolean parameter (defaults to`true` when omitted) that determines whether or not Breeze should transform query results into entities and merged their data into cache.
 
 "NoTracking" queries execute much faster than a corresponding query without the "noTracking" option. Example:
  

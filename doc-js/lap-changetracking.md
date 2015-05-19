@@ -115,7 +115,7 @@ You delete an entity by changing its `EntityState` to "Deleted" like this:
 `setDeleted` does not destroy the object locally nor does it remove the entity from the database. The entity simply remains in cache in its new "Deleted" state &hellip; as changed and added entities do. A successful save does delete the entity from the database and remove it from cache.
 
 ##PropertyChanged
-A Breeze entity property raises a `propertyChanged` event when it is changed to a different value. You attach an event handler to that event to listen for changes to *a* specific property of *one specific entity instance* as explained in the [API documentation for this event](http://www.breezejs.com/sites/all/apidocs/classes/EntityAspect.html#event_propertyChanged).
+A Breeze entity property raises a `propertyChanged` event when it is changed to a different value. You attach an event handler to that event to listen for changes to *a* specific property of *one specific entity instance* as explained in the [API documentation for this event](/doc-js/api-docs/classes/EntityAspect.html#event_propertyChanged).
 
     // assume order is an order entity attached to an EntityManager.
     order.entityAspect.propertyChanged.subscribe(function (propertyChangedArgs) {
@@ -180,9 +180,9 @@ You just learned how to listen for a change to *a single Knockout property of a 
 <a name="emEntityChanged"></a>
 ##EntityManager.entityChanged Event
 
-The `EntityManager` is always watching for changes to entities in its cache and when it detects a change to an entity, it raises the [entityChanged event](http://www.breezejs.com/sites/all/apidocs/classes/EntityManager.html#event_entityChanged). 
+The `EntityManager` is always watching for changes to entities in its cache and when it detects a change to an entity, it raises the [entityChanged event](/doc-js/api-docs/classes/EntityManager.html#event_entityChanged). 
 
-The manager raises the event when it detects many different kinds of changes which it calls "entity actions". The Breeze [`EntityAction` enumeration](http://www.breezejs.com/sites/all/apidocs/classes/EntityAction.html) describes them.
+The manager raises the event when it detects many different kinds of changes which it calls "entity actions". The Breeze [`EntityAction` enumeration](/doc-js/api-docs/classes/EntityAction.html) describes them.
 
 Here's how you might subscribe to `eventChanged` to respond to property changes:
 
