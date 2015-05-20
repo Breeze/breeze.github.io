@@ -4,40 +4,30 @@ layout: doc-cs
 
 # Breeze Sharp
 
-Love writing C# apps? BreezeSharp brings rich data management to .NET clients. BreezeSharp communicates 
-with any service that speaks HTTP and JSON and runs natively on any .NET client (all 2.5 billion of them).
-[Learn more](/doc-cs/features)
+#![Breeze.Sharp](/images/logos/BreezeSharpB.png "Breeze.Sharp")
 
-<ul class="learn-cards">
-  <li class="learn-card">
-    <a href="/breeze-sharp/about" class="learn-card__inner">
-    <span class="icon icons-about"></span>
-    <h3 class="learn-card__title">About</h3>
-      <p>Learn more about Breeze.js</p>
-    </a>
-  </li>
+###Welcome to **Breeze.Sharp** by [**IdeaBlade**](http://www.ideablade.com "IdeaBlade website"), the data management library for developers of rich client applications written in  **C#, F#, and VB.NET**.
 
-  <li class="learn-card">
-    <a href="/breeze-sharp/samples" class="learn-card__inner">
-      <span class="icon icons-samples"></span>
-      <h3 class="learn-card__title">Samples</h3>
-      <p>Download real world working examples.</p>
-    </a>
-  </li>
+This repository holds the Breeze assets **for .NET and Xamarin client development**. 
 
-  <li class="learn-card">
-    <a href="/breeze-sharp-api/index.html" class="learn-card__inner">
-      <span class="icon icons-api"></span>
-      <h3 class="learn-card__title">API</h3>
-      <p>Get the full documentation.</p>
-    </a>
-  </li>
 
-  <li class="learn-card">
-    <a href="/breeze-sharp/download" class="learn-card__inner">
-      <span class="icon icons-download"></span>
-      <h3 class="learn-card__title">Downloads</h3>
-      <p>Get Breeze.js right now!!!</p>
-    </a>
-  </li>
-</ul>
+##Support
+
+**For technical questions, please go to [StackOverflow with the tag "breeze"](http://stackoverflow.com/questions/tagged/breeze?sort=newest "Breeze.Sharp on StackOverflow").**
+
+<p><a title="Breeze# on StackOverflow" href="http://stackoverflow.com/questions/tagged/breeze?sort=newest"><img src="http://www.breezejs.com/sites/all/themes/breeze/images/BreezeSharpLovesStackOverflow.png" alt="BreezeJS loves StackOverflow"></a></p>
+
+StackOverflow is a fantastic site where tons of developers help each other with their technical questions.
+
+[http://stackoverflow.com/questions/tagged/breeze](http://stackoverflow.com/questions/tagged/breeze?sort=newest)
+
+We monitor this tag on the StackOverflow website and do our best to answer your questions. The advantage of StackOverflow over the GitHub Wiki is the sheer number of qualified developers able to help you with your questions, the visibility of the question itself, and the whole StackOverflow infrastructure (reputation, up- or down-vote, comments, etc).
+
+**For bug reports**, please do use the GitHub **Issues** tab! 
+
+Please post your [**feature suggestions** to our User Voice site](https://breezejs.uservoice.com/forums/248991-2-breezesharp-feature-suggestions "Breeze.Sharp User Voice")
+
+<a href="mailto:breeze@ideablade.com/?subject=Tell me about Breeze.Sharp paid support" title="Paid Support">Learn about <strong>paid support</strong></a>.
+
+<a href="mailto:breeze@ideablade.com/?subject=Tell me about professional services" title="Professional Services">Learn about IdeaBlade's <strong>professional services</strong></a> from training through application development</a>.
+
