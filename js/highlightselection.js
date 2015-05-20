@@ -4,10 +4,10 @@ $(window).on('load', function() {
     if (!$li.length) return;
     
     // force any parents that are dropdowns to drop down.
-    var $dropdowns = $li.parents('.dropdown-menu');
-    $dropdowns.each(function(ix, dd) {
-        $(dd).prev().dropdown('toggle');
-    });
+//    var $dropdowns = $li.parents('.dropdown-menu');
+//    $dropdowns.each(function(ix, dd) {
+//        $(dd).prev().dropdown('toggle');
+//    });
     
     // scroll the current li to the top if not visible.
     var $leftnav = $('#leftnav');
@@ -23,6 +23,29 @@ $(window).on('hashchange', function() {
     selectHrefLi();
     
 });
+
+$('.dropdown.keep-open').on({
+    "shown.bs.dropdown": function() { 
+        this.closable = false; 
+    },
+    "click":             function(e) {
+        if( ($(e.target).is('button')) && ($.contains(this, e.target)) ) {
+            // only allow collapse if hitting the parent button 
+            this.closable = true; 
+        } else {
+            this.closable = false;
+        }
+    },
+    "hide.bs.dropdown":  function() { 
+        return !!this.closable; 
+    }
+});
+
+// Creates a combo box
+//$(".dropdown-menu li a").click(function(){
+//  var selText = $(this).text();
+//  $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+//});
 
 function goPrev() {
     var href;

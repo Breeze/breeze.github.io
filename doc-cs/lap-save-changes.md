@@ -2,96 +2,78 @@
 layout: doc-cs
 ---
 
-# Change tracking
+# Save changes
 
-At the heart of every Breeze entity is a nugget of “entity-ness”, its EntityAspect. Get it by calling theEntity.EntityAspect.
+The code snippets on this page are drawn from the Breeze Todo Sample App and from the BasicTodoTests module of the DocCode teaching tests.
 
-A full discussion of EntityAspect awaits you in a later topic. For now, we scratch the surface with an introduction to one two specific EntityAspect members:
+The Todo sample App doesn’t have a save button. It saves changes as you add new items, update descriptions, check the “done” box, archive the completed Todos, and tick “Mark all as complete”. Create, update, and delete operations are all represented. Clicking “Mark all as complete” saves multiple updates in one transaction bundle.
 
-EntityState – a property that reveals the entity’s change-state
-ValidationErrors: a collection of any errors that are the result of applying validation rules:
+Here’s one way to save using the EntityManager.SaveChanges method:
 
-### EntityState
-
-A Breeze entity is “self-tracking”.  Its EntityAspect.EntityState tells you if it is
-
-| Entity State | Description
-| ------------ | -----------
-| “Added” | A new entity in cache that does not exist in the backend database
-| “Unchanged” | An existing entity in cache that was queried from the database
-| “Modified” | An existing entity in cache with pending changes
-| “Deleted” |  An existing entity in cache that is marked for deletion
-| “Detached” |  An entity that is not in cache; its status in the database is unknown
-
-An EntityState instance has accessor methods that make it easy to test these states individually (IsAdded(), IsUnchanged(), IsModified(), IsDeleted(), IsDetached()) or in useful combinations (IsAddedOrModifiedOrDeleted(), IsAddedOrModified() IsDeletedOrDetached(),  etc).
-
-As things happen to an entity, Breeze updates its EntityState automatically. For example,
-
-| Action | new EntityState
-| ------ | ---------------
-| Create entity and call AddEntity | Added
-| Create entity and call AttachEntity | Unchanged
-| Arrives in cache from a query | Unchanged
-| Set one of its properties | Modified
-| Save it successfully | Unchanged
-
-You can change any EntityState to another state with one of several methods. That’s an advanced, potentially risky trick that you can learn about later … except for one common case.
-
-#### Deleting an entity
-
-You delete an entity by changing its EntityState to “Deleted” like this:
-
-    someEntity.EntityAspect.Delete(); // mark for deletion
-
-Delete does not destroy the object locally nor does it remove the entity from the database. The entity simply remains in cache in its new “Deleted” state … as changed and added entities do. A successful save does delete the entity from the database and remove it from cache.
-
-#### PropertyChanged
-
-Every Breeze entity implements INotifyPropertyChanged explicitly. We configured Breeze to produce Knockout observable properties. You can subscribe to changes as shown here:
-
-With the Breeze EntityAspect.propertyChanged event, you can listen for a change to any property with a single subscription:
-
-    ((INotifyPropertyChanged) newTodo).PropertyChanged += (sender, eventArgs) => {
-        var propertyName = eventArgs.PropertyName;
+    if (manager.HasChanges()) {
+        var saveResult = await manager.SaveChanges();
+    } else {
+        // log or inform user that there is nothing to save.     
     }
-        
 
-#### Property validation
+Checking for the presence of changes with HasChanges() is optional; Breeze won’t try to save if there is nothing to save. In this case, the author wants the user to see that there were no changes so he logs that fact and only calls manager.SaveChanges() when necessary.
 
-Breeze properties aren’t just observable. They can validate changes based on rules registered in metadata. Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well.
-
-In brief, Breeze evaluates validation rules at prescribed times of your choosing. A validation rule either passes or fails. If it passes, it returns null. If it fails, it returns a ValidationError describing the problem. Every EntityAspect maintains a ValidationErrors collection. The Breeze validation engine adds new ValidationError instances to that collection when validation rules fail and removes old ValidationErrors instances when validation rules pass [3].
-
-Every Breeze entity also implement the .NET INotifyDataErrorInfo interface. This allows you to subscribe to any changes in the ValidationErrors associated with any specific entity. 
-
-    var inde = (INotifyDataErrorInfo)emp;
-    var hasErrors = inde.HasErrors; // check if there are any errors on this entity
-    // subscribe to the ErrorsChanged event.  
-    inde.ErrorsChanged += (s, e) => {
-        var propertyName = e.PropertyName;  
-        var validationErrors = inde.GetErrors(propertyName).Cast<ValidationError>();    
-    };
+> You can call EntityManager.SaveChanges(save_only_these_entities) if you want to cherry pick entities to save. If the list includes unchanged entities, Breeze won’t bother saving them. We advise against using this option because it’s easy to save one entity while neglecting an important dependent entity. For example, you probably don’t want to save a new OrderDetail without saving its parent new Order. It is your application; use the power wisely.
 
 
-By default, Breeze validates the entities before saving them to the server; it won't send any of them if one of the entities fails validation. 
+#### The save process
 
-> Reminder: Client-side validation improves the user experience. It is not a substitute for validation on the server.
+The *EntityManager* collects every entity with a pending change into a change-set. Then it validates the entities in that change-set, invoking each entity’s property- and entity-level validation rules, adding and removing errors from each entity's *EntityAspect.ValidationErrors* collection. The save fails if any entity in the bundle has errors. If they are all error-free, the manager sends the change-set in the body of a single POST request to the persistence service 
 
-### Reverting a change
+A save is an async operation, like any other service operation.  The Todo app releases the UI immediately, enabling the user to keep working unblocked. When the save result arrives from the service, the app reports success or failure with its logger.
 
-Once you’ve changed an entity, it’s in a changed state … even if you manually restore the original value:
+#### After the save
 
-    var oldDescription = todo.Description; // assume existing "Unchanged" entity
-    todo.Description = "Something new"; // EntityState becomes "Modified"
-    todo.Description =  OldDescription; // entityState is still "Modified"
+If the save fails, the contents of the cache are unchanged. The entities with pending changes remain in their changed state. The app should analyze the *SaveException* thrown as a result of any failed save to determine the appropriate recovery or shutdown steps.
 
-You cancel and roll back changes to an entity by calling EntityAspect.RejectChanges.
+If the save succeeds, Breeze has some bookkeeping to do. The service sent the saved entities back to Breeze; the list is available from the *SaveResult.Entities* property.  They may contain changes that are news to the client, changes made by something in the backend.  Breeze merges these changes back into the cache.
 
-    var oldDescription = todo.Description; // assume existing "Unchanged" entity
-    todo.Description = "Something new"; // EntityState becomes "Modified"
-    todo.EntityAspect.RejectChanges() //  entityState restored to "Unchanged”
-                                   
-#### Saving Changes
+For deleted entities the *SaveResult.Entities* property will include the deleted entities that are no longer in cache.
 
-Perhaps we have new, changed, and deleted entities in cache that we want to preserve in permanent storage. Learn about saving these changes in the next topic.
+An entity that was marked for delete is removed from cache; its *EntityState* becomes “Detached”. The *EntityState* of new and modified entities becomes “Unchanged”.
+
+
+#### Id Fixup
+
+Updates to store-generated keys are the most common backend changes. A new Todo.Id was assigned a temporary id such as (-1) while it was in cache before save.  During the save, the database assigned it a permanent id, say (42). The Breeze EntityManager detects this and updates its cache key map accordingly. Then it visits every other entity in cache that might have had a reference to (-1) and replaces that value with (42) in a process called “id fix-up”.
+
+The Todo app doesn’t need id fix-up because there are no relationships among entities in this model. But if we were saving a new Order and its OrderDetails, Breeze would replace all of the OrderDetail.OrderID values with the new Order.OrderID; for example, their (-1) values would be updated to (42).
+
+If a fixup is performed the *SaveResult* provides a *KeyMapping* property that is a dictionary (map) of old EntityKeys to their corresponding new EntityKeys.
+
+#### Offline
+
+What if we couldn't save Todo changes right away? What if we couldn't rely on a fast, continuous connection to the server? We'd like to stash the cache contents to local storage. Breeze can smooth that process for you with its EntityManager export/import facilities. 
+
+    // add a new Todo to the cache
+    var newTodo = manager.AddEntity(CreateTodo("Export/import safely"));
+    
+    var changes = manager.GetChanges(); // we'll stash just the changes
+    var changesExport = manager.ExportEntities(changes);
+    
+    // write the changesExport to a file or isolated storage.
+    WriteChangesToFile(changesExport);  
+    // ... much later ...
+    
+    var changesImport = ReadChangesFromFile();
+    manager.ImportEntities(changesImport);
+
+    // ... the todo is back in cache in its added state  ...
+
+We cover export/import in greater detail in Export and Import Entities.
+
+So ends the tour
+
+You’ve queried, added new entities, changed others, and perhaps deleted one or two. You’ve saved your changes to the server. Those are the basics of data management in any application … and now you’ve run that lap with Breeze.
+
+There are plenty of details to explore in later topics. You’ll likely dig deeper as you encounter more challenging scenarios. But now, you’re properly equipped to get started building a Breeze app. What’s stopping you? Get going! Have fun! And please stay in touch.
+
+
+
+
 
