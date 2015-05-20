@@ -25,6 +25,7 @@ $(window).on('hashchange', function() {
 });
 
 function goPrev() {
+    var href;
     var $li = getCurrentLi();
     var isChild = $li.parents('.dropdown').length;
     var $prevLi = $li.prev('li');
@@ -36,17 +37,26 @@ function goPrev() {
         // $prevLi is a parent with children - so go to last child
         $prevLi = $prevLi.find('li').last();
     }
-       
-    var href = $prevLi.find('a').attr("href");
-    if (href.length) {
+    
+    if (!$prevLi.length) {
+        // at beginning ( no prev li) so goto top
+        href = $('#menu-header').attr('href');
+    } else {
+        href = $prevLi.find('a').attr("href");
+    }
+    
+    if (href && href.length) {
         window.location.href = href;
     }
 }
 
 function goNext() {
+    var href, $nextLi;
     var $li = getCurrentLi();
-    var $nextLi;
-    if ($li.hasClass("dropdown")) {
+    if (!$li.length) {
+        // at top ( no li avail)
+        $nextLi = $('#menu-top').find('li').first();
+    } else  if ($li.hasClass("dropdown")) {
         $nextLi = $li.find('li');
     } else {
         $nextLi = $li.next('li');  
@@ -56,11 +66,16 @@ function goNext() {
         }  
     }
     
-    var href = $nextLi.find('a').attr("href");
-    if (href.length) {
+    if (!$nextLi.length) {
+        return;
+    }
+    
+    href = $nextLi.find('a').attr("href");
+    if (href && href.length) {
         window.location.href = href;
     }
 }
+
 
 function getCurrentLi() {
     var pathName = location.pathname;

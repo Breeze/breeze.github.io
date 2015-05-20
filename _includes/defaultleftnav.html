@@ -1,6 +1,6 @@
 <div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-    <a id="menuname" class="navmenu-brand" href="/{{page.layout}}/">{{menu.title}}</a>
-	<ul class="nav navmenu-nav">
+    <a id="menu-header" class="navmenu-brand" href="/{{page.layout}}/">{{menu.title}}</a>
+	<ul id="menu-top" class="nav navmenu-nav">
 {% for menuitem in menu.menuitems %}
     {% if menuitem.isparent %}
         {% if indropdown == true %}
