@@ -76,26 +76,12 @@ h4, .h4 {
   
 }
 
-@media (max-width: 992px) {
-    .navbar {
-        background: none;
-        border: none;
-    }
+body {
+    padding-top: 50px;  /* padding for space under the top nav */
 }
 
 @media (min-width: 992px) {
   body {
-    padding: 50px 0 0 220px;
+    padding: 50px 0 0 220px;  /* padding for space under the top nav and the left nav */
   }
-
-  body.noleftnav {
-    padding: 50px 0 0 0;
-  }
-
-  /*.navmenu {
-    padding-top: 0;
-  }*/
-  /*.navbar {
-    display: none !important; 
-  }*/  /* IE8 fix */
 }
