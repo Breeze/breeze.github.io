@@ -80,31 +80,14 @@ function getCurrentLi() {
 
 function selectHrefLi() {
      // select the current li
-    var pathName = location.pathname;
-    var hash = location.hash;
-    
-    var pathParts = pathName.split("/");
-    var lastPart = pathParts[pathParts.length-1];
-    var hrefVal =  (hash != "") ? lastPart+hash : lastPart;
-    var $anchor =  $('a[href="' + hrefVal + '"]');
-    // fallback to just the html page name if we can't find the page with hash ref.
-    if (!$anchor.length) {
-        $anchor =  $('a[href="' + lastPart + '"]');
-    } 
-    var $li = $anchor.parent();
+    var $li = getCurrentLi();
     $("li.active").removeClass("active");
     $li.addClass("active");
     
     // hack to accomodate header + padding (50 + 20)
-    if (hash) {
+    if (location.hash) {
         setTimeout(function() { window.scrollBy(0, -70) }); 
         // scrollBy(0, -70) ; 
-    }
-    
-    var $menu = $('#menuname');
-    var $selectedMenu = $('#selected-menu');
-    if ($menu.length && $selectedMenu.length) {
-        $selectedMenu.html($menu.text() + '      <span class="caret"></span>');
     }
     
     return $li;

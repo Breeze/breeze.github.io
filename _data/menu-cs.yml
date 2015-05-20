@@ -11,7 +11,7 @@ menuitems:
   - { link: "lap-query-with-filter.html", title: Query with a filter, ischild: true }
   - { link: "lap-add-entity.html", title: Add a new entity, ischild: true }
   - { link: "lap-change-tracking.html", title: Change tracking, ischild: true }
-  - { link: "lap-save-changes.html#", title: Save Changes, ischild: true }
+  - { link: "lap-save-changes.html", title: Save Changes, ischild: true }
   - { link: "query.html", title: Querying, isparent: true }
   - { link: "query-in-depth.html", title: Querying in depth, ischild: true }
   - { link: "query-locally.html", title: Querying locally, ischild: true }
