@@ -475,3 +475,138 @@
 .icons-youtube{
 	background-position:0 -897px
 }
+
+.download-intro{
+	margin-bottom:30px
+}
+
+.download-boxes,.support-boxes,.support-buttons{
+	padding:0;
+	margin-bottom:24px
+}
+
+.download-boxes:before,.download-boxes:after,.support-boxes:before,.support-boxes:after,.support-buttons:before,.support-buttons:after{
+	content:" ";
+	display:table
+}
+
+.download-boxes:after,.support-boxes:after,.support-buttons:after{
+	clear:both
+}
+
+.download-boxes li:last-child,.support-boxes li:last-child,.support-buttons li:last-child{
+	margin-right:0
+}
+
+.support-buttons{
+	margin-top:24px
+}
+
+.download-box,.support-box{
+	float:left;
+	height:450px;
+	display:block;
+	-moz-box-shadow:rgba(0,0,0,0.15) 3px 3px 15px 3px;
+	-webkit-box-shadow:rgba(0,0,0,0.15) 3px 3px 15px 3px;
+	box-shadow:rgba(0,0,0,0.15) 3px 3px 15px 3px;
+	list-style-type:none
+}
+
+.download-box .download-box__inner,.support-box .download-box__inner{
+	padding:10px
+}
+
+.download-box .download-box__icon,.support-box .download-box__icon{
+	display:block;
+	height:100px;
+	width:100px;
+	margin:0 auto
+}
+
+.download-box .download-box__icon img,.support-box .download-box__icon img{
+	display:block;
+	margin:auto;
+	width:100%;
+	height:auto
+}
+
+.download-box a,.support-box a{
+	text-decoration:none
+}
+
+.download-box h3,.download-box p,.support-box h3,.support-box p{
+	margin-bottom:12px
+}
+
+.download-box{
+	width:48%;
+	margin-right:7px;
+	height:350px
+}
+
+.support-box{
+	width:21%;
+	height:500px;
+	margin-right:7px;
+	padding:10px;
+	position:relative
+}
+
+.subscription-icon{
+	text-align:center;
+	font-size:50px
+}
+
+.support-box__add-to-cart{
+	position:absolute;
+	bottom:10px;
+	color:#f90;
+	text-transform:capitalize
+}
+
+.shopping-cart{
+	margin-left:10px;
+	font-size:32px;
+	color:#000
+}
+
+.support-buttons p{
+	text-align:center;
+	padding:0;
+	margin:0
+}
+
+.support-buttons__inner{
+	width:75%;
+	float:left;
+	padding:20px;
+	background:#a4afb6
+}
+
+.support-buttons__inner .support-buttons__icon{
+	display:block;
+	height:80px;
+	padding:5px;
+	margin-bottom:24px
+}
+
+.support-buttons__inner .support-buttons__icon img{
+	display:block;
+	margin:auto;
+	width:100%;
+	height:auto
+}
+
+.so-support-button,.uv-support-button{
+	float:left;
+	width:48%;
+	margin-right:10px
+}
+
+.so-support-icon{
+	background:#0072C6
+}
+
+.uv-support-icon{
+	background:#41ADFA
+}

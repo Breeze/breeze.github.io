@@ -40,8 +40,8 @@
     {% endif %}
     
     <a href="/doc-main/support.html" class="navmenu-brand pull-left" >Support</a>    
-     
-     <!-- Search form -->
+        
+    <!-- Search form -->
     <form id="searchform" class="form-inline navbar-brand pull-right">
         <div class="input-group">
             <input type="text" class="form-control input-sm" id="searchterm" name="searchterm" placeholder="Search for...">
@@ -49,7 +49,19 @@
                 <button class="btn btn-default input-sm" type="submit">Go!</button>
             </span>
         </div>
-    </form>
+    </form>        
+    
+     <!-- Prev/Next buttons -->
+    <div class="navbar-brand pull-right">
+        <button type="button" class="btn btn-default btn-sm" aria-label="Prev">
+    	   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </button>    
+    
+        <button type="button" class="btn btn-default btn-sm" aria-label="Next">
+    	   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </button>
+    </div>
+    
     
                        
     

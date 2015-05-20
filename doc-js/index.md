@@ -2,7 +2,7 @@
 layout: doc-js
 title: Javascript client
 ---
-# Overview
+# BreezeJs 
 
 **BreezeJS is a JavaScript library that helps you manage data in rich client applications**. If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
 

@@ -6,7 +6,7 @@ layout: doc-cs
 
 Love writing C# apps? BreezeSharp brings rich data management to .NET clients. BreezeSharp communicates 
 with any service that speaks HTTP and JSON and runs natively on any .NET client (all 2.5 billion of them).
-[Learn more](/doc-cs/about)
+[Learn more](/doc-cs/features)
 
 <ul class="learn-cards">
   <li class="learn-card">
