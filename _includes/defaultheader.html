@@ -1,68 +1,67 @@
-<!-- mobile header -->
-<div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
-    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-</div>
-
-<div id="header" class="navbar navbar-default navbar-fixed-top hidden-sm hidden-xs">
+<div id="header" class="navbar navbar-default navbar-fixed-top">
+    <div class="hidden-md hidden-lg">
+        <button type="button" class="navbar-toggle pull-left" style="position: static" data-toggle="offcanvas" data-target=".navmenu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
     <a class="navmenu-brand pull-left" href="/">Breeze&nbsp;&nbsp;&nbsp;&nbsp</a>
 
-    <!-- Tech selector -->    
-    <a class="navmenu-brand pull-left">Technology: </a>
-    <div class="btn-group pull-left">            
+    <!-- Tech selector -->
+    <div class="btn-group pull-left">
         <button id="selected-menu" type="button" class="btn btn-default navmenu-brand dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             {{menu.title}}  <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
             <li role="presentation" class="dropdown-header">Overview</li>
-            <li><a href="/doc-main">&nbsp;&nbsp;&nbsp;&nbsp Introduction</a></li> 
+            <li><a href="/doc-main">&nbsp;&nbsp;&nbsp;&nbsp Introduction</a></li>
             <li role="presentation" class="dropdown-header">Client technologies</li>
             <li><a href="/doc-js">&nbsp;&nbsp;&nbsp;&nbsp Javascript client</a></li>
-            <li><a href="/doc-cs">&nbsp;&nbsp;&nbsp;&nbsp C# client</a></li>                
+            <li><a href="/doc-cs">&nbsp;&nbsp;&nbsp;&nbsp C# client</a></li>
             <li role="presentation" class="dropdown-header">Server technologies</li>
-            <li><a href="/doc-net">&nbsp;&nbsp;&nbsp;&nbsp .NET server w/ Entity Framework or NHibernate</a></li>                                       
-            <li><a href="/doc-node-sequelize">&nbsp;&nbsp;&nbsp;&nbsp Node server w/ Sequelize</a></li>    
-            <li><a href="/doc-node-mongodb">&nbsp;&nbsp;&nbsp;&nbsp Node server w/ MongoDB</a></li>                    
+            <li><a href="/doc-net">&nbsp;&nbsp;&nbsp;&nbsp .NET server w/ Entity Framework or NHibernate</a></li>
+            <li><a href="/doc-node-sequelize">&nbsp;&nbsp;&nbsp;&nbsp Node server w/ Sequelize</a></li>
+            <li><a href="/doc-node-mongodb">&nbsp;&nbsp;&nbsp;&nbsp Node server w/ MongoDB</a></li>
             <li><a href="/doc-java-hib">&nbsp;&nbsp;&nbsp;&nbsp Java server w/ Hibernate</a></li>
         </ul>
     </div>
 
-    <!-- Optional additional widgets -->       
-    {% if widget1 %}
-        {% include {{widget1}} %}
-    {% endif %}
-    
-    {% if widget2 %}
-        {% include {{widget2}} %}
-    {% endif %}
-    
-    <a href="/doc-main/support.html" class="navmenu-brand pull-left" >Support</a>    
-        
-    <!-- Search form -->
-    <form id="searchform" class="form-inline navbar-brand pull-right">
-        <div class="input-group">
-            <input type="text" class="form-control input-sm" id="searchterm" name="searchterm" placeholder="Search for...">
-            <span class="input-group-btn">
-                <button class="btn btn-default input-sm" type="submit">Go!</button>
-            </span>
-        </div>
-    </form>        
-    
+    <!-- Optional additional widgets -->
+    <div class="hidden-sm hidden-xs">
+		{% if widget1 %}
+			{% include {{widget1}} %}
+		{% endif %}
+
+		{% if widget2 %}
+			{% include {{widget2}} %}
+		{% endif %}
+
+		<a href="/doc-main/support.html" class="navmenu-brand pull-left" >Support</a>
+
+		<!-- Search form -->
+		<form id="searchform" class="form-inline navbar-brand pull-right">
+			<div class="input-group">
+				<input type="text" class="form-control input-sm" id="searchterm" name="searchterm" placeholder="Search for...">
+				<span class="input-group-btn">
+					<button class="btn btn-default input-sm" type="submit">Go!</button>
+				</span>
+			</div>
+		</form>
+    </div>
+
      <!-- Prev/Next buttons -->
     <div class="navbar-brand pull-right">
         <button type="button" class="btn btn-default btn-sm" aria-label="Prev" onclick="goPrev()">
     	   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        </button>    
-    
+        </button>
+
         <button type="button" class="btn btn-default btn-sm" aria-label="Next" onclick="goNext()">
     	   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         </button>
     </div>
-    
-    
-                       
-    
+
+
+
+
 </div>

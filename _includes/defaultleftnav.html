@@ -1,10 +1,9 @@
 <div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-    <a class="navmenu-default visible-sm visible-xs" href="/"><strong>Breeze</strong></a>
     <a id="menuname" class="navmenu-brand" href="/{{page.layout}}/">{{menu.title}}</a>
 	<ul class="nav navmenu-nav">
 {% for menuitem in menu.menuitems %}
     {% if menuitem.isparent %}
-        {% if indropdown == true %} 
+        {% if indropdown == true %}
             {% assign indropdown = false %}
                 </ul>
             </div>
