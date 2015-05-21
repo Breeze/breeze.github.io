@@ -22,7 +22,7 @@ layout: doc-js
 	<li>Saving data to an arbitrary HTTP service</li>
 </ul>
 
-<h2><a id="NamedSave" name="NamedSave"></a>Custom save operations with &quot;named saves&quot;</h2>
+<h2><a name="NamedSave"></a>Custom save operations with &quot;named saves&quot;</h2>
 
 <p>By default the <span class="codeword">EntityManager.saveChanges</span> method sends a save request to a server endpoint called &quot;SaveChanges&quot;.</p>
 

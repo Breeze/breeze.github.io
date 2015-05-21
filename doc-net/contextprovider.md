@@ -291,7 +291,7 @@ Now the entire save process occurs within a `TransactionScope` including the `Be
 
 <p class="note">This discussion presupposes that the technologies involved support transactions.
 
-You may want to call this particular `SaveWithTransactionScope` method only for certain client requests. You can add a dedicated endpoint for that purpose to your Web API controller and call it from the client with a [named save](http://www.breezejs.com/documentation/download#130). 
+You may want to call this particular `SaveWithTransactionScope` method only for certain client requests. You can add a dedicated endpoint for that purpose to your Web API controller and call it from the client with a [named save](/doc-js/saving-changes#NamedSave). 
 
 	[HttpPost]
 	public SaveResult SpecialSave(JObject saveBundle) {
