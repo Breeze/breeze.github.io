@@ -1,4 +1,4 @@
-﻿html, body {
+html, body {
   height: 100%;
 }
 
@@ -58,9 +58,9 @@ h4, .h4 {
 }
 
 .navbar-toggle {
-  position: absolute;
-  float: left;
-  margin-left: 15px;
+  margin-left: 8px;
+  margin-right: 4px;
+  border: none;
 }
 
 .container {
@@ -84,3 +84,26 @@ h4, .h4 {
     padding: 61px 0px 0px 235px;
   }
 }
+
+#next-prev {
+    float: right !important;
+}
+
+@media (max-width: 992px) {
+    .navmenu-brand {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .navbar-brand {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        padding: 8px;
+    }
+    #next-prev {
+        float: none !important;
+        margin-bottom: 0;
+    }
+}
+
