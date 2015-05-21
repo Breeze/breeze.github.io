@@ -12,7 +12,6 @@ We've already defined the EF code first model that supports our <a href="/sample
 
 We're *using* Entity Framework, not *teaching* it, so we'll simply show you our *NorthwindDbContext* (located in the *Models* folder) and highlight the key points.
 
-
 	public class NorthwindContext : DbContext
 	{
 	    private const string _contextName = "NorthwindContext";

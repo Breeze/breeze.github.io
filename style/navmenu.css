@@ -2,14 +2,25 @@
   height: 100%;
 }
 
+#header {
+  margin-bottom: 0px;
+}
+
 #leftnav {
-  padding-top: 50px;
+  padding-top: 61px;
+}
+
+#docpage {
+  padding-top: 61px;
+  width: 100%;
+  height: 100%;
+  scroll: auto;
 }
 
 #menu-header {
   font-size: 14px;
   font-weight: bold;
-  margin: 15px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 .navmenu {
@@ -36,7 +47,6 @@ h3, .h3 {
 h4, .h4 {
   font-size: 18px;
 }
-
 
 .navbar {
   display: block;
@@ -69,13 +79,8 @@ h4, .h4 {
   }
   
 }
-
-body {
-    padding-top: 50px;  /* padding for space under the top nav */
-}
-
 @media (min-width: 992px) {
-  body {
-    padding: 50px 0 0 220px;  /* padding for space under the top nav and the left nav */
+  #docpage {
+    padding: 61px 0px 0px 235px;
   }
 }

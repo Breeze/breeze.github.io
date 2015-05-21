@@ -2,11 +2,34 @@
 layout: doc-js
 title: Javascript client
 ---
-# BreezeJs 
+
+#![BreezeJs](/images/logos/BreezeJsB.png "BreezeJs")
+
+###Welcome to **BreezeJs** by [**IdeaBlade**](http://www.ideablade.com "IdeaBlade website"), the data management library for developers of rich client applications written in **Javascript**.
+
+##Support
+
+**For technical questions, please go to [StackOverflow with the tag "breeze"](http://stackoverflow.com/questions/tagged/breeze?sort=newest "BreezeJs on StackOverflow").**
+
+StackOverflow is a fantastic site where tons of developers help each other with their technical questions.
+
+[http://stackoverflow.com/questions/tagged/breeze](http://stackoverflow.com/questions/tagged/breeze?sort=newest)
+
+We monitor this tag on the StackOverflow website and do our best to answer your questions. The advantage of StackOverflow over the GitHub Wiki is the sheer number of qualified developers able to help you with your questions, the visibility of the question itself, and the whole StackOverflow infrastructure (reputation, up- or down-vote, comments, etc).
+
+**For bug reports**, please do use the GitHub **Issues** tab! 
+
+Please post your [**feature suggestions** to our User Voice site](https://breezejs.uservoice.com/forums/248991-2-breezesharp-feature-suggestions "Breeze.Sharp User Voice")
+
+<a href="mailto:breeze@ideablade.com/?subject=Tell me about BreezeJS paid support" title="Paid Support">Learn about <strong>paid support</strong></a>.
+
+<a href="mailto:breeze@ideablade.com/?subject=Tell me about professional services" title="Professional Services">Learn about IdeaBlade's <strong>professional services</strong></a> from training through application development</a>.
+
+## BreezeJs 
 
 **BreezeJS is a JavaScript library that helps you manage data in rich client applications**. If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
 
-# Headline features
+## Headline features
 
 **Business data objects** mirror your server-side model. Breeze creates them dynamically. Their properties bind to UI controls so the UI updates when your data model changes. Each object knows when it has changed and what has changed.
 
