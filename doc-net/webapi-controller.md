@@ -3,7 +3,7 @@ layout: doc-net
 ---
 #The ASP.NET Web API controller
 
-The Basic Breeze teaching tests in the [DocCode sample](http://www.breezejs.com/samples/doccode "Breeze 'DocCode' teaching sample") demonstrate the Breeze `EntityManager` making requests of a **Breeze ASP.NET Web API controller**.
+The Basic Breeze teaching tests in the [DocCode sample](/samples/doccode "Breeze 'DocCode' teaching sample") demonstrate the Breeze `EntityManager` making requests of a **Breeze ASP.NET Web API controller**.
 
 The [ASP.NET Web API](http://www.asp.net/web-api "Microsoft ASP.NET Web API ") is a framework for building HTTP services. Its simplicity has made it instantly popular with .NET backend developers who are used to struggling with Microsoft’s enormously complex, SOAP-based, WCF communications stack.
 
@@ -15,7 +15,7 @@ The Breeze Controller is just one of many ways to serve a Breeze client with eit
 
 When targeting a Breeze client, it is usually preferable to write a Web API **controller per *service***. 
 
-The [DocCode teaching tests](http://www.breezejs.com/samples/doccode "Breeze 'DocCode' teaching sample") target a couple of different "services" each with its own entity model. For example, some DocCode tests aim at the "Todos" model and other tests aim at the "Northwind" model.  The DocCode sample has two corresponding Web API controllers, `TodosController` and `NorthwindController`.
+The [DocCode teaching tests](/samples/doccode "Breeze 'DocCode' teaching sample") target a couple of different "services" each with its own entity model. For example, some DocCode tests aim at the "Todos" model and other tests aim at the "Northwind" model.  The DocCode sample has two corresponding Web API controllers, `TodosController` and `NorthwindController`.
 
 ###Controller-per-type
 
@@ -23,7 +23,7 @@ You *could* adopt the customary *controller-per-**type*** implementation pattern
 
 But this is tedious and usually unnecessary. As we'll see, Breeze can radically reduce the number of controller methods that you'll need for each type ... typically to one query method. Most Breeze clients combine the discrete entity insert, update, and delete operations into compound "change-sets" and send that change-set to a controller save method. The Breeze controller may only require a single save method to support an entire suite of entity types. 
 
->You can have multiple "save changes" methods to support "[named saves](http://www.breezejs.com/documentation/saving-changes)"; here we're describing the simple case.
+>You can have multiple "save changes" methods to support "[named saves](/doc-js/saving-changes)"; here we're describing the simple case.
 
 If you followed the *controller-per-type* approach, you'd be writing numerous controllers, each with a single method ... the query method. In our opinion, that's a maintenance burden without a compensating benefit. 
 
@@ -85,7 +85,7 @@ A Breeze controller uses this same `JsonMediaTypeFormatter` *class* for its clie
 
 The Breeze formatter settings are prescribed in the `BreezeConfig.CreateJsonSerializerSettings` method. You can modify these settings to suit your needs as long as you avoid settings that that would confuse the Breeze client.
 
-For example, the default method tells the formatter to send null values: if the "Description" property value is null, the formatter will still send the property. It would be a pretty small optimization if you wanted to suppress this behavior.  We <strong>don't </strong>actually recommend this because most of the time the price of sending null values is a negligible increase in payload size, And ... It's an optimization that may not work well in your application; a value of null often has a very specific meaning ( as opposed to not being sent at all). 
+For example, the default method tells the formatter to send null values: if the "Description" property value is null, the formatter will still send the property. It would be a pretty small optimization if you wanted to suppress this behavior.  We **don't** actually recommend this because most of the time the price of sending null values is a negligible increase in payload size, And ... It's an optimization that may not work well in your application; a value of null often has a very specific meaning ( as opposed to not being sent at all). 
 
 All that said, you can change it so that null values *are excluded* in the serialized output sent to the client.
 
@@ -103,9 +103,8 @@ You don't have to register the `CustomBreezeConfig` class with Breeze. Breeze wi
 
 **Important**: you are responsible for ensuring that your changes do not conflict with Breeze client expectations. Test your changes thoroughly. If you're not sure, ask us first (e.g., on [StackOverflow tagged with "breeze"](http://stackoverflow.com/questions/tagged/breeze?sort=newest "StackOverflow tagged with 'breeze'")).
 
-<p class="note">
-<strong>Do not</strong> reconfigure the formatter to use camel casing on the client. Use the BreezeJS <a href="http://www.breezejs.com/documentation/metadata/#NamingConvention" title="NamingConvention"><code>NamingConvention</code></a> instead.
-</p>
+>**Do not** reconfigure the formatter to use camel casing on the client. Use the BreezeJS  [`NamingConvention`](/doc-js/metadata/#NamingConvention) instead.
+
 
 <a name="breeze-queryable"></a>
 #BreezeQueryableAttribute
@@ -147,12 +146,12 @@ The `BreezeQueryableAttribute` derives from the `QueryableAttribute`, adding cap
 
 >We are aware that Web API's `QueryableAttribute` has been deprecated in favor of `EnableQueryAttribute` in Web API v.1.5. Please stick with `BreezeQueryable` until we've had a chance to write a corresponding derived attribute for `EnableQuery`.
 
-<p class="note">
-<strong><em>Always</em> use the <code>BreezeQueryable</code> attribute. DO NOT USE the Web API's <code>Queryable</code> attribute!</strong> The latter overwrites Breeze’s JSON.Net configuration so the client may not be able to interpret the JSON query result correctly.</p>
+
+> ***Always* use the `BreezeQueryable` attribute. DO NOT USE the Web API's `Queryable` attribute!** The latter overwrites Breeze’s JSON.Net configuration so the client may not be able to interpret the JSON query result correctly.
 
 #EFContextProvider
 
-Many .NET server developers turn to the Microsoft's [Entity Framework](http://msdn.microsoft.com/en-us/data/ef.aspx) for relational data modeling and relational data access. It's so popular that Breeze offers a special [`EFContextProvider` class](http://www.breezejs.com/documentation/efcontextprovider) to facilitate development of .NET servers for Breeze clients.
+Many .NET server developers turn to the Microsoft's [Entity Framework](http://msdn.microsoft.com/en-us/data/ef.aspx) for relational data modeling and relational data access. It's so popular that Breeze offers a special [`EFContextProvider` class](/doc-net/ef-efcontextprovider) to facilitate development of .NET servers for Breeze clients.
 
 This provider encapsulates three main functions:
 
@@ -183,9 +182,9 @@ We don't do that in real world code. The approach you see here is fine for demos
 
 ###Alternatives to Entity Framework
 
-The `EFContextProvider` derives from the Breeze [`ContextProvider`](http://www.breezejs.com/documentation/contextprovider "ContextProvider") which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
+The `EFContextProvider` derives from the Breeze [`ContextProvider`](/doc-net/ef-efcontextprovider "ContextProvider") which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
 
-Breeze ships [components for NHibernate](http://www.breezejs.com/documentation/nhibernate) developers.  The [in-memory "No DB" sample](http://www.breezejs.com/samples/nodb) has a custom `ContextProvider` that doesn't write to a database. The source for any of these providers can guide you in writing your own provider.
+Breeze ships [components for NHibernate](/doc-net/nh-details) developers.  The [in-memory "No DB" sample](/samples/nodb) has a custom `ContextProvider` that doesn't write to a database. The source for any of these providers can guide you in writing your own provider.
 
 But back to our story .. and the first of the "Breeze Controller"  specialty methods.
 
@@ -193,7 +192,7 @@ But back to our story .. and the first of the "Breeze Controller"  specialty met
 
 The Breeze JavaScript client requires metadata to query the service, create new entities, and save changes. These metadata describe the client-side entity model and how to translate it into the service model that is understood by the persistence service.
 
-As we saw earlier, it takes a fair amount of [metadata](http://www.breezejs.com/documentation/metadata) to adequately describe a model. Fortunately, an `EFContextProvider` tell Entity Framework to generate metadata for the Breeze client so that the JavaScript developer doesn’t have to [write it by hand](http://www.breezejs.com/documentation/metadata-by-hand). 
+As we saw earlier, it takes a fair amount of [metadata](/doc-js/metadata) to adequately describe a model. Fortunately, an `EFContextProvider` tell Entity Framework to generate metadata for the Breeze client so that the JavaScript developer doesn’t have to [write it by hand](/doc-js/metadata-by-hand). 
 
 The Breeze client requests metadata from the server by calling upon the controller's `Metadata` method.
 
@@ -303,4 +302,4 @@ The Web API delivers the bundle to the controller’s `SaveChanges` method as a 
 
 Are alarm bells ringing when you read this code? We shouldn't blithely save everything the client tells us to save. We should inspect every request, making sure that the changes are valid and that the user is authorized to make them.
 
-Learn how to do that with [a custom EFContextProvider and save interception](http://www.breezejs.com/documentation/custom-efcontextprovider#SaveInterception).
+Learn how to do that with [a custom EFContextProvider and save interception](/doc-net/ef-efcontextprovider#SaveInterception).

@@ -3,11 +3,11 @@ layout: doc-net
 ---
 #Controlling Serialization
 
-If you're serving data with Breeze-flavored ASP.NET Web API controllers, you're using the Newtonsoft.Json .NET library to serialize and deserialize data. 
+If you're serving data with Breeze-flavored ASP.NET Web API controllers, you're using the Newtonsoft.Json .NET library to serialize and de-serialize data. 
 
 All Web API controllers use this library. The native Web API configures it one way. Breeze configures it a little differently.
 
-It's important that you stick with the Breeze settings rather than the native ones. For example **do not use Json.Net's camel casing**! Breeze needs to handle casing on the client sidewith its own [`NamingConvention.camelCase`](http://www.breezejs.com/documentation/naming-convention). You'll mess things up badly if you set Json.Net's camel casing too.
+It's important that you stick with the Breeze settings rather than the native ones. For example **do not use Json.Net's camel casing**! Breeze needs to handle casing on the client-side with its own [`NamingConvention.camelCase`](/doc-js/server-namingconvention). You'll mess things up badly if you set Json.Net's camel casing too.
 
 ##Custom serialization
 
@@ -43,7 +43,7 @@ Here's an example that overrides the `CreateJsonSerializerSettings` method:
 You could put this *CustomBreezeConfig.cs* file in the *Controllers* folder of your Web API project and Breeze will find it automatically. 
 
 >You can deploy only one custom BreezeConfig class.
->
+
 >Although `JsonSerializerSettings ` is the only virtual method you can override at this time, `BreezeConfig` is intended to be the locus of future extension points of this kind.
 
 ##Use Case: replace the nasty serialized dynamic type names
@@ -83,6 +83,6 @@ Run the app again after you install the nuget package and re-build the server. L
 
 Much better, right? It's ugly but not too long and you can safely infer that this type is not a registered `EntityType`.
 
-See this nuget package and its contents in action in [the "DocCode" sample](http://www.breezejs.com/samples/doccode).
+See this nuget package and its contents in action in [the "DocCode" sample](/samples/doccode).
 
 >Remember that this is a Breeze Lab and not part of the core Breeze product. We're confident that it's good and has no adverse side-effects. But it is offered "as is" with no promise of support and we could take it away in future if we discover a better way to handle the problem.

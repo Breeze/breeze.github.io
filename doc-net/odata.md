@@ -3,13 +3,13 @@ layout: doc-net
 ---
 #**OData Services**
 
-A Breeze client can consume any <a href="http://www.odata.org/" target="_blank">standard OData</a> feed &ldquo;as is&rdquo; when you configure the client for OData.
+A Breeze client can consume any <a href="http://www.odata.org/" target="_blank">standard OData</a> feed "as is" when you configure the client for OData.
 
-Topics elsewhere cover configuring for [OData BreezeJS Clients](http://www.breezejs.com/documentation/odata) and for [OData Breeze Sharp clients](http://www.breezejs.com/breeze-sharp-documentation/open-data-odata).
+Topics elsewhere cover configuring for [OData BreezeJS Clients](/doc-js/odata) and for [OData Breeze Sharp clients](/doc-cs/open-data-odata).
 
 OData is a cross-platform standard (with several versions). Unfortunately, not every OData service fully complies with the standard. The deviations from the metadata specifications can easily trip you up.
 
-If you have no control over the server, you may have to abandon the server's *$metadata* feed and construct the `MetadataStore` on the client ... as described in the [BreezeJS documentation](http://www.breezejs.com/documentation/metadata "Metadata documentation") and the [Breeze Sharp Documentation](http://www.breezejs.com/breeze-sharp-documentation/metadata).
+If you have no control over the server, you may have to abandon the server's *$metadata* feed and construct the `MetadataStore` on the client ... as described in the [BreezeJS documentation](/doc-js/metadata "Metadata documentation") and the [Breeze Sharp Documentation](/doc-cs/metadata).
 
 If you do control the server you *may* be able to make adjustments on the server that improve the situation for the Breeze client. In this topic we explore your options on some well known OData server stacks.
 
@@ -17,7 +17,7 @@ If you do control the server you *may* be able to make adjustments on the server
 
 This is Microsoft's original OData implementation. It is the most compliant implementation and Breeze clients should have no trouble with the metadata it generates.
 
-However, Microsoft seem to have <a href="http://blogs.msdn.com/b/odatateam/archive/2014/03/27/future-direction-of-wcf-data-services.aspx" target="_blank" title="Mike Pizzo discusses MS OData roadmap">redirected their energies toward development of <strong>ASP.NET Web API OData</strong></a> and away from **WCF Data Services**. The future of WCF Data Services is anyone's guess.
+However, Microsoft seem to have <a href="http://blogs.msdn.com/b/odatateam/archive/2014/03/27/future-direction-of-wcf-data-services.aspx" target="_blank" title="Mike Pizzo discusses MS OData roadmap">redirected their energies toward development of **ASP.NET Web API OData**</a> and away from **WCF Data Services**. The future of WCF Data Services is anyone's guess.
 
 #ASP.NET Web API OData Service
 
@@ -25,11 +25,11 @@ However, Microsoft seem to have <a href="http://blogs.msdn.com/b/odatateam/archi
 
 It is rapidly evolving and is highly compliant with the latest OData standards while offering a number of superb manageability, security and customization capabilities.
 
-We highly recommend Brian Noyes' <a href="http://briannoyes.net/2013/02/16/ConsumingAnASPNETWebAPIODataServiceWithBreeze.aspx" target="_blank">brilliant <strong>blog post with step-by-step instructions</strong> for building a Breeze/Web API OData sample</a> which includes a downloadable sample.  We also recommend his Pluralsight course &quot;<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank"><strong>Building ASP.NET Web API OData module, "Consuming OData Services..." module</strong></a> that demonstrates consuming a Web API OData service with a Breeze client.
+We highly recommend Brian Noyes' <a href="http://briannoyes.net/2013/02/16/ConsumingAnASPNETWebAPIODataServiceWithBreeze.aspx" target="_blank">brilliant **blog post with step-by-step instructions** for building a Breeze/Web API OData sample</a> which includes a downloadable sample.  We also recommend his Pluralsight course "<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank">**Building ASP.NET Web API OData module, "Consuming OData Services..." module**</a> that demonstrates consuming a Web API OData service with a Breeze client.
 
 You must consider certain peculiarities of the Web API OData that affect your design.
 
->The [Breeze Web API OData](http://www.breezejs.com/samples/breeze-web-api-odata) JavaScript sample attempts to mitigate some of the more unfortunate consequences of these "peculiarities".
+>The [Breeze Web API OData](/samples/breeze-web-api-odata) JavaScript sample attempts to mitigate some of the more unfortunate consequences of these "peculiarities".
 
 ### No transactional save
 
@@ -74,7 +74,7 @@ Why? Because the metadata it generates don't identify the foreign key properties
 <a name="edmBuilder"></a>
 ### EdmBuilder workaround
 
-There is an approved workaround if your OData service is backed by the Entity Framework. You can **use the Breeze Labs `EdmBuilder`** to produced the metadata instead of the Web API's own `ODataConventionModelBuilder`. The ["Web API OData and Breeze" sample](http://www.breezejs.com/samples/breeze-web-api-odata#BuildEDM "Web API OData and Breeze sample") explains why this is necessary and how to wire up the `EdmBuilder`.
+There is an approved workaround if your OData service is backed by the Entity Framework. You can **use the Breeze Labs `EdmBuilder`** to produced the metadata instead of the Web API's own `ODataConventionModelBuilder`. The ["Web API OData and Breeze" sample](/samples/breeze-web-api-odata#BuildEDM "Web API OData and Breeze sample") explains why this is necessary and how to wire up the `EdmBuilder`.
 
 We summarize here:
 
@@ -103,7 +103,7 @@ This mistake creates confusion on both server and client. The OData server is co
 
 >That's not a helpful message is it. Oh well ...
 
-When the Breeze client reads the metadata, it's told to expect the "**EF**.Customer" entity type. But the JSON query results are typed as "<strong>Models</strong>.Customer". Breeze can't find that type and assumes that you haven't fetched metadata at all. It reports: "*Unable to locate a 'Type' by the name: 'Customer:#EF'. Be sure to execute a query or call fetchMetadata first.*". That's technically correct ... but not the actual cause of the problem.
+When the Breeze client reads the metadata, it's told to expect the "**EF**.Customer" entity type. But the JSON query results are typed as "**Models**.Customer". Breeze can't find that type and assumes that you haven't fetched metadata at all. It reports: "*Unable to locate a 'Type' by the name: 'Customer:#EF'. Be sure to execute a query or call fetchMetadata first.*". That's technically correct ... but not the actual cause of the problem.
 
 We can suggest a server-side workaround, depending on how you constructed your `DbContext`.
 
@@ -141,7 +141,7 @@ Now we reference it in place of the base `MyDbContext`.
 
 Did you see the change?
 
-`model: EdmBuilder.GetEdm<`<strong>MyApp.Models.MyDbContextForEdm</strong>`>(),`
+`model: EdmBuilder.GetEdm<`**MyApp.Models.MyDbContextForEdm**`>(),`
 
 ####EDMX-based `DbContext` workaround
 
@@ -155,7 +155,7 @@ Therefore you have to correct the EDMX namespace to match the model entity names
 
 Here's that property sheet:
 
-![EDMX property editor](/sites/default/files/images/EDMXnamespace.png)
+![EDMX property editor](/images/EDMXnamespace.png)
 
 >The EDMX namespace does not appear to play a practical role in an existing EF application. For example, changing it does not affect the namespaces of the corresponding entity classes.
 
@@ -195,7 +195,7 @@ As far as we know, Web API OData cannot handle model classes located in multiple
 
 ## Is Web API OData right for you?
 
-We've describe here some of the real-world challenges of Web API OData development. We discuss more of them in "[OData vs. Web API](http://www.breezejs.com/documentation/odata-vs-webapi)". These are pretty serious obstacles for many applications.
+We've describe here some of the real-world challenges of Web API OData development. We discuss more of them in "[OData vs. Web API](/doc-net/odata-vs-webapi)". These are pretty serious obstacles for many applications.
 
 Should you build a Breeze Web API service, a Conventional Web API service, or an OData Web API service? Here's how we see it. 
 
@@ -224,4 +224,4 @@ SharePoint 2010 and 2013 offer "OData REST APIs". They only partially comply wit
 
 Even if SP did produce "correct metadata", we rather doubt that you'd want it; a trivial data model produces almost 750Mb of metadata, most of it of no interest to the client application developer.
 
-Your only recourse at this time is to define the metadata you need on the client. Learn more by starting with our [SharePoint 2013 Sample](http://www.breezejs.com/samples/introduction-single-page-apps-sharepoint "SharePoint 2013 Sample documentation").
+Your only recourse at this time is to define the metadata you need on the client. Learn more by starting with our [SharePoint 2013 Sample](/samples/introduction-single-page-apps-sharepoint "SharePoint 2013 Sample documentation").

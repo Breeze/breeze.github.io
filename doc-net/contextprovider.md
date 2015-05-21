@@ -148,7 +148,7 @@ The `ContextProvider` itself ignores the pre-change values in the `OriginalValue
 
 The pre-change values may be useful to you when pre-processing the `EntityInfo`. 
 
-<p class="note"><b>Beware!</b> The <code>OriginalValuesMap</code> was <b>provided by the client</b> as part of its "save changes" request. It is your responsibility to confirm that this user is allowed to save changes to these properties. Before you make use of the pre-change values you should verify that the stated pre-change values actually are the "original values".</p>
+<p class="note"><b>Beware!</b> The `OriginalValuesMap` was <b>provided by the client</b> as part of its "save changes" request. It is your responsibility to confirm that this user is allowed to save changes to these properties. Before you make use of the pre-change values you should verify that the stated pre-change values actually are the "original values".
 
 The `ContextProvider` assumes that the client request is valid. You are responsible for data integrity and data security. You should scrutinize everything in the change-set to the degree that your business requires. 
 
@@ -196,7 +196,7 @@ The base implementation of this method simply returns the incoming dictionary un
 <a name="AfterSaveEntities"></a>
 ## AfterSaveEntities
 
-<p><i>AfterSaveEntities</i> gives access the to entities after they've been saved to the database, and after database-assigned identifiers have been assigned. </p>
+<i>AfterSaveEntities</i> gives access the to entities after they've been saved to the database, and after database-assigned identifiers have been assigned. 
 
 
     protected override void AfterSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings)
@@ -289,7 +289,7 @@ Here's an example:
 
 Now the entire save process occurs within a `TransactionScope` including the `BeforeSaveEntities` and the `AfterSaveEntities` invocations. Now you can abort the transaction after saving to the database by throwing an exception in your `AfterSaveEntities` method; doing so will rollback all previous inserts, updates or deletes that were part of the transaction.
 
-<p class="note">This discussion presupposes that the technologies involved support transactions.</p>
+<p class="note">This discussion presupposes that the technologies involved support transactions.
 
 You may want to call this particular `SaveWithTransactionScope` method only for certain client requests. You can add a dedicated endpoint for that purpose to your Web API controller and call it from the client with a [named save](http://www.breezejs.com/documentation/download#130). 
 

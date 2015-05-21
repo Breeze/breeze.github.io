@@ -2,7 +2,8 @@
 layout: doc-net
 ---
 #Server-side validation
-## Save validation<a name="Savevalidation"></a>
+
+## Save validation <a name="Savevalidation"></a>
 
 All server side validation errors go to the ‘fail’ promise. Server side validation errors appear as a property called ‘entityErrors’ that contains an array of server errors.  
 	

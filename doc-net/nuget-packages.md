@@ -6,27 +6,27 @@ Breeze offers several <a href="http://nuget.org/" target="_blank">NuGet</a> pack
 
 The package (or packages) you need depend on your development scenario.
 
-* <a href="#learn">Learn about Breeze</a>
+* [Learn about Breeze](#learn)
 
-* <a href="#current">Nuget packages for single and multiple project applications built with VS2013 technologies</a>
+* [Nuget packages for single and multiple project applications built with VS2013 technologies](#current)
 
-* <a href="#legacy">Nuget packages for .NET 4.0 or "legacy" VS2012 technologies.</a>
+* [Nuget packages for .NET 4.0 or "legacy" VS2012 technologies.](#legacy)
 
-* <a href="#convert">Upgrade and convert a legacy breeze application to VS2013 technologies.</a>
+* [Upgrade and convert a legacy breeze application to VS2013 technologies.](#convert)
 
-* <a href="#demoPkg">Try the "Todo" demo package.</a>
+* [Try the "Todo" demo package.](#demoPkg)
 
 <a name="learn"></a>
 ##Are you new to Breeze?
 
-We recommend that you look first at Brian Noyes "<a href="http://www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="http://pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with Angular and Breeze</a>" and "<a href="http://pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
+We recommend that you look first at Brian Noyes "<a href="www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with Angular and Breeze</a>" and "<a href="pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
 
 John's "HotTowel" nuget packages will soon reflect the recently released Visual Studio 2013 and its family of technology updates.
 
 <a name="current"></a>
 ## Visual Studio 2013 and .NET 4.5
 
-<a href="#legacy">Go here</a> if you must run on the .NET 4.0 platform. These packages are for .NET 4.5 applications only.
+[Go here](#legacy) if you must run on the .NET 4.0 platform. These packages are for .NET 4.5 applications only.
 
 Your first decision: "*will I have a single project or multiple projects?*"
 
@@ -96,7 +96,7 @@ To convert a (legacy) Visual Studio 2012 Breeze application to Breeze ASP.NET We
 
 * Replace the "Breeze.WebApi" and "Breeze.WebApi.EF" namespaces with "Breeze.WebApi2", "Breeze.ContextProvider", and "Breeze.ContextProvider.EF6".
 
-* Replace references to EF 4/5 namespaces in all of your project files with references to the EF 6 namespaces. Check out the <a href="http://entityframework.codeplex.com/wikipage?title=specs" target="_blank">pertinent Microsoft documentation</a>.
+* Replace references to EF 4/5 namespaces in all of your project files with references to the EF 6 namespaces. Check out the <a href="entityframework.codeplex.com/wikipage?title=specs" target="_blank">pertinent Microsoft documentation</a>.
 
 <a name="demoPkg"></a>
 #Get started with the Breeze Demo package
@@ -110,11 +110,11 @@ This 10 minute video demonstrates the process and walks you through the material
 
 > This video refers to the breeze package which has been renamed to "Breeze.WebApi.Sample". It targets Web API (v.1) and EF 5. Please adjust accordingly.
 
-<p><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/ItvUb0kjEss" width="420"></iframe></p>
+<iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/ItvUb0kjEss" width="420"></iframe>
 
 In brief, 
 
-* create a new project, selecting <code>Visual C# | Web | VisualStudio 2012 | "ASP.NET Empty Web Application"</code>
+* create a new project, selecting `Visual C# | Web | VisualStudio 2012 | "ASP.NET Empty Web Application"`
 
 * ask the NuGet package manager to install the publicly available "Breeze.WebApi.Sample"
 
@@ -124,7 +124,7 @@ Try it by running without debug (Ctrl F5) ... or with debug (F5) if you prefer.
 
 You'll see an MVC web page which is the shell for the Breeze sample application. You'll be able to edit the sample "todos", mark them done or not-done, save the changes, and toggle the query to show either not-done todos or all todos (done and not-done) as shown here:
 
-<p><img alt="" src="/sites/all//images/BreezeNugetSampleRunning01.png" style="height: 400px; width: 362px;" /></p>
+<img alt="" src="/images/samples/BreezeNugetSampleRunning01.png" style="height: 400px; width: 362px;" />
 
 All of the pertinent Breeze client code is in one JavaScript file, *Scripts/app/sampleViewModel.js*.
 
