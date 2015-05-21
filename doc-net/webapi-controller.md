@@ -1,5 +1,6 @@
 ---
 layout: doc-net
+redirect_from: "/old/documentation/web-api-controller.html"
 ---
 #The ASP.NET Web API controller
 

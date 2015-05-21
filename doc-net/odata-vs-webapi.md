@@ -1,5 +1,6 @@
 ---
 layout: doc-net
+redirect_from: "/old/documentation/odata-vs-webapi.html"
 ---
 #OData vs Web Api support in Breeze
 

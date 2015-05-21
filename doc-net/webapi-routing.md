@@ -1,5 +1,6 @@
 ---
 layout: doc-net
+redirect_from: "/old/documentation/web-api-routing.html"
 ---
 # Web API Routing
 We've built a Breeze controller that Web API will discover automatically. Now we must teach the Web API to route Breeze client requests to this controller and configure the Web API to use the controller properly.

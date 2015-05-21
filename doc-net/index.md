@@ -1,5 +1,6 @@
 ---
 layout: doc-net
+redirect_from: "/old/documentation/aspnet-web-api.html"
 ---
 # ASP.NET Web API
 The ASP.NET Web API is a popular technology for providing data services over HTTP. This section describes how specific Web API service implementations influence Breeze client development.

@@ -1,5 +1,6 @@
 ---
 layout: doc-net
+redirect_from: "/old/documentation/start-nuget.html"
 ---
 #Breeze NuGet packages
 Breeze offers several <a href="http://nuget.org/" target="_blank">NuGet</a> packages for the .NET developer.

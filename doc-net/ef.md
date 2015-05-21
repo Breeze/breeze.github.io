@@ -1,5 +1,6 @@
 ---
 layout: doc-net
+redirect_from: "/old/documentation/entity-framework.html"
 ---
 # Entity Framework
 
