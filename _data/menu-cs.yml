@@ -37,6 +37,7 @@ menuitems:
   - { link: "naming-convention.html", title: Naming Convention }
   - { link: "extending-entities.html", title: Extending entities }
   - { link: "webservice-data-mapping.html", title: Web Service data mapping }
+  - { link: "odata.html", title: OData }
   - { link: "testing.html", title: Testing }
 
   
