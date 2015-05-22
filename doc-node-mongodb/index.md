@@ -1,6 +1,7 @@
 ---
 layout: doc-node-mongodb
 title: Server - Node w/ MongoDB
+redirect_from: "/old/documentation/mongodb.html"
 ---
 
 # Breeze-MongoDB integration (*Beta*)#
@@ -9,7 +10,7 @@ A Breeze client can communicate to almost any server technology including <a hre
 
 This topic explains how.
 
-<p class="note">See Breeze-MongoDB integration in action in the <a href="http://www.breezejs.com/samples/zza"  target="_blank">Zza! Node/MongoDB sample</a>.</p>
+> See Breeze-MongoDB integration in action in the <a href="http://www.breezejs.com/samples/zza"  target="_blank">Zza! Node/MongoDB sample</a>.
 
 ### Client side Requirements: ###
 
@@ -56,7 +57,7 @@ Breeze represents sub-documents as `ComplexType`s. A property could return a sin
 
 A property that returns one or more simple data types is a Breeze `DataProperty`, In MongoDB, that property returns either a scalar (`isScalar=true`) or an array (`isScalar=false`) property.
 
-Metadata describing the MongoDB structure can be defined on either the client or the server using [Breeze's native metadata format](http://www.breezejs.com/documentation/breeze-metadata-format).
+Metadata describing the MongoDB structure can be defined on either the client or the server using [Breeze's native metadata format](/doc-js/metadata-details).
 
 ### Breeze/MongoDB - Server side processing
 
@@ -76,7 +77,7 @@ The examples assume you'll launch in node a JavaScript file containing standard 
 
 Almost all of the Breeze/MongoDB code shown in these examples is assumed to be part of a "routes.js" file.  Below is the beginning of such a file that opens a MongoDB database called "MyNorthwindDatabase".
 
->Assume a MongoDB server is running with access to this database.
+> Assume a MongoDB server is running with access to this database.
 
 **routes.js**
   
@@ -109,7 +110,7 @@ Querying a MongoDB database from a Breeze client involves nothing more than a st
 
 The real point here is that, in general, you cannot tell by looking at the client side code what backend datastore is behind any Breeze query.
 
-<p class="note">Breeze does not yet support querying a MongoDB sub-document directly although it will return one as part of its parent.  The ability to query sub-documents will be added in a future release.</p>
+> Breeze does not yet support querying a MongoDB sub-document directly although it will return one as part of its parent.  The ability to query sub-documents will be added in a future release.
 
 #### Server side
 
@@ -275,7 +276,7 @@ As with queries, in order to support Breeze's client side EntityManager.saveChan
   
     app.post('/breeze/Northwind/SaveChanges', routes.saveChanges);
 
-<p class="note">Note that we use HTTP 'app.post' for saving as opposed to the 'app.get' for queries.</p>  
+> Note that we use HTTP 'app.post' for saving as opposed to the 'app.get' for queries.
 
 Here is a simple implementation for `routes.saveChanges`.
    
@@ -377,7 +378,7 @@ You will need the following methods if you add a new entity to the saveMap durin
 ####Saving entities that are not in the client "saveMap" ####
 You can save changes to entities that the client did not include in the `saveMap`. For example, you might log changes to entities in an Audit table by creating "audit entities" on the server. You'll want to create them and add them to the "saveMap" with `addToSaveMap` so that they are saved as part of the "transaction".
 
-<p class="note">MongoDB doesn't support real transactions so were using the word loosely, meaning "at the same time as".</p>
+> MongoDB doesn't support real transactions so were using the word loosely, meaning "at the same time as".
 
 You could also add entities to the "saveMap" in "Modified" or "Deleted" state, meaning that these entities exist in the database and are to be updated or deleted. 
 
