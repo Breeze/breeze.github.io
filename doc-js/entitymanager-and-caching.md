@@ -38,16 +38,16 @@ EntityManager methods relating to querying entities, either from remote services
 </thead>
 <tbody>
 <tr>
-<td>executeQuery</td>
-<td>Asynchronously executes its <em>EntityQuery</em> argument, returning an *Promise* that in turn will return an array of entities.</td>
+<td><em>executeQuery</em></td>
+<td>Asynchronously executes its <em>EntityQuery</em> argument, returning an <em>Promise</em> that in turn will return an array of entities.</td>
 </tr>
 <tr>
-<td>executeQueryLocally</td>
-<td>Synchonously executes its *EntityQuery *argument against any entities already in the entity cache, returning an array of entities.</td>
+<td><em>executeQueryLocally</em></td>
+<td>Synchonously executes its <em>EntityQuery</em> argument against any entities already in the entity cache, returning an array of entities.</td>
 </tr>
 <tr>
-<td>*fetchEntityByKey*</td>
-<td>Asynchronously queries for an entity by its key; returning a *Promise *that in turn will return the entity.</td>
+<td><em>fetchEntityByKey</em></td>
+<td>Asynchronously queries for an entity by its key; returning a <em>Promise</em> that in turn will return the entity.</td>
 </tr>
 </tbody>
 </table>
@@ -69,15 +69,15 @@ EntityManager methods that allow for searching and retrieving entities from the 
 <td>(same as above) Synchonously executes its EntityQuery argument against any entities already in the entity cache, returning an array of entities.</td>
 </tr>
 <tr>
-<td>*getEntityByKey*</td>
+<td><i>getEntityByKey</i></td>
 <td>Synchonously returns an entity from the local entity cache.</td>
 </tr>
 <tr>
-<td>*getEntities*</td>
+<td><i>getEntities</i></td>
 <td>Synchronously returns an array of entities of specified EntityTypes and EntityStates from the local entity cache.</td>
 </tr>
 <tr>
-<td>*getChanges*</td>
+<td><i>getChanges</i></td>
 <td>Synchronously returns an array of changed (Modified, Added, Deleted) entities of optionally specified EntityTypes and EntityStates from the local entity cache.</td>
 </tr>
 </tbody>
@@ -96,23 +96,23 @@ EntityManager methods that allow for adding or attaching entities to the local e
 </thead>
 <tbody>
 <tr>
-<td>*addEntity*</td>
+<td><i>addEntity</i></td>
 <td>Adds a new entity to the local entity cache with an EntityState of 'Added'.</td>
 </tr>
 <tr>
-<td>*attachEntity*</td>
+<td><i>attachEntity</i></td>
 <td>Adds an entity to the local entity cache with an arbitrary EntityState.</td>
 </tr>
 <tr>
-<td>*detachEntity     *</td>
+<td><i>detachEntity     </i></td>
 <td>Removes an entity from the local entity cache. </td>
 </tr>
 <tr>
-<td>*createEntity*</td>
+<td><i>createEntity</i></td>
 <td>Creates a new entity (based on preexisting metadata) and adds or attaches it to the local entity cache. </td>
 </tr>
 <tr>
-<td>*clear*</td>
+<td><i>clear</i></td>
 <td>Clears all entities from the local entity cache. </td>
 </tr>
 </tbody>
@@ -131,7 +131,7 @@ The EntityManager has exactly one method to save changes to the persistence serv
 </thead>
 <tbody>
 <tr>
-<td><font color="#4d4d4d" size="2"><i>saveChanges</i></font></td>
+<td><i>saveChanges</i></td>
 <td>Can save either all of the changes (Added, Modified, and Deleted entities) in the local entity cache or any selected subset.</td>
 </tr>
 </tbody>
@@ -172,7 +172,7 @@ The EntityManager is able to serialize its state to a local persistence store an
 <tr>
 </tr>
 <tr>
-<td>*importEntities*</td>
+<td><i>importEntities</i></td>
 <td>Deserializes any previously 'exported' entities into the entity manager.</td>
 </tr>
 </tbody>
@@ -191,11 +191,11 @@ EntityManager events that may be subscribed to and which occur when changes occu
 </thead>
 <tbody>
 <tr>
-<td>*entityChanged*</td>
+<td><i>entityChanged</i></td>
 <td>Fired whenever an entity within the EntityManager has changed.</td>
 </tr>
 <tr>
-<td>*hasChanges*</td>
+<td><i>hasChanges</i></td>
 <td>Fired whenever the state of the EntityManager transistions from a state of having changes to not having changes or vice versa.</td>
 </tr>
 </tbody>
