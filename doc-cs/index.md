@@ -4,22 +4,21 @@ layout: doc-cs
 
 # Breeze Sharp
 
-#![Breeze.Sharp](/images/logos/BreezeSharpB.png "Breeze.Sharp")
+<a class="logo-inline" href="/doc-cs" title="Breeze Sharp">
+  <img src="/images/logos/BreezeSharpB.png" alt="BreezeSharp" width="100">
+</a> 
 
-###Welcome to **Breeze.Sharp** by [**IdeaBlade**](http://www.ideablade.com "IdeaBlade website"), the data management library for developers of rich client applications written in  **C#, F#, and VB.NET**.
+Welcome to **Breeze.Sharp** by [**IdeaBlade**](http://www.ideablade.com "IdeaBlade website"), the data management library for developers of rich client applications written in  **C#, F#, and VB.NET**.
 
-This repository holds the Breeze assets **for .NET and Xamarin client development**. 
+If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your C# client, BreezeSharp is for you.
 
+<div style="clear:both"/>
 
 ##Support
 
 **For technical questions, please go to [StackOverflow with the tag "breeze"](http://stackoverflow.com/questions/tagged/breeze?sort=newest "Breeze.Sharp on StackOverflow").**
 
-<p><a title="Breeze# on StackOverflow" href="http://stackoverflow.com/questions/tagged/breeze?sort=newest"><img src="http://www.breezejs.com/sites/all/themes/breeze/images/BreezeSharpLovesStackOverflow.png" alt="BreezeJS loves StackOverflow"></a></p>
-
 StackOverflow is a fantastic site where tons of developers help each other with their technical questions.
-
-[http://stackoverflow.com/questions/tagged/breeze](http://stackoverflow.com/questions/tagged/breeze?sort=newest)
 
 We monitor this tag on the StackOverflow website and do our best to answer your questions. The advantage of StackOverflow over the GitHub Wiki is the sheer number of qualified developers able to help you with your questions, the visibility of the question itself, and the whole StackOverflow infrastructure (reputation, up- or down-vote, comments, etc).
 

@@ -6,11 +6,34 @@ redirect_from: "/old/documentation/mongodb.html"
 
 # Breeze-MongoDB integration (*Beta*)#
 
+<a class="logo-inline" href="/doc-node-mongodb" title="Node MongoDB">
+  <img src="/images/logos/Breeze-mongodb.png" alt="Node MongoDB" width="100">
+</a> 
+
 A Breeze client can communicate to almost any server technology including <a href="http://http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a> with a <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> database.
 
 This topic explains how.
 
 > See Breeze-MongoDB integration in action in the <a href="http://www.breezejs.com/samples/zza"  target="_blank">Zza! Node/MongoDB sample</a>.
+
+<div style="clear:both"/>
+
+##Support
+
+**For technical questions, please go to [StackOverflow with the tag "breeze"](http://stackoverflow.com/questions/tagged/breeze?sort=newest "Breeze on StackOverflow").**
+
+StackOverflow is a fantastic site where tons of developers help each other with their technical questions.
+
+We monitor this tag on the StackOverflow website and do our best to answer your questions. The advantage of StackOverflow over the GitHub Wiki is the sheer number of qualified developers able to help you with your questions, the visibility of the question itself, and the whole StackOverflow infrastructure (reputation, up- or down-vote, comments, etc).
+
+**For bug reports**, please do use the GitHub **Issues** tab! 
+
+Please post your [**feature suggestions** to our User Voice site](https://breezejs.uservoice.com/forums/248991-2-breezesharp-feature-suggestions "Breeze.Sharp User Voice")
+
+<a href="mailto:breeze@ideablade.com/?subject=Tell me about Breeze paid support" title="Paid Support">Learn about <strong>paid support</strong></a>.
+
+<a href="mailto:breeze@ideablade.com/?subject=Tell me about professional services" title="Professional Services">Learn about IdeaBlade's <strong>professional services</strong></a> from training through application development</a>.
+
 
 ### Client side Requirements: ###
 

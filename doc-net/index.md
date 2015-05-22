@@ -3,7 +3,34 @@ layout: doc-net
 redirect_from: "/old/documentation/aspnet-web-api.html"
 ---
 # ASP.NET Web API
+
+<a class="logo-inline" href="/doc-net" title="ASP.NET">
+  <img src="/images/logos/Breeze-aspnet.png" alt="ASP.NET" width="100">
+</a>
+
 The ASP.NET Web API is a popular technology for providing data services over HTTP. This section describes how specific Web API service implementations influence Breeze client development.
+
+<div style="clear:both"/>
+
+##Support
+
+**For technical questions, please go to [StackOverflow with the tag "breeze"](http://stackoverflow.com/questions/tagged/breeze?sort=newest "Breeze on StackOverflow").**
+
+StackOverflow is a fantastic site where tons of developers help each other with their technical questions.
+
+We monitor this tag on the StackOverflow website and do our best to answer your questions. The advantage of StackOverflow over the GitHub Wiki is the sheer number of qualified developers able to help you with your questions, the visibility of the question itself, and the whole StackOverflow infrastructure (reputation, up- or down-vote, comments, etc).
+
+**For bug reports**, please do use the GitHub **Issues** tab! 
+
+Please post your [**feature suggestions** to our User Voice site](https://breezejs.uservoice.com/forums/248991-2-breezesharp-feature-suggestions "Breeze.Sharp User Voice")
+
+<a href="mailto:breeze@ideablade.com/?subject=Tell me about Breeze paid support" title="Paid Support">Learn about <strong>paid support</strong></a>.
+
+<a href="mailto:breeze@ideablade.com/?subject=Tell me about professional services" title="Professional Services">Learn about IdeaBlade's <strong>professional services</strong></a> from training through application development</a>.
+
+
+## ASP.NET Web API
+
 
 There are many ways to write your service with the ASP.NET Web API. We group them here in three categories:
 
@@ -11,7 +38,7 @@ There are many ways to write your service with the ASP.NET Web API. We group the
 1. Conventional Web API
 1. OData Web API
 
-##Breeze Web API
+## Breeze Web API
 
 A "Breeze-flavored" Web API is the quickest, most productive path to an HTTP service that a Breeze client can talk to with minimal configuration. You'll use .NET components written specifically to support Breeze clients and you'll write one (or a few) controllers in a style that minimizes your server-side coding and maintenance without compromising power, flexibility, security or performance.
 
