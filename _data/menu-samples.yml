@@ -1,10 +1,22 @@
 title: Samples
 menuitems:
-  - { link: "todo-angular-sequelize.html", title: ToDo with Angular and Node/Sequelize }
-  - { link: "todo-angular-hibernate.html", title: ToDo with Angular and Java/Hibernate }
-  - { link: "web-api-odata.html", title: WebApi with OData }
-  - { link: "zza-mongo", title: Zza with Node/Mongo }
-  - { link: "todo-angular-hibernate.html", title: ToDo with Angular and Java/Hibernate }
-
-  
-  
+  - { link: "todo.html", title: ToDo with Angular; Java/Hibernate server }
+  - { link: "todo-angular.html", title: ToDo with Angular - .NET/EF server }
+  - { link: "todo-knockout.html", title: ToDo with Knockout - .NET/EF server }
+  - { link: "todo-knockout-require.html", title: ToDo with Knockout and Require - Java/Hibernate server }
+  - { link: "todo-zumo.html", title: ToDo with Zumo server }
+  - { link: "todo-angular-sequelize.html", title: ToDo with Angular - Node/Sequelize server }
+  - { link: "todo-angular-hibernate.html", title: ToDo with Angular - Java/Hibernate server }
+  - { link: "web-api-odata.html", title: WebApi with .NET/OData server }
+  - { link: "zza-mongo.html", title: Zza pizza delivery - Node/Mongo server }
+  - { link: "doccode.html", title: Doc-Code Teaching Tests - .NET/EF server }
+  - { link: "edmunds.html", title: 'The Edmunds "Not My Server" Sample - External service' }
+  - { link: "intro-to-spa.html", title: Into to SPA - .NET/EF server }
+  - { link: "intro-to-spa-sharepoint.html", title: Into to SPA - Sharepoint server }
+  - { link: "intro-to-spa-ruby.html", title: Into to SPA - Ruby server }
+  - { link: "no-db.html", title: Sample with no database - .NET in memory server }
+  - { link: "hot-towel.html", title: Hot Towel SPA template - .NET/EF server }
+  - { link: "php-employee-directory.html", title: Employee directory - PHP server }
+  - { link: "north-breeze.html", title: Northwind app - .NET/NHibernate server }
+  - { link: "temp-hire.html", title: TempHire reference application - .NET/EF server }
+  - { link: "car-bones.html", title: Backbone demo - .NET/EF server }

@@ -1,0 +1,6 @@
+// can only be used for non-html generating loops
+{% capture cache %}
+   {% for p in site.posts %}
+     do stuff here
+   {% endfor %}
+{% endcapture %}{% assign cache = nil %}
