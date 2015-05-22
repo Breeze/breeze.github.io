@@ -9,6 +9,13 @@ title: Server - Node w/ Sequelize
   <img src="/images/logos/Breeze-sequelize.png" alt="Node Sequelize" width="100">
 </a>
 
+A Breeze client can communicate to almost any server technology including <a href="http://http://nodejs.org/" target="_blank">Node.js</a> server
+running Sequelize.  These pages describe Breeze's server side solution for Node with a MySQL, MariaDB, or PostgreSQL database. 
+
+{% include support-frag.html %}
+
+## Breeze with Sequelize
+
 Breeze client applications make three basic kinds of HTTP ajax calls:
 
   - 1) Breeze metadata 'Get' requests
