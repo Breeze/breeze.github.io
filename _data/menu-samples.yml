@@ -1,0 +1,10 @@
+title: Samples
+menuitems:
+  - { link: "todo-angular-sequelize.html", title: ToDo with Angular and Node/Sequelize }
+  - { link: "todo-angular-hibernate.html", title: ToDo with Angular and Java/Hibernate }
+  - { link: "web-api-odata.html", title: WebApi with OData }
+  - { link: "zza-mongo", title: Zza with Node/Mongo }
+  - { link: "todo-angular-hibernate.html", title: ToDo with Angular and Java/Hibernate }
+
+  
+  
