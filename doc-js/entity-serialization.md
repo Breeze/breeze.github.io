@@ -1,22 +1,23 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/entity-serialization.html"
 ---
 
 #Entity Serialization
 
-Breeze serializes entity data when saving to remote storage and when [exporting entities](http://www.breezejs.com/documentation/entitymanager-and-caching "Export/Import") to a string. Sometimes Breeze needs your help in serializing values in the manner your app requires.
+Breeze serializes entity data when saving to remote storage and when [exporting entities](/doc-js/entitymanager-and-caching "Export/Import") to a string. Sometimes Breeze needs your help in serializing values in the manner your app requires.
 
-Serialization is not as obvious as it might seem. Entities have circular references (e.g., Order &rarr; OrderDetail &rarr; parent Order) that confound naive serialization. Some internal Breeze properties shouldn't be serialized (e.g., the deep details of the entity type). And Breeze discards unrecognized properties as a matter of policy (e.g., `someEntity.foo="ha ha ha"` where `foo` is not a property identified in [metadata](http://www.breezejs.com/documentation/metadata "MetadataStore")).
+Serialization is not as obvious as it might seem. Entities have circular references (e.g., Order &rarr; OrderDetail &rarr; parent Order) that confound naive serialization. Some internal Breeze properties shouldn't be serialized (e.g., the deep details of the entity type). And Breeze discards unrecognized properties as a matter of policy (e.g., `someEntity.foo="ha ha ha"` where `foo` is not a property identified in [metadata](/doc-js/metadata "MetadataStore")).
 
 >"Unmapped" and "unrecognized" properties are different. 
->
+
 >An "unmapped" property *is a recognized property* in the sense that it is registered in metadata. You typically create "unmapped" properties by defining them in a custom constructor. You can also register an "unmapped" property explicitly. A registered property is "unmapped" if it does not translate to a persisted property of the corresponding server-side entity class.
->
+
 >A property is "unrecognized" if it is not registered in metadata. Properties that you add to an entity in an entity initializer or "on the fly" are unrecognized.
 
 Breeze uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FJSON%2Fstringify" title="JSON.stringify API" target="_blank">`JSON.stringify`</a> internally to serialize data, subject to policy constraints and customizations attuned to your needs.
 <a name="Unmapped-properties"></a>
+
 ##Unmapped properties
 
 Breeze strives to minimize serialization exceptions. It has a good handle on things that can go wrong in *mapped* properties over which it has a great deal of control. 
