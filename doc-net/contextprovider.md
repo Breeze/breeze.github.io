@@ -1,5 +1,6 @@
 ---
 layout: doc-net
+redirect_from: "/old/documentation/contextprovider.html"
 ---
 # ContextProvider
 
