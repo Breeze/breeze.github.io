@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/exportimport.html"
 ---
 #Export and import entities
 
@@ -14,13 +14,13 @@ In Breeze it's easy to export and re-import cached entities to any destination, 
 
 ##Export cache as a string
 
-The Breeze `EntityManager` can export some or all of its cached contents as [a serialized string](/documentation/entity-serialization "Entity Serialization"). Here's how to export its entire cache.
+The Breeze `EntityManager` can export some or all of its cached contents as [a serialized string](/doc-js/entity-serialization "Entity Serialization"). Here's how to export its entire cache.
 
 	var exportData = manager.exportEntities();
 
 The `exportData` value is a string serialization of every entity in the manager's cache plus the metadata for the entire model.
 
-> See the <a href="/documentation/metadata" target="_blank">metadata topic</a> for a discussion of the <code>MetadataStore</code>'s own export/import facilities.
+> See the <a href="/doc-js/metadata" target="_blank">metadata topic</a> for a discussion of the `MetadataStore`'s own export/import facilities.
 
 You are free to store that string anywhere, such as:
 
