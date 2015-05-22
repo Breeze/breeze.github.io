@@ -107,3 +107,11 @@ h4, .h4 {
     }
 }
 
+.button.dropdown-toggle {
+    border: none;
+    background-color: rgba(0, 0, 0, 0); /* transparent */
+}
+
+.selector-menu-item {
+    margin-left: 15px;
+}
