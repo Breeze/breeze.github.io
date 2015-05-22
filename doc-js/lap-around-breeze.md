@@ -2,8 +2,7 @@
 layout: doc-js
 redirect_from: "/old/documentation/.html"
 ---
-#
-	A lap around Breeze
+#	A lap around Breeze
 This is a quick spin around Breeze. It sticks to the basics that a JavaScript client developer must know to work with Breeze. You won't learn everything but you will acquire a foundation in breeze sufficient to build a simple application. You'll know<br />
 	 
 <ul>
