@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/.html"
 title: Javascript client
 ---
 
@@ -40,7 +41,7 @@ You create a Breeze **EntityManager** in your JavaScript client to access and *c
 
 You present entity data to users typically by **binding** UI controls to entity properties. You add new entities to cache, update existing entities, and schedule other entities to be deleted. Periodically you **save** these pending changes in a batch back to the persistence service which stores them in a database as a single transaction.
 
-This entity-oriented style of data management is familiar to business application developers who use an Object Relational Mapper (ORM) or such technologies as ActiveRecord, RIA Services, and IdeaBlade's <a href="http://www.ideablade.com/">DevForce</a>.</p>
+This entity-oriented style of data management is familiar to business application developers who use an Object Relational Mapper (ORM) or such technologies as ActiveRecord, RIA Services, and IdeaBlade's <a href="http://www.ideablade.com/">DevForce</a>.
 
 The **bold** terms are clues to the key components and concepts in Breeze.
 
@@ -50,7 +51,7 @@ The Breeze `EntityManager` is both a gateway to the back-end persistence service
 
 You ask an `EntityManager` to execute queries and save pending changes. The `EntityManage`r builds the requisite requests and handles the asynchronous communications with the back-end service.
 
-The objects queried and saved are entities held in the `EntityManager`'s cache. Entities enter the `EntityManager` cache in several ways: as a result of a query, by adding entities directly to the cache, or perhaps by importing them from another source (a file, another `EntityManager`). Entities leave the cache when you remove them manually and after saving entities marked for deletion. You can query the cache in the same way &hellip; with the same query command object &hellip; that you use to query the remote server.
+The objects queried and saved are entities held in the `EntityManager`'s cache. Entities enter the `EntityManager` cache in several ways: as a result of a query, by adding entities directly to the cache, or perhaps by importing them from another source (a file, another `EntityManager`). Entities leave the cache when you remove them manually and after saving entities marked for deletion. You can query the cache in the same way ... with the same query command object ... that you use to query the remote server.
 
 You'll learn more about the `EntityManager` soon. But let's take a step back. What's an "entity"?
 
@@ -74,7 +75,7 @@ Many binding frameworks detect changes by listening to a property changed event,
 
 >Angular v.1.x does not rely on observable properties. It detects property changes by comparing current and previous values ("dirty checking"). That works for Breeze models too although even an Angular app can benefit from observable models.
 
-There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular v.2, Aurelia, Backbone, Knockout,&nbsp;&hellip;) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose.
+There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular v.2, Aurelia, Backbone, Knockout,&nbsp;...) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose.
 
 >Breeze currently supports AngularJS, Aurelia, Knockout, and BackBone with adapters for other libraries under consideration. We'd be happy to help you write an adapter for a library we don't yet support.
 
@@ -102,7 +103,7 @@ Breeze resolves this query into an HTTP GET request to a persistence service end
 
 The OData format would look like this
 
-<p style="font-family: Consolas,Courier,monospace; font-size: 1em; background-color: ghostwhite;">http://www.example.com/<strong>api/Northwind/Customers?$filter=startswith(CompanyName,'C') eq true&amp;$orderby=CompanyName</strong></p>
+<p style="font-family: Consolas,Courier,monospace; font-size: 1em; background-color: ghostwhite;">http://www.example.com/**api/Northwind/Customers?$filter=startswith(CompanyName,'C') eq true&amp;$orderby=CompanyName**
 
 >The OData query syntax is just one part of the OData cross-vendor, open standard. It can be interpreted by a wide variety of server technologies that may be otherwise ignorant of OData protocols.
 
@@ -154,7 +155,7 @@ You are not boxed in by the metadata entity type. It's easy to extend the Breeze
 
 A Breeze application makes HTTP requests of a persistence service that typically resides on a remote server. 
 
-The Breeze ***client*** doesn't know &hellip; or care &hellip; how the data are processed and stored by that persistence service. The service could be written in any language and run on any platform. The Breeze client can be adapted to speak to almost any data service supporting an HTTP + JSON API.
+The Breeze ***client*** doesn't know ... or care ... how the data are processed and stored by that persistence service. The service could be written in any language and run on any platform. The Breeze client can be adapted to speak to almost any data service supporting an HTTP + JSON API.
 
 The Microsoft server technologies happens to be very popular with business application developers. Breeze ships with adapters for the ASP.NET <a href="http://www.asp.net/web-api">Web API</a> and for <a href="http://www.odata.org">OData</a>. It also ships with .NET components that interface with the Entity Framework and that generate Breeze metadata from an Entity Framework model. 
 

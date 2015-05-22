@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/.html"
 ---
 #Export and import entities
 
@@ -7,9 +8,9 @@ A mobile application may have to operate where connectivity is poor or non-exist
 
 A reliable, responsive application can save work to local storage and restore the data when the app is revived or re-launched.
 
-In Breeze it's easy to export and re-import cached entities to any destination, including local storage or another `EntityManager`.</p>
+In Breeze it's easy to export and re-import cached entities to any destination, including local storage or another `EntityManager`.
 
-<p class="note">Entity export/import examples on this page are in the <strong>exportImportTests</strong> module of <a href="/samples/doccode" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.</p>
+<p class="note">Entity export/import examples on this page are in the **exportImportTests** module of <a href="/samples/doccode" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.
 
 ##Export cache as a string
 
@@ -19,9 +20,9 @@ The Breeze `EntityManager` can export some or all of its cached contents as [a s
 
 The `exportData` value is a string serialization of every entity in the manager's cache plus the metadata for the entire model.
 
-<p class="note">See the <a href="/documentation/metadata" target="_blank">metadata topic</a> for a discussion of the <code>MetadataStore</code>'s own export/import facilities.</p>
+<p class="note">See the <a href="/documentation/metadata" target="_blank">metadata topic</a> for a discussion of the <code>MetadataStore</code>'s own export/import facilities.
 
-You are free to store that string anywhere, such as:</p>
+You are free to store that string anywhere, such as:
 
 * browser local storage
 * browser global storage

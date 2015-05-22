@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/.html"
 ---
 
 #Change tracking
@@ -12,7 +13,7 @@ A full discussion of `EntityAspect` awaits you in a [later topic](inside-entity)
 1. `propertyChanged` - an event raised when any entity property changes
 1. `validationErrorsChanged` - an event raised after applying validation rules.
 
-<p class="note">Many of the code snippets on this page are in the <a href="/samples/todo">Breeze Todo Sample App</a>.</p>
+<p class="note">Many of the code snippets on this page are in the <a href="/samples/todo">Breeze Todo Sample App</a>.
 
 ##EntityState
 
@@ -22,7 +23,7 @@ A Breeze entity is "self-tracking".  Its `entityAspect.entityState` tells you if
 	<tbody>
 		<tr>
 			<td style="width:121px;">
-			<strong>"Added"</strong>
+			**"Added"**
 			</td>
 			<td style="width:498px;">
 			A new entity in cache that does not exist in the backend database
@@ -30,7 +31,7 @@ A Breeze entity is "self-tracking".  Its `entityAspect.entityState` tells you if
 		</tr>
 		<tr>
 			<td style="width:121px;">
-			<strong>"Unchanged"</strong>
+			**"Unchanged"**
 			</td>
 			<td style="width:498px;">
 			An existing entity in cache that was queried from the database
@@ -38,7 +39,7 @@ A Breeze entity is "self-tracking".  Its `entityAspect.entityState` tells you if
 		</tr>
 		<tr>
 			<td style="width:121px;">
-			<strong>"Modified"</strong>
+			**"Modified"**
 			</td>
 			<td style="width:498px;">
 			An existing entity in cache with pending changes
@@ -46,7 +47,7 @@ A Breeze entity is "self-tracking".  Its `entityAspect.entityState` tells you if
 		</tr>
 		<tr>
 			<td style="width:121px;">
-			<strong>"Deleted"</strong>
+			**"Deleted"**
 			</td>
 			<td style="width:498px;">
 			An existing entity in cache that is marked for deletion
@@ -54,7 +55,7 @@ A Breeze entity is "self-tracking".  Its `entityAspect.entityState` tells you if
 		</tr>
 		<tr>
 			<td style="width:121px;">
-			<strong>"Detached"</strong>
+			**"Detached"**
 			</td>
 			<td style="width:498px;">
 			An entity that is not in cache; its status in the database is unknown
@@ -71,10 +72,10 @@ As things happen to an entity, Breeze updates its `EntityState` automatically. F
 	<tbody>
 		<tr>
 			<td style="width:319px;">
-			<strong>Action</strong>
+			**Action**
 			</td>
 			<td style="width:319px;">
-			<strong>new `EntityState`</strong>
+			**new `EntityState`**
 			</td>
 		</tr>
 		<tr>
@@ -104,7 +105,7 @@ As things happen to an entity, Breeze updates its `EntityState` automatically. F
 	</tbody>
 </table>
 
-You can change any `EntityState` to another state with one of several methods. That's an advanced, potentially risky trick that you can learn about later &hellip; except for one common case, deleting an entity.
+You can change any `EntityState` to another state with one of several methods. That's an advanced, potentially risky trick that you can learn about later ... except for one common case, deleting an entity.
 
 ###Deleting an entity
 
@@ -112,7 +113,7 @@ You delete an entity by changing its `EntityState` to "Deleted" like this:
 
     someEntity.entityAspect.setDeleted(); // mark for deletion
 
-`setDeleted` does not destroy the object locally nor does it remove the entity from the database. The entity simply remains in cache in its new "Deleted" state &hellip; as changed and added entities do. A successful save does delete the entity from the database and remove it from cache.
+`setDeleted` does not destroy the object locally nor does it remove the entity from the database. The entity simply remains in cache in its new "Deleted" state ... as changed and added entities do. A successful save does delete the entity from the database and remove it from cache.
 
 ##PropertyChanged
 A Breeze entity property raises a `propertyChanged` event when it is changed to a different value. You attach an event handler to that event to listen for changes to *a* specific property of *one specific entity instance* as explained in the [API documentation for this event](/doc-js/api-docs/classes/EntityAspect.html#event_propertyChanged).
@@ -161,7 +162,7 @@ If you want to listen for changes to another property, you subscribe to that one
     newTodo.IsDone.subscribe(
         function (newValue) { /* do something */);});
 
-You'll probably need a separate handler for each subscription. A handler is called with the new value &hellip; and that's it. You don't know what object or what property called the handler.
+You'll probably need a separate handler for each subscription. A handler is called with the new value ... and that's it. You don't know what object or what property called the handler.
 
 Need to know if `any` property has changed? You may have to subscribe to every property of the object [<a href="#note 1">1</a>].
 
@@ -235,11 +236,11 @@ By default, Breeze validates the entities before saving them to the server; it w
 
 [Learn more](validation) about Breeze property-level and entity-level validation.
 
-<p class="note"><strong>Reminder:</strong> Client-side validation improves the user experience. It is not a substitute for validation on the server.
+<p class="note">**Reminder:** Client-side validation improves the user experience. It is not a substitute for validation on the server.
 
 ##Reverting a change
 
-Once you've changed an entity, it's in a changed state &hellip; even if you manually restore the original value:
+Once you've changed an entity, it's in a changed state ... even if you manually restore the original value:
 
     var oldDescription = todo.Description(); // assume existing "Unchanged" entity
     todo.Description("Something new"); // entityState becomes "Modified"

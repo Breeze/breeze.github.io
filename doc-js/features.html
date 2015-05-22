@@ -1,124 +1,125 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/.html"
 ---
 
-<h1>Features</h1>
-<p>Breeze is a library for rich client applications written in HTML and JavaScript.</p>
-<p>It concentrates on the challenge of building and maintaining highly responsive, data-intensive applications in which users search, add, update, and view complex data from different angles as they pursue solutions to real problems in real time.</p>
-<p>Features include:</p>
-<p><strong>Rich queries</strong></p>
+#Features
+Breeze is a library for rich client applications written in HTML and JavaScript.
+It concentrates on the challenge of building and maintaining highly responsive, data-intensive applications in which users search, add, update, and view complex data from different angles as they pursue solutions to real problems in real time.
+Features include:
+**Rich queries**
 <ul>
 	<li>
 		Write simple and complex queries using a&nbsp;LINQ-like query syntax:
 		<ul style="list-style-type: circle;">
 			<li>
-				Simple conditions (id == 42, amount &gt; 100, name starts with &ldquo;Bob&rdquo;)</li>
+				Simple conditions (id == 42, amount > 100, name starts with "Bob")
 			<li>
-				Compound conditions (name is &ldquo;Bob&rdquo; or &ldquo;Robert&rdquo;)</li>
+				Compound conditions (name is "Bob" or "Robert")
 			<li>
-				Conditions with functions (length(name) &gt; 30)</li>
+				Conditions with functions (length(name) > 30)
 			<li>
-				Conditions on related entities (customers with orders shipped to California)</li>
+				Conditions on related entities (customers with orders shipped to California)
 			<li>
-				Sort, page, take first &lsquo;n&rsquo;</li>
+				Sort, page, take first 'n'
 			<li>
-				Expand the query result to include related entities in the payload (eager loading)</li>
+				Expand the query result to include related entities in the payload (eager loading)
 			<li>
-				Select a subset of properties; flatten complex object graphs with projections</li>
+				Select a subset of properties; flatten complex object graphs with projections
 		</ul>
-	</li>
+	
 </ul>
 <ul>
 	<li>
-		Query a remote service with a full OData-compliant URL.</li>
+		Query a remote service with a full OData-compliant URL.
 	<li>
-		Merges query results into cache, adding new entities and updating others while preserving unsaved changes.</li>
+		Merges query results into cache, adding new entities and updating others while preserving unsaved changes.
 	<li>
-		Use the same query object and query language to filter entities in the local cache.</li>
+		Use the same query object and query language to filter entities in the local cache.
 </ul>
-<p><strong>Client-side caching</strong></p>
+**Client-side caching**
 <ul>
 	<li>
-		Caching entities locally on the JavaScript client.</li>
+		Caching entities locally on the JavaScript client.
 	<li>
-		Navigation among entities in cache, e.g., <em>Customer </em>to <em>Orders </em>to <em>OrderDetails </em>to <em>Product </em>&hellip; and back.</li>
+		Navigation among entities in cache, e.g., *Customer *to *Orders *to *OrderDetails *to *Product *... and back.
 </ul>
-<p><strong>Change tracking</strong></p>
+**Change tracking**
 <ul>
 	<li>
-		Entities are self-tracking; they know when they are new, changed, marked-for-delete, or unchanged.</li>
+		Entities are self-tracking; they know when they are new, changed, marked-for-delete, or unchanged.
 	<li>
-		Refresh an entity to its current state on the server or revert changed entities to their original values with a single command.</li>
+		Refresh an entity to its current state on the server or revert changed entities to their original values with a single command.
 	<li>
-		Publishes property-changed and other notifications about the entities that enter, leave, and change in cache.</li>
+		Publishes property-changed and other notifications about the entities that enter, leave, and change in cache.
 </ul>
-<p><strong>Validation</strong></p>
+**Validation**
 <ul>
 	<li>
-		Validates entire entities and individual property values, automatically or on-demand, with a combination of discovered and custom rules.</li>
+		Validates entire entities and individual property values, automatically or on-demand, with a combination of discovered and custom rules.
 	<li>
-		Validation error messages can be customized or localized.</li>
+		Validation error messages can be customized or localized.
 </ul>
-<p><strong>Pluggable back-end</strong></p>
+**Pluggable back-end**
 <ul>
 	<li>
-		Full integration with the Entity Framework.</li>
+		Full integration with the Entity Framework.
 	<li>
-		Supports WebAPI and OData back-ends.</li>
+		Supports WebAPI and OData back-ends.
 	<li>
-		Works with NoSQL, non-.NET, and SOA back-ends. <em>(Samples under development.)</em></li>
+		Works with NoSQL, non-.NET, and SOA back-ends. *(Samples under development.)*
 </ul>
-<p><strong>Data management</strong></p>
+**Data management**
 <ul>
 	<li>
-		Create entities dynamically based on metadata that you control and extend.</li>
+		Create entities dynamically based on metadata that you control and extend.
 	<li>
-		Id generation strategies handle a wide variety of client and store-generated key schemes; use ours or write your own.</li>
+		Id generation strategies handle a wide variety of client and store-generated key schemes; use ours or write your own.
 	<li>
-		Export and reimport entities to device local storage to meet offline and reliability requirements.</li>
+		Export and reimport entities to device local storage to meet offline and reliability requirements.
 	<li>
-		Create multiple caches to segment and isolate data changes in &ldquo;sandboxes&rdquo;.</li>
+		Create multiple caches to segment and isolate data changes in "sandboxes".
 	<li>
-		Combine entities from multiple remote services in the same cache.</li>
+		Combine entities from multiple remote services in the same cache.
 	<li>
-		All service operations return JavaScript promises.</li>
+		All service operations return JavaScript promises.
 	<li>
-		Entities&nbsp;support Complex Types and Enumerations as properties.</li>
+		Entities&nbsp;support Complex Types and Enumerations as properties.
 </ul>
-<p><strong>Batched saves</strong></p>
+**Batched saves**
 <ul>
 	<li>
-		Save pending changes to a remote service in a single request.</li>
+		Save pending changes to a remote service in a single request.
 	<li>
-		Mix entities of different types in the same change-set (Customers, Orders, OrderDetails).</li>
+		Mix entities of different types in the same change-set (Customers, Orders, OrderDetails).
 	<li>
-		Mix operations (add, update, delete) in the same change-set.</li>
+		Mix operations (add, update, delete) in the same change-set.
 	<li>
-		Save the change-set as a single transaction.</li>
+		Save the change-set as a single transaction.
 	<li>
-		Detect and resolve concurrency conflicts.</li>
+		Detect and resolve concurrency conflicts.
 </ul>
-<p><strong>Library and Tooling support</strong></p>
+**Library and Tooling support**
 <ul>
 	<li>
-		Out-of-box support for Knockout, Angular, and Backbone.</li>
+		Out-of-box support for Knockout, Angular, and Backbone.
 	<li>
-		TypeScript support for compile-time type checking, classes, interfaces, and inheritance.</li>
+		TypeScript support for compile-time type checking, classes, interfaces, and inheritance.
 	<li>
-		IntelliSense support for Visual Studio 2012.</li>
+		IntelliSense support for Visual Studio 2012.
 	<li>
-		RequireJS-enabled for modular applications.</li>
+		RequireJS-enabled for modular applications.
 	<li>
-		Open API that allows additional front or back-ends to be plugged in.</li>
+		Open API that allows additional front or back-ends to be plugged in.
 </ul>
-<p><strong>Supported by IdeaBlade</strong></p>
+**Supported by IdeaBlade**
 <ul>
 	<li>
-		Developed and supported by IdeaBlade, since 2001 a leader in rich client application libraries.</li>
+		Developed and supported by IdeaBlade, since 2001 a leader in rich client application libraries.
 	<li>
-		Extensive API documentation with examples and links to source code.</li>
+		Extensive API documentation with examples and links to source code.
 	<li>
-		Quality control through QUnit automated tests.</li>
+		Quality control through QUnit automated tests.
 	<li>
-		Paid support options, training,&nbsp;and consulting services to ensure that you succeed.</li>
+		Paid support options, training,&nbsp;and consulting services to ensure that you succeed.
 </ul>
