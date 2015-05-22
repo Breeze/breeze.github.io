@@ -68,7 +68,7 @@ redirect_from: "/old/documentation/.html"
     
   
  <!-- .download-boxes -->
-The Breeze source code is free, open-source,&nbsp;<a href="http://opensource.org/licenses/mit-license.php">MIT licensed</a>.
+The Breeze source code is free, open-source, <a href="http://opensource.org/licenses/mit-license.php">MIT licensed</a>.
 ##Prerequisites
 Many of the demos and samples were built with .NET development in mind. Please review the <a href="/documentation/prerequisites">prerequisites topic</a> before trying to build and execute them.
 <a name="release notes"></a>

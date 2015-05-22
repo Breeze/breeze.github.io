@@ -4,8 +4,8 @@ redirect_from: "/old/documentation/.html"
 ---
 #
 	Data binding with Knockout
-<p class="note">The code snippets on this page are in the <a href="/samples/todo">Breeze Todo Sample App</a>.
-Breeze entities in the Todo sample are built for UI data binding with <a href="http://knockoutjs.com/">Knockout</a>.&nbsp; A property that return a single value is exposed as a <a href="http://knockoutjs.com/documentation/observables.html">Knockout observable property</a>. A property that returns a collection (e.g., a collection navigation property such as Customer.Orders) is exposed as a <a href="http://knockoutjs.com/documentation/observableArrays.html">Knockout observable array property</a>.
+> The code snippets on this page are in the <a href="/samples/todo">Breeze Todo Sample App</a>.
+Breeze entities in the Todo sample are built for UI data binding with <a href="http://knockoutjs.com/">Knockout</a>.  A property that return a single value is exposed as a <a href="http://knockoutjs.com/documentation/observables.html">Knockout observable property</a>. A property that returns a collection (e.g., a collection navigation property such as Customer.Orders) is exposed as a <a href="http://knockoutjs.com/documentation/observableArrays.html">Knockout observable array property</a>.
 To appreciate what this means, let's look at the screen the user sees when the *ViewModel* first pours queried Todo entities into its <span class="codeword">items</span> array.
 <img src="/images/DocCodeTodosListSnapshotjpg.jpg" style="border-width: 0px; border-style: solid;" />
 On launch the screen was empty; now it has a list of Todos, styled to reflect the IsDone and <span class="codeword">IsArchived</span> properties of each Todo.
@@ -21,7 +21,7 @@ A developer did mark up the HTML with declarative binding instructions. Here's a
 </ul>
 
 The "data-bind" attributes are Knockout's markup convention. The "*foreach*:" binding declaration tells KO to iterate over the ViewModel's <span class="codeword">items</span> array, creating HTML list items for each Todo in the array. The checkbox "checked" property is bound to the Todo's <span class="codeword">IsDone</span> property. The label's "text" property is bound to the Todo's <span class="codeword">Description property</span>.
-The catch is that someone &ndash; or something &ndash; had to make every entity property observable to the Knockout framework. If you did it yourself, you'd probably write code like this:
+The catch is that someone - or something - had to make every entity property observable to the Knockout framework. If you did it yourself, you'd probably write code like this:
 
 	<pre class="brush:jscript;">
 var new TodoItem = {

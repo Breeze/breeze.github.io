@@ -4,9 +4,9 @@ redirect_from: "/old/documentation/.html"
 ---
 #Query with a filter
 
-<p class="note">Most of the code snippets on this page are in the <a href="/samples/todo">Breeze Todo App</a>; a few are in the **basicTodoTests **module of the <a href="/samples/doccode">DocCode teaching tests</a>.
+> Most of the code snippets on this page are in the <a href="/samples/todo">Breeze Todo App</a>; a few are in the **basicTodoTests **module of the <a href="/samples/doccode">DocCode teaching tests</a>.
 
-Our <a href="/documentation/first-query-0">first query</a> returned every Todo in the database [<a href="#note 1">1</a>]. &nbsp;That's fine for a short list of Todos; not so great if we're querying for orders of a large company. We need a query that selects a more manageable number of results, preferably the ones that interest the user.
+Our <a href="/documentation/first-query-0">first query</a> returned every Todo in the database [<a href="#note 1">1</a>].  That's fine for a short list of Todos; not so great if we're querying for orders of a large company. We need a query that selects a more manageable number of results, preferably the ones that interest the user.
 
 In this app, we can archive the Todos that we want to keep but look at rarely. The *<span class="codeword">getAllTodos</span> *method in the *dataservice* has an "IncludeArchived" option. If the flag is false, the code adds a "where" clause to filter exclusively for *Todos *that are active (not archived).
 
@@ -65,7 +65,7 @@ var predicate = p1.and(p2);
 var query = new EntityQuery("Todos").where(predicate);
 
 
-In addition to &#39;and&#39;, there are also &#39;or&#39; and &#39;not&#39; operators for predicates. You can learn more about them in the API docs for <a href="/sites/all/apidocs/classes/Predicate.html">Predicates</a>.
+In addition to 'and', there are also 'or' and 'not' operators for predicates. You can learn more about them in the API docs for <a href="/sites/all/apidocs/classes/Predicate.html">Predicates</a>.
 
 ##Filter operator enumeration
 
@@ -93,7 +93,7 @@ The label changes because it is <a href="/documentation/databinding-knockout">bo
 
 The Breeze query language is capable of answering many complex questions. Check out the <a href="/documentation/query-examples">query examples</a> for an inventory of possibilities.
 
-So far we&#39;ve sent every query to the server to fetch data from a far. You can query the cache in the same way using the same query language. In fact, you can use the same query:
+So far we've sent every query to the server to fetch data from a far. You can query the cache in the same way using the same query language. In fact, you can use the same query:
 
 <pre class="brush:jscript;">
 var query = new EntityQuery("Todos").where(predicate); // from the example above

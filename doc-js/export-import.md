@@ -10,7 +10,7 @@ A reliable, responsive application can save work to local storage and restore th
 
 In Breeze it's easy to export and re-import cached entities to any destination, including local storage or another `EntityManager`.
 
-<p class="note">Entity export/import examples on this page are in the **exportImportTests** module of <a href="/samples/doccode" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.
+> Entity export/import examples on this page are in the **exportImportTests** module of <a href="/samples/doccode" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.
 
 ##Export cache as a string
 
@@ -20,14 +20,14 @@ The Breeze `EntityManager` can export some or all of its cached contents as [a s
 
 The `exportData` value is a string serialization of every entity in the manager's cache plus the metadata for the entire model.
 
-<p class="note">See the <a href="/documentation/metadata" target="_blank">metadata topic</a> for a discussion of the <code>MetadataStore</code>'s own export/import facilities.
+> See the <a href="/documentation/metadata" target="_blank">metadata topic</a> for a discussion of the <code>MetadataStore</code>'s own export/import facilities.
 
 You are free to store that string anywhere, such as:
 
 * browser local storage
 * browser global storage
 * cloud storage
-* <a href="http://brian.io/lawnchair/" target="_blank">lawnchair</a> &ndash; a popular mobile device storage library
+* <a href="http://brian.io/lawnchair/" target="_blank">lawnchair</a> - a popular mobile device storage library
 
 Let's store it in browser local storage:
 

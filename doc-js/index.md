@@ -75,7 +75,7 @@ Many binding frameworks detect changes by listening to a property changed event,
 
 >Angular v.1.x does not rely on observable properties. It detects property changes by comparing current and previous values ("dirty checking"). That works for Breeze models too although even an Angular app can benefit from observable models.
 
-There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular v.2, Aurelia, Backbone, Knockout,&nbsp;...) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose.
+There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular v.2, Aurelia, Backbone, Knockout, ...) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose.
 
 >Breeze currently supports AngularJS, Aurelia, Knockout, and BackBone with adapters for other libraries under consideration. We'd be happy to help you write an adapter for a library we don't yet support.
 
@@ -118,7 +118,7 @@ The same query object can be used to find 'C' customers in cache.
 
 This time the query only applies to entities in cache; the `EntityManager` does not call the back-end. This statement executes synchronously and the results are available immediately.
 
-Notice that we use the same query syntax &ndash; the same query object &ndash; to search both the local cache and a remote database.
+Notice that we use the same query syntax - the same query object - to search both the local cache and a remote database.
 
 You can write complex queries in the Breeze query language. For example, a query can reference related entities as when we filter for customers who have placed an order in California. It can combine the filtered customers with their orders in the same result payload. It can project a result that flattens the Customer-Orders graph into a three-valued object: *CustomerId*, *CustomerName*, and *OrderCount*. 
 
@@ -144,7 +144,7 @@ For saves (and queries) to work, the client and service must understand the shap
 
 Breeze metadata describe entity types and relationships among entities in a data model. Breeze needs this metadata to communicate with the persistence service during query and save, to create new entities on the client, and to navigate among entities in cache.
 
-Because Breeze has metadata, it can generate your JavaScript model objects on the fly.&nbsp; You may not have to write these objects by hand. For example, to create a new customer object you could write the following:
+Because Breeze has metadata, it can generate your JavaScript model objects on the fly.  You may not have to write these objects by hand. For example, to create a new customer object you could write the following:
 
 	// Create new customer named 'Acme' and add to the manager's cache
 	var newCust = manager.createEntity('Customer', {CompanyName='Acme';});

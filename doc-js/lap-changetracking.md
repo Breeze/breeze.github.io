@@ -13,7 +13,7 @@ A full discussion of `EntityAspect` awaits you in a [later topic](inside-entity)
 1. `propertyChanged` - an event raised when any entity property changes
 1. `validationErrorsChanged` - an event raised after applying validation rules.
 
-<p class="note">Many of the code snippets on this page are in the <a href="/samples/todo">Breeze Todo Sample App</a>.
+> Many of the code snippets on this page are in the <a href="/samples/todo">Breeze Todo Sample App</a>.
 
 ##EntityState
 
@@ -236,7 +236,7 @@ By default, Breeze validates the entities before saving them to the server; it w
 
 [Learn more](validation) about Breeze property-level and entity-level validation.
 
-<p class="note">**Reminder:** Client-side validation improves the user experience. It is not a substitute for validation on the server.
+> **Reminder:** Client-side validation improves the user experience. It is not a substitute for validation on the server.
 
 ##Reverting a change
 

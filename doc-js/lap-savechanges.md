@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/.html"
 ---
 #Save changes
 
-<p class="note">The code snippets on this page are drawn from the <a href="/samples/todo">Breeze Todo Sample App</a> and from the **basicTodoTests** module of the <a href="/samples/doccode">DocCode teaching tests</a>.
+> The code snippets on this page are drawn from the <a href="/samples/todo">Breeze Todo Sample App</a> and from the **basicTodoTests** module of the <a href="/samples/doccode">DocCode teaching tests</a>.
 
 The Todo sample App doesn't have a save button. It saves changes as you add new items, update descriptions, check the "done" box, archive the completed Todos, and tick "Mark all as complete". Create, update, and delete operations are all represented. Clicking "Mark all as complete" saves multiple updates in one transaction bundle.
 
@@ -29,31 +29,31 @@ Checking for the presence of changes with <span class="codeword">hasChanges()</s
 
 The *EntityManager* collects every entity with a pending change into a change-set. Then it validates the entities in that change-set, invoking each entity's property- and entity-level validation rules, adding and removing errors from each entity's <span class="codeword">validationErrorsCollection</span>. The save fails if any entity in the bundle has errors. If they are all error-free, the manager sends the change-set in the body of a single POST request to the persistence service [<a href="#note 2">2</a>].
 
-A save is an async operation, like any other service operation, so the method returns a promise &ndash; a promise to report the outcome of the save.&nbsp; The Todo app releases the UI immediately, enabling the user to keep working unblocked. When the save result arrives from the service, the app reports success or failure with its logger.
+A save is an async operation, like any other service operation, so the method returns a promise - a promise to report the outcome of the save.  The Todo app releases the UI immediately, enabling the user to keep working unblocked. When the save result arrives from the service, the app reports success or failure with its logger.
 
 ##After the save
 
 If the save fails, the contents of the cache are unchanged. The entities with pending changes remain in their changed state. The app should analyze the <span class="codeword">saveResult.error</span> to determine the appropriate recovery or shutdown steps.
 
-If the save succeeds, Breeze has some bookkeeping to do. The service sent the saved entities back to Breeze; the list is available from the&nbsp; <span class="codeword">saveResult.entities</span>[<a href="#note 3">3</a>]. They may contain changes that are news to the client, changes made by something in the backend. &nbsp;Breeze merges these changes back into the cache.
+If the save succeeds, Breeze has some bookkeeping to do. The service sent the saved entities back to Breeze; the list is available from the  <span class="codeword">saveResult.entities</span>[<a href="#note 3">3</a>]. They may contain changes that are news to the client, changes made by something in the backend.  Breeze merges these changes back into the cache.
 
 An entity that was marked for delete is removed from cache; its <span class="codeword">entityState</span> becomes "Detached". The <span class="codeword">entityState</span> of new and modified entities becomes "Unchanged".
 
 ##Id Fixup
 
-Updates to store-generated keys are the most common backend changes. A new Todo.Id() was assigned a temporary id such as (-1) while it was in cache before save. &nbsp;During the save, the database assigned it a permanent id, say (42). The Breeze *EntityManager* detects this and updates its cache key map accordingly. Then it visits every other entity in cache that might have had a reference to (-1) and replaces that value with (42) in a process called "*id fix-up*".
+Updates to store-generated keys are the most common backend changes. A new Todo.Id() was assigned a temporary id such as (-1) while it was in cache before save.  During the save, the database assigned it a permanent id, say (42). The Breeze *EntityManager* detects this and updates its cache key map accordingly. Then it visits every other entity in cache that might have had a reference to (-1) and replaces that value with (42) in a process called "*id fix-up*".
 
 The Todo app doesn't need id fix-up because there are no relationships among entities in this model. But if we were saving a new *Order* and its *OrderDetails*, Breeze would replace all of the <span class="codeword">OrderDetail.OrderID</span> values with the new <span class="codeword">Order.OrderID</span>; for example, their (-1) values would be updated to (42).
 
 ##Offline
 
-What if we couldn&#39;t save Todo changes right away? What if we couldn&#39;t rely on a fast, continuous connection to the server? We&#39;d like to stash the cache contents to local storage. Breeze can smooth that process for you with its EntityManager export/import facilities. Here&#39;s an extract from a test in the **basicTodoTests **module.
+What if we couldn't save Todo changes right away? What if we couldn't rely on a fast, continuous connection to the server? We'd like to stash the cache contents to local storage. Breeze can smooth that process for you with its EntityManager export/import facilities. Here's an extract from a test in the **basicTodoTests **module.
 
 <pre class="brush:jscript;">
 // add a new Todo to the cache
 var newTodo = em.addEntity(createTodo("Export/import safely"));
 
-var changes = em.getChanges(); // we&#39;ll stash just the changes
+var changes = em.getChanges(); // we'll stash just the changes
 var changesExport = em.exportEntities(changes);
 
 window.localStorage.setItem("todos", changesExport);

@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/.html"
 ---
 #First query
 
-Many applications begin with a query for some existing data and that&#39;s how we&#39;ll begin. We&#39;re using the <a href="/samples/todo">Breeze Todo Sample App</a> to guide our lap around Breeze. We&#39;ll find the **first query** (and all other data service operations) in the *Scripts/services/**dataservice.js*** folder.
+Many applications begin with a query for some existing data and that's how we'll begin. We're using the <a href="/samples/todo">Breeze Todo Sample App</a> to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the *Scripts/services/**dataservice.js*** folder.
 
 The code snippets on this page are in the <a href="/samples/todo">Breeze Todo App</a>.
 
@@ -12,14 +12,14 @@ The code snippets on this page are in the <a href="/samples/todo">Breeze Todo Ap
 
 **Open*** Scripts/services/**dataservice.js***.
 
-This Todo app works with the <a href="http://knockoutjs.com/" target="_blank">Knockout </a>model library and a <a href="http://www.asp.net/web-api" target="_blank">Web API</a> back-end service. You might prefer a different model library (e.g., "backbone") or a different data service (e.g., "OData") in which case you&#39;d make those preferences known first, at the top of this file (see the <a href="/samples/todo-angular" target="_top">Todo-Angular</a> version for an example). In Basic Breeze we&#39;re building with Knockout and the Web API; these are the Breeze defaults so we can proceed without further ado.
+This Todo app works with the <a href="http://knockoutjs.com/" target="_blank">Knockout </a>model library and a <a href="http://www.asp.net/web-api" target="_blank">Web API</a> back-end service. You might prefer a different model library (e.g., "backbone") or a different data service (e.g., "OData") in which case you'd make those preferences known first, at the top of this file (see the <a href="/samples/todo-angular" target="_top">Todo-Angular</a> version for an example). In Basic Breeze we're building with Knockout and the Web API; these are the Breeze defaults so we can proceed without further ado.
 
 ##Create an EntityManager
 
 A query can't execute itself. We'll need a Breeze ***EntityManager***. The *EntityManager* is a gateway to the persistence service which will execute the query on the backend and return query results in its response. The next few lines give us an *EntityManager*:
 
 <pre class="brush:jscript;">
-var serviceName = &#39;breeze/todos&#39;, // route to the Web Api controller
+var serviceName = 'breeze/todos', // route to the Web Api controller
     manager = new breeze.EntityManager(serviceName);
 
 
@@ -67,7 +67,7 @@ It must return something and it must do so immediately. The thing it returns is 
 
 ##Accepting a promise
 
-A caller of the *dataservice*'s ***getAllTodos ***method typically attaches both a success and failure callback to the returned promise. Here&#39;s how the Todo app&#39;s ***ViewModel ***calls *getAllTodos*:
+A caller of the *dataservice*'s ***getAllTodos ***method typically attaches both a success and failure callback to the returned promise. Here's how the Todo app's ***ViewModel ***calls *getAllTodos*:
 
 
 <pre class="brush:jscript;">
@@ -82,7 +82,7 @@ Notice the use of method chaining:
 
 
 	<li>the *dataservice* returned a promise;
-	<li>the *ViewModel* called the promise&#39;s *then( ... )* method for the success path
+	<li>the *ViewModel* called the promise's *then( ... )* method for the success path
 	<li>the *ViewModel* called the promise's *fail( ... )* method for the failure path.
 
 
@@ -106,7 +106,7 @@ function querySucceeded(data) {
 }
 
 
-And just like that, the screen fills with *Todos*.&nbsp; We'll discuss how *that* happens when we peek inside the entity <a href="/documentation/databinding-knockout">later in this tour</a>. Before we do, let's **<a href="/documentation/query-filter">try another query</a>**.
+And just like that, the screen fills with *Todos*.  We'll discuss how *that* happens when we peek inside the entity <a href="/documentation/databinding-knockout">later in this tour</a>. Before we do, let's **<a href="/documentation/query-filter">try another query</a>**.
 
 ##Notes
 

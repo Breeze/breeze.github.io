@@ -120,7 +120,7 @@ Now that the manager's `MetadataStore` is fully populated, we are ready to creat
 
 ##*Don't "new" a custom constructor*
 
-<p class="note">We strongly recommend that you do not call an entity constructor function directly. This section explains why. Use one of the two Breeze factory functions instead, either `EntityManager.CreateEntity()` or `EntityType.CreateEntity()`.
+> We strongly recommend that you do not call an entity constructor function directly. This section explains why. Use one of the two Breeze factory functions instead, either `EntityManager.CreateEntity()` or `EntityType.CreateEntity()`.
 
 The `Customer` function is a valid JavaScript constructor; it is perfectly legal to write:
 
@@ -358,7 +358,7 @@ You want Breeze to watch these properties. You want Breeze to validate and seria
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" title="Defined properties">Learn more about ES5 properties</a> on the web. 
 
-<p class="note">These techniques only work in ES5+ browsers. The <code>Object.DefineProperty</code> feature cannot be shimmed (aka, "polyfilled") into older browsers. Some browsers, such as IE8, appear to support ES5 defined properties but actually don't.
+> These techniques only work in ES5+ browsers. The <code>Object.DefineProperty</code> feature cannot be shimmed (aka, "polyfilled") into older browsers. Some browsers, such as IE8, appear to support ES5 defined properties but actually don't.
 
 <a name="ko-computeds"></a>
 #Knockout computed properties
