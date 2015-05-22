@@ -19,7 +19,7 @@ When the client application requires data, it typically calls a method on an ins
 
 In most cases when you query with an *EntityManager*, you are not just getting the results of the query, but you also place the queried entities into the *EntityManager's* cache. When you create new entities, you add them to that cache. When you delete entities, you are actually marking entities in the cache, scheduling them to be deleted.
 
-When you eventually ask the *EntityManager* to save, it finds the changed entities in cache - the ones you've modified, added, and scheduled for deletion - and sends the changes to the *persistence service*. If all goes well, the service reports success and the *EntityManager *adjusts the cached entities to reflect the save by discarding deleted entities and re-setting the ***EntityState*** of the added and modified entities to *Unchanged*.
+When you eventually ask the *EntityManager* to save, it finds the changed entities in cache - the ones you've modified, added, and scheduled for deletion - and sends the changes to the *persistence service*. If all goes well, the service reports success and the *EntityManager* adjusts the cached entities to reflect the save by discarding deleted entities and re-setting the ***EntityState*** of the added and modified entities to *Unchanged*.
 
 ##Key EntityManager capabilities
 
