@@ -14,12 +14,16 @@ layout: samples
 <p>BreezeJS is designed to work with a variety of JavaScript libraries. To make that point, this Todo Sample comes in several flavors, each one a variation in the client implementation.</p>
 
 <ul>
-	<li><a href="/samples/todo-angular"><strong>Todo-Angular</strong></a><br />
-	Built with AngularJS.</li>
-	<li><a href="/samples/todo-knockout"><strong>Todo-Knockout</strong></a><br />
-	Built with KnockoutJS.</li>
-	<li><a href="/samples/todo-require"><strong>Todo-Knockout-Require</strong></a><br />
+	<li><a href="/samples/todo-angular.html"><strong>Todo-Angular</strong></a><br />
+	Built with AngularJS against a .NET server.</li>
+	<li><a href="/samples/todo-knockout.html"><strong>Todo-Knockout</strong></a><br />
+	Built with KnockoutJS against a .NET server.</li>
+	<li><a href="/samples/todo-knockout-require.html"><strong>Todo-Knockout-Require</strong></a><br />
 	Introduces dependency management with RequireJS to the base KO version.</li>
+	<li><a href="/samples/todo-angular-hibernate.html"><strong>Todo-Angular-Hibernate</strong></a><br />
+  Built with AngularJS against a Java/Hibernate server</li>
+  <li><a href="/samples/todo-angular-sequelize.html"><strong>Todo-Angular-Sequelize</strong></a><br />
+    Built with AngularJS against a Node/Sequelize server</li>
 </ul>
 
 <p>To facilitate comparison, these variations differ from each other as little as possible. They all have the same UI and the same one-entity TodoItem model. Because our focus is on client-side programming, they share the same server side design and implementation: an ASP.NET Web API controller accessing a SQL database via Entity Framework.&nbsp;</p>
@@ -29,17 +33,17 @@ layout: samples
 <p>We&#39;ll explore some details of the Todo sample and its variations over this and several other pages:</p>
 
 <ul>
-	<li><strong><a href="/samples/todo-server">Application server</a></strong>&nbsp;<br />
+	<li><strong><a href="/samples/about-todo-server.html">Application server</a></strong>&nbsp;<br />
 	Describes everything happening on the Todo application server. The server is the same across all samples</li>
 </ul>
 
 <ul>
-	<li><strong><a href="/samples/todo-viewmodel">ViewModel design</a></strong>&nbsp;<br />
+	<li><strong><a href="/samples/about-todo-viewmodel.html">ViewModel design</a></strong>&nbsp;<br />
 	All samples have a ViewModel whose API and basic design is the same but whose implementation differs by variation. This topic explains what they have in common.</li>
 </ul>
 
 <ul>
-	<li><strong><a href="/samples/todo-dataservice">Dataservice</a></strong>&nbsp;<br />
+	<li><strong><a href="/samples/about-todo-dataservice.html">Dataservice</a></strong>&nbsp;<br />
 	This module uses Breeze to access remote data and manage data locally; its design and implementation is almost identical accross the variations.</li>
 </ul>
 

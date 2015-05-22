@@ -39,7 +39,9 @@ td.stack {
 
 </style>
 
-#![Zza!](/images/samples/zza-sample.png) <span style="font-size: 300%">Zza!</span> (Node/MongoDB)
+# Zza! with (Node/MongoDB)
+
+<img alt="Zza sample" height="66" src="/images/samples/zza-sample.png" width="66" />
 
 **Zza!** is a single page application (SPA) for ordering pizzas, salads and drinks.
 

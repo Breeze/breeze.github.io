@@ -1,6 +1,9 @@
 title: Samples
 menuitems:
-  - { link: "todo.html", title: ToDo with Angular; Java/Hibernate server }
+  - { link: "about-todo.html", title: About the ToDo samples, isparent: true }
+  - { link: "about-todo-server.html", title: About the application server, ischild: true }
+  - { link: "about-todo-viewmodel.html", title: About the view model design, ischild: true }
+  - { link: "about-todo-dataservice.html", title: About the data service, ischild: true }
   - { link: "todo-angular.html", title: ToDo with Angular - .NET/EF server }
   - { link: "todo-knockout.html", title: ToDo with Knockout - .NET/EF server }
   - { link: "todo-knockout-require.html", title: ToDo with Knockout and Require - Java/Hibernate server }
