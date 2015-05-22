@@ -24,6 +24,24 @@
 	margin-bottom:30px
 }
 
+.download-samples{
+	width:225px;
+	border-bottom:1px solid #379ad3;
+	margin-bottom:24px
+}
+
+.download-samples:hover{
+	border-bottom:1px solid #226f9b
+}
+
+.download-samples a{
+	text-decoration:none
+}
+
+.download-samples img{
+	height:28px;
+	vertical-align:middle
+}
 .download-boxes,.support-boxes,.support-buttons{
 	padding:0;
 	margin-bottom:24px
