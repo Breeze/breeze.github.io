@@ -1,0 +1,70 @@
+/* only used on the download page */
+
+
+.download-intro a {
+    margin-bottom:40px
+}
+
+.download-intro a {
+    font-size:18px;
+}
+
+.download-boxes, {
+    padding:0;
+    margin-bottom:24px
+}
+
+.download-boxes:before,.download-boxes:after {
+    content:" ";
+    display:table
+}
+
+.download-boxes:after {
+    clear:both
+}
+
+.download-boxes li:last-child {
+    margin-right:0
+}
+
+.download-box {
+    float:left;
+    height:450px;
+    display:block;
+    -moz-box-shadow:rgba(0,0,0,0.15) 3px 3px 15px 3px;
+    -webkit-box-shadow:rgba(0,0,0,0.15) 3px 3px 15px 3px;
+    box-shadow:rgba(0,0,0,0.15) 3px 3px 15px 3px;
+    list-style-type:none
+}
+
+.download-box .download-box__inner {
+    padding:10px
+}
+
+.download-box .download-box__icon{
+    display:block;
+    height:100px;
+    width:100px;
+    margin:0 auto
+}
+
+.download-box .download-box__icon img {
+    display:block;
+    margin:auto;
+    width:100%;
+    height:auto
+}
+
+.download-box a {
+    text-decoration:none
+}
+
+.download-box h3,.download-box p {
+    margin-bottom:12px
+}
+
+.download-box {
+    width:48%;
+    margin-right:7px;
+    height:350px
+}

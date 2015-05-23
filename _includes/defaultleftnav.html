@@ -1,20 +1,23 @@
 <div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
     <a id="menu-header" class="navmenu-brand" href="/{{page.layout}}/">{{menu.title}}</a>
 	<ul id="menu-top" class="nav navmenu-nav">
-<!-- find parent menu if current page is a child menu - call it expandeditem -->        
-{% assign parent = null %}
-{% assign expandeditem = null %}
-{% for menuitem in menu.menuitems %}
-    {% if menuitem.isparent %}
-       {% assign parent = menuitem %}
-    {% elsif menuitem.ischild == null %} 
-       {% assign parent = null %}
-    {% endif %}
-    {% assign pagelink = page.url | split: '/' | last  %}
-    {% if parent != null and pagelink == menuitem.link %}        
-       {% assign expandeditem = parent %}
-    {% endif %}
-{% endfor %}     
+<!-- find parent menu if current page is a child menu - call it expandeditem
+     capture 'tmp' is too suppress extra lf in html   -->
+{% capture tmp %}
+    {% assign parent = null %}
+    {% assign expandeditem = null %}
+    {% for menuitem in menu.menuitems %}
+        {% if menuitem.isparent %}
+           {% assign parent = menuitem %}
+        {% elsif menuitem.ischild == null %}
+           {% assign parent = null %}
+        {% endif %}
+        {% assign pagelink = page.url | split: '/' | last  %}
+        {% if parent != null and pagelink == menuitem.link %}
+           {% assign expandeditem = parent %}
+        {% endif %}
+    {% endfor %}
+{% endcapture %}{% assign tmp = nil %}
                       
 {% assign indropdown = false %}                  
 {% for menuitem in menu.menuitems %}
