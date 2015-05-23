@@ -252,7 +252,7 @@ This is a pretty standard pattern for loading a module extension with requireJS.
 
 #Summary#
 
-Require saves us from having to write lots of script tags and list them in the right order. Instead of loading all Javascript files before the app starts - even scripts we may never use - Require can load scripts dynamically as they are needed. We can see any module's dependencies by looking at its first line, making it easier to understand, maintain, and test. And Require helps with view composition, the practice of building up larger views from smaller, potentially reusable view parts.
+Require saves us from having to write lots of script tags and list them in the right order. Instead of loading all JavaScript files before the app starts - even scripts we may never use - Require can load scripts dynamically as they are needed. We can see any module's dependencies by looking at its first line, making it easier to understand, maintain, and test. And Require helps with view composition, the practice of building up larger views from smaller, potentially reusable view parts.
 
 These capabilities came with a cost. We added the *require.js* library. We added a *main.js* for bootstrapping. We extracted the *view.html* from *index.html*. We increased the number of files by two (66%) and increased the concept count substantially. We've dug into our "complexity budget".
 

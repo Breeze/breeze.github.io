@@ -11,7 +11,7 @@ Breeze clients communicate with any remote service that speaks HTTP and JSON.
 ## Breeze Client Technologies
 <p>
    <a style="display:inline-block;float:left;margin-right:7%" href="/doc-js" title="BreezeJS">
-   <img src="/images/logos/BreezeJsB.png" alt="BreezeJs" width="100">
+   <img src="/images/logos/BreezeJsB.png" alt="BreezeJS" width="100">
    </a>&nbsp; 
    <a style="display:inline-block;margin-right:7%" href="/doc-cs" title="BreezeSharp">
    <img src="/images/logos/BreezeSharpB.png" alt="BreezeSharp" width="100">

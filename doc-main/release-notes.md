@@ -218,7 +218,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 - Breeze samples in breeze.js.samples are now self-contained. (i.e. no other repositories are needed to run these samples.).
 - Reduced memory footprint for entities retrieved via OData. 
 - Improved Breeze OData/WebApi documentation. see: http://www.breezejs.com/documentation/odata-server
-- Javascript "use strict" now applied globally to all breeze libs.
+- JavaScript "use strict" now applied globally to all breeze libs.
 	
 #### Bugs
 - D2574 - Fixed multiple bugs related to using Breeze with Microsoft's WebApiOData.
