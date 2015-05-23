@@ -1,12 +1,13 @@
 /* only used on the download page */
 
-
-.download-intro a {
-    margin-bottom:40px
+.download-intro {
+    margin-top: 15px;
+    margin-bottom:30px;
+    font-size:18px;
 }
 
 .download-intro a {
-    font-size:18px;
+    display:block;
 }
 
 .download-boxes, {
