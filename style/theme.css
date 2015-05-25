@@ -34,6 +34,10 @@ a.navmenu-brand { color: #ffffff; }
     color: #f0c000;
 }
 
+.navmenu-default .btn-group.open a:hover {
+  background-color: #215572;
+}
+
 .navmenu-default .navmenu-nav > .active > a,
 .navmenu-default .navmenu-nav > .active > .btn-group,
 .navmenu-default .navmenu-nav.dropdown-menu > .active > a {
@@ -45,6 +49,10 @@ a.navmenu-brand { color: #ffffff; }
 .navmenu-default .navmenu-nav > .active > .btn-group > button > .caret {
     color: #555555;
     background-color: #ffffff;
+}
+
+.navmenu-nav .dropdown .btn-group a {
+    text-decoration: none;
 }
 
 .dropdown .btn-group .dropdown-toggle {
