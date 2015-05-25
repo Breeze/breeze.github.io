@@ -1,5 +1,5 @@
 ---
-layout: doc-js
+layout: doc-cool-breezes
 ---
 #Presenting a Many-to-Many association with Checkboxes in Breeze and Angular
 

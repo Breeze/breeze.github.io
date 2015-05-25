@@ -1,5 +1,5 @@
 ---
-layout: doc-js
+layout: doc-cool-breezes
 ---
 <h1>
 	Lookup Lists</h1>

@@ -1,5 +1,5 @@
 ---
-layout: doc-js
+layout: doc-cool-breezes
 ---
 <h1>
 	Multiple EntityManagers</h1>

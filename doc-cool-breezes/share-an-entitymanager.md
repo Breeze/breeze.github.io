@@ -1,5 +1,5 @@
 ---
-layout: doc-js
+layout: doc-cool-breezes
 ---
 <h2>
 	<a name="SingleManagerApp"></a>Share a single EntityManager</h2>

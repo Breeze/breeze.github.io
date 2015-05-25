@@ -1,0 +1,9 @@
+title: Cool Breezes
+menuitems:
+  - { link: share-an-entitymanager.html, title: Share an EntityManager }
+  - { link: multiple-entitymanagers.html, title: Multiple EntityManagers }
+  - { link: concurrent-saves.html, title: Concurrent saves }
+  - { link: lookup-lists.html, title: Lookup lists }
+  - { link: import-save-results.html, title: Import save results }
+  - { link: knockout-circular-refs.html, title: Knockout circular references }
+  - { link: presenting-many-to-many.html, title: Presenting many-to-many }
