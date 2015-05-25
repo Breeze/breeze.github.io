@@ -27,7 +27,8 @@ html, body {
   width: 220px;
 }
 
-.navmenu-nav.dropdown-menu {
+.navmenu-nav.dropdown-menu,
+.navmenu-nav .dropdown .btn-group {
     width: 219px;
 }
 
