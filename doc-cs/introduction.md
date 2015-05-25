@@ -4,7 +4,7 @@ layout: doc-cs
 
 # Introduction
 
-**Breeze.sharp** is a .NET library that helps you manage data in rich client applications. If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your .NET client, Breeze is for you. **BreezeSharp** also has a sister product, **BreezeJs** that is a Javascript client library with exactly the same capabilities. Both clients are compatible with any 'Breeze' service.
+**Breeze.sharp** is a .NET library that helps you manage data in rich client applications. If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your .NET client, Breeze is for you. **BreezeSharp** also has a sister product, **BreezeJS** that is a JavaScript client library with exactly the same capabilities. Both clients are compatible with any 'Breeze' service.
 
 ### Headline features
 

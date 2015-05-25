@@ -53,7 +53,7 @@ If there is a public method whose name matches the resource name in the servlet 
 
 The 'Named' query below would be called from a breeze client to return a list of customers the 'expand' to include the Orders associated with these customers will be added on the server. 
 
-Javascript client: 
+JavaScript client: 
 
     var q = EntityQuery.from("CustomersAndOrders").where("companyName", "startsWith", "P");
     myEntityManager.executeQuery(q).then(...);
@@ -79,7 +79,7 @@ Java Servlet:
 
 he BreezeControllerServlet will automatically route and handle any servlet requests that the result of client *SaveChanges* operations, i.e. any javascript operations that look like
 
-Javascript client:
+JavaScript client:
 
     myEntityManager.saveChanges(...).then(...);
 
@@ -91,7 +91,7 @@ This involves simply naming a method in your servlet subclass with the same name
 
 In the example below, we perform a standard save plus the addition of an additional comment record added for each save operation performed.
 
-Javascript client:
+JavaScript client:
 
     var so = new SaveOptions({ resourceName: "SaveWithComment", tag: "some additional info" });
     em.saveChanges(null, so).then(...)

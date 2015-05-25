@@ -18,7 +18,7 @@ Breeze offers several <a href="http://nuget.org/" target="_blank">NuGet</a> pack
 
 - *Breeze.Server.ContextProvider* - If you manage data access by some means other than Entity Framework or NHibernate. The EF and NH packages depend upon this one.
 
->Note that these server side nugets are actually EXACTLY the same nugets used by the Breeze.Js (javascript) client.  Any Breeze client (.NET or Javascript) should be able to talk to any Breeze server, regardless of technology.  
+>Note that these server side nugets are actually EXACTLY the same nugets used by the Breeze.Js (javascript) client.  Any Breeze client (.NET or JavaScript) should be able to talk to any Breeze server, regardless of technology.  
 
 ### Which projects use which Nugets? 
 

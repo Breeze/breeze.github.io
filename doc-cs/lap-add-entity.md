@@ -5,7 +5,7 @@ layout: doc-cs
 <h1>
 	Add a new entity</h1>
 	
-<h2> - TBD - This page need to be converted to Breeze # syntax - it uses BreezeJs syntax right now. </h2>
+<h2> - TBD - This page need to be converted to Breeze # syntax - it uses BreezeJS syntax right now. </h2>
 		
 <p class="note">The code snippets on this page are in the <a href="/samples/todo">Breeze Todo Sample App</a>.</p>
 <p>When the user enters a description in the big &ldquo;Todo app&rdquo; textbox and hits <strong>Enter</strong>, the screen&rsquo;s <em>ViewModel</em> calls the dataservice&rsquo;s <span class="codeword">createTodo</span> method, passing along a hash of initial values that are partly derived from user input (the big textbox, the state of the &quot;Mark all completed&quot; checkbox):</p>

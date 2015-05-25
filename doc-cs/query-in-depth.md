@@ -57,7 +57,7 @@ You can query these endpoints by adding the `.WithParameters(...)` clause to you
 
 >This is probably how you will query servers that are not written with .NET technologies.
 
-<p class="note">Brian Noyes has an <a href="http://briannoyes.net/2014/02/13/passing-complex-query-parameters-with-breeze/" target="_blank" title="Passing Complex Query Parameters with Breeze"><strong>excellent blog post</strong></a> describing <code>WithParameters</code> queries in great detail.  His examples are in Javascript but the same API is present in the Breeze.Sharp product.</p>
+<p class="note">Brian Noyes has an <a href="http://briannoyes.net/2014/02/13/passing-complex-query-parameters-with-breeze/" target="_blank" title="Passing Complex Query Parameters with Breeze"><strong>excellent blog post</strong></a> describing <code>WithParameters</code> queries in great detail.  His examples are in JavaScript but the same API is present in the Breeze.Sharp product.</p>
 
 Web API Example:
 

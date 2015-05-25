@@ -1,17 +1,17 @@
 ---
 layout: doc-js
 redirect_from: "/old/documentation/.html"
-title: Javascript client
+title: JavaScript client
 ---
 
-# BreezeJs
+# BreezeJS
 
 <a class="logo-inline" href="/doc-js" title="BreezeJS">
-   <img src="/images/logos/BreezeJsB.png" alt="BreezeJs" width="100">
+   <img src="/images/logos/BreezeJsB.png" alt="BreezeJS" width="100">
 </a> 
 
-Welcome to **BreezeJs** by [**IdeaBlade**](http://www.ideablade.com "IdeaBlade website"), the data management library 
-for developers of rich client applications written in **Javascript**.
+Welcome to **BreezeJS** by [**IdeaBlade**](http://www.ideablade.com "IdeaBlade website"), the data management library 
+for developers of rich client applications written in **JavaScript**.
 
 If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
 
@@ -19,7 +19,7 @@ If you store data in a database, query and save those data as complex object gra
 
 {% include support-frag.html %}
  
-## BreezeJs 
+## BreezeJS 
 
 **BreezeJS is a JavaScript library that helps you manage data in rich client applications**. If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
 

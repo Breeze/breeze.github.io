@@ -27,7 +27,7 @@ Most samples get their data from SQL Server Compact  4.0 databases with filename
  
 While many of our samples are implemented in this fashion today, Breeze servers do not require .NET, Visual Studio, Entity Framework, SQL Server, or ASP.NET. Breeze servers are not handcuffed to Microsoft. 
 
-However, the Breeze.sharp client IS a .NET client.  As an alternative, the Breeze.Js product provides the same client side functionality and much the same API for Javascript and HTML5/Browser development.  Any server that *Breeze.sharp* can talk to, *Breeze.Js* can talk to as well, as vice versa. 
+However, the Breeze.sharp client IS a .NET client.  As an alternative, the Breeze.Js product provides the same client side functionality and much the same API for JavaScript and HTML5/Browser development.  Any server that *Breeze.sharp* can talk to, *Breeze.Js* can talk to as well, as vice versa. 
 
 We intend to demonstrate other back-ends as well as show IDEs other than Visual Studio. Your feedback on UserVoice will help us prioritize these plans.
 
