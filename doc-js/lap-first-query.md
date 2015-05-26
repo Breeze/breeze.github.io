@@ -106,11 +106,11 @@ function querySucceeded(data) {
 }
 
 
-And just like that, the screen fills with *Todos*.  We'll discuss how *that* happens when we peek inside the entity <a href="/documentation/databinding-knockout">later in this tour</a>. Before we do, let's **<a href="/documentation/query-filter">try another query</a>**.
+And just like that, the screen fills with *Todos*.  We'll discuss how *that* happens when we peek inside the entity <a href="/doc-js/databinding-knockout">later in this tour</a>. Before we do, let's **<a href="/doc-js/query-filter">try another query</a>**.
 
 ##Notes
 
-<a name="note 1"></a>[1] Breeze appends the "breeze/todos" service name string to the "site of origin", probably "http://localhost:26843/" if you're playing along at home. The *EntityManager *will send requests to "http://localhost:26843/breeze/todos"; the receiving Web API service routes the request to the TodosController on the server and then the server-side magic happens. You can <a href="/documentation/web-api-controller">read about this controller</a> later.
+<a name="note 1"></a>[1] Breeze appends the "breeze/todos" service name string to the "site of origin", probably "http://localhost:26843/" if you're playing along at home. The *EntityManager *will send requests to "http://localhost:26843/breeze/todos"; the receiving Web API service routes the request to the TodosController on the server and then the server-side magic happens. You can <a href="/doc-js/web-api-controller">read about this controller</a> later.
 
 <a name="note 2"></a>[2] Promises are a technique for managing sequences of asynchronous method calls.
 

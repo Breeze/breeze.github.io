@@ -16,11 +16,11 @@ The "Customer" is also an **entity**, a long-lived object with a permanent key. 
 
 #EntityType
 
-Every Breeze entity instance has an <code>entityType</code> property that returns an <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank" title="EntityType API"><code>EntityType</code></a> object which is the <a href="/documentation/metadata.html" title="Metadata documentation">metadata</a> that describe its properties and other facts about the type.
+Every Breeze entity instance has an <code>entityType</code> property that returns an <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank" title="EntityType API"><code>EntityType</code></a> object which is the <a href="/doc-js/metadata.html" title="Metadata documentation">metadata</a> that describe its properties and other facts about the type.
 
 <pre class="brush:jscript;">
 var type = someCustomer.entityType;
-
+</pre>
 
 #EntityAspect
 
@@ -30,7 +30,7 @@ An object becomes a Breeze entity when it acquires its *EntityAspect *which it d
 
 <ul>
 	<li>first enters the cache as a result of a query or import **OR**
-	<li>is created with the <a href="/documentation/creating-entities" target="_blank">*EntityType.createEntity*</a> factory method **OR**
+	<li>is created with the <a href="/doc-js/creating-entities" target="_blank">*EntityType.createEntity*</a> factory method **OR**
 	<li>is explictly added or attached to an EntityManager
 </ul>
 
@@ -104,6 +104,7 @@ You can test the value of an EntityState enumeration by comparing its name with 
   if (state === breeze.EntityState.Modified) {/* ... */}; // better
   if (state.IsModified())  {/* ... */};                   // best
   if (state.IsAddedModifiedorDeleted())  {/* ... */};     // often useful
+</pre>
 
 ###EntityState transitions
 
@@ -178,7 +179,7 @@ As things happen to an entity, Breeze updates its *EntityState* automatically. H
 			 
 			</td>
 			<td style="vertical-align: top; width: 280px;">
-			<a href="/documentation/creating-entities" target="_blank">Create a new entity</a>
+			<a href="/doc-js/creating-entities" target="_blank">Create a new entity</a>
 			</td>
 			<td style="vertical-align: top; width: 100px;">
 			Detached
@@ -219,7 +220,7 @@ A detached entity does not belong to an *EntityManager*. It's still an entity; i
 
 A detached entities should not be used. Either attach it to an *EntityManager *or release all references to it ... and let it be garbage collected.
 
-A detached entity is unreliable. It still has data values and you can still set them. But its <a href="/documentation/navigation-properties" target="_blank">navigation properties</a> are not dependable and other entity features may behave unexpectedly. You can't tell by inspection whether a detached entity has corresponding data in remote storage.
+A detached entity is unreliable. It still has data values and you can still set them. But its <a href="/doc-js/navigation-properties" target="_blank">navigation properties</a> are not dependable and other entity features may behave unexpectedly. You can't tell by inspection whether a detached entity has corresponding data in remote storage.
 
 New entities start as detached entities. You might have to create them where no *EntityManager *is available. More likely, you have to initialize some of the new entity's values before you can add it to an *EntityManager*. For example, because all entities in cache must have unique keys, if the entity key is client-determined (as opposed to store-generated), you must set the key to a unique value before you can attach the entity to an *EntityManager*.
 
@@ -266,7 +267,7 @@ Deleting an entity begins with an *EntityState* change. Call ***setDeleted()*** 
 
 <pre class="brush:jscript;">
   someEntity.entityAspect.setDeleted(); // mark for deletion
-
+</pre>
 
 *<span class="codeword">setDeleted</span> *does not destroy the object locally nor does it remove the entity from the database. The entity simply remains in cache in a "Deleted" state ... as changed and added entities do ... until you save. A successful save deletes the entity from the database and removes it from cache.
 
@@ -279,7 +280,7 @@ Once you've changed an entity, it stays in a changed state ... even if you manua
   var oldDescription = todo.Description(); // assume existing "Unchanged" entity
   todo.Description("Something new");       // entityState becomes "Modified"
   todo.Description(oldDescription);        // entityState is still "Modified"
-
+</pre>
 
 Call *rejectChanges *to cancel pending changes, revert properties to their prior values, and set the *entityState *to "Unchanged".
 
@@ -289,12 +290,13 @@ Call *rejectChanges *to cancel pending changes, revert properties to their prior
   todo.Description("Something new");      // entityState becomes "Modified"
   todo.entityAspect.rejectChanges();      // entityState restored to "Unchanged"
                                           // todo.Description() === oldDescription
-
+</pre>
 
 You can also call *rejectChanges* on the EntityManager to cancel and revert pending changes for every entity in cache.
 
 <pre class="brush:jscript;">
   manager.rejectChanges(); // revert all pending changes in cache
+</pre>
 
 ###Original values
 
@@ -308,7 +310,7 @@ Here's a function to get those keys:
       for (var name in entity.entityAspect.originalValues) { names.push(name); }
       return names;
   }
-
+</pre>
 
 Breeze replaces *entityAspect.originalValues* with a new empty hash when any operation restores the entity to the "Unchanged" state. A successful save, *rejectChanges*, *setUnchanged*, and *acceptChanges *all reset the *originalValues* hash.
 
@@ -320,7 +322,7 @@ Breeze creates entities in accordance with the model library you selected for yo
 <pre class="brush:jscript;">
   entity.Name.subscribe(
       function (newValue) { /* ... */);});
-
+</pre>
 
 Each model library has its own property change subscription mechanism.
 
@@ -330,7 +332,7 @@ Breeze also has a *propertyChanged *event that supplements the model library off
 <pre class="brush:jscript;">
  entity.entityAspect.propertyChanged
        .subscribe(function (changeArgs) { /* ... */);});
-
+</pre>
 
 The properties of the *<span class="codeword">changeArgs</span>*<span class="codeword"> </span>are
 
@@ -348,11 +350,11 @@ Capture the subscription token if you need to unsubscribe later.
                     .subscribe(function (changeArgs) { /* ... */);});
   // ... time passes ...
   entity.entityAspect.propertyChanged.unsubscribe(token);
-
+</pre>
 
 ###Limitations
 
-Breeze only monitors changes to properties identified in the metadata for this *EntityType*. These properties - mapped and unmapped - are the "*Breeze-tracked entity properties*" mentioned earlier. Breeze doesn't track properties that you add with an entity initialization function (see <a href="/documentation/extending-entities">Extending Entities</a>) or that you patch into the entity later in its lifetime.
+Breeze only monitors changes to properties identified in the metadata for this *EntityType*. These properties - mapped and unmapped - are the "*Breeze-tracked entity properties*" mentioned earlier. Breeze doesn't track properties that you add with an entity initialization function (see <a href="/doc-js/extending-entities">Extending Entities</a>) or that you patch into the entity later in its lifetime.
 
 Nor does Breeze raise the *propertyChanged *event when an *EntityAspect *property changes. For example, the *propertyChanged *event does not fire when the <a href="#EntityState">*entityState*</a> changes.
 
@@ -362,9 +364,9 @@ Breeze typically raises *propertyChanged *for each property individually. Some o
 
 ##<a name="ValidateEntity"></a>ValidateEntity
 
-Breeze properties aren't just observable. They can validate changes based on rules registered in metadata. Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well. See the <a href="/documentation/validation" target="_blank">Validation topic</a> for details.
+Breeze properties aren't just observable. They can validate changes based on rules registered in metadata. Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well. See the <a href="/doc-js/validation" target="_blank">Validation topic</a> for details.
 
-In brief, Breeze evaluates validation rules at prescribed times. It can also validate on demand. Call the *entityAspect.validateEntity* to validate the entire entity which means every property validation rule as well as every entity-level validation rule. You can validate a single property (all of its rules) by calling *entityAspect.<a href="/doc-js/api-docs/classes/EntityAspect.html#method_validateProperty" target="_blank">validateProperty</a>*, passing in the name of the property and an optional context. Again, see the <a href="/documentation/validation" target="_blank">Validation topic</a> for details.
+In brief, Breeze evaluates validation rules at prescribed times. It can also validate on demand. Call the *entityAspect.validateEntity* to validate the entire entity which means every property validation rule as well as every entity-level validation rule. You can validate a single property (all of its rules) by calling *entityAspect.<a href="/doc-js/api-docs/classes/EntityAspect.html#method_validateProperty" target="_blank">validateProperty</a>*, passing in the name of the property and an optional context. Again, see the <a href="/doc-js/validation" target="_blank">Validation topic</a> for details.
 
 A validation rule either passes or fails. If it passes, it returns null. If it fails, it returns a *<a href="/doc-js/api-docs/classes/ValidationError.html" target="_blank">ValidationError</a>* describing the problem.
 
@@ -378,7 +380,7 @@ Breeze raises the *EntityAspect*'s ***<span class="codeword">validationErrorsCha
 <pre class="brush:jscript;">
   entity.entityAspect
        .validationErrorsChanged.subscribe(handleValidationErrorChanged);
-
+</pre>
 
 Breeze calls the handler with an *<span class="codeword">errorsChangedArgs</span> *that tells you what property changed, the *ValidationErrors *that were added, and the *ValidationErrors * that were removed.
 
@@ -391,7 +393,7 @@ This last category is a small menagerie of miscellaneous *EntityAspect *members
 	<li>***entityManager ***- the *EntityManager *to which this entity is attached ... or was attached. It's null if the entity is new and not yet added to a manager.
 	<li>***getKey* **- a function returning the entity's *<a href="/doc-js/api-docs/classes/EntityKey.html" target="_blank">EntityKey</a>*. A key is an object that uniquely identifies the entity in cache and in remote storage. The key is not a simple JavaScript value. It's an object the identifies the type of the entity and the value ... or values ... of the key; Breeze supports entities with composite keys.
 	<li>***isBeingSaved* **- a property that returns *true *if this entity is one in a batch of entities being saved and the save operation is still in progress. Your application may need to prevent further changes to the entity until the save operation completes, successfully or not.
-	<li>***loadNavigationProperty* **- you can download related entities, on demand, by calling *loadNavigationProperty *as described in the <a href="/documentation/navigation-properties" target="_blank">Navigation Properties</a> topic.
+	<li>***loadNavigationProperty* **- you can download related entities, on demand, by calling *loadNavigationProperty *as described in the <a href="/doc-js/navigation-properties" target="_blank">Navigation Properties</a> topic.
 </ul>
 
 #Breeze properties on the entity itself
@@ -404,8 +406,9 @@ You typically access the breeze entity infrastructure through the *entityAspect*
   var customerType = manager.metadataStore.getEntityType("Customer");
   var customer = customerType.createEntity();
   // customer.entityType === customerType 
+</pre>
 
-***getProperty ***- a function that returns the value of a property<br />
+***getProperty ***- a function that returns the value of a property
 ***setProperty ***- a function that sets a property value
 
 <pre class="brush:jscript;">
@@ -413,6 +416,7 @@ You typically access the breeze entity infrastructure through the *entityAspect*
   customer.setProperty("CompanyName", setName);
   var getName = customer.getProperty("CompanyName");
   // getName === setName
+</pre>
 
 With *getProperty *and *setProperty*, you can write utilities to access the properties of any Breeze entity. The model library won't matter. An entity could be implemented with the Knockout model library, the backbone model library, the angular model library, or a custom model library. Each library has its own distinctive property accessor methodology. You can ignore these differences.
 

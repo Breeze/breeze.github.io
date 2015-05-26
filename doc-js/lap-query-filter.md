@@ -6,7 +6,7 @@ redirect_from: "/old/documentation/.html"
 
 > Most of the code snippets on this page are in the <a href="/samples/todo">Breeze Todo App</a>; a few are in the **basicTodoTests **module of the <a href="/samples/doccode">DocCode teaching tests</a>.
 
-Our <a href="/documentation/first-query-0">first query</a> returned every Todo in the database [<a href="#note 1">1</a>].  That's fine for a short list of Todos; not so great if we're querying for orders of a large company. We need a query that selects a more manageable number of results, preferably the ones that interest the user.
+Our <a href="/doc-js/first-query-0">first query</a> returned every Todo in the database [<a href="#note 1">1</a>].  That's fine for a short list of Todos; not so great if we're querying for orders of a large company. We need a query that selects a more manageable number of results, preferably the ones that interest the user.
 
 In this app, we can archive the Todos that we want to keep but look at rarely. The *<span class="codeword">getAllTodos</span> *method in the *dataservice* has an "IncludeArchived" option. If the flag is false, the code adds a "where" clause to filter exclusively for *Todos *that are active (not archived).
 
@@ -87,11 +87,11 @@ The EntityManager only keeps one copy of the "Water" Todo entity. It knows that 
 
 The EntityManager doesn't replace an entity object in cache after a query. That object stays right where it is. Instead, the manager updates the entity's property values in place from the data in the query results [<a href="#note 4">4</a>] and the HTML label on screen immediately changes to "Wine".
 
-The label changes because it is <a href="/documentation/databinding-knockout">bound with Knockout</a> to the entity's "Description". "Description" is a Knockout observable property so any change to its value, whether made by the user or by Breeze, raises a *property changed* notification that updates all of its data bound screen controls.
+The label changes because it is <a href="/doc-js/databinding-knockout">bound with Knockout</a> to the entity's "Description". "Description" is a Knockout observable property so any change to its value, whether made by the user or by Breeze, raises a *property changed* notification that updates all of its data bound screen controls.
 
 ##Querying the local cache
 
-The Breeze query language is capable of answering many complex questions. Check out the <a href="/documentation/query-examples">query examples</a> for an inventory of possibilities.
+The Breeze query language is capable of answering many complex questions. Check out the <a href="/doc-js/query-examples">query examples</a> for an inventory of possibilities.
 
 So far we've sent every query to the server to fetch data from a far. You can query the cache in the same way using the same query language. In fact, you can use the same query:
 
@@ -103,7 +103,7 @@ The manager executes the query synchronously and the results are available immed
 
 ##Next up ... creating entities
 
-Another way that entities enter the cache is by **<a href="/documentation/add-new-entity">adding them directly</a>**.
+Another way that entities enter the cache is by **<a href="/doc-js/add-new-entity">adding them directly</a>**.
 
 ##Notes
 
