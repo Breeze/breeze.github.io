@@ -1,7 +1,10 @@
 ---
 layout: samples
 ---
-<img src="/images/samples/BreezeZumo.png" alt="Todo App with Azure" style="float:left; height:70px; margin-right: 8px;"/><h1>The Breeze/Angular Todo-Zumo App</h1>
+
+# The Breeze/Angular Todo-Zumo (Azure) App
+
+<img src="/images/samples/BreezeZumo.png" alt="Todo App with Azure" style="float:left; height:70px; margin-right: 8px;"/>
 
 "**todo-zumo**" is a simple **one-screen Angular Todo app**  that demonstrates features of a Breeze + Angular.
 
