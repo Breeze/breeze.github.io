@@ -1,7 +1,6 @@
 ---
 layout: doc-js
 redirect_from: "/old/documentation/introduction.html"
-title: JavaScript client
 ---
 
 # BreezeJS

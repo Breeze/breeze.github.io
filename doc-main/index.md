@@ -1,6 +1,5 @@
 ---
 layout: doc-main
-title: Introduction
 redirect_from: "/" 
 ---
 # Rich Data Management for a variety of technologies  
