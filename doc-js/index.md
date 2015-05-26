@@ -102,9 +102,9 @@ Breeze resolves this query into an HTTP GET request to a persistence service end
 
 The OData format would look like this
 
-<p style="font-family: Consolas,Courier,monospace; font-size: 1em; background-color: ghostwhite;">http://www.example.com/**api/Northwind/Customers?$filter=startswith(CompanyName,'C') eq true&amp;$orderby=CompanyName**
+       http://www.example.com/**api/Northwind/Customers?$filter=startswith(CompanyName,'C') eq true&amp;$orderby=CompanyName**      
 
->The OData query syntax is just one part of the OData cross-vendor, open standard. It can be interpreted by a wide variety of server technologies that may be otherwise ignorant of OData protocols.
+> The OData query syntax is just one part of the OData cross-vendor, open standard. It can be interpreted by a wide variety of server technologies that may be otherwise ignorant of OData protocols.
 
 The server returns query results as JSON. The Breeze `EntityManager` reshapes the JSON data into entities and merges them into its cache. Finally it passes these entities to the promise object which forwards them to the caller's success callback (the `querySucceeded` method in the example).
 
@@ -121,7 +121,7 @@ Notice that we use the same query syntax - the same query object - to search bot
 
 You can write complex queries in the Breeze query language. For example, a query can reference related entities as when we filter for customers who have placed an order in California. It can combine the filtered customers with their orders in the same result payload. It can project a result that flattens the Customer-Orders graph into a three-valued object: *CustomerId*, *CustomerName*, and *OrderCount*. 
 
->See [the documentation](query-examples) for more examples.
+> See [the query examples documentation](/doc-js/query-examples.html) for more examples.
 
 ## Save
 
