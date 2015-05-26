@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/databinding-knockout.html"
 ---
 #	Data binding with Knockout
 

@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/add-new-entity.html"
 ---
 <h1>
 	Add a new entity</h1>
@@ -64,16 +64,11 @@ var todoType = manager.metadataStore.getEntityType(&quot;TodoItem&quot;);</pre>
 <p>We&rsquo;ll cover the fundamentals now and leave details and nuances for a later.</p>
 <p>The <span class="codeword">createEntity</span> first invokes a Breeze default parameterless constructor to make the new Todo object [<a href="#note 2">2</a>]. The new Todo has the following characteristics:</p>
 <ul>
-	<li>
-		a type, accessible from its <span class="codeword">entityType</span> property.</li>
-	<li>
-		a key property</li>
-	<li>
-		an observable property for every simple data property defined for the type</li>
-	<li>
-		an observable array for every collection property (typically a navigation property)</li>
-	<li>
-		a Breeze entityAspect property for access to the breezy entity-ness inside.</li>
+	<li>		a type, accessible from its <span class="codeword">entityType</span> property.</li>
+	<li>		a key property</li>
+	<li>		an observable property for every simple data property defined for the type</li>
+	<li>		an observable array for every collection property (typically a navigation property)</li>
+	<li>		a Breeze entityAspect property for access to the breezy entity-ness inside.</li>
 </ul>
 <p>We&rsquo;ll look at the properties first and examine the <span class="codeword">entityAspect</span> later when we take up <a href="/doc-js/lap-changetracking.html">Breeze change tracking</a>.</p>
 <h2>
@@ -100,15 +95,13 @@ var todoType = manager.metadataStore.getEntityType(&quot;TodoItem&quot;);</pre>
 <p>Breeze property also needs an implementation to play well with the data binding frameworks that greatly simplify development and maintenance of interactive UIs.</p>
 <p>There are two basic approaches to presenting data to users:</p>
 <ol>
-	<li>
-		write code to push values into HTML controls and pull changed values back out;</li>
-	<li>
-		bind controls to data properties and rely on the binding framework to move values back and forth automatically when either control or data values change.</li>
+	<li>		write code to push values into HTML controls and pull changed values back out;</li>
+	<li>		bind controls to data properties and rely on the binding framework to move values back and forth automatically when either control or data values change.</li>
 </ol>
 <p>A helpful <a href="http://weblogs.asp.net/dwahlin/archive/2012/07/27/The-JavaScript-Cheese-is-Moving_3A00_-Data_2D00_Oriented-vs.-Control_2D00_Oriented-Programming.aspx">article by Dan Wahlin</a> describes and compares these rival techniques. He makes a pretty good case for data binding ... and we agree</p>
 <p>If you still prefer the push/pull, control-oriented style, you can use Breeze entity properties that way. True, plain old JavaScript properties would have been fine; but Breeze properties won&#39;t get in your way.</p>
 <p>If you prefer data binding, the entity data properties must be implemented in a way that supports that style. They have to raise property-changed events when their data change and the data binding framework you choose must be able to hear those events in order to update the screen. In other words, the properties must be &ldquo;observable&rdquo; by the data binding framework.</p>
-<p>Breeze entities are observable properties. They&#39;re designed to be observable by a wide range of model libraries. As it happens, the Todo sample was built for UI data binding with <a href="http://knockoutjs.com/">Knockout</a>, a popular data binding library that we&#39;ll explore in the <strong><a href="/documentation/databinding-knockout.html">next topic</a></strong>.</p>
+<p>Breeze entities are observable properties. They&#39;re designed to be observable by a wide range of model libraries. As it happens, the Todo sample was built for UI data binding with <a href="http://knockoutjs.com/">Knockout</a>, a popular data binding library that we&#39;ll explore in the <strong><a href="/doc-js/lap-knockout.html">next topic</a></strong>.</p>
 <h2>
 	Notes</h2>
 <p><a name="note 1"></a>[1] A typical application works almost exclusively with entities in an EntityManager cache in order to leverage the manager&rsquo;s capabilities.Entities can exist outside of a cache in a &ldquo;detached&rdquo; state. Learn about that later in this documentation. As a general rule, you want to work with entities that are in an EntityManager cache in order to take advantage of facilities that an EntityManager provides. For example, an entity must be in cache before it can be saved to the persistence service.</p>
