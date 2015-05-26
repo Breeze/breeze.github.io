@@ -8,3 +8,4 @@
 6) Document new site structure
    1) add caveat about files needing to be UTF8 without BOM
    2) file names on GitHub pages are case sensitive!
+7) Side nav bar sizing   

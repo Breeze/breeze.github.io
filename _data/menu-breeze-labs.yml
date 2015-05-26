@@ -1,4 +1,5 @@
 title: Breeze Labs
+shorttitle: Breeze Labs
 menuitems:
   - { link: directives-validation.html, title: AngularJS Validation directive}
   - { link: directives-float.html, title: AngularJS Float directive }

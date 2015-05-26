@@ -6,9 +6,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/style/favicon.png">
-
-    <title>Breeze - {{page.title}}</title>
-
+{% capture tmp %}
+{%   for menuitem in menu.menuitems %}
+{%     assign pagelink = page.url | split: '/' | last  %}
+{%     if pagelink == menuitem.link %}
+{%       assign title = menuitem.title  %}
+{%     endif %}
+{%   endfor %}
+{% endcapture %}{% assign tmp = nil %}
+{% if title == null %}
+{%   if page.title == null %}
+    <title>Breeze | {{menu.title}}</title>
+{%   else %}
+    <title>Breeze | {{menu.shorttitle}} | {{page.title}}</title>
+{%   endif %}
+{% else %}
+    <title>Breeze | {{menu.shorttitle}} | {{title}}</title>
+{% endif %}
     <!-- Bootstrap core CSS -->
     <link href="/style/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/style/jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet">

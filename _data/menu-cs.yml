@@ -1,4 +1,5 @@
 title: .NET C# Client
+shorttitle: .NET/C#
 menuitems: 
   - { link: "introduction.html", title: Introduction }
   - { link: "features.html", title: Features }

@@ -1,4 +1,5 @@
 title: Samples
+shorttitle: Samples
 menuitems:
   - { link: "about.html", title: How to find/download them }
   - { link: "about-todo.html", title: About the ToDo samples, isparent: true }

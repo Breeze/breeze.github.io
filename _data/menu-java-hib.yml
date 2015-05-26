@@ -1,4 +1,5 @@
 title: Java server w/ Hibernate
+shorttitle: Java/Hibernate
 menuitems: 
   - { link: breeze-hibernate.html, title: Breeze with hibernate }
   - { link: query-processor.html, title: Processing queries }

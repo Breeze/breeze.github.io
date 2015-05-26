@@ -1,4 +1,5 @@
 title: .NET Server w/ Entity Framework or NHibernate
+shorttitle: .NET
 menuitems: 
   - { link: "nuget-packages.html", title: Start with Nuget }
   - { link: "hosting-in-aspnet.html", title: Hosting in ASP.NET }
