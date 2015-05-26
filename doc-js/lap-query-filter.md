@@ -65,11 +65,11 @@ var predicate = p1.and(p2);
 var query = new EntityQuery("Todos").where(predicate);
 
 
-In addition to 'and', there are also 'or' and 'not' operators for predicates. You can learn more about them in the API docs for <a href="/sites/all/apidocs/classes/Predicate.html">Predicates</a>.
+In addition to 'and', there are also 'or' and 'not' operators for predicates. You can learn more about them in the API docs for <a href="/doc-js/api-docs/classes/Predicate.html">Predicates</a>.
 
 ##Filter operator enumeration
 
-We wrote "==" to filter for every Todo whose "*IsArchived*" property equals *false.* Breeze supports a variety of other comparison operators, all of which can be expressed as strings. Maybe you feel queesy about magic strings such as "==". Breeze offers an alternative, a <a href="/sites/all/apidocs/classes/FilterQueryOp.html" target="_blank">FilterQueryOp </a>enumeration. Intellisense for that enumeration reveals the available comparison operators and can eliminate the spelling mistakes that lead to runtime JavaScript errors.
+We wrote "==" to filter for every Todo whose "*IsArchived*" property equals *false.* Breeze supports a variety of other comparison operators, all of which can be expressed as strings. Maybe you feel queesy about magic strings such as "==". Breeze offers an alternative, a <a href="/doc-js/api-docs/classes/FilterQueryOp.html" target="_blank">FilterQueryOp </a>enumeration. Intellisense for that enumeration reveals the available comparison operators and can eliminate the spelling mistakes that lead to runtime JavaScript errors.
 
 We could have written the previous predicates using the *FilterQueryOp *enumeration:
 

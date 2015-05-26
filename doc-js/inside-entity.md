@@ -16,7 +16,7 @@ The "Customer" is also an **entity**, a long-lived object with a permanent key. 
 
 #EntityType
 
-Every Breeze entity instance has an <code>entityType</code> property that returns an <a href="/sites/all/apidocs/classes/EntityType.html" target="_blank" title="EntityType API"><code>EntityType</code></a> object which is the <a href="/documentation/metadata.html" title="Metadata documentation">metadata</a> that describe its properties and other facts about the type.
+Every Breeze entity instance has an <code>entityType</code> property that returns an <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank" title="EntityType API"><code>EntityType</code></a> object which is the <a href="/documentation/metadata.html" title="Metadata documentation">metadata</a> that describe its properties and other facts about the type.
 
 <pre class="brush:jscript;">
 var type = someCustomer.entityType;
@@ -24,7 +24,7 @@ var type = someCustomer.entityType;
 
 #EntityAspect
 
-A Breeze entity is "self-tracking". It maintains its own entity state, and the means to change that state, in the ***<a href="/sites/all/apidocs/classes/EntityAspect.html" target="_blank" title="EntityAspect API">EntityAspect</a>*** object returned by its *entityAspect *property.
+A Breeze entity is "self-tracking". It maintains its own entity state, and the means to change that state, in the ***<a href="/doc-js/api-docs/classes/EntityAspect.html" target="_blank" title="EntityAspect API">EntityAspect</a>*** object returned by its *entityAspect *property.
 
 An object becomes a Breeze entity when it acquires its *EntityAspect *which it does when it
 
@@ -49,7 +49,7 @@ We'll tackle *EntityAspect*'s key features in four groups.
 
 Is the entity attached to an *EntityManager *and therefore in its cache? Has it changed? If changed, is it a new entity, a modified version of an existing entity from remote storage, or an existing entity that is marked for deletion?
 
-The *entityState *property answers these questions with a value from the *<a href="/sites/all/apidocs/classes/EntityState.html">EntityState</a>* enumeration. Here are the enumeration names and their meanings:
+The *entityState *property answers these questions with a value from the *<a href="/doc-js/api-docs/classes/EntityState.html">EntityState</a>* enumeration. Here are the enumeration names and their meanings:
 
 <table border="0" cellpadding="0" cellspacing="0">
 	<tbody>
@@ -364,13 +364,13 @@ Breeze typically raises *propertyChanged *for each property individually. Some o
 
 Breeze properties aren't just observable. They can validate changes based on rules registered in metadata. Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well. See the <a href="/documentation/validation" target="_blank">Validation topic</a> for details.
 
-In brief, Breeze evaluates validation rules at prescribed times. It can also validate on demand. Call the *entityAspect.validateEntity* to validate the entire entity which means every property validation rule as well as every entity-level validation rule. You can validate a single property (all of its rules) by calling *entityAspect.<a href="/sites/all/apidocs/classes/EntityAspect.html#method_validateProperty" target="_blank">validateProperty</a>*, passing in the name of the property and an optional context. Again, see the <a href="/documentation/validation" target="_blank">Validation topic</a> for details.
+In brief, Breeze evaluates validation rules at prescribed times. It can also validate on demand. Call the *entityAspect.validateEntity* to validate the entire entity which means every property validation rule as well as every entity-level validation rule. You can validate a single property (all of its rules) by calling *entityAspect.<a href="/doc-js/api-docs/classes/EntityAspect.html#method_validateProperty" target="_blank">validateProperty</a>*, passing in the name of the property and an optional context. Again, see the <a href="/documentation/validation" target="_blank">Validation topic</a> for details.
 
-A validation rule either passes or fails. If it passes, it returns null. If it fails, it returns a *<a href="/sites/all/apidocs/classes/ValidationError.html" target="_blank">ValidationError</a>* describing the problem.
+A validation rule either passes or fails. If it passes, it returns null. If it fails, it returns a *<a href="/doc-js/api-docs/classes/ValidationError.html" target="_blank">ValidationError</a>* describing the problem.
 
 Every *EntityAspect* maintains a *<span class="codeword">validationErrorsCollection</span>*. The Breeze validation engine adds a new *ValidationError *instance to that collection when a validation rules fails and removes an old *ValidationErrors* instance when its associated validation rule passes.
 
-You can't access the inner *<span class="codeword">validationErrorsCollection</span>* directly. You can get a copy of its contents by calling *entityAspect*.*<a href="/sites/all/apidocs/classes/EntityAspect.html#method_getValidationErrors" target="_blank">getValidationErrors</a>*. You can also add to or remove *validationError*s from the *<span class="codeword">validationErrorsCollection</span>* programmatically with the *EntityAspect *methods, *<a href="/sites/all/apidocs/classes/EntityAspect.html#method_addValidationError" target="_blank">addValidationError</a>* and *<a href="/sites/all/apidocs/classes/EntityAspect.html#method_removeValidationError" target="_blank">removeValidationError</a>*.
+You can't access the inner *<span class="codeword">validationErrorsCollection</span>* directly. You can get a copy of its contents by calling *entityAspect*.*<a href="/doc-js/api-docs/classes/EntityAspect.html#method_getValidationErrors" target="_blank">getValidationErrors</a>*. You can also add to or remove *validationError*s from the *<span class="codeword">validationErrorsCollection</span>* programmatically with the *EntityAspect *methods, *<a href="/doc-js/api-docs/classes/EntityAspect.html#method_addValidationError" target="_blank">addValidationError</a>* and *<a href="/doc-js/api-docs/classes/EntityAspect.html#method_removeValidationError" target="_blank">removeValidationError</a>*.
 
 Breeze raises the *EntityAspect*'s ***<span class="codeword">validationErrorsChanged</span> ***event when *ValidationErrors* are added or removed from the entity's *<span class="codeword">validationErrorsCollection</span>*; you can subscribe to that event:
 
@@ -389,7 +389,7 @@ This last category is a small menagerie of miscellaneous *EntityAspect *members
 <ul>
 	<li>***entity* **- a backward reference to the entity that holds this *EntityAspect*
 	<li>***entityManager ***- the *EntityManager *to which this entity is attached ... or was attached. It's null if the entity is new and not yet added to a manager.
-	<li>***getKey* **- a function returning the entity's *<a href="/sites/all/apidocs/classes/EntityKey.html" target="_blank">EntityKey</a>*. A key is an object that uniquely identifies the entity in cache and in remote storage. The key is not a simple JavaScript value. It's an object the identifies the type of the entity and the value ... or values ... of the key; Breeze supports entities with composite keys.
+	<li>***getKey* **- a function returning the entity's *<a href="/doc-js/api-docs/classes/EntityKey.html" target="_blank">EntityKey</a>*. A key is an object that uniquely identifies the entity in cache and in remote storage. The key is not a simple JavaScript value. It's an object the identifies the type of the entity and the value ... or values ... of the key; Breeze supports entities with composite keys.
 	<li>***isBeingSaved* **- a property that returns *true *if this entity is one in a batch of entities being saved and the save operation is still in progress. Your application may need to prevent further changes to the entity until the save operation completes, successfully or not.
 	<li>***loadNavigationProperty* **- you can download related entities, on demand, by calling *loadNavigationProperty *as described in the <a href="/documentation/navigation-properties" target="_blank">Navigation Properties</a> topic.
 </ul>
@@ -398,7 +398,7 @@ This last category is a small menagerie of miscellaneous *EntityAspect *members
 
 You typically access the breeze entity infrastructure through the *entityAspect* property. Breeze also injects a few more entity-oriented members into the model object's prototype. These members are visible on the entity's surface API.
 
-***entityType ***- a property that returns the Breeze <a href="/sites/all/apidocs/classes/EntityType.html" target="_blank">type information object</a>, metadata describing this type of entity.
+***entityType ***- a property that returns the Breeze <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank">type information object</a>, metadata describing this type of entity.
 
 <pre class="brush:jscript;">
   var customerType = manager.metadataStore.getEntityType("Customer");
