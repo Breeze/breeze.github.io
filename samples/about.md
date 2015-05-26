@@ -9,8 +9,6 @@ These are end-to-end samples which means that most of them have both client and 
 
 What they all have in common is an HTML/JavaScript front-end, written with Breeze.js
 
-Learn more about these [samples on the Breeze website](http://www.breezejs.com/samples/ "About the BreezeJS Samples").
-
 ## Download
 
 The code samples (except as noted) are maintained in the [breeze.js.samples repository on github](https://github.com/Breeze/breeze.js.samples "breeze.js.samples on GitHub") where it is maintained continuously between releases of BreezeJS itself.

@@ -1,0 +1,63 @@
+#tech-chooser {
+  margin-top: 10px;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+#tech-chooser fieldset.group  { 
+  display: inline;
+  float: left;
+  margin: 0px 10px 10px 50px; 
+  padding: 0px 10px 10px 10px; 
+} 
+
+#tech-chooser .checkbox {
+  list-style-type: none;
+} 
+
+#tech-chooser button {
+  font-size: 10px;
+}
+
+fieldset.group legend { 
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal; 
+} 
+
+
+#techlist {
+  margin: 0;
+  padding: 0;
+}
+
+#techlist ul li {
+  list-style-type: none;
+  display:inline;
+	float:left;
+  padding: 10px;
+  margin: 10px;
+  height: 160px;
+  -webkit-box-shadow: 2px 2px 3px 4px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    2px 2px 3px 4px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         2px 2px 3px 4px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+#techlist ul li a {
+  display:inline;
+}
+
+#techlist ul li a p {
+  font-size: 14px;
+  width: 100px;
+}
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
