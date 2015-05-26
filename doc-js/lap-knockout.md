@@ -13,14 +13,14 @@ On launch the screen was empty; now it has a list of Todos, styled to reflect th
 This is <a href="http://knockoutjs.com/">Knockout</a> at work, binding HTML controls and CSS classes to Breeze Todo entity properties. A developer didn't write code to punch the word "Food" into a label or to tick the "Drink" checkbox or to paint "Shelter" in a paler shade.
 A developer did mark up the HTML with declarative binding instructions. Here's a brief look at some of the HTML behind the screenshot.
 
-<pre class="brush:jscript;">
+
 	<ul data-bind="foreach: items">
 	    <li>
 	        <input type="checkbox" data-bind="checked: IsDone" />
 	        <label data-bind="text: Description"></label>           
 	    </li>
 	</ul>
-</pre>
+
 
 The "data-bind" attributes are Knockout's markup convention. The "*foreach*:" binding declaration tells KO to iterate over the ViewModel's <span class="codeword">items</span> array, creating HTML list items for each Todo in the array. The checkbox "checked" property is bound to the Todo's <span class="codeword">IsDone</span> property. The label's "text" property is bound to the Todo's <span class="codeword">Description property</span>.
 The catch is that someone - or something - had to make every entity property observable to the Knockout framework. If you did it yourself, you'd probably write code like this:
