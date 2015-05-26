@@ -1,8 +1,8 @@
 ---
 layout: samples
 ---
-<h1 style="margin: 8px 0 12px 0;">
-	&quot;NoDb&quot; - Breeze without a database</h1>
+<h1>&quot;NoDb&quot; - Breeze without a database</h1>
+
 <p>The NoDb sample demonstrates a BreezeJS client working with an ASP.NET Web API service backed by an in-memory &quot;database&quot;. <strong>No Entity Framework, No SQL Server</strong>.</p>
 <p>BreezeJS is a pure JavaScript library. If your dataservice talks JSON over HTTP, it can work with BreezeJS.</p>
 <p>You&rsquo;ll find &ldquo;NoDb&rdquo; among the samples in the <a href="/documentation/download">full download</a>.</p>
