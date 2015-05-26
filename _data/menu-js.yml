@@ -47,14 +47,6 @@ menuitems:
   - { link: breeze-angular.html, title: Breeze + Angular }
   - { link: testing.html, title: Testing }
   - { link: coding-conventions.html, title: Coding conventions }
-  - { link: cool-breezes.html, title: Cool Breezes, isparent: true }
-  - { link: cool-share-an-entitymanager.html, title: Share an EntityManager, ischild: true }
-  - { link: cool-multiple-entitymanagers.html, title: Multiple EntityManagers, ischild: true }
-  - { link: cool-concurrent-saves.html, title: Concurrent saves, ischild: true }
-  - { link: cool-lookup-lists.html, title: Lookup lists, ischild: true }
-  - { link: cool-import-save-results.html, title: Import save results, ischild: true }
-  - { link: cool-knockout-circular-refs.html, title: Knockout circular references, ischild: true }
-  - { link: cool-presenting-many-to-many.html, title: Presenting many-to-many, ischild: true }
     
   
     

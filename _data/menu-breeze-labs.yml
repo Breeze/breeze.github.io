@@ -1,0 +1,12 @@
+title: Breeze Labs
+menuitems:
+  - { link: directives-validation.html, title: AngularJS Validation directive}
+  - { link: directives-float.html, title: AngularJS Float directive }
+  - { link: ajax-rest-interceptor.html, title: Ajax REST interceptor }
+  - { link: ajax-post.html, title: Queries with POST }
+  - { link: get-entity-graph.html, title: Get entity graph method }
+  - { link: metadata-helper.html, title: Metadata helper }
+  - { link: save-error-extensions.html, title: SaveError extensions }
+  - { link: save-queuing.html, title: Save Queuing }
+  - { link: angular-q.html, title: Angular with Q (deprecated) }
+  - { link: to-q.html, title: Angular to Q bridge (deprecated) }
