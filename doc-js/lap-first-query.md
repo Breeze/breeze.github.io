@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/first-query.html"
 ---
 #First query
 
@@ -21,7 +21,7 @@ A query can't execute itself. We'll need a Breeze ***EntityManager***. The *Enti
 <pre class="brush:jscript;">
 var serviceName = 'breeze/todos', // route to the Web Api controller
     manager = new breeze.EntityManager(serviceName);
-
+</pre>
 
 The *serviceName *identifies the service end-point, the route to the Web API controller ("breeze/todos") [<a href="#note 1">1</a>]; all *manager *operations will address that controller.
 
@@ -46,7 +46,7 @@ function getAllTodos(includeArchived) {
 	<li>creates a new Breeze *EntityQuery *object
 	<li>aims the query at a method on the Web API controller named "*Todos*" that returns *Todo* items.
 	<li>adds an *orderBy* clause that tells the remote service to sort results by the "CreatedAt" property *before* sending them to the client.
-
+</pre>
 
 
 The string, "Todos", is case sensitive and must match the controller method name *exactly*.
@@ -59,7 +59,7 @@ We execute the query with the EntityManager
 
 <pre class="brush:jscript;">
  return manager.executeQuery(query);
-
+</pre>
 
 The executeQuery method **does not return Todos**. It can't return Todos. A JavaScript client cannot freeze the browser and wait for the server to reply. The executeQuery method does its thing asynchronously.
 
@@ -76,14 +76,13 @@ A caller of the *dataservice*'s ***getAllTodos ***method typically attaches both
          .then(querySucceeded)
          .fail(queryFailed);
  }
-
+</pre>
 
 Notice the use of method chaining:
 
-
-	<li>the *dataservice* returned a promise;
-	<li>the *ViewModel* called the promise's *then( ... )* method for the success path
-	<li>the *ViewModel* called the promise's *fail( ... )* method for the failure path.
+<li>the *dataservice* returned a promise;
+<li>the *ViewModel* called the promise's *then( ... )* method for the success path
+<li>the *ViewModel* called the promise's *fail( ... )* method for the failure path.
 
 
 Both the *then() *and the *fail() *return a promise which means we can chain a sequence of asynchronous steps. Such syntax makes it easy to flatten what might otherwise be a nasty nest of dependent async calls. We don't have dependent async calls in this application... but a real application might... and you'll see plenty of examples among the <a href="/samples/doccode" target="_blank">teaching tests</a> [<a href="#note 3">3</a>].
@@ -104,7 +103,7 @@ function querySucceeded(data) {
     });
     ...
 }
-
+</pre>
 
 And just like that, the screen fills with *Todos*.  We'll discuss how *that* happens when we peek inside the entity <a href="/doc-js/databinding-knockout">later in this tour</a>. Before we do, let's **<a href="/doc-js/query-filter">try another query</a>**.
 
