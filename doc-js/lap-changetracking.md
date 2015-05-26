@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/change-tracking.html"
 ---
 
 #Change tracking
@@ -232,7 +232,7 @@ Breeze calls the handler with an `errorsChangedArgs` that tells you what propert
 
 By default, Breeze validates the entities before saving them to the server; it won't send any of them if one of the entities fails validation. For example, the Todo application displays this error message if you add a new new Todo with a description that exceeds 30 characters.
 
-<img alt="Snapshot of "Description too long" error message" src="/sites/all//images/BreezeTodoDescriptionTooLong.jpg" style="width: 600px; height: 165px;" />
+<img alt="Snapshot of "Description too long" error message" src="/images/samples/BreezeTodoDescriptionTooLong.jpg" style="width: 600px; height: 165px;" />
 
 [Learn more](validation) about Breeze property-level and entity-level validation.
 
@@ -259,10 +259,10 @@ Perhaps we have new, changed, and deleted entities in cache that we want to pres
 
 ##Notes
 
-<a name="note 1"></a>[1] Check out the "*KO property change notifications raised*" test in the ***basicTodoTests*** module of the <a href="/samples/teaching-tests">Teaching Tests</a> for a sense of what that might be like. Ponder the implications for a line-of-business application whose entities have twenty or more properties.
+<a name="note 1"></a>[1] Check out the "*KO property change notifications raised*" test in the ***basicTodoTests*** module of the <a href="/samples/doccode">Teaching Tests</a> for a sense of what that might be like. Ponder the implications for a line-of-business application whose entities have twenty or more properties.
 
-<a name="note 2"></a>[2] For a study in contrast, see the test named "*Breeze propertyChanged raised when any property changes*" in the ***basicTodoTests*** module of the <a href="/samples/teaching-tests">Teaching Tests</a>.
+<a name="note 2"></a>[2] For a study in contrast, see the test named "*Breeze propertyChanged raised when any property changes*" in the ***basicTodoTests*** module of the <a href="/samples/doccode">Teaching Tests</a>.
 
 <a name="note 3"></a>[3] It's up to the developer to determine how to display errors and guide the user experience. Breeze will not save entities that have validation errors.
 
-<a name="note 4"></a>[4] See the test named "*validation error when set Id null*" in the ***basicTodoTests*** module of the [Teaching Tests](/samples/teaching-tests).
+<a name="note 4"></a>[4] See the test named "*validation error when set Id null*" in the ***basicTodoTests*** module of the [Teaching Tests](/samples/doccode).
