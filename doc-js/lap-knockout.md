@@ -13,18 +13,19 @@ On launch the screen was empty; now it has a list of Todos, styled to reflect th
 This is <a href="http://knockoutjs.com/">Knockout</a> at work, binding HTML controls and CSS classes to Breeze Todo entity properties. A developer didn't write code to punch the word "Food" into a label or to tick the "Drink" checkbox or to paint "Shelter" in a paler shade.
 A developer did mark up the HTML with declarative binding instructions. Here's a brief look at some of the HTML behind the screenshot.
 
-	<pre class="brush:jscript;">
-<ul data-bind="foreach: items">
-    <li>
-        <input type="checkbox" data-bind="checked: IsDone" />
-        <label data-bind="text: Description"></label>           
-    </li>
-</ul>
+<pre class="brush:jscript;">
+	<ul data-bind="foreach: items">
+	    <li>
+	        <input type="checkbox" data-bind="checked: IsDone" />
+	        <label data-bind="text: Description"></label>           
+	    </li>
+	</ul>
+</pre>
 
 The "data-bind" attributes are Knockout's markup convention. The "*foreach*:" binding declaration tells KO to iterate over the ViewModel's <span class="codeword">items</span> array, creating HTML list items for each Todo in the array. The checkbox "checked" property is bound to the Todo's <span class="codeword">IsDone</span> property. The label's "text" property is bound to the Todo's <span class="codeword">Description property</span>.
 The catch is that someone - or something - had to make every entity property observable to the Knockout framework. If you did it yourself, you'd probably write code like this:
 
-	<pre class="brush:jscript;">
+<pre class="brush:jscript;">
 var new TodoItem = {
     Id: ko.observable(dto.Id),   
     Description: ko.observable(dto.Description),   
@@ -32,6 +33,7 @@ var new TodoItem = {
     IsDone: ko.observable(dto.IsDone),
     IsArchived: ko.observable(dto.IsArchived),
 };
+</pre>
 
 That's no fun for five properties. Think about writing and maintaining that kind of code for thirty entity types averaging twenty properties each. How about 100 entity types ... a typical model size in a business application? The Breeze <span class="codeword">createEntity</span> method does this grunt work for you.
 
@@ -42,4 +44,4 @@ Be careful how you set a KO property. If you write <span class="codeword">newTod
 We all make these mistakes ... frequently. You recognize the symptoms more quickly as you gain experience.
 
 ## 	Next step
-There is more to a Breeze entity than its properties. Every Breeze entity has "entity-ness" at its core. You tap that "entity-ness" by way of its <span class="codeword">entityAspect</span> property which we meet in the **<a href="/documentation/change-tracking">next topic on change tracking</a>**.
+There is more to a Breeze entity than its properties. Every Breeze entity has "entity-ness" at its core. You tap that "entity-ness" by way of its <span class="codeword">entityAspect</span> property which we meet in the **<a href="/doc-js/lap-changetracking">next topic on change tracking</a>**.
