@@ -32,7 +32,7 @@ Because this is JavaScript, we can extend a customer object simply by patching i
     // Knockout observable (because we'll bind to it):
     cust.isBeingEdited = ko.observable(false);
 
-That's not so bad. We'll probably do this a few more times so we encapsulate all of this plumbing into a customerFactory method.
+That's not so bad. We'll probably do this a few more times so we encapsulate all of this plumbing into a `customerFactory` method.
 
 Unfortunately, that only covers the entity creation use case. Breeze also ***materializes*** entities from query results. Consider this query:
 
@@ -56,7 +56,7 @@ Notice that I had to check for the presence of the `isBeingEdited` property. A c
 
 How about the related orders that accompanied the customers in the payload thanks to the "*expand*" clause? We'll have to extend them in the callback logic too.
 
-What if we materialize customers and orders by **importing** them into the manager (see the [Export/Import](/documentation/exportImport) topic). Fortunately, Breeze raises events when entities are imported and we can add event handlers that patch in the `isBeingEdited` property.
+What if we materialize customers and orders by **importing** them into the manager (see the [Export/Import](/doc-js/export-import) topic). Fortunately, Breeze raises events when entities are imported and we can add event handlers that patch in the `isBeingEdited` property.
 
 All of this entity patching is turning into a mess. Imagine trying to patch every entity after every query and import, wherever it occurs in the application.
 
@@ -145,7 +145,7 @@ The act of adding the entity to the manager causes Breeze to
 
 * Add all properties defined in metadata for this entity
 * Rewrite fields to suit the prevailing model library [<a href="#Note03">3</a>].
-* Add <a href="/documentation/inside-entity">entityAspect</a> and the change tracking that goes with it.
+* Add <a href="/doc-js/inside-entity">entityAspect</a> and the change tracking that goes with it.
 * Execute the post-construction initializer (if one is defined).
 
 The `EntityType.CreateEntity()` factory function does all of all of this for you too ... without adding the entity instance to the manager. But we like the `EntityManager.CreateEntity()` approach even better. 
@@ -283,7 +283,7 @@ Fortunately, you can create a custom key generator and register it with an `Enti
             return nextId;
       };
 
-The **entityExtensionTests** module in the DocCode <a href="http://www.breezejs.com/samples/teaching-tests">Teaching Tests</a> has a simple example. The Breeze `breeze.KeyGenerator` is the best source of inspiration.
+The **entityExtensionTests** module in the DocCode <a href="/samples/doccode">Teaching Tests</a> has a simple example. The Breeze `breeze.KeyGenerator` is the best source of inspiration.
 
 <a name="es5-property"></a>
 #ECMAScript 5 Defined Properties
