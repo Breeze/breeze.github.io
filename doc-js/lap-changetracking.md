@@ -232,7 +232,7 @@ Breeze calls the handler with an `errorsChangedArgs` that tells you what propert
 
 By default, Breeze validates the entities before saving them to the server; it won't send any of them if one of the entities fails validation. For example, the Todo application displays this error message if you add a new new Todo with a description that exceeds 30 characters.
 
-<img alt="Snapshot of "Description too long" error message" src="/images/samples/BreezeTodoDescriptionTooLong.jpg" style="width: 600px; height: 165px;">
+<img alt="Snapshot of 'Description too long' error message" src="/images/samples/BreezeTodoDescriptionTooLong.jpg" style="width: 600px; height: 165px;">
 
 [Learn more](validation) about Breeze property-level and entity-level validation.
 
