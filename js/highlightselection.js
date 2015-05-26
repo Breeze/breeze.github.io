@@ -1,14 +1,12 @@
 $(window).on('load', function() {
+
+    $("#goPrev").click(goPrev);
+    $("#goNext").click(goNext);
+
     $li = selectHrefLi();
     
     if (!$li.length) return;
-    
-    // force any parents that are dropdowns to drop down.
-//    var $dropdowns = $li.parents('.dropdown-menu');
-//    $dropdowns.each(function(ix, dd) {
-//        $(dd).prev().dropdown('toggle');
-//    });
-    
+
     // scroll the current li to the top if not visible.
     var $leftnav = $('#leftnav');
     var offset = $li.offset().top;
@@ -16,7 +14,7 @@ $(window).on('load', function() {
     if(offset > ($leftnav.innerHeight() - $('#header').height())) {
        $leftnav.scrollTop(offset);
     }
-    
+
 });
 
 $(window).on('hashchange', function() {
