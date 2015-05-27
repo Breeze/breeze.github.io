@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/metadata-hand-depth.html"
 ---
 #Metadata by hand ... in depth#
 
@@ -19,7 +19,7 @@ If your application server implements the OData standard, Breeze (usually) can g
 
 Sometimes you're not that fortunate. Perhaps you can't touch the server (as illustrated by the "[Edmunds Auto Service](/samples/edmunds "Edmunds Auto Service")" sample). Perhaps your server can't generate the metadata (see the [Ruby on Rails](/samples/intro-spa-ruby "Code Camper Jumpstart in Ruby on Rails") and [Node/MongoDb](/samples/zza "Zza Node/MongoDb sample") samples). You won't be able to get metadata from the server.
 
->If you're a .NET developer with access to the server side data model classes, you can use Entity Framework *as a  metadata generator*, as a design-time-only tool,  even if you won't use EF to access data in production. [We describe this technique elsewhere](/doc-js/ef-design-tool "EF as a Metadata Design Tool"). 
+>If you're a .NET developer with access to the server side data model classes, you can use Entity Framework *as a  metadata generator*, as a design-time-only tool,  even if you won't use EF to access data in production. [We describe this technique elsewhere](/doc-js/metadata-with-ef "EF as a Metadata Design Tool"). 
 
 **You don't have to get the metadata from the server**.  Breeze metadata on the client is just JavaScript. You can write that JavaScript metadata yourself ... as we'll see here.
 
@@ -118,7 +118,7 @@ breeze.EntityQuery.from("Category")
 Let's dig into the `createMetadataStore` method.
 
 ##Naming Convention##
-We must tell our `MetadataStore` what [NamingConvention](/doc-js/naming-convention "NamingConvention") to use before adding entity types. 
+We must tell our `MetadataStore` what [NamingConvention](/doc-js/server-namingconvention "NamingConvention") to use before adding entity types. 
 
 <pre class="brush:jscript;">
 var store = new breeze.MetadataStore({

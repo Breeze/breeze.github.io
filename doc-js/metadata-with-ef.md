@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/ef-design-tool.html"
 ---
 
 #Entity Framework as a metadata design tool#
