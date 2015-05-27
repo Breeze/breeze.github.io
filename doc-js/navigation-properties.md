@@ -3,15 +3,15 @@ layout: doc-js
 ---
 # Navigation Properties
 
-<p class="note">All of the examples and principles in this topic are on display in the **navigationTests** module of <a href="/samples/doccode">DocCode</a>.</p>
+> All of the examples and principles in this topic are on display in the **navigationTests** module of <a href="/samples/doccode.html">DocCode</a>.
 
 Entities in most models are connected to each other by associations. In the [Northwind model](#_Sample_Code_Persistence), for example, the `Order` entity has a parent `Customer` entity and many child `OrderDetail` entities. An `OrderDetail` has a parent `Order` and a parent `Product` entity. `Product` entities have `Shippers`. It's a web of relationships that in Breeze can be traversed by following *property paths* from one entity to the next: `Customer` to `Order` to `OrderDetail` to `Product` to `Shipper`.
 
-Each leg of the property path is represented by a **navigation** property. The `Customer.Orders `property travels from a customer to its collection of orders The `Customer.Orders()` property returns an array of zero or more orders; we call it a **collection** **navigation** property. We can take one of those orders and call its `Order.Customer()` property to travel back to the parent customer.  The `Order.Customer()` property returns a single object; we call it a **scalar** **navigation** property or a **reference** **navigation** property.
+Each leg of the property path is represented by a **navigation** property. The `Customer.Orders` property travels from a customer to its collection of orders The `Customer.Orders()` property returns an array of zero or more orders; we call it a **collection** **navigation** property. We can take one of those orders and call its `Order.Customer()` property to travel back to the parent customer.  The `Order.Customer()` property returns a single object; we call it a **scalar** **navigation** property or a **reference** **navigation** property.
 
 ## Accessing navigation properties in Knockout
 
-<p class="note">We present navigation properties in <strong>knockout</strong> style throughout most of the topic. In Knockout, entity properties are implemented as observable functions.<br/><br/>If you're writing your app in Angular, you should ignore these nuances and simply read and set the navigation property values directly. The larger points about navigation still apply to you.<br/><br/>Other frameworks have their own syntax. The concepts and techniques are the same regardless of the binding framework. Learn more in the <a href="#get-set-property">discussion  below</a>.</p>
+> We present navigation properties in <strong>knockout</strong> style throughout most of the topic. In Knockout, entity properties are implemented as observable functions.<br/><br/>If you're writing your app in Angular, you should ignore these nuances and simply read and set the navigation property values directly. The larger points about navigation still apply to you.<br/><br/>Other frameworks have their own syntax. The concepts and techniques are the same regardless of the binding framework. Learn more in the <a href="#get-set-property">discussion  below</a>.
 
 Read a navigation property in the same way you would any observable property. Here we get the customer from an order in cache:
 
@@ -156,7 +156,7 @@ The query still returns orders as it did before. Breeze first pulls the details 
 
 The happy consequence is that we now can ask one of the orders for its details (e.g., `someOrder.OrderDetails()`) and Breeze will return them. Without `expand`, that expression would have returned an empty array.
 
-<p class="note">Use the client-side spelling when specifying expand property names. For example, if you use <a href="naming-convention">camel casing on the client</a> and would get details by writing <code>order.orderDetails()</code>, then write the expand clause as <code>'orderDetails'</code>.</p>
+> Use the client-side spelling when specifying expand property names. For example, if you use <a href="/doc-js/server-namingconvention.html">camel casing on the client</a> and would get details by writing <code>order.orderDetails()</code>, then write the expand clause as <code>'orderDetails'</code>.
 
 ### Multiple expand paths
 
@@ -193,7 +193,7 @@ The `.expand` is a wonderful feature. **It is easy to abuse**. Too many expansio
 
 Please use the `expand` clause judiciously. Consider [delaying retrieval](#on-demand) of related entities until you need them.
 
-<p class="note">If expand fails to work as expected, take a look at the "<a href="/documentation/query-result-debugging#expand" title="Query result debugging">Query result debugging</a>" topic.</p>
+<p class="note">If expand fails to work as expected, take a look at the "<a href="/doc-js/query-debugging.html#expand" title="Query result debugging">Query result debugging</a>" topic.</p>
 
 <a name="on-demand"></a>
 ## Loading related entities on demand

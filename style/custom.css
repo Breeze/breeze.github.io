@@ -20,4 +20,7 @@
 	padding-bottom: 15px
 }
 
-
+blockquote {
+	font-size: 1em;
+	font-style: italic;
+}
