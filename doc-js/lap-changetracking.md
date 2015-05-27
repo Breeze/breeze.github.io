@@ -7,7 +7,7 @@ redirect_from: "/old/documentation/change-tracking.html"
 
 Breeze entities are "self-tracking" which means that each entity instance keeps track of its own changed state ... and much more. At the heart of every Breeze entity is a nugget of "entity-ness", its `EntityAspect`. You access it by calling `theEntity.entityAspect.`
 
-A full discussion of `EntityAspect` awaits you in a [later topic](inside-entity). For now, we scratch the surface with an introduction to three prominent `EntityAspect` members that concern change tracking:
+A full discussion of `EntityAspect` awaits you in a [later topic](/doc-js/inside-entity). For now, we scratch the surface with an introduction to three prominent `EntityAspect` members that concern change tracking:
 
 1. `entityState` - a property that reveals the entity's change-state
 1. `propertyChanged` - an event raised when any entity property changes
@@ -219,7 +219,7 @@ A listener for `EntityState` changes could be similar:
 
 ##Property validation
 
-Breeze properties aren't just observable. They can [validate changes](validation) based on rules registered in [**metadata**](metadata). Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well.
+Breeze properties aren't just observable. They can [validate changes](/doc-js/validation) based on rules registered in [**metadata**](/doc-js/metadata). Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well.
 
 In brief, Breeze evaluates validation rules at prescribed times of your choosing. A validation rule either passes or fails. If it passes, it returns null. If it fails, it returns a `ValidationError` describing the problem. Every `EntityAspect` maintains a `validationErrorsCollection`. The Breeze validation engine adds new `ValidationError` instances to that collection when validation rules fail and removes old `ValidationErrors` instances when validation rules pass [<a href="#note 3">3</a>].
 
@@ -234,7 +234,7 @@ By default, Breeze validates the entities before saving them to the server; it w
 
 <img alt="Snapshot of 'Description too long' error message" src="/images/samples/BreezeTodoDescriptionTooLong.jpg" style="width: 600px; height: 165px;">
 
-[Learn more](validation) about Breeze property-level and entity-level validation.
+[Learn more](/doc-js/validation) about Breeze property-level and entity-level validation.
 
 > **Reminder:** Client-side validation improves the user experience. It is not a substitute for validation on the server.
 
@@ -255,7 +255,7 @@ You cancel and roll back changes to an entity by calling rejectChanges.
 
 ##Saving Changes
 
-Perhaps we have new, changed, and deleted entities in cache that we want to preserve in permanent storage. Learn about saving these changes in the **[next topic](save-changes)**.
+Perhaps we have new, changed, and deleted entities in cache that we want to preserve in permanent storage. Learn about saving these changes in the **[next topic](/doc-js/lap-savechanges)**.
 
 ##Notes
 
