@@ -18,17 +18,17 @@ layout: doc-js
 
 <p>We&rsquo;ll also assume that you&rsquo;ve got the sample tests running. You&rsquo;ll need Visual Studio, at least to get the persistence service running. When you start the project, either with debugging (F5) or without (Ctrl-F5), a browser should launch and the window should something like this:</p>
 
-<p><img src="/sites/default/files/images/documentation/DocCodeTestsRunning2.jpg" /></p>
+<p><img src="/images/samples/DocCodeTestsRunning2.jpg" /></p>
 
 <p>QUnit lists each test by its module name and test name. Clicking the test row opens a window showing the message output by each of the test&rsquo;s asserts in the test &hellip; as seen in this close up.</p>
 
-<p><img src="/sites/default/files/images/documentation/ASingleSuccessfulTest.jpg" /></p>
+<p><img src="/images/samples/ASingleSuccessfulTest.jpg" /></p>
 
 <p>Double-click the test or click the faint &ldquo;Rerun&rdquo; link on the right to run just that one test.</p>
 
 <p>Tests are grouped in modules. Each module is dedicated to a topic or theme such as &ldquo;entityTests&rdquo;. Run just the tests of a single module by picking it from the combo-box in the upper right of the toolbar (notice the query string it created in the address [<a href="#note 4">4</a>]):</p>
 
-<p><img src="/sites/default/files/images/documentation/DocCodeTestsModulePicking.jpg" /></p>
+<p><img src="/images/samples/DocCodeTestsModulePicking.jpg" /></p>
 
 <p>Click the title, &ldquo;Breeze Documentation Sample Test Suite&rdquo;, to get back to the full suite.</p>
 
@@ -311,7 +311,7 @@ ok(data.results.length &gt; 0, &quot;should have customers.&quot;);</pre>
 
 <p>If <span class="codeword">data.results.length</span> actually is greater than zero, this test passes and displays in green. If the value is not greater than zero or the test throws an exception, it fails and displays in red:</p>
 
-<p><img src="/sites/default/files/images/documentation/ASingleFailingTest.jpg" /></p>
+<p><img src="/images/samples/ASingleFailingTest.jpg" /></p>
 
 <p>Some test gurus maintain that a test should check a single fact about the test subject and therefore should have only one assertion. We&rsquo;re not that picayune. We agree that a test ought to stay focused on a narrow issue. But we&rsquo;re happy to sprinkle it liberally with assertions that illuminate from multiple angles.</p>
 

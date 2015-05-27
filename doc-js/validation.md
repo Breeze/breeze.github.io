@@ -19,9 +19,9 @@ layout: doc-js
 
 <p>Validation is a process of judging the current state of an entity with validation rules.&nbsp; Each rule assesses a fact about the validity of an entity or one of its properties. A rule judges but it does not change; the entity values are the same, before and after evaluation.</p>
 
-<p>Concretely, a validation rule is an instance of the Breeze <a href="/sites/all/apidocs/classes/Validator.html" target="_blank"><span class="codeword">Validator</span> class</a>.</p>
+<p>Concretely, a validation rule is an instance of the Breeze <a href="/doc-js/api-docs/classes/Validator.html" target="_blank"><span class="codeword">Validator</span> class</a>.</p>
 
-<p class="note">Please read the Breeze API documentation for the <strong><a href="/sites/all/apidocs/classes/Validator.html" target="_blank"><span class="codeword">Validator</span> class</a></strong>. It has a lot of good information about how validations work and how to write them.</p>
+<p class="note">Please read the Breeze API documentation for the <strong><a href="/doc-js/api-docs/classes/Validator.html" target="_blank"><span class="codeword">Validator</span> class</a></strong>. It has a lot of good information about how validations work and how to write them.</p>
 
 <p>Most Breeze validators evaluate property data. A length validator can detect if the <em>CompanyName</em> is too long; a required validator determines that the <em>CompanyName</em> has a value; a string data type validator ensures that the <em>CompanyName</em> is a string, not a number or a date.&nbsp; These rules combine to determine the overall validity of the <em>CompanyName</em> property.&nbsp;</p>
 
@@ -421,7 +421,7 @@ customerType
 
 <p>But there is a special case. When you get your metadata from a local serialized source rather than the server, you must take one more step: you must register that validator with Breeze.</p>
 
-<p>For example, suppose you designed your application to load entities from local storage when it starts. In the previous session you exported the entity cache and stowed the serialized cache data to browser local storage (see &quot;<a href="/documentation/exportimport" target="_blank">Export/Import</a>&quot;). Now when you start a new session, your app restores the cache and you pick up where you left off ... without having to hit the server. Pretty cool!</p>
+<p>For example, suppose you designed your application to load entities from local storage when it starts. In the previous session you exported the entity cache and stowed the serialized cache data to browser local storage (see &quot;<a href="/doc-js/export-import" target="_blank">Export/Import</a>&quot;). Now when you start a new session, your app restores the cache and you pick up where you left off ... without having to hit the server. Pretty cool!</p>
 
 <p>Unfortunately, the app throws an exception when it loads the locally stored data. The exception complains about an unknown, unregistered validation rule ... perhaps that custom <em>zipCodeValidator </em>we just created. What happened?</p>
 
@@ -492,7 +492,7 @@ This event is fired whenever any entity within the EntityManager experiences any
 
 <h2><a name="message-templates"></a>Customize the message templates</h2>
 
-<p>Don&#39;t like the messages produced by the stock validators? Need to translate them to another language? No problem. The messages are based on templates that you can access and change. The <a href="/sites/all/apidocs/classes/Validator.html#property_messageTemplates" target="_blank">Validator.messageTemplates</a> class property returns the template collection, keyed by the validator name. Configure it to suit your needs. For example, we could make the <span class="codeword">Validator.required</span> message a bit more emphatic:</p>
+<p>Don&#39;t like the messages produced by the stock validators? Need to translate them to another language? No problem. The messages are based on templates that you can access and change. The <a href="/doc-js/api-docs/classes/Validator.html#property_messageTemplates" target="_blank">Validator.messageTemplates</a> class property returns the template collection, keyed by the validator name. Configure it to suit your needs. For example, we could make the <span class="codeword">Validator.required</span> message a bit more emphatic:</p>
 
 <pre class="brush:jscript;">
 Validator.messageTemplates[&quot;required&quot;,

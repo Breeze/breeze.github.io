@@ -237,7 +237,7 @@ While we're talking about AJAX interceptors, it's worth mentioning the `changeRe
 
 The `EntityManager.saveChanges` method delegates many of the details of save processing to a *DataServiceAdapter* which handles the specifics of communicating with a particular web service. 
 
-Breeze ships with [several *DataServiceAdapters*](/doc-js/server-dataserviceadapter#breeze-oob-adapters) and you can also [write your own](/doc-js/dataserviceadapter#custom-adapter).
+Breeze ships with [several *DataServiceAdapters*](/doc-js/server-dataserviceadapter#breeze-oob-adapters) and you can also [write your own](/doc-js/server-dataserviceadapter#custom-adapter).
 
 But writing a custom *DataServiceAdapter* isn't always easy because web service APIs are often complicated.
 
