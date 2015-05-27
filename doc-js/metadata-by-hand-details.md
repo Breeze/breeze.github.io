@@ -45,7 +45,7 @@ Let's create a `MetadataStore` for a three-entity model consisting of `Product`,
 
 The model will map exactly, property-for-column, to three  tables of the well-known <a href="http://northwinddatabase.codeplex.com/" title="Northwind Database" target="_blank">Northwind database</a>.
 
-<img alt="Product/Supplier/Categories ERD" src="/images/productcategorysuppliererd.png" style="width: 100%; max-width: 616px;" />
+<img alt="Product/Supplier/Categories ERD" src="/images/ProductCategorySupplierERD.png" style="width: 100%; max-width: 616px;">
 
 >Such close correspondence is typical but it isn't necessary. What matters more is that the client model align with the data structures returned in HTTP response payloads.
 
