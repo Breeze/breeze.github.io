@@ -105,7 +105,7 @@ function querySucceeded(data) {
 }
 </pre>
 
-And just like that, the screen fills with *Todos*.  We'll discuss how *that* happens when we peek inside the entity <a href="/doc-js/databinding-knockout">later in this tour</a>. Before we do, let's **<a href="/doc-js/query-filter">try another query</a>**.
+And just like that, the screen fills with *Todos*.  We'll discuss how *that* happens when we peek inside the entity <a href="/doc-js/lap-knockout">later in this tour</a>. Before we do, let's **<a href="/doc-js/query-filter">try another query</a>**.
 
 ##Notes
 
