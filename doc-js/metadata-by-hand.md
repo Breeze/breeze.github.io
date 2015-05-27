@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/metadata-by-hand.html"
 ---
 #Metadata by hand#
 
@@ -28,7 +28,7 @@ It is also available as <a  href="https://www.nuget.org/packages/Breeze.Metadata
 
 *In this topic*, we'll concentrate on *using the **Metadata-Helper** when it gets it right* ... which is most of the time. 
 
-The related topic, [**"Metadata by hand (in depth)"**](metadata-hand-depth) delves into the details of how the helper works, how you can intervene, and how it all relates to the underlying metadata schema that Breeze uses at runtime. Visit that page when you're ready ... if you have to.
+The related topic, [**"Metadata by hand (in depth)"**](/doc-js/metadata-by-hand-details) delves into the details of how the helper works, how you can intervene, and how it all relates to the underlying metadata schema that Breeze uses at runtime. Visit that page when you're ready ... if you have to.
 
 #Show me
 
