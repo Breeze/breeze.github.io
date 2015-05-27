@@ -263,7 +263,7 @@ You can change it. For example, you can switch to camel casing ("FirstName" on t
 
     NamingConvention.camelCase.setAsDefault();
 
-You can create your own conventions as well. Learn more in the [NamingConvention](naming-convention) topic.
+You can create your own conventions as well. Learn more in the [NamingConvention](/doc-js/server-namingconvention) topic.
 
 #Temporary key generation
 
