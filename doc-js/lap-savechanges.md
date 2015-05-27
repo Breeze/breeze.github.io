@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/save-changes.html"
 ---
 #Save changes
 
@@ -21,7 +21,7 @@ function saveChanges() {
         logger.info("Nothing to save");
     };
 };
-
+</pre>
 
 Checking for the presence of changes with <span class="codeword">hasChanges()</span> [<a href="#note 1">1</a>] was optional; Breeze won't try to save if there is nothing to save. In this case, the author wants the user to see that there were no changes so he logs that fact and only calls <span class="codeword">manager.saveChanges()</span> when necessary.
 
@@ -64,8 +64,9 @@ var changesImport = window.localStorage.getItem("todos");
 em.importEntities(changesImport);
 
 // ... the todo is back in cache in its added state  ...
+</pre>
 
-We cover export/import in greater detail in <a href="http://www.breezejs.com/documentation/exportimport">Export and Import Entities</a>.
+We cover export/import in greater detail in <a href="/doc-js/export-import">Export and Import Entities</a>.
 
 ##So ends the tour
 

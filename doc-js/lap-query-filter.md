@@ -1,12 +1,12 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/query-filter.html"
 ---
 #Query with a filter
 
 > Most of the code snippets on this page are in the <a href="/samples/todo">Breeze Todo App</a>; a few are in the **basicTodoTests **module of the <a href="/samples/doccode">DocCode teaching tests</a>.
 
-Our <a href="/doc-js/first-query-0">first query</a> returned every Todo in the database [<a href="#note 1">1</a>].  That's fine for a short list of Todos; not so great if we're querying for orders of a large company. We need a query that selects a more manageable number of results, preferably the ones that interest the user.
+Our <a href="/doc-js/lap-first-query">first query</a> returned every Todo in the database [<a href="#note 1">1</a>].  That's fine for a short list of Todos; not so great if we're querying for orders of a large company. We need a query that selects a more manageable number of results, preferably the ones that interest the user.
 
 In this app, we can archive the Todos that we want to keep but look at rarely. The *<span class="codeword">getAllTodos</span> *method in the *dataservice* has an "IncludeArchived" option. If the flag is false, the code adds a "where" clause to filter exclusively for *Todos *that are active (not archived).
 
@@ -23,22 +23,22 @@ function getAllTodos(includeArchived) {
 
     return manager.executeQuery(query);
 };
-
+</pre>
 
 Notice the *method chaining* syntax. The where method doesn't modify the original query; it extends a copy of the original and returns the copy.
 
 With this approach you can maintain a library of base queries and mint new ones by extension as you need them. For example, the Todo app looks at the **Show archived** checkbox) to decide if it should add the where clause to the base query (unchecked) or not (checked).
 
-<img alt="" src="/images/BreezeTodoShowArchivedSnapshot.jpg" />
+<img alt="" src="/images/samples/BreezeTodoShowArchivedSnapshot.jpg" />
 
 ##Predicates
 
 The <span class="codeword">where()</span> method takes three values:
 
 
-	<li value="NaN">The name of the entity property to evaluate ("IsArchived")
-	<li value="NaN">A value comparison operator ("==")
-	<li value="NaN">A comparison value (<span class="codeword">false</span>)
+1. The name of the entity property to evaluate ("IsArchived")
+1. A value comparison operator ("==")
+1. A comparison value (<span class="codeword">false</span>)
 
 
 The <span class="codeword">where()</span> method converts these three values into a *predicate* for filtering the data ***on the server*** [<a href="#note 2">2</a>].
@@ -50,7 +50,7 @@ A ***predicate*** describes a selection function returning either *true* (keep i
 var predicate = new breeze.Predicate("IsArchived", "==", false);
 
 var query = new EntityQuery("Todos").where(predicate).orderBy("CreatedAt");
-
+</pre>
 
 We prefer the simpler in-line form for a single-condition filter. We need the predicate form when we filter on multiple criteria.
 
@@ -63,7 +63,7 @@ var p2 = breeze.Predicate("IsDone", "==", false);
 var predicate = p1.and(p2);
 
 var query = new EntityQuery("Todos").where(predicate);
-
+</pre>
 
 In addition to 'and', there are also 'or' and 'not' operators for predicates. You can learn more about them in the API docs for <a href="/doc-js/api-docs/classes/Predicate.html">Predicates</a>.
 
@@ -78,6 +78,7 @@ var op = breeze.FilterQueryOp;
 var p1 = new breeze.Predicate("IsArchived", op.Equals,  false);
 var p2 = breeze.Predicate("IsDone", op.NotEquals, true); // using NotEquals for variety
 var predicate = p1.and(p2);
+</pre>
 
 ##The entity cache
 
@@ -87,7 +88,7 @@ The EntityManager only keeps one copy of the "Water" Todo entity. It knows that 
 
 The EntityManager doesn't replace an entity object in cache after a query. That object stays right where it is. Instead, the manager updates the entity's property values in place from the data in the query results [<a href="#note 4">4</a>] and the HTML label on screen immediately changes to "Wine".
 
-The label changes because it is <a href="/doc-js/databinding-knockout">bound with Knockout</a> to the entity's "Description". "Description" is a Knockout observable property so any change to its value, whether made by the user or by Breeze, raises a *property changed* notification that updates all of its data bound screen controls.
+The label changes because it is <a href="/doc-js/lap-knockout">bound with Knockout</a> to the entity's "Description". "Description" is a Knockout observable property so any change to its value, whether made by the user or by Breeze, raises a *property changed* notification that updates all of its data bound screen controls.
 
 ##Querying the local cache
 
@@ -98,12 +99,13 @@ So far we've sent every query to the server to fetch data from a far. You can qu
 <pre class="brush:jscript;">
 var query = new EntityQuery("Todos").where(predicate); // from the example above
 var results = manager.executeQueryLocally(query);
+</pre>
 
 The manager executes the query synchronously and the results are available immediately (unlike executeQuery which is asynchronous and returns a promise)
 
 ##Next up ... creating entities
 
-Another way that entities enter the cache is by **<a href="/doc-js/add-new-entity">adding them directly</a>**.
+Another way that entities enter the cache is by **<a href="/doc-js/lap-add-entity">adding them directly</a>**.
 
 ##Notes
 
@@ -114,14 +116,14 @@ Another way that entities enter the cache is by **<a href="/doc-js/add-new-entit
 
 <pre class="brush:jscript;">
 ?$filter=IsArchived%20eq%20false&amp;$orderby=CreatedAt
-
+</pre>
 
 ... which is easier to understand after replacing '%20' with spaces.
 
 
 <pre class="brush:jscript;">
 ?$filter=IsArchived eq false &amp; $orderby=CreatedAt
-
+</pre>
 
 Logic in an OData-aware persistence service translates that syntax into a query form that the service understands. The Todo app persistence service translates it into a LINQ query; subsequent execution of the LINQ query causes the Entity Framework to compose and issue a SQL query. Thus the filtering and sorting takes place on the *data tier*, not in the service or client layers.
 

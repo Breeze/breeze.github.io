@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/.html"
 ---
 #Load metadata from script#
 
@@ -7,7 +8,7 @@ A Breeze app typically retrieves metadata from the server asynchronously. But th
 
 This topic shows you how to **capture the metadata in a JavaScript file and load it synchronously at runtime**.
 
-<p class="note">The code shown in this topic is adapted from the <a href="http://www.breezejs.com/samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>.</p>
+<p class="note">The code shown in this topic is adapted from the <a href="/samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>.</p>
 <p></p>
 <p class="note">Pablo Romeo proposes an interesting approach to solving a related problem. He doesn't mind that the server provides the metadata and he doesn't want to serve a <em>metadata.js</em> file as described here. He does want the server-supplied metadata to be <b>versioned and cached on the server</b>. If that sounds more like your scenario, take a look at <a href="http://stackoverflow.com/questions/20574310/breeze-metadata-request-url-with-cache-bust/20576539 " title="Versioning and caching metadata on the server" target="_blank">his StackOverflow question and answer</a>.</p>
 
@@ -45,7 +46,7 @@ While we heartily endorse this approach, it can't stand on its own because
 
 - local storage access is asynchronous on some platforms (e.g, Windows Store apps). It's still faster than going remote. But the asynchronous protocol complicates production and test code.
 
-*Another option*: we can <a href="http://www.breezejs.com/documentation/metadata-by-hand" title="Metadata By Hand">write the metadata by hand</a> in JavaScript and push it to the client in a script file. In fact, that's exactly what you'll do when your app talks to a non-.NET server or a server you can't touch.
+*Another option*: we can <a href="/doc-js/metadata-by-hand" title="Metadata By Hand">write the metadata by hand</a> in JavaScript and push it to the client in a script file. In fact, that's exactly what you'll do when your app talks to a non-.NET server or a server you can't touch.
 
 But we'd rather use generated metadata when available. Coding metadata by hand - especially for a large model - is tedious, error prone, and requires on-going maintenance. Generated metadata is almost carefree and automatically in-sync with the evolving service model.
 
@@ -69,7 +70,7 @@ Here's the procedure:
 
 2. Launch the app to wake up the server and then set the browser address bar to the URL for the metadata endpoint. The browser tab might look a bit like this (with optional JSON formatting turned off):
 
-    <img alt="Metadata on the wire" src="/sites/default/files/images/metadataOnTheWire.png" style="width: 100%; max-width: 612px;" />
+    <img alt="Metadata on the wire" src="/images/metadataOnTheWire.png" style="width: 100%; max-width: 612px;" />
 
 3. Copy the contents of the browser window (ctrl-A, ctrl-C) and paste (ctrl-V) them into *metadata.js*. You've just pasted in a huge JSON object on a single line.
 

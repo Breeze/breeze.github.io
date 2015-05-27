@@ -1,13 +1,14 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/.html"
 ---
 #Metadata by hand ... in depth#
 
-The related topic [**"Metadata by Hand"**](http://www.breezejs.com/documentation/metadata-by-hand) is an introduction to writing your own metadata in JavaScript rather than depending on the server to generate it for you.  It tell you all you need to know about writing metadata for your model.
+The related topic [**"Metadata by Hand"**](/doc-js/metadata-by-hand) is an introduction to writing your own metadata in JavaScript rather than depending on the server to generate it for you.  It tell you all you need to know about writing metadata for your model.
 
 **This topic goes deeper into the details**. It covers more of the options. It explains in greater depth what is going on and the relationship between the Breeze Labs MetadataHelper and the native Breeze metadata format.
 
-<p class="note">The code shown in this topic is adapted from <i><a href="https://github.com/IdeaBlade/Breeze/blob/master/Samples/DocCode/DocCode/tests/helpers/metadataOnClient.js" title="metadataOnClient.js source code" target="_blank">metadataOnClient.js</a></i>&nbsp;  in the <a href="http://www.breezejs.com/samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and metadata in particular through the medium of QUnit tests.</p>
+<p class="note">The code shown in this topic is adapted from <i><a href="https://github.com/IdeaBlade/Breeze/blob/master/Samples/DocCode/DocCode/tests/helpers/metadataOnClient.js" title="metadataOnClient.js source code" target="_blank">metadataOnClient.js</a></i>&nbsp;  in the <a href="/samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and metadata in particular through the medium of QUnit tests.</p>
 
 ##Why "by hand?"##
 The Breeze client needs metadata *to make entity data work for you*: to compose queries, identify objects by key, navigate to related entities, track changed state, raise property-changed events, validate data entry, and serialize entities to the server or local storage.
@@ -16,9 +17,9 @@ Whenever you query the server, Breeze uses metadata to identify entity data in t
 
 If your application server implements the OData standard, Breeze (usually) can get the metadata it needs with a request to the $metadata endpoint. If your application server relies on the .NET Entity Framework ORM to access the database, Breeze.NET components can generate the Breeze client metadata for you.
 
-Sometimes you're not that fortunate. Perhaps you can't touch the server (as illustrated by the "[Edmunds Auto Service](http://www.breezejs.com/samples/edmunds "Edmunds Auto Service")" sample). Perhaps your server can't generate the metadata (see the [Ruby on Rails](http://www.breezejs.com/samples/intro-spa-ruby "Code Camper Jumpstart in Ruby on Rails") and [Node/MongoDb](http://www.breezejs.com/samples/zza "Zza Node/MongoDb sample") samples). You won't be able to get metadata from the server.
+Sometimes you're not that fortunate. Perhaps you can't touch the server (as illustrated by the "[Edmunds Auto Service](/samples/edmunds "Edmunds Auto Service")" sample). Perhaps your server can't generate the metadata (see the [Ruby on Rails](/samples/intro-spa-ruby "Code Camper Jumpstart in Ruby on Rails") and [Node/MongoDb](/samples/zza "Zza Node/MongoDb sample") samples). You won't be able to get metadata from the server.
 
->If you're a .NET developer with access to the server side data model classes, you can use Entity Framework *as a  metadata generator*, as a design-time-only tool,  even if you won't use EF to access data in production. [We describe this technique elsewhere](http://www.breezejs.com/documentation/ef-design-tool "EF as a Metadata Design Tool"). 
+>If you're a .NET developer with access to the server side data model classes, you can use Entity Framework *as a  metadata generator*, as a design-time-only tool,  even if you won't use EF to access data in production. [We describe this technique elsewhere](/doc-js/ef-design-tool "EF as a Metadata Design Tool"). 
 
 **You don't have to get the metadata from the server**.  Breeze metadata on the client is just JavaScript. You can write that JavaScript metadata yourself ... as we'll see here.
 
@@ -44,7 +45,7 @@ Let's create a `MetadataStore` for a three-entity model consisting of `Product`,
 
 The model will map exactly, property-for-column, to three  tables of the well-known <a href="http://northwinddatabase.codeplex.com/" title="Northwind Database" target="_blank">Northwind database</a>.
 
-<img alt="Product/Supplier/Categories ERD" src="/sites/default/files/images/productcategorysuppliererd.png" style="width: 100%; max-width: 616px;" />
+<img alt="Product/Supplier/Categories ERD" src="/images/productcategorysuppliererd.png" style="width: 100%; max-width: 616px;" />
 
 >Such close correspondence is typical but it isn't necessary. What matters more is that the client model align with the data structures returned in HTTP response payloads.
 
@@ -117,7 +118,7 @@ breeze.EntityQuery.from("Category")
 Let's dig into the `createMetadataStore` method.
 
 ##Naming Convention##
-We must tell our `MetadataStore` what [NamingConvention](http://www.breezejs.com/documentation/naming-convention "NamingConvention") to use before adding entity types. 
+We must tell our `MetadataStore` what [NamingConvention](/doc-js/naming-convention "NamingConvention") to use before adding entity types. 
 
 <pre class="brush:jscript;">
 var store = new breeze.MetadataStore({
@@ -541,7 +542,7 @@ Writing a special `ComplexType` class and then replacing properties with this ne
 
 ##Embed a property Validator##
 
-We typically [add Validators after](http://www.breezejs.com/documentation/validation "Validation") the types have been registered. But you also can add Validators to a property definition while defining that property. The `Supplier.phone` is an example:
+We typically [add Validators after](/doc-js/validation "Validation") the types have been registered. But you also can add Validators to a property definition while defining that property. The `Supplier.phone` is an example:
 
 <pre class="brush:jscript;">
 dataProperties: {
