@@ -6,7 +6,7 @@ redirect_from: "/old/documentation/nhibernate-support.html"
 
 Breeze provides a server-side assembly that supports using NHibernate with WebAPI. **Breeze.WebApi.NH** provides features similar to those offered by the Breeze WebAPI Entity Framework provider, and makes it easier to develop a Breeze client application by taking care of some of the server-side plumbing.
 
-Our [first NHibernate sample](/samples/northbreeze) is available now. Please have a look and kick the wheels.
+Our [first NHibernate sample](/samples/north-breeze) is available now. Please have a look and kick the wheels.
 
 ## Features
 
@@ -35,7 +35,7 @@ Our [first NHibernate sample](/samples/northbreeze) is available now. Please hav
 	Support (via HTTP Filter, `NHQueryableInclude`, and NHibernate lazy loading) for OData `$expand` 
 
 ## Getting Started
-The following instructions assume you're using Visual Studio 2012. Please look at the [NorthBreeze sample application](/samples/northbreeze), where the following steps have already been performed:
+The following instructions assume you're using Visual Studio 2012. Please look at the [NorthBreeze sample application](/samples/north-breeze), where the following steps have already been performed:
 
 1. Create a new project. Choose "ASP.NET MVC 4 Web Application" and the "Empty" template.
 
