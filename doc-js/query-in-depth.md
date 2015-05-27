@@ -6,7 +6,7 @@ layout: doc-js
 
 <p>In this topic we explore Breeze query features and techniques in depth.</p>
 
-<p class="note">If a query completely misbehaves, take a look at the "<a href="/documentation/query-result-debugging" title="Query result debugging">Query result debugging</a>" topic.</p> 
+<p class="note">If a query completely misbehaves, take a look at the "<a href="/doc-js/query-debugging.html" title="Query result debugging">Query result debugging</a>" topic.</p> 
 
 <p>This page is currently a framework for topics and is nowhere near complete. Eventually this page will cover:</p>
 

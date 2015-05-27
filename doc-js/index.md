@@ -5,7 +5,7 @@ redirect_from: "/old/documentation/introduction.html"
 
 # BreezeJS
 
-<a class="logo-inline" href="/doc-js" title="BreezeJS">
+<a class="logo-inline" href="/doc-js/" title="BreezeJS">
    <img src="/images/logos/BreezeJsB.png" alt="BreezeJS" width="100">
 </a> 
 
@@ -162,4 +162,5 @@ But it bears repeating: Breeze client is in no way limited to these particular t
 
 ## What's next?
 
-You now have the big picture. Take a look at Breeze <a href="http://www.breezejs.com/documentation/features">Features</a> or run the <a href="http://learn.breezejs.com" target="_blank">Online Tutorial</a>.
+You now have the big picture. Take a look at Breeze <a href="/doc-js/features.html">Features</a> or run the <a href="http://learn.breezejs.com" target="_blank">Online Tutorial</a>.
+You now have the big picture. Take a look at Breeze <a href="/doc-js/features.html">Features</a> or run the <a href="http://learn.breezejs.com" target="_blank">Online Tutorial</a>.

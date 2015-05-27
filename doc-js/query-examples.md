@@ -4,7 +4,7 @@ title: Query examples
 ---
 # Query examples
 
-<p class="note">Every query example on this page is in one of the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/queryTests.js" target="_blank" title="queryTests.js on github"><strong>queryTests</strong> modules</a> of the <a href="/samples/doccode">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
+<p class="note">Every query example on this page is in one of the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/queryTests.js" target="_blank" title="queryTests.js on github"><strong>queryTests</strong> modules</a> of the <a href="/samples/doccode.html">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
 
 <div class="index">
 <p><a href="#Setup">Setup</a></p>
@@ -464,4 +464,4 @@ EntityQuery.from(&#39;Lookups&#39;)
      .using(em).execute()
      .fail(handleFail);</pre>
 
-<p>The <em>Region</em>, <em>Territory</em>, and <em>Category </em>entities are in cache after the query succeeds. See '<a href="/documentation/lookup-lists" target="_blank">Lookup Lists</a>' for a richer discussion of this example.</p>
+<p>The <em>Region</em>, <em>Territory</em>, and <em>Category </em>entities are in cache after the query succeeds. See '<a href="/cool-breezes/lookup-lists.html" target="_blank">Lookup Lists</a>' for a richer discussion of this example.</p>

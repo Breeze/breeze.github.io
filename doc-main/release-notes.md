@@ -8,9 +8,9 @@ These are the release notes for the current **1.5.x** and 1.4.x releases.
 Prior <a href="http://www.breezejs.com/previous-release-notes" target="_blank">release notes</a> are also available.
 
 ##1.5.x
-* New json query api and query serialization support.  See: <a href="http://www.breezejs.com/documentation/query-using-json">Breeze queries with JSON documentation</a>
+* New json query api and query serialization support.  See: <a href="/doc-js/query-using-json.html">Breeze queries with JSON documentation</a>
 * New full stack breeze server using the NodeJS Sequelize package to provide server side javascript support for MySql/MariaDb/Postgres databases. 
-See: <a href="http://www.getbreezenow.com/sequelize-mysqlpostgressql-lite"> breeze-sequelize package</a>
+See: <a href="/doc-node-sequelize/"> breeze-sequelize package</a>
 * Support for ASP.NET WebApi 2.2
 
 ##1.4.x#
@@ -20,7 +20,7 @@ See: <a href="http://www.getbreezenow.com/sequelize-mysqlpostgressql-lite"> bree
 * [Zza! Node/MongoDB sample](#Zza)
 * [Todo-Zumo sample](#todoZumo) for Azure Mobile Services
 * [MongoDB integration](#140)
-* [NHibernate support](nhibernate-support) with an [NHibernate sample](/samples/northbreeze)
+* [NHibernate support](/doc-net/nh.html) with an [NHibernate sample](/samples/north-breeze.html)
 * Support for OData V3, Visual Studio 2013, ASP.NET Web API 2.1, and Entity Framework 6
 
 ###<a name="154"></a>1.5.4 <span class="doc-date">May 5, 2015</span>###
@@ -375,7 +375,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 + The ability to perform an EntityQuery involving the "any" or "all" operators ( also aliased as "some" and "every") has been added.
  
 >For more info see 
-<a href="http://www.breezejs.com/documentation/query-examples#Where clauses with any/all conditions on related properties">**Entity Query Any/All conditions**</a>
+<a href="/doc-js/query-examples.html#Where clauses with any/all conditions on related properties">**Entity Query Any/All conditions**</a>
 
 <a name="notracking"></a>
 + An *EntityQuery.noTracking* method has been added to allow EntityQueries to return simple JavaScript objects instead of Breeze entities. The method accept a single optional boolean parameter that determines whether or not the noTracking capability should be enabled. If this parameter is omitted, true is assumed. 
@@ -432,7 +432,7 @@ Example:
 ---
 <a name="exclude-metadata"></a>
 
->The export/import features added in this release are documented in <a href="/documentation/exportimport"><b>Exports and Imports</b></a>.
+>The export/import features added in this release are documented in <a href="/doc-js/export-import.html"><b>Exports and Imports</b></a>.
 
 + The *EntityManager.exportEntities* method now allows you to optionally exclude metadata.  This can significantly reduce the size of the exported data, especially when exporting only a small number of entities.  
   +  The EntityManager.exportEntities method now has a second boolean parameter, `includeMetadata`. It is optional and defaults to 'true'. Set this second parameter to `false` if you want to exclude metadata. Example: 
@@ -464,7 +464,7 @@ Example:
 
 ---
 
->The serialization features added in this release are documented in <a href="/documentation/entity-serialization">Entity Serialization</a>.
+>The serialization features added in this release are documented in <a href="/doc-js/entity-serialization.html">Entity Serialization</a>.
 
 + When serializing data from the Breeze client to either the server or to an exported string, Breeze automatically ensures that exceptions do not occur during the serialization process. In practice this means ensuring that any 'unmapped' properties serialize 'correctly'.  It does this according to the following rules:
 
@@ -724,7 +724,7 @@ With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Valid
 + Fixed bug to insure that EntityManager.exportEntities and importEntities preserves null values.
 
 <h3><a name="Zza"></a>Zza! sample<span class="doc-date">August 05, 2013</span></h3>
-* <a href="http://www.breezejs.com/samples/zza">100% JS sample</a>, written for Node.js running Express with a MongoDB database.
+* <a href="/samples/zza-mongo.html">100% JS sample</a>, written for Node.js running Express with a MongoDB database.
 
 <h3><a name="140"></a>1.4.0<span class="doc-date">July 23, 2013</span></h3>
 

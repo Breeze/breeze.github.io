@@ -15,16 +15,15 @@ If not, stop. Figure out why the server isn't sending the right data before worr
 
 If you're getting data, please keep reading and following the suggested diagnostic steps.
 
-<p class="note">
-If and when you become truly stuck, you'll want to submit a question in <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" target="_blank" title="Breeze on StackOverflow">StackOverflow</a>. Before you do, please 
+> If and when you become truly stuck, you'll want to submit a question in <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" target="_blank" title="Breeze on StackOverflow">StackOverflow</a>. Before you do, please 
 prepare a code sample that reproduces the problem as described below in "<a href="#query-debugging-tool">Exploring query results with Plunker</a>".
-</p>
+
 
 ##I'm getting the right data from the server
 
 Ok ... you see the data but some or all of the aren't showing up in the entity. One of the first things we do is examine the metadata for a one or more of your `EntityType`s starting with the root type of the query.
 
-<p class="note">Please <a href="http://www.breezejs.com/documentation/metadata" title="Breeze Metadata"><b>learn about Breeze metadata</b></a> before continuing with this topic. It won't make much sense otherwise.</p>
+> Please <a href="/doc-js/metadata.html" title="Breeze Metadata"><b>learn about Breeze metadata</b></a> before continuing with this topic. It won't make much sense otherwise.</p>
 
 Let's look at a query that returns an `Order`, its `OrderDetail`s, and its parent `Customer`.
 
