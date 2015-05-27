@@ -2,61 +2,19 @@
 layout: doc-js
 ---
 
-<h1>Querying in depth</h1>
+# Querying in depth
 
-<p>In this topic we explore Breeze query features and techniques in depth.</p>
+In this topic we explore Breeze query features and techniques in depth.
 
-<p class="note">If a query completely misbehaves, take a look at the "<a href="/doc-js/query-debugging.html" title="Query result debugging">Query result debugging</a>" topic.</p> 
+> If a query completely misbehaves, take a look at the "<a href="/doc-js/query-debugging.html" title="Query result debugging">Query result debugging</a>" topic. 
 
-<p>This page is currently a framework for topics and is nowhere near complete. Eventually this page will cover:</p>
+This page is currently a framework for topics and is nowhere near complete. 
+The **queryTests** module in DocCode demonstrates many of the techniques covered in this topic.
 
-<div class="index">
-<ul>
-	<li>the role of the <span class="codeword">EntityManager</span> in querying</li>
-	<li>the resource name: a Rose is not a rose</li>
-	<li>how the client query becomes an URL in OData query syntax</li>
-	<li>getting data from an arbitrary HTTP source</li>
-	<li><a href='#QueryOptions'><span class="codeword">queryOptions</span></a> control how queried entities are found and merged into the cache</li>
-	<li>the query result data package</li>
-	<li>query the local cache with <span class="codeword">executeQueryLocally</span></li>
-	<li>combining remote and local query for a refreshed cache perspective on the results</li>
-	<li>hiding async ceremony by pouring results into a data bound, observable array</li>
-	<li><span class="codeword">EntityQuery</span> immutability</li>
-	<li>filtering
-	<ul>
-		<li>simple conditions</li>
-		<li>compound condition with <span class="codeword">Predicates</span></li>
-		<li>conditions on related entities using property paths</li>
-                <li>using <a href='#withParameters'><span class="codeword">withParameter</span></a> to pass arbitrary parameters to the server</li>
-	</ul>
-	</li>
-	<li><span class="codeword">fromEntities</span> &ndash; refresh values for or more entities</li>
-	<li><span class="codeword">fromEntityKey</span> &ndash; get an entity when you know its key</li>
-	<li><span class="codeword">fromEntityNavigation</span> &ndash; load related entities on-demand</li>
-	<li>include related entities in the query result payload with <em>expand</em></li>
-	<li><a href='#paging'>paging with <em>skip</em>, <em>take</em>, <em>top</em>, and <em>inlineCount</em></a></li>
-	<li>projection queries to select a subset of properties and flatten object graphs</li>
-	<li><span class="codeword">orderBy</span> to sort results on the data tier</li>
-	<li>shape the base query on the server with custom query actions</li>
-	<li>Events raised during the query process</li>
-</ul>
-
-<p>Please consult the API documentation for the following related classes:</p>
-
-<p style="margin-left: 2em;"><span class="codeword">EntityQuery</span><br />
-<span class="codeword">EntityManager</span><br />
-<span class="codeword">FilterQueryOp</span><br />
-<span class="codeword">FetchStrategy</span><br />
-<span class="codeword">MergeStrategy</span><br />
-<span class="codeword">Predicate</span><br />
-<span class="codeword">QueryOptions</span></p>
-
-<p>The <strong><em>queryTests</em></strong> module in DocCode demonstrates many of the techniques covered in this topic.</p>
-</div>
-
-<p class="note">This page is under construction. The following is a grab-bag of details concerning the points just enumerated.</p>
+> This page is under construction. The following is a grab-bag of details for now.
 
 <a name="withParameters"></a>
+
 ## Passing parameters to the server
 Often the method on the server does not recognize OData URI query syntax but it does take other parameters passed in the query string of the request.
 
@@ -108,6 +66,7 @@ Web API assumes that data for non-simple parameter types will be in the body of 
 **Important**: a query can have only one `.withParameters` clause.
 
 <a id='paging'></a>
+
 ## Paging with *skip*, *take*, *top*,  and *inlineCount* ##
 
 A query typically returns all entities that satisfy the filter criteria in your `where` clause(s). It could return a lot of data ... perhaps more data than you need or want right now.
@@ -166,6 +125,7 @@ You can remove an existing `take` or `skip` from the query by appending `.take()
     }
 
 <a name="QueryOptions"></a>
+
 ### Query Options ###
 The [**`QueryOptions`**](/doc-js/api-docs/classes/QueryOptions.html) object defines two strategies that guide the EntityManager's processing of a query.
 
@@ -176,6 +136,7 @@ The [**`MergeStrategy`**](/doc-js/api-docs/classes/MergeStrategy.html) tells Bre
 The "no tracking" feature is logically another "query option" but is implemented as its own option on the `EntityQuery` itself. [`EntityQuery.noTracking`](/doc-js/api-docs/classes/EntityQuery.html#method_noTracking) determines if Breeze should attempt (`false`) or should not attempt (`true`) to merge the raw query data into cache, as discussed in the next section.
 
 <a name="no-tracking"></a>
+
 ### "NoTracking" Queries
 
 The [**`EntityQuery.noTracking`**](/doc-js/api-docs/classes/EntityQuery.html#method_noTracking) method accepts a single optional boolean parameter (defaults to`true` when omitted) that determines whether or not Breeze should transform query results into entities and merged their data into cache.
