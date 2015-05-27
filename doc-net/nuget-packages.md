@@ -20,7 +20,7 @@ The package (or packages) you need depend on your development scenario.
 <a name="learn"></a>
 ##Are you new to Breeze?
 
-We recommend that you look first at Brian Noyes "<a href="www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with Angular and Breeze</a>" and "<a href="pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
+We recommend that you look first at Brian Noyes "<a href="http://www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with Angular and Breeze</a>" and "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
 
 John's "HotTowel" nuget packages will soon reflect the recently released Visual Studio 2013 and its family of technology updates.
 
@@ -97,7 +97,7 @@ To convert a (legacy) Visual Studio 2012 Breeze application to Breeze ASP.NET We
 
 * Replace the "Breeze.WebApi" and "Breeze.WebApi.EF" namespaces with "Breeze.WebApi2", "Breeze.ContextProvider", and "Breeze.ContextProvider.EF6".
 
-* Replace references to EF 4/5 namespaces in all of your project files with references to the EF 6 namespaces. Check out the <a href="entityframework.codeplex.com/wikipage?title=specs" target="_blank">pertinent Microsoft documentation</a>.
+* Replace references to EF 4/5 namespaces in all of your project files with references to the EF 6 namespaces. Check out the <a href="http://entityframework.codeplex.com/wikipage?title=specs" target="_blank">pertinent Microsoft documentation</a>.
 
 <a name="demoPkg"></a>
 #Get started with the Breeze Demo package

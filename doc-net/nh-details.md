@@ -20,7 +20,7 @@ Our [first NHibernate sample](/samples/northbreeze) is available now. Please hav
 
 - **BeforeSaveEntities**
 
-	`BeforeSaveEntities` interception point for business logic to be applied after the entites have been materialized from the HTTP request, but **before** they are saved to the database. This is a good place for [server-side validation](/doc-net/ef-server-side-validation).
+	`BeforeSaveEntities` interception point for business logic to be applied after the entites have been materialized from the HTTP request, but **before** they are saved to the database. This is a good place for [server-side validation](/doc-net/ef-serverside-validation).
 
 - **AfterSaveEntities**
 
