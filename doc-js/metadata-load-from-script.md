@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/load-metadata-script.html"
 ---
 #Load metadata from script#
 
