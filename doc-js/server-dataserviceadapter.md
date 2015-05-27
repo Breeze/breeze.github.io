@@ -206,7 +206,7 @@ Submits a query request to the server and returns a promise for the query result
   - ***mappingContext*** - An instance of `MappingContext` that describes the query to be performed along with other query-environment data.                      
   - **returns** a *promise* for *raw JSON query results* (not entities), results that Breeze filters through a `JsonResultsAdapter` and turns into entities.
 
-This method typically does little more than tell the AJAX component to issue the query. The `EntityManager` handles entity materialization and merging into cache, informed by the applicable [`JsonResultsAdapter`](jsonresultsadapters).
+This method typically does little more than tell the AJAX component to issue the query. The `EntityManager` handles entity materialization and merging into cache, informed by the applicable [`JsonResultsAdapter`](/doc-js/server-jsonresultsadapter).
 
 Much of the [**`MappingContext`**](https://github.com/Breeze/breeze.js/blob/master/src/a55_mappingContext.js) is private to Breeze but some of it is relevant to your implementation of `executeQuery`
               

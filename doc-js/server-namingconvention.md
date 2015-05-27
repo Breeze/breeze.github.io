@@ -56,9 +56,9 @@ When you search for a person whose first name is "Joe", Breeze must know if the 
 
 There are two built-in `NamingConvention` instances, both static properties of the `NamingConvention` class: 
 
-1. <a href="/sites/all/apidocs/classes/NamingConvention.html#property_defaultInstance" target="_blank">none</a> which preserves the names in both directions.
+1. <a href="/doc-js/api-docs/classes/NamingConvention.html#property_defaultInstance" target="_blank">none</a> which preserves the names in both directions.
  
-1. <a href="/sites/all/apidocs/classes/NamingConvention.html#property_camelCase" target="_blank">camelCase</a> which performs the 'FirstName' / 'firstName' translation.
+1. <a href="/doc-js/api-docs/classes/NamingConvention.html#property_camelCase" target="_blank">camelCase</a> which performs the 'FirstName' / 'firstName' translation.
 
 There is always a default `NamingConvention` instance. You can ask the `NamingConvention` for the current default.
 
@@ -76,7 +76,7 @@ Call the following line before creating any `MetadataStores` or `EntityManagers`
 
 #### The *MetadataStore* and the *NamingConvention*
 
-A Breeze <a href="/sites/all/apidocs/classes/MetadataStore.html" target="_blank"><code>MetadataStore</code></a> requires a `NamingConvention` to handle property name translation.
+A Breeze <a href="/doc-js/api-docs/classes/MetadataStore.html" target="_blank"><code>MetadataStore</code></a> requires a `NamingConvention` to handle property name translation.
 
 When you create a new instance of a `MetadataStore` (explicitly or indirectly when you create a new `EntityManager`), you're also pinning it to a specific `NamingConvention` instance. It will be pinned to the default convention unless you say otherwise:
 
@@ -312,4 +312,4 @@ Suppose you want the metadata exported from an existing store but  you don't wan
 
 # Beyond the NamingConvention ... the JsonResultsAdapter
 
-The `NamingConvention` is ideal for *property name* translation. When you need to do more complex manipulations of data arriving from the server, you can turn to the [**`JsonResultsAdapter`**](mapping-json)
+The `NamingConvention` is ideal for *property name* translation. When you need to do more complex manipulations of data arriving from the server, you can turn to the [**`JsonResultsAdapter`**](/doc-js/server-jsonresultsadapter)

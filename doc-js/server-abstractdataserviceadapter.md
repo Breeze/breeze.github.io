@@ -12,7 +12,7 @@ Many people feel it is easier to write a custom adapter that derives from `Abstr
 
 This adapter is designed for web services that accept batch save requests consisting of entity change-set payloads. OData services and web services that understand the Breeze change-set protocol fall in this category.
 
->If your web service does not work this way (most "REST" APIs do not), take a look at the [`AbstractRestDataServiceAdapter`](https://github.com/Breeze/breeze.js.labs/blob/master/breeze.labs.dataservice.abstractrest.js) and its derivatives in [**Breeze Labs**](what-are-breeze-labs) instead. 
+>If your web service does not work this way (most "REST" APIs do not), take a look at the [`AbstractRestDataServiceAdapter`](https://github.com/Breeze/breeze.js.labs/blob/master/breeze.labs.dataservice.abstractrest.js) and its derivatives in [**Breeze Labs**](/doc-breeze-labs/) instead. 
 
 A *DataServiceAdapter* derived from `AbstractDataServiceAdapter` could look something like the following:
 
@@ -62,7 +62,9 @@ You **MIGHT override**
 
 - **jsonResultsAdapter**: the property that returns the `jsonResultsAdapter` to be used for this *DataServiceAdapter*. Both the `executeQuery` and the `saveChanges` methods use this `jsonResultsAdapter`. 
 
-	You'll probably override this property if your web service serializes query and save responses in a way that the native `jsonResultsAdapter` did not anticipate. See the "[JsonResultsAdapters](jsonresultsadapters)" topic for more details.
+	You'll probably override this property if your web service serializes query and save responses in a way that the native `jsonResultsAdapter` did not anticipate. 
+	
+	See the "[JsonResultsAdapters](/doc-js/server-jsonresultsadapter)" topic for more details.
 
 
 You **MUST implement** the following two `saveChanges` helper methods if your adapter can save changes. 

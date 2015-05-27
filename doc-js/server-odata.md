@@ -84,9 +84,11 @@ You must specify an absolute path for your service address (AKA serviceName), e.
 
 ##Adding headers and other configuration
 
-The Breeze OData DataService adapters, "OData" and "webApiOData", rely on the DataJS `OData` component to handle AJAX calls. If you need to add custom headers or otherwise manipulate the HTTP request, you'll need to configure the `OData.defaultHttpClient` as described in the ["Controlling AJAX calls"](controlling-ajax#odata-ajax "OData AJAX") topic.
+The Breeze OData DataService adapters, "OData" and "webApiOData", rely on the DataJS `OData` component to handle AJAX calls. If you need to add custom headers or otherwise manipulate the HTTP request,
+ you'll need to configure the `OData.defaultHttpClient` as described in the ["Controlling AJAX calls"](/doc-js/server-ajaxadapter#odata-ajax "OData AJAX") topic.
 
-When you save entities, the entire change-set becomes a $batch request consisting of multiple nested HTTP requests for each entity. The DataService adapters build these requests for you. You can [adjust the $batch details](controlling-ajax#changeRequestInterceptor "Adjust save request data with a changeRequestInterceptor") via each adapter's `changeRequestInterceptor`.
+When you save entities, the entire change-set becomes a $batch request consisting of multiple nested HTTP requests for each entity. The DataService adapters build these requests for you. 
+You can [adjust the $batch details](/doc-js/server-ajaxadapter#changeRequestInterceptor "Adjust save request data with a changeRequestInterceptor") via each adapter's `changeRequestInterceptor`.
 
 #Support for other OData sources
 

@@ -13,7 +13,7 @@ We'll start with the `EntityManager` itself which is the focal point of the Bree
 
 * [**NamingConvention**](/doc-js/server-namingconvention.html) - translate between server-side property names and client-side property names.
 
-* [**AjaxAdapter**](/doc-js/ajaxadapter.html) - a concrete implementation of the Breeze interface for making AJAX requests and receiving responses.
+* [**AjaxAdapter**](/doc-js/server-ajaxadapter.html) - a concrete implementation of the Breeze interface for making AJAX requests and receiving responses.
 
 We'll also cover [**OData**](/doc-js/server-odata.html) in this section. OData is a widely used, open source protocol for CRUD operations. Breeze supports this protocol with a couple of *DataServiceAdapters*.
 

@@ -23,7 +23,9 @@ Sadly, the real world isn't always that simple.
 
 ## Transforming property names
 
-Sometimes it's *almost* that simple. Maybe the property names differ in some predictable way ... as when the property names are **CamelCase on the server** and **pascalCase on the client**. Such property name transforms are so common that Breeze offers the [**NamingConvention**](naming-convention) for just that purpose.  
+Sometimes it's *almost* that simple. Maybe the property names differ in some predictable way ... as when the property names are **CamelCase on the server** and **pascalCase on the client**. 
+
+Such property name transforms are so common that Breeze offers the [**NamingConvention**](/doc-js/server-namingconvention) for just that purpose.  
 
 You can create your own convention and make it the default:
 
@@ -82,7 +84,9 @@ That help comes in the form of a **JsonResultsAdapter**, a component that conver
 
 The *JsonResultsAdapter* provides fine grained, programmatic control over the raw data arriving from the server ... before those data become entity property values. It is a powerful interception tool and it is often used *in conjunction with the* `NamingConvention` to translate raw query and save result data into the entities.
 
->The *JsonResultsAdapter* does **not** handle the ***outbound*** conversion of entity data into to the JSON save request body. That's the responsibility of [*DataServiceAdapter*'s `saveChanges`](dataserviceadapters#saveChanges), specifically the **\_prepareSaveBundle** method.
+>The *JsonResultsAdapter* does **not** handle the ***outbound*** conversion of entity data into to the JSON save request body. 
+
+That's the responsibility of [*DataServiceAdapter*'s `saveChanges`](/doc-js/server-dataserviceadapter#saveChanges), specifically the **\_prepareSaveBundle** method.
 
 While you can always write your own adapter [as explained below](#jra-interface), Breeze ships with several adapters, any of which may be sufficient for your needs.
 
@@ -99,11 +103,13 @@ OData services send predictable JSON. So do many services that are configured fo
 * Ruby-on-Rails servers (that serialize "just right")
 * SharePoint 2013 OData services
 
-Where are these *JsonResultsAdapters*?  **They're tucked away inside the *dataServiceAdapters*** that [correspond to these service technologies](talking-server#breeze-dataserviceadapters)!
+Where are these *JsonResultsAdapters*?  **They're tucked away inside the *dataServiceAdapters*** 
+
+that [correspond to these service technologies](/doc-js/server-dataserviceadapter)!
 
 ### JsonResultsAdapters and DataServiceAdapters
 
-A [**DataServiceAdapter**](dataserviceadapters) handles the details of communication between the Breeze client and the remote data server.
+A [**DataServiceAdapter**](/doc-js/server-dataserviceadapter) handles the details of communication between the Breeze client and the remote data server.
 
 The *DataServiceAdapter* is responsible for the two Breeze operations, query and save, that receive JSON data and materialize the data as entities. So the *DataServiceAdapter* is the obvious home for a *JsonResultsAdapter* that prepares the JSON data for materialization.
 
@@ -381,7 +387,8 @@ Three important considerations for **entity nodes**:
  
     We presumably re-mapped the `Bar` property to `Foo` because the client-side entity has a `Foo` property, not a `Bar` property. Such property name translation is rare ... the active `NamingConvention` can usually do the job ... but it happens.
 
-1. A *JsonResultsAdapter* converts in **one direction only**, from the server JSON to the entity. Converting from `Bar` to `Foo` is fine if you'll only read the data. But if you ever have to save a change to `Foo` and need that value to persist to `Bar` on the server ... you'll have to handle *that* property name conversion elsewhere (see **\_prepareSaveBundle** in the [DataServiceAdapters topic](dataserviceadapters)).
+1. A *JsonResultsAdapter* converts in **one direction only**, from the server JSON to the entity. Converting from `Bar` to `Foo` is fine if you'll only read the data.
+But if you ever have to save a change to `Foo` and need that value to persist to `Bar` on the server ... you'll have to handle *that* property name conversion elsewhere (see **\_prepareSaveBundle** in the [DataServiceAdapters topic](/doc-js/server-dataserviceadapter)).
 
 ### Node traversal logic 
 

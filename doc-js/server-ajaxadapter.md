@@ -128,7 +128,9 @@ You have no obligation to implement the "defaultSettings" or the [`requestInterc
 
 The `config` parameter passed to the `ajax` method conforms to a Breeze-specific interface. It is **not** the same as the `setting` parameter you'd pass to jQuery's `$.ajax` or Angular's `$http()`. 
 
-The `config` parameter is designed for consumption by a Breeze [*DataSeviceAdapter*](/doc-js/server-dataserviceadapter.html). The *DataServiceAdapters* shipped with Breeze (excluding OData adapters) construct their HTTP requests in terms of the AJAX adapter's `config` interface.
+The `config` parameter is designed for consumption by a Breeze [*DataSeviceAdapter*](/doc-js/server-dataserviceadapter.html). 
+
+The *DataServiceAdapters* shipped with Breeze (excluding OData adapters) construct their HTTP requests in terms of the AJAX adapter's `config` interface.
 
 ### Register your adapter
 
@@ -233,7 +235,9 @@ While we're talking about AJAX interceptors, it's worth mentioning the `changeRe
 
 >We are talking about the **DataServiceAdapter** now, *not* the *AJAX adapter* which we've been discussing up to this point.
 
-The `EntityManager.saveChanges` method delegates many of the details of save processing to a *DataServiceAdapter* which handles the specifics of communicating with a particular web service. Breeze ships with [several *DataServiceAdapters*](dataserviceadapters#breeze-oob-adapters) and you can also [write your own](dataserviceadapters#custom-adapter).
+The `EntityManager.saveChanges` method delegates many of the details of save processing to a *DataServiceAdapter* which handles the specifics of communicating with a particular web service. 
+
+Breeze ships with [several *DataServiceAdapters*](/doc-js/server-dataserviceadapter#breeze-oob-adapters) and you can also [write your own](/doc-js/dataserviceadapter#custom-adapter).
 
 But writing a custom *DataServiceAdapter* isn't always easy because web service APIs are often complicated.
 
