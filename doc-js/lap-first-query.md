@@ -109,7 +109,7 @@ And just like that, the screen fills with *Todos*.  We'll discuss how *that* hap
 
 ##Notes
 
-<a name="note 1"></a>[1] Breeze appends the "breeze/todos" service name string to the "site of origin", probably "http://localhost:26843/" if you're playing along at home. The *EntityManager *will send requests to "http://localhost:26843/breeze/todos"; the receiving Web API service routes the request to the TodosController on the server and then the server-side magic happens. You can <a href="/doc-js/web-api-controller">read about this controller</a> later.
+<a name="note 1"></a>[1] Breeze appends the "breeze/todos" service name string to the "site of origin", probably "http://localhost:26843/" if you're playing along at home. The *EntityManager *will send requests to "http://localhost:26843/breeze/todos"; the receiving Web API service routes the request to the TodosController on the server and then the server-side magic happens. You can <a href="/doc-net/webapi-controller">read about this controller</a> later.
 
 <a name="note 2"></a>[2] Promises are a technique for managing sequences of asynchronous method calls.
 
