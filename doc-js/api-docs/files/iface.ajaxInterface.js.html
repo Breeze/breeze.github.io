@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>..\src\a55_saveOptions.js</title>
+    <title>iface.ajaxInterface.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
 
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
@@ -200,114 +200,65 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: ..\src\a55_saveOptions.js</h1>
+                        <h1 class="file-heading">File: iface.ajaxInterface.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 ﻿/**
-@module breeze
-**/
+ @module breeze
+ **/
 
-var SaveOptions = (function () {
-  /**
-  A SaveOptions instance is used to specify the &#x27;options&#x27; under which a save will occur.
+/**
+ This is an interface description. Any class that implements the methods and properties defined here is considered a valid
+ implementation of this interface.
 
-  @class SaveOptions
-  **/
+ @class ~ajax_interface
+ **/
 
-  /**
-  @method &lt;ctor&gt; SaveOptions
-  @param config {Object}
-  @param [config.allowConcurrentSaves] {Boolean} Whether multiple saves can be in-flight at the same time. The default is false.
-  @param [config.resourceName] {String} Resource name to be used during the save - this defaults to &quot;SaveChanges&quot;
-  @param [config.dataService] {DataService} The DataService to be used for this save.
-  @param [config.tag] {Object} Free form value that will be sent to the server during the save.
-  **/
-  var ctor = function SaveOptions(config) {
-    updateWithConfig(this, config);
-  };
+/**
+ Performs an ajax request. This method takes a single argument — a configuration object — that is used to generate an HTTP request. The config object has two callback methods:
+ &#x27;success&#x27; and &#x27;error&#x27; in addition to a number of properties that may be used to configure the request itself. Higher level Breeze constructs will wrap calls to the ajax adapter
+ into Promises. Individual adapters may add additional properties to the basic config object described below.
 
-  var proto = ctor.prototype;
-  proto._$typeName = &quot;SaveOptions&quot;;
+ @method ajax
+ @param config {Object}
+ @param config.url {String} Absolute or relative URL of the resource that is being requested.
+ @param config.type {String} HTTP method (e.g. &#x27;GET&#x27;, &#x27;POST&#x27;, etc)
+ @param [config.data] {Object|String} Data to be sent as the request message data
+ @param [config.params]  Map of strings or objects which will be sent to the server in the query string in a form encoded format - url?key1=value1&amp;key2=value2
+ @param [config.crossDomain=false]
+ @param config.success {Function} Function called on success.
+ successFunction(httpResponse)
+ @param config.error {Function} Function called on failure.
+ errorFunction(httpResponse)
+ **/
 
-  /**
-  Sets the &#x27;defaultInstance&#x27; by creating a copy of the current &#x27;defaultInstance&#x27; and then applying all of the properties of the current instance.
-  The current instance is returned unchanged.
-  @method setAsDefault
-  @chainable
-  **/
-  proto.setAsDefault = function () {
-    return __setAsDefault(this, ctor);
-  };
+/**
+ A generic wrapper for any Http response returned by a server.
 
-  /**
-  Whether another save can be occuring at the same time as this one - default is false.
+ @class HttpResponse
+ **/
 
-  __readOnly__
-  @property allowConcurrentSaves {Boolean}
-  **/
+/**
+ The response body.
+ @property data {Object}
+ **/
 
-  /**
-  A {{#crossLink &quot;DataService&quot;}}{{/crossLink}}.
-  __readOnly__
-  @property dataService {DataService}
-  **/
+/**
+ HTTP status code of the response.
+ @property status {Number}
+ **/
 
-  /**
-  The resource name to call to perform the save.
-  __readOnly__
-  @property resourceName {String}
-  **/
+/**
+ The configuration object that was used to generate the request.
+ @property config {Object}
+ **/
 
-  /**
-  A free form value that will be sent to the server.
-
-  __readOnly__
-  @property tag {Object}
-  **/
-
-  /**
-  The default value whenever SaveOptions are not specified.
-  @property defaultInstance {SaveOptions}
-  @static
-  **/
-
-  /**
-  Returns a copy of this SaveOptions with the specified config options applied.
-  @example
-      var saveOptions = em1.saveOptions.using( {resourceName: &quot;anotherResource&quot; });
-
-  @method using
-  @param config {Configuration Object|} The object to apply to create a new SaveOptions.
-  @param [config.allowConcurrentSaves] {Boolean} Whether multiple saves can be in-flight at the same time. The default is false.
-  @param [config.resourceName] {String} Resource name to be used during the save - this defaults to &quot;SaveChanges&quot;
-  @param [config.dataService] {DataService} The DataService to be used for this save.
-  @param [config.tag] {Object} Free form value that will be sent to the server during the save.
-  @chainable
-  **/
-  proto.using = function (config) {
-    return updateWithConfig(this, config);
-  };
-
-  function updateWithConfig(obj, config) {
-    if (config) {
-      assertConfig(config)
-          .whereParam(&quot;resourceName&quot;).isOptional().isString()
-          .whereParam(&quot;dataService&quot;).isOptional().isInstanceOf(DataService)
-          .whereParam(&quot;allowConcurrentSaves&quot;).isBoolean().isOptional()
-          .whereParam(&quot;tag&quot;).isOptional()
-          .applyAll(obj);
-    }
-    return obj;
-  }
-
-  ctor.defaultInstance = new ctor({ allowConcurrentSaves: false});
-  return ctor;
-})();
-
-breeze.SaveOptions = SaveOptions;
-
-
+/**
+ A function to retrieve headers - a null headerName will return all headers.
+ @method getHeader
+ @param [headerName] {String}
+ **/
 
     </pre>
 </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>..\src\a40_keyGenerator.js</title>
+    <title>a30_entityKey.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
 
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
@@ -200,7 +200,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: ..\src\a40_keyGenerator.js</h1>
+                        <h1 class="file-heading">File: a30_entityKey.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -208,122 +208,158 @@
 @module breeze
 **/
 
-var KeyGenerator = (function () {
+var EntityKey = (function () {
 
-  /*
-  @class KeyGenerator
-  */
-  var ctor = function KeyGenerator() {
-    // key is dataProperty.name + || + entityType.name, value is propEntry
-    // propEntry = { entityType, propertyName, keyMap }
-    // keyMap has key of the actual value ( as a string) and a value of null or the real id.
-    this._tempIdMap = {};
+  var ENTITY_KEY_DELIMITER = &quot;:::&quot;;
+
+  /**
+  An EntityKey is an object that represents the unique identity of an entity.  EntityKey&#x27;s are immutable.
+
+  @class EntityKey
+  **/
+
+  /**
+  Constructs a new EntityKey.  Each entity within an EntityManager will have a unique EntityKey.
+  @example
+      // assume em1 is an EntityManager containing a number of existing entities.
+      var empType = em1.metadataStore.getEntityType(&quot;Employee&quot;);
+      var entityKey = new EntityKey(empType, 1);
+  EntityKey&#x27;s may also be found by calling EntityAspect.getKey()
+  @example
+      // assume employee1 is an existing Employee entity
+      var empKey = employee1.entityAspect.getKey();
+  Multipart keys are created by passing an array as the &#x27;keyValues&#x27; parameter
+  @example
+      var empTerrType = em1.metadataStore.getEntityType(&quot;EmployeeTerritory&quot;);
+      var empTerrKey = new EntityKey(empTerrType, [ 1, 77]);
+      // The order of the properties in the &#x27;keyValues&#x27; array must be the same as that
+      // returned by empTerrType.keyProperties
+  @method &lt;ctor&gt; EntityKey
+  @param entityType {EntityType} The {{#crossLink &quot;EntityType&quot;}}{{/crossLink}} of the entity.
+  @param keyValues {value|Array of values} A single value or an array of values.
+  **/
+  var ctor = function EntityKey(entityType, keyValues) {
+    assertParam(entityType, &quot;entityType&quot;).isInstanceOf(EntityType).check();
+    var subtypes = entityType.getSelfAndSubtypes();
+    if (subtypes.length &gt; 1) {
+      this._subtypes = subtypes.filter(function (st) {
+        return st.isAbstract === false;
+      });
+    }
+
+    if (!Array.isArray(keyValues)) {
+      keyValues = __arraySlice(arguments, 1);
+    }
+
+    this.entityType = entityType;
+    entityType.keyProperties.forEach(function (kp, i) {
+      // insure that guid keys are comparable.
+      if (kp.dataType === DataType.Guid) {
+        keyValues[i] = keyValues[i] &amp;&amp; keyValues[i].toLowerCase();
+      }
+    });
+
+    this.values = keyValues;
+    this._keyInGroup = createKeyString(keyValues);
+
   };
+
+  ctor._$typeName = &quot;EntityKey&quot;;
   var proto = ctor.prototype;
 
-  /*
-  Returns a unique &#x27;temporary&#x27; id for the specified {{#crossLink &quot;EntityType&quot;}}{{/crossLink}}.
-  Uniqueness is defined for this purpose as being unique within each instance of a KeyGenerator. This is sufficient
-  because each EntityManager will have its own instance of a KeyGenerator and any entities imported into
-  the EntityManager with temporary keys will have them regenerated and remapped on import.
+  /**
+  The &#x27;EntityType&#x27; that this is a key for.
 
-  The return value of this method must be of the correct type as determined by the keyProperties of the
-  specified EntityType
+  __readOnly__
+  @property entityType {EntityType}
+  **/
+
+  /**
+  An array of the values for this key. This will usually only have a single element, unless the entity type has a multipart key.
+
+  __readOnly__
+  @property values {Array}
+  **/
+
+  proto.toJSON = function () {
+    return {
+      entityType: this.entityType.name,
+      values: this.values
+    };
+  };
+
+  ctor.fromJSON = function (json, metadataStore) {
+    var et = metadataStore._getEntityType(json.entityType, true);
+    return new EntityKey(et, json.values);
+  };
+
+  /**
+  Used to compare EntityKeys are determine if they refer to the same Entity.
+  There is also an static version of &#x27;equals&#x27; with the same functionality.
   @example
-      // Assume em1 is a preexisting EntityManager
-      var custType = em1.metadataStore.getEntityType(&quot;Customer&quot;);
-      var cust1 = custType.createEntity();
-      // next line both sets cust1&#x27;s &#x27;CustomerId&#x27; property but also returns the value
-      var cid1 = em1.generateTempKeyValue(cust1);
-      em1.saveChanges().then( function( data) {
-        var sameCust1 = data.results[0];
-        // cust1 === sameCust1;
-        // but cust1.getProperty(&quot;CustomerId&quot;) != cid1
-        // because the server will have generated a new id
-        // and the client will have been updated with this
-        // new id.
-      });
-  @method generateTempKeyValue
-  @param entityType {EntityType}
+      // assume em1 is an EntityManager containing a number of existing entities.
+      var empType = em1.metadataStore.getEntityType(&quot;Employee&quot;);
+      var empKey1 = new EntityKey(empType, 1);
+      // assume employee1 is an existing Employee entity
+      var empKey2 = employee1.entityAspect.getKey();
+      if (empKey1.equals(empKey2)) {
+          // do something  ...
+      }
+  @method equals
+  @param entityKey {EntityKey}
+  **/
+  proto.equals = function (entityKey) {
+    if (!(entityKey instanceof EntityKey)) return false;
+    return (this.entityType === entityKey.entityType) &amp;&amp;
+        __arrayEquals(this.values, entityKey.values);
+  };
+
+  /*
+  Returns a human readable representation of this EntityKey.
+  @method toString
   */
-  proto.generateTempKeyValue = function (entityType, valueIfAvail) {
-    var keyProps = entityType.keyProperties;
-    if (keyProps.length &gt; 1) {
-      throw new Error(&quot;Ids can not be autogenerated for entities with multipart keys&quot;);
-    }
-    var keyProp = keyProps[0];
-    var propEntry = getPropEntry(this, keyProp, true);
-    var nextId;
-    if (valueIfAvail != null) {
-      if (!propEntry.keyMap[valueIfAvail.toString()]) {
-        nextId = valueIfAvail;
-      }
-    }
-
-    if (nextId === undefined) {
-      var dataType = keyProp.dataType;
-      if (dataType.getNext) {
-        nextId = dataType.getNext(this);
-        // need to watch out for collision with previously imported ids that might also get generated.
-        while (propEntry.keyMap[nextId.toString()] != null) {
-          nextId = dataType.getNext(this);
-        }
-      } else {
-        throw new Error(&quot;Cannot use a property with a dataType of: &quot; + dataType.toString() + &quot; for id generation&quot;);
-      }
-    }
-
-    propEntry.keyMap[nextId.toString()] = true;
-    return nextId;
+  proto.toString = function (altEntityType) {
+    return (altEntityType || this.entityType).name + &#x27;-&#x27; + this._keyInGroup;
   };
 
-  proto.getTempKeys = function () {
-    var results = [];
-    //noinspection JSHint
-    for (var key in this._tempIdMap) {
-      var propEntry = this._tempIdMap[key];
-      var entityType = propEntry.entityType;
-      // var propName = propEntry.propertyName;
-      //noinspection JSHint
-      for (var keyValue in propEntry.keyMap) {
-        results.push(new EntityKey(entityType, [keyValue]));
+  /**
+  Used to compare EntityKeys are determine if they refer to the same Entity.
+  There is also an instance version of &#x27;equals&#x27; with the same functionality.
+  @example
+      // assume em1 is an EntityManager containing a number of existing entities.
+      var empType = em1.metadataStore.getEntityType(&quot;Employee&quot;);
+      var empKey1 = new EntityKey(empType, 1);
+      // assume employee1 is an existing Employee entity
+      var empKey2 = employee1.entityAspect.getKey();
+      if (EntityKey.equals(empKey1, empKey2)) {
+          // do something  ...
       }
-    }
-    return results;
+  @method equals
+  @static
+  @param k1 {EntityKey}
+  @param k2 {EntityKey}
+  **/
+  ctor.equals = function (k1, k2) {
+    if (!(k1 instanceof EntityKey)) return false;
+    return k1.equals(k2);
   };
 
-
-  // proto methods below are not part of the KeyGenerator interface.
-
-  proto.isTempKey = function (entityKey) {
-    var keyProps = entityKey.entityType.keyProperties;
-    if (keyProps.length &gt; 1) return false;
-    var keyProp = keyProps[0];
-    var propEntry = getPropEntry(this, keyProp);
-    if (!propEntry) {
-      return false;
-    }
-    return (propEntry.keyMap[entityKey.values[0].toString()] !== undefined);
+  // TODO: we may want to compare to default values later.
+  proto._isEmpty = function () {
+    return this.values.join(&quot;&quot;).length === 0;
   };
 
-  function getPropEntry(that, keyProp, createIfMissing) {
-    var key = keyProp.name + &quot;..&quot; + keyProp.parentType.name;
-    var propEntry = that._tempIdMap[key];
-    if (!propEntry) {
-      if (createIfMissing) {
-        propEntry = { entityType: keyProp.parentType, propertyName: keyProp.name, keyMap: {} };
-        that._tempIdMap[key] = propEntry;
-      }
-    }
-    return propEntry;
+  ctor.createKeyString = createKeyString;
+
+  function createKeyString(keyValues) {
+    return keyValues.join(ENTITY_KEY_DELIMITER);
   }
-
-  __config.registerType(ctor, &quot;KeyGenerator&quot;);
 
   return ctor;
 })();
 
-breeze.KeyGenerator = KeyGenerator;
+breeze.EntityKey = EntityKey;
+
     </pre>
 </div>
 

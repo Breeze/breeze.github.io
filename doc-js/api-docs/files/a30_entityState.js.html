@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>..\src\iface.ajaxInterface.js</title>
+    <title>a30_entityState.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
 
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
@@ -200,65 +200,163 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: ..\src\iface.ajaxInterface.js</h1>
+                        <h1 class="file-heading">File: a30_entityState.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 ﻿/**
- @module breeze
- **/
+@module breeze
+**/
 
-/**
- This is an interface description. Any class that implements the methods and properties defined here is considered a valid
- implementation of this interface.
+var EntityState = (function () {
+  /**
+  EntityState is an &#x27;Enum&#x27; containing all of the valid states for an &#x27;Entity&#x27;.
 
- @class ~ajax_interface
- **/
+  @class EntityState
+  @static
+  **/
+  var entityStateMethods = {
+    /**
+    @example
+        var es = anEntity.entityAspect.entityState;
+        return es.isUnchanged();
+    is the same as
+    @example
+        return es === EntityState.Unchanged;
+    @method isUnchanged
+    @return {Boolean} Whether an entityState instance is EntityState.Unchanged.
+    **/
+    isUnchanged: function () {
+      return this === EntityState.Unchanged;
+    },
+    /**
+    @example
+        var es = anEntity.entityAspect.entityState;
+        return es.isAdded();
+    is the same as
+    @example
+        return es === EntityState.Added;
+    @method isAdded
+    @return {Boolean} Whether an entityState instance is EntityState.Added.
+    **/
+    isAdded: function () {
+      return this === EntityState.Added;
+    },
+    /**
+    @example
+        var es = anEntity.entityAspect.entityState;
+        return es.isModified();
+    is the same as
+    @example
+        return es === EntityState.Modified;
+    @method isModified
+    @return {Boolean} Whether an entityState instance is EntityState.Modified.
+    **/
+    isModified: function () {
+      return this === EntityState.Modified;
+    },
+    /**
+    @example
+        var es = anEntity.entityAspect.entityState;
+        return es.isDeleted();
+    is the same as
+    @example
+        return es === EntityState.Deleted;
+    @method isDeleted
+    @return  {Boolean} Whether an entityState instance is EntityState.Deleted.
+    **/
+    isDeleted: function () {
+      return this === EntityState.Deleted;
+    },
+    /**
+    @example
+        var es = anEntity.entityAspect.entityState;
+        return es.isDetached();
+    is the same as
+    @example
+        return es === EntityState.Detached;
+    @method isDetached
+    @return  {Boolean} Whether an entityState instance is EntityState.Detached.
+    **/
+    isDetached: function () {
+      return this === EntityState.Detached;
+    },
+    /**
+    @example
+        var es = anEntity.entityAspect.entityState;
+        return es.isUnchangedOrModified();
+    is the same as
+    @example
+        return es === EntityState.Unchanged || es === EntityState.Modified
+    @method isUnchangedOrModified
+    @return {Boolean} Whether an entityState instance is EntityState.Unchanged or EntityState.Modified.
+    **/
+    isUnchangedOrModified: function () {
+      return this === EntityState.Unchanged || this === EntityState.Modified;
+    },
+    /**
+    @example
+        var es = anEntity.entityAspect.entityState;
+        return es.isAddedModifiedOrDeleted();
+    is the same as
+    @example
+        return es === EntityState.Added || es === EntityState.Modified || es === EntityState.Deleted
+    @method isAddedModifiedOrDeleted
+    @return {Boolean} Whether an entityState instance is EntityState.Unchanged or EntityState.Modified or EntityState.Deleted.
+    **/
+    isAddedModifiedOrDeleted: function () {
+      return this === EntityState.Added ||
+          this === EntityState.Modified ||
+          this === EntityState.Deleted;
+    }
+  };
 
-/**
- Performs an ajax request. This method takes a single argument — a configuration object — that is used to generate an HTTP request. The config object has two callback methods:
- &#x27;success&#x27; and &#x27;error&#x27; in addition to a number of properties that may be used to configure the request itself. Higher level Breeze constructs will wrap calls to the ajax adapter
- into Promises. Individual adapters may add additional properties to the basic config object described below.
+  var EntityState = new Enum(&quot;EntityState&quot;, entityStateMethods);
+  /**
+  The &#x27;Unchanged&#x27; state.
 
- @method ajax
- @param config {Object}
- @param config.url {String} Absolute or relative URL of the resource that is being requested.
- @param config.type {String} HTTP method (e.g. &#x27;GET&#x27;, &#x27;POST&#x27;, etc)
- @param [config.data] {Object|String} Data to be sent as the request message data
- @param [config.params]  Map of strings or objects which will be sent to the server in the query string in a form encoded format - url?key1=value1&amp;key2=value2
- @param [config.crossDomain=false]
- @param config.success {Function} Function called on success.
- successFunction(httpResponse)
- @param config.error {Function} Function called on failure.
- errorFunction(httpResponse)
- **/
+  @property Unchanged {EntityState}
+  @final
+  @static
+  **/
+  EntityState.Unchanged = EntityState.addSymbol();
+  /**
+  The &#x27;Added&#x27; state.
 
-/**
- A generic wrapper for any Http response returned by a server.
+  @property Added {EntityState}
+  @final
+  @static
+  **/
+  EntityState.Added = EntityState.addSymbol();
+  /**
+  The &#x27;Modified&#x27; state.
 
- @class HttpResponse
- **/
+  @property Modified {EntityState}
+  @final
+  @static
+  **/
+  EntityState.Modified = EntityState.addSymbol();
+  /**
+  The &#x27;Deleted&#x27; state.
 
-/**
- The response body.
- @property data {Object}
- **/
+  @property Deleted {EntityState}
+  @final
+  @static
+  **/
+  EntityState.Deleted = EntityState.addSymbol();
+  /**
+  The &#x27;Detached&#x27; state.
 
-/**
- HTTP status code of the response.
- @property status {Number}
- **/
+  @property Detached {EntityState}
+  @final
+  @static
+  **/
+  EntityState.Detached = EntityState.addSymbol();
+  EntityState.resolveSymbols();
+  return EntityState;
+})();
 
-/**
- The configuration object that was used to generate the request.
- @property config {Object}
- **/
-
-/**
- A function to retrieve headers - a null headerName will return all headers.
- @method getHeader
- @param [headerName] {String}
- **/
+breeze.EntityState = EntityState;
 
     </pre>
 </div>

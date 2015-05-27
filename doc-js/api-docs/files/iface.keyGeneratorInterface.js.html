@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>..\src\iface.promise.js</title>
+    <title>iface.keyGeneratorInterface.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
 
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
@@ -200,7 +200,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: ..\src\iface.promise.js</h1>
+                        <h1 class="file-heading">File: iface.keyGeneratorInterface.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -209,30 +209,43 @@
  **/
 
 /**
- This is an simply api documentation for the CommonJS A Promises specification as it is used within Breeze.
- @class Promise
+ This is an interface description. Any class that implements the methods and properties defined here is considered a valid
+ implementation of this interface.
+
+ Each EntityManager can have a single KeyGenerator implementation that it will use to manage the generation of all &#x27;temporary&#x27; keys.
+
+ A KeyGenerator implementation is assigned to an EntityManager via the {{#crossLink &quot;EntityManager/setProperties&quot;}}{{/crossLink}}
+ method with a config parameter of &#x27;keyGeneratorCtor&#x27;.
+
+     MyKeyGenerator = function() {
+         // your code here
+     }
+     MyKeyGenerator.prototype.generateTempKeyValue = function(entityType) {
+         // your implementation here.
+     }
+     em.setProperties( {keyGeneratorCtor: MyKeyGenerator });
+
+ The assigned KeyGenerator is then called whenever the
+ EntityManager.generateTempKeyValue method is called.  The EntityManager internally keeps track of all of the generated keys
+ and handles all of the mapping of these temporary keys to real keys after any save.
+
+ The KeyGenerator implementation only needs to do one thing.  Return a unique key value of the correct datatype for each
+ call to the generateTempKeyValue method.  Note, that KeyGeneration is NOT supported for multipart keys.
+
+ If no KeyGenerator is supplied, a default KeyGenerator will be automatically provided.
+ @class ~keyGenerator_interface
  **/
 
 /**
- Used to handle the sucessfull return of data from a promise
+ Returns a unique &#x27;temporary&#x27; key for the specified {{#crossLink &quot;EntityType&quot;}}{{/crossLink}}.
+ Uniqueness is defined for this purpose as being unique within this KeyGenerator. This is sufficient
+ because each EntityManager will have its own instance of a KeyGenerator and any entities imported into
+ the EntityManager with temporary keys will have them regenerated and remapped on import.
 
- @method then
- @param callback {Function}
+ @method generateTempKeyValue
+ @param entityType {EntityType}
  **/
 
-/**
- Used to handle any errors encountered wheh processing the promise.
-
- @method fail
- @param errorCallback {Function}
- **/
-
-/**
- A callback that is called regardless of the success or failure of the promise.
-
- @method fin
- @param finallyCallback {Function}
- **/
     </pre>
 </div>
 
