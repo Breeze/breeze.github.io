@@ -17,7 +17,7 @@ Whenever you query the server, Breeze uses metadata to identify entity data in t
 
 If your application server implements the OData standard, Breeze (usually) can get the metadata it needs with a request to the $metadata endpoint. If your application server relies on the .NET Entity Framework ORM to access the database, Breeze.NET components can generate the Breeze client metadata for you.
 
-Sometimes you're not that fortunate. Perhaps you can't touch the server (as illustrated by the "[Edmunds Auto Service](/samples/edmunds "Edmunds Auto Service")" sample). Perhaps your server can't generate the metadata (see the [Ruby on Rails](/samples/intro-spa-ruby "Code Camper Jumpstart in Ruby on Rails") and [Node/MongoDb](/samples/zza "Zza Node/MongoDb sample") samples). You won't be able to get metadata from the server.
+Sometimes you're not that fortunate. Perhaps you can't touch the server (as illustrated by the "[Edmunds Auto Service](/samples/edmunds "Edmunds Auto Service")" sample). Perhaps your server can't generate the metadata (see the [Ruby on Rails](/samples/intro-to-spa-ruby "Code Camper Jumpstart in Ruby on Rails") and [Node/MongoDb](/samples/zza-mongo "Zza Node/MongoDb sample") samples). You won't be able to get metadata from the server.
 
 >If you're a .NET developer with access to the server side data model classes, you can use Entity Framework *as a  metadata generator*, as a design-time-only tool,  even if you won't use EF to access data in production. [We describe this technique elsewhere](/doc-js/metadata-with-ef "EF as a Metadata Design Tool"). 
 

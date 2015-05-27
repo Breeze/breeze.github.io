@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/custom-metadata.html"
 ---
 
 ## Metadata API to support "custom" annotations.
