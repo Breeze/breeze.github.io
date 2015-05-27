@@ -70,7 +70,7 @@ This is mostly boilerplate.
 
 - We set some variables that make it more convenient to access frequently referenced Breeze objects.
  
-- We set two variables with application-specific magic strings (we'll explain the default namespace <a name="#namespace">below</a>).
+- We set two variables with application-specific magic strings (we'll explain the default namespace <a href="#namespace">below</a>).
 
 - We create an instance of the **Breeze Labs `MetadataHelper` class** whose functions spare us some cumbersome syntax and much of the error prone repetition that would otherwise mar our metadata writing experience. 
 
