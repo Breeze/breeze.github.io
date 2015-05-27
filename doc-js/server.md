@@ -7,15 +7,15 @@ In this section we discuss how an **EntityManager communicates** with a ***speci
 
 We'll start with the `EntityManager` itself which is the focal point of the Breeze application developer's server-facing activities. In subsequent topics we'll see how the `EntityManager` relies on supporting components that are hidden from view most of the time:
 
-* [**DataServiceAdapter**](dataserviceadapters) - handles many of the details involved in preparing requests and processing server responses.
+* [**DataServiceAdapter**](/doc-js/server-dataserviceadapter.html) - handles many of the details involved in preparing requests and processing server responses.
 
-* [**JsonResultsAdapter**](jsonresultsadapters) - transforms raw JSON from the server into a shape that Breeze can interpret.
+* [**JsonResultsAdapter**](/doc-js/server-jsonresultsadapter.html) - transforms raw JSON from the server into a shape that Breeze can interpret.
 
-* [**NamingConvention**](namingconvention) - translate between server-side property names and client-side property names.
+* [**NamingConvention**](/doc-js/server-namingconvention.html) - translate between server-side property names and client-side property names.
 
-* [**AjaxAdapter**](controlling-ajax) - a concrete implementation of the Breeze interface for making AJAX requests and receiving responses.
+* [**AjaxAdapter**](/doc-js/ajaxadapter.html) - a concrete implementation of the Breeze interface for making AJAX requests and receiving responses.
 
-We'll also cover [**OData**](odata) in this section. OData is a widely used, open source protocol for CRUD operations. Breeze supports this protocol with a couple of *DataServiceAdapters*.
+We'll also cover [**OData**](/doc-js/server-odata.html) in this section. OData is a widely used, open source protocol for CRUD operations. Breeze supports this protocol with a couple of *DataServiceAdapters*.
 
 ## EntityManager
 
@@ -52,4 +52,4 @@ Breeze can't anticipate every way a data service could answer these questions an
 
 Therefore, the `EntityManager` delegates most of these details to a **DataServiceAdapter** ... of which there are many, each designed to handle the details of communicating with a particular kind of remote data service.
 
-That's probably [where you should go next](dataserviceadapters).
+That's probably [where you should go next](/doc-js/server-dataserviceadapter.html).

@@ -17,7 +17,7 @@ layout: doc-js
 	<li>Concurrency and the <span class="codeword">DataProperty.concurrencyMode</span></li>
 	<li>Saving selected entities</li>
 	<li>Default and explicit <span class="codeword">SaveOptions</span></li>
-	<li><a href="/documentation/concurrent-saves">Guard against accidental double saves</a></li>
+	<li><a href="/doc-cool-breezes/concurrent-saves.html">Guard against accidental double saves</a></li>
 	<li>Saving a change-set to a specific server endpoint with a &quot;<a href="#NamedSave">named save</a>&quot;</li>
 	<li>Saving data to an arbitrary HTTP service</li>
 </ul>
