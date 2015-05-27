@@ -108,7 +108,7 @@ If it was supposed to return a simple data value, you'll have to work backward f
 
 In many applications the client-side spelling of a property name should be different than the server-side spelling. You'll see the server-side spelling in the JSON payload and in the `dataproperty.nameOnServer` where as the client-side spelling is reflected in the entity property name you see in the debugger and in the `dataproperty.name`.
 
-The Breeze [**`NamingConvention`**](/doc-js/server-namingconvention.html, "NamingConvention") translates between these two spellings. Are you sure that your metadata are governed by the `NamingConvention` you expect? You may *think* you are applying one convention when, in fact, a different convention is controlling the translation. See "[Beware of the baked-in NamingConvention](/doc-js/server-namingconvention.html#NamingConventionInMetadata)".
+The Breeze [**`NamingConvention`**](/doc-js/server-namingconvention.html "NamingConvention") translates between these two spellings. Are you sure that your metadata are governed by the `NamingConvention` you expect? You may *think* you are applying one convention when, in fact, a different convention is controlling the translation. See "[Beware of the baked-in NamingConvention](/doc-js/server-namingconvention.html#NamingConventionInMetadata)".
 
 ##Are you missing a navigation property?
 

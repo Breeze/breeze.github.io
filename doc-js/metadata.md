@@ -6,12 +6,12 @@ redirect_from: "/old/documentation/metadata.html"
 
 Breeze relies on metadata about entity types and their relationships when it queries, saves, and creates new entities.
 
-* [Metadata details](/doc-js/metadata-details)
-* [Naming convention](/doc-js/server-namingconvention)
-* [Loading metadata from script](/doc-js/load-metadata-script)
-* [Custom metadata](/doc-js/metadata-by-hand)
-* [Using Entity Framework as a design tool](/doc-js/ef-design-tool)
-* [Metadata schema](/doc-js/metadata-schema)
+* [Metadata details](/doc-js/metadata-details.html)
+* [Naming convention](/doc-js/server-namingconvention.html)
+* [Loading metadata from script](/doc-js/metadata-load-from-script.html)
+* [Custom metadata](/doc-js/metadata-by-hand.html)
+* [Using Entity Framework as a design tool](/doc-js/metadata-with-ef.html)
+* [Metadata schema](/doc-js/metadata-schema.html)
 
 
 
