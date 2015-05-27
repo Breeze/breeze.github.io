@@ -135,7 +135,7 @@ The following instructions assume you're using Visual Studio 2012. Please look a
             //... Additional methods for other entities
         }
 
-1. Write your Breeze client. Dive into the [Breeze documentation](/doc-js/introduction) for a full description.  
+1. Write your Breeze client. Dive into the [Breeze documentation](/doc-js/) for a full description.  
 
 
 ## Caveats and Limitations

@@ -6,7 +6,7 @@ redirect_from: "/old/documentation/odata-server.html"
 
 A Breeze client can consume any <a href="http://www.odata.org/" target="_blank">standard OData</a> feed "as is" when you configure the client for OData.
 
-Topics elsewhere cover configuring for [OData BreezeJS Clients](/doc-js/odata) and for [OData Breeze Sharp clients](/doc-cs/open-data-odata).
+Topics elsewhere cover configuring for [OData BreezeJS Clients](/doc-js/server-odata) and for [OData Breeze Sharp clients](/doc-cs/open-data-odata).
 
 OData is a cross-platform standard (with several versions). Unfortunately, not every OData service fully complies with the standard. The deviations from the metadata specifications can easily trip you up.
 

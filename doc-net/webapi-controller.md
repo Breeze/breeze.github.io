@@ -104,7 +104,7 @@ You don't have to register the `CustomBreezeConfig` class with Breeze. Breeze wi
 
 **Important**: you are responsible for ensuring that your changes do not conflict with Breeze client expectations. Test your changes thoroughly. If you're not sure, ask us first (e.g., on [StackOverflow tagged with "breeze"](http://stackoverflow.com/questions/tagged/breeze?sort=newest "StackOverflow tagged with 'breeze'")).
 
->**Do not** reconfigure the formatter to use camel casing on the client. Use the BreezeJS  [`NamingConvention`](/doc-js/metadata/#NamingConvention) instead.
+>**Do not** reconfigure the formatter to use camel casing on the client. Use the BreezeJS  [`NamingConvention`](/doc-js/metadata#NamingConvention) instead.
 
 
 <a name="breeze-queryable"></a>
