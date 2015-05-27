@@ -190,7 +190,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 
 #### Features
 - Additional OData documentation.
-- New [**ChangeRequestInterceptor**](controlling-ajax#changeRequestInterceptor) for customization of the request data that `EntityManager.saveChanges` sends to the server. 
+- New [**ChangeRequestInterceptor**](/doc-js/server-ajaxadapter.html#changeRequestInterceptor) for customization of the request data that `EntityManager.saveChanges` sends to the server. 
 	
 
 #### Breeze.JS bugs
@@ -351,11 +351,11 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 
 #### Features
 + New and Updated documentation:
-	+ [Entity serialization](http://www.breezejs.com/documentation/entity-serialization)
-	+ [Export/Import](http://www.breezejs.com/documentation/exportimport)
-	+ [Query Result Debugging](http://www.breezejs.com/documentation/query-result-debugging)
-	+ [The ContextProvider](http://www.breezejs.com/documentation/contextprovider)
-	+ [Todo-Require sample](http://www.breezejs.com/samples/todo-require) explains building a Breeze app with RequireJS
+	+ [Entity serialization](/doc-js/entity-serialization.html)
+	+ [Export/Import](/doc-js/export-import.html)
+	+ [Query Result Debugging](/doc-js/query-debugging.html)
+	+ [The ContextProvider](/doc-net/contextprovider.html)
+	+ [Todo-Require sample](/samples/todo-knockout-require.html) explains building a Breeze app with RequireJS
 	
 #### Bugs  
 
@@ -619,7 +619,7 @@ None
             }
 
 
-+ [Support for NHibernate](nhibernate-support) - (this is a BETA feature).  A [sample is available now](/samples/northbreeze).
++ [Support for NHibernate](/doc-net/nh.html) - (this is a BETA feature).  A [sample is available now](/samples/north-breeze.html).
 
 + The *Breeze.WebApi* dll has been broken up into multiple assemblies. 
    + There are now 3 Server side .NET assemblies instead of one.
