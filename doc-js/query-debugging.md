@@ -114,7 +114,7 @@ The Breeze [**`NamingConvention`**](/doc-js/server-namingconvention.html, "Namin
 
 You were expecting a "navigation property" - a property that returns another entity - and it wasn't listed among the `DataProperties`.
 
-This is probably a metadata creation problem. If you wrote the [metadata by hand](/doc-js/metadata-by-hand.html/#NavigationProperties), return to the "Navigation Properties" section of that topic and try to discover what you did differently.
+This is probably a metadata creation problem. If you wrote the [metadata by hand](/doc-js/metadata-by-hand.html#NavigationProperties), return to the "Navigation Properties" section of that topic and try to discover what you did differently.
 
 Did you define **foreign key (FK) properties**? Developers often neglect to define or identify the FK properties. Breeze requires FK properties to implement navigation properties. 
 

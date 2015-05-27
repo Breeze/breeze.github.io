@@ -144,7 +144,7 @@ You can cure the problem with `.toType` as before.
 
 ##Resource names and local cache queries
 
-It's easy in Breeze to take the remote service query object and [apply it to the local cache](querying-locally "querying the local cache"). 
+It's easy in Breeze to take the remote service query object and [apply it to the local cache](/doc-js/query-locally.html "querying the local cache"). 
 
 	var query = breeze.EntityQuery.from('Orders') // back to 'Orders'
 		.where('OrderDate', '>=', 'January 1, 1998');

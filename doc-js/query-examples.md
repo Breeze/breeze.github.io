@@ -464,4 +464,4 @@ EntityQuery.from(&#39;Lookups&#39;)
      .using(em).execute()
      .fail(handleFail);</pre>
 
-<p>The <em>Region</em>, <em>Territory</em>, and <em>Category </em>entities are in cache after the query succeeds. See '<a href="/cool-breezes/lookup-lists.html" target="_blank">Lookup Lists</a>' for a richer discussion of this example.</p>
+<p>The <em>Region</em>, <em>Territory</em>, and <em>Category </em>entities are in cache after the query succeeds. See '<a href="/doc-cool-breezes/lookup-lists.html" target="_blank">Lookup Lists</a>' for a richer discussion of this example.</p>
