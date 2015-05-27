@@ -19,7 +19,7 @@ If you're getting data, please keep reading and following the suggested diagnost
 prepare a code sample that reproduces the problem as described below in "<a href="#query-debugging-tool">Exploring query results with Plunker</a>".
 
 
-##I'm getting the right data from the server
+## I'm getting the right data from the server
 
 Ok ... you see the data but some or all of the aren't showing up in the entity. One of the first things we do is examine the metadata for a one or more of your `EntityType`s starting with the root type of the query.
 
@@ -53,9 +53,9 @@ We'll modify the `successHandler` to make our exploration easy.
 
 Run the code to the breakpoint. 
 
->We'll use the browser's debugger for this exercise
+> We'll use the browser's debugger for this exercise
 
-##Are the types defined?
+## Are the types defined?
 
 Make sure each of the types - `orderType`, `orderDetailType`, and `customerType` - are defined. If any of them is null, you have found a problem.
 
@@ -147,6 +147,7 @@ In the list below, find the kind of `DataProperty` that you were expecting and s
 If you still can't figure it out after following these links, <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" title="Breeze StackOverflow" target="_blank">ask a question on StackOverflow</a> and please state what you learned from this metadata analysis.
 
 <a name="SimpleMapped"></a>
+
 #### Simple mapped property
 
 	orderType.getProperty('OrderDate');
@@ -176,6 +177,7 @@ Notice that
 - it has a validator; drill in and you'll find a "DateTime" `DataType` validator.
 
 <a name="SimpleUnmapped"></a>
+
 #### Simple unmapped property
 
 An "unmapped property" refers to a value that is not persisted in the remote data store. Because an unmapped property is not persisted, it isn't transmitted to the server and changes to  the property values have no effect on the entity's `EntityState`.
@@ -211,6 +213,7 @@ Notice that
 	- `nameOnServer`
 
 <a name="ComplexMapped"></a>
+
 #### Complex mapped property
 
 	orderType.getProperty('ShipTo');
@@ -237,6 +240,7 @@ Notice that
 - it has a validator; drill in and you'll find a `required` validator.
 
 <a name="NavigationProperties"></a>
+
 #### Navigation properties
 
 You can navigate from an entity to other related entities via *navigation properties* as in
@@ -269,6 +273,7 @@ Breeze supports several association *cardinalities*:
 With this background in mind, let's look at the two types of navigation properties in detail.
 
 <a name="ReferenceNavigation"></a>
+
 #### Reference navigation property
 
 A "reference navigation property" returns a single related entity, typically the "parent" entity (the entity in the "principal" role) of an association. The "Customer" is the parent of an "Order" in this model.
@@ -310,6 +315,7 @@ Notice that
 Breeze does not require navigation properties for both sides of an association. The `inverse` navigation property is optional. The `associationName` could be omitted if there were no `inverse` navigation property.
 
 <a name="CollectionNavigation"></a>
+
 #### Collection navigation property
 
 A "collection navigation property" returns an array of related entities, typically the "children" of this "parent" entity.
@@ -359,6 +365,7 @@ But it is quite common to omit the collection navigation property of an associat
 The `associationName` could be omitted if there were no `inverse` navigation property.
 
 <a name="expand"></a>
+
 #### When *.expand(...)*&nbsp; fails
 
 One way to load related entities into cache is to add an [`.expand(...)` clause](query-examples#Eager%20loading%20%20EntityQuery.expand ""expand" documentation") to your query.
@@ -399,6 +406,7 @@ You'll want to add that `FooId` property to the `Bar` type defined in your serve
 <p class="note">This point is frequently neglected and misunderstood. See, for example, <a href="http://stackoverflow.com/questions/20692463/issues-including-navigation-properties-in-query" target="_blank">this StackOverflow question</a> wherein the FK is omitted and the author is surprised by the results. The answer explores the symptoms and the resolution in greater detail.</p>
 
 <a name="ForeignKey"></a>
+
 #### Foreign Key (FK) property
 
 A foreign key (FK) property is a simple mapped property with a little extra information, a `relatedNavigationProperty`. 
@@ -435,6 +443,7 @@ Notice that
 
 
 <a name="query-debugging-tool"></a>
+
 ## Exploring query results with Plunker
 
 If you still can't figure this out you'll want to <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" target="_blank" title="Breeze on StackOverflow">submit a question in StackOverflow</a>.
