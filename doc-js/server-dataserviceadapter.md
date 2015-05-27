@@ -7,7 +7,7 @@ A ***DataServiceAdapter*** is the mechanism by which the `EntityManager` interac
 
 A *DataServiceAdapter* translates the three `EntityManager` remote service operations into custom web service calls:    
 
-   1. **fetchMetadata** becomes a web service request for Breeze [metadata](metadata).
+   1. **fetchMetadata** becomes a web service request for Breeze [metadata](/doc-js/metadata.html).
 
    1. ***executeQuery*** becomes a web service data request and it materializes the query results into Breeze entities.
 
@@ -40,7 +40,7 @@ The officially supported breeze client libraries include
 
 * <a href="https://github.com/Breeze/breeze.js/blob/master/src/breeze.dataService.mongo.js" target="_blank" title="mongo DataServiceAdapter on github"><strong>mongo</strong></a> - for an Express/MondoDb server written in Breeze style
 
-[**Breeze Labs**](what-are-breeze-labs) adds a few more
+[**Breeze Labs**](/doc-breeze-labs/) adds a few more
 
 * <a href="https://github.com/Breeze/breeze.js.labs/blob/master/breeze.labs.dataservice.azuremobileservices.js" target="_blank" title="azure-mobile-services DataServiceAdapter on github"><strong>azure-mobile-services</strong></a> - a simple REST-ish service tailored for a "Azure Mobile Services" server.  
 
@@ -60,7 +60,7 @@ Here is the public API summary (revisited in [detail below](#api-detail)):
 * [**fetchMetadata**](#fetchMetadata) - retrieve the metadata and populate a `MetadataStore`.
 *  [**executeQuery**](#executeQuery) - request data from the server (usually with constraints) and materialize the results as entities.
 *  [**saveChanges**](#saveChanges) - save the pending changes for one or more entities.
-*  [**jsonResultsAdapter**](#jsonResultsAdapter) - returns a [`JsonResultsAdapter`](jsonresultsadapters) which manipulates query and save result data from the server into a shape that Breeze understands.
+*  [**jsonResultsAdapter**](#jsonResultsAdapter) - returns a [`JsonResultsAdapter`](/doc-js/server-jsonresultsadapter.html) which manipulates query and save result data from the server into a shape that Breeze understands.
 
 Your service may not support one or more of the Breeze operations. Many remote services don't provide metadata or won't accept client changes. That's OK. 
 
@@ -86,7 +86,7 @@ While you *can* write your adapter entirely from scratch, many Breeze adapters (
 
 `proto = new breeze.AbstractDataServiceAdapter();`
 
-Then override selected members of that adapter [as described here](abstractdataservice-adapter).
+Then override selected members of that adapter [as described here](/doc-js/server-abstractdataserviceadapter.html).
 
 `proto.someMember = myVersionOfSomeMember;`
 
@@ -223,7 +223,7 @@ Most `executeQuery` implementations get the query URL by calling `mappingContext
   
 The *queryResults* returned in a fulfilled promise should be an object with following schema:
      
- - **results**: the data returned in the server's response. Breeze filters this raw data through the applicable [`jsonResultsAdapter`](jsonresultsadapters) and turns that filtered data into entities where it can.
+ - **results**: the data returned in the server's response. Breeze filters this raw data through the applicable [`jsonResultsAdapter`](/doc-js/server-jsonresultsadapter.html) and turns that filtered data into entities where it can.
  - **httpResponse**: The full http response returned from the server.  Breeze  mostly ignores this property but passes it along to the caller which may be able to extract additional useful information (e.g., from headers) or present it for debugging.  
  - **inlineCount**: An *integer* count of entities that would have been returned had the query not contained any skip or take conditions. This property should only be set if the query specified the *inlineCount* option.      
                   
@@ -254,7 +254,7 @@ The "saveChanges" feature is designed for batched saves of multiple entities in 
 ##### "REST" saves
 Many web service save APIs can only process a single entity at a time. For example, a typical "REST" service accepts a PUT, POST, or DELETE request for a single added, modified, or deleted entity. 
 
-You can write a *DataServiceAdapter* that follows this pattern although the power of Breeze transactional batch saves is largely wasted on such services. For examples see the [`AbstractRestDataServiceAdapter`](https://github.com/Breeze/breeze.js.labs/blob/master/breeze.labs.dataservice.abstractrest.js) and its derivatives in [**Breeze Labs**](what-are-breeze-labs).
+You can write a *DataServiceAdapter* that follows this pattern although the power of Breeze transactional batch saves is largely wasted on such services. For examples see the [`AbstractRestDataServiceAdapter`](https://github.com/Breeze/breeze.js.labs/blob/master/breeze.labs.dataservice.abstractrest.js) and its derivatives in [**Breeze Labs**](/doc-breeze-labs/).
 
 Some services accept a multi-part http POST request consisting of a batch of several individual save requests. That's how the Breeze OData *DataServerAdapters* implement `saveChanges()`.
 
@@ -309,11 +309,12 @@ A failed *saveResult* is an error object that may contain specific information a
 
 #### jsonResultsAdapter
 
-A property that returns the  [`JsonResultsAdapter`](jsonresultsadapters) that Breeze should apply when processing query and save results returned by this adapter. 
+A property that returns the  [`JsonResultsAdapter`](/doc-js/server-jsonresultsadapter.html) that Breeze should apply when processing query and save results returned by this adapter. 
  
->The *jsonResultsAdapter* that Breeze actually uses can be overridden temporarily; see the [`JsonResultsAdapter` topic](jsonresultsadapters) for details.
+>The *jsonResultsAdapter* that Breeze actually uses can be overridden temporarily; see the [`JsonResultsAdapter` topic](/doc-js/server-jsonresultsadapter.html) for details.
 
 <a name="checkForRecomposition"></a>
+
 #### checkForRecomposition(*interfaceInitializedArgs*)
 
 This method is optional. If defined, Breeze calls it after initializing any adapter of any type.  Your *DataServiceAdapter* should define a `checkForRecomposition` method only if it is dependent on another Breeze adapter and should do something when the dependent adapter changes.
@@ -411,7 +412,7 @@ You'll find examples in the [changeRequestInterceptorTests](https://github.com/B
 <a name="changeRequestInterceptor-when-to-use"></a>
 
 #### When to use the *changeRequestInterceptor*
-The [*AJAX adapter*](controlling-ajax) has a `requestInterceptor` and the *DataServicAdapter* has a `changeRequestInterceptor`. Why both?
+The [*AJAX adapter*](/doc-js/server-ajaxadapter.html) has a `requestInterceptor` and the *DataServicAdapter* has a `changeRequestInterceptor`. Why both?
 
 You might get by with the AJAX adapter's `requestInterceptor` alone. It has the last look at the *entire* AJAX request just before the AJAX component turns it into an HTTP request. You can change *anything* about that request including the data element in the request body.
 

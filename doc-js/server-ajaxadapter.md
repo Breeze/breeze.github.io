@@ -4,7 +4,7 @@ layout: doc-js
 
 #Controlling AJAX calls
 
-A Breeze [*DataSeviceAdapter*](dataserviceadapters) makes HTTP calls to a **Breeze AJAX adapter** that wraps a 3rd party low-level AJAX component. 
+A Breeze [*DataSeviceAdapter*](/doc-js/server-dataserviceadapter.html) makes HTTP calls to a **Breeze AJAX adapter** that wraps a 3rd party low-level AJAX component. 
 
 The default Breeze AJAX adapter wraps the <a href="http://api.jquery.com/jQuery.ajax/" target="_blank">jQuery.ajax</a> method and assumes your client app is running with jQuery. But you can configure Breeze to use an alternative AJAX implementations or write your own adapter ... as described below.
 
@@ -95,6 +95,7 @@ For example, the jQuery `ajax` method takes a `settings` configuration object. O
 >Every AJAX component is different. This kind of configuration requires specific knowledge of the component and version deployed with your application.
 
 <a name="customAdapter"></a>
+
 ##Write your own AJAX adapter
 
 You can write your own JavaScript AJAX adapter, one that either replaces or extends one of the stock adapters.
@@ -248,7 +249,7 @@ Thanks to the AJAX adapter's `requestInterceptor`, you could manipulate the requ
 
 Maybe you don't. All of stock Breeze adapters have a `changeRequestInterceptor` with which you can manipulate the change requests just before they're handed off to the AJAX adapter. Breeze calls the `changeRequestInterceptor` with lots of save context so it can make well-informed decisions.
 
-[Learn more](dataserviceadapters#changeRequestInterceptor) about the `changeRequestInterceptor` and how it [compares to the AJAX adapter's&nbsp; `requestInterceptor`](dataserviceadapters#changeRequestInterceptor-when-to-use).
+[Learn more](/doc-js/server-dataserviceadapter.html#changeRequestInterceptor) about the `changeRequestInterceptor` and how it [compares to the AJAX adapter's&nbsp; `requestInterceptor`](/doc-js/server-dataserviceadapter.html#changeRequestInterceptor-when-to-use).
 
 <a name="odata-ajax"></a>
 

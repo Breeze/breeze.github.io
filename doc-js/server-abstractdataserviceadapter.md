@@ -4,9 +4,9 @@ layout: doc-js
 
 # The AbstractDataServiceAdapter
 
-The *breeze.AbstractDataServiceAdapter* is an implementation of the [***DataServiceAdapter*** interface](dataserviceadapters#api-detail) that satisfies the basic requirements of many *DataServiceAdapters*.
+The *breeze.AbstractDataServiceAdapter* is an implementation of the [***DataServiceAdapter*** interface](/doc-js/server-dataserviceadapter.html#api-detail) that satisfies the basic requirements of many *DataServiceAdapters*.
 
-It uses the default [*AjaxAdapter*](controlling-ajax) to make HTTP AJAX calls to web services and it can perform most of the `EntityManager` web service operations with very little help from you.
+It uses the default [*AjaxAdapter*](/doc-js/server-ajaxadapter.html) to make HTTP AJAX calls to web services and it can perform most of the `EntityManager` web service operations with very little help from you.
 
 Many people feel it is easier to write a custom adapter that derives from `AbstractDataServiceAdapter` and overrides or extends its members than to write a completely original adapter from scratch. 
 
