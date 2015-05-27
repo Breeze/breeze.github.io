@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>..\src\a30_primitiveArray.js</title>
+    <title>a55_saveOptions.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
 
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
@@ -200,94 +200,115 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: ..\src\a30_primitiveArray.js</h1>
+                        <h1 class="file-heading">File: a55_saveOptions.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
-﻿breeze.makePrimitiveArray = (function () {
-  var primitiveArrayMixin = {};
+﻿/**
+@module breeze
+**/
 
-  // complexArray will have the following props
-  //    parent
-  //    propertyPath
-  //    parentProperty
-  //    addedItems  - only if modified
-  //    removedItems  - only if modified
-  //  each complexAspect of any entity within a complexArray
-  //  will have its own _complexState = &quot;A/M&quot;;
-
+var SaveOptions = (function () {
   /**
-  Primitive arrays are not actually classes, they are objects that mimic arrays. A primitive array is collection of
-  primitive types associated with a data property on a single entity or complex object. i.e. customer.invoiceNumbers.
-  This collection looks like an array in that the basic methods on arrays such as &#x27;push&#x27;, &#x27;pop&#x27;, &#x27;shift&#x27;, &#x27;unshift&#x27;, &#x27;splice&#x27;
-  are all provided as well as several special purpose methods.
-  @class ~primitiveArray
+  A SaveOptions instance is used to specify the &#x27;options&#x27; under which a save will occur.
+
+  @class SaveOptions
   **/
 
   /**
-  An {{#crossLink &quot;Event&quot;}}{{/crossLink}} that fires whenever the contents of this array changed.  This event
-  is fired any time a new entity is attached or added to the EntityManager and happens to belong to this collection.
-  Adds that occur as a result of query or import operations are batched so that all of the adds or removes to any individual
-  collections are collected into a single notification event for each relation array.
+  @method &lt;ctor&gt; SaveOptions
+  @param config {Object}
+  @param [config.allowConcurrentSaves] {Boolean} Whether multiple saves can be in-flight at the same time. The default is false.
+  @param [config.resourceName] {String} Resource name to be used during the save - this defaults to &quot;SaveChanges&quot;
+  @param [config.dataService] {DataService} The DataService to be used for this save.
+  @param [config.tag] {Object} Free form value that will be sent to the server during the save.
+  **/
+  var ctor = function SaveOptions(config) {
+    updateWithConfig(this, config);
+  };
+
+  var proto = ctor.prototype;
+  proto._$typeName = &quot;SaveOptions&quot;;
+
+  /**
+  Sets the &#x27;defaultInstance&#x27; by creating a copy of the current &#x27;defaultInstance&#x27; and then applying all of the properties of the current instance.
+  The current instance is returned unchanged.
+  @method setAsDefault
+  @chainable
+  **/
+  proto.setAsDefault = function () {
+    return __setAsDefault(this, ctor);
+  };
+
+  /**
+  Whether another save can be occuring at the same time as this one - default is false.
+
+  __readOnly__
+  @property allowConcurrentSaves {Boolean}
+  **/
+
+  /**
+  A {{#crossLink &quot;DataService&quot;}}{{/crossLink}}.
+  __readOnly__
+  @property dataService {DataService}
+  **/
+
+  /**
+  The resource name to call to perform the save.
+  __readOnly__
+  @property resourceName {String}
+  **/
+
+  /**
+  A free form value that will be sent to the server.
+
+  __readOnly__
+  @property tag {Object}
+  **/
+
+  /**
+  The default value whenever SaveOptions are not specified.
+  @property defaultInstance {SaveOptions}
+  @static
+  **/
+
+  /**
+  Returns a copy of this SaveOptions with the specified config options applied.
   @example
-      // assume order is an order entity attached to an EntityManager.
-      orders.arrayChanged.subscribe(
-      function (arrayChangedArgs) {
-          var addedEntities = arrayChangedArgs.added;
-          var removedEntities = arrayChanged.removed;
-      });
-  @event arrayChanged
-  @param added {Array of Primitives} An array of all of the items added to this collection.
-  @param removed {Array of Primitives} An array of all of the items removed from this collection.
-  @readOnly
+      var saveOptions = em1.saveOptions.using( {resourceName: &quot;anotherResource&quot; });
+
+  @method using
+  @param config {Configuration Object|} The object to apply to create a new SaveOptions.
+  @param [config.allowConcurrentSaves] {Boolean} Whether multiple saves can be in-flight at the same time. The default is false.
+  @param [config.resourceName] {String} Resource name to be used during the save - this defaults to &quot;SaveChanges&quot;
+  @param [config.dataService] {DataService} The DataService to be used for this save.
+  @param [config.tag] {Object} Free form value that will be sent to the server during the save.
+  @chainable
   **/
-
-    // virtual impls 
-  primitiveArrayMixin._getGoodAdds = function (adds) {
-    return adds;
+  proto.using = function (config) {
+    return updateWithConfig(this, config);
   };
 
-  primitiveArrayMixin._beforeChange = function () {
-    var entityAspect = this.getEntityAspect();
-    if (entityAspect.entityState.isUnchanged()) {
-      entityAspect.setModified();
+  function updateWithConfig(obj, config) {
+    if (config) {
+      assertConfig(config)
+          .whereParam(&quot;resourceName&quot;).isOptional().isString()
+          .whereParam(&quot;dataService&quot;).isOptional().isInstanceOf(DataService)
+          .whereParam(&quot;allowConcurrentSaves&quot;).isBoolean().isOptional()
+          .whereParam(&quot;tag&quot;).isOptional()
+          .applyAll(obj);
     }
-    if (entityAspect.entityState.isModified() &amp;&amp; !this._origValues) {
-      this._origValues = this.slice(0);
-    }
-  };
-
-  primitiveArrayMixin._processAdds = function (adds) {
-    // nothing needed
-  };
-
-  primitiveArrayMixin._processRemoves = function (removes) {
-    // nothing needed;
-  };
-  //
-
-  primitiveArrayMixin._rejectChanges = function () {
-    if (!this._origValues) return;
-    this.length = 0;
-    Array.prototype.push.apply(this, this._origValues);
-  };
-
-  primitiveArrayMixin._acceptChanges = function () {
-    this._origValues = null;
-  };
-
-  // local functions
-
-  function makePrimitiveArray(arr, parent, parentProperty) {
-
-    observableArray.initializeParent(arr, parent, parentProperty);
-    arr.arrayChanged = new Event(&quot;arrayChanged&quot;, arr);
-    __extend(arr, observableArray.mixin);
-    return __extend(arr, primitiveArrayMixin);
+    return obj;
   }
 
-  return makePrimitiveArray;
+  ctor.defaultInstance = new ctor({ allowConcurrentSaves: false});
+  return ctor;
 })();
+
+breeze.SaveOptions = SaveOptions;
+
+
+
     </pre>
 </div>
 

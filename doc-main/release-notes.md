@@ -235,7 +235,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 
 #### Features
 
-- Ajax adapter enhancements, specifically the addition of the `requestInterceptor` to enable fine-tuning of a Breeze AJAX request such as timeout and mock response. See the new documentation, ["Controlling AJAX calls"](controlling-ajax).
+- Ajax adapter enhancements, specifically the addition of the `requestInterceptor` to enable fine-tuning of a Breeze AJAX request such as timeout and mock response. See the new documentation, ["Controlling AJAX calls"](/doc-js/server-ajaxadapter.html).
 - D2257 - Improved data type inference for unmapped properties defined in a constructor. 
 - Improved documentation on Breeze web site and in API Docs.
 <a name="todoZumo"></a>
@@ -715,7 +715,7 @@ With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Valid
 
 [See the API docs](/doc-js/api-docs/classes/Validator.html) for more information on how to use these new validators.
 
->Many of these new validators correlate to <a href="(http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx" target="_blank">.NET data annotations</a>. In a future release, the Breeze.NET `EFContextProvider`will be able to include these validations in the metadata automatically for you. For now, you'll have to add them to the properties on the client side as shown above.
+>Many of these new validators correlate to <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx" target="_blank">.NET data annotations</a>. In a future release, the Breeze.NET `EFContextProvider`will be able to include these validations in the metadata automatically for you. For now, you'll have to add them to the properties on the client side as shown above.
 
 #### Bug fixes
 + Fixed bug with *EntityQuery.inlineCount* when used in conjunction with a orderBy clause involving a nested property path.  

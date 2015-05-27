@@ -4,7 +4,7 @@ layout: doc-js
 
 <h1>Testing a Breeze application</h1>
 
-<p>One of the best ways to learn Breeze is through the automated <a href="/samples/doccode">DocCode</a> code sample. You can be sure that the examples we show in print actually work. You can clone the tests and tweak them to explore options and edge cases we didn&rsquo;t cover. And if you discover a bug, a variation on one of our tests is a great way to report it.</p>
+<p>One of the best ways to learn Breeze is through the automated <a href="/samples/doccode.html">DocCode</a> code sample. You can be sure that the examples we show in print actually work. You can clone the tests and tweak them to explore options and edge cases we didn&rsquo;t cover. And if you discover a bug, a variation on one of our tests is a great way to report it.</p>
 
 <p>The test suite is also a useful model for testing your own application code. We&rsquo;ve tackled many of the challenges you&rsquo;ll face in testing your own code such as setting up a test suite, modularizing the tests, isolating tests with clean EntityManagers, testing asynchronous code.</p>
 

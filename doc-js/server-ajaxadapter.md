@@ -128,7 +128,7 @@ You have no obligation to implement the "defaultSettings" or the [`requestInterc
 
 The `config` parameter passed to the `ajax` method conforms to a Breeze-specific interface. It is **not** the same as the `setting` parameter you'd pass to jQuery's `$.ajax` or Angular's `$http()`. 
 
-The `config` parameter is designed for consumption by a Breeze [*DataSeviceAdapter*](dataserviceadapters). The *DataServiceAdapters* shipped with Breeze (excluding OData adapters) construct their HTTP requests in terms of the AJAX adapter's `config` interface.
+The `config` parameter is designed for consumption by a Breeze [*DataSeviceAdapter*](/doc-js/server-dataserviceadapter.html). The *DataServiceAdapters* shipped with Breeze (excluding OData adapters) construct their HTTP requests in terms of the AJAX adapter's `config` interface.
 
 ### Register your adapter
 

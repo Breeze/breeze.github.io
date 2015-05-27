@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>..\src\a40_localQueryComparisionOptions.js</title>
+    <title>a30_entityAction.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
 
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
@@ -200,7 +200,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: ..\src\a40_localQueryComparisionOptions.js</h1>
+                        <h1 class="file-heading">File: a30_entityAction.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -208,98 +208,143 @@
 @module breeze
 **/
 
-var LocalQueryComparisonOptions = (function () {
 
+var EntityAction = (function () {
   /**
-  A LocalQueryComparisonOptions instance is used to specify the &quot;comparison rules&quot; used when performing &quot;local queries&quot; in order
-  to match the semantics of these same queries when executed against a remote service.  These options should be set based on the
-  manner in which your remote service interprets certain comparison operations.
+  EntityAction is an &#x27;Enum&#x27; containing all of the valid actions that can occur to an &#x27;Entity&#x27;.
 
-  The default LocalQueryComparisonOptions stipulates &#x27;caseInsensitive&quot; queries with ANSI SQL rules regarding comparisons of unequal
-  length strings.
-
-  @class LocalQueryComparisonOptions
+  @class EntityAction
+  @static
   **/
-
-  /**
-  LocalQueryComparisonOptions constructor
-  @example
-      // create a &#x27;caseSensitive - non SQL&#x27; instance.
-      var lqco = new LocalQueryComparisonOptions({
-              name: &quot;caseSensitive-nonSQL&quot;
-              isCaseSensitive: true;
-              usesSql92CompliantStringComparison: false;
-          });
-      // either apply it globally
-      lqco.setAsDefault();
-      // or to a specific MetadataStore
-      var ms = new MetadataStore({ localQueryComparisonOptions: lqco });
-      var em = new EntityManager( { metadataStore: ms });
-
-  @method &lt;ctor&gt; LocalQueryComparisonOptions
-  @param config {Object}
-  @param [config.name] {String}
-  @param [config.isCaseSensitive] {Boolean} Whether predicates that involve strings will be interpreted in a &quot;caseSensitive&quot; manner. Default is &#x27;false&#x27;
-  @param [config.usesSql92CompliantStringComparison] {Boolean} Whether of not to enforce the ANSI SQL standard
-  of padding strings of unequal lengths before comparison with spaces. Note that per the standard, padding only occurs with equality and
-  inequality predicates, and not with operations like &#x27;startsWith&#x27;, &#x27;endsWith&#x27; or &#x27;contains&#x27;.  Default is true.
-  **/
-
-  var ctor = function LocalQueryComparisonOptions(config) {
-    assertConfig(config || {})
-        .whereParam(&quot;name&quot;).isOptional().isString()
-        .whereParam(&quot;isCaseSensitive&quot;).isOptional().isBoolean()
-        .whereParam(&quot;usesSql92CompliantStringComparison&quot;).isBoolean()
-        .applyAll(this);
-    if (!this.name) {
-      this.name = __getUuid();
+  var entityActionMethods = {
+    isAttach: function () {
+      return !!this.isAttach;
+    },
+    isDetach: function () {
+      return !!this.isDetach;
+    },
+    isModification: function () {
+      return !!this.isModification;
     }
-    __config._storeObject(this, proto._$typeName, this.name);
-  };
-  var proto = ctor.prototype;
-  proto._$typeName = &quot;LocalQueryComparisonOptions&quot;;
-
-  
-  /**
-  Case insensitive SQL compliant options - this is also the default unless otherwise changed.
-  @property caseInsensitiveSQL {LocalQueryComparisonOptions}
-  @static
-  **/
-  ctor.caseInsensitiveSQL = new ctor({
-  name: &quot;caseInsensitiveSQL&quot;,
-  isCaseSensitive: false,
-  usesSql92CompliantStringComparison: true
-  });
-
-  /**
-  The default value whenever LocalQueryComparisonOptions are not specified. By default this is &#x27;caseInsensitiveSQL&#x27;.
-  @property defaultInstance {LocalQueryComparisonOptions}
-  @static
-  **/
-  ctor.defaultInstance = new ctor(ctor.caseInsensitiveSQL);
-
-  /**
-  Sets the &#x27;defaultInstance&#x27; by creating a copy of the current &#x27;defaultInstance&#x27; and then applying all of the properties of the current instance.
-  The current instance is returned unchanged.
-  @method setAsDefault
-  @example
-      var lqco = new LocalQueryComparisonOptions({
-          isCaseSensitive: false;
-          usesSql92CompliantStringComparison: true;
-      });
-  lqco.setAsDefault();
-  @chainable
-  **/
-  proto.setAsDefault = function () {
-  return __setAsDefault(this, ctor);
   };
 
+  var EntityAction = new Enum(&quot;EntityAction&quot;, entityActionMethods);
 
-  return ctor;
+  /**
+  Attach - Entity was attached via an AttachEntity call.
+
+  @property Attach {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.Attach = EntityAction.addSymbol({ isAttach: true});
+
+  /**
+  AttachOnQuery - Entity was attached as a result of a query.
+
+  @property AttachOnQuery {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.AttachOnQuery = EntityAction.addSymbol({ isAttach: true});
+
+  /**
+  AttachOnImport - Entity was attached as a result of an import.
+
+  @property AttachOnImport {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.AttachOnImport = EntityAction.addSymbol({ isAttach: true});
+
+
+  /**
+  Detach - Entity was detached.
+
+  @property Detach {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.Detach = EntityAction.addSymbol({ isDetach: true });
+
+  /**
+  MergeOnQuery - Properties on the entity were merged as a result of a query.
+
+  @property MergeOnQuery {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.MergeOnQuery = EntityAction.addSymbol({ isModification: true });
+
+  /**
+  MergeOnImport - Properties on the entity were merged as a result of an import.
+
+  @property MergeOnImport {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.MergeOnImport = EntityAction.addSymbol({ isModification: true });
+
+  /**
+  MergeOnSave - Properties on the entity were merged as a result of a save
+
+  @property MergeOnSave {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.MergeOnSave = EntityAction.addSymbol({ isModification: true });
+
+  /**
+  PropertyChange - A property on the entity was changed.
+
+  @property PropertyChange {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.PropertyChange = EntityAction.addSymbol({ isModification: true});
+
+  /**
+  EntityStateChange - The EntityState of the entity was changed.
+
+  @property EntityStateChange {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.EntityStateChange = EntityAction.addSymbol();
+
+
+  /**
+  AcceptChanges - AcceptChanges was called on the entity, or its entityState was set to Unmodified.
+
+  @property AcceptChanges {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.AcceptChanges = EntityAction.addSymbol();
+
+  /**
+  RejectChanges - RejectChanges was called on the entity.
+
+  @property RejectChanges {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.RejectChanges = EntityAction.addSymbol({ isModification: true});
+
+  /**
+  Clear - The EntityManager was cleared.  All entities detached.
+
+  @property Clear {EntityAction}
+  @final
+  @static
+  **/
+  EntityAction.Clear = EntityAction.addSymbol({ isDetach: true});
+
+  EntityAction.resolveSymbols();
+  return EntityAction;
 })();
 
-breeze.LocalQueryComparisonOptions = LocalQueryComparisonOptions;
-
+breeze.EntityAction = EntityAction;
 
 
     </pre>

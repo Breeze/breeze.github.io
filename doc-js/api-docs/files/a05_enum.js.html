@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>..\src\a30_entityAction.js</title>
+    <title>a05_enum.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
 
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
@@ -200,151 +200,287 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: ..\src\a30_entityAction.js</h1>
+                        <h1 class="file-heading">File: a05_enum.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 ﻿/**
-@module breeze
+@module core
 **/
 
+var Enum = (function () {
 
-var EntityAction = (function () {
+  // TODO: think about CompositeEnum (flags impl).
+
   /**
-  EntityAction is an &#x27;Enum&#x27; containing all of the valid actions that can occur to an &#x27;Entity&#x27;.
+  Base class for all Breeze enumerations, such as EntityState, DataType, FetchStrategy, MergeStrategy etc.
+  A Breeze Enum is a namespaced set of constant values.  Each Enum consists of a group of related constants, called &#x27;symbols&#x27;.
+  Unlike enums in some other environments, each &#x27;symbol&#x27; can have both methods and properties.
 
-  @class EntityAction
-  @static
+  @example
+      // Example of creating a new Enum
+      var prototype = {
+          nextDay: function () {
+              var nextIndex = (this.dayIndex+1) % 7;
+              return DayOfWeek.getSymbols()[nextIndex];
+          }
+      };
+
+      var DayOfWeek = new Enum(&quot;DayOfWeek&quot;, prototype);
+      DayOfWeek.Monday    = DayOfWeek.addSymbol( { dayIndex: 0 });
+      DayOfWeek.Tuesday   = DayOfWeek.addSymbol( { dayIndex: 1 });
+      DayOfWeek.Wednesday = DayOfWeek.addSymbol( { dayIndex: 2 });
+      DayOfWeek.Thursday  = DayOfWeek.addSymbol( { dayIndex: 3 });
+      DayOfWeek.Friday    = DayOfWeek.addSymbol( { dayIndex: 4 });
+      DayOfWeek.Saturday  = DayOfWeek.addSymbol( { dayIndex: 5, isWeekend: true });
+      DayOfWeek.Sunday    = DayOfWeek.addSymbol( { dayIndex: 6, isWeekend: true });
+      DayOfWeek.resolveSymbols();
+
+      // custom methods
+      ok(DayOfWeek.Monday.nextDay() === DayOfWeek.Tuesday);
+      ok(DayOfWeek.Sunday.nextDay() === DayOfWeek.Monday);
+      // custom properties
+      ok(DayOfWeek.Tuesday.isWeekend === undefined);
+      ok(DayOfWeek.Saturday.isWeekend == true);
+      // Standard enum capabilities
+      ok(DayOfWeek instanceof Enum);
+      ok(Enum.isSymbol(DayOfWeek.Wednesday));
+      ok(DayOfWeek.contains(DayOfWeek.Thursday));
+      ok(DayOfWeek.Tuesday.parentEnum == DayOfWeek);
+      ok(DayOfWeek.getSymbols().length === 7);
+      ok(DayOfWeek.Friday.toString() === &quot;Friday&quot;);
+
+
+  @class Enum
   **/
-  var entityActionMethods = {
-    isAttach: function () {
-      return !!this.isAttach;
-    },
-    isDetach: function () {
-      return !!this.isDetach;
-    },
-    isModification: function () {
-      return !!this.isModification;
+
+  /**
+  Enum constructor - may be used to create new Enums.
+  @example
+      var prototype = {
+          nextDay: function () {
+              var nextIndex = (this.dayIndex+1) % 7;
+              return DayOfWeek.getSymbols()[nextIndex];
+          }
+      };
+
+      var DayOfWeek = new Enum(&quot;DayOfWeek&quot;, prototype);
+  @method &lt;ctor&gt; Enum
+  @param name {String}
+  @param [methodObj] {Object}
+  **/
+
+  var ctor = function Enum(name, methodObj) {
+    this.name = name;
+    var prototype = new EnumSymbol(methodObj);
+    prototype.parentEnum = this;
+    this._symbolPrototype = prototype;
+    if (methodObj) {
+      Object.keys(methodObj).forEach(function (key) {
+        prototype[key] = methodObj[key];
+      });
     }
   };
-
-  var EntityAction = new Enum(&quot;EntityAction&quot;, entityActionMethods);
-
-  /**
-  Attach - Entity was attached via an AttachEntity call.
-
-  @property Attach {EntityAction}
-  @final
-  @static
-  **/
-  EntityAction.Attach = EntityAction.addSymbol({ isAttach: true});
+  var proto = ctor.prototype;
 
   /**
-  AttachOnQuery - Entity was attached as a result of a query.
-
-  @property AttachOnQuery {EntityAction}
-  @final
+  Checks if an object is an Enum &#x27;symbol&#x27;.
+  @example
+      if (Enum.isSymbol(DayOfWeek.Wednesday)) {
+        // do something ...
+      };
+  @method isSymbol
+  @return {Boolean}
   @static
   **/
-  EntityAction.AttachOnQuery = EntityAction.addSymbol({ isAttach: true});
+  ctor.isSymbol = function (obj) {
+    return obj instanceof EnumSymbol;
+  };
 
   /**
-  AttachOnImport - Entity was attached as a result of an import.
-
-  @property AttachOnImport {EntityAction}
-  @final
-  @static
+  Returns an Enum symbol given its name.
+  @example
+      var dayOfWeek = DayOfWeek.from(&quot;Thursday&quot;);
+      // nowdayOfWeek === DayOfWeek.Thursday
+  @method fromName
+  @param name {String} Name for which an enum symbol should be returned.
+  @return {EnumSymbol} The symbol that matches the name or &#x27;undefined&#x27; if not found.
   **/
-  EntityAction.AttachOnImport = EntityAction.addSymbol({ isAttach: true});
-
+  proto.fromName = function (name) {
+    return this[name];
+  };
 
   /**
-  Detach - Entity was detached.
-
-  @property Detach {EntityAction}
-  @final
-  @static
+  Adds a new symbol to an Enum.
+  @example
+      var DayOfWeek = new Enum(&quot;DayOfWeek&quot;, prototype);
+      DayOfWeek.Monday    = DayOfWeek.addSymbol( { dayIndex: 0 });
+  @method addSymbol
+  @param [propertiesObj] {Object} A collection of properties that should be added to the new symbol.
+  In other words, the &#x27;propertiesObj&#x27; is any state that should be held by the symbol.
+  @return {EnumSymbol} The new symbol
   **/
-  EntityAction.Detach = EntityAction.addSymbol({ isDetach: true });
+  proto.addSymbol = function (propertiesObj) {
+    // TODO: check if sealed.
+    var newSymbol = Object.create(this._symbolPrototype);
+    if (propertiesObj) {
+      Object.keys(propertiesObj).forEach(function (key) {
+        newSymbol[key] = propertiesObj[key];
+      });
+    }
+    setTimeout(function () {
+      newSymbol.getName();
+    }, 0);
+    return newSymbol;
+  };
 
   /**
-  MergeOnQuery - Properties on the entity were merged as a result of a query.
-
-  @property MergeOnQuery {EntityAction}
-  @final
-  @static
+  Seals this enum so that no more symbols may be added to it. This should only be called after all symbols
+  have already been added to the Enum.
+  @example
+      DayOfWeek.resolveSymbols();
+  @method resolveSymbols
   **/
-  EntityAction.MergeOnQuery = EntityAction.addSymbol({ isModification: true });
+  proto.resolveSymbols = function () {
+    this.getSymbols().forEach(function (sym) {
+      return sym.getName();
+    });
+  };
+
+  //// TODO: remove or rethink this.
+  //Enum.prototype.combineSymbols = function () {
+  //    var proto = this._symbolPrototype;
+  //    var newSymbol = Object.create(proto);
+  //    newSymbol._symbols = __arraySlice(arguments);
+
+  //    Object.keys(proto).forEach(function (key) {
+  //        var result;
+  //        var oldMethod = proto[key];
+  //        if (__isFunction(oldMethod)) {
+  //            var newMethod = function () {
+
+  //                if (this._symbols) {
+  //                    result = this._symbols.map(function (sym) {
+  //                        return oldMethod.apply(sym);
+  //                    });
+  //                } else {
+  //                    result = oldMethod.apply(this);
+  //                }
+  //                return result;
+  //            };
+  //            proto[key] = newMethod;
+  //        }
+  //    });
+  //    return newSymbol;
+  //};
 
   /**
-  MergeOnImport - Properties on the entity were merged as a result of an import.
-
-  @property MergeOnImport {EntityAction}
-  @final
-  @static
+  Returns all of the symbols contained within this Enum.
+  @example
+      var symbols = DayOfWeek.getSymbols();
+  @method getSymbols
+  @return {Array of EnumSymbol} All of the symbols contained within this Enum.
   **/
-  EntityAction.MergeOnImport = EntityAction.addSymbol({ isModification: true });
+  proto.getSymbols = function () {
+    return this.getNames().map(function (key) {
+      return this[key];
+    }, this);
+  };
 
   /**
-  MergeOnSave - Properties on the entity were merged as a result of a save
-
-  @property MergeOnSave {EntityAction}
-  @final
-  @static
+  Returns the names of all of the symbols contained within this Enum.
+  @example
+      var symbols = DayOfWeek.getNames();
+  @method getNames
+  @return {Array of String} All of the names of the symbols contained within this Enum.
   **/
-  EntityAction.MergeOnSave = EntityAction.addSymbol({ isModification: true });
+  proto.getNames = function () {
+    var result = [];
+    for (var key in this) {
+      if (this.hasOwnProperty(key)) {
+        if (key !== &quot;name&quot; &amp;&amp; key.substr(0, 1) !== &quot;_&quot; &amp;&amp; !__isFunction(this[key])) {
+          result.push(key);
+        }
+      }
+    }
+    return result;
+  };
 
   /**
-  PropertyChange - A property on the entity was changed.
-
-  @property PropertyChange {EntityAction}
-  @final
-  @static
+  Returns whether an Enum contains a specified symbol.
+  @example
+      var symbol = DayOfWeek.Friday;
+      if (DayOfWeek.contains(symbol)) {
+          // do something
+      }
+  @method contains
+  @param {Object} Object or symbol to test.
+  @return {Boolean} Whether this Enum contains the specified symbol.
   **/
-  EntityAction.PropertyChange = EntityAction.addSymbol({ isModification: true});
+  proto.contains = function (sym) {
+    if (!(sym instanceof EnumSymbol)) {
+      return false;
+    }
+    return this[sym.getName()] === sym;
+  };
 
   /**
-  EntityStateChange - The EntityState of the entity was changed.
-
-  @property EntityStateChange {EntityAction}
-  @final
-  @static
+  One of the constant values that is generated by the {{#crossLink &quot;Enum&quot;}}{{/crossLink}} &quot;addSymbol&quot; method.  EnumSymbols should ONLY be created via
+  the Enum.addSymbol method.
+  @example
+      var DayOfWeek = new Enum(&quot;DayOfWeek&quot;);
+      DayOfWeek.Monday    = DayOfWeek.addSymbol();
+  @class EnumSymbol
   **/
-  EntityAction.EntityStateChange = EntityAction.addSymbol();
 
+  function EnumSymbol() {
+  }
 
   /**
-  AcceptChanges - AcceptChanges was called on the entity, or its entityState was set to Unmodified.
-
-  @property AcceptChanges {EntityAction}
-  @final
-  @static
+  The {{#crossLink &quot;Enum&quot;}}{{/crossLink}} to which this symbol belongs.
+  __readOnly__
+  @property parentEnum {Enum}
   **/
-  EntityAction.AcceptChanges = EntityAction.addSymbol();
 
   /**
-  RejectChanges - RejectChanges was called on the entity.
-
-  @property RejectChanges {EntityAction}
-  @final
-  @static
+  Returns the name of this symbol.
+  @example
+      var name = DayOfWeek.Monday.getName();
+      // name === &quot;Monday&quot;
+  @method getName
   **/
-  EntityAction.RejectChanges = EntityAction.addSymbol({ isModification: true});
+  EnumSymbol.prototype.getName = function () {
+    if (!this.name) {
+      var that = this;
+      this.name = __arrayFirst(this.parentEnum.getNames(), function (name) {
+        return that.parentEnum[name] === that;
+      });
+    }
+    return this.name;
+  };
 
   /**
-  Clear - The EntityManager was cleared.  All entities detached.
-
-  @property Clear {EntityAction}
-  @final
-  @static
+  Same as the getName method. Returns the name of this symbol.
+  @example
+      var name = DayOfWeek.Monday.toString();
+      // name === &quot;Monday&quot;
+  @method toString
   **/
-  EntityAction.Clear = EntityAction.addSymbol({ isDetach: true});
+  EnumSymbol.prototype.toString = function () {
+    return this.getName();
+  };
 
-  EntityAction.resolveSymbols();
-  return EntityAction;
+  EnumSymbol.prototype.toJSON = function () {
+    return {
+      _$typeName: this.parentEnum.name,
+      name: this.name
+    };
+  };
+
+  return ctor;
 })();
+core.Enum = Enum;
 
-breeze.EntityAction = EntityAction;
 
 
     </pre>

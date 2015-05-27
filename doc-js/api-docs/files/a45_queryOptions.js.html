@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>..\src\a05_enum.js</title>
+    <title>a45_queryOptions.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
 
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
@@ -200,286 +200,240 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: ..\src\a05_enum.js</h1>
+                        <h1 class="file-heading">File: a45_queryOptions.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 ﻿/**
-@module core
+@module breeze
 **/
 
-var Enum = (function () {
-
-  // TODO: think about CompositeEnum (flags impl).
-
+var MergeStrategy = (function () {
   /**
-  Base class for all Breeze enumerations, such as EntityState, DataType, FetchStrategy, MergeStrategy etc.
-  A Breeze Enum is a namespaced set of constant values.  Each Enum consists of a group of related constants, called &#x27;symbols&#x27;.
-  Unlike enums in some other environments, each &#x27;symbol&#x27; can have both methods and properties.
+  MergeStrategy is an &#x27;Enum&#x27; that determines how entities are merged into an EntityManager.
 
-  @example
-      // Example of creating a new Enum
-      var prototype = {
-          nextDay: function () {
-              var nextIndex = (this.dayIndex+1) % 7;
-              return DayOfWeek.getSymbols()[nextIndex];
-          }
-      };
-
-      var DayOfWeek = new Enum(&quot;DayOfWeek&quot;, prototype);
-      DayOfWeek.Monday    = DayOfWeek.addSymbol( { dayIndex: 0 });
-      DayOfWeek.Tuesday   = DayOfWeek.addSymbol( { dayIndex: 1 });
-      DayOfWeek.Wednesday = DayOfWeek.addSymbol( { dayIndex: 2 });
-      DayOfWeek.Thursday  = DayOfWeek.addSymbol( { dayIndex: 3 });
-      DayOfWeek.Friday    = DayOfWeek.addSymbol( { dayIndex: 4 });
-      DayOfWeek.Saturday  = DayOfWeek.addSymbol( { dayIndex: 5, isWeekend: true });
-      DayOfWeek.Sunday    = DayOfWeek.addSymbol( { dayIndex: 6, isWeekend: true });
-      DayOfWeek.resolveSymbols();
-
-      // custom methods
-      ok(DayOfWeek.Monday.nextDay() === DayOfWeek.Tuesday);
-      ok(DayOfWeek.Sunday.nextDay() === DayOfWeek.Monday);
-      // custom properties
-      ok(DayOfWeek.Tuesday.isWeekend === undefined);
-      ok(DayOfWeek.Saturday.isWeekend == true);
-      // Standard enum capabilities
-      ok(DayOfWeek instanceof Enum);
-      ok(Enum.isSymbol(DayOfWeek.Wednesday));
-      ok(DayOfWeek.contains(DayOfWeek.Thursday));
-      ok(DayOfWeek.Tuesday.parentEnum == DayOfWeek);
-      ok(DayOfWeek.getSymbols().length === 7);
-      ok(DayOfWeek.Friday.toString() === &quot;Friday&quot;);
-
-
-  @class Enum
-  **/
-
-  /**
-  Enum constructor - may be used to create new Enums.
-  @example
-      var prototype = {
-          nextDay: function () {
-              var nextIndex = (this.dayIndex+1) % 7;
-              return DayOfWeek.getSymbols()[nextIndex];
-          }
-      };
-
-      var DayOfWeek = new Enum(&quot;DayOfWeek&quot;, prototype);
-  @method &lt;ctor&gt; Enum
-  @param name {String}
-  @param [methodObj] {Object}
-  **/
-
-  var ctor = function Enum(name, methodObj) {
-    this.name = name;
-    var prototype = new EnumSymbol(methodObj);
-    prototype.parentEnum = this;
-    this._symbolPrototype = prototype;
-    if (methodObj) {
-      Object.keys(methodObj).forEach(function (key) {
-        prototype[key] = methodObj[key];
-      });
-    }
-  };
-  var proto = ctor.prototype;
-
-  /**
-  Checks if an object is an Enum &#x27;symbol&#x27;.
-  @example
-      if (Enum.isSymbol(DayOfWeek.Wednesday)) {
-        // do something ...
-      };
-  @method isSymbol
-  @return {Boolean}
+  @class MergeStrategy
   @static
   **/
-  ctor.isSymbol = function (obj) {
-    return obj instanceof EnumSymbol;
+  var MergeStrategy = new Enum(&quot;MergeStrategy&quot;);
+  /**
+  MergeStrategy.PreserveChanges updates the cached entity with the incoming values unless the cached entity is in a changed
+  state (added, modified, deleted) in which case the incoming values are ignored. The updated cached entity’s EntityState will
+  remain {{#crossLink &quot;EntityState/Unchanged&quot;}}{{/crossLink}} unless you’re importing entities in which case the new EntityState will
+  be that of the imported entities.
+
+  @property PreserveChanges {MergeStrategy}
+  @final
+  @static
+  **/
+  MergeStrategy.PreserveChanges = MergeStrategy.addSymbol();
+  /**
+  MergeStrategy.OverwriteChanges always updates the cached entity with incoming values even if the entity is in
+  a changed state (added, modified, deleted). After the merge, the pending changes are lost.
+  The new EntityState will be  {{#crossLink &quot;EntityState/Unchanged&quot;}}{{/crossLink}} unless you’re importing entities
+  in which case the new EntityState will be that of the imported entities.
+
+  @property OverwriteChanges {MergeStrategy}
+  @final
+  @static
+  **/
+  MergeStrategy.OverwriteChanges = MergeStrategy.addSymbol();
+
+  /**
+  SkipMerge is used to ignore incoming values. Adds the incoming entity to the cache only if there is no cached entity with the same key.
+  This is the fastest merge strategy but your existing cached data will remain “stale”.
+
+  @property SkipMerge {MergeStrategy}
+  @final
+  @static
+  **/
+  MergeStrategy.SkipMerge = MergeStrategy.addSymbol();
+
+  /**
+  Disallowed is used to throw an exception if there is an incoming entity with the same key as an entity already in the cache.
+  Use this strategy when you want to be sure that the incoming entity is not already in cache.
+  This is the default strategy for EntityManager.attachEntity.
+
+  @property Disallowed {MergeStrategy}
+  @final
+  @static
+  **/
+  MergeStrategy.Disallowed = MergeStrategy.addSymbol();
+  MergeStrategy.resolveSymbols();
+  return MergeStrategy;
+})();
+
+var FetchStrategy = (function () {
+  /**
+  FetchStrategy is an &#x27;Enum&#x27; that determines how and where entities are retrieved from as a result of a query.
+
+  @class FetchStrategy
+  @static
+  **/
+  var FetchStrategy = new Enum(&quot;FetchStrategy&quot;);
+  /**
+  FromServer is used to tell the query to execute the query against a remote data source on the server.
+  @property FromServer {MergeStrategy}
+  @final
+  @static
+  **/
+  FetchStrategy.FromServer = FetchStrategy.addSymbol();
+  /**
+  FromLocalCache is used to tell the query to execute the query against a local EntityManager instead of going to a remote server.
+  @property FromLocalCache {MergeStrategy}
+  @final
+  @static
+  **/
+  FetchStrategy.FromLocalCache = FetchStrategy.addSymbol();
+  FetchStrategy.resolveSymbols();
+  return FetchStrategy;
+})();
+
+var QueryOptions = (function () {
+  /**
+  A QueryOptions instance is used to specify the &#x27;options&#x27; under which a query will occur.
+
+  @class QueryOptions
+  **/
+
+  /**
+  QueryOptions constructor
+  @example
+      var newQo = new QueryOptions( { mergeStrategy: MergeStrategy.OverwriteChanges });
+      // assume em1 is a preexisting EntityManager
+      em1.setProperties( { queryOptions: newQo });
+
+  Any QueryOptions property that is not defined will be defaulted from any QueryOptions defined at a higher level in the breeze hierarchy, i.e.
+  -  from query.queryOptions
+  -  to   entityManager.queryOptions
+  -  to   QueryOptions.defaultInstance;
+
+  @method &lt;ctor&gt; QueryOptions
+  @param [config] {Object}
+  @param [config.fetchStrategy] {FetchStrategy}
+  @param [config.mergeStrategy] {MergeStrategy}
+  @param [config.includeDeleted] {Boolean} Whether query should return cached deleted entities (false by default)
+  **/
+  var ctor = function QueryOptions(config) {
+    updateWithConfig(this, config);
+  };
+  var proto = ctor.prototype;
+  proto._$typeName = &quot;QueryOptions&quot;;
+
+  /**
+  A {{#crossLink &quot;FetchStrategy&quot;}}{{/crossLink}}
+  __readOnly__
+  @property fetchStrategy {FetchStrategy}
+  **/
+
+  /**
+  A {{#crossLink &quot;MergeStrategy&quot;}}{{/crossLink}}
+  __readOnly__
+  @property mergeStrategy {MergeStrategy}
+  **/
+
+  /**
+  Whether to include cached deleted entities in a query result (false by default).
+
+  __readOnly__
+  @property includeDeleted {Boolean}
+  **/
+
+  ctor.resolve = function (queryOptionsArray) {
+    return new QueryOptions(__resolveProperties(queryOptionsArray, [&quot;fetchStrategy&quot;, &quot;mergeStrategy&quot;, &quot;includeDeleted&quot;]));
   };
 
   /**
-  Returns an Enum symbol given its name.
-  @example
-      var dayOfWeek = DayOfWeek.from(&quot;Thursday&quot;);
-      // nowdayOfWeek === DayOfWeek.Thursday
-  @method fromName
-  @param name {String} Name for which an enum symbol should be returned.
-  @return {EnumSymbol} The symbol that matches the name or &#x27;undefined&#x27; if not found.
+  The default value whenever QueryOptions are not specified.
+  @property defaultInstance {QueryOptions}
+  @static
   **/
-  proto.fromName = function (name) {
-    return this[name];
-  };
+  ctor.defaultInstance = new ctor({
+    fetchStrategy: FetchStrategy.FromServer,
+    mergeStrategy: MergeStrategy.PreserveChanges,
+    includeDeleted: false
+  });
 
   /**
-  Adds a new symbol to an Enum.
+  Returns a copy of this QueryOptions with the specified {{#crossLink &quot;MergeStrategy&quot;}}{{/crossLink}},
+  {{#crossLink &quot;FetchStrategy&quot;}}{{/crossLink}}, or &#x27;includeDeleted&#x27; option applied.
   @example
-      var DayOfWeek = new Enum(&quot;DayOfWeek&quot;, prototype);
-      DayOfWeek.Monday    = DayOfWeek.addSymbol( { dayIndex: 0 });
-  @method addSymbol
-  @param [propertiesObj] {Object} A collection of properties that should be added to the new symbol.
-  In other words, the &#x27;propertiesObj&#x27; is any state that should be held by the symbol.
-  @return {EnumSymbol} The new symbol
-  **/
-  proto.addSymbol = function (propertiesObj) {
-    // TODO: check if sealed.
-    var newSymbol = Object.create(this._symbolPrototype);
-    if (propertiesObj) {
-      Object.keys(propertiesObj).forEach(function (key) {
-        newSymbol[key] = propertiesObj[key];
+      // Given an EntityManager instance, em
+      var queryOptions = em.queryOptions.using(MergeStrategy.PreserveChanges);
+  or
+  @example
+      var queryOptions = em.queryOptions.using(FetchStrategy.FromLocalCache);
+  or
+  @example
+      var queryOptions = em.queryOptions.using({ mergeStrategy: MergeStrategy.OverwriteChanges });
+  or
+  @example
+      var queryOptions = em.queryOptions.using({
+          includeDeleted: true,
+          fetchStrategy:  FetchStrategy.FromLocalCache 
       });
+  @method using
+  @param config {Configuration Object|MergeStrategy|FetchStrategy} The object to apply to create a new QueryOptions.
+  @return {QueryOptions}
+  @chainable
+  **/
+  proto.using = function (config) {
+    if (!config) return this;
+    var result = new QueryOptions(this);
+    if (MergeStrategy.contains(config)) {
+      config = { mergeStrategy: config };
+    } else if (FetchStrategy.contains(config)) {
+      config = { fetchStrategy: config };
     }
-    setTimeout(function () {
-      newSymbol.getName();
-    }, 0);
-    return newSymbol;
+    return updateWithConfig(result, config);
   };
 
   /**
-  Seals this enum so that no more symbols may be added to it. This should only be called after all symbols
-  have already been added to the Enum.
+  Sets the &#x27;defaultInstance&#x27; by creating a copy of the current &#x27;defaultInstance&#x27; and then applying all of the properties of the current instance.
+  The current instance is returned unchanged.
+  @method setAsDefault
   @example
-      DayOfWeek.resolveSymbols();
-  @method resolveSymbols
+      var newQo = new QueryOptions( { mergeStrategy: MergeStrategy.OverwriteChanges });
+      newQo.setAsDefault();
+  @chainable
   **/
-  proto.resolveSymbols = function () {
-    this.getSymbols().forEach(function (sym) {
-      return sym.getName();
+  proto.setAsDefault = function () {
+    return __setAsDefault(this, ctor);
+  };
+
+  proto.toJSON = function () {
+    return __toJson(this, {
+      fetchStrategy: null,
+      mergeStrategy: null,
+      includeDeleted: false
     });
   };
 
-  //// TODO: remove or rethink this.
-  //Enum.prototype.combineSymbols = function () {
-  //    var proto = this._symbolPrototype;
-  //    var newSymbol = Object.create(proto);
-  //    newSymbol._symbols = __arraySlice(arguments);
-
-  //    Object.keys(proto).forEach(function (key) {
-  //        var result;
-  //        var oldMethod = proto[key];
-  //        if (__isFunction(oldMethod)) {
-  //            var newMethod = function () {
-
-  //                if (this._symbols) {
-  //                    result = this._symbols.map(function (sym) {
-  //                        return oldMethod.apply(sym);
-  //                    });
-  //                } else {
-  //                    result = oldMethod.apply(this);
-  //                }
-  //                return result;
-  //            };
-  //            proto[key] = newMethod;
-  //        }
-  //    });
-  //    return newSymbol;
-  //};
-
-  /**
-  Returns all of the symbols contained within this Enum.
-  @example
-      var symbols = DayOfWeek.getSymbols();
-  @method getSymbols
-  @return {Array of EnumSymbol} All of the symbols contained within this Enum.
-  **/
-  proto.getSymbols = function () {
-    return this.getNames().map(function (key) {
-      return this[key];
-    }, this);
+  ctor.fromJSON = function (json) {
+    return new QueryOptions({
+      fetchStrategy: FetchStrategy.fromName(json.fetchStrategy),
+      mergeStrategy: MergeStrategy.fromName(json.mergeStrategy),
+      includeDeleted: json.includeDeleted === true
+    });
   };
 
-  /**
-  Returns the names of all of the symbols contained within this Enum.
-  @example
-      var symbols = DayOfWeek.getNames();
-  @method getNames
-  @return {Array of String} All of the names of the symbols contained within this Enum.
-  **/
-  proto.getNames = function () {
-    var result = [];
-    for (var key in this) {
-      if (this.hasOwnProperty(key)) {
-        if (key !== &quot;name&quot; &amp;&amp; key.substr(0, 1) !== &quot;_&quot; &amp;&amp; !__isFunction(this[key])) {
-          result.push(key);
-        }
-      }
+  function updateWithConfig(obj, config) {
+    if (config) {
+      assertConfig(config)
+          .whereParam(&quot;fetchStrategy&quot;).isEnumOf(FetchStrategy).isOptional()
+          .whereParam(&quot;mergeStrategy&quot;).isEnumOf(MergeStrategy).isOptional()
+          .whereParam(&quot;includeDeleted&quot;).isBoolean().isOptional()
+          .applyAll(obj);
     }
-    return result;
-  };
-
-  /**
-  Returns whether an Enum contains a specified symbol.
-  @example
-      var symbol = DayOfWeek.Friday;
-      if (DayOfWeek.contains(symbol)) {
-          // do something
-      }
-  @method contains
-  @param {Object} Object or symbol to test.
-  @return {Boolean} Whether this Enum contains the specified symbol.
-  **/
-  proto.contains = function (sym) {
-    if (!(sym instanceof EnumSymbol)) {
-      return false;
-    }
-    return this[sym.getName()] === sym;
-  };
-
-  /**
-  One of the constant values that is generated by the {{#crossLink &quot;Enum&quot;}}{{/crossLink}} &quot;addSymbol&quot; method.  EnumSymbols should ONLY be created via
-  the Enum.addSymbol method.
-  @example
-      var DayOfWeek = new Enum(&quot;DayOfWeek&quot;);
-      DayOfWeek.Monday    = DayOfWeek.addSymbol();
-  @class EnumSymbol
-  **/
-
-  function EnumSymbol() {
+    return obj;
   }
-
-  /**
-  The {{#crossLink &quot;Enum&quot;}}{{/crossLink}} to which this symbol belongs.
-  __readOnly__
-  @property parentEnum {Enum}
-  **/
-
-  /**
-  Returns the name of this symbol.
-  @example
-      var name = DayOfWeek.Monday.getName();
-      // name === &quot;Monday&quot;
-  @method getName
-  **/
-  EnumSymbol.prototype.getName = function () {
-    if (!this.name) {
-      var that = this;
-      this.name = __arrayFirst(this.parentEnum.getNames(), function (name) {
-        return that.parentEnum[name] === that;
-      });
-    }
-    return this.name;
-  };
-
-  /**
-  Same as the getName method. Returns the name of this symbol.
-  @example
-      var name = DayOfWeek.Monday.toString();
-      // name === &quot;Monday&quot;
-  @method toString
-  **/
-  EnumSymbol.prototype.toString = function () {
-    return this.getName();
-  };
-
-  EnumSymbol.prototype.toJSON = function () {
-    return {
-      _$typeName: this.parentEnum.name,
-      name: this.name
-    };
-  };
 
   return ctor;
 })();
-core.Enum = Enum;
+
+breeze.QueryOptions = QueryOptions;
+breeze.FetchStrategy = FetchStrategy;
+breeze.MergeStrategy = MergeStrategy;
 
 
 
