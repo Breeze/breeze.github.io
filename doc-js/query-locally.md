@@ -20,7 +20,7 @@ layout: doc-js
 
 <p>The <code>EntityManager</code> offers several methods for retrieving entities from cache without visiting the server. All of them are synchronous and return their results immediately.</p>
 
-<p>With <a href="/sites/all/apidocs/classes/EntityManager.html#method_executeQueryLocally" target="_blank"><code>executeQueryLocally</code></a>, you can take a previously defined query that would otherwise target the remote server and apply it to the cache</p>
+<p>With <a href="/doc-js/api-docs/classes/EntityManager.html#method_executeQueryLocally" target="_blank"><code>executeQueryLocally</code></a>, you can take a previously defined query that would otherwise target the remote server and apply it to the cache</p>
 
 <pre class="brush:jscript;">
 // Customers whose names begin with &#39;c&#39;
@@ -35,7 +35,7 @@ var customers = manager.executeQueryLocally(query); // query the cache (synchron
 <p>Notice how you get the customers back immediately.</p>
 
 <blockquote>
-<p>The <a href="/sites/all/apidocs/classes/EntityQuery.html#method_executeLocally" target="_blank"><code>EntityQuery.executeLocally</code></a> method does the same thing:</p>
+<p>The <a href="/doc-js/api-docs/classes/EntityQuery.html#method_executeLocally" target="_blank"><code>EntityQuery.executeLocally</code></a> method does the same thing:</p>
 
 <pre class="brush:jscript;">
 var customers = query.using(manager).executeLocally();</pre>
@@ -44,9 +44,9 @@ var customers = query.using(manager).executeLocally();</pre>
 <p>The following methods aren&#39;t really queries. They just get entities from the cache directly. They all begin with the <em>get...</em> prefix.</p>
 
 <ul>
-	<li><a href="/sites/all/apidocs/classes/EntityManager.html#method_getChanges" target="_blank"><code>getChanges([entityTypes])</code></a></li>
-	<li><a href="/sites/all/apidocs/classes/EntityManager.html#method_getEntities" target="_blank"><code>getEntities([entityTypes],[entityState])</code></a></li>
-	<li><a href="/sites/all/apidocs/classes/EntityManager.html#method_getEntityByKey" target="_blank"><code>getEntityByKey(entityKey)</code></a></li>
+	<li><a href="/doc-js/api-docs/classes/EntityManager.html#method_getChanges" target="_blank"><code>getChanges([entityTypes])</code></a></li>
+	<li><a href="/doc-js/api-docs/classes/EntityManager.html#method_getEntities" target="_blank"><code>getEntities([entityTypes],[entityState])</code></a></li>
+	<li><a href="/doc-js/api-docs/classes/EntityManager.html#method_getEntityByKey" target="_blank"><code>getEntityByKey(entityKey)</code></a></li>
 </ul>
 
 <h2>getChanges</h2>
@@ -70,7 +70,7 @@ var myChangeSet = manager.getChanges([&#39;Customer&#39;, &#39;Order&#39;, &#39;
 
 <h2>getEntities</h2>
 
-<p>Get entities by <a href="/sites/all/apidocs/classes/EntityType.html" target="_blank"><code>EntityType</code></a> and/or <a href="/sites/all/apidocs/classes/EntityState.html" target="_blank"><code>EntityState</code></a>.</p>
+<p>Get entities by <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank"><code>EntityType</code></a> and/or <a href="/doc-js/api-docs/classes/EntityState.html" target="_blank"><code>EntityState</code></a>.</p>
 
 <p>Here&#39;s how to extract all <code>Customer</code> entities in cache:</p>
 
@@ -93,7 +93,7 @@ var i = -1 &lt; deletedCustomers.indexOf(someCustomer); // true
 
 <p>Breeze supports type inheritance. Queries for a base type can return entities of that type (if it isn&#39;t abstract) and all of its derived sub-types. This is called a &quot;polymorphic query&quot;. A navigation property defined for a base type can return a &quot;polymorphic&quot; result too.</p>
 
-<p><code>Customer.Orders</code>is an example of polymorphic navigation property in the &quot;Northwind&quot; model of <a href="/samples/doccode">the DocCode sample</a>. It can return instances of <code>Order</code> or <code>InternationalOrder</code>.</p>
+<p><code>Customer.Orders</code>is an example of polymorphic navigation property in the &quot;Northwind&quot; model of <a href="/samples/doccode.html">the DocCode sample</a>. It can return instances of <code>Order</code> or <code>InternationalOrder</code>.</p>
 
 <p>However, <code>getEntities()</code>returns entities for the <em>specified type(s) only</em>. If you want to get both <code>Order</code> and <code>InternationalOrder</code> from cache, you&#39;d have to write this:</p>
 
@@ -146,7 +146,7 @@ service.getCustomersStartingWith function(searchText){
 }
 </pre>
 
-<p>The method signature retains its asynchronous form even though the query will run synchronously and return immediately when the application is disconnected. Internally, when the app is disconnected, the developer <a href="/sites/all/apidocs/classes/EntityQuery.html#method_using" target="_blank">changes the query&#39;s <code>QueryOption</code></a> to target the cache.</p>
+<p>The method signature retains its asynchronous form even though the query will run synchronously and return immediately when the application is disconnected. Internally, when the app is disconnected, the developer <a href="/doc-js/api-docs/classes/EntityQuery.html#method_using" target="_blank">changes the query&#39;s <code>QueryOption</code></a> to target the cache.</p>
 
 <p>We can even toggle the <code>EntityManager</code> itself to run locally when the app loses the connection.</p>
 
@@ -209,7 +209,7 @@ return manager.executeQueryLocally(query); // OK
 <p>You may wonder why generally don&#39;t add <code>toType()</code> to our queries. What's different about this case?
 How can you teach Breeze to recognize "Speakers" as a resource returning <code>Person</code> entities?</p>
 
-<p>Learn the answers to these questions in the <a href="query-from">"Query from" topic</a>.</p>
+<p>Learn the answers to these questions in the <a href="/doc-js/query-from.html">"Query from" topic</a>.</p>
 
 <h2>Fetch an entity by its key</h3>
 
@@ -229,7 +229,7 @@ EntityQuery.from(&#39;Employee&#39;)
             });
 </pre>
 
-<p>Breeze offers a <a href="/sites/all/apidocs/classes/EntityManager.html#method_fetchEntityByKey" target="_blank"><code>fetchEntityByKey</code></a> shortcut for this common case.</p>
+<p>Breeze offers a <a href="/doc-js/api-docs/classes/EntityManager.html#method_fetchEntityByKey" target="_blank"><code>fetchEntityByKey</code></a> shortcut for this common case.</p>
 
 <pre class="brush:jscript;">
 manager.fetchEntityByKey(&#39;Employee&#39;, employeeID)
@@ -255,7 +255,7 @@ manager.fetchEntityByKey(&#39;Employee&#39;, employeeID, true)
 
 <p>What if we want to present a list of employees on screen ... a list that combines unsaved employee changes with the latest employee data from the server?</p>
 
-<p>We can chain a pair of queries as in this example from <em>queryTests.js</em> in the <a href="http://www.breezejs.com/samples/doccode" target="_blank">DocCode</a> teaching tests:</p>
+<p>We can chain a pair of queries as in this example from <em>queryTests.js</em> in the <a href="/samples/doccode.html" target="_blank">DocCode</a> teaching tests:</p>
 
 <pre class="brush:jscript;">
 // Assume &#39;Andrew&#39; and &#39;Anne&#39; are in the database and the manager is empty
@@ -307,10 +307,10 @@ promise.then(function (data) {
 	<li>the query returns only Andrew, not the entity formerly-known-as-Anne</li>
 </ul>
 
-<p>Focus on what happens to the &#39;Anne&#39; entity. The default <a href="/sites/all/apidocs/classes/MergeStrategy.html" target="_blank"><code>MergeStrategy.PreserveChanges</code></a> prevents the remote query from overwriting the current name value of &#39;Charlene&#39; with the database value which is still &#39;Anne&#39;. Then the local query excludes the Anne entity from its results because her local current name is &#39;Charlene&#39;.</p>
+<p>Focus on what happens to the &#39;Anne&#39; entity. The default <a href="/doc-js/api-docs/classes/MergeStrategy.html" target="_blank"><code>MergeStrategy.PreserveChanges</code></a> prevents the remote query from overwriting the current name value of &#39;Charlene&#39; with the database value which is still &#39;Anne&#39;. Then the local query excludes the Anne entity from its results because her local current name is &#39;Charlene&#39;.</p>
 
 <p>This behavior is exactly what we want most of the time. The user who is changing &#39;Alice&#39; to &#39;Charlene&#39; would be surprised, annoyed, or both if the re-query wiped out her changes. She&#39;d be equally surprised if the list of &#39;A&#39; employees displayed a person named &#39;Charlene&#39;.</p>
 
 <p>We should be able to query the database repeatedly without having its data overwrite our pending changes. We want the latest information from the database but not at the expense of our unsaved work.</p>
 
-<p>If we really do want the database values to trump unsaved changes ... if we want the query to change &#39;Charlene&#39; back to &#39;Alice&#39; ..., we can specify the <a href="/sites/all/apidocs/classes/MergeStrategy.html" target="_blank"><code>MergeStrategy.OverwriteChanges</code></a>.</p>
+<p>If we really do want the database values to trump unsaved changes ... if we want the query to change &#39;Charlene&#39; back to &#39;Alice&#39; ..., we can specify the <a href="/doc-js/api-docs/classes/MergeStrategy.html" target="_blank"><code>MergeStrategy.OverwriteChanges</code></a>.</p>
