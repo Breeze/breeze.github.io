@@ -82,7 +82,7 @@ Define your custom adapter as a constructor function with a name, perhaps like t
     
     var proto = ctor.prototype; // because you'll reference the prototype a lot
 
-While you *can* write your adapter entirely from scratch, many Breeze adapters (such as the 'webApi' and 'mongoDb' *DataServiceAdapters*) derive from the [`AbstractDataServiceAdapter`](abstractdataservice-adapter) and you might choose to do likewise.
+While you *can* write your adapter entirely from scratch, many Breeze adapters (such as the 'webApi' and 'mongoDb' *DataServiceAdapters*) derive from the [`AbstractDataServiceAdapter`](/doc-js/server-abstractdataserviceadapter.html) and you might choose to do likewise.
 
 `proto = new breeze.AbstractDataServiceAdapter();`
 
