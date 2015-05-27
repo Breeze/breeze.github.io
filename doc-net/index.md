@@ -29,12 +29,12 @@ A "Breeze-flavored" Web API is the quickest, most productive path to an HTTP ser
 
 The following topics cover various aspects of this Breeze-flavored approach
 
-* [Hosting in ASP.NET](http://www.breezejs.com/documentation/hosting-aspnet)
-* [Web API Routing](http://www.breezejs.com/documentation/web-api-routing)
-* [The Web API controller](http://www.breezejs.com/documentation/web-api-controller)
-* [The ContextProvider](http://www.breezejs.com/documentation/contextprovider)
-* [Using the Entity Framework for data access](http://www.breezejs.com/documentation/entity-framework)
-* [Using NHibernate for data access](http://www.breezejs.com/documentation/nhibernate)
+* [Hosting in ASP.NET](/doc-net/hosting-in-aspnet)
+* [Web API Routing](/doc-net/webapi-routing)
+* [The Web API controller](/doc-net/webapi-controller)
+* [The ContextProvider](/doc-net/ef-efcontextprovider)
+* [Using the Entity Framework for data access](/doc-net/ef)
+* [Using NHibernate for data access](/doc-net/nh)
 
 ## Conventional Web API
 
@@ -52,4 +52,4 @@ Breeze clients work well with these APIs too. You have to do a bit more work to 
 
 ASP.NET provides a special set of components and techniques for building an <a href="http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api" target="_blank" title="OData Support in Web API">OData service in Web API</a>.
 
-Such a service can be consumed by any client that understands the <a href="http://www.odata.org/" target="_blank" title="OData.org">OData protocol</a> ... a set that includes Breeze clients.  If you're writing an OData Web API service, you have implementation choices with consequences for client application developers. To learn how these choices affect Breeze clients, start with the topic "[OData on the Server](/documentation/odata-server)".
+Such a service can be consumed by any client that understands the <a href="http://www.odata.org/" target="_blank" title="OData.org">OData protocol</a> ... a set that includes Breeze clients.  If you're writing an OData Web API service, you have implementation choices with consequences for client application developers. To learn how these choices affect Breeze clients, start with the topic "[OData on the Server](/doc-net/odata)".
