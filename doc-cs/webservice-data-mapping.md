@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/.html"
 ---
 
 # Mapping Web Service Data into Breeze entities

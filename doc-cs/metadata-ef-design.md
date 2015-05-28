@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/.html"
 ---
 
 #Entity Framework as a metadata design tool#

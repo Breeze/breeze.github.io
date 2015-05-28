@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/.html"
 ---
 
 # Validation
@@ -20,9 +21,9 @@ This topic covers the most important aspects of the Breeze validation system.
 
 Validation is a process of judging the current state of an entity with validation rules.&nbsp; Each rule assesses a fact about the validity of an entity or one of its properties. A rule judges but it does not change; the entity values are the same, before and after evaluation.
 
-Concretely, a validation rule is an instance of the Breeze [`Validator`](/breeze-sharp-api/html/T_Breeze_Sharp_Validator.htm) class.
+Concretely, a validation rule is an instance of the Breeze [`Validator`](/doc-cs/api-docs/html/T_Breeze_Sharp_Validator.htm) class.
 
-<p class="note">Please read the Breeze API documentation for the <strong><a href="/breeze-sharp-api/html/T_Breeze_Sharp_Validator.htm" target="_blank"><span class="codeword">Validator</span></a></strong> class. It has a lot of good information about how validations work and how to write them.</p>
+<p class="note">Please read the Breeze API documentation for the <strong><a href="/doc-cs/api-docs/html/T_Breeze_Sharp_Validator.htm" target="_blank"><span class="codeword">Validator</span></a></strong> class. It has a lot of good information about how validations work and how to write them.</p>
 
 Most Breeze validators evaluate property data. A length validator can detect if the ***CompanyName*** is too long; a required validator determines that the ***CompanyName*** has a value; a string data type validator ensures that the ***CompanyName*** is a string, not a number or a date. These rules combine to determine the overall validity of the ***CompanyName*** property.
 
