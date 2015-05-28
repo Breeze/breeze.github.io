@@ -89,7 +89,7 @@ redirect_from: "/old/samples/nodb.html"
 <h3>
 	TodoController</h3>
 <p>Client requests arrive and depart through the <strong><span class="codeword">TodoController</span></strong>, a simple ASP.NET Web API controller.</p>
-<p>The class is adorned with the <a href="/documentation/web-api-controller/#BreezeControllerAttribute"><span class="codeword">BreezeController</span></a> attribute which conveniently purges all formatters, adds a JSON formatter configured for Breeze clients, and adds&nbsp; Breeze.NET <em>IQueryable</em> support. The NoDb app doesn&#39;t issue queries - it just retrieves all TodoLists in a single request - but it could and you can experiment with OData query URLs in a tool like <a href="http://www.fiddler2.com/fiddler2/" target="_blank">Fiddler</a>.</p>
+<p>The class is adorned with the <a href="/doc-net/webapi-controller/#BreezeControllerAttribute"><span class="codeword">BreezeController</span></a> attribute which conveniently purges all formatters, adds a JSON formatter configured for Breeze clients, and adds&nbsp; Breeze.NET <em>IQueryable</em> support. The NoDb app doesn&#39;t issue queries - it just retrieves all TodoLists in a single request - but it could and you can experiment with OData query URLs in a tool like <a href="http://www.fiddler2.com/fiddler2/" target="_blank">Fiddler</a>.</p>
 <p><span class="codeword">TodoController</span> is similar to other Breeze controllers in that it responds to actions specified in the request URL. But it only offers two actions: (1) <span class="codeword">TodoLists</span> which returns an <span class="codeword">IQueryable</span> of the only type the client asks about and (1) <span class="codeword">SaveChanges</span> which receives a standard BreezeJS JSON change-set bundle and forwards them to an instance of the <span class="codeword">TodoRepository</span>. Clearly missing is the <em>Metadata </em>action typical of other Breeze controllers. This service does not generate metadata for the client and respond with a &quot;404 Not Found&quot; if asked for metadata.</p>
 <p>The simplicity of this controller is in keeping with recommendations for Web API controllers in general and Breeze controllers in particular: it dispatches all serious work to helper classes such as the <span class="codeword">TodoRepository</span>.</p>
 <h3>
@@ -122,7 +122,7 @@ public class EntityInfo {
 <p>The <span class="codeword">EntityState</span> is an enum indicating the save operation to perform: insert (&quot;Added&quot;), update (&quot;Modified&quot;), or delete (&quot;Deleted&quot;).</p>
 <p>The <span class="codeword">OriginalValuesMap</span> contains property-name/original-value pairs for each of the properties that have changed; only &quot;Modified&quot; entities have mapped values.</p>
 <p class="note"><strong>Caution</strong>: remember that this map comes from&nbsp; the client which can never be fully trusted. Use the map for guidance. Ignore it and re-fetch the original from the database for comparison with the proposed values if this entity type carries any sensitive information.</p>
-<p><a href="/documentation/custom-efcontextprovider/#SaveInterception">Pre-save validation</a> is the next step in the save process. This provider overrides the <span class="codeword">BeforeSaveEntity</span> method where it confirms that every <span class="codeword">TodoItem</span> has a parent <span class="codeword">TodoList</span>. This single check suffices for now; there are other validations performed downstream.</p>
+<p><a href="/doc-net/ef-efcontextprovider/#SaveInterception">Pre-save validation</a> is the next step in the save process. This provider overrides the <span class="codeword">BeforeSaveEntity</span> method where it confirms that every <span class="codeword">TodoItem</span> has a parent <span class="codeword">TodoList</span>. This single check suffices for now; there are other validations performed downstream.</p>
 <p>Next comes the save itself. The base <span class="codeword">ContextProvider</span> knows when to save but not how to save so we override the abstract <span class="codeword">SaveChangesCore</span> and delegate to the <a href="#TodoContextSaveChanges"><span class="codeword">TodoContext.SaveChanges</span></a> method. That method should save the entities, update their values, and return a key map of temporary-to-permanent keys. The base provider repackages that key map and the updated entity map into a <span class="codeword">SaveResult</span>. We return the <span class="codeword">SaveResult</span> to the calling controller which bakes it into the HTTP response. The save process is complete. Failures along the way (e.g., a failed validation) should be thrown as exceptions for the controller (or the Web API) to catch and forward to the client.</p>
 <p class="note">It bears repeating that the reliance of this <span class="codeword">TodoRepository</span> on the Breeze <span class="codeword">ContextProvider</span> is a matter of convenience. We could have replaced all Breeze.NET components with custom code. In our judgment doing so would only cloud with complexity what should be a simple point: a Breeze client can work with a server that does not use Entity Framework and does not suppy metadata.</p>
 <h3>
@@ -186,7 +186,7 @@ var manager = new breeze.EntityManager({ dataService: dataService });
 &lt;script src=&quot;Scripts/app/todo.viewmodel.js&quot;&gt;&lt;/script&gt;
 </pre>
 <p>There&#39;s a <em>model.js</em> script sitting between the <em>datacontext.js</em>, which creates the application&#39;s <span class="codeword">EntityManager</span>, and the <em>viewmodel.js</em> that launches the user experience.</p>
-<p>In that small window of time, <em>model.js</em> can define the application metadata. Many Breeze applications have a <em>model.js</em> script, positioned just like this one, to supplement the server-supplied metadata with client-side logic. Such a script typically <a href="/documentation/extending-entities">extends the <span class="codeword">EntityTypes</span></a> with constructors, initializing functions, properties, validations, and behaviors in support of application workflow and presentation.</p>
+<p>In that small window of time, <em>model.js</em> can define the application metadata. Many Breeze applications have a <em>model.js</em> script, positioned just like this one, to supplement the server-supplied metadata with client-side logic. Such a script typically <a href="/doc-js/extending-entities">extends the <span class="codeword">EntityTypes</span></a> with constructors, initializing functions, properties, validations, and behaviors in support of application workflow and presentation.</p>
 <p>The <em>model.js</em> in NoDb creates the <span class="codeword">EntityTypes</span> <em>first</em> and then extends them. The following few lines explain the approach:</p>
 <pre class="brush:jscript;">
 // The empty metadataStore to which we add types
@@ -224,7 +224,7 @@ et.addProperty(new breeze.DataProperty({
 <h4>
 	NamingConvention</h4>
 <p>The client-side property <strong>name</strong> must <em>correspond</em> to the server-side property name. Unlike the entity type name, it need not match exactly. As we see here, the key property is named &quot;todoItemId&quot; (camelCase) on the client and &quot;TodoItemId&quot; (PascalCase) on the server.</p>
-<p>The two names are strictly related by a <a href="/documentation/metadata/#NamingConvention">NamingConvention</a>. By default the client and server property names match exactly. The author of NoDb preferred camel case on the client and set the default convention accordingly in the <em>datacontext.js</em> just <em><strong>before</strong></em> creating the <span class="codeword">EntityManager</span>; later would have been too late.</p>
+<p>The two names are strictly related by a <a href="/doc-js/server-namingconvention">NamingConvention</a>. By default the client and server property names match exactly. The author of NoDb preferred camel case on the client and set the default convention accordingly in the <em>datacontext.js</em> just <em><strong>before</strong></em> creating the <span class="codeword">EntityManager</span>; later would have been too late.</p>
 <pre class="brush:jscript;">
 breeze.NamingConvention.camelCase.setAsDefault();
 </pre>
@@ -244,10 +244,10 @@ breeze.NamingConvention.camelCase.setAsDefault();
  et.addValidator(
     breeze.Validator.maxLength({ maxLength: 30 }),prop);
 </pre>
-<p>The property definition holds no surprises. But we followed that definition by adding a couple of validation rules called &quot;<a href="/documentation/validation">Validators</a>&quot;. We could have added them later (validators are among the few aspects of a property that can be changed later). We added them here as a matter of style.</p>
+<p>The property definition holds no surprises. But we followed that definition by adding a couple of validation rules called &quot;<a href="/doc-js/validation">Validators</a>&quot;. We could have added them later (validators are among the few aspects of a property that can be changed later). We added them here as a matter of style.</p>
 <h4>
 	Navigation properties</h4>
-<p>A <span class="codeword">TodoItem</span> has a parent <span class="codeword">TodoList</span>. A <span class="codeword">TodoList</span> has zero or more child <span class="codeword">TodoItems</span>. They are bound by an <strong><em>association</em></strong>. Breeze supports associations with <a href="/documentation/navigation-properties">navigation properties</a> defined in metadata.</p>
+<p>A <span class="codeword">TodoItem</span> has a parent <span class="codeword">TodoList</span>. A <span class="codeword">TodoList</span> has zero or more child <span class="codeword">TodoItems</span>. They are bound by an <strong><em>association</em></strong>. Breeze supports associations with <a href="/doc-js/navigation-properties">navigation properties</a> defined in metadata.</p>
 <p>Let&#39;s add a property to &quot;navigate&quot; from a <span class="codeword">TodoItem</span> to its parent <span class="codeword">TodoList</span>.</p>
 <pre class="brush:jscript;">
 et.addProperty(new breeze.NavigationProperty({
@@ -281,7 +281,7 @@ store.addEntityType(et);
 	Add an initializer function</h4>
 <p>We can add business logic, define default values, and create <em>unmapped</em> properties for any <span class="codeword">EntityType</span> by register a <strong>custom constructor</strong> function.</p>
 <p>All of the properties we&#39;ve added were mapped, meaning they correspond to locations in permanent storage on the server and Breeze moves values between these properties and those locations when it queries and saves. Yet sometimes we want an entity to carry information that is not saved permanently and does not correspond to a location in the database.</p>
-<p><strong><em>Unmapped</em></strong> properties can be a good choice for this purpose. Breeze still recognizes them. Breeze will serialize them, send them to the server, and listen for their changes. But it won&#39;t try to save them and changes to unmapped properties do not affect the <a href="/documentation/inside-entity/#EntityState"><span class="codeword">EntityState</span></a>.</p>
+<p><strong><em>Unmapped</em></strong> properties can be a good choice for this purpose. Breeze still recognizes them. Breeze will serialize them, send them to the server, and listen for their changes. But it won&#39;t try to save them and changes to unmapped properties do not affect the <a href="/doc-js/inside-entity#EntityState"><span class="codeword">EntityState</span></a>.</p>
 <p>The <span class="codeword">TodoItem</span> in this app doesn&#39;t have custom business logic and doesn&#39;t have unmapped properties so it doesn&#39;t need a custom constructor. But there is another property that every <span class="codeword">TodoItem</span> must have, the <span class="codeword">errorMessage</span> Knockout observable. That&#39;s where the application puts validation messages and system error messages when something is wrong with a Todo. Knockout binds the Todo&#39;s <span class="codeword">errorMessage</span> is to the view and updates the view as error messages are added and cleared.</p>
 <p>Breeze shouldn&#39;t know about this property. It&#39;s clearly not a mapped property. It&#39;s not unmapped either. Breeze shouldn&#39;t serialize it or send it to the server. But we&#39;d like Breeze to add this property to every new <span class="codeword">TodoItem</span> it makes, whether that Todo is created explicitly or implicitly as a result of a query. We can make that happen when we register an <strong>initializer function</strong><!--. </p-->.</p>
 <pre class="brush:jscript;">
@@ -291,7 +291,7 @@ function todoItemInitializer(todoItem) {
    todoItem.errorMessage = ko.observable();
 }
 </pre>
-<p>Learn more about custom constructors and initializers in the &quot;<a href="/documentation/extending-entities">Extending entities</a>&quot; topic.</p>
+<p>Learn more about custom constructors and initializers in the &quot;<a href="/doc-js/extending-entities">Extending entities</a>&quot; topic.</p>
 <h2>
 	We&#39;re Done!</h2>
 <p>In this sample we did away with the database, with EntityFramework, and with server-supplied metadata.&nbsp;</p>

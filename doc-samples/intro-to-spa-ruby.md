@@ -13,10 +13,10 @@ redirect_from: "/old/samples/intro-spa-ruby.html"
 <p>We&#39;d encourage you to:</p>
 
 <ul>
-	<li>Download the <a href="/sites/default/files/CCJS-Ruby.zip" target="_blank">CCJS-Ruby source code</a> and run the app yourself.</li>
+	<li>Download the <a href="/downloads/CCJS-Ruby.zip" target="_blank">CCJS-Ruby source code</a> and run the app yourself.</li>
 	<li>Read <a href="http://www.johnpapa.net/spajs04/" target="_blank">What Breeze can do for you</a> on John&#39;s blog along with the 50+ comments from other developers.</li>
 	<li>Take the <a href="http://pluralsight.com/training/courses/TableOfContents?courseName=single-page-apps-jumpstart" target="_blank">Single Page Apps JumpStart</a> course on PluralSight (requires subscription, but they&nbsp;have a free trial).</li>
-	<li>Flip through slides from Ward&#39;s Bay.NET presentation, <a href="/sites/default/files/slides/CCJS-Ruby.pptx">Breeze, Data, and the Single Page App</a>. We&#39;llbe turning this into a video soon.</li>
+	<li>Flip through slides from Ward&#39;s Bay.NET presentation, <a href="/downloads/CCJS-Ruby.pptx">Breeze, Data, and the Single Page App</a>. We&#39;llbe turning this into a video soon.</li>
 	<li>Watch the <a href="http://www.youtube.com/watch?v=YffHd_WBfig" target="_blank">video</a>.<br /><br/>
 	<div class="embed-container"><iframe allowfullscreen="" frameborder="0" src="http://www.youtube.com/embed/YffHd_WBfig"></iframe></div></li>
 </ul>

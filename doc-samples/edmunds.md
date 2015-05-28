@@ -26,7 +26,7 @@ redirect_from: "/old/samples/edmunds.html"
 
 <p>Just some <strong>HTML and JavaScript on the client</strong> talking to a <strong>public 3rd party API that is completely out of our control</strong>.</p>
 
-<p>You&rsquo;ll find &ldquo;Edmunds&rdquo; among the samples in the <a href="/documentation/download">full download</a>.</p>
+<p>You&rsquo;ll find &ldquo;Edmunds&rdquo; among the samples in the <a href="/doc-js/download">full download</a>.</p>
 
 <h2>Prep It</h2>
 
@@ -77,7 +77,7 @@ redirect_from: "/old/samples/edmunds.html"
 
 <p>And <strong>breeze.js</strong> of course.</p>
 
-<p>However, this app only includes the Breeze JavaScript files which we <a href="/documentation/download" title="Breeze download">extracted from the runtime zip</a>. We did <strong>not</strong> install the <em>breeze.webapi</em> NuGet package because we only want the JavaScript; we don&#39;t need any of the Breeze.NET components.</p>
+<p>However, this app only includes the Breeze JavaScript files which we <a href="/doc-js/download" title="Breeze download">extracted from the runtime zip</a>. We did <strong>not</strong> install the <em>breeze.webapi</em> NuGet package because we only want the JavaScript; we don&#39;t need any of the Breeze.NET components.</p>
 
 <h2>Inside the app</h2>
 
