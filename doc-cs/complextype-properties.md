@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/complextype-properties.html"
 ---
 
 # Complex Type properties
