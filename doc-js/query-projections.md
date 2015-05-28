@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/projection-queries.html"
 ---
 
 <h1>

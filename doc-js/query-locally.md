@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/querying-locally.html"
 ---
 
 <h1>Querying Locally</h1>
@@ -211,7 +212,7 @@ How can you teach Breeze to recognize "Speakers" as a resource returning <code>P
 
 <p>Learn the answers to these questions in the <a href="/doc-js/query-from.html">"Query from" topic</a>.</p>
 
-<h2>Fetch an entity by its key</h3>
+<h2>Fetch an entity by its key</h2>
 
 <p>We often want to fetch an entity with a known key. For example, we may be looking at an order and decide that we want to see information about the employee who sold the order.</p>
 

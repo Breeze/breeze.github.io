@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/querying-depth.html"
 ---
 
 # Querying in depth

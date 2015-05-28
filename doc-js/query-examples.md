@@ -1,6 +1,6 @@
 ---
 layout: doc-js
-title: Query examples
+redirect_from: "/old/documentation/query-examples.html"
 ---
 # Query examples
 

@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/query-result-debugging.html"
 ---
 #Debugging query result mysteries
 

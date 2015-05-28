@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/saving-changes.html"
 ---
 <h1>Saving changes</h1>
 

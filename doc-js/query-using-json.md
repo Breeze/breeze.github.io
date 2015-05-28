@@ -1,9 +1,9 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/query-using-json.html"
 ---
+# EntityQueries in json format 
 
-EntityQueries in json format 
-----
 As of Breeze 1.5.1 both *EntityQueries* and *Predicates* can be expressed not only via a fluent interface
   
     var query = EntityQuery.from("Customers")

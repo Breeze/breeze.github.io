@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/talking-server.html"
 ---
 # Talking to the server
 
