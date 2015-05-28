@@ -6,7 +6,7 @@ redirect_from: "/old/samples/todo-knockout.html"
 
 <p>The base Todo sample demonstrates Breeze and <a href="http://knockoutjs.com/" target="_blank">KnockoutJS</a> working together in a single page CRUD (Create/Read/Update/Delete) application.</p>
 
-<p clear="all">The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/documentation/download" target="_blank">download here</a>.</p>
+<p clear="all">The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/doc-js/download" target="_blank">download here</a>.</p>
 
 <h2><img alt="" src="/images/samples/Todo-KoRunning.png" style="width: 100%; max-width: 568px;" /></h2>
 

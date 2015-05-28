@@ -7,7 +7,7 @@ redirect_from: "/old/samples/todo-angular-sequelize.html"
 
 The Todo-Angular-Sequelize sample demonstrates Breeze, <a href="http://angularjs.org/" target="_blank">AngularJS</a> and <a href="http://docs.sequelizejs.com/" target="_blank">Sequelize</a> working together in a single page CRUD (Create/Read/Update/Delete) application.
 
-The <a href="/doc-samples/todo/#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/documentation/download" target="_blank">download here</a>.
+The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/doc-js/download" target="_blank">download here</a>.
 
 ##<img alt="" src="/images/samples/Todo-AngularRunning.png" style="max-width: 568px; width: 100%;" />
 
@@ -190,7 +190,7 @@ A controller written in this "MVVM" style makes no references to view elements a
 
 ##Dataservice
 
-The *dataservice.js* file handles the creation of new Todo objects and all interactions with the server. It&#39;s written in Breeze and almost all Breeze-related code is in this <em>dataservice</em>. See the &quot;<a href="/doc-samples/todo-dataservice">Todo Sample Dataservice</a>&quot; page for details.</p>
+The *dataservice.js* file handles the creation of new Todo objects and all interactions with the server. It&#39;s written in Breeze and almost all Breeze-related code is in this <em>dataservice</em>. See the &quot;<a href="/doc-samples/about-todo-dataservice">Todo Sample Dataservice</a>&quot; page for details.</p>
 
 Notice the use of Angular dependency injection.
 

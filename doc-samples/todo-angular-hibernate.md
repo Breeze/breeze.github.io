@@ -182,7 +182,7 @@ A controller written in this "MVVM" style makes no references to view elements a
 
 ##Dataservice
 
-The *dataservice.js* file handles the creation of new Todo objects and all interactions with the server. It&#39;s written in Breeze and almost all Breeze-related code is in this <em>dataservice</em>. See the &quot;<a href="/doc-samples/todo-dataservice">Todo Sample Dataservice</a>&quot; page for details.</p>
+The *dataservice.js* file handles the creation of new Todo objects and all interactions with the server. It&#39;s written in Breeze and almost all Breeze-related code is in this <em>dataservice</em>. See the &quot;<a href="/doc-samples/about-todo-dataservice">Todo Sample Dataservice</a>&quot; page for details.</p>
 
 Notice the use of Angular dependency injection.
 
@@ -191,7 +191,7 @@ Notice the use of Angular dependency injection.
 
 We're injecting the Angular `$timeout` service (an abstraction over JavaScript's `setTimeout`), the 'breeze' service, and the application's 'logger' service (described below).
 
-Inject the 'breeze' service is a way of accessing Breeze itself without getting it from the global (`window`) namespace. But that's not why we're injecting it. We're actually looking for a side-effect of that injection: the configuration of Breeze for an Angular application. See ["Breeze Angular Service"](http://www.breezejs.com/documentation/breeze-angular-service) to learn more.
+Inject the 'breeze' service is a way of accessing Breeze itself without getting it from the global (`window`) namespace. But that's not why we're injecting it. We're actually looking for a side-effect of that injection: the configuration of Breeze for an Angular application. See ["Breeze Angular Service"](/doc-js/breeze-angular) to learn more.
 
 The `controller` is insulated from data access details and has no direct connection with Breeze. The `dataservice` api provides it with all that it needs ... and no more. 
 

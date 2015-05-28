@@ -241,9 +241,9 @@ Now that you know how Require works in *main.js*, apply the same thinking to the
 
 Look again at the `define` call in *dataservice.js*. Focus on the last dependency, 'breeze.savequeuing'.
 
-'breeze.savequeuing' is a Breeze extension. It's a [Breeze Lab](http://www.breezejs.com/breeze-labs/breezesavequeuingjs "breeze.savequeuing documentation") extension that we [downloaded from from the Breeze source on GitHub](https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.savequeuing.js "breeze.savequeuing source"). 
+'breeze.savequeuing' is a Breeze extension. It's a [Breeze Lab](/doc-breeze-labs/save-queuing "breeze.savequeuing documentation") extension that we [downloaded from from the Breeze source on GitHub](https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.savequeuing.js "breeze.savequeuing source"). 
 
->[Breeze Labs](http://www.breezejs.com/documentation/what-are-breeze-labs "Breeze Labs") are code that you might find useful in your application. They aren't part of Breeze and they are not officially supported (although we take good care of them in practice).
+>[Breeze Labs](/doc-breeze-labs/ "Breeze Labs") are code that you might find useful in your application. They aren't part of Breeze and they are not officially supported (although we take good care of them in practice).
 
 "Save Queuing" copes with the fact that this app allows the user to issue save requests in rapid succession without waiting for saves to finish. The server doesn't have enough time to process a a prior save request before the next request arrives. The client could become confused unless we buffered the outbound requests ... which is what the "breeze.savequeueing" extension does.
 
@@ -259,4 +259,4 @@ These capabilities came with a cost. We added the *require.js* library. We added
 
 This is all too expensive for a simple Todo app. But we think it's a solid investment when building a real app, an investment that pays off quickly.
 
-[Back to the main Todo Sample page](/samples/about-todo)
+[Back to the main Todo Sample page](/doc-samples/about-todo)
