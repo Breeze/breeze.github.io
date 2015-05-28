@@ -1,6 +1,6 @@
 ---
 layout: doc-breeze-labs
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/breezeajaxpostjs.html"
 ---
 #Breeze queries using POST#
 This feature is for handling large object graphs as query parameters - object graphs so large that they won't fit in a URL.
