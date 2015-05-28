@@ -14,7 +14,7 @@ Breeze relies on metadata about entity types and their relationships when it que
 * [Using Entity Framework as a design tool](/doc-cs/metadata-ef-design)
 * [Metadata schema](/doc-cs/metadata-schema)
 
-Please consult the [API docs](/doc-cs/api-docs/html/index.html) for the following related classes:
+Please consult the [API docs](/doc-cs/api-docs/index.html) for the following related classes:
 
 <span class="codeword">MetadataStore</span>
 
