@@ -26,6 +26,11 @@ html, body {
   margin: 10px 0px 0px 0px;
 }
 
+#menu-header.active {
+    color: #555555;
+    background-color: #ffffff;
+}
+
 .navmenu {
   top: 68px;
   width: 220px;
@@ -72,6 +77,8 @@ h4, .h4 {
   margin-right: 4px;
   border: none;
 }
+
+
 
 .dropdown-header {
   font-size: 14px;

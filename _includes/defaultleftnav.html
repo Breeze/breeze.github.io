@@ -1,12 +1,15 @@
+{% assign pagelink = page.url | split: '/' | last  %}
+{% if pagelink == "index.html" %}
+{% assign header-active = "active" %}
+{% endif %}
 <div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-    <a id="menu-header" class="navmenu-brand" href="/{{page.layout}}/">{{menu.title}}</a>
+    <a id="menu-header" class="navmenu-brand {{header-active}}" href="/{{page.layout}}/">{{menu.title}}</a>
 	<ul id="menu-top" class="nav navmenu-nav">
 <!-- find parent menu if current page is a child menu - call it expandeditem
      capture 'tmp' is too suppress extra lf in html   -->
 {% capture tmp %}
     {% assign parent = null %}
     {% assign expandeditem = null %}
-    {% assign pagelink = page.url | split: '/' | last  %}
     {% for menuitem in menu.menuitems %}
         {% if menuitem.isparent %}
            {% assign parent = menuitem %}
