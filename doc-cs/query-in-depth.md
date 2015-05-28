@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/.html"
 ---
 
 # Querying in depth
@@ -136,9 +137,9 @@ Breeze does not yet support aggregate queries (count, sum, average, etc.). But w
 
 <a name="QueryOptions"></a>
 ### Query Options ###
-The [**`QueryOptions`**](http://www.breezejs.com/breeze-sharp-api/html/T_Breeze_Sharp_QueryOptions.htm) object defines two strategies that guide the EntityManager's processing of a query.
+The [**`QueryOptions`**](/doc-cs/api-docs/html/T_Breeze_Sharp_QueryOptions.htm) object defines two strategies that guide the EntityManager's processing of a query.
 
-The [**`FetchStrategy`**](http://www.breezejs.com/breeze-sharp-api/html/T_Breeze_Sharp_FetchStrategy.htm) determines the query target (server or cache). 
+The [**`FetchStrategy`**](/doc-cs/api-docs/html/T_Breeze_Sharp_FetchStrategy.htm) determines the query target (server or cache). 
 
-The [**`MergeStrategy`**](http://www.breezejs.com/breeze-sharp-api/html/T_Breeze_Sharp_MergeStrategy.htm) tells Breeze how to merge raw entity query data into cache when an entity with that key is already in cache.
+The [**`MergeStrategy`**](/doc-cs/api-docs/html/T_Breeze_Sharp_MergeStrategy.htm) tells Breeze how to merge raw entity query data into cache when an entity with that key is already in cache.
 
