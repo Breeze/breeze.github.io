@@ -3,21 +3,13 @@ $(window).on('load', function() {
     $("#goPrev").click(goPrev);
     $("#goNext").click(goNext);
 
-    $li = selectHrefLi();
-
-    if (!$li.length) return;
-
-    //// scroll the current li to the top if not visible.
-    var $leftnav = $('#leftnav');
-    var offset = $li.offset().top;
-    if(offset > $leftnav.innerHeight()) {
-       $leftnav.scrollTop(offset);
-    }
+    $li = getCurrentLi();
+    scrollLeftNavTo($li);
 
 });
 
 $(window).on('hashchange', function() {
-    selectHrefLi();
+    // selectHrefLi();
     
 });
 
@@ -37,6 +29,17 @@ $('.dropdown.keep-open').on({
         return !!this.closable; 
     }
 });
+
+function scrollLeftNavTo($li) {
+    if (!$li.length) return;
+
+    //// scroll the current li to the top if not visible.
+    var $leftnav = $('#leftnav');
+    var offset = $li.offset().top;
+    if(offset > $leftnav.innerHeight()) {
+        $leftnav.scrollTop(offset);
+    }
+}
 
 function goPrev() {
     var href;
@@ -90,7 +93,27 @@ function goNext() {
     }
 }
 
+function getCurrentLi() {
+    // select the current li
+    var $li = $("#leftnav li.active").first();
+    return $li;
+}
+
 // No longer needed.
+//function selectHrefLi() {
+//    var $li = getCurrentLi();
+//    $("li.active").removeClass("active");
+//    $li.addClass("active");
+//
+//    // hack to accomodate header + padding (50 + 20)
+//    if (location.hash) {
+//        setTimeout(function() { window.scrollBy(0, -70) });
+//        // scrollBy(0, -70) ;
+//    }
+//
+//    return $li;
+//}
+
 //function getCurrentLi() {
 //    var pathName = location.pathname;
 //    var hash = location.hash;
@@ -106,20 +129,3 @@ function goNext() {
 //    var $li = $anchor.closest('li');
 //    return $li;
 //}
-
-function selectHrefLi() {
-     // select the current li
-    var $li = $("#leftnav li.active").first();
-    return $li;
-    //var $li = getCurrentLi();
-    //$("li.active").removeClass("active");
-    //$li.addClass("active");
-    //
-    //// hack to accomodate header + padding (50 + 20)
-    //if (location.hash) {
-    //    setTimeout(function() { window.scrollBy(0, -70) });
-    //    // scrollBy(0, -70) ;
-    //}
-    //
-    //return $li;
-}
