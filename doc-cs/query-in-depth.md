@@ -1,13 +1,13 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/querying-depth.html"
 ---
 
 # Querying in depth
 
 In this topic we explore Breeze query features and techniques in depth.
 
-> If a query completely misbehaves, take a look at the "<a href="/breeze-sharp-documentation/query-result-debugging" title="Query result debugging">Query result debugging</a>" topic. 
+> If a query completely misbehaves, take a look at the "<a href="/doc-cs/query-debugging" title="Query result debugging">Query result debugging</a>" topic. 
 
 This page is currently a framework for topics and is nowhere near complete. Eventually this page will cover:
 
@@ -52,6 +52,7 @@ The **QueryTests** module in DocCode sample demonstrates many of the techniques 
 
 <a name="withParameters" />
 ## Passing parameters to the server
+
 Often the method on the server does not recognize OData URI query syntax but it does take other parameters passed in the query string of the request.
 
 You can query these endpoints by adding the `.WithParameters(...)` clause to your query.

@@ -1,6 +1,6 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/saving-changes.html"
 ---
 
 # Saving changes
@@ -27,7 +27,7 @@ This page is not ready for publication. It will cover:
 
 - Default and explicit `SaveOptions`
 
-- [Guard against accidental double saves](/breeze-sharp-documentation/concurrent-saves)
+- [Guard against accidental double saves](/doc-cs/concurrent-saves)
 
 - Saving a change-set to a specific server endpoint with a "[named save](#NamedSave)"
 
