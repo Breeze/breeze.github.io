@@ -1,12 +1,13 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/inside-entity.html"
 ---
 
 # Inside the Entity
 
 This topic concentrates on the model object's entity nature, in particular how the entity is **tracked** during its lifetime on the client. You'll learn about the **`EntityAspect`** property through which the developer can access and control the state of the entity within the Breeze system.
 
->Code snippets on this page are in the <strong>InsideEntityTests.cs</strong> file in the [DocCode teaching tests](/breeze-sharp/samples).
+>Code snippets on this page are in the <strong>InsideEntityTests.cs</strong> file in the [DocCode teaching tests](https://github.com/Breeze/breeze.sharp.samples/tree/master/DocCode).
 
 ### "*Entity-ness*"
 
@@ -16,13 +17,13 @@ The "Customer" is also an **entity**, a long-lived object with a permanent key. 
 
 # EntityType
 
-Every Breeze entity instance has an `EntityAspect` property that in turn has an `EntityType` property that returns an *EntityType* object which is the [metadata](/breeze-sharp-documentation/metadata) that describe its properties and other facts about the type.
+Every Breeze entity instance has an `EntityAspect` property that in turn has an `EntityType` property that returns an *EntityType* object which is the [metadata](/doc-cs/metadata) that describe its properties and other facts about the type.
 	
 	var type = someCustomer.EntityAspect.EntityType;
 
 # EntityAspect
 
-A Breeze entity is "self-tracking". It maintains its own entity state, and the means to change that state, in the ***[EntityAspect](http://www.breezejs.com/breeze-sharp-api/html/T_Breeze_Sharp_EntityAspect.htm)*** object returned by its ***EntityAspect*** property.
+A Breeze entity is "self-tracking". It maintains its own entity state, and the means to change that state, in the ***[EntityAspect](/doc-cs/api-docs/html/T_Breeze_Sharp_EntityAspect.htm)*** object returned by its ***EntityAspect*** property.
 
 An object becomes a Breeze entity when it acquires its ***EntityAspect*** which it does when it
 
@@ -49,7 +50,7 @@ We'll tackle ***EntityAspect***'s key features in four groups.
 
 Is the entity attached to an ***EntityManager*** and therefore in its cache? Has it changed? If changed, is it a new entity, a modified version of an existing entity from remote storage, or an existing entity that is marked for deletion?
 
-The ***EntityState*** property answers these questions with a value from the ***[EntityState](http://www.breezejs.com/breeze-sharp-api/html/T_Breeze_Sharp_EntityState.htm)*** enumeration. Here are the enumeration names and their meanings:
+The ***EntityState*** property answers these questions with a value from the ***[EntityState](/doc-cs/api-docs/html/T_Breeze_Sharp_EntityState.htm)*** enumeration. Here are the enumeration names and their meanings:
 
 | EntityState |  Meaning |
 | -- | --
@@ -92,7 +93,7 @@ A detached entity does not belong to an ***EntityManager***. It's still an entit
 
 A detached entity should not be used. Either attach it to an ***EntityManager*** or release all references to it ... and let it be garbage collected.
 
-A detached entity is unreliable. It still has data values and you can still set them. But its [navigation properties](/breeze-sharp-documentation/navigation-properties) are not dependable and other entity features may behave unexpectedly. You can't tell by inspection whether a detached entity has corresponding data in remote storage.
+A detached entity is unreliable. It still has data values and you can still set them. But its [navigation properties](/doc-cs/navigation-properties) are not dependable and other entity features may behave unexpectedly. You can't tell by inspection whether a detached entity has corresponding data in remote storage.
 
 New entities start as detached entities. You might have to create them where no ***EntityManager*** is available. More likely, you have to initialize some of the new entity's values before you can add it to an ***EntityManager***. For example, because all entities in cache must have unique keys, if the entity key is client-determined (as opposed to store-generated), you must set the key to a unique value before you can attach the entity to an ***EntityManager***.
 
@@ -200,16 +201,16 @@ You can listen for a change to any Breeze-tracked entity property with the follo
 
 ### Limitations
 
-Breeze only monitors changes to properties identified in the metadata for this ***EntityType***. These properties - mapped and unmapped - are the "Breeze-tracked entity properties" mentioned earlier. Breeze doesn't track properties that you add with an entity initialization method (see [Extending Entities](/breeze-sharp-documentation/extending-entities)) or that you patch into the entity later in its lifetime.
+Breeze only monitors changes to properties identified in the metadata for this ***EntityType***. These properties - mapped and unmapped - are the "Breeze-tracked entity properties" mentioned earlier. Breeze doesn't track properties that you add with an entity initialization method (see [Extending Entities](/doc-cs/extending-entities)) or that you patch into the entity later in its lifetime.
 
 <a name="ValidateEntity"></a>
 ## ValidateEntity
 
-Breeze properties aren’t just observable. They can validate changes based on rules registered in metadata. Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well. See the [Validation](/breeze-sharp-documentation/validation) topic for details.
+Breeze properties aren’t just observable. They can validate changes based on rules registered in metadata. Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well. See the [Validation](/doc-cs/validation) topic for details.
 
-In brief, Breeze evaluates validation rules at prescribed times. It can also validate on demand. Call the ***EntityAspect.Validate*** to validate the entire entity which means every property validation rule as well as every entity-level validation rule. You can validate a single property (all of its rules) by calling ***EntityAspect.ValidateProperty***. Again, see the [Validation](/breeze-sharp-documentation/validation) topic for details.
+In brief, Breeze evaluates validation rules at prescribed times. It can also validate on demand. Call the ***EntityAspect.Validate*** to validate the entire entity which means every property validation rule as well as every entity-level validation rule. You can validate a single property (all of its rules) by calling ***EntityAspect.ValidateProperty***. Again, see the [Validation](/doc-cs/validation) topic for details.
 
-A validation rule either passes or fails. If it passes, it returns null. If it fails, it returns a ***[ValidationError](http://www.breezejs.com/breeze-sharp-api/html/T_Breeze_Sharp_ValidationError.htm)*** describing the problem.
+A validation rule either passes or fails. If it passes, it returns null. If it fails, it returns a ***[ValidationError](/doc-cs/api-docs/html/T_Breeze_Sharp_ValidationError.htm)*** describing the problem.
     
 Every ***EntityAspect*** maintains a `ValidationErrors` collection. The Breeze validation engine adds a new ***ValidationError*** instance to that collection when a validation rules fails and removes an old ***ValidationError*** instance when its associated validation rule passes.
 
@@ -222,9 +223,9 @@ This last category is a small menagerie of miscellaneous EntityAspect members
 
 - ***EntityManager*** - the ***EntityManager*** to which this entity is attached ... or was attached. It's null if the entity is new and not yet added to a manager.
 
-- ***EntityKey*** - the entity's [***EntityKey***](http://www.breezejs.com/breeze-sharp-api/html/T_Breeze_Sharp_EntityKey.htm). A key is an object that uniquely identifies the entity in cache and in remote storage. The key is not a simple value. It's an object that identifies the type of the entity and the value ... or values ... of the key; Breeze supports entities with composite keys.
+- ***EntityKey*** - the entity's [***EntityKey***](/doc-cs/api-docs/html/T_Breeze_Sharp_EntityKey.htm). A key is an object that uniquely identifies the entity in cache and in remote storage. The key is not a simple value. It's an object that identifies the type of the entity and the value ... or values ... of the key; Breeze supports entities with composite keys.
 
-- ***LoadNavigationProperty*** you can download related entities, on demand, by calling ***LoadNavigationProperty*** as described in the [Navigation Properties](/breeze-sharp-documentation/navigation-properties) topic.
+- ***LoadNavigationProperty*** you can download related entities, on demand, by calling ***LoadNavigationProperty*** as described in the [Navigation Properties](/doc-cs/navigation-properties) topic.
 
 # Breeze properties on the entity itself
 
