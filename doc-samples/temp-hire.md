@@ -30,7 +30,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>Even better, through the use of proven architecture and design patterns, multiple developers can work independently on specific views, models, and workflows without impacting other modules.</p>
 
-<p><img src="/images/samples/temphire/temphire.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
+<p><img src="/images/samples/temphire/TempHire.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
 
 <h1>TempHire under the hood</h1>
 

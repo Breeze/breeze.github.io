@@ -6,7 +6,7 @@ redirect_from: "/old/samples/todo-require.html"
 
 The **Todo-Knockout-Require** sample extends the <a href="/doc-samples/todo-knockout">Todo Knockout</a> sample with **dependency management** and **view composition** using the <a href="http://requirejs.org//" target="_blank">RequireJS</a> library.</p>
 
-<p clear="all">The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the "Samples" package which you can <a href="/documentation/download" target="_blank">download here</a>.</p>
+<p clear="all">The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the "Samples" package which you can <a href="/doc-js/download" target="_blank">download here</a>.</p>
 
 <p><img src="/images/samples/Todo-RequireRunning.png" style="width:100%; max-width:568px;"></p>
 
