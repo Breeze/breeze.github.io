@@ -6,7 +6,7 @@ redirect_from: "/old/samples/breeze-webapi-odata.html"
 
 A Breeze application can talk to an ASP.NET Web API 2 OData data service. We show how in this **"BOWA" Web API OData Todo Sample** which you can <a href="/doc-js/download" target="_blank"><strong>download from here</strong></a>.
 
-![Web API OData Sample in action](/images/samples/WebAPIODataSampleInAction.png)
+![Web API OData Sample in action](/images/samples/WebApiODataSampleInAction.png)
 
 <p class="note">Many thanks to Javier Calvarro Nelson who works on the Microsoft Web API OData team. This sample was Javier's idea, he drove it, and he wrote much of it, most importantly the server-side OData controllers.</p>
 
@@ -53,7 +53,7 @@ The container takes one line of HTML:
     <div data-ng-app="app" data-ng-include="'/app/todolists.html'"></div>
 
 <div>
-<img src="/images/samples/WebAPIODataSampleStack.png" alt="WebAPI OData Sample Stack" style="float:left"/>
+<img src="/images/samples/WebApiODataSampleStack.png" alt="WebAPI OData Sample Stack" style="float:left"/>
 <p>Everything the user sees takes place inside that shell <code>&lt;div/></code>. Its contents are constructed dynamically on the client in HTML and JavaScript with the help of Angular and Breeze.</p>
 
 <p>Angular provides the data binding and other presentation infrastructure behind the user experience. The app adopts a "Model-View-ViewModel" (MVVM) style for separating layout (HTML) from logic (JavaScript) </p><p>On the server stack is your business model and data, communicated to the client with Web API and OData, queried and stored with Entity Framework and SQL Server.</p>
@@ -379,20 +379,20 @@ The ***app*** folder holds all application JavaScript and HTML. This application
 
 This simple app only has one "screen", composed dynamically from an outer master View and three sub-views. Here's the outer ***todolists.html*** - its sub-views outlined and shaded - followed by the three sub-views themselves:
 
-![](/images/samples/WebAPIODataSample-TodoListsView.png)
+![](/images/samples/WebApiODataSample-TodoListsView.png)
 
 <hr/>
 ***commandbar.html***
 
-![](/images/samples/WebAPIODataSample-CommandBarView.png)
+![](/images/samples/WebApiODataSample-CommandBarView.png)
 <hr/>
 ***new-todolist.html***
 
-![](/images/samples/WebAPIODataSample-NewTodoListView.png)
+![](/images/samples/WebApiODataSample-NewTodoListView.png)
 <hr/>
 ***todolist-detail.html***
 
-![](/images/samples/WebAPIODataSample-TodoListDetailView.png)
+![](/images/samples/WebApiODataSample-TodoListDetailView.png)
 <hr/>
 
 The outer *todolists* View and all of the sub-views are bound to a single master "ViewModel" (aka "Controller"), **todolists**.
