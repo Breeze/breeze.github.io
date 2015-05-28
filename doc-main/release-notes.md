@@ -20,7 +20,7 @@ See: <a href="/doc-node-sequelize/"> breeze-sequelize package</a>
 * [Zza! Node/MongoDB sample](#Zza)
 * [Todo-Zumo sample](#todoZumo) for Azure Mobile Services
 * [MongoDB integration](#140)
-* [NHibernate support](/doc-net/nh.html) with an [NHibernate sample](/samples/north-breeze.html)
+* [NHibernate support](/doc-net/nh.html) with an [NHibernate sample](/doc-samples/north-breeze.html)
 * Support for OData V3, Visual Studio 2013, ASP.NET Web API 2.1, and Entity Framework 6
 
 ###<a name="154"></a>1.5.4 <span class="doc-date">May 5, 2015</span>###
@@ -239,7 +239,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 - D2257 - Improved data type inference for unmapped properties defined in a constructor. 
 - Improved documentation on Breeze web site and in API Docs.
 <a name="todoZumo"></a>
-- Added ["Todo-Zumo" to Breeze samples](/samples/todo-zumo): Breeze + Angular + Azure Mobile Services
+- Added ["Todo-Zumo" to Breeze samples](/doc-samples/todo-zumo): Breeze + Angular + Azure Mobile Services
 - Additional samples in the Breeze samples zip.
 	
 #### Bugs
@@ -355,7 +355,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 	+ [Export/Import](/doc-js/export-import.html)
 	+ [Query Result Debugging](/doc-js/query-debugging.html)
 	+ [The ContextProvider](/doc-net/contextprovider.html)
-	+ [Todo-Require sample](/samples/todo-knockout-require.html) explains building a Breeze app with RequireJS
+	+ [Todo-Require sample](/doc-samples/todo-knockout-require.html) explains building a Breeze app with RequireJS
 	
 #### Bugs  
 
@@ -619,7 +619,7 @@ None
             }
 
 
-+ [Support for NHibernate](/doc-net/nh.html) - (this is a BETA feature).  A [sample is available now](/samples/north-breeze.html).
++ [Support for NHibernate](/doc-net/nh.html) - (this is a BETA feature).  A [sample is available now](/doc-samples/north-breeze.html).
 
 + The *Breeze.WebApi* dll has been broken up into multiple assemblies. 
    + There are now 3 Server side .NET assemblies instead of one.

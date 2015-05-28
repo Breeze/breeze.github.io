@@ -30,7 +30,7 @@ We highly recommend Brian Noyes' <a href="http://briannoyes.net/2013/02/16/Consu
 
 You must consider certain peculiarities of the Web API OData that affect your design.
 
->The [Breeze Web API OData](/samples/breeze-web-api-odata) JavaScript sample attempts to mitigate some of the more unfortunate consequences of these "peculiarities".
+>The [Breeze Web API OData](/doc-samples/breeze-web-api-odata) JavaScript sample attempts to mitigate some of the more unfortunate consequences of these "peculiarities".
 
 ### No transactional save
 
@@ -75,7 +75,7 @@ Why? Because the metadata it generates don't identify the foreign key properties
 <a name="edmBuilder"></a>
 ### EdmBuilder workaround
 
-There is an approved workaround if your OData service is backed by the Entity Framework. You can **use the Breeze Labs `EdmBuilder`** to produced the metadata instead of the Web API's own `ODataConventionModelBuilder`. The ["Web API OData and Breeze" sample](/samples/breeze-web-api-odata#BuildEDM "Web API OData and Breeze sample") explains why this is necessary and how to wire up the `EdmBuilder`.
+There is an approved workaround if your OData service is backed by the Entity Framework. You can **use the Breeze Labs `EdmBuilder`** to produced the metadata instead of the Web API's own `ODataConventionModelBuilder`. The ["Web API OData and Breeze" sample](/doc-samples/breeze-web-api-odata#BuildEDM "Web API OData and Breeze sample") explains why this is necessary and how to wire up the `EdmBuilder`.
 
 We summarize here:
 
@@ -225,4 +225,4 @@ SharePoint 2010 and 2013 offer "OData REST APIs". They only partially comply wit
 
 Even if SP did produce "correct metadata", we rather doubt that you'd want it; a trivial data model produces almost 750Mb of metadata, most of it of no interest to the client application developer.
 
-Your only recourse at this time is to define the metadata you need on the client. Learn more by starting with our [SharePoint 2013 Sample](/samples/introduction-single-page-apps-sharepoint "SharePoint 2013 Sample documentation").
+Your only recourse at this time is to define the metadata you need on the client. Learn more by starting with our [SharePoint 2013 Sample](/doc-samples/introduction-single-page-apps-sharepoint "SharePoint 2013 Sample documentation").

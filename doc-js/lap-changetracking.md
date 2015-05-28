@@ -265,4 +265,4 @@ Perhaps we have new, changed, and deleted entities in cache that we want to pres
 
 <a name="note 3"></a>[3] It's up to the developer to determine how to display errors and guide the user experience. Breeze will not save entities that have validation errors.
 
-<a name="note 4"></a>[4] See the test named "*validation error when set Id null*" in the ***basicTodoTests*** module of the [Teaching Tests](/samples/doccode).
+<a name="note 4"></a>[4] See the test named "*validation error when set Id null*" in the ***basicTodoTests*** module of the [Teaching Tests](/doc-samples/doccode).

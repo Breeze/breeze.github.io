@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/web-api-controller.html"
 ---
 #The ASP.NET Web API controller
 
-The Basic Breeze teaching tests in the [DocCode sample](/samples/doccode "Breeze 'DocCode' teaching sample") demonstrate the Breeze `EntityManager` making requests of a **Breeze ASP.NET Web API controller**.
+The Basic Breeze teaching tests in the [DocCode sample](/doc-samples/doccode "Breeze 'DocCode' teaching sample") demonstrate the Breeze `EntityManager` making requests of a **Breeze ASP.NET Web API controller**.
 
 The [ASP.NET Web API](http://www.asp.net/web-api "Microsoft ASP.NET Web API ") is a framework for building HTTP services. Its simplicity has made it instantly popular with .NET backend developers who are used to struggling with Microsoft’s enormously complex, SOAP-based, WCF communications stack.
 
@@ -16,7 +16,7 @@ The Breeze Controller is just one of many ways to serve a Breeze client with eit
 
 When targeting a Breeze client, it is usually preferable to write a Web API **controller per *service***. 
 
-The [DocCode teaching tests](/samples/doccode "Breeze 'DocCode' teaching sample") target a couple of different "services" each with its own entity model. For example, some DocCode tests aim at the "Todos" model and other tests aim at the "Northwind" model.  The DocCode sample has two corresponding Web API controllers, `TodosController` and `NorthwindController`.
+The [DocCode teaching tests](/doc-samples/doccode "Breeze 'DocCode' teaching sample") target a couple of different "services" each with its own entity model. For example, some DocCode tests aim at the "Todos" model and other tests aim at the "Northwind" model.  The DocCode sample has two corresponding Web API controllers, `TodosController` and `NorthwindController`.
 
 ###Controller-per-type
 
@@ -185,7 +185,7 @@ We don't do that in real world code. The approach you see here is fine for demos
 
 The `EFContextProvider` derives from the Breeze [`ContextProvider`](/doc-net/ef-efcontextprovider "ContextProvider") which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
 
-Breeze ships [components for NHibernate](/doc-net/nh-details) developers.  The [in-memory "No DB" sample](/samples/nodb) has a custom `ContextProvider` that doesn't write to a database. The source for any of these providers can guide you in writing your own provider.
+Breeze ships [components for NHibernate](/doc-net/nh-details) developers.  The [in-memory "No DB" sample](/doc-samples/nodb) has a custom `ContextProvider` that doesn't write to a database. The source for any of these providers can guide you in writing your own provider.
 
 But back to our story .. and the first of the "Breeze Controller"  specialty methods.
 

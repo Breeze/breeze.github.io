@@ -84,6 +84,6 @@ Run the app again after you install the nuget package and re-build the server. L
 
 Much better, right? It's ugly but not too long and you can safely infer that this type is not a registered `EntityType`.
 
-See this nuget package and its contents in action in [the "DocCode" sample](/samples/doccode).
+See this nuget package and its contents in action in [the "DocCode" sample](/doc-samples/doccode).
 
 >Remember that this is a Breeze Lab and not part of the core Breeze product. We're confident that it's good and has no adverse side-effects. But it is offered "as is" with no promise of support and we could take it away in future if we discover a better way to handle the problem.
