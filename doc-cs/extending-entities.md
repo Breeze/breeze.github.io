@@ -8,7 +8,7 @@ While Breeze can create an entity based exclusively on its metadata description,
 
 ### Basic extension
 
-Breeze entities are either created or ìmaterializedî. They are typically created either by "newing" them up or by calling the CreateEntity method on an EntityManager.
+Breeze entities are either created or ‘≠aterialized‘Æ They are typically created either by "newing" them up or by calling the CreateEntity method on an EntityManager.
 
     var cust = new Customer();
 
