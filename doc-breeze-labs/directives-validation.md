@@ -1,5 +1,6 @@
 ---
 layout: doc-breeze-labs
+redirect_from: "/old/documentation/.html"
 ---
 #Breeze Labs: AngularJS Validation and Required Indicator Directive
 

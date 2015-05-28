@@ -1,5 +1,6 @@
 ---
 layout: doc-breeze-labs
+redirect_from: "/old/documentation/.html"
 ---
 # ![Breeze Labs](/images/logos/BreezeLabsB.png "Breeze Labs") What are Breeze Labs?
 

@@ -1,5 +1,6 @@
 ---
 layout: doc-breeze-labs
+redirect_from: "/old/documentation/.html"
 ---
 #Get entity graph from cache
 
