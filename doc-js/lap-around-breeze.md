@@ -28,7 +28,7 @@ We've organized the "lap..." as a tour of the Todo sample application. We'll det
 You could just dive in. We think you'll get more from the tour if you take these three preliminary steps:
 
 <li>		Review "<a href="/doc-net/nuget-packages">Start with NuGet</a>".  It takes about 10 minutes. You might follow along and build the sample.
-<li>		Try the <a href="/doc-samples/todo">Todo sample application</a> and at least skim its documentation..
+<li>		Try the <a href="/doc-samples/about-todo">Todo sample application</a> and at least skim its documentation..
 <li>		Try the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 
 We'll wait.

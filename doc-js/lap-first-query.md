@@ -4,9 +4,9 @@ redirect_from: "/old/documentation/first-query.html"
 ---
 #First query
 
-Many applications begin with a query for some existing data and that's how we'll begin. We're using the <a href="/doc-samples/todo">Breeze Todo Sample App</a> to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the *Scripts/services/**dataservice.js*** folder.
+Many applications begin with a query for some existing data and that's how we'll begin. We're using the <a href="/doc-samples/about-todo">Breeze Todo Sample App</a> to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the *Scripts/services/**dataservice.js*** folder.
 
-The code snippets on this page are in the <a href="/doc-samples/todo">Breeze Todo App</a>.
+The code snippets on this page are in the <a href="/doc-samples/about-todo">Breeze Todo App</a>.
 
 ##Setup
 

@@ -13,7 +13,7 @@ A full discussion of `EntityAspect` awaits you in a [later topic](/doc-js/inside
 1. `propertyChanged` - an event raised when any entity property changes
 1. `validationErrorsChanged` - an event raised after applying validation rules.
 
-> Many of the code snippets on this page are in the <a href="/doc-samples/todo">Breeze Todo Sample App</a>.
+> Many of the code snippets on this page are in the <a href="/doc-samples/about-todo">Breeze Todo Sample App</a>.
 
 ##EntityState
 

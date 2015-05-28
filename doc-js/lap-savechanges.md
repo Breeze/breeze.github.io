@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/save-changes.html"
 ---
 #Save changes
 
-> The code snippets on this page are drawn from the <a href="/doc-samples/todo">Breeze Todo Sample App</a> and from the **basicTodoTests** module of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
+> The code snippets on this page are drawn from the <a href="/doc-samples/about-todo">Breeze Todo Sample App</a> and from the **basicTodoTests** module of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 
 The Todo sample App doesn't have a save button. It saves changes as you add new items, update descriptions, check the "done" box, archive the completed Todos, and tick "Mark all as complete". Create, update, and delete operations are all represented. Clicking "Mark all as complete" saves multiple updates in one transaction bundle.
 

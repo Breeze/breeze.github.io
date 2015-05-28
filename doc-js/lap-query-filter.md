@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/query-filter.html"
 ---
 #Query with a filter
 
-> Most of the code snippets on this page are in the <a href="/doc-samples/todo">Breeze Todo App</a>; a few are in the **basicTodoTests **module of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
+> Most of the code snippets on this page are in the <a href="/doc-samples/about-todo">Breeze Todo App</a>; a few are in the **basicTodoTests **module of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 
 Our <a href="/doc-js/lap-first-query">first query</a> returned every Todo in the database [<a href="#note 1">1</a>].  That's fine for a short list of Todos; not so great if we're querying for orders of a large company. We need a query that selects a more manageable number of results, preferably the ones that interest the user.
 
