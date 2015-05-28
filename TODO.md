@@ -12,4 +12,4 @@
 12) Cosmetics - vertical bars between menu items on header like twitter bootstrap link
 13) Download menu for breeze#
 14) Add prior release builds to site.
-15) Need to add a download dir for zips.
+16) Fix white flash at top of screen when changing pages.
