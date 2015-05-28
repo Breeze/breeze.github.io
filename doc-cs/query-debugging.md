@@ -1,6 +1,6 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/query-result-debugging.html"
 ---
 
 #Debugging query result mysteries
@@ -19,7 +19,7 @@ If not, stop. Figure out why the server isn't sending the right data before worr
 
 Ok ... you see the data but some or all of the aren't showing up in the entity. One of the first things we do is examine the metadata for a one or more of your `EntityType`s starting with the root type of the query.
 
-> Please <a href="http://www.breezejs.com/breeze-sharp-documentation/metadata" title="Breeze Metadata"><b>learn about Breeze metadata</b></a> before continuing with this topic. It won't make much sense otherwise.
+> Please <a href="/doc-cs/metadata" title="Breeze Metadata"><b>learn about Breeze metadata</b></a> before continuing with this topic. It won't make much sense otherwise.
 
 Let's look at a query that returns an `Order`, its `OrderDetail`s, and its parent `Customer`.
 
@@ -78,13 +78,13 @@ If it was supposed to return a simple data value, you'll have to work backward f
 
 In many applications the client-side spelling of a property name should be different than the server-side spelling. You'll see the server-side spelling in the JSON payload and in the `DataProperty.NameOnServer` where as the client-side spelling is reflected in the entity property name you see in the debugger and in the `DataProperty.Name`.
 
-The Breeze [**`NamingConvention`**](http://www.breezejs.com/breeze-sharp-documentation/naming-convention, "NamingConvention") translates between these two spellings. Are you sure that your metadata are governed by the `NamingConvention` you expect? You may *think* you are applying one convention when, in fact, a different convention is controlling the translation. See "[Beware of the baked-in NamingConvention](http://www.breezejs.com/breeze-sharp-documentation/naming-convention/#NamingConventionInMetadata)".
+The Breeze [**`NamingConvention`**](/doc-cs/naming-convention, "NamingConvention") translates between these two spellings. Are you sure that your metadata are governed by the `NamingConvention` you expect? You may *think* you are applying one convention when, in fact, a different convention is controlling the translation. See "[Beware of the baked-in NamingConvention](/doc-cs/naming-convention#NamingConventionInMetadata)".
 
 ##Are you missing a navigation property?
 
 You were expecting a "navigation property" - a property that returns another entity - and it wasn't listed among the `NavigationProperties`.
 
-This is probably a metadata creation problem. If you wrote the [metadata by hand](http://www.breezejs.com/breeze-sharp-documentation/metadata-by-hand/#NavigationProperties), return to the "Navigation Properties" section of that topic and try to discover what you did differently.
+This is probably a metadata creation problem. If you wrote the [metadata by hand](/doc-cs/metadata-by-hand#NavigationProperties), return to the "Navigation Properties" section of that topic and try to discover what you did differently.
 
 Did you define **foreign key (FK) properties**? Developers often neglect to define or identify the FK properties. Breeze requires FK properties to implement navigation properties. 
 
@@ -139,7 +139,7 @@ Unmapped properties often don't even exist on the server model object to which t
 
 The value of an unmapped property *can come from the server* as when the server model calculates a value for the client that the client could not calculate for itself. Breeze copies the value from the JSON payload into the unmapped property when materializing query results. Just remember: changes to that value won't be sent back to the server.
 
-See the ["Extending Entities" topic](http://www.breezejs.com/breeze-sharp-documentation/extending-entities "Extending Entities") to learn how to create an unmapped property. If `Order` had an unmapped property called `isBeingEdited`, you could access it like this.
+See the ["Extending Entities" topic](/doc-cs/extending-entities "Extending Entities") to learn how to create an unmapped property. If `Order` had an unmapped property called `isBeingEdited`, you could access it like this.
 
 	orderEntityType.GetProperty('IsBeingEdited');
 
@@ -175,7 +175,7 @@ You can navigate from an entity to other related entities via *navigation proper
 
 These properties return entities from cache. If the related entities are not in cache, they'll return an empty collection or null as appropriate for that property. 
 
->You can eagerly load the related entities into cache during a query with the [`.expand(...)` clause](http://www.breezejs.com/breeze-sharp-documentation/query-examples#Eager%20loading%20%20EntityQuery.expand ""expand" documentation"). If this *expand*&nbsp; isn't working for you, see the "[When expand fails](#expand "When expand fails")" section below.
+>You can eagerly load the related entities into cache during a query with the [`.expand(...)` clause](/doc-cs/query#Eager%20loading%20%20EntityQuery.expand ""expand" documentation"). If this *expand* isn't working for you, see the "[When expand fails](#expand "When expand fails")" section below.
 
 A navigation property corresponds to one side of an *association* between two entity types.
 
@@ -253,7 +253,7 @@ The `AssociationName` could be omitted if there were no `Inverse` navigation pro
 <a name="expand"></a>
 #### When *.expand(...)* fails
 
-One way to load related entities into cache is to add an [`.expand(...)` clause](http://www.breezejs.com/documentation-breeze-sharp/query-examples#Eager%20loading%20%20EntityQuery.expand ""expand" documentation") to your query.
+One way to load related entities into cache is to add an [`.expand(...)` clause](/doc-cs/query#Eager%20loading%20%20EntityQuery.expand ""expand" documentation") to your query.
 
 Did you add an `.Expand(...)` clause to your query? Do you see the related entity data in the query result payload as in this example where `Bar` data is nested within the `Foo` data.
 
