@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/testing-breeze-application.html"
 ---
 
 <h1>Testing a Breeze application</h1>

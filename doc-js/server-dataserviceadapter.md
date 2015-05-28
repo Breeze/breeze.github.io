@@ -1,5 +1,6 @@
 ---
 layout: doc-js
+redirect_from: "/old/documentation/dataserviceadapters.html"
 ---
 # Breeze DataServiceAdapters
 
