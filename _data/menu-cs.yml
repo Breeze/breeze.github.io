@@ -23,8 +23,9 @@ menuitems:
   - { link: "complextype-properties.html", title: ComplexType properties }
   - { link: "creating-entities.html", title: Creating entities }
   - { link: "inside-the-entity.html", title: Inside the entity }
-  - { link: "validation.html", title: Validation }
   - { link: "entitymanager.html", title: EntityManager and caching }
+  - { link: "validation.html", title: Validation }
+  - { link: "server-side-validation.html", title: Server-side Validation }
   - { link: "saving-changes.html", title: Saving changes }
   - { link: "export-import.html", title: Export/Import }
   - { link: "metadata.html", title: Metadata, isparent: true }
