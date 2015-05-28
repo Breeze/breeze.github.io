@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/todo-zumo.html"
 ---
 
 # The Breeze/Angular Todo-Zumo (Azure) App

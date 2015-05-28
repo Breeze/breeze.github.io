@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/zza-mongo.html"
 ---
 <style>
 .nestedList {

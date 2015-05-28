@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/breeze-webapi-odata.html"
 ---
 #Web API OData and Breeze
 

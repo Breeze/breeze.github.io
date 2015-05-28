@@ -1,6 +1,6 @@
 ---
 layout: samples
-redirect_from: "/old/samples/nodb.html"
+redirect_from: "/old/samples/todo-require.html"
 ---
 #Todo-Knockout-Require Sample#
 
