@@ -1,13 +1,13 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/first-query.html"
 ---
 
 # First query
 
-Many applications begin with a query for some existing data and that's how we'll begin. We're using the [Breeze Todo Sample App](/breeze-sharp/samples) to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the ***Todo.Client/ViewModels/TodoViewModel.cs*** file.
+Many applications begin with a query for some existing data and that's how we'll begin. We're using the [Breeze Todo Sample App](https://github.com/Breeze/breeze.sharp.samples/tree/master/ToDo) to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the ***Todo.Client/ViewModels/TodoViewModel.cs*** file.
 
-The code snippets on this page are in the [Breeze Todo App](/breeze-sharp/samples).
+The code snippets on this page are in the [Breeze Todo App](https://github.com/Breeze/breeze.sharp.samples/tree/master/ToDo).
 **Todo** is a WPF application that works with a Web API back-end service.
 
 # Create an EntityManager
@@ -53,7 +53,7 @@ If the query returns from the server without error, the task contains the result
 
 The query results of course! In this example, each ***Todo*** item is added to an IEnumerable collection bound to a list on the screen.
 
-And just like that, the screen fills with Todos.  We’ll discuss how that happens when we peek inside the entity later in this tour. Before we do, let’s [**try another query**](/breeze-sharp-documentation/query-filter).
+And just like that, the screen fills with Todos.  We’ll discuss how that happens when we peek inside the entity later in this tour. Before we do, let’s [**try another query**](/doc-cs/lap-query-with-filter).
 
 Notes
 
