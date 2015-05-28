@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/hot-towel-template.html"
 ---
 <h1 style="margin: 8px 0 12px 0;">
 	Hot Towel SPA template</h1>

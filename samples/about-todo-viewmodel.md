@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/todo-viewmodel.html"
 ---
 <h1>
 	Todo Sample ViewModel Design</h1>

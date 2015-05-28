@@ -1,6 +1,6 @@
 ---
 layout: samples
-redirect_from: "/old/samples/temphire-sample.html"
+redirect_from: "/old/samples/temphire-angular.html"
 ---
 <h1>TempHire reference application</h1>
 
@@ -10,7 +10,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>&nbsp;</p>
 
-<p><img src="/images/samples/temphire-breeze.png" style="width: 640px; max-width: 640px;" /></p>
+<p><img src="/sites/default/files/images/temphire/temphire-breeze.png" style="width: 640px; max-width: 640px;" /></p>
 
 <h1>Challenge</h1>
 
@@ -26,11 +26,11 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>TempHire is designed to be a completely modular single-page application (SPA). It&rsquo;s written in JavaScript, so it works on the platforms your customers use today&mdash;and will still be using tomorrow.</p>
 
-<p>TempHire reduces complexity by leveraging frameworks like <a href="http://durandaljs.com">Durandal</a> for presentation and libraries like Breeze for data management, so developers can focus on solving business problems rather than the plumbing and wiring.</p>
+<p>TempHire reduces complexity by leveraging frameworks like <a href="http://angularjs.org">Angular</a> for presentation and libraries like Breeze for data management, so developers can focus on solving business problems rather than the plumbing and wiring.</p>
 
 <p>Even better, through the use of proven architecture and design patterns, multiple developers can work independently on specific views, models, and workflows without impacting other modules.</p>
 
-<p><img src="/images/samples/temphire.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
+<p><img src="/sites/default/files/images/temphire/temphire-angular.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
 
 <h1>TempHire under the hood</h1>
 
@@ -38,7 +38,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>TempHire is composed of a client side app (JavaScript, CSS, HTML, etc.), a domain model (entities, and business logic), and various server side components (services, controllers, etc.).</p>
 
-<p><img src="/images/samples/solution-explorer.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 350px;" /></p>
+<p><img src="/sites/default/files/images/temphire/solution-explorer.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 350px;" /></p>
 
 <h1>Domain model</h1>
 
@@ -48,7 +48,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>Let&rsquo;s look at AddressType as an example of one of Temphire&rsquo;s entity classes. It&rsquo;s a Code First class that has four properties.</p>
 
-<p><img src="/images/samples/addresstype.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 479px;" /></p>
+<p><img src="/sites/default/files/images/temphire/addresstype.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 479px;" /></p>
 
 <h2>EntityBase</h2>
 
@@ -56,7 +56,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>You can see this in action by the way that TempHire handles concurrency checking. It&rsquo;s located in the base class and is inherited by every entity.&nbsp;</p>
 
-<p><img src="/images/samples/concurrencycheck.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 410px;" /></p>
+<p><img src="/sites/default/files/images/temphire/concurrencycheck.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 410px;" /></p>
 
 <h2>DbContext</h2>
 
@@ -66,7 +66,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>Temphire uses projections and DTOs where applicable to improve performance and to move complex queries to the server, where implementing them in LINQ is a lot easier. You can see this in action on the master details screen:</p>
 
-<p><img src="/images/samples/mastergrid.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 640px;" /></p>
+<p><img src="/sites/default/files/images/temphire/mastergrid.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 640px;" /></p>
 
 <p>&nbsp;</p>
 
@@ -78,13 +78,13 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <h2>App</h2>
 
-<p>The App folder contains the core components of the TempHire client: Durandal, Client Services, ViewModel code, the HTML Views, and main.js, the script that bundles the app&rsquo;s scripts into a single package.</p>
+<p>The App folder contains the core components of the TempHire client: Angular, Client Services, ViewModel code, the HTML Views, and main.js, the script that bundles the app&rsquo;s scripts into a single package.</p>
 
-<p>We&rsquo;re assuming you&rsquo;re familiar with the basics, so the most interesting components here are likely App/Durandal and App/ Services.</p>
+<p>We&rsquo;re assuming you&rsquo;re familiar with the basics, so the most interesting components here are likely App/Angular and App/ Services.</p>
 
-<h3>Durandal</h3>
+<h3>Angular</h3>
 
-<p>Durandal, Rob Eisenberg&rsquo;s excellent SPA framework, leverages Knockout and Require. Durandal takes care of the front-end plumbing and makes screen composition and management fast and easy. Even better, Durandal promotes architecture practices that will positively impact scalability and long term maintenance. Long story short, Durandal saves a ton of time and hassle in regards to architecturally sound front-end development.</p>
+<p>Angular is a very popular front end SPA framework created by Google.  For this sample, we are using a preliminary version of Angular 1.4 as well as it's <a href="https://github.com/angular/router">new router</a>. Please note that there may be issues that will be resolved once the router is final and we upgrade the sample to Angular 1.4 final release.</p>
 
 <h3>Services</h3>
 
@@ -120,15 +120,15 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <h2>Scripts</h2>
 
-<p>Temphire is powered by eight JavaScript libraries. If you&rsquo;re new to JavaScript and are concerned by seeing so many libraries, please stop reading this article and read to John Papa&rsquo;s <a href="http://www.johnpapa.net/howmanyistoomany/">Why all those JavaScript libraries</a>. Feel better now? The libraries that make TempHire tick include:&nbsp;</p>
+<p>Temphire is powered by multiple JavaScript libraries. If you&rsquo;re new to JavaScript and are concerned by seeing so many libraries, please stop reading this article and read to John Papa&rsquo;s <a href="http://www.johnpapa.net/howmanyistoomany/">Why all those JavaScript libraries</a>. Feel better now? The libraries that make TempHire tick include:&nbsp;</p>
 
 <p>&nbsp;</p>
 
-<p><img src="/images/logos/twitterbootstrap.png" style="border-width: 0px; border-style: solid; width: 101px; height: 50px;" /></p>
+<p><img src="/sites/default/files/images/temphire/twitterbootstrap.png" style="border-width: 0px; border-style: solid; width: 101px; height: 50px;" /></p>
 
 <p><a href="http://twitter.github.io/bootstrap/"><strong>Bootstrap</strong></a> adds front-end pizazz with a variety of widgets, transitions, buttons, etc. It should go without saying that they all work seamlessly with the Twitter Bootstrap CSS (See Content). The various GUI elements are documented at <a href="http://twitter.github.io/bootstrap/javascript.html">twitter.github.io</a>.</p>
 
-<p><img src="/images/logos/breeze.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
+<p><img src="/sites/default/files/images/temphire/breeze.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
 <p><a href="http://www.breezejs.com?eng=cp&amp;chnl=art&amp;amsg=brztemphire"><strong>Breeze</strong></a> excels at data management and takes care of the Model &ndash;the M in MVVM. Breeze queries, saves, and manages all data interactions between client and server. &nbsp;Breeze <em>EntityManagers</em> make writing TempHire&rsquo;s Unit of Work patterns considerably easier.</p>
 
@@ -136,27 +136,15 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>If you store data in a database, query and save data as complex object graphs, and share graphs across multiple views&mdash;and want to do it in JavaScript&mdash;there&rsquo;s no better way than with Breeze.</p>
 
-<p><img src="/images/logos/jquery.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
+<p><img src="/sites/default/files/images/temphire/jquery.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
-<p><a href="http://jquery.com/"><strong>jQuery</strong></a> is a dependency for some of TempHire&rsquo;s libraries and templates. Bootstrap, Breeze, Durandal, and Sammy rely on one bit of jQuery or another.&nbsp;</p>
+<p><a href="http://jquery.com/"><strong>jQuery</strong></a> is a dependency for some of TempHire&rsquo;s libraries and templates. Bootstrap, Breeze, and Angular rely on one bit of jQuery or another.&nbsp;</p>
 
-<p><strong><img src="/images/logos/knockout.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></strong></p>
-
-<p><a href="http://knockoutjs.com/"><strong>Knockout</strong></a> manages the data-binding and dependency tracking for the presentation layer&mdash;the ViewModel&mdash;the VM in MVVM. Even better, it is intimately tied to Require and Sammy via the Durandal framework, making much of the front-end wiring easier.</p>
-
-<p><img src="/images/logos/moment.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
+<p><img src="/sites/default/files/images/temphire/moment.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
 <p><a href="http://momentjs.com/"><strong>Moment</strong></a> is our go-to library when working with date and time (parsing, validating, manipulating, and formatting) in JavaScript.</p>
 
-<p><img src="/images/logos/q.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
-
-<p><a href="https://github.com/kriskowal/q"><strong>q</strong></a> assists in managing asynchronous operations through CommonJs promises.</p>
-
-<p><img src="/images/logos/sammy.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
-
-<p><a href="http://sammyjs.org/"><strong>Sammy</strong></a> is a small, yet powerful, framework for building SPAs like TempHire. (Sammy refers to them as single-page AJAX applications, but SPAJAX is a bit of a mouthful.) TempHire uses Sammy primarily for its navigation and routing functionality.</p>
-
-<p><img src="/images/logos/toastr.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
+<p><img src="/sites/default/files/images/temphire/toastr.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
 <p><a href="https://github.com/CodeSeven/toastr"><strong>Toastr</strong></a> displays process and error notifications in &quot;toast&quot; windows that float up from the lower right to let you know what TempHire is doing at any given time.</p>
 

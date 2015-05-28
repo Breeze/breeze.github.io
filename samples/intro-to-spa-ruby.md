@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/intro-spa-ruby.html"
 ---
 <h1 style="margin: 8px 0px 12px;">Introduction to Single Page Apps ... with Ruby</h1>
 

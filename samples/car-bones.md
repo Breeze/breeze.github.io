@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/car-bones.html"
 ---
 <h1>Car Bones: a Backbone Sample</h1>
 

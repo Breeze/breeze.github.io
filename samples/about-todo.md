@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/todo.html"
 ---
 <h1 style="margin: 8px 0 12px 0;">Todo</h1>
 

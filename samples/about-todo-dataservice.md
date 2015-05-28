@@ -1,9 +1,10 @@
 ---
 layout: samples
+redirect_from: "/old/samples/todo-dataservice.html"
 ---
 <h1>Todo Sample Dataservice</h1>
 
-<p>In all <a href="/samples/todo">Todo samples</a>, <em>Dataservice.js</em> handles the creation of new Todo objects and all interactions with <a href="/samples/todo-server">the server</a>. It&#39;s written in Breeze and almost all Breeze-related code is in this dataservice.</p>
+<p>In all <a href="/samples/about-todo">Todo samples</a>, <em>Dataservice.js</em> handles the creation of new Todo objects and all interactions with <a href="/samples/about-todo-server">the server</a>. It&#39;s written in Breeze and almost all Breeze-related code is in this dataservice.</p>
 
 <p>The dataservice only has five public methods:</p>
 
@@ -38,7 +39,7 @@ layout: samples
 	</tbody>
 </table>
 
-<p>These are the five methods called by the application <a href="/samples/todo-viewmodel">ViewModel</a> (or Controller) that manages the screen. We&#39;ll drill a little deeper into them in a moment after we&#39;ve covered the setup code at the top of the file.</p>
+<p>These are the five methods called by the application <a href="/samples/about-todo-viewmodel">ViewModel</a> (or Controller) that manages the screen. We&#39;ll drill a little deeper into them in a moment after we&#39;ve covered the setup code at the top of the file.</p>
 
 <h2>Setup</h2>
 
@@ -107,7 +108,7 @@ breeze.config.initializeAdapterInstance(&quot;modelLibrary&quot;, &quot;backingS
 
 <p>The Todo also has a Breeze <em>EntityAspect</em>. This is a doorway to important features of every Breeze entity. The ViewModel calls upon two of these features: the <em>propertyChanged</em> event and the <em>setDeleted</em> method. The <em>propertyChanged</em> event is raised when a data property changes; the ViewModel listens to that event to learn when it should save those changes. If the user clicks the &quot;X&quot; next to the Todo description, the ViewModel will calls the <em>setDeleted</em> method to put the Todo in a &quot;Deleted&quot; state and then saves this change; on the server, entities marked for delete are removed from the database.</p>
 
-<p>You&#39;ll find a few more specifics of this sample&#39;s implementation in the &quot;<a href="/documentation/add-new-entity" target="_blank">Add a new entity</a>&quot; step of the Basic Breeze walk through.</p>
+<p>You&#39;ll find a few more specifics of this sample&#39;s implementation in the &quot;<a href="/doc-js/lap-add-entity" target="_blank">Add a new entity</a>&quot; step of the Basic Breeze walk through.</p>
 
 <h3>saveChanges</h3>
 
@@ -143,8 +144,8 @@ breeze.config.initializeAdapterInstance(&quot;modelLibrary&quot;, &quot;backingS
 
 <h2>Why a dedicated dataservice?</h2>
 
-<p>Of course you could merge this data access component into the <a href="/samples/todo-viewmodel">ViewModel</a> (or Controller) that binds to the HTML widgets on screen. The ViewModel could create a Breeze <em>EntityManager</em> and call its <em>executeQuery</em> and <em>saveChanges</em> methods directly.</p>
+<p>Of course you could merge this data access component into the <a href="/samples/about-todo-viewmodel">ViewModel</a> (or Controller) that binds to the HTML widgets on screen. The ViewModel could create a Breeze <em>EntityManager</em> and call its <em>executeQuery</em> and <em>saveChanges</em> methods directly.</p>
 
 <p>But we highly recommend keeping the data access and the Breeze particulars in a separate module of its own. ViewModels are much easier to maintain when they have less to do. In a multi-screen app, several ViewModels will surely share a common dataservice and its cache of entities.</p>
 
-<p><a href="/samples/todo">Back to the main Todo Sample page</a></p>
+<p><a href="/samples/about-todo">Back to the main Todo Sample page</a></p>

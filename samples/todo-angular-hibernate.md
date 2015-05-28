@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/todo-angular-hibernate.html"
 ---
 #Todo-Angular-Hibernate Sample
 

@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/nodb.html"
 ---
 <h1>&quot;NoDb&quot; - Breeze without a database</h1>
 

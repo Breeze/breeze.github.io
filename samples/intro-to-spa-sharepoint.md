@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/introduction-single-page-apps-sharepoint.html"
 ---
 <h1 style="margin: 8px 0px 12px;">SharePoint SPA</h1>
 

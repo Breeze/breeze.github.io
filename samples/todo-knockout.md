@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/todo-knockout.html"
 ---
 <h1>Todo Knockout Sample</h1>
 

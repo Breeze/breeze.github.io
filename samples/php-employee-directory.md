@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/php-employee-directory.html"
 ---
 #PHP Employee Directory
 

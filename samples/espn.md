@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/espn.html"
 ---
 <table style="border: 0; margin: 0 0 20px 0;">
 	<tbody>

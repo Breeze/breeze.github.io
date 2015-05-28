@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/about-samples.html"
 ---
 #About the Breeze JS Samples
 

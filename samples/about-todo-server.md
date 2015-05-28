@@ -1,5 +1,6 @@
 ---
 layout: samples
+redirect_from: "/old/samples/todo-server.html"
 ---
 <h1>
 	Todo .NET Sample Server</h1>
