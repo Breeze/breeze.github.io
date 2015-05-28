@@ -8,7 +8,7 @@
    2) file names on GitHub pages are case sensitive!  
 8) Small mobile resizing issues with lost menus
 10) Missing one .NET Cool Breeze page
-11) Highlight missing from topmost menu item in left navbar.
+
 12) Cosmetics - vertical bars between menu items on header like twitter bootstrap link
 13) Download menu for breeze#
 14) Add prior release builds to site.

@@ -6,7 +6,7 @@ redirect_from: "/old/samples/todo-knockout.html"
 
 <p>The base Todo sample demonstrates Breeze and <a href="http://knockoutjs.com/" target="_blank">KnockoutJS</a> working together in a single page CRUD (Create/Read/Update/Delete) application.</p>
 
-<p clear="all">The <a href="/doc-samples/todo/#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/documentation/download" target="_blank">download here</a>.</p>
+<p clear="all">The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/documentation/download" target="_blank">download here</a>.</p>
 
 <h2><img alt="" src="/images/samples/Todo-KoRunning.png" style="width: 100%; max-width: 568px;" /></h2>
 
@@ -134,11 +134,11 @@ function initVm() {
 	<li>Fetch the initial set of active (non-archived) Todos.</li>
 </ol>
 
-<p>The <a href="/doc-samples/todo-viewmodel" target="_blank">Todo ViewModel Sample Design</a> topic describes the purpose and basic mechanics of the remaining functions including the three computeds.</p>
+<p>The <a href="/doc-samples/about-todo-viewmodel" target="_blank">Todo ViewModel Sample Design</a> topic describes the purpose and basic mechanics of the remaining functions including the three computeds.</p>
 
 <h2>Dataservice</h2>
 
-<p>The <em>dataservice.js</em> file handles the creation of new Todo objects and all interactions with the server. It&#39;s written in Breeze and almost all Breeze-related code is in this <em>dataservice</em>. See the &quot;<a href="/doc-samples/todo-dataservice">Todo Sample Dataservice</a>&quot; page for details.</p>
+<p>The <em>dataservice.js</em> file handles the creation of new Todo objects and all interactions with the server. It&#39;s written in Breeze and almost all Breeze-related code is in this <em>dataservice</em>. See the &quot;<a href="/doc-samples/about-todo-dataservice">Todo Sample Dataservice</a>&quot; page for details.</p>
 
 <p>Breeze ships configured to use Knockout as the model library. When the application creates new Todos or materializes Todos from query result data, Breeze instantiates Todo objects with Knockout observables in lieu of JavaScript properties. For example, the server-side TodoItem.Description property becomes the KO <em>item.Description</em> observable function; you get the value by calling <span class="codeword">item.Description()</span> and you set the value by calling <span class="codeword">item.Description(&quot;Learn Breeze&quot;)</span>.</p>
 
@@ -148,4 +148,4 @@ function initVm() {
 
 <p>This file is identical across all Todo sample variations.</p>
 
-<p><a href="/doc-samples/todo">Back to the main Todo Sample page</a></p>
+<p><a href="/doc-samples/about-todo">Back to the main Todo Sample page</a></p>

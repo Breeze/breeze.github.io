@@ -4,9 +4,9 @@ redirect_from: "/old/samples/todo-require.html"
 ---
 #Todo-Knockout-Require Sample#
 
-The **Todo-Knockout-Require** sample extends the <a href="/doc-samples/todo-ko">Todo Knockout</a> sample with **dependency management** and **view composition** using the <a href="http://requirejs.org//" target="_blank">RequireJS</a> library.</p>
+The **Todo-Knockout-Require** sample extends the <a href="/doc-samples/todo-knockout">Todo Knockout</a> sample with **dependency management** and **view composition** using the <a href="http://requirejs.org//" target="_blank">RequireJS</a> library.</p>
 
-<p clear="all">The <a href="/doc-samples/todo/#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/todo">all Todo Sample</a> variations. The source lies within the "Samples" package which you can <a href="/documentation/download" target="_blank">download here</a>.</p>
+<p clear="all">The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the "Samples" package which you can <a href="/documentation/download" target="_blank">download here</a>.</p>
 
 <p><img src="/images/samples/Todo-RequireRunning.png" style="width:100%; max-width:568px;"></p>
 
@@ -167,7 +167,7 @@ That call injects the application 'viewModel' module. That module depends upon t
 
 The second dependency injects the view. It looks like we are at last ready to load and bind our ViewModel and View ... almost.
 
-We're about to discover how requireJS can help with something called "view composition." To understand what that's about, we'll take a step back and review the <a href="/doc-samples/todo-ko" title="Original Todo Sample" target="_blank">original Todo sample</a> which assembled views in a more traditional way.
+We're about to discover how requireJS can help with something called "view composition." To understand what that's about, we'll take a step back and review the <a href="/doc-samples/todo-knockout" title="Original Todo Sample" target="_blank">original Todo sample</a> which assembled views in a more traditional way.
 
 In the original sample, the View was a chunk of HTML within *index.html.* At the bottom of the *viewModel.js* in that version is one line of bootstrapping that binds the ViewModel to the View in *index.html*
 
@@ -201,7 +201,7 @@ The plugin is the part *before* the "!", It identifies the JavaScript *text.js* 
 
 The part *after* the "!" is the path and name of the text file to load, *view.html*, located in *Scripts/app* ... the same directory as *main.js*.
 
-Compare the *view.html* in this Todo sample with the contents of the "applicationHost" `<div>` in the <a href="/doc-samples/todo-ko" target="_blank">original Todo sample</a>'s *index.html*; you'll see that they are identical. We just ripped that `<div>` out and put it in its own file.
+Compare the *view.html* in this Todo sample with the contents of the "applicationHost" `<div>` in the <a href="/doc-samples/todo-knockout" target="_blank">original Todo sample</a>'s *index.html*; you'll see that they are identical. We just ripped that `<div>` out and put it in its own file.
 
 The revised *index.html* becomes the much simpler application shell with a
 
@@ -259,4 +259,4 @@ These capabilities came with a cost. We added the *require.js* library. We added
 
 This is all too expensive for a simple Todo app. But we think it's a solid investment when building a real app, an investment that pays off quickly.
 
-[Back to the main Todo Sample page](/samples/todo)
+[Back to the main Todo Sample page](/samples/about-todo)

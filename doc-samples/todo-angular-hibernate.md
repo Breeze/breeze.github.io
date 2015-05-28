@@ -6,7 +6,7 @@ redirect_from: "/old/samples/todo-angular-hibernate.html"
 
 The Todo-Angular-Hibernate sample demonstrates Breeze, <a href="http://angularjs.org/" target="_blank">AngularJS</a> and <a href="http://hibernate.org/" target="_blank">Hibernate</a> working together in a single page CRUD (Create/Read/Update/Delete) application.
 
-The <a href="/doc-samples/todo/#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/documentation/download" target="_blank">download here</a>.
+The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/documentation/download" target="_blank">download here</a>.
 
 ##<img alt="" src="/images/samples/Todo-AngularRunning.png" style="max-width: 568px; width: 100%;" />
 
