@@ -10,7 +10,7 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p>&nbsp;</p>
 
-<p><img src="/sites/default/files/images/temphire/temphire-breeze.png" style="width: 640px; max-width: 640px;" /></p>
+<p><img src="/images/samples/temphire/temphire-breeze.png" style="width: 640px; max-width: 640px;" /></p>
 
 <h1>Challenge</h1>
 
@@ -30,7 +30,7 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p>Even better, through the use of proven architecture and design patterns, multiple developers can work independently on specific views, models, and workflows without impacting other modules.</p>
 
-<p><img src="/sites/default/files/images/temphire/temphire-angular.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
+<p><img src="/images/samples/temphire/temphire-angular.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
 
 <h1>TempHire under the hood</h1>
 
@@ -38,7 +38,7 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p>TempHire is composed of a client side app (JavaScript, CSS, HTML, etc.), a domain model (entities, and business logic), and various server side components (services, controllers, etc.).</p>
 
-<p><img src="/sites/default/files/images/temphire/solution-explorer.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 350px;" /></p>
+<p><img src="/images/samples/temphire/solution-explorer.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 350px;" /></p>
 
 <h1>Domain model</h1>
 
@@ -48,7 +48,7 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p>Let&rsquo;s look at AddressType as an example of one of Temphire&rsquo;s entity classes. It&rsquo;s a Code First class that has four properties.</p>
 
-<p><img src="/sites/default/files/images/temphire/addresstype.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 479px;" /></p>
+<p><img src="/images/samples/temphire/addresstype.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 479px;" /></p>
 
 <h2>EntityBase</h2>
 
@@ -56,7 +56,7 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p>You can see this in action by the way that TempHire handles concurrency checking. It&rsquo;s located in the base class and is inherited by every entity.&nbsp;</p>
 
-<p><img src="/sites/default/files/images/temphire/concurrencycheck.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 410px;" /></p>
+<p><img src="/images/samples/temphire/concurrencycheck.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 410px;" /></p>
 
 <h2>DbContext</h2>
 
@@ -66,7 +66,7 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p>Temphire uses projections and DTOs where applicable to improve performance and to move complex queries to the server, where implementing them in LINQ is a lot easier. You can see this in action on the master details screen:</p>
 
-<p><img src="/sites/default/files/images/temphire/mastergrid.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 640px;" /></p>
+<p><img src="/images/samples/temphire/mastergrid.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 640px;" /></p>
 
 <p>&nbsp;</p>
 
@@ -124,27 +124,27 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p>&nbsp;</p>
 
-<p><img src="/sites/default/files/images/temphire/twitterbootstrap.png" style="border-width: 0px; border-style: solid; width: 101px; height: 50px;" /></p>
+<p><img src="/images/logos/twitterbootstrap.png" style="border-width: 0px; border-style: solid; width: 101px; height: 50px;" /></p>
 
 <p><a href="http://twitter.github.io/bootstrap/"><strong>Bootstrap</strong></a> adds front-end pizazz with a variety of widgets, transitions, buttons, etc. It should go without saying that they all work seamlessly with the Twitter Bootstrap CSS (See Content). The various GUI elements are documented at <a href="http://twitter.github.io/bootstrap/javascript.html">twitter.github.io</a>.</p>
 
-<p><img src="/sites/default/files/images/temphire/breeze.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
+<p><img src="/images/logos/breeze.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
-<p><a href="http://www.breezejs.com?eng=cp&amp;chnl=art&amp;amsg=brztemphire"><strong>Breeze</strong></a> excels at data management and takes care of the Model &ndash;the M in MVVM. Breeze queries, saves, and manages all data interactions between client and server. &nbsp;Breeze <em>EntityManagers</em> make writing TempHire&rsquo;s Unit of Work patterns considerably easier.</p>
+<p><strong>Breeze</strong> excels at data management and takes care of the Model &ndash;the M in MVVM. Breeze queries, saves, and manages all data interactions between client and server. &nbsp;Breeze <em>EntityManagers</em> make writing TempHire&rsquo;s Unit of Work patterns considerably easier.</p>
 
 <p>Breeze automatically creates JavaScript model objects (entities) that match the shape of the data coming from the remote service. It adds business rules and infrastructure that support validation, change tracking, and navigation to related entities. Breeze navigation properties automate traversal of the object graphs that are implicit in a relational model so you can walk the graph, from a customer to its orders, and from an order to its line items. Breeze tracks users&rsquo; changes and validates them with rules, some of which may have been propagated to the client from the server.</p>
 
 <p>If you store data in a database, query and save data as complex object graphs, and share graphs across multiple views&mdash;and want to do it in JavaScript&mdash;there&rsquo;s no better way than with Breeze.</p>
 
-<p><img src="/sites/default/files/images/temphire/jquery.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
+<p><img src="/images/logos/jquery.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
 <p><a href="http://jquery.com/"><strong>jQuery</strong></a> is a dependency for some of TempHire&rsquo;s libraries and templates. Bootstrap, Breeze, and Angular rely on one bit of jQuery or another.&nbsp;</p>
 
-<p><img src="/sites/default/files/images/temphire/moment.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
+<p><img src="/images/logos/moment.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
 <p><a href="http://momentjs.com/"><strong>Moment</strong></a> is our go-to library when working with date and time (parsing, validating, manipulating, and formatting) in JavaScript.</p>
 
-<p><img src="/sites/default/files/images/temphire/toastr.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
+<p><img src="/images/logos/toastr.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
 <p><a href="https://github.com/CodeSeven/toastr"><strong>Toastr</strong></a> displays process and error notifications in &quot;toast&quot; windows that float up from the lower right to let you know what TempHire is doing at any given time.</p>
 

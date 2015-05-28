@@ -10,7 +10,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>&nbsp;</p>
 
-<p><img src="/images/samples/temphire-breeze.png" style="width: 640px; max-width: 640px;" /></p>
+<p><img src="/images/samples/temphire/temphire-breeze.png" style="width: 640px; max-width: 640px;" /></p>
 
 <h1>Challenge</h1>
 
@@ -30,7 +30,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>Even better, through the use of proven architecture and design patterns, multiple developers can work independently on specific views, models, and workflows without impacting other modules.</p>
 
-<p><img src="/images/samples/temphire.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
+<p><img src="/images/samples/temphire/temphire.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
 
 <h1>TempHire under the hood</h1>
 
@@ -38,7 +38,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>TempHire is composed of a client side app (JavaScript, CSS, HTML, etc.), a domain model (entities, and business logic), and various server side components (services, controllers, etc.).</p>
 
-<p><img src="/images/samples/solution-explorer.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 350px;" /></p>
+<p><img src="/images/samples/temphire/solution-explorer.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 350px;" /></p>
 
 <h1>Domain model</h1>
 
@@ -48,7 +48,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>Let&rsquo;s look at AddressType as an example of one of Temphire&rsquo;s entity classes. It&rsquo;s a Code First class that has four properties.</p>
 
-<p><img src="/images/samples/addresstype.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 479px;" /></p>
+<p><img src="/images/samples/temphire/addresstype.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 479px;" /></p>
 
 <h2>EntityBase</h2>
 
@@ -56,7 +56,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>You can see this in action by the way that TempHire handles concurrency checking. It&rsquo;s located in the base class and is inherited by every entity.&nbsp;</p>
 
-<p><img src="/images/samples/concurrencycheck.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 410px;" /></p>
+<p><img src="/images/samples/temphire/concurrencycheck.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 410px;" /></p>
 
 <h2>DbContext</h2>
 
@@ -66,7 +66,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p>Temphire uses projections and DTOs where applicable to improve performance and to move complex queries to the server, where implementing them in LINQ is a lot easier. You can see this in action on the master details screen:</p>
 
-<p><img src="/images/samples/mastergrid.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 640px;" /></p>
+<p><img src="/images/samples/temphire/mastergrid.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 640px;" /></p>
 
 <p>&nbsp;</p>
 
