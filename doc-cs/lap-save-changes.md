@@ -1,6 +1,6 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/save-changes.html"
 ---
 
 # Save changes

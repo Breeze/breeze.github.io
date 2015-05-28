@@ -1,20 +1,20 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/metadata.html"
 ---
 
 # Metadata
 
 Breeze relies on metadata about entity types and their relationships when it queries, saves, and creates new entities.
 
-* [Metadata details](http:./details)
-* [Naming convention](http:./naming-convention)
-* [Loading metadata from script](http:./load-metadata-script)
-* [Custom metadata](http:./metadata-by-hand)
-* [Using Entity Framework as a design tool](http:./ef-design-tool)
-* [Metadata schema](http:./metadata-schema)
+* [Metadata details](/doc-cs/metadata-details)
+* [Naming convention](/doc-cs/naming-convention)
+* [Loading metadata from script](/doc-cs/metadata-from-script)
+* [Custom metadata](/doc-cs/metadata-by-hand)
+* [Using Entity Framework as a design tool](/doc-cs/metadata-ef-design)
+* [Metadata schema](/doc-cs/metadata-schema)
 
-Please consult the [API docs](/doc-js/api-docs/index.html) for the following related classes:
+Please consult the [API docs](/doc-cs/api-docs/html/index.html) for the following related classes:
 
 <span class="codeword">MetadataStore</span>
 
