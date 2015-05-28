@@ -1,6 +1,6 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/ef-design-tool.html"
 ---
 
 #Entity Framework as a metadata design tool#
@@ -11,7 +11,7 @@ This topic may persuade you to **let Entity Framework generate Breeze metadata**
 
 ###Why use EF to generate metadata?###
 
-You can always <a href="http:./metadata-by-hand" title="Metadata By Hand">write metadata by hand</a>. It's not hard. And you'll almost certainly write the metadata by hand if you're building your server in a non-.NET technology.
+You can always <a href="/doc-cs/metadata-by-hand" title="Metadata By Hand">write metadata by hand</a>. It's not hard. And you'll almost certainly write the metadata by hand if you're building your server in a non-.NET technology.
 
 Let's admit it. Hand-coded metadata is pretty unappealing when you have a large model with a lot of types and you are worried about keeping your metadata in sync as the model evolves. In these circumstances, if you are a .NET developer,  Metadata generation with EF starts to look mighty attractive.
 
@@ -44,7 +44,7 @@ In brief, we
 
 We'll demonstrate this technique with an example web application that accesses a Microsoft "Northwind" database via DTOs. Those DTOs do not map directly to Northwind tables nor to tables of any other database.
 
-<p class="note">The code in this example is adapted from the <a href="http://www.breezejs.com/samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and EF metadata generation in particular through the medium of QUnit tests.</p>
+<p class="note">The code in this example is adapted from the <a href="https://github.com/Breeze/breeze.sharp.samples/tree/master/DocCode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and EF metadata generation in particular through the medium of QUnit tests.</p>
 
 There is a `NorthwindDtoController` Web API controller whose methods expose and consume those DTOs which collectively constitute the NorthwindDto service model. 
 

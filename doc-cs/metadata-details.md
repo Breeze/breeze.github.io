@@ -1,6 +1,6 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/details.html"
 ---
 
 # Metadata 
@@ -40,7 +40,7 @@ Breeze fetches metadata automatically just before performing its first remote se
 
     - A **Breeze Metadata Format** object as described below.
 
-- When using the Breeze **OData** *dataService* adapter, the format is an OData Metadata document per the <a href="http://www.odata.org/docs/" target="_blank">OData specification</a>. Remember to <a href="/documentation/odata">configure Breeze with the OData *dataService * adapter</a>.
+- When using the Breeze **OData** *dataService* adapter, the format is an OData Metadata document per the <a href="http://www.odata.org/docs/" target="_blank">OData specification</a>. Remember to <a href="/doc-cs/odata">configure Breeze with the OData *dataService * adapter</a>.
 	
 
 ## The unhelpful server ##
