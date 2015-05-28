@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/get-your-feet-wet.html"
 ---
 
 # Get Your Feet Wet with Breeze.sharp
