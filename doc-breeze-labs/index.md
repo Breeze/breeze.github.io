@@ -17,7 +17,7 @@ Every project has its own guide, either within this documentation, in the projec
 
 ##License
 
-Breeze Labs projects are all released under the <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT license</a>. This license applies ONLY to the labs project-specific source and does not extend to Breeze itself, or any other 3rd party libraries used in a repository. For licensing information about BreezeJS, see the [License Agreement page](http://www.breezejs.com/license).
+Breeze Labs projects are all released under the <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT license</a>. This license applies ONLY to the labs project-specific source and does not extend to Breeze itself, or any other 3rd party libraries used in a repository. For licensing information about BreezeJS, see the [License Agreement page](/doc-main/license).
 
 ##Support
 

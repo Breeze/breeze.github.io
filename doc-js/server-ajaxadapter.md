@@ -185,7 +185,7 @@ This means the developer can
 
 - setup service call timeout or provide a "cancel" option.
 
-    >The jQuery adapter adds `requestInfo.jqXHR` so the `requestInterceptor` can wire-up a "canceller" that can call `jqXHR.abort()`. Normally jQuery's XHR object isn't made available to developers on the grounds that it is an implementation detail. But you'll need it to cancel a jQuery AJAX request. See the [DocCode:jQueryAjaxAdapterTests](http://www.breezejs.com/samples/doccode) for an example of canceling a request. 
+    >The jQuery adapter adds `requestInfo.jqXHR` so the `requestInterceptor` can wire-up a "canceller" that can call `jqXHR.abort()`. Normally jQuery's XHR object isn't made available to developers on the grounds that it is an implementation detail. But you'll need it to cancel a jQuery AJAX request. See the [DocCode:jQueryAjaxAdapterTests](/doc-samples/doccode) for an example of canceling a request. 
 
 - make AJAX-component-specific changes for this particular request, e.g., set jQuery's 'cache' flag
   or setup an [angular $http request cancel option](

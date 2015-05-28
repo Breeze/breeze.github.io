@@ -24,7 +24,7 @@ And if there is an error, it displays like this:
 
 Breeze entities have built-in model-level validation driven by metadata that describe client-side validation rules for properties and entities. Breeze invokes these rules automatically during four phases of the entity life-cycle (attached, queried, property changed, saved).  You also can invoke these rules programmatically at any time. 
 
-You can read about these features [in the user guide](http://www.breezejs.com/documentation/validation) and in the [Validator API documentation](http://www.breezejs.com/sites/all/apidocs/classes/Validator.html). 
+You can read about these features [in the user guide](/doc-js/validation) and in the [Validator API documentation](http://www.breezejs.com/sites/all/apidocs/classes/Validator.html). 
 
 Those sources describe how to define validation rules and how to invoke them. They tell you that each entity carries a collection of zero-or-more validation errors that you can access by calling its `entityAspect.getValidationErrors()`
 

@@ -4,7 +4,7 @@ layout: doc-java-hib
 
 ## breeze-hibernate
 
-This project is a Java library that facilitates building [Breeze](http://www.breezejs.com/)-compatible backends using
+This project is a Java library that facilitates building [BreezeJS](/doc-js/)-compatible backends using
 [Hibernate](http://hibernate.org/orm/).  It is set up as a [Maven](http://maven.apache.org/) project, which builds a JAR that can then
 be used as a library in a web application. 
 

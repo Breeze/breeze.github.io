@@ -56,7 +56,7 @@ The cost may be negligible and having those entities in cache for some future pu
 
 But if you're only interested in a subset of data for the read-only grid and you don't need to cache the entities, you should consider using a projection query instead.
 
-Construct a query <a href="http://www.breezejs.com/documentation/query-examples#Projection (Selection)  EntityQuery.select" target="_blank">using a <span class="codeword">select</span> clause</a> that names just the property values you'll display in your grid (plus the entity key so you can get the full entity later when you need to).
+Construct a query <a href="/doc-js/query-examples#Projection (Selection)  EntityQuery.select" target="_blank">using a <span class="codeword">select</span> clause</a> that names just the property values you'll display in your grid (plus the entity key so you can get the full entity later when you need to).
 
 A projection query returns JavaScript objects with raw property values. You won't need to unwrap them with <span class="codeword">ko.toJS</span>.
 
