@@ -4,7 +4,7 @@ redirect_from: "/old/samples/breeze-webapi-odata.html"
 ---
 #Web API OData and Breeze
 
-A Breeze application can talk to an ASP.NET Web API 2 OData data service. We show how in this **"BOWA" Web API OData Todo Sample** which you can <a href="/documentation/download" target="_blank"><strong>download from here</strong></a>.
+A Breeze application can talk to an ASP.NET Web API 2 OData data service. We show how in this **"BOWA" Web API OData Todo Sample** which you can <a href="/doc-js/download" target="_blank"><strong>download from here</strong></a>.
 
 ![Web API OData Sample in action](/images/samples/WebAPIODataSampleInAction.png)
 
