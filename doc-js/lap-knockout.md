@@ -8,7 +8,7 @@ redirect_from: "/old/documentation/databinding-knockout.html"
 
 Breeze entities in the Todo sample are built for UI data binding with <a href="http://knockoutjs.com/">Knockout</a>.  A property that returns a single value is exposed as a <a href="http://knockoutjs.com/documentation/observables.html">Knockout observable property</a>. A property that returns a collection (e.g., a collection navigation property such as Customer.Orders) is exposed as a <a href="http://knockoutjs.com/documentation/observableArrays.html">Knockout observable array property</a>.
 To appreciate what this means, let's look at the screen the user sees when the *ViewModel* first pours queried Todo entities into its <span class="codeword">items</span> array.
-<img src="/images/DocCodeTodosListSnapshotjpg.jpg" style="border-width: 0px; border-style: solid;" />
+<img src="/images/samples/DocCodeTodosListSnapshotjpg.jpg" style="border-width: 0px; border-style: solid;" />
 On launch the screen was empty; now it has a list of Todos, styled to reflect the IsDone and <span class="codeword">IsArchived</span> properties of each Todo.
 This is <a href="http://knockoutjs.com/">Knockout</a> at work, binding HTML controls and CSS classes to Breeze Todo entity properties. A developer didn't write code to punch the word "Food" into a label or to tick the "Drink" checkbox or to paint "Shelter" in a paler shade.
 A developer did mark up the HTML with declarative binding instructions. Here's a brief look at some of the HTML behind the screenshot.

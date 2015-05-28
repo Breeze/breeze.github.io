@@ -1,7 +1,7 @@
 ---
 layout: doc-breeze-labs
 ---
-# ![Breeze Labs](/sites/default/files/images/BreezeLabsB.png "Breeze Labs") What are Breeze Labs?
+# ![Breeze Labs](/images/logos/BreezeLabsB.png "Breeze Labs") What are Breeze Labs?
 
 Breeze Labs projects are extensions to Breeze. They are meant to help you become more productive with Breeze, especially in combination with other libraries such as [AngularJS](http://angularjs.org/),  [Durandal](http://durandaljs.com/),  and [Knockout](http://knockoutjs.com/).
 
