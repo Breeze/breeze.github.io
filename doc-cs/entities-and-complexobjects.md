@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/entities-and-complex-objects.html"
 ---
 
 # Entities and Complex Objects  

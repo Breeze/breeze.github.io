@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/entitymanager-and-caching.html"
 ---
 
 <h1>EntityManager</h1>
@@ -169,7 +170,7 @@ layout: doc-cs
 <div>
 <h2>Offline support&nbsp;</h2>
 
-<p>The EntityManager is able to serialize its state to a local persistence store and later rematerialize that state. See the <a href="/documentation/exportimport">Export/Import topic</a> for details.</p>
+<p>The EntityManager is able to serialize its state to a local persistence store and later rematerialize that state. See the <a href="/doc-cs/export-import">Export/Import topic</a> for details.</p>
 
 <div>
 <table border="1" cellpadding="1" cellspacing="1">
