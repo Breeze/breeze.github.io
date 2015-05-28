@@ -31,7 +31,7 @@ The Breeze **JavaScript** client source code and libraries are in the [**breeze.
 
 #[breeze.js.labs](https://github.com/Breeze/breeze.js.labs "Breeze JavaScript Labs")
 
-A collection of small [helper libraries for developing client apps](http://www.breezejs.com/documentation/what-are-breeze-labs "Breeze JS Labs documentation"). These libraries are not part of "Breeze core".
+A collection of small [helper libraries for developing client apps](/doc-breeze-labs/ "Breeze JS Labs documentation"). These libraries are not part of "Breeze core".
 
 #[breeze.sharp](https://github.com/Breeze/breeze.sharp "Breeze Sharp client") 
 

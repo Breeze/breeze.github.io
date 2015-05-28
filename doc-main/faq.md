@@ -48,7 +48,7 @@ title: FAQ
 
 <p>Any standard SQL&nbsp;database like Oracle, MySQL, MariaDB, SQLServer, etc&nbsp;is supported out of the box as long as there is an <a href="http://msdn.microsoft.com/en-us/data/dd363565" target="_blank">Entity Framework Provider</a> for it (and almost all of them do).</p>
 
-<p>Breeze supports <a href="http://www.breezejs.com/documentation/mongodb">MongoDB</a>, and for other NoSQL databases Breeze&nbsp;exposes a lower level IQueryable interface that allows querying these databases through a LINQ provider. Many of the most common NoSQL databases have such a provider. Saves to NoSQL databases are more complicated and do require customized code for each NoSQL database. We can provide these server side adapters as part of our consulting services.</p>
+<p>Breeze supports <a href="/doc-node-mongodb">MongoDB</a>, and for other NoSQL databases Breeze&nbsp;exposes a lower level IQueryable interface that allows querying these databases through a LINQ provider. Many of the most common NoSQL databases have such a provider. Saves to NoSQL databases are more complicated and do require customized code for each NoSQL database. We can provide these server side adapters as part of our consulting services.</p>
 
 <p>&nbsp;</p>
 
@@ -56,7 +56,7 @@ title: FAQ
 
 <p>Breeze works out-of-the-box with all&nbsp;modern browsers on desktop and mobile devices. These browsers implement the current JavaScript standard, known as ECMAScript 5 (ES5), which Breeze uses internally.</p>
 
-<p>Older browsers (such as IE 8) implement the prior ES3 standard. Fortunately, you can enable ES5 syntax on these browsers by adding a JavaScript &quot;shim&quot; library to your page. See the&nbsp;<a href="http://www.breezejs.com/documentation/prerequisites">Prerequisites</a> topic for more details and a specific list of supported browser versions.</p>
+<p>Older browsers (such as IE 8) implement the prior ES3 standard. Fortunately, you can enable ES5 syntax on these browsers by adding a JavaScript &quot;shim&quot; library to your page. See the&nbsp;<a href="/doc-js/prerequisites">Prerequisites</a> topic for more details and a specific list of supported browser versions.</p>
 
 <p>&nbsp;</p>
 
@@ -64,7 +64,7 @@ title: FAQ
 
 <ul>
 	<li><strong>Documentation</strong><br />
-	Not to brag, but the <a href="http://www.breezejs.com/documentation/introduction">documentation here on the Breeze website</a> is pretty good. Same goes for the <a href="/doc-js/api-docs/index.html" target="_blank">Breeze API</a>. Both are indexed and searchable.</li>
+	Not to brag, but the <a href="/doc-main/">documentation here on the Breeze website</a> is pretty good. Same goes for the <a href="/doc-js/api-docs/index.html" target="_blank">Breeze API</a>. Both are indexed and searchable.</li>
 	<li><strong>Troubleshooting</strong><br />
 	Community support for Breeze can be found on Stack Overflow. We look for <a href="http://stackoverflow.com/questions/tagged/breeze" target="_blank">questions using the Breeze tag</a>.</li>
 	<li><strong>Feature suggestions</strong><br />

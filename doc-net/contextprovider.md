@@ -6,11 +6,11 @@ redirect_from: "/old/documentation/contextprovider.html"
 
 The `ContextProvider` is a server-side component for managing data access and business validation with .NET technologies.
 
-`ContextProvider` is the base class for the [`EFContextProvider`](http://www.breezejs.com/documentation/efcontextprovider) and the `NHContextProvider` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.
+`ContextProvider` is the base class for the [`EFContextProvider`](/doc-net/ef-efcontextprovider) and the `NHContextProvider` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.
 
 This topic covers the uses and capabilities of the `ContextProvider`. While often described in connection with the `EFContextProvider`, please remember that it is more general than that.
 
-You can use `ContextProvider` as the basis for transforming BreezeJS query and save requests into actions performed against *any kind of data store*. See, for example, the the [in-memory "No DB" sample](http://www.breezejs.com/samples/nodb ""No DB" sample").
+You can use `ContextProvider` as the basis for transforming BreezeJS query and save requests into actions performed against *any kind of data store*. See, for example, the the [in-memory "No DB" sample](/doc-samples/no-db ""No DB" sample").
 
 <a name="SaveChanges"></a>
 ## SaveChanges
@@ -197,7 +197,8 @@ The base implementation of this method simply returns the incoming dictionary un
 <a name="AfterSaveEntities"></a>
 ## AfterSaveEntities
 
-<i>AfterSaveEntities</i> gives access the to entities after they've been saved to the database, and after database-assigned identifiers have been assigned. 
+
+<i>AfterSaveEntities</i> gives access the to entities after they've been saved to the database, and after database-assigned identifiers have been assigned. 
 
 
     protected override void AfterSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings)
@@ -215,7 +216,7 @@ The `SaveChangesCore` method performs the save operations on the change-set. The
 
 Most developers rely on a pre-existing derived class such as the `EFContextProvider` to implement this method and there is rarely a need to override that implementation.
 
-You will override it if you write your own `ContextProvider`. That task is beyond the scope of this topic. You'll find clues in the `TodoContext` class of the ["NoDB" sample](http://www.breezejs.com/samples/nodb ""NoDB" sample") and in the <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.WebApi.EF/EFContextProvider.cs" title="EFContextProvider on GitHub" target="_blank">source code for the `EFContextProvider`</a>.  There's also a discussion of `ContextProvider` extensibility in [this StackOverflow answer](http://stackoverflow.com/questions/21691579/uninitialised-jsonserializer-in-breeze-savebundletosavemap-sample/27414629#27414629).
+You will override it if you write your own `ContextProvider`. That task is beyond the scope of this topic. You'll find clues in the `TodoContext` class of the ["NoDB" sample](/doc-samples/no-db ""NoDB" sample") and in the <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.WebApi.EF/EFContextProvider.cs" title="EFContextProvider on GitHub" target="_blank">source code for the `EFContextProvider`</a>.  There's also a discussion of `ContextProvider` extensibility in [this StackOverflow answer](http://stackoverflow.com/questions/21691579/uninitialised-jsonserializer-in-breeze-savebundletosavemap-sample/27414629#27414629).
 
 <a name="HelperMethods"></a>
 <a name="helpermethods"></a>

@@ -14,7 +14,7 @@ A Breeze client can communicate to almost any server technology including <a hre
 
 This topic explains how.
 
-> See Breeze-MongoDB integration in action in the <a href="http://www.breezejs.com/samples/zza"  target="_blank">Zza! Node/MongoDB sample</a>.
+> See Breeze-MongoDB integration in action in the <a href="/doc-samples/zza-mongo"  target="_blank">Zza! Node/MongoDB sample</a>.
 
 <div style="clear:both"/>
 
@@ -30,7 +30,7 @@ Standard Breeze requirements:
 
 Additional MongoDB requirement: 
 
-+ *Breeze.dataservice.mongo.js*  - a Breeze dataservice adapter that handles all of the MongoDB -specific client-side work involved in communicating with the MongoDB--backed service. Currently <a href="https://raw.github.com/IdeaBlade/Breeze/master/Breeze.Client/Scripts/IBlade/breeze.dataService.mongo.js" target="_blank">available on github</a> and in the [Zza! Node/MongoDB sample](http://www.breezejs.com/samples/zza).
++ *Breeze.dataservice.mongo.js*  - a Breeze dataservice adapter that handles all of the MongoDB -specific client-side work involved in communicating with the MongoDB--backed service. Currently <a href="https://raw.github.com/IdeaBlade/Breeze/master/Breeze.Client/Scripts/IBlade/breeze.dataService.mongo.js" target="_blank">available on github</a> and in the [Zza! Node/MongoDB sample](/doc-samples/zza-mongo).
 
 ### Server side requirements ###
 

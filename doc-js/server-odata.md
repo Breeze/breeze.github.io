@@ -13,7 +13,7 @@ Breeze is not configured for OData services out of the box but it's easy to tell
 
 The catch is that you have to pick the right adapter for your OData source. OData may be a "standard" but not all OData services are the same. They often diverge from the specifications in ways that can be painful for you. 
 
-We discuss the diversity of OData services (and the consequences) in a separate topic devoted to [OData on the Server](http://www.breezejs.com/documentation/odata-server "OData Services"). **Be sure to read it carefully**.
+We discuss the diversity of OData services (and the consequences) in a separate topic devoted to [OData on the Server](/doc-js/server-odata "OData Services"). **Be sure to read it carefully**.
 
 ## Industry standard and WCF OData sources
 
@@ -69,7 +69,7 @@ Feel free to rewrite it to suit your version of the Web API OData service and as
     var adapter = breeze.config.initializeAdapterInstance('dataService', 'webApiOData4');
     adapter.getRoutePrefix = myGetRoutePrefix;
 
-This is an example of a more general problem. The Web API OData simply does not comply with the OData specification for metadata and has other peculiarities that you should consider in your design. Please read about this in [OData on the Server](http://www.breezejs.com/documentation/odata-server "OData Services")
+This is an example of a more general problem. The Web API OData simply does not comply with the OData specification for metadata and has other peculiarities that you should consider in your design. Please read about this in [OData on the Server](/doc-js/server-odata "OData Services")
 
 We also highly recommend the Pluralsight course &quot;<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank"><strong>Building ASP.NET Web API OData Services</strong></a>&quot; by <a href="http://briannoyes.net/default.aspx" target="_blank">Brian Noyes</a>. The module, "Consuming OData Services...", demonstrates consuming a Web API OData service with Breeze.
 

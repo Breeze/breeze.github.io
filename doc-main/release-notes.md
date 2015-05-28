@@ -5,7 +5,7 @@ layout: doc-main
 
 These are the release notes for the current **1.5.x** and 1.4.x releases.
 
-Prior <a href="http://www.breezejs.com/previous-release-notes" target="_blank">release notes</a> are also available.
+Prior <a href="/doc-js/previous-release-notes" target="_blank">release notes</a> are also available.
 
 ##1.5.x
 * New json query api and query serialization support.  See: <a href="/doc-js/query-using-json.html">Breeze queries with JSON documentation</a>
@@ -217,7 +217,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 
 - Breeze samples in breeze.js.samples are now self-contained. (i.e. no other repositories are needed to run these samples.).
 - Reduced memory footprint for entities retrieved via OData. 
-- Improved Breeze OData/WebApi documentation. see: http://www.breezejs.com/documentation/odata-server
+- Improved Breeze OData/WebApi documentation. see: /doc-js/server-odata.html
 - JavaScript "use strict" now applied globally to all breeze libs.
 	
 #### Bugs
@@ -256,26 +256,26 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 
 
 #### Notes
-+ We have just released a [*Breeze.sharp*]  (http://www.breezejs.com/breeze-sharp) product that is fully compliant with any server built for Breeze.JS.  This is a .NET client that has an almost identical API to that of the Breeze.JS product. We are also working on a *Breeze.java* client.             
++ We have just released a [*Breeze.sharp*]  (/doc-cs/) product that is fully compliant with any server built for Breeze.JS.  This is a .NET client that has an almost identical API to that of the Breeze.JS product. We are also working on a *Breeze.java* client.             
 
 ###<a name="1411"></a>1.4.11 <span class="doc-date">Mar 7, 2014</span>###
 
 #### Features
 +  Performance improvements with large saves and large queries that overwrite existing modified entities. 
-+  <a name="WebApiOData"></a>New [**Web API OData Sample**](http://www.breezejs.com/samples/breeze-web-api-odata), an MVC/SPA hybrid written with Javier Calvarro  Nelson, a member of the Microsoft Web API OData team. This effort prompted numerous small changes to Breeze core that enriched exposed functionality w/o changing underlying behavior.
-+  The [Angular Todo Sample](http://www.breezejs.com/samples/todo-angular) has been spruced up. It's been upgraded to Angular v.1.2 and the new ["Breeze Angular Service"](http://www.breezejs.com/documentation/breeze-angular-service) module.
++  <a name="WebApiOData"></a>New [**Web API OData Sample**](/doc-samples/web-api-odata), an MVC/SPA hybrid written with Javier Calvarro  Nelson, a member of the Microsoft Web API OData team. This effort prompted numerous small changes to Breeze core that enriched exposed functionality w/o changing underlying behavior.
++  The [Angular Todo Sample](/doc-samples/todo-angular) has been spruced up. It's been upgraded to Angular v.1.2 and the new ["Breeze Angular Service"](http://www.breezejs.com/documentation/breeze-angular-service) module.
 +  Breeze 'ajax' adapters accept headers configuration; useful to authors of Breeze 'dataService' adapters. 
 +  `EntityQuery.fromEntityKey` specifically targets the `EntityType` of the `EntityKey` and casts query results into that `EntityType`.
 
 + New or changed in Breeze Labs
 
-	+ **Breeze Angular Service**, a new [*breeze.angular.js*](http://www.breezejs.com/documentation/breeze-angular-service) module that configures your Breeze/Angular client app for Angular in "Angular-style". Sets the right 'model library', `$q` for promises, and `$http` for ajax calls. It has its own [nuget package](https://www.nuget.org/packages/Breeze.Angular/).
+	+ **Breeze Angular Service**, a new [*breeze.angular.js*](/doc-js/breeze-angular) module that configures your Breeze/Angular client app for Angular in "Angular-style". Sets the right 'model library', `$q` for promises, and `$http` for ajax calls. It has its own [nuget package](https://www.nuget.org/packages/Breeze.Angular/).
 
-	+ **getEntityGraph** extends `EntityManager` so you can retrieve a root entity *and its related entities* from cache as an array. [Read why and how](http://www.breezejs.com/breeze-labs/getentitygraph) in the breeze labs documentation.
+	+ **getEntityGraph** extends `EntityManager` so you can retrieve a root entity *and its related entities* from cache as an array. [Read why and how](/doc-breeze-labs/get-entity-graph) in the breeze labs documentation.
 	
 	+ **metadata-helper** (updated) library to make  hand-coding Breeze metadata in JavaScript a bit easier. Now a [nuget package](https://www.nuget.org/packages/Breeze.Metadata.Helper/).
 	
-    + **EdmBuilder**, a tiny C# class that generates Breeze-compatible metadata for a Web API OData backend. See the [Web API OData sample](http://www.breezejs.com/samples/breeze-web-api-odata).
+    + **EdmBuilder**, a tiny C# class that generates Breeze-compatible metadata for a Web API OData backend. See the [Web API OData sample](/doc-samples/web-api-odata).
 
  	+ **SharePoint 2013 + Angular + Breeze** - a composite [nuget package](https://www.nuget.org/packages/Breeze.Angular.SharePoint/) that delivers in one package all the Breeze stuff you need to build the app. We're really close to  announcing a SharePoint/Angular/Breeze sample built by Andrew Connell.     
 
@@ -537,7 +537,7 @@ None
 #### Features
 + Added OData V3 support. Previously only OData V2 was supported.    
 + Added *EntityManager.acceptChanges* and *EntityManager.rejectChanges* methods. These methods basically call *EntityAspect.acceptChanges/rejectChanges* for every changed entity within an *EntityManager*. 
-+ Added support for [custom metadata](http://www.breezejs.com/documentation/metadata-by-hand).
++ Added support for [custom metadata](/doc-js/metadata-by-hand).
 + Added an **Angular** Ajax adapter.  The new adapter can be initialized by calling
 
             breeze.config.initializeAdapterInstance("ajax", "angular");  
@@ -654,7 +654,7 @@ must be replaced with
 + Fix bug with OData provider and unmapped properties.
 
 <h3><a name="ruby"></a>Intro to SPA with Ruby<span class="doc-date">Aug 30, 2013</span></h3>
-+ We've replaced the Web API and Entity Framework used to power the backend of Code Camper Jumpstart with [Ruby on Rails](http://www.breezejs.com/samples/intro-spa-ruby). 
++ We've replaced the Web API and Entity Framework used to power the backend of Code Camper Jumpstart with [Ruby on Rails](/doc-samples/intro-to-spa-ruby). 
 
 <h3><a name="141"></a>1.4.1<span class="doc-date">Aug 13, 2013</span></h3>
 
@@ -732,25 +732,25 @@ With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Valid
 
 ####Client side
 
-+ [EntityQuery.withParameters](http://www.breezejs.com/documentation/querying-depth#EntityQuery) now supports parameters that are arrays.
-+ New [EntityAspect.hasValidationErrors](http://www.breezejs.com/documentation/validation#hasValidationErrors) property. 	
-+ New [EntityManager.validationErrorsChanged](http://www.breezejs.com/documentation/validation#validationErrorsChanged) event. 
++ [EntityQuery.withParameters](/doc-js/query-in-depth#EntityQuery) now supports parameters that are arrays.
++ New [EntityAspect.hasValidationErrors](/doc-js/validation#hasValidationErrors) property. 	
++ New [EntityManager.validationErrorsChanged](/doc-js/validation#validationErrorsChanged) event. 
 
 ####Server side (Node.js)
 
-+ [MongoDB integration](http://www.breezejs.com/documentation/mongo-integration).
++ [MongoDB integration](/doc-node-mongodb/).
 
 ####Server side (.NET)
  
-+ New server-side interception point, [AfterSaveEntities](http://www.breezejs.com/documentation/custom-efcontextprovider#AfterSaveEntities).
++ New server-side interception point, [AfterSaveEntities](/doc-net/ef-efcontextprovider#AfterSaveEntities).
 	
-+ New options for server-side transaction control. `SaveChanges` now has an optional [TransactionSettings](http://www.breezejs.com/documentation/custom-efcontextprovider#TransactionSettings) parameter, which controls the type of transaction that wraps the `BeforeSaveEntites`, `SaveChangesCore`, and `AfterSaveEntities` methods.  
++ New options for server-side transaction control. `SaveChanges` now has an optional [TransactionSettings](/doc-net/ef-efcontextprovider#TransactionSettings) parameter, which controls the type of transaction that wraps the `BeforeSaveEntites`, `SaveChangesCore`, and `AfterSaveEntities` methods.  
 
-+ New methods on [ContextProvider](http://www.breezejs.com/documentation/custom-efcontextprovider#ContextProvidermethods) for use in `BeforeSaveEntities` and `AfterSaveEntities`.  These methods help allow re-use of database connections, which reduces the need for distributed transactions.
++ New methods on [ContextProvider](/doc-net/ef-efcontextprovider#ContextProvidermethods) for use in `BeforeSaveEntities` and `AfterSaveEntities`.  These methods help allow re-use of database connections, which reduces the need for distributed transactions.
 
-+ [Save validation](http://www.breezejs.com/documentation/server-side-validation) enhancements. (Communicate server side validation errors to the client.)  
++ [Save validation](/doc-net/ef-serverside-validation) enhancements. (Communicate server side validation errors to the client.)  
 	
-+ [Server side validation errors](http://www.breezejs.com/documentation/server-side-validation) can be returned in using .NET Validation Attributes or by throwing an *EntityErrorsException* within the server side *BeforeSaveEntities* delegate or virtual method.
++ [Server side validation errors](/doc-net/ef-serverside-validation) can be returned in using .NET Validation Attributes or by throwing an *EntityErrorsException* within the server side *BeforeSaveEntities* delegate or virtual method.
 	      
 ### Bugs
 
