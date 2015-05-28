@@ -36,7 +36,12 @@ Breeze clients communicate with any remote service that speaks HTTP and JSON.
 
 <hr/>
 
-<h2><a href="https://www.ideablade.com/services">Get help with Breeze and your technologies</a></h2>
+<div style="clear:both"/>
+
+{% include support-frag.html %}
+
+
+
 
 
 
