@@ -47,6 +47,6 @@ Some require a little preparation first, e.g., downloading supporting libraries 
 Look for a sample-specific "readme" that describes how to install and run.
 
 - if there is one, follow its instructions
-- if there isn't one, check the [website documentation for that sample](http://www.breezejs.com/samples/)
+- if there isn't one, check the [website documentation for that sample](/doc-samples/)
 
 >Your OS may interrupt the build flow with security questions, especially if you neglected to "unblock" the zip. Just play along, saying "*yes ... go ahead and do that*", every time it presents a scary message and asks if you really want to proceed.

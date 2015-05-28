@@ -4,7 +4,7 @@ redirect_from: "/old/samples/todo-server.html"
 ---
 <h1>
 	Todo .NET Sample Server</h1>
-<p>The <a href="/doc-samples/todo">Todo samples</a> are introductory tutorials on client-side JavaScript development with Breeze. The server is not the point. But the Todo application needs a server to demonstrate its capabilities.</p>
+<p>The <a href="/doc-samples/about-todo">Todo samples</a> are introductory tutorials on client-side JavaScript development with Breeze. The server is not the point. But the Todo application needs a server to demonstrate its capabilities.</p>
 <p>That server, the subject of this topic, is the same for all Todo Sample variations. It is a simple ASP.NET Web Application running a Breeze Web API controller on IIS that queries and saves data to a SQL Server database via an Entity Framework &quot;Code First&quot; model.</p>
 <p>We stress that BreezeJS itself is not wedded to this particular combination of technologies. Other Breeze samples will demonstrate Breeze working with other server-side technologies. We settled on ASP.NET, IIS, Web API, Entity Framework, and SQL Server <em>for these Todo samples</em> because they are easy-to-use and widely accepted within the .NET community ... the first community to adopt Breeze as its own.</p>
 <h2>
@@ -179,7 +179,7 @@ public class TodosController : ApiController {
 <p>This provider wraps an instance of <em>TodoContext</em>, the application model&#39;s <em>DbContext </em>(described above). The provider&#39;s <em>Context </em>property exposes this <em>DbContext</em> directly to controller query methods such as <em>Todos</em>, making it easy to return a <em>DbContext</em>&#39;s <em>DbSet </em>property as the action result.</p>
 <p>Creating metadata for the Breeze client based on an Entity Framework model is no small task. The provider&#39;s <em>Metadata </em>method does the job.</p>
 <p>The provider&#39;s <em>SaveChanges </em>method can turn the incoming Json.NEt object representing an entity changeset into a database update via the Entity Framework.</p>
-<p>Read <a href="/documentation/efcontextprovider">more about the EFContextProvider here</a>.</p>
+<p>Read <a href="/doc-net/ef-efcontextprovider">more about the EFContextProvider here</a>.</p>
 <h3>
 	Demo members</h3>
 <p>The rest of the controller - perhaps as much as half of the controller code - has nothing to do with the Todo application <em>per se</em>. You probably wouldn&#39;t include any of it in your applications.</p>
@@ -188,4 +188,4 @@ public class TodosController : ApiController {
 <p>There is also timer logic at the top and bottom of the controller to purge and reset the database automatically every 20 minutes. You are unlikey to want to do this to your production database.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><a href="/doc-samples/todo">Back to the main Todo Sample page</a></p>
+<p><a href="/doc-samples/about-todo">Back to the main Todo Sample page</a></p>

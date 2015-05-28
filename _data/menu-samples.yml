@@ -13,9 +13,9 @@ menuitems:
   - { link: "todo-angular-hibernate.html", title: ToDo w/ Java/Hibernate server }
   - { link: "no-db.html", title: Todo w/ no database }
   - { link: "todo-zumo.html", title: ToDo w/ Zumo }
+  - { link: "doccode.html", title: Doc-Code Teaching Tests  }
   - { link: "web-api-odata.html", title: OData WebApi  }
   - { link: "zza-mongo.html", title: Zza w/ Node }
-  - { link: "doccode.html", title: Doc-Code Teaching Tests  }
   - { link: "edmunds.html", title: Edmunds w/ External Web Service' }
   - { link: "intro-to-spa.html", title: Into to SPA  }
   - { link: "intro-to-spa-sharepoint.html", title: Into to SPA w/ Sharepoint }
@@ -23,5 +23,6 @@ menuitems:
   - { link: "hot-towel.html", title: Hot Towel SPA  }
   - { link: "php-employee-directory.html", title: Employee directory - PHP }
   - { link: "north-breeze.html", title: Northwind app - NHibernate }
-  - { link: "temp-hire.html", title: TempHire reference application  }
+  - { link: "temp-hire.html", title: TempHire reference app - Knockout }
+  - { link: "temp-hire-angular.html", title: TempHire reference app - Angular  }
   - { link: "car-bones.html", title: Backbone demo }

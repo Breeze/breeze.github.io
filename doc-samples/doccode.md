@@ -12,7 +12,7 @@ DocCode helps you experience Breeze features as running code. It consists of a b
 ## Video
 The following video shows you how to use the DocCode sample.
 
->The video is slightly dated. The "Basic Breeze" test modules make use of the Todo Sample application's model and server-side controller. A copy of the Todo application used to be embedded in DocCode. Rather than maintain two copies of the same application, we removed the client-side Todo app from DocCode. We refer you now to the single, stand-alone version of the [Todo sample application](/samples/todo).
+>The video is slightly dated. The "Basic Breeze" test modules make use of the Todo Sample application's model and server-side controller. A copy of the Todo application used to be embedded in DocCode. Rather than maintain two copies of the same application, we removed the client-side Todo app from DocCode. We refer you now to the single, stand-alone version of the [Todo sample application](/samples/about-todo).
 
 The first part of the video explains the Todo application which is the context for the "Basic Breeze" tests; the DocCode test framework walk-through <a href="http://www.youtube.com/watch?v=6OULlr7A6Ps&amp;feature=player_detailpage#t=295s" target="_blank">begins at 4:58</a>.</p>
 <p><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/6OULlr7A6Ps" width="420"></iframe></p>
@@ -179,7 +179,7 @@ So please do your best to look past the KO-isms and glean insights about Breeze.
 
 Many of the DocCode tests make calls upon remote services implemented as ASP.NET Web API controllers.
 
-One of them is the Web API `TodosController` from the [Breeze Todos application](/samples/todo). The controller calls upon an Entity Framework "code first" model with a single `TodoItem` entity, mapped to the single-table *Todos* database. While patently simplistic, it does have two virtues from our point of view: it's easy to understand and it's easy to rebuild. After messing it up with saved changes, we can quickly restore it to a known state.
+One of them is the Web API `TodosController` from the [Breeze Todos application](/samples/about-todo). The controller calls upon an Entity Framework "code first" model with a single `TodoItem` entity, mapped to the single-table *Todos* database. While patently simplistic, it does have two virtues from our point of view: it's easy to understand and it's easy to rebuild. After messing it up with saved changes, we can quickly restore it to a known state.
 
 A second service is implemented with the Web API `NorthwindController`. It also talks to a "code first" Entity Framework model.  This one is backed by the "Northwind" SQL Server database which has more than 15 interrelated tables.
 

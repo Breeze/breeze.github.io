@@ -4,7 +4,7 @@ redirect_from: "/old/samples/car-bones.html"
 ---
 <h1>Car Bones: a Backbone Sample</h1>
 
-<p>Breeze entities can be adapted to suit your preferred modeling framework. The <strong>Car Bones </strong>sample illustrates Breeze entities adapted for <a href="http://backbonejs.org/" target="_blank">Backbone</a>, one of the more popular JavaScript Model-View-Controller (MVC) frameworks. You&#39;ll find the code for Car Bones among the samples in the <a href="/documentation/download" target="_blank">full download</a>.</p>
+<p>Breeze entities can be adapted to suit your preferred modeling framework. The <strong>Car Bones </strong>sample illustrates Breeze entities adapted for <a href="http://backbonejs.org/" target="_blank">Backbone</a>, one of the more popular JavaScript Model-View-Controller (MVC) frameworks. You&#39;ll find the code for Car Bones among the samples in the <a href="/doc-js/download" target="_blank">full download</a>.</p>
 
 <h2>What it shows</h2>
 
