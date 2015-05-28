@@ -1,6 +1,6 @@
 ---
 layout: doc-breeze-labs
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/breezeangularqjs.html"
 ---
 # Breeze Angular Q-Promises
 
@@ -14,7 +14,7 @@ Some outdated examples and PluralSight courses still refer to "breeze.angular.q"
 
     >`Uninstall-Package Breeze.Angular.Q` if you used NuGet.
 
-1. Install *breeze.bridge.angular.js* as explained [here](breeze-angular).
+1. Install *breeze.bridge.angular.js* as explained [here](/doc-js/breeze-angular).
 
 1. Update your *index.html*, changing *breeze.angular.q.js* to *breeze.bridge.angular.js*.
 

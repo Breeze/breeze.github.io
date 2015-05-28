@@ -1,6 +1,6 @@
 ---
 layout: doc-breeze-labs
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/breezeajaxrestinterceptorjs.html"
 ---
 # Ajax REST interceptor
 
