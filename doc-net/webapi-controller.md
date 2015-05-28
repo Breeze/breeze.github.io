@@ -185,7 +185,7 @@ We don't do that in real world code. The approach you see here is fine for demos
 
 The `EFContextProvider` derives from the Breeze [`ContextProvider`](/doc-net/ef-efcontextprovider "ContextProvider") which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
 
-Breeze ships [components for NHibernate](/doc-net/nh-details) developers.  The [in-memory "No DB" sample](/doc-samples/nodb) has a custom `ContextProvider` that doesn't write to a database. The source for any of these providers can guide you in writing your own provider.
+Breeze ships [components for NHibernate](/doc-net/nh-details) developers.  The [in-memory "No DB" sample](/doc-samples/no-db) has a custom `ContextProvider` that doesn't write to a database. The source for any of these providers can guide you in writing your own provider.
 
 But back to our story .. and the first of the "Breeze Controller"  specialty methods.
 
