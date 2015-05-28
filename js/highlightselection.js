@@ -4,14 +4,13 @@ $(window).on('load', function() {
     $("#goNext").click(goNext);
 
     $li = selectHrefLi();
-    
+
     if (!$li.length) return;
 
-    // scroll the current li to the top if not visible.
+    //// scroll the current li to the top if not visible.
     var $leftnav = $('#leftnav');
     var offset = $li.offset().top;
-    // 30 is approx height of top menu
-    if(offset > ($leftnav.innerHeight() - $('#header').height())) {
+    if(offset > $leftnav.innerHeight()) {
        $leftnav.scrollTop(offset);
     }
 
@@ -91,34 +90,36 @@ function goNext() {
     }
 }
 
-
-function getCurrentLi() {
-    var pathName = location.pathname;
-    var hash = location.hash;
-    
-    var pathParts = pathName.split("/");
-    var lastPart = pathParts[pathParts.length-1];
-    var hrefVal =  (hash != "") ? lastPart+hash : lastPart;
-    var $anchor =  $('a[href="' + hrefVal + '"]');
-    // fallback to just the html page name if we can't find the page with hash ref.
-    if (!$anchor.length) {
-        $anchor =  $('a[href="' + lastPart + '"]');
-    } 
-    var $li = $anchor.closest('li');
-    return $li;
-}
+// No longer needed.
+//function getCurrentLi() {
+//    var pathName = location.pathname;
+//    var hash = location.hash;
+//
+//    var pathParts = pathName.split("/");
+//    var lastPart = pathParts[pathParts.length-1];
+//    var hrefVal =  (hash != "") ? lastPart+hash : lastPart;
+//    var $anchor =  $('a[href="' + hrefVal + '"]');
+//    // fallback to just the html page name if we can't find the page with hash ref.
+//    if (!$anchor.length) {
+//        $anchor =  $('a[href="' + lastPart + '"]');
+//    }
+//    var $li = $anchor.closest('li');
+//    return $li;
+//}
 
 function selectHrefLi() {
      // select the current li
-    var $li = getCurrentLi();
-    $("li.active").removeClass("active");
-    $li.addClass("active");
-    
-    // hack to accomodate header + padding (50 + 20)
-    if (location.hash) {
-        setTimeout(function() { window.scrollBy(0, -70) }); 
-        // scrollBy(0, -70) ; 
-    }
-    
+    var $li = $("#leftnav li.active").first();
     return $li;
+    //var $li = getCurrentLi();
+    //$("li.active").removeClass("active");
+    //$li.addClass("active");
+    //
+    //// hack to accomodate header + padding (50 + 20)
+    //if (location.hash) {
+    //    setTimeout(function() { window.scrollBy(0, -70) });
+    //    // scrollBy(0, -70) ;
+    //}
+    //
+    //return $li;
 }

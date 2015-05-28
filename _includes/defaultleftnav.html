@@ -6,13 +6,13 @@
 {% capture tmp %}
     {% assign parent = null %}
     {% assign expandeditem = null %}
+    {% assign pagelink = page.url | split: '/' | last  %}
     {% for menuitem in menu.menuitems %}
         {% if menuitem.isparent %}
            {% assign parent = menuitem %}
         {% elsif menuitem.ischild == null %}
            {% assign parent = null %}
         {% endif %}
-        {% assign pagelink = page.url | split: '/' | last  %}
         {% if parent != null and pagelink == menuitem.link %}
            {% assign expandeditem = parent %}
         {% endif %}
@@ -21,6 +21,11 @@
                       
 {% assign indropdown = false %}                  
 {% for menuitem in menu.menuitems %}
+    {% if pagelink == menuitem.link %}
+        {% assign possible-active = "active" %}
+    {% else %}
+        {% assign possible-active = "" %}
+    {% endif %}
     {% if menuitem.isparent %}
         {% if indropdown == true %}
             {% assign indropdown = false %}
@@ -28,7 +33,7 @@
             </div>
         </li>
         {% endif %}
-        <li class="dropdown keep-open">           
+        <li class="dropdown keep-open {{possible-active}}" >
         {% if expandeditem == menuitem %}
             <div class="btn-group open">
         {% else %}
@@ -48,7 +53,7 @@
         </li>
     {% endif %}
     {% if menuitem.isparent == null %} 
-    <li>
+    <li class="{{possible-active}}">
         <a href="{{menuitem.link}}">{{menuitem.title}}</a>
     </li>
     {% endif %}
