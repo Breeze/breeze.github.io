@@ -4,17 +4,17 @@ redirect_from: "/old/breeze-sharp-documentation/server-side-validation"
 ---
 #Server-side validation
 
-## Save validation<a name="Savevalidation"></a>
+## Save validation<a name="Savevalidation"></a>  
 
 All server side validation errors go to the ‘fail’ promise. Server side validation errors appear as a property called ‘entityErrors’ that contains an array of server errors.  
 	
-	             em.saveChanges().then(function (sr) {
+	            em.saveChanges().then(function (sr) {
 	                   …
-	              }).fail(function (e) {
+	            }).fail(function (e) {
 	                 var entityErrors = e.entityErrors;
 	                 var entityErrors = entityErrors.length; // number of errors
 	                 // handle the errors...
-	              });
+	            });
 	
 Each client side entityError consists of the following properties:
 
@@ -124,4 +124,4 @@ Example:
 	          return saveMap;
 	        }
 	
-All other errors thrown on the server, still go to the fail promise but without the “entityErrors�? property.
+All other errors thrown on the server, still go to the fail promise but without the “entityErrors" property.
