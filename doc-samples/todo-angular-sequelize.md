@@ -199,7 +199,7 @@ Notice the use of Angular dependency injection.
 
 We're injecting the Angular `$timeout` service (an abstraction over JavaScript's `setTimeout`), the 'breeze' service, and the application's 'logger' service (described below).
 
-Inject the 'breeze' service is a way of accessing Breeze itself without getting it from the global (`window`) namespace. But that's not why we're injecting it. We're actually looking for a side-effect of that injection: the configuration of Breeze for an Angular application. See ["Breeze Angular Service"](http://www.breezejs.com/documentation/breeze-angular-service) to learn more.
+Inject the 'breeze' service is a way of accessing Breeze itself without getting it from the global (`window`) namespace. But that's not why we're injecting it. We're actually looking for a side-effect of that injection: the configuration of Breeze for an Angular application. See ["Breeze Angular Service"](/doc-js/breeze-angular) to learn more.
 
 The `controller` is insulated from data access details and has no direct connection with Breeze. The `dataservice` api provides it with all that it needs ... and no more. 
 
@@ -241,7 +241,7 @@ Duplicate saves are rarely acceptable. For example, you don't want to add the sa
 
 We guard against duplicate save by putting save requests on a queue. If there is a save request in process, the `EntityManager.saveChanges` queues subsequent requests until it receives a server response for the current save. It processes the queue in order until it runs dry.
 
-"Save Queuing" is a Breeze Labs feature and you can [learn more about it here](http://www.breezejs.com/breeze-labs/breezesavequeuingjs). We enabled "Save Queuing" for this application's `EntityManager` at the top of the `dataservice`:
+"Save Queuing" is a Breeze Labs feature and you can [learn more about it here](/doc-breeze-labs/save-queuing). We enabled "Save Queuing" for this application's `EntityManager` at the top of the `dataservice`:
 
     manager.enableSaveQueuing(true);
 

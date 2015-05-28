@@ -130,7 +130,7 @@ redirect_from: "/old/samples/temphire-sample.html"
 
 <p><img src="/images/logos/breeze.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
-<p><a href="http://www.breezejs.com?eng=cp&amp;chnl=art&amp;amsg=brztemphire"><strong>Breeze</strong></a> excels at data management and takes care of the Model &ndash;the M in MVVM. Breeze queries, saves, and manages all data interactions between client and server. &nbsp;Breeze <em>EntityManagers</em> make writing TempHire&rsquo;s Unit of Work patterns considerably easier.</p>
+<p><strong>Breeze</strong> excels at data management and takes care of the Model &ndash;the M in MVVM. Breeze queries, saves, and manages all data interactions between client and server. &nbsp;Breeze <em>EntityManagers</em> make writing TempHire&rsquo;s Unit of Work patterns considerably easier.</p>
 
 <p>Breeze automatically creates JavaScript model objects (entities) that match the shape of the data coming from the remote service. It adds business rules and infrastructure that support validation, change tracking, and navigation to related entities. Breeze navigation properties automate traversal of the object graphs that are implicit in a relational model so you can walk the graph, from a customer to its orders, and from an order to its line items. Breeze tracks users&rsquo; changes and validates them with rules, some of which may have been propagated to the client from the server.</p>
 

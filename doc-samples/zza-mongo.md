@@ -252,7 +252,7 @@ With **this one call**, the client receives all of the reference items it needs 
 
 It bears repeating that the "magic" in this call is all on the client. The `lookups` implementation is standard JavaScript with four standard MongoDB queries in the inner `getAll` function.    
 
-<p class="note"><a href="http://www.breezejs.com/documentation/mongodb"><b>Learn more here</b></a> about the <em>breeze-mongodb</em> module and programming with breeze, node, and MongoDB.</p>
+<p class="note"><a href="/doc-node-mongodb/"><b>Learn more here</b></a> about the <em>breeze-mongodb</em> module and programming with breeze, node, and MongoDB.</p>
 
 # The Zza! MongoDB database <a id="mongodb"></a>
 

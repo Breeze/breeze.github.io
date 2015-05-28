@@ -346,7 +346,7 @@ return { entityType: &quot;Model&quot; };
 
 <p class="note">Note that Breeze only sets values for the data properties defined in metadata for that entity type. Most of the node data from the Edmunds service are discarded in this sample application.</p>
 
-<p><a href="http://www.breezejs.com/documentation/web-service-data-parsing" title="JsonResultsAdapter">Learn more about <em>JsonResultsAdapter</em></a> in the Breeze documentation.</p>
+<p><a href="/doc-js/server-jsonresultsadapter" title="JsonResultsAdapter">Learn more about <em>JsonResultsAdapter</em></a> in the Breeze documentation.</p>
 
 <h2>Service glitches</h2>
 

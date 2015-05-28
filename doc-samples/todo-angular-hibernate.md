@@ -233,7 +233,7 @@ Duplicate saves are rarely acceptable. For example, you don't want to add the sa
 
 We guard against duplicate save by putting save requests on a queue. If there is a save request in process, the `EntityManager.saveChanges` queues subsequent requests until it receives a server response for the current save. It processes the queue in order until it runs dry.
 
-"Save Queuing" is a Breeze Labs feature and you can [learn more about it here](http://www.breezejs.com/breeze-labs/breezesavequeuingjs). We enabled "Save Queuing" for this application's `EntityManager` at the top of the `dataservice`:
+"Save Queuing" is a Breeze Labs feature and you can [learn more about it here](/doc-breeze-labs/save-queuing). We enabled "Save Queuing" for this application's `EntityManager` at the top of the `dataservice`:
 
     manager.enableSaveQueuing(true);
 

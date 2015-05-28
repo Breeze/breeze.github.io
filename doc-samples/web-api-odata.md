@@ -165,7 +165,7 @@ The **EDM** is the other side of the route equation ... and we turn to it now.
 
 The EDM describes the schema for the model targeted by requests that follow a route. If a client makes a request to the `odata/TodoLists` resource, the route EDM had better describe an `EntitySet` named "TodoLists".
 
-Breeze also needs the EDM as a source of metadata. [Breeze requires that metadata](http://www.breezejs.com/documentation/metadata "Breeze Metadata documentation") to understand the schema for entities on the client. Metadata tell Breeze which types to track, what properties they have, which property is the key, the property data types, whether they return scalar values or collections of values, etc.
+Breeze also needs the EDM as a source of metadata. [Breeze requires that metadata](/doc-js/metadata "Breeze Metadata documentation") to understand the schema for entities on the client. Metadata tell Breeze which types to track, what properties they have, which property is the key, the property data types, whether they return scalar values or collections of values, etc.
 
 A Breeze client can ask an OData source for metadata.
 
@@ -312,7 +312,7 @@ We must tell Breeze to use the Web API OData adapter (**'webApiOData'**) like th
 >Make sure you pick the 'webApiOData' adapter, **not** the generic 'odata' adapter. The 'webApiOdata' adapter is adjusted for certain peculiarities of the Web API OData implementation.
 
 ###NamingConvention 
-While were at it we should lock in the Breeze [`NamingConvention`](http://www.breezejs.com/documentation/naming-convention).
+While were at it we should lock in the Breeze [`NamingConvention`](/doc-js/server-namingconvention).
 
 Most JavaScript developers write property names in camelCase ("firstName"). Most .NET developers write property names in PascalCase ("FirstName"). You shouldn't be forced to pick one convention for both platforms. And you don't have to. The Breeze `NamingConvention.camelCase` convention translates PascalCase server-side property names into camelCase client-side property names (and vice-versa). We make that the default for this application:
 
