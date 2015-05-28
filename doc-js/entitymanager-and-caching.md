@@ -155,7 +155,7 @@ You should only call `acceptChanges` when you know exactly what you are doing. I
 
 ##Offline support 
 
-The EntityManager is able to serialize its state to a local persistence store and later rematerialize that state. See the <a href="/documentation/exportimport">Export/Import topic</a> for details.
+The EntityManager is able to serialize its state to a local persistence store and later rematerialize that state. See the <a href="/doc-js/export-import">Export/Import topic</a> for details.
 
 <table border="1" cellpadding="1" cellspacing="1">
 <thead>

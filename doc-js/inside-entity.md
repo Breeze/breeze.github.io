@@ -6,7 +6,7 @@ redirect_from: "/old/documentation/inside-entity.html"
 
 This topic concentrates on the model object's entity nature, in particular how the entity is **tracked **during its lifetime on the client. You'll learn about the ***<span class="codeword">entityAspect</span> ***property through which the developer can access and control the state of the entity within the Breeze system.
 
-> Code snippets on this page are in the ***basicTodoTests ***and  ***entityTests** *modules of the <a href="/doc-samples/docode">DocCode teaching tests</a>.
+> Code snippets on this page are in the ***basicTodoTests ***and  ***entityTests** *modules of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 
 ###"*Entity-ness*"
 
@@ -360,7 +360,7 @@ Nor does Breeze raise the *propertyChanged *event when an *EntityAspect *propert
 
 > You can detect when the *entityState *changes ... using a technique to be described soon.
 
-Breeze typically raises *propertyChanged *for each property individually. Some operations - such as queries, imports, saves, and *<a href="#RejectChanges">rejectChanges</a>* - update many properties at the same time. Breeze consolidates notification of these changes into a single *propertyChanged *event with a "null" property name. A subscriber learns that at least one property changed but can't know which particular properties changed; if this information is important to you, you'll have to indentify the affected properties in some out-of-band way (see *entityTests* module of the <a href="/doc-samples/docode">DocCode teaching tests</a> for a suggestion).
+Breeze typically raises *propertyChanged *for each property individually. Some operations - such as queries, imports, saves, and *<a href="#RejectChanges">rejectChanges</a>* - update many properties at the same time. Breeze consolidates notification of these changes into a single *propertyChanged *event with a "null" property name. A subscriber learns that at least one property changed but can't know which particular properties changed; if this information is important to you, you'll have to indentify the affected properties in some out-of-band way (see *entityTests* module of the <a href="/doc-samples/doccode">DocCode teaching tests</a> for a suggestion).
 
 ##<a name="ValidateEntity"></a>ValidateEntity
 
