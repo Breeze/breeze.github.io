@@ -4,7 +4,7 @@ redirect_from: "/old/samples/todo-viewmodel.html"
 ---
 <h1>
 	Todo Sample ViewModel Design</h1>
-<p>The <a href="/doc-samples/todo">Todo sample</a> binds HTML widgets in a view to a JavaScript &quot;ViewModel&quot;. The ViewModel could be the <em>viewModel.js</em> of our sample using <a href="/doc-samples/todo-knockout">KnockoutJS </a>or the <em>controller.js</em> in our sample using <a href="/doc-samples/todo-angular">AngularJS</a>. Both work in essentially the same way and expose for binding virtually the same properties and methods. Both are located in the <em>Scripts/app folder</em>.</p>
+<p>The <a href="/doc-samples/about-todo">Todo sample</a> binds HTML widgets in a view to a JavaScript &quot;ViewModel&quot;. The ViewModel could be the <em>viewModel.js</em> of our sample using <a href="/doc-samples/todo-knockout">KnockoutJS </a>or the <em>controller.js</em> in our sample using <a href="/doc-samples/todo-angular">AngularJS</a>. Both work in essentially the same way and expose for binding virtually the same properties and methods. Both are located in the <em>Scripts/app folder</em>.</p>
 <h2>
 	Query Todos</h2>
 <p>When the viewmodel is created, it calls its own <em>getAllTodos</em> method which delegates to the dataservice (the dataservice is a separate JavaScript component that handles all data operations using Breeze). When the query succeeds, the controller pours the retrieved <em>TodoItems</em> into its <em>items</em> array.</p>
