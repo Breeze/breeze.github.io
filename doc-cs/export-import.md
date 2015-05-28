@@ -1,5 +1,6 @@
 ---
 layout: doc-cs
+redirect_from: "/old/breeze-sharp-documentation/exportimport.html"
 ---
 
 # Export and import entities
@@ -10,17 +11,17 @@ A reliable, responsive application can save work to local storage and restore th
 
 In Breeze it's easy to export and re-import cached entities to any destination, including local storage or another `EntityManager`.
 
-<p class="note">Entity export/import examples on this page are in the <strong>ExportImportTests.cs</strong> file in <a href="/breeze-sharp/samples" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.</p>
+<p class="note">Entity export/import examples on this page are in the <strong>ExportImportTests.cs</strong> file in <a href="https://github.com/Breeze/breeze.sharp.samples/tree/master/DocCode" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.</p>
 
 ## Export cache as a string
 
-The Breeze `EntityManager` can export some or all of its cached contents as [a serialized string](/breeze-sharp-documentation/entity-serialization "Entity Serialization"). Here's how to export its entire cache.
+The Breeze `EntityManager` can export some or all of its cached contents as [a serialized string](/doc-js/entity-serialization "Entity Serialization"). Here's how to export its entire cache.
 
 	var exportData = manager.ExportEntities();
 
 The `exportData` value is a string serialization of every entity in the manager's cache plus the metadata for the entire model.
 
-<p class="note">See the <a href="/breeze-sharp-documentation/metadata" target="_blank">metadata topic</a> for a discussion of the <code>MetadataStore</code>'s own export/import facilities.</p>
+<p class="note">See the <a href="/doc-cs/metadata" target="_blank">metadata topic</a> for a discussion of the <code>MetadataStore</code>'s own export/import facilities.</p>
 
 You are free to store that string anywhere, such as:
 
