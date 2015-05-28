@@ -6,7 +6,7 @@ redirect_from: "/old/documentation/extending-entities.html"
 
 While Breeze can create an entity based exclusively on its metadata description, you can add additional properties and behaviors as needed to support client-side requirements. For example, you may want to add a method that is useful when presenting data to the user. This topic explains how to extend the entity definition with members that are not defined in metadata.
 
-Most of the topic examples are based on tests in the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/entityExtensionTests.js" target="_blank">**entityExtensionTests**</a> module of <a href="/samples/doccode" target="_blank">DocCode</a>.
+Most of the topic examples are based on tests in the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/entityExtensionTests.js" target="_blank">**entityExtensionTests**</a> module of <a href="/doc-samples/doccode" target="_blank">DocCode</a>.
 
 #Brute force extension
 
@@ -242,7 +242,7 @@ Suppose you've got a custom constructor and a custom initializer function and yo
 
     new customer = manager.createEntity('Customer', { Name: 'Acme' });
 
-What is the order of events? The answer is illustrated in the *'createEntity sequence ...*' test in the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/entityExtensionTests.js" target="_blank">**entityExtensionTests**</a> module of <a href="/samples/doccode" target="_blank">DocCode</a>.
+What is the order of events? The answer is illustrated in the *'createEntity sequence ...*' test in the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/entityExtensionTests.js" target="_blank">**entityExtensionTests**</a> module of <a href="/doc-samples/doccode" target="_blank">DocCode</a>.
 
 1. custom constructor
 1. initial values ('Acme')
@@ -283,7 +283,7 @@ Fortunately, you can create a custom key generator and register it with an `Enti
             return nextId;
       };
 
-The **entityExtensionTests** module in the DocCode <a href="/samples/doccode">Teaching Tests</a> has a simple example. The Breeze `breeze.KeyGenerator` is the best source of inspiration.
+The **entityExtensionTests** module in the DocCode <a href="/doc-samples/doccode">Teaching Tests</a> has a simple example. The Breeze `breeze.KeyGenerator` is the best source of inspiration.
 
 <a name="es5-property"></a>
 #ECMAScript 5 Defined Properties

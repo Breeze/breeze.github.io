@@ -39,7 +39,7 @@ It the `none` and `camelCase` conventions don't satisfy your property translatio
 
 The rest of this section dives deeper into these subjects.
 
-<p class="note">The <a href="/samples/doccode" title="DocCode Sample" target="_blank">"DocCode" sample</a> devotes <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/namingConventionTests.js" title="DocCode: NamingConvention tests" target="_blank">an entire test suite</a> to the <strong><code>NamingConvention</code></strong> and the details described herein.</p>
+<p class="note">The <a href="/doc-samples/doccode" title="DocCode Sample" target="_blank">"DocCode" sample</a> devotes <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/namingConventionTests.js" title="DocCode: NamingConvention tests" target="_blank">an entire test suite</a> to the <strong><code>NamingConvention</code></strong> and the details described herein.</p>
 
 ## Don't fix it on the server
 

@@ -8,7 +8,7 @@ The related topic [**"Metadata by Hand"**](/doc-js/metadata-by-hand) is an intro
 
 **This topic goes deeper into the details**. It covers more of the options. It explains in greater depth what is going on and the relationship between the Breeze Labs MetadataHelper and the native Breeze metadata format.
 
-<p class="note">The code shown in this topic is adapted from <i><a href="https://github.com/IdeaBlade/Breeze/blob/master/Samples/DocCode/DocCode/tests/helpers/metadataOnClient.js" title="metadataOnClient.js source code" target="_blank">metadataOnClient.js</a></i>&nbsp;  in the <a href="/samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and metadata in particular through the medium of QUnit tests.</p>
+<p class="note">The code shown in this topic is adapted from <i><a href="https://github.com/IdeaBlade/Breeze/blob/master/Samples/DocCode/DocCode/tests/helpers/metadataOnClient.js" title="metadataOnClient.js source code" target="_blank">metadataOnClient.js</a></i>&nbsp;  in the <a href="/doc-samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and metadata in particular through the medium of QUnit tests.</p>
 
 ##Why "by hand?"##
 The Breeze client needs metadata *to make entity data work for you*: to compose queries, identify objects by key, navigate to related entities, track changed state, raise property-changed events, validate data entry, and serialize entities to the server or local storage.

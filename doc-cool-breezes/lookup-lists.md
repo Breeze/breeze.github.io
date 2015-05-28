@@ -7,12 +7,12 @@ layout: doc-cool-breezes
 <p><img alt="Categories combobox" src="/images/CategoriesCombobox.png" style="width: 201px; height: 168px; float: left; margin-right: 8px; margin-left: 8px;" />You know you&#39;ll need these &quot;lookup lists&quot; almost immediately. They tend to be static anyway so why not cache them? The colors, status codes, units-of-measure are unlikely to change during a user&#39;s session.</p>
 <p>You&#39;d like to retrieve them from the database and cache them when the application starts.</p>
 <p>Unfortunately, there could be a lot of them; a typical medium-sized application might have twenty or thirty. You want the application to start quickly and twenty or thirty separate calls to the server might take too long even if you can make those calls asynchronously in parallel. Each list is short. It would be nice to fetch all of the lists in one shot. Here&#39;s how.</p>
-<p class="note" style="clear: both;">Find the example code for this topic in the <strong>queryTests </strong>module of the <a href="/samples/doccode" target="_blank">DocCode sample</a></p>
+<p class="note" style="clear: both;">Find the example code for this topic in the <strong>queryTests </strong>module of the <a href="/doc-samples/doccode" target="_blank">DocCode sample</a></p>
 <h2>
 	Create a Lookups controller method</h2>
 <p>Let&#39;s assume that you&#39;re using a Breeze Web API controller on the server and that it&#39;s talking to the Entity Framework.</p>
 <p>These assumptions aren&#39;t important. What matters is that you can create a single method on the server that returns an object whose properties are the lookup lists. The object can be anonymous; the list elements should be entities known to the client.</p>
-<p>The <span class="codeword">NorthwindController</span> in the <a href="/samples/doccode" target="_blank">DocCode sample</a> is a Breeze Web API controller with such a method:</p>
+<p>The <span class="codeword">NorthwindController</span> in the <a href="/doc-samples/doccode" target="_blank">DocCode sample</a> is a Breeze Web API controller with such a method:</p>
 <pre class="brush:csharp;">
 [HttpGet]
 public object Lookups() // returns an object, not an IQueryable

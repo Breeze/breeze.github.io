@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/validation.html"
 ---
 <h1>Validation</h1>
 
-<p class="note">Every code snippet on this page is in the <strong>validationTests</strong> module of <a href="/samples/doccode">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
+<p class="note">Every code snippet on this page is in the <strong>validationTests</strong> module of <a href="/doc-samples/doccode">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
 
 <p>A good application strives to ensure the integrity of data before saving them to permanent storage in part by screening new and changed with validation rules.</p>
 

@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/databinding-knockout.html"
 ---
 #	Data binding with Knockout
 
-> The code snippets on this page are in the <a href="/samples/todo">Breeze Todo Sample App</a>.
+> The code snippets on this page are in the <a href="/doc-samples/todo">Breeze Todo Sample App</a>.
 
 Breeze entities in the Todo sample are built for UI data binding with <a href="http://knockoutjs.com/">Knockout</a>.  A property that returns a single value is exposed as a <a href="http://knockoutjs.com/documentation/observables.html">Knockout observable property</a>. A property that returns a collection (e.g., a collection navigation property such as Customer.Orders) is exposed as a <a href="http://knockoutjs.com/documentation/observableArrays.html">Knockout observable array property</a>.
 To appreciate what this means, let's look at the screen the user sees when the *ViewModel* first pours queried Todo entities into its <span class="codeword">items</span> array.

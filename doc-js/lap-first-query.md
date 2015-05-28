@@ -4,15 +4,15 @@ redirect_from: "/old/documentation/first-query.html"
 ---
 #First query
 
-Many applications begin with a query for some existing data and that's how we'll begin. We're using the <a href="/samples/todo">Breeze Todo Sample App</a> to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the *Scripts/services/**dataservice.js*** folder.
+Many applications begin with a query for some existing data and that's how we'll begin. We're using the <a href="/doc-samples/todo">Breeze Todo Sample App</a> to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the *Scripts/services/**dataservice.js*** folder.
 
-The code snippets on this page are in the <a href="/samples/todo">Breeze Todo App</a>.
+The code snippets on this page are in the <a href="/doc-samples/todo">Breeze Todo App</a>.
 
 ##Setup
 
 **Open*** Scripts/services/**dataservice.js***.
 
-This Todo app works with the <a href="http://knockoutjs.com/" target="_blank">Knockout </a>model library and a <a href="http://www.asp.net/web-api" target="_blank">Web API</a> back-end service. You might prefer a different model library (e.g., "backbone") or a different data service (e.g., "OData") in which case you'd make those preferences known first, at the top of this file (see the <a href="/samples/todo-angular" target="_top">Todo-Angular</a> version for an example). In Basic Breeze we're building with Knockout and the Web API; these are the Breeze defaults so we can proceed without further ado.
+This Todo app works with the <a href="http://knockoutjs.com/" target="_blank">Knockout </a>model library and a <a href="http://www.asp.net/web-api" target="_blank">Web API</a> back-end service. You might prefer a different model library (e.g., "backbone") or a different data service (e.g., "OData") in which case you'd make those preferences known first, at the top of this file (see the <a href="/doc-samples/todo-angular" target="_top">Todo-Angular</a> version for an example). In Basic Breeze we're building with Knockout and the Web API; these are the Breeze defaults so we can proceed without further ado.
 
 ##Create an EntityManager
 
@@ -85,7 +85,7 @@ Notice the use of method chaining:
 <li>the *ViewModel* called the promise's *fail( ... )* method for the failure path.
 
 
-Both the *then() *and the *fail() *return a promise which means we can chain a sequence of asynchronous steps. Such syntax makes it easy to flatten what might otherwise be a nasty nest of dependent async calls. We don't have dependent async calls in this application... but a real application might... and you'll see plenty of examples among the <a href="/samples/doccode" target="_blank">teaching tests</a> [<a href="#note 3">3</a>].
+Both the *then() *and the *fail() *return a promise which means we can chain a sequence of asynchronous steps. Such syntax makes it easy to flatten what might otherwise be a nasty nest of dependent async calls. We don't have dependent async calls in this application... but a real application might... and you'll see plenty of examples among the <a href="/doc-samples/doccode" target="_blank">teaching tests</a> [<a href="#note 3">3</a>].
 
 ##Process the query results
 

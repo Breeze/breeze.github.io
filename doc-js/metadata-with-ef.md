@@ -44,7 +44,7 @@ In brief, we
 
 We'll demonstrate this technique with an example web application that accesses a Microsoft "Northwind" database via DTOs. Those DTOs do not map directly to Northwind tables nor to tables of any other database.
 
-<p class="note">The code in this example is adapted from the <a href="/samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and EF metadata generation in particular through the medium of QUnit tests.</p>
+<p class="note">The code in this example is adapted from the <a href="/doc-samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and EF metadata generation in particular through the medium of QUnit tests.</p>
 
 There is a `NorthwindDtoController` Web API controller whose methods expose and consume those DTOs which collectively constitute the NorthwindDto service model. 
 

@@ -8,7 +8,7 @@ A Breeze app typically retrieves metadata from the server asynchronously. But th
 
 This topic shows you how to **capture the metadata in a JavaScript file and load it synchronously at runtime**.
 
-<p class="note">The code shown in this topic is adapted from the <a href="/samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>.</p>
+<p class="note">The code shown in this topic is adapted from the <a href="/doc-samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>.</p>
 <p></p>
 <p class="note">Pablo Romeo proposes an interesting approach to solving a related problem. He doesn't mind that the server provides the metadata and he doesn't want to serve a <em>metadata.js</em> file as described here. He does want the server-supplied metadata to be <b>versioned and cached on the server</b>. If that sounds more like your scenario, take a look at <a href="http://stackoverflow.com/questions/20574310/breeze-metadata-request-url-with-cache-bust/20576539 " title="Versioning and caching metadata on the server" target="_blank">his StackOverflow question and answer</a>.</p>
 

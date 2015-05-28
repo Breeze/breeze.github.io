@@ -183,7 +183,7 @@ There are at least four ways to substitute your *jsonResultsAdapter* (jra) for t
 ## Before you write your own ...
 We strongly recommend that you review a few examples before trying to write your own *JsonResultsAdapter*.
 
-The <a href="/samples/edmunds.html">Edmunds sample</a> includes [a  simple *JsonResultsAdapter*](https://github.com/Breeze/breeze.js.samples/blob/master/no-server/edmunds/app/jsonResultsAdapter.js "github: Edmunds jsonResultsAdapter") that converts JSON results for just two queries of the *Edmunds Vehicle Information Service*.
+The <a href="/doc-samples/edmunds.html">Edmunds sample</a> includes [a  simple *JsonResultsAdapter*](https://github.com/Breeze/breeze.js.samples/blob/master/no-server/edmunds/app/jsonResultsAdapter.js "github: Edmunds jsonResultsAdapter") that converts JSON results for just two queries of the *Edmunds Vehicle Information Service*.
 
 The *DataServiceAdapters* in the [breeze core](https://github.com/Breeze/breeze.js/tree/master/src "github: breeze core") and [breeze-labs](https://github.com/Breeze/breeze.js.labs "github:breeze labs") github repositories contain good examples of complete *JsonResultsAdapters*; &nbsp;look for any JavaScript file with "*.dataservice*" in its name.
 

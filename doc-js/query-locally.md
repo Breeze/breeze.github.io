@@ -15,7 +15,7 @@ redirect_from: "/old/documentation/querying-locally.html"
 
 <p>Your client app can retrieve entities from cache in a variety of ways as discussed in this topic.</p>
 
-<p class="note">The query examples on this page are in one of the <strong>queryTests</strong> modules of the <a href="/samples/doccode" target="_blank">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
+<p class="note">The query examples on this page are in one of the <strong>queryTests</strong> modules of the <a href="/doc-samples/doccode" target="_blank">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
 
 <h1><a id="synchronous-methods" name="synchronous-methods"></a>Synchronous methods</h1>
 
@@ -94,7 +94,7 @@ var i = -1 &lt; deletedCustomers.indexOf(someCustomer); // true
 
 <p>Breeze supports type inheritance. Queries for a base type can return entities of that type (if it isn&#39;t abstract) and all of its derived sub-types. This is called a &quot;polymorphic query&quot;. A navigation property defined for a base type can return a &quot;polymorphic&quot; result too.</p>
 
-<p><code>Customer.Orders</code>is an example of polymorphic navigation property in the &quot;Northwind&quot; model of <a href="/samples/doccode.html">the DocCode sample</a>. It can return instances of <code>Order</code> or <code>InternationalOrder</code>.</p>
+<p><code>Customer.Orders</code>is an example of polymorphic navigation property in the &quot;Northwind&quot; model of <a href="/doc-samples/doccode.html">the DocCode sample</a>. It can return instances of <code>Order</code> or <code>InternationalOrder</code>.</p>
 
 <p>However, <code>getEntities()</code>returns entities for the <em>specified type(s) only</em>. If you want to get both <code>Order</code> and <code>InternationalOrder</code> from cache, you&#39;d have to write this:</p>
 
@@ -256,7 +256,7 @@ manager.fetchEntityByKey(&#39;Employee&#39;, employeeID, true)
 
 <p>What if we want to present a list of employees on screen ... a list that combines unsaved employee changes with the latest employee data from the server?</p>
 
-<p>We can chain a pair of queries as in this example from <em>queryTests.js</em> in the <a href="/samples/doccode.html" target="_blank">DocCode</a> teaching tests:</p>
+<p>We can chain a pair of queries as in this example from <em>queryTests.js</em> in the <a href="/doc-samples/doccode.html" target="_blank">DocCode</a> teaching tests:</p>
 
 <pre class="brush:jscript;">
 // Assume &#39;Andrew&#39; and &#39;Anne&#39; are in the database and the manager is empty

@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/query-examples.html"
 ---
 # Query examples
 
-<p class="note">Every query example on this page is in one of the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/queryTests.js" target="_blank" title="queryTests.js on github"><strong>queryTests</strong> modules</a> of the <a href="/samples/doccode.html">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
+<p class="note">Every query example on this page is in one of the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/queryTests.js" target="_blank" title="queryTests.js on github"><strong>queryTests</strong> modules</a> of the <a href="/doc-samples/doccode.html">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
 
 <div class="index">
 <p><a href="#Setup">Setup</a></p>

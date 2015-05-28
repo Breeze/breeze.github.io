@@ -10,7 +10,7 @@ A reliable, responsive application can save work to local storage and restore th
 
 In Breeze it's easy to export and re-import cached entities to any destination, including local storage or another `EntityManager`.
 
-> Entity export/import examples on this page are in the **exportImportTests** module of <a href="/samples/doccode" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.
+> Entity export/import examples on this page are in the **exportImportTests** module of <a href="/doc-samples/doccode" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.
 
 ##Export cache as a string
 
@@ -79,7 +79,7 @@ The `EntityManager.exportEntities` method has a second boolean parameter, "inclu
 
 	myEntityManager.exportEntities(entitiesToExport, false); // export without metadata
 
->The *exportImportTests* in the <a href="/samples/doccode" target="_blank">DocCode</a> sample show a reduction from ~26,700 bytes to ~480 bytes when exporting a single entity. Your mileage may vary.
+>The *exportImportTests* in the <a href="/doc-samples/doccode" target="_blank">DocCode</a> sample show a reduction from ~26,700 bytes to ~480 bytes when exporting a single entity. Your mileage may vary.
 
 Entities exported without metadata **must be re-imported into an `EntityManager` that already contains the matching metadata** or else an exception will be thrown.
 

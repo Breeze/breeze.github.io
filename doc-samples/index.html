@@ -1,0 +1,188 @@
+---
+layout: doc-samples
+custom-css: "/styles/sample-chooser.css"
+custom-js: "/js/sample-chooser.js"
+redirect_from: "/old/samples/"
+---
+<div id="tech-chooser" >
+  <fieldset id="server-group" class="group">
+    <legend>Server implementations
+      <button type="button" id="btn-server-all">Select all</button>
+      <button type="button" id="btn-server-none">Clear all</button>
+    </legend>
+    <ul class="checkbox">
+      <li><input type="checkbox" id="net-ef"   /><label for="net-ef">.NET/Entity Framework</label></li>
+      <li><input type="checkbox" id="net-nhib" /><label for="net-nhib">.NET/NHibernate</label></li>
+      <li><input type="checkbox" id="net-nodb" /><label for="net-nodb">.NET/No database</label></li>
+      <li><input type="checkbox" id="net-odata" /><label for="net-odata">.NET/OData</label></li>
+      <li><input type="checkbox" id="java-hib" /><label for="java-hib">Java/Hibernate</label></li>
+      <li><input type="checkbox" id="node-sequelize" /><label for="node-sequelize">Node/Sequelize</label></li>
+      <li><input type="checkbox" id="node-mongo" /><label for="node-mongo">Node/MongoDb</label></li>
+      <li><input type="checkbox" id="azure-zumo" /><label for="azure-zumo">Azure/Zumo</label></li>
+      <li><input type="checkbox" id="ruby" /><label for="ruby">Ruby</label></li>
+      <li><input type="checkbox" id="sharepoint" /><label for="sharepoint">Sharepoint</label></li>
+      <li><input type="checkbox" id="webservice" /><label for="webservice">External Web Service</label></li>
+    </ul>
+  </fieldset>
+
+  <fieldset id="client-group" class="group">
+    <legend>Client technology
+      <button type="button" id="btn-client-all">Select all</button>
+      <button type="button" id="btn-client-none">Clear all</button>
+    </legend>
+    <ul class="checkbox">
+      <li><input type="checkbox" id="angular" /><label for="angular">Angular/Javascript</label></li>
+      <li><input type="checkbox" id="knockout" /><label for="knockout">Knockout/Javascript</label></li>
+      <li><input type="checkbox" id="backbone" /><label for="backbone">Backbone/Javascript</label></li>
+      <li><input type="checkbox" id="xaml" /><label for="xaml">XAML/C#</label></li>
+    </ul>
+  </fieldset>
+</div>
+
+<div style="clear:both">
+
+<div id="techlist">
+  <ul>
+    <li tech="node-sequelize,angular">
+      <a href="/doc-samples/todo-angular-sequelize.html" >
+        <img src="/images/logos/angular-logo-new.png" width="100" />
+        <p>Todo Angular Sequelize</p>
+      </a>
+    </li>
+    <li tech="java-hib,angular" >
+      <a href="/doc-samples/todo-angular-hibernate.html" >
+        <img src="/images/logos/angular-logo-new.png" width="100" />
+        <p>Todo Angular Hibernate</p>
+      </a>
+    </li>
+    <li tech="net-ef,angular" >
+      <a href="/doc-samples/todo-angular.html" >
+        <img src="/images/logos/angular-logo-new.png" width="100" />
+        <p>Todo Angular</p>
+      </a>
+    </li>
+    <li tech="net-ef,knockout">
+      <a href="/doc-samples/todo-knockout.html" >
+        <img src="/images/samples/todo-knockout-new.png" width="100" />
+        <p>Todo Knockout</p>
+      </a>
+    </li>
+    <li tech="net-ef,require,knockout">
+      <a href="/doc-samples/todo-knockout-require.html" >
+        <img src="/images/logos/require-new.png" width="100" />
+        <p>Todo Require</p>
+      </a>
+    </li>
+    <li tech="azure-zumo,angular">
+      <a href="/doc-samples/todo-zumo.html" >
+        <img src="/images/samples/Todo-Zumo.png" width="100" />
+        <p>Todo Zumo</p>
+      </a>
+    </li>
+    <li tech="net-ef,knockout">
+      <a href="/doc-samples/doccode.html" >
+        <img src="/images/samples/doccode-icon-new.png"  width="100" />
+        <p>DocCode</p>
+      </a>
+    </li>
+    <li tech="net-odata,angular" style="display:inline" >
+      <a href="/doc-samples/web-api-odata.html">
+        <img src="/images/samples/webapiodatalogo.png"  width="100" />
+        <p>Breeze WebApi OData</p>
+      </a>
+    </li>
+    <li tech="node-mongo,angular" >
+      <a href="/doc-samples/zza-mongo.html">
+        <img src="/images/samples/zza-sample.png" width="100" />
+        <p>Zza!</p>
+      </a>
+    </li>
+    <li tech="webservice,angular">
+      <a href="/doc-samples/edmunds.html" >
+        <img src="/images/logos/edmunds-app-logo.png" width="100" />
+        <p>Edmunds</p>
+      </a>
+    </li>
+    <li tech="net-nodb,knockout">
+      <a href="/doc-samples/no-db.html" >
+        <img src="/images/samples/nodbicon-new.png" width="100" />
+        <p>NoDB</p>
+      </a>
+    </li>
+
+    <li tech="webservice,knockout">
+      <a href="/doc-samples/espn.html" >
+        <img src="/images/logos/espn-sample.png" width="100" />
+        <p>ESPN</p>
+      </a>
+    </li>
+    <li tech="net-ef,knockout">
+      <a href="/doc-samples/intro-to-spa.html" >
+        <img src="/images/samples/code-camper-icon-new.png" width="100" />
+        <p>Intro to SPA</p>
+      </a>
+    </li>
+    <li tech="sharepoint,angular">
+      <a href="/doc-samples/intro-to-spa-sharepoint.html" >
+        <img src="/images/logos/sharepoint-logo.png" width="100" />
+        <p>Intro to SPA - Sharepoint</p>
+      </a>
+    </li>
+    <li tech="ruby,knockout">
+      <a href="/doc-samples/intro-to-spa-ruby.html" >
+        <img src="/images/samples/code-camper-icon-ruby.png" width="100" />
+        <p>Intro to Spa (Ruby)</p>
+      </a>
+    </li>
+    <li tech="php,knockout">
+      <a href="/doc-samples/php-employee-directory.html" >
+        <img src="/images/logos/php.png" width="100" />
+        <p>PHP Employee Directory</p>
+      </a>
+    </li>
+
+    <li tech="net-ef,backbone">
+      <a href="/doc-samples/car-bones.html" >
+        <img src="/images/samples/carbones-icon-new.png" width="100" />
+        <p>Carbones</p>
+      </a>
+    </li>
+    <li tech="net-ef,knockout">
+      <a href="/doc-samples/hot-towel.html" >
+        <img src="/images/samples/hot-towel-icon-new.png" width="100" />
+        <p>Hot towel</p>
+      </a>
+    </li>
+    <li tech="net-nhib,angular">
+      <a href="/doc-samples/north-breeze.html" >
+        <img src="/images/samples/nhibernate-sample.png" width="100" />
+        <p>NorthBreeze</p>
+      </a>
+    </li>
+    <li tech="net-ef,knockout">
+      <a href="/doc-samples/temp-hire.html" >
+        <img src="/images/samples/temphire-icon.png" width="100" />
+        <p>TempHire</p>
+      </a>
+    </li>
+    <li tech="net-ef,angular">
+      <a href="/doc-samples/temp-hire-angular.html" >
+        <img src="/images/samples/temphire-icon.png" width="100" />
+        <p>TempHire - Angular</p>
+      </a>
+    </li>
+    <li tech="net-ef,xaml">
+      <a href="https://github.com/Breeze/breeze.sharp.samples/tree/master/DocCode" >
+        <img src="/images/logos/github-logo.png" width="100" />
+        <p>DocCode (C#)</p>
+      </a>
+    </li>
+    <li tech="net-ef,xaml">
+      <a href="https://github.com/Breeze/breeze.sharp.samples/tree/master/ToDo" >
+        <img src="/images/logos/github-logo.png" width="100" />
+        <p>ToDo (C#)</p>
+      </a>
+    </li>
+
+  </ul>
+</div>

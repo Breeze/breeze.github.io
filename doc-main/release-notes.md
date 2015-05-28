@@ -724,7 +724,7 @@ With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Valid
 + Fixed bug to insure that EntityManager.exportEntities and importEntities preserves null values.
 
 <h3><a name="Zza"></a>Zza! sample<span class="doc-date">August 05, 2013</span></h3>
-* <a href="/samples/zza-mongo.html">100% JS sample</a>, written for Node.js running Express with a MongoDB database.
+* <a href="/doc-samples/zza-mongo.html">100% JS sample</a>, written for Node.js running Express with a MongoDB database.
 
 <h3><a name="140"></a>1.4.0<span class="doc-date">July 23, 2013</span></h3>
 

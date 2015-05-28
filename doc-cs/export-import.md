@@ -102,7 +102,7 @@ The `EntityManager.ExportEntities` method has a second boolean parameter, "inclu
     manager.ExportEntities(entitiesToExport, false); // export without metadata
 
 
->The *ExportImportTests* in the <a href="/samples/doccode" target="_blank">DocCode</a> sample show a reduction from ~63,000 bytes to ~3000 bytes when exporting five entities. Your mileage may vary.
+>The *ExportImportTests* in the <a href="/doc-samples/doccode" target="_blank">DocCode</a> sample show a reduction from ~63,000 bytes to ~3000 bytes when exporting five entities. Your mileage may vary.
 
 Entities exported without metadata **must be re-imported into an `EntityManager` that already contains the matching metadata** or else an exception will be thrown.
 

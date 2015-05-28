@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/navigation-properties.html"
 ---
 # Navigation Properties
 
-> All of the examples and principles in this topic are on display in the **navigationTests** module of <a href="/samples/doccode.html">DocCode</a>.
+> All of the examples and principles in this topic are on display in the **navigationTests** module of <a href="/doc-samples/doccode.html">DocCode</a>.
 
 Entities in most models are connected to each other by associations. In the [Northwind model](#_Sample_Code_Persistence), for example, the `Order` entity has a parent `Customer` entity and many child `OrderDetail` entities. An `OrderDetail` has a parent `Order` and a parent `Product` entity. `Product` entities have `Shippers`. It's a web of relationships that in Breeze can be traversed by following *property paths* from one entity to the next: `Customer` to `Order` to `OrderDetail` to `Product` to `Shipper`.
 

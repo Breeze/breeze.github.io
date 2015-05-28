@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/add-new-entity.html"
 ---
 <h1>
 	Add a new entity</h1>
-<p class="note">The code snippets on this page are in the <a href="/samples/about-todo.html">Breeze Todo Sample App</a>.</p>
+<p class="note">The code snippets on this page are in the <a href="/doc-samples/about-todo.html">Breeze Todo Sample App</a>.</p>
 <p>When the user enters a description in the big &ldquo;Todo app&rdquo; textbox and hits <strong>Enter</strong>, the screen&rsquo;s <em>ViewModel</em> calls the dataservice&rsquo;s <span class="codeword">createTodo</span> method, passing along a hash of initial values that are partly derived from user input (the big textbox, the state of the &quot;Mark all completed&quot; checkbox):</p>
 <pre class="brush:jscript;">
 function addItem() {

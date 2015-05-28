@@ -8,7 +8,7 @@ The Basic Breeze teaching tests make requests for data services to an ASP.NET We
 
 This arrangement is typical for many Breeze applications and, although far from necessary, it is the arrangement we're describing in "Basic Breeze".
 
-We've already defined the EF code first model that supports our <a href="/samples/doccode">DocCode </a>sample tests. We'll need an Entity Framework *DbContext* to configure and access that model.
+We've already defined the EF code first model that supports our <a href="/doc-samples/doccode">DocCode </a>sample tests. We'll need an Entity Framework *DbContext* to configure and access that model.
 
 We're *using* Entity Framework, not *teaching* it, so we'll simply show you our *NorthwindDbContext* (located in the *Models* folder) and highlight the key points.
 
