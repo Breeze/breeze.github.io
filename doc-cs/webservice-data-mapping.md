@@ -1,6 +1,6 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/web-service-data-mapping.html"
 ---
 
 # Mapping Web Service Data into Breeze entities
@@ -62,15 +62,14 @@ The *VisitNode* method returns a *JsonNodeInfo* instance contains the following 
    - *JsonNodeInfo* properties:
        - *ServerTypeNameInfo*: The Server side TypeNameInfo for the type returned by this node.  
        - *NodeId*: The same object may appear several times in a dataset. Such redundancy can bloat the payload. Some JSON serializers are able to serialize the object just once. The first instance is serialized normally and assigned a unique serialization id. The data for subsequent instances are replaced by references to this serialization id. For example, given an array with the same person listed twice, the serializer might produce:
-
-            [{
-              "$id": "1",
-              "Name": "James",
-              "BirthDate": "1983-03-08T00:00Z",
-            },
-            {
-              "$ref": "1"
-            }]
+				[{
+				  "$id": "1",
+				  "Name": "James",
+				  "BirthDate": "1983-03-08T00:00Z",
+				},
+				{
+				  "$ref": "1"
+				}]
 Breeze supports approach by allowing you to return a unique identifier for any object node and later refer to other instances of the same object with this identifier. The nodeId is the unique identifier.
  
        - *NodeRefId*: An identifier that refers to another object with this id. Breeze might encounter a nodeRefId before meeting the object with the corresponding nodeId. Breeze defers resolution of such references until after traversing the entire top level graph.

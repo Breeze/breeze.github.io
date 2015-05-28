@@ -1,11 +1,11 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/validation.html"
 ---
 
 # Validation
 
-<p class="note">Every code snippet on this page is in the <strong>ValidationTests.cs</strong> file of <a href="//breeze-sharp/samples">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
+<p class="note">Every code snippet on this page is in the <strong>ValidationTests.cs</strong> file of <a href="https://github.com/Breeze/breeze.sharp.samples/tree/master/DocCode">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
 
 A good application strives to ensure the integrity of data before saving them to permanent storage in part by screening new and changed with validation rules.
 
@@ -89,7 +89,7 @@ Validation on the client improves the user experience; some say that makes it op
 
 There are many ways to validate data on the server. Much depends on the technologies and practices that you are using.
 
-No matter what you do, you'll probably want to surface the validation errors on the client. The topic ["Server-side validation"](/breeze-sharp-documentation/server-side-validation) covers how to prepare errors and transmit them in JSON so that the Breeze client can include them in the entity's validation errors collection. 
+No matter what you do, you'll probably want to surface the validation errors on the client. The topic ["Server-side validation"](/doc-cs/server-side-validation) covers how to prepare errors and transmit them in JSON so that the Breeze client can include them in the entity's validation errors collection. 
 
 >That topic also explains how validation errors detected by Entity Framework are automatically communicated to the client.
 
@@ -377,7 +377,7 @@ This ***ErrorsChanged*** event (which is also on the Entity) is fired  whenever 
 
 ## Customize the message templates
 
-Don't like the messages produced by the stock validators? Need to translate them to another language? No problem. The messages are based on templates that you can access and change. The [ValidatorExtensions](http://www.breezejs.com/breeze-sharp-api/index.html) class contains `WithMessage` methods to create new messages based on existing validator messages. For example, we could make the `RequiredValidator` message a bit more emphatic:
+Don't like the messages produced by the stock validators? Need to translate them to another language? No problem. The messages are based on templates that you can access and change. The [ValidatorExtensions](/doc-cs/api-docs/index.html) class contains `WithMessage` methods to create new messages based on existing validator messages. For example, we could make the `RequiredValidator` message a bit more emphatic:
 
     var vr = new RequiredValidator().WithMessage("Dude! The {0} is really required ... seriously ... as in mandatory");
 
@@ -387,7 +387,7 @@ Typically, you define a custom validator, get the metadata from the server (impl
 
 But there is a special case. When you get your metadata from a local serialized source rather than the server, you must take one more step: you must register that validator with Breeze.
 
-For example, suppose you designed your application to load entities from local storage when it starts. In the previous session you exported the entity cache and stowed the serialized cache data to browser local storage (see [Export/Import](/breeze-sharp-documentation/exportimport)). Now when you start a new session, your app restores the cache and you pick up where you left off ... without having to hit the server. Pretty cool!
+For example, suppose you designed your application to load entities from local storage when it starts. In the previous session you exported the entity cache and stowed the serialized cache data to browser local storage (see [Export/Import](/doc-csn/export-import)). Now when you start a new session, your app restores the cache and you pick up where you left off ... without having to hit the server. Pretty cool!
 
 Unfortunately, the app throws an exception when it loads the locally stored data. The exception complains about an unknown, unregistered validation rule ... perhaps that custom ***ZipCodeValidator*** we just created. What happened?
 
