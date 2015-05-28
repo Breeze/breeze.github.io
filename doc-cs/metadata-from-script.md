@@ -1,6 +1,6 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/load-metadata-script.html"
 ---
 
 #Load metadata from script#
@@ -44,7 +44,7 @@ While we heartily endorse this approach, it can't stand on its own because
 
 - local storage access is asynchronous on some platforms (e.g, Windows Store apps). It's still faster than going remote. But the asynchronous protocol complicates production and test code.
 
-*Another option*: we can <a href="http://www.breezejs.com/breeze-sharp-documentation/metadata-by-hand" title="Metadata By Hand">write the metadata by hand</a> and push it to the client in a script file. In fact, that's exactly what you'll do when your app talks to a non-.NET server or a server you can't touch.
+*Another option*: we can <a href="/doc-cs/metadata-by-hand" title="Metadata By Hand">write the metadata by hand</a> and push it to the client in a script file. In fact, that's exactly what you'll do when your app talks to a non-.NET server or a server you can't touch.
 
 But we'd rather use generated metadata when available. Coding metadata by hand - especially for a large model - is tedious, error prone, and requires on-going maintenance. Generated metadata is almost carefree and automatically in-sync with the evolving service model.
 
@@ -73,7 +73,7 @@ Here's the procedure:
 
 2. Launch the app to wake up the server and then set the browser address bar to the URL for the metadata endpoint. The browser tab might look a bit like this (with optional JSON formatting turned off):
 
-    <img alt="Metadata on the wire" src="/sites/default/files/images/metadataOnTheWire.png" style="width: 100%; max-width: 612px;" />
+    <img alt="Metadata on the wire" src="/images/metadataOnTheWire.png" style="width: 100%; max-width: 612px;" />
 
 3. Copy the contents of the browser window (ctrl-A, ctrl-C) and paste (ctrl-V) them into *metadata.json*. You've just pasted in a huge JSON object on a single line.
 
