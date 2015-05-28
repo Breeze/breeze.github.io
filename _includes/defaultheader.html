@@ -10,10 +10,24 @@
 
     <!-- Tech selector -->
     <div class="btn-group pull-left">
-        <a id="selected-menu" class="navmenu-brand dropdown-toggle" style="border-style:solid;border-width: 2px"  data-toggle="dropdown" aria-expanded="false">
+        <a id="selected-menu" class="navmenu-brand dropdown-toggle hidden-sm hidden-xs" style="border-style:solid;border-width: 2px"  data-toggle="dropdown" aria-expanded="false">
             {{menu.title}}  <span class="caret"></span>
         </a>
+        <a class="tech-subhead hidden-lg hidden-md" data-toggle="dropdown" aria-expanded="false">{{menu.title}} <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
+
+		{% if widget1 %}
+			<li class="visible-xxs">
+			{% include {{widget1}} %}
+			</li>
+		{% endif %}
+		{% if widget2 %}
+			<li class="visible-xxs">
+			{% include {{widget2}} %}
+			</li>
+		{% endif %}
+            <li class="visible-xxs"><a href="http://www.getbreezenow.com/support" class="navmenu-brand pull-left">Support</a></li>
+
             <li role="presentation" class="dropdown-header">Overview</li>
             <li><a class="selector-menu-item" href="/doc-main/">Introduction</a></li>
             <li role="presentation" class="dropdown-header">Client technologies</li>
@@ -32,7 +46,7 @@
     </div>
 
     <!-- Optional additional widgets -->
-    <div class="hidden-sm hidden-xs">
+    <div class="hidden-xxs">
 		{% if widget1 %}
 			{% include {{widget1}} %}
 		{% endif %}
@@ -42,28 +56,32 @@
 		{% endif %}
 
 		<a href="http://www.getbreezenow.com/support" class="navmenu-brand pull-left" >Support</a>
+    </div>
 
-		<!-- Search form -->
-		<form id="searchform" class="form-inline navbar-brand pull-right">
-			<div class="input-group">
-				<input type="text" class="form-control input-sm" id="searchterm" name="searchterm" placeholder="Search for...">
-				<span class="input-group-btn">
-					<button class="btn btn-default input-sm" type="submit">Go!</button>
-				</span>
-			</div>
-		</form>
+    <!-- Search form or icon -->
+    <div class="hidden-md hidden-sm hidden-xs pull-right">
+        <form id="searchform" class="form-inline navbar-brand">
+            <div class="input-group">
+                <input type="text" class="form-control input-sm" id="searchterm" name="searchterm" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default input-sm" type="submit">Go!</button>
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="hidden-lg pull-right">
+        <a class="navmenu-brand" href="/doc-main/search-results.html"><span class="glyphicon glyphicon-search"></span></a>
     </div>
 
      <!-- Prev/Next buttons -->
-    <div class="navbar-brand" id="next-prev">
-        <button type="button" id="goPrev" class="btn btn-default btn-sm" aria-label="Prev" >
+    <div class="navbar-brand pull-right" id="next-prev">
+        <button type="button" id="goPrev" class="button noborder" aria-label="Prev" >
     	   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         </button>
 
-        <button type="button" id="goNext" class="btn btn-default btn-sm" aria-label="Next" >
+        <button type="button" id="goNext" class="button noborder" aria-label="Next" >
     	   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         </button>
     </div>
-
 
 </div>

@@ -6,6 +6,11 @@ body {
 
 a.navmenu-brand { color: #ffffff; }
 
+.nav-inverse {
+    color: #28688c;
+    background-color: #ffffff;
+}
+
 /* Copied/Adapted from generated code below */
 .navmenu-default {
   background-color: #28688c;
