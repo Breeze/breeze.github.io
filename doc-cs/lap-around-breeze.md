@@ -1,6 +1,6 @@
 ---
 layout: doc-cs
-redirect_from: "/old/breeze-sharp-documentation/.html"
+redirect_from: "/old/breeze-sharp-documentation/lap-around-breeze.html"
 ---
 
 # A lap around Breeze
@@ -29,14 +29,14 @@ We've organized the "lap..." as a tour of the Todo sample application. We'll det
 
 You could just dive in. We think you'll get more from the tour if you take these three preliminary steps:
 
-1. Review ["**Start with NuGet**"](/breeze-sharp-documentation/start-nuget).  It takes about 10 minutes. You might follow along and build the sample.
+1. Review ["**Start with NuGet**"](/doc-cs/nuget).  It takes about 10 minutes. You might follow along and build the sample.
 
-2. Try the [**Todo sample application**](/breeze-sharp/samples) and at least skim its documentation.
+2. Try the [**Todo sample application**](https://github.com/Breeze/breeze.sharp.samples/tree/master/ToDo) and at least skim its documentation.
 
-3. Try the [**DocCode teaching tests**](/breeze-sharp/samples).
+3. Try the [**DocCode teaching tests**](https://github.com/Breeze/breeze.sharp.samples/tree/master/DocCode).
 
 We’ll wait.
 
 # Welcome back
 
-You’ve downloaded the code and experienced the Todo sample as a user would. It's time to [write a query](/breeze-sharp-documentation/first-query).
+You’ve downloaded the code and experienced the Todo sample as a user would. It's time to [write a query](/doc-cs/lap-first-query).
