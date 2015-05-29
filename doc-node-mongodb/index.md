@@ -10,7 +10,7 @@ redirect_from: "/old/documentation/mongodb.html"
   <img src="/images/logos/Breeze-mongodb.png" alt="Node MongoDB" width="100">
 </a> 
 
-A Breeze client can communicate to almost any server technology including <a href="http://http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a> with a <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> database.
+A Breeze client can communicate to almost any server technology including <a href="http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a> with a <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> database.
 
 This topic explains how.
 
