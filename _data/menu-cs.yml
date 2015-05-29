@@ -2,6 +2,7 @@ title: .NET C# Client
 shorttitle: .NET/C#
 menuitems: 
   - { link: "introduction.html", title: Introduction }
+  - { link: "download.html", title: Download }
   - { link: "features.html", title: Features }
   - { link: "prerequisites.html", title: Prerequisites }
   - { link: "nuget.html", title: Start with Nuget }
