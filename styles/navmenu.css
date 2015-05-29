@@ -32,7 +32,7 @@ html, body {
 }
 
 .navmenu {
-  top: 68px;
+  top: 62px;
   width: 220px;
   overflow-x: hidden;
 }
@@ -149,9 +149,10 @@ h4, .h4 {
     margin-left: 15px;
 }
 
-.dropdown-menu > li > a {  /* fix widgets in dropdown menu */
+.dropdown-menu > li > a.navmenu-brand {  /* fix widgets in dropdown menu */
     margin: 2px 0 0 0;
     float: none !important;
+    color: #28688c;
 }
 
 a.tech-subhead {
