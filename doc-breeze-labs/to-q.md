@@ -1,6 +1,6 @@
 ---
 layout: doc-breeze-labs
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/toqjs.html"
 ---
 #***to$q*** - a bridge to Angular promises
 
