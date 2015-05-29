@@ -1,6 +1,7 @@
 ---
 layout: doc-main
 title: FAQ
+redirect_from: "/old/documentation/faq.html"
 ---
 <h1>Frequently asked questions</h1>
 
