@@ -13,3 +13,4 @@
 13) Download menu for breeze#
 14) Add prior release builds to site.
 16) Fix white flash at top of screen when changing pages.
+17) Add index.html to downloads dir - right now unable to see what is downloadable.
