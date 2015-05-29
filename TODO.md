@@ -14,3 +14,4 @@
 14) Add prior release builds to site.
 16) Fix white flash at top of screen when changing pages.
 17) Add index.html to downloads dir - right now unable to see what is downloadable.
+18) Add css style so that <code>xxx</code> tags style like *xxx* in markdown which translates to <em>xxx<em>

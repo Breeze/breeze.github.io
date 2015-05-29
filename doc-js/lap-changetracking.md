@@ -19,91 +19,23 @@ A full discussion of `EntityAspect` awaits you in a [later topic](/doc-js/inside
 
 A Breeze entity is "self-tracking".  Its `entityAspect.entityState` tells you if it is
 
-<table border="0" cellpadding="0" cellspacing="0">
-	<tbody>
-		<tr>
-			<td style="width:121px;">
-			**"Added"**
-			</td>
-			<td style="width:498px;">
-			A new entity in cache that does not exist in the backend database
-			</td>
-		</tr>
-		<tr>
-			<td style="width:121px;">
-			**"Unchanged"**
-			</td>
-			<td style="width:498px;">
-			An existing entity in cache that was queried from the database
-			</td>
-		</tr>
-		<tr>
-			<td style="width:121px;">
-			**"Modified"**
-			</td>
-			<td style="width:498px;">
-			An existing entity in cache with pending changes
-			</td>
-		</tr>
-		<tr>
-			<td style="width:121px;">
-			**"Deleted"**
-			</td>
-			<td style="width:498px;">
-			An existing entity in cache that is marked for deletion
-			</td>
-		</tr>
-		<tr>
-			<td style="width:121px;">
-			**"Detached"**
-			</td>
-			<td style="width:498px;">
-			An entity that is not in cache; its status in the database is unknown
-			</td>
-		</tr>
-	</tbody>
-</table>
+| Entity State        | Description                    |
+| ------------------- | ------------------------------ |
+| Added         |	A new entity in cache that does not exist in the backend database
+| Unchanged     |	An existing entity in cache that was queried from the database
+| Modified      |	An existing entity in cache with pending changes
+| Deleted       | An existing entity in cache that is marked for deletion
+| Detached      | An entity that is not in cache; its status in the database is unknown |
 
 An `EntityState` instance has accessor methods that make it easy to test these states individually (`isAdded`, `isUnchanged`, `isModified`, `isDeleted`, `isDetached`) or in useful combinations (`isAddedModifiedorDeleted`, `isUnchangedOrModified`).
 
 As things happen to an entity, Breeze updates its `EntityState` automatically. For example,
 
-<table border="1" cellpadding="0" cellspacing="0">
-	<tbody>
-		<tr>
-			<td style="width:319px;">
-			**Action**
-			</td>
-			<td style="width:319px;">
-			**new `EntityState`**
-			</td>
-		</tr>
-		<tr>
-			<td style="width:319px;">
-			Arrives in cache from a query
-			</td>
-			<td style="width:319px;">
-			Unchanged
-			</td>
-		</tr>
-		<tr>
-			<td style="width:319px;">
-			Set one of its properties
-			</td>
-			<td style="width:319px;">
-			Modified
-			</td>
-		</tr>
-		<tr>
-			<td style="width:319px;">
-			Save it successful
-			</td>
-			<td style="width:319px;">
-			Unchanged
-			</td>
-		</tr>
-	</tbody>
-</table>
+| **Action**                      | **new `EntityState`** 
+| -----------                     | ---------------------
+| Arrives in cache from a query   | Unchanged 
+| Set one of its properties       | Modified 
+| Save it successfully            | 	Unchanged | 
 
 You can change any `EntityState` to another state with one of several methods. That's an advanced, potentially risky trick that you can learn about later ... except for one common case, deleting an entity.
 
@@ -164,7 +96,7 @@ If you want to listen for changes to another property, you subscribe to that one
 
 You'll probably need a separate handler for each subscription. A handler is called with the new value ... and that's it. You don't know what object or what property called the handler.
 
-Need to know if `any` property has changed? You may have to subscribe to every property of the object [<a href="#note 1">1</a>].
+Need to know if **any** property has changed? You may have to subscribe to every property of the object [<a href="#note 1">1</a>].
 
 With the Breeze `EntityAspect.propertyChanged` event, you can listen for a change to any property with a single subscription:
 
@@ -179,6 +111,7 @@ The `changeArgs` tell you what property changed, its previous value and its new 
 You just learned how to listen for a change to *a single Knockout property of a single entity instance*. There is a better way when you need to listen for changes to many properties on many entities: [**listen to the `EntityManager.entityChanged` event instead**](#emEntityChanged).
 
 <a name="emEntityChanged"></a>
+
 ##EntityManager.entityChanged Event
 
 The `EntityManager` is always watching for changes to entities in its cache and when it detects a change to an entity, it raises the [entityChanged event](/doc-js/api-docs/classes/EntityManager.html#event_entityChanged). 

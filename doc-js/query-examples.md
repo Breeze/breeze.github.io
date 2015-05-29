@@ -57,7 +57,7 @@ redirect_from: "/old/documentation/query-examples.html"
     // create a manager to execute queries
     var manager = new breeze.EntityManager(serviceName);
 
-## <a name="BasicQueries"></a>Basic queries</h2>
+## <a name="BasicQueries"></a>Basic queries
 
     // 3 equivalent queries for "all Customers"
     var query1a = EntityQuery.from('Customers');   
@@ -266,6 +266,7 @@ and Predicates can even be nested. In this case we are querying for any orders w
 
 ### <a name="WhereODataFunctions"></a>Conditions using OData functions
 
+>   Not all server backends support all functions and some backends may support additional functions.
 
     // Customers whose Company names starts with "C" or "c";
     var query1 = EntityQuery.from('Customers')

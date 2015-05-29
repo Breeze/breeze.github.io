@@ -24,3 +24,43 @@ blockquote {
 	font-size: 1em;
 	font-style: italic;
 }
+
+/* This is to make <code> and <em> look the same because our markdown code on the site uses *xxx* -> <em>xxx<em> to indicate code
+   but our html code uses the <code> tag.  So we want to make them look the same (for now)
+   If we update the markdown to use `xxx` instead of *xxx* it might be better but way too much work for now. */
+/* code, em {
+	font-size: .9em;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-style: normal;
+	color: #c7254e;
+	background-color: #f9f2f4;
+}
+*/
+
+/* needed because something in either bootstrap or jasny-bootstrap really kill table formatting. */
+
+table {
+	padding: 0;
+	margin-bottom: 14px; }
+table tr {
+	border-top: 1px solid #cccccc;
+	background-color: white;
+	margin: 0;
+	padding: 0; }
+table tr:nth-child(2n) {
+	background-color: #f8f8f8; }
+table tr th {
+	font-weight: bold;
+	border: 1px solid #cccccc;
+	text-align: left;
+	margin: 0;
+	padding: 6px 13px; }
+table tr td {
+	border: 1px solid #cccccc;
+	text-align: left;
+	margin: 0;
+	padding: 6px 13px; }
+table tr th :first-child, table tr td :first-child {
+	margin-top: 0; }
+table tr th :last-child, table tr td :last-child {
+	margin-bottom: 0; }
