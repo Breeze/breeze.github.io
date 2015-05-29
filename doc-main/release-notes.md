@@ -263,7 +263,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 #### Features
 +  Performance improvements with large saves and large queries that overwrite existing modified entities. 
 +  <a name="WebApiOData"></a>New [**Web API OData Sample**](/doc-samples/web-api-odata), an MVC/SPA hybrid written with Javier Calvarro  Nelson, a member of the Microsoft Web API OData team. This effort prompted numerous small changes to Breeze core that enriched exposed functionality w/o changing underlying behavior.
-+  The [Angular Todo Sample](/doc-samples/todo-angular) has been spruced up. It's been upgraded to Angular v.1.2 and the new ["Breeze Angular Service"](http://www.breezejs.com/documentation/breeze-angular-service) module.
++  The [Angular Todo Sample](/doc-samples/todo-angular) has been spruced up. It's been upgraded to Angular v.1.2 and the new ["Breeze Angular Service"](/doc-js/breeze-angular) module.
 +  Breeze 'ajax' adapters accept headers configuration; useful to authors of Breeze 'dataService' adapters. 
 +  `EntityQuery.fromEntityKey` specifically targets the `EntityType` of the `EntityKey` and casts query results into that `EntityType`.
 
