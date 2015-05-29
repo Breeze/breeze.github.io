@@ -1,4 +1,4 @@
-title: Java server w/ Hibernate
+title: Java server + Hibernate
 shorttitle: Java/Hibernate
 menuitems: 
   - { link: breeze-hibernate.html, title: Breeze with hibernate }

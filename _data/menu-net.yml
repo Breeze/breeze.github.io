@@ -1,4 +1,4 @@
-title: .NET Server w/ Entity Framework or NHibernate
+title: .NET Server + EF or NHibernate
 shorttitle: .NET
 menuitems: 
   - { link: "nuget-packages.html", title: Start with Nuget }
