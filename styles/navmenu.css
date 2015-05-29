@@ -23,7 +23,8 @@ html, body {
 #menu-header {
   font-size: 14px;
   font-weight: bold;
-  margin: 10px 0px 0px 0px;
+  padding: 10px 0px 5px 15px;
+  margin: 0;
 }
 
 #menu-header.active {
