@@ -1,6 +1,6 @@
 ---
 layout: doc-cool-breezes
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/lookup-lists.html"
 ---
 <h1>
 	Lookup Lists</h1>

@@ -1,6 +1,6 @@
 ---
 layout: doc-cool-breezes
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/import-save-results.html"
 ---
 # Import save results from a "sandbox editor"
 

@@ -1,6 +1,6 @@
 ---
 layout: doc-cool-breezes
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/concurrent-saves.html"
 ---
 <h1>
 	Concurrent Saves</h1>

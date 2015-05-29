@@ -1,9 +1,9 @@
 ---
 layout: doc-cool-breezes
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/what-are-they.html"
 ---
-<h1>
-	Cool Breezes</h1>
+
+<h1>Cool Breezes</h1>
 <p>Cool Breezes are tips and techniques for using Breeze in real applications.</p>
 <p>&nbsp;</p>
 <h2>

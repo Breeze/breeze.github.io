@@ -1,6 +1,6 @@
 ---
 layout: doc-cool-breezes
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/multiple-managers.html"
 ---
 <h1>
 	Multiple EntityManagers</h1>

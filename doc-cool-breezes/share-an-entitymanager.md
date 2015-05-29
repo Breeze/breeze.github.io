@@ -1,6 +1,6 @@
 ---
 layout: doc-cool-breezes
-redirect_from: "/old/documentation/.html"
+redirect_from: "/old/documentation/share-entitymanager.html"
 ---
 <h2>
 	<a name="SingleManagerApp"></a>Share a single EntityManager</h2>
