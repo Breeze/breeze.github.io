@@ -1,5 +1,6 @@
 ---
 layout: doc-cool-breezes
+redirect_from: "/old/documentation/.html"
 ---
 # Import save results from a "sandbox editor"
 

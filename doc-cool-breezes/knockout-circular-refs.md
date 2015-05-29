@@ -1,5 +1,6 @@
 ---
 layout: doc-cool-breezes
+redirect_from: "/old/documentation/.html"
 ---
 #Grids and Knockout circular references#
 

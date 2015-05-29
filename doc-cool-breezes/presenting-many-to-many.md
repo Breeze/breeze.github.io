@@ -1,5 +1,6 @@
 ---
 layout: doc-cool-breezes
+redirect_from: "/old/documentation/.html"
 ---
 #Presenting a Many-to-Many association with Checkboxes in Breeze and Angular
 
