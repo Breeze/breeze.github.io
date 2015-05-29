@@ -2,6 +2,10 @@
 layout: doc-js
 redirect_from: "/old/documentation/first-query.html"
 ---
+---
+layout: doc-js
+redirect_from: "/old/documentation/first-query.html"
+---
 #First query
 
 Many applications begin with a query for some existing data and that's how we'll begin. We're using the <a href="/doc-samples/about-todo">Breeze Todo Sample App</a> to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the *Scripts/services/**dataservice.js*** folder.
@@ -18,10 +22,10 @@ This Todo app works with the <a href="http://knockoutjs.com/" target="_blank">Kn
 
 A query can't execute itself. We'll need a Breeze ***EntityManager***. The *EntityManager* is a gateway to the persistence service which will execute the query on the backend and return query results in its response. The next few lines give us an *EntityManager*:
 
-<pre class="brush:jscript;">
-var serviceName = 'breeze/todos', // route to the Web Api controller
-    manager = new breeze.EntityManager(serviceName);
-</pre>
+
+    var serviceName = 'breeze/todos'; // route to the Web Api controller
+    var manager = new breeze.EntityManager(serviceName);
+
 
 The *serviceName *identifies the service end-point, the route to the Web API controller ("breeze/todos") [<a href="#note 1">1</a>]; all *manager *operations will address that controller.
 
@@ -30,23 +34,19 @@ The *serviceName *identifies the service end-point, the route to the Web API con
 We're ready to write the first query. The Todo app query method is called *getAllTodos *and it looks like this:
 
 
-<pre class="brush:jscript;">
-function getAllTodos(includeArchived) {
-    var query = breeze.EntityQuery // [1]
-            .from("Todos")         // [2]
-            .orderBy("CreatedAt"); // [3]
+    function getAllTodos(includeArchived) {
+        var query = breeze.EntityQuery // [1]
+                .from("Todos")         // [2]
+                .orderBy("CreatedAt"); // [3]
+    
+        // ... snip ...
+    
+        return manager.executeQuery(query);
+    };
 
-    // ... snip ...
-
-    return manager.executeQuery(query);
-};
-
-
-
-	<li>creates a new Breeze *EntityQuery *object
-	<li>aims the query at a method on the Web API controller named "*Todos*" that returns *Todo* items.
-	<li>adds an *orderBy* clause that tells the remote service to sort results by the "CreatedAt" property *before* sending them to the client.
-</pre>
+- creates a new Breeze *EntityQuery *object
+- aims the query at a method on the Web API controller named "*Todos*" that returns *Todo* items.
+- adds an *orderBy* clause that tells the remote service to sort results by the "CreatedAt" property *before* sending them to the client.
 
 
 The string, "Todos", is case sensitive and must match the controller method name *exactly*.
@@ -56,12 +56,9 @@ The string, "Todos", is case sensitive and must match the controller method name
 
 We execute the query with the EntityManager
 
+    return manager.executeQuery(query);
 
-<pre class="brush:jscript;">
- return manager.executeQuery(query);
-</pre>
-
-The executeQuery method **does not return Todos**. It can't return Todos. A JavaScript client cannot freeze the browser and wait for the server to reply. The executeQuery method does its thing asynchronously.
+The *executeQuery* method **does not return Todos**. It can't return Todos. A JavaScript client cannot freeze the browser and wait for the server to reply. The *executeQuery* method does its thing asynchronously.
 
 It must return something and it must do so immediately. The thing it returns is a **promise **[<a href="#note 2">2</a>], a promise to report back when the service response arrives.
 
@@ -70,19 +67,19 @@ It must return something and it must do so immediately. The thing it returns is 
 A caller of the *dataservice*'s ***getAllTodos ***method typically attaches both a success and failure callback to the returned promise. Here's how the Todo app's ***ViewModel ***calls *getAllTodos*:
 
 
-<pre class="brush:jscript;">
- function getTodos() {
-     dataservice.getAllTodos(includeArchived)
-         .then(querySucceeded)
-         .fail(queryFailed);
- }
-</pre>
+
+    function getTodos() {
+      dataservice.getAllTodos(includeArchived)
+        .then(querySucceeded)
+        .fail(queryFailed);
+    }
+
 
 Notice the use of method chaining:
 
-<li>the *dataservice* returned a promise;
-<li>the *ViewModel* called the promise's *then( ... )* method for the success path
-<li>the *ViewModel* called the promise's *fail( ... )* method for the failure path.
+- the *dataservice* returned a promise;
+- the *ViewModel* called the promise's *then( ... )* method for the success path
+- the *ViewModel* called the promise's *fail( ... )* method for the failure path.
 
 
 Both the *then() *and the *fail() *return a promise which means we can chain a sequence of asynchronous steps. Such syntax makes it easy to flatten what might otherwise be a nasty nest of dependent async calls. We don't have dependent async calls in this application... but a real application might... and you'll see plenty of examples among the <a href="/doc-samples/doccode" target="_blank">teaching tests</a> [<a href="#note 3">3</a>].
@@ -94,16 +91,15 @@ If the query returns from the server without error, the promise calls the *ViewM
 The query results of course! Get them from the ***data.results*** property as the *ViewModel* does. In this example, each *Todo *item is pushed into a <a href="http://knockoutjs.com/documentation/observableArrays.html">Knockout observable array</a> bound to a list on the screen.
 
 
-<pre class="brush:jscript;">
-function querySucceeded(data) {
-    ...
-    data.results.forEach(function (item) {
+    function querySucceeded(data) {
         ...
-        shellVm.items.push(item);
-    });
-    ...
-}
-</pre>
+        data.results.forEach(function (item) {
+            ...
+            shellVm.items.push(item);
+        });
+        ...
+    }
+
 
 And just like that, the screen fills with *Todos*.  We'll discuss how *that* happens when we peek inside the entity <a href="/doc-js/lap-knockout">later in this tour</a>. Before we do, let's **<a href="/doc-js/lap-query-filter">try another query</a>**.
 
