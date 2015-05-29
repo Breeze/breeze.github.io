@@ -1,5 +1,6 @@
 ---
 layout: doc-java-hib
+redirect_from: "/old/documentation/java-server.html"
 ---
 
 # Java with Hibernate

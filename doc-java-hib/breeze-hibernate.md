@@ -1,5 +1,6 @@
 ---
 layout: doc-java-hib
+redirect_from: "/old/documentation/javahibernate.html"
 ---
 
 ## breeze-hibernate
