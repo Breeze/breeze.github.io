@@ -8,7 +8,7 @@ The related topic [**"Metadata by Hand"**](/doc-js/metadata-by-hand) is an intro
 
 **This topic goes deeper into the details**. It covers more of the options. It explains in greater depth what is going on and the relationship between the Breeze Labs MetadataHelper and the native Breeze metadata format.
 
-<p class="note">The code shown in this topic is adapted from <i><a href="https://github.com/IdeaBlade/Breeze/blob/master/Samples/DocCode/DocCode/tests/helpers/metadataOnClient.js" title="metadataOnClient.js source code" target="_blank">metadataOnClient.js</a></i>&nbsp;  in the <a href="/doc-samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and metadata in particular through the medium of QUnit tests.</p>
+> The code shown in this topic is adapted from <i><a href="https://github.com/IdeaBlade/Breeze/blob/master/Samples/DocCode/DocCode/tests/helpers/metadataOnClient.js" title="metadataOnClient.js source code" target="_blank">metadataOnClient.js</a></i>&nbsp;  in the <a href="/doc-samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and metadata in particular through the medium of QUnit tests.
 
 ##Why "by hand?"##
 The Breeze client needs metadata *to make entity data work for you*: to compose queries, identify objects by key, navigate to related entities, track changed state, raise property-changed events, validate data entry, and serialize entities to the server or local storage.
@@ -19,7 +19,7 @@ If your application server implements the OData standard, Breeze (usually) can g
 
 Sometimes you're not that fortunate. Perhaps you can't touch the server (as illustrated by the "[Edmunds Auto Service](/doc-samples/edmunds "Edmunds Auto Service")" sample). Perhaps your server can't generate the metadata (see the [Ruby on Rails](/doc-samples/intro-to-spa-ruby "Code Camper Jumpstart in Ruby on Rails") and [Node/MongoDb](/doc-samples/zza-mongo "Zza Node/MongoDb sample") samples). You won't be able to get metadata from the server.
 
->If you're a .NET developer with access to the server side data model classes, you can use Entity Framework *as a  metadata generator*, as a design-time-only tool,  even if you won't use EF to access data in production. [We describe this technique elsewhere](/doc-js/metadata-with-ef "EF as a Metadata Design Tool"). 
+> If you're a .NET developer with access to the server side data model classes, you can use Entity Framework *as a  metadata generator*, as a design-time-only tool,  even if you won't use EF to access data in production. [We describe this technique elsewhere](/doc-js/metadata-with-ef "EF as a Metadata Design Tool"). 
 
 **You don't have to get the metadata from the server**.  Breeze metadata on the client is just JavaScript. You can write that JavaScript metadata yourself ... as we'll see here.
 
@@ -74,57 +74,54 @@ This is mostly boilerplate.
 
 - We create an instance of the **Breeze Labs `MetadataHelper` class** whose functions spare us some cumbersome syntax and much of the error prone repetition that would otherwise mar our metadata writing experience. 
 
-<p class="note"><strong>The helper saves a lot of time and heartache</strong> and is strongly recommended. It is <a href="#addTypeToStore"><strong>described in detail below</strong></a>.</p>
+> **The helper saves a lot of time and heartache** and is strongly recommended. It is <a href="#addTypeToStore"><strong>described in detail below</strong></a>.</p>
 
 We're ready to write the function that creates our handwritten `MetadataStore`:
 
-<pre class="brush:jscript;">
-// Creates a metadataStore with 3 Northwind EntityTypes:
-// Product, Category, Supplier and a Location ComplexType
-function createMetadataStore(serviceName) {
+    // Creates a metadataStore with 3 Northwind EntityTypes:
+    // Product, Category, Supplier and a Location ComplexType
+    function createMetadataStore(serviceName) {
+    
+        var store = new breeze.MetadataStore({
+            namingConvention: breeze.NamingConvention.camelCase
+        });
+    
+        helper.addDataService(store, serviceName);
+    
+        // Add types in alphabetical order ... because we can
+        addCategoryType(store);
+        addLocationComplexType(store);
+        addProductType(store);
+        addSupplierType(store);
+    
+        return store;
+    }
+
+
+Now use it to create an `EntityManager` and execute a query.
+
+    var store = createMetadataStore(serviceName);
+    
+    var manager = new breeze.EntityManager({
+                serviceName: serviceName,
+                metadataStore: store
+            });
+    
+    breeze.EntityQuery.from("Category")
+          .using(manager).execute().then(function(data){
+              alert("Got "+ data.results.length + " 'Category' entities");
+           });
+
+Let's dig into the `createMetadataStore` method.
+
+## Naming Convention
+
+We must tell our `MetadataStore` what [NamingConvention](/doc-js/server-namingconvention "NamingConvention") to use before adding entity types. 
+
 
     var store = new breeze.MetadataStore({
         namingConvention: breeze.NamingConvention.camelCase
     });
-
-    helper.addDataService(store, serviceName);
-
-    // Add types in alphabetical order ... because we can
-    addCategoryType(store);
-    addLocationComplexType(store);
-    addProductType(store);
-    addSupplierType(store);
-
-    return store;
-}
-</pre>
-
-Now use it to create an `EntityManager` and execute a query.
-
-<pre class="brush:jscript;">
-var store = createMetadataStore(serviceName);
-
-var manager = new breeze.EntityManager({
-            serviceName: serviceName,
-            metadataStore: store
-        });
-
-breeze.EntityQuery.from("Category")
-      .using(manager).execute().then(function(data){
-          alert("Got "+ data.results.length + " 'Category' entities");
-       });
-</pre>
-
-Let's dig into the `createMetadataStore` method.
-
-##Naming Convention##
-We must tell our `MetadataStore` what [NamingConvention](/doc-js/server-namingconvention "NamingConvention") to use before adding entity types. 
-
-<pre class="brush:jscript;">
-var store = new breeze.MetadataStore({
-    namingConvention: breeze.NamingConvention.camelCase
-});
-</pre>
 
 A `NamingConvention` coverts between the spelling of server property name and the spelling of client property names when serializing and deserializing entity data on the wire.
 
@@ -132,59 +129,56 @@ We configured the new `MetadataStore` to use the [camelCase NamingConvention](/d
 
 Regardless of backend, we specify **client-oriented property names** in our hand coded metadata, and rely on the `NamingConvention` to translate to server-side property names.
 
-##Specify the DataService ##
+## Specify the DataService 
 The Breeze [DataService](/doc-js/api-docs/classes/DataService.html "DataService API") specifies details about the remote server associated with this metadata. It's most important (and only essential) property is its `serviceName` which identifies the root path to the remote server.
 
-<pre class="brush:jscript;">
-store.addDataService(
-    new breeze.DataService({ serviceName: 'breeze/Northwind' }
-);
-</pre>
+    store.addDataService(
+        new breeze.DataService({ serviceName: 'breeze/Northwind' }
+    );
 
-
->You would add another `DataService` if you needed this same metadataStore to work with a second remote server at a different address.
+> You would add another `DataService` if you needed this same metadataStore to work with a second remote server at a different address.
 
 And now we're ready to add the entity types, starting with a simple example
 
-#Define the Category type#
+# Define the Category type
 
 Let's look at some code and then break it down:
 
-<pre class="brush:jscript;">
-// Definition of a simple reference type
-function addCategoryType(store) {
-    var et = {
-        // Header info
-        shortName: "Category",
-        namespace: defaultNamespace,
-        autoGeneratedKeyType: Identity, 
-        defaultResourceName: "Categories",
-        
-        dataProperties: {
-            categoryID:   { dataType: DT.Int32, isPartOfKey: true },
-            categoryName: { maxLength: 4000 }, // DT.String is the default type
-            description:  { maxLength: 4000 },
-            picture:      { dataType: DT.Binary, maxLength: 4000},
-            rowVersion:   { dataType: DT.Int32, isNullable: false },
-        }
-    };
-
-    return addTypeToStore(store, et);
-}
-</pre>
+    // Definition of a simple reference type
+    function addCategoryType(store) {
+        var et = {
+            // Header info
+            shortName: "Category",
+            namespace: defaultNamespace,
+            autoGeneratedKeyType: Identity, 
+            defaultResourceName: "Categories",
+            
+            dataProperties: {
+                categoryID:   { dataType: DT.Int32, isPartOfKey: true },
+                categoryName: { maxLength: 4000 }, // DT.String is the default type
+                description:  { maxLength: 4000 },
+                picture:      { dataType: DT.Binary, maxLength: 4000},
+                rowVersion:   { dataType: DT.Int32, isNullable: false },
+            }
+        };
+    
+        return addTypeToStore(store, et);
+    }
 
 We're creating a big configuration object, `et` (short for "EntityType"), and then passing it to some function that purportedly creates the `Category` entity type from that config and adds it to the metadataStore (the `store`). We'll get to that function in due time. 
 
-##Header information##
+## Header information
 The config object begins with some "header info", followed by a list of data properties. Let's tackle the "header" first.
 
 <a name="namespace"></a>
-###Naming the type###
+
+### Naming the type
+
 The `shortName` is the familiar name of the type, "Category".  
 
 The `namespace` value identifies the namespace of the "Category" class as it is known on the server-side model, a string such as "Northwind.Models". 
 
->Because we'll use the same `namespace` throughout our model definition, we've captured it in the variable `northwindNamespace`.
+> Because we'll use the same `namespace` throughout our model definition, we've captured it in the variable `northwindNamespace`.
 
 The namespace value matters if it matters to the backend; if the backend doesn't care (e.g. Rails or Node), then it can be anything as long *as the client and the server agree on the same value*.
 
@@ -192,7 +186,8 @@ In principle we could have two `Category` types in the metadata as long as they 
 
 It's tedious and error prone to have to write the namespace over and over, especially when this model (like most models) only has one namespace. We'll omit the namespace specification from now on and leave it to the MetadataHelper (`helper`) to apply the `defaultNamespace` when the time comes.
 
-###Key generation###
+### Key generation
+
 How will the system assign a key when we create a new `Category` entity instance? Should the client assign the key value? Or will the key be assigned on the server (e.g., by the data tier)?  
 
 Breeze supports the three choices in the [AutoGeneratedKeyType](/doc-js/api-docs/classes/AutoGeneratedKeyType.html "AutoGeneratedKeyType enum API") enumeration:
@@ -214,16 +209,15 @@ or by setting it explicitly
 
     helper.setDefaultAutoGeneratedKeyType(defaultKeyGen);
 
-###Default ResourceName###
+### Default ResourceName
+
 The `defaultResourceName` should be the **resource name** of the server endpoint that you target most frequently with queries for this type.
 
 The `defaultResourceName` is typically the plural form of the type name (e.g., "Categories") because that's where most people go to "get all" instances of the type. 
 
 For example, if I want to get all `Category` entities, I'll  probably write a Breeze query like this one:
 
-<pre class="brush:jscript;">
-var query = breeze.EntityQuery.from("Categories");
-</pre>
+    var query = breeze.EntityQuery.from("Categories");
 
 Notice that you can't tell what type of objects this query returns unless you know that the resource name in the `from("Categories")` clause is associated with the `Category` type.
 
@@ -231,13 +225,13 @@ Breeze doesn't *always* have to know the query return type. It usually can figur
 
 So give Breeze a hand by specifying a good default resource name. Later will learn how to tell Breeze with metadata about other ResourceName-to-EntityType associations.
 
-##DataProperties##
+## DataProperties
 
 Breeze metadata describe two kinds of properties: a **`Navigation`** property for getting and setting related entities and a **`DataProperty`** for getting and setting other kinds of values.
 
 The `Category` type doesn't have navigation properties. Although there is a relationship between `Product` and `Category` and you can navigate from a product to its category (`Product.category`, <a href="#Product_category">described below</a>), we opted to omit the navigation property from category to product.
 
->This is an application modeling decision of the kind you'll make for your own model.
+> This is an application modeling decision of the kind you'll make for your own model.
 
 `Category` does have data properties, each of them an instance of the Breeze `DataProperty` class. The `DataProperty` attributes describe many important characteristics of the property such as:
 
@@ -252,31 +246,27 @@ The `Category` type doesn't have navigation properties. Although there is a rela
 * if its value has a [maximum length](/doc-js/api-docs/classes/DataProperty.html#property_maxLength "DataProperty.maxLength API") [optional]
 
 Our `Category` configuration  defines a `DataProperties` hash object whose keys are the type's client-side property names and whose values prescribe one or more of those `DataProperty` attributes.
- 
-<pre class="brush:jscript;">
-dataProperties: {
-   categoryID:   { dataType: DT.Int32, isPartOfKey: true },
-   categoryName: { maxLength: 4000 }, // DT.String is the default DataType
-   description:  { maxLength: 4000 },
-   picture:      { dataType: DT.Binary, maxLength: 4000},
-}
-</pre>
+
+    dataProperties: {
+       categoryID:   { dataType: DT.Int32, isPartOfKey: true },
+       categoryName: { maxLength: 4000 }, // DT.String is the default DataType
+       description:  { maxLength: 4000 },
+       picture:      { dataType: DT.Binary, maxLength: 4000},
+    }
 
 You can specify every attribute explicitly or accept the defaults as we have done here.
 
->For brevity we captured the `breeze.DataType` enumeration in a variable named `DT` earlier in the code-base.
+> For brevity we captured the `breeze.DataType` enumeration in a variable named `DT` earlier in the code-base.
 
 A `DataProperty` also holds a collection of [Validators](/doc-js/api-docs/classes/Validator.html "Validator API"). We could add validators here while we're defining each property. Instead, we'll <a href="#inferValidators">generate some validators</a> a little later in our program.
 
 Check out the **[DataProperty API docs](/doc-js/api-docs/classes/DataProperty.html "DataProperty API")** for the full story on `DataProperty` attributes.
 
-##Add Category to the store##
+## Add Category to the store
 
 We've completed the configuration object for the `Category` type. We're ready to create the type and add it to the `MetadataStore` ... which our code does by calling a helper function
 
-<pre class="brush:jscript;">
-return et = addTypeToStore(store, et)
-</pre>
+    return et = addTypeToStore(store, et)
 
 We'll delve into that function <a href= "#addTypeToStore">later in our story</a>. Let's skip ahead to the definition of the `Product` type where we'll learn about navigation properties.
 
@@ -286,69 +276,67 @@ We follow the same course when defining the `Product` entity type. Here's a some
 
 ><a href="#ProductRevisited">Later in this topic</a> you'll learn how to define this type a bit more concisely.
 
-<pre class="brush:jscript;">
-function addProductType(store) {
-    var et = {
-        shortName: "Product",
-        autoGeneratedKeyType: Identity, 
-        defaultResourceName: "Products",
-
-        dataProperties: {
-            productID:       { dataType: DT.Int32, isPartOfKey: true },
-            productName:     { maxLength: 40 },
-            supplierID:      { dataType: DT.Int32} ,
-            categoryID:      { dataType: DT.Int32 },
-            unitPrice:       { dataType: DT.Decimal },
-            unitsInStock:    { dataType: DT.Int16 },
-            discontinued:    { dataType: DT.Boolean, isNullable: false },
-            discontinuedDate:{ dataType: DT.DateTime },
-            // other properties
-        },
-
-        navigationProperties: {
-            category: {
-                entityTypeName: "Category",
-                associationName: "Product_Category",
-                foreignKeyNames: ["categoryID"] 
+    function addProductType(store) {
+        var et = {
+            shortName: "Product",
+            autoGeneratedKeyType: Identity, 
+            defaultResourceName: "Products",
+    
+            dataProperties: {
+                productID:       { dataType: DT.Int32, isPartOfKey: true },
+                productName:     { maxLength: 40 },
+                supplierID:      { dataType: DT.Int32} ,
+                categoryID:      { dataType: DT.Int32 },
+                unitPrice:       { dataType: DT.Decimal },
+                unitsInStock:    { dataType: DT.Int16 },
+                discontinued:    { dataType: DT.Boolean, isNullable: false },
+                discontinuedDate:{ dataType: DT.DateTime },
+                // other properties
             },
-            supplier: {
-                entityTypeName: "Supplier",
-                associationName: "Supplier_Products",
-                foreignKeyNames: ["supplierID"] 
-            },
-        }
-    };
-
-    return addTypeToStore(store, et);
-}
-</pre>
+    
+            navigationProperties: {
+                category: {
+                    entityTypeName: "Category",
+                    associationName: "Product_Category",
+                    foreignKeyNames: ["categoryID"] 
+                },
+                supplier: {
+                    entityTypeName: "Supplier",
+                    associationName: "Supplier_Products",
+                    foreignKeyNames: ["supplierID"] 
+                },
+            }
+        };
+    
+        return addTypeToStore(store, et);
+    }
   
 The `dataProperties` definition illustrates a few of the other [DataTypes](/doc-js/api-docs/classes/DataType.html "DataType API") that Breeze supports.
 
 Our attention turns to a new subject, the **navigation properties**.
 
 <a name="NavigationProperties"></a>
-##Navigation Properties##
+
+## Navigation Properties
 
 A **[NavigationProperty](/doc-js/api-docs/classes/NavigationProperty.html "NavigationProperty API")** describes an entity property that returns a related entity (or collection of entities) from the `EntityManager` cache.
 
 <a name="Product_category"></a>
+
 The `Product` type has two navigation properties, `Product.category` and `Product.supplier`. Here are their definitions again:
 
-<pre class="brush:jscript;">
-navigationProperties: {
-    category: {
-        entityTypeName: "Category",
-        associationName: "Product_Category",
-        foreignKeyNames: ["categoryID"] 
-    },
-    supplier: {
-        entityTypeName: "Supplier",
-        associationName: "Supplier_Products",
-        foreignKeyNames: ["supplierID"] 
-    },
-}
-</pre>
+    navigationProperties: {
+        category: {
+            entityTypeName: "Category",
+            associationName: "Product_Category",
+            foreignKeyNames: ["categoryID"] 
+        },
+        supplier: {
+            entityTypeName: "Supplier",
+            associationName: "Supplier_Products",
+            foreignKeyNames: ["supplierID"] 
+        },
+    }
 
 We're showing three of the four critical attributes for these navigation properties:
 
@@ -362,21 +350,20 @@ We're showing three of the four critical attributes for these navigation propert
 
 The first three attributes deserve a few more words of explanation.
 
-###entityTypeName###
+### entityTypeName
+
 This required attribute identifies another entity type registered in the `metadataStore`. We must supply the full type name. For example, we should have written:
 
-<pre class="brush:jscript;">
-entityTypeName: "Category:#Northwind.Models"
-</pre> 
+    entityTypeName: "Category:#Northwind.Models"
 
 We cheated. We'll get away with it because we'll later call the <a href= "#addTypeToStore">addTypeToStore</a> which will patch in the missing namespace for us. 
 
->Why cheat? We'll explain when we discuss that function. Just know (a) that you'll need to specify the full name and (b) you don't have to cheat if you don't want to.
+> Why cheat? We'll explain when we discuss that function. Just know (a) that you'll need to specify the full name and (b) you don't have to cheat if you don't want to.
 
-###associationName###
+### associationName
 This model has one association between `Product` and `Supplier` ("Supplier_Products") and another association between `Product` and  `Category` ("Product_Category"). 
 
->These names are conventional and somewhat arbitrary. It doesn't matter which entity type name comes first. In fact, the name itself doesn't matter at all. You could call it "Association#1" if you like.
+> These names are conventional and somewhat arbitrary. It doesn't matter which entity type name comes first. In fact, the name itself doesn't matter at all. You could call it "Association#1" if you like.
 
 The "Supplier_Products" association happens to be bi-directional. There is a `Product.supplier` navigation and an "inverse" `Supplier.products` navigation.
 
@@ -387,11 +374,12 @@ When an association is bi-directional, Breeze needs to know about both navigatio
 Breeze knows that two navigation properties are related by association when they have the same `associationName`. The actual name doesn't matter. They just have to be the same for both navigation properties.
 
 <a name="foreignKeyNames"></a>
-###foreignKeyNames###
+
+###foreignKeyNames
 
 The `foreignKeyNames` is an array of property names that identify the foreign key properties in this entity that help Breeze implement the association. Usually there is only one foreign key property and thus only one name in the array. 
 
->Breeze asks for an array in anticipation of the possibility that the association requires a compound foreign key.
+> Breeze asks for an array in anticipation of the possibility that the association requires a compound foreign key.
 
 Breeze needs foreign keys to maintain associations between two related entities. If you set the a cached product's `categoryID` to "42", Breeze looks in cache for a `Category` with that ID and, if it finds one, it updates the product's `category` navigation property accordingly.
 
@@ -399,7 +387,7 @@ The same thing happens when you retrieve a `Product` from the server.  You don't
 
 Your model entities must have foreign keys if you want Breeze perform these services. 
 
-###Supplier.products###
+### Supplier.products
 
 We've seen two navigation properties leading from `Product` to two other entity types, `Category` and `Supplier`. What about the "inverse" navigations back to `Product`.
 
@@ -409,7 +397,7 @@ We've seen two navigation properties leading from `Product` to two other entity 
 
 We'll see how to define that navigation property when we discuss the `Supplier` type ... next.
 
-#Define the Supplier type#
+# Define the Supplier type
 In the `Supplier` type we'll learn how to
 
 * define a navigation property returning a collection of related entities.
@@ -419,38 +407,36 @@ In the `Supplier` type we'll learn how to
 
 Here's a slightly abbreviated look at the `addSupplierType` function:
 
-<pre class="brush:jscript;">
-function addSupplierType(store) {
-    var et = {
-        shortName: "Supplier",
-        autoGeneratedKeyType: Identity, 
-        defaultResourceName: "Suppliers",
 
-        custom: {style: "bold", meaningOfLife: 42},
-
-        dataProperties: {
-            supplierID:   { dataType: DT.Int32, isPartOfKey: true },
-            companyName:  { maxLength: 40, isNullable: false, custom: {uiHint:"big"} },
-            location:     { complexTypeName: "Location", isNullable: false},
-            phone:        { maxLength: 24 , validators: [ Validator.phone() ] },       
-            // ... other properties
-        },
-
-        navigationProperties: {
-            products: {
-                entityTypeName: "Product",
-                isScalar: false,
-                associationName: "Supplier_Products"
+    function addSupplierType(store) {
+        var et = {
+            shortName: "Supplier",
+            autoGeneratedKeyType: Identity, 
+            defaultResourceName: "Suppliers",
+    
+            custom: {style: "bold", meaningOfLife: 42},
+    
+            dataProperties: {
+                supplierID:   { dataType: DT.Int32, isPartOfKey: true },
+                companyName:  { maxLength: 40, isNullable: false, custom: {uiHint:"big"} },
+                location:     { complexTypeName: "Location", isNullable: false},
+                phone:        { maxLength: 24 , validators: [ Validator.phone() ] },       
+                // ... other properties
+            },
+    
+            navigationProperties: {
+                products: {
+                    entityTypeName: "Product",
+                    isScalar: false,
+                    associationName: "Supplier_Products"
+                }
             }
-        }
-    };
+        };
+    
+        return addTypeToStore(store, et);
+    }
 
-    return addTypeToStore(store, et);
-}
-</pre>
-
-
-##The "products" collection navigation property##
+## The "products" collection navigation property
 
 The `Supplier.products` property is the inverse of the `Product.supplier` navigation on the `Product` type. It's the flip side of the "Supplier_Products" association and we know that because both navigation properties share the same `associationName`.
 
@@ -468,12 +454,11 @@ One of the association navigation properties must identify the foreign keys. The
 
 >We would have to code this navigation property a little differently if there were no `Product.supplier` property; <a href="#invForeignKeyNames">see below</a> for details.
 
-##Custom metadata##
+## Custom metadata
+
 The `MetadataStore` holds a lot of useful information about each entity type in the model and that information is pretty easy to access at runtime. First you fish out the type of interest.
 
-<pre class="brush:jscript;">
-var type = manager.metadataStore.getEntityType('Category);
-</pre>
+    var type = manager.metadataStore.getEntityType('Category);
 
 Then you drill into its properties until you find what you want.
 
@@ -499,72 +484,69 @@ and custom information at the property level in `Supplier.companyName`:
 
 Breeze itself ignores `custom` metadata attributes except when importing or exporting a 'MmetadataStore`. What you do with them is up to you. You can add or remove them any time. Breeze will include custom attributes when (and if) it [serializes metadata](/doc-js/api-docs/classes/MetadataStore.html#method_exportMetadata "Serialize metadata with the exportMetadata method").
 
-##Complex types##
+## Complex types
 The "Supplier" table has several columns that collectively describe the shipper's address.
 
 We mapped those columns to the properties of a higher level construct called `Location` which is implemented as a [ComplexType](http://msdn.microsoft.com/en-us/library/vstudio/bb738472(v=vs.100).aspx "ComplexType") as we see in this extract of the data properties section.
 
-<pre class="brush:jscript;">
-location:     { complexTypeName: "Location:#Northwind.Models", isNullable: false},
 
-/* if we didn't have Location ComplexType
-address:      { maxLength: 60 },
-city:         { maxLength: 15 },
-region:       { maxLength: 15 },
-postalCode:   { maxLength: 10 },
-country:      { maxLength: 15 },
-*/
-</pre>
+    location:     { complexTypeName: "Location:#Northwind.Models", isNullable: false},
+    
+    /* if we didn't have Location ComplexType
+    address:      { maxLength: 60 },
+    city:         { maxLength: 15 },
+    region:       { maxLength: 15 },
+    postalCode:   { maxLength: 10 },
+    country:      { maxLength: 15 },
+    */
 
 Now we can access the `city` property through the `Location`. Instead of writing `someSuppler.city` we can write `someSupplier.location.city`.
 
 Of course we must also add the `Location` definition to the metadata. Here we've written an `addLocationComplexType`method for that purpose..
 
-<pre class="brush:jscript;">
-function addLocationComplexType(store) {
-    var et = {
-        shortName: "Location",
-        isComplexType: true,
+    function addLocationComplexType(store) {
+        var et = {
+            shortName: "Location",
+            isComplexType: true,
+    
+            dataProperties: {
+                address:    { maxLength: 60 },
+                city:       { maxLength: 15 },
+                region:     { maxLength: 15 },
+                postalCode: { maxLength: 10 },
+                country:    { maxLength: 15 },
+            }
+        };
+    
+        return et = addTypeToStore(store, et);
+    } 
 
-        dataProperties: {
-            address:    { maxLength: 60 },
-            city:       { maxLength: 15 },
-            region:     { maxLength: 15 },
-            postalCode: { maxLength: 10 },
-            country:    { maxLength: 15 },
-        }
-    };
+Writing a special `ComplexType` class and then replacing properties with this new type ...  seems like a lot of work. It doesn't seem worth doing just once. It might payoff if we could re-use the `Location` type elsewhere in the model.  
 
-    return et = addTypeToStore(store, et);
-} 
-</pre>
-Writing a special `ComplexType` class and then replacing properties with this new type ...  seems like a lot of work. It doesn't seem worth doing just once. It might payoff if we could re-use the `Location` type elsewhere in the model.  As it happens, the Northwind database has four tables ("Customer", "Employee", "Order", "Supplier") that have the same location properties. The four corresponding entity types are all candidates for the `Location` complex type treatment.
+As it happens, the Northwind database has four tables ("Customer", "Employee", "Order", "Supplier") that have the same location properties. The four corresponding entity types are all candidates for the `Location` complex type treatment.
 
-##Embed a property Validator##
+## Embed a property Validator
 
 We typically [add Validators after](/doc-js/validation "Validation") the types have been registered. But you also can add Validators to a property definition while defining that property. The `Supplier.phone` is an example:
 
-<pre class="brush:jscript;">
-dataProperties: {
-    ...
-    // example of embedding a validator in the metadata
-    phone:        { maxLength: 24 , validators: [ breeze.Validator.phone() ] }, 
-    ...       
-}
-</pre>
+    dataProperties: {
+        ...
+        // example of embedding a validator in the metadata
+        phone:        { maxLength: 24 , validators: [ breeze.Validator.phone() ] }, 
+        ...       
+    }
 
 Notice that the data property has a `validators` array whose elements are instances of [the `Validator` class](/doc-js/api-docs/classes/Validator.html "Validator API"). 
 
-
 <a name="addTypeToStore"></a>
-#Add types to the MetadataStore#
+
+# Add types to the MetadataStore
 
 We'll use `addTypeToStore` to complete the process of defining metadata for our model.
 
-<p class="note">The <code>addTypeToStore</code> method and related helper functions are are <em>not part of core Breeze</em>. They belong to the Breeze Labs <strong><code>MetadataHelper</code></strong> extension defined in <em>breeze.metadata-helper.js</em>. <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.</p>
+> The `addTypeToStore` method and related helper functions are are ** part of core Breeze**. They belong to the Breeze Labs `MetadataHelper` extension defined in <em>breeze.metadata-helper.js</em>. <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.
 
 So far we've created object hashes that describe three entity types - `Category`, `Product`, and `Supplier` - and one complex type, `Location`. Let's turn those hashes into Breeze types and add them to the `MetadataStore` using the `addTypeToStore` helper.
-
 
 Create an instance of the helper at the top of your metadata creation script as we did
 
@@ -573,26 +555,25 @@ Create an instance of the helper at the top of your metadata creation script as 
     var helper = new breeze.config.MetadataHelper(defaultNamespace);
     var addTypeToStore = helper.addTypeToStore.bind(helper);
 
->`addTypeToStore` is only <i>one</i> way to achieve an efficient metadata writing workflow by conventions. That way may not suit your model or your preferred style. Please use as inspiration, not prescription.
+> `addTypeToStore` is only <i>one</i> way to achieve an efficient metadata writing workflow by conventions. That way may not suit your model or your preferred style. Please use as inspiration, not prescription.
 
 With that caveat in mind, we'll continue describing the `addTypeToStore` and its supporting methods in the Breeze Labs *breeze.metadata-helper.js* script. 
 
-<pre class="brush:jscript;">
-// Create the type from the definition hash and add the type to the store
-// fixes some defaults, infers certain validators,
-// add adds the type's "shortname" as a resource name
-function addTypeToStore(store, typeDef) {
-    patchDefaults(typeDef);
-    var type = typeDef.isComplexType ?
-        new breeze.ComplexType(typeDef) :
-        new breeze.EntityType(typeDef);
-    store.addEntityType(type);
-    inferValidators(type);
-    addTypeNameAsResource(type);
+    // Create the type from the definition hash and add the type to the store
+    // fixes some defaults, infers certain validators,
+    // add adds the type's "shortname" as a resource name
+    function addTypeToStore(store, typeDef) {
+        patchDefaults(typeDef);
+        var type = typeDef.isComplexType ?
+            new breeze.ComplexType(typeDef) :
+            new breeze.EntityType(typeDef);
+        store.addEntityType(type);
+        inferValidators(type);
+        addTypeNameAsResource(type);
+    
+        return type;
+    }
 
-    return type;
-}
-</pre>
 
 There are five steps:
 
@@ -606,7 +587,8 @@ There are five steps:
  
 5. Tell breeze that the entity's own name is a valid "resource name" for local queries.
 
-##patchDefaults##
+## patchDefaults
+
 We strive to minimize the amount of configuration code.  Magic strings in hash objects are a necessary evil; anything we can do to reduce repetition and infer values improves readability and maintainability. So in our configurations above we've abbreviated or omitted some values that Breeze ultimately requires, trusting that we'll be able to fill the gaps later.
 
 For example, Breeze requires all type names to include the namespace. Most models only have one namespace. In this code, you can omit the namespace and let `patchDefault` supply it later.
@@ -625,7 +607,6 @@ The time for "later" is now. The `patchDefault` method sweeps the configuration 
 
 Here is `patchDefaults` almost in its entirety:
 
-<pre class="brush:jscript;">
     function patchDefaults(typeDef) {
         var key, prop;
         ...
@@ -680,9 +661,9 @@ Here is `patchDefaults` almost in its entirety:
             }
         };
     }
-</pre>
 
-###attribute abbreviations
+
+### attribute abbreviations
 
 Some of the metadata attributes are a bit long winded. Fortunately, you often can abbreviate the more common attributes and `patchDefaults` will translate to the offical Breeze attribute names.
 
@@ -703,98 +684,97 @@ Here are some examples:
   - `invFK` or `invFKs` becomes `invForeignKeyNames`
   - `assoc` becomes `associationName`
 
-###array coercion
+### array coercion
 
 The `validators` attribute should be assigned an array of validators. It's easy to forget the array brackets when you only have one validator. `patchDefault` will coerce that into a one-element array for you.
 
 The `foreignKeyNames` and `invForeignKeyNames` attributes should be assigned an array of foreign key property names. In practice, navigation properties are almost always backed by exactly one FK property. If you omit the array brackets, `patchDefault` will coerce the string value for the FK property name into a one-element string array for you.
 
 <a name="ProductRevisited"></a> 
-###example
+
+### example
 
 Here's how abbreviations and array coercion might simplify the `Product` type definition we saw earlier.
 
-<pre class="brush:jscript;">
-function addProductType(store) {
-    var et = {
-        name: "Product",
-        defaultResourceName: "Products",
-        autoGeneratedKeyType: Identity, 
-
-        dataProperties: {
-            productID:       { type: DT.Int32, key: true },
-            productName:     { max: 40 },
-            supplierID:      { type: DT.Int32} ,
-            categoryID:      { type: DT.Int32 },
-            unitPrice:       { type: DT.Decimal },
-            unitsInStock:    { type: DT.Int16 },
-            discontinued:    { type: DT.Boolean, nullOk: false },
-            discontinuedDate:{ type: DT.DateTime },
-            // other properties
-        },
-
-        navigationProperties: {
-            category: {
-                type: "Category",
-                assoc: "Product_Category",
-                fk: "categoryID" 
+    function addProductType(store) {
+        var et = {
+            name: "Product",
+            defaultResourceName: "Products",
+            autoGeneratedKeyType: Identity, 
+    
+            dataProperties: {
+                productID:       { type: DT.Int32, key: true },
+                productName:     { max: 40 },
+                supplierID:      { type: DT.Int32} ,
+                categoryID:      { type: DT.Int32 },
+                unitPrice:       { type: DT.Decimal },
+                unitsInStock:    { type: DT.Int16 },
+                discontinued:    { type: DT.Boolean, nullOk: false },
+                discontinuedDate:{ type: DT.DateTime },
+                // other properties
             },
-            supplier: {
-                type: "Supplier",
-                assoc: "Supplier_Products",
-                fk: "supplierID" 
-            },
-        }
-    };
+    
+            navigationProperties: {
+                category: {
+                    type: "Category",
+                    assoc: "Product_Category",
+                    fk: "categoryID" 
+                },
+                supplier: {
+                    type: "Supplier",
+                    assoc: "Supplier_Products",
+                    fk: "supplierID" 
+                },
+            }
+        };
+    
+        return addTypeToStore(store, et);
+    }
 
-    return addTypeToStore(store, et);
-}
-</pre>
+<a name="inferValidators"></a>
+ 
+## inferValidators
 
-<a name="inferValidators"></a> 
-##inferValidators##
 A property that is not nullable is probably required. The property should have a `required` validator. When we set a property value and the property has a data type, we probably want to confirm that the value matches the data type. The property should have the appropriate data type validator.
 If we specified a `maxLength` for a string property, the property should carry the `maxLength` validator.
 
 The developer shouldn't have to specify these validators when we can infer them so easily. The `inferValidators` method takes carry of this.
 
->Breeze infers these validators automatically when it processes metadata received from the server. We're writing metadata by hand on the client so we have to do it ourselves.
+> Breeze infers these validators automatically when it processes metadata received from the server. We're writing metadata by hand on the client so we have to do it ourselves.
 
-<pre class="brush:jscript;">
-function inferValidators(entityType) {
-
-    entityType.dataProperties.forEach(function (prop) {
-        if (!prop.isNullable) { // is required. 
-            addValidator(prop, Validator.required());
-        };
-
-        addValidator(prop, getDataTypeValidator(prop));
-
-        if (prop.maxLength != null && prop.dataType === DT.String) {
-            addValidator(prop, Validator.maxLength({ maxLength: prop.maxLength }));
+    function inferValidators(entityType) {
+    
+        entityType.dataProperties.forEach(function (prop) {
+            if (!prop.isNullable) { // is required. 
+                addValidator(prop, Validator.required());
+            };
+    
+            addValidator(prop, getDataTypeValidator(prop));
+    
+            if (prop.maxLength != null && prop.dataType === DT.String) {
+                addValidator(prop, Validator.maxLength({ maxLength: prop.maxLength }));
+            }
+    
+        });
+    
+        return entityType;
+    
+        function addValidator(prop, validator) {
+            if (!validator) { return; } // no validator arg
+            var valName = validator.name;
+            var validators = prop.validators;
+            var found = validators.filter(function (val) { return val.name == valName; })
+            if (!found.length) { // this validator has not already been specified
+                validators.push(validator);
+            }
         }
-
-    });
-
-    return entityType;
-
-    function addValidator(prop, validator) {
-        if (!validator) { return; } // no validator arg
-        var valName = validator.name;
-        var validators = prop.validators;
-        var found = validators.filter(function (val) { return val.name == valName; })
-        if (!found.length) { // this validator has not already been specified
-            validators.push(validator);
+    
+        function getDataTypeValidator(prop) {
+            var dataType = prop.dataType;
+            var validatorCtor = !dataType || dataType === DT.String ? null : dataType.validatorCtor;
+            return validatorCtor ? validatorCtor() : null;
         }
     }
-
-    function getDataTypeValidator(prop) {
-        var dataType = prop.dataType;
-        var validatorCtor = !dataType || dataType === DT.String ? null : dataType.validatorCtor;
-        return validatorCtor ? validatorCtor() : null;
-    }
-}
-</pre>
 
 The `getDataTypeValidator` is noteworthy in two respects.
 
@@ -802,17 +782,15 @@ The `getDataTypeValidator` is noteworthy in two respects.
  
 2. We can't use the data type `Validator` for a string property because we lack the length information that `Validator.string()` requires.
 
-##addTypeNameAsResource##
+## addTypeNameAsResource
 
 We often write Breeze queries that apply to the local cache. For example,
 
-<pre class="brush:jscript;">
-var query = breeze.EntityQuery.from('Product')
-            .where('categoryID', '==', someCategoryId);
+    var query = breeze.EntityQuery.from('Product')
+                .where('categoryID', '==', someCategoryId);
 
-// query the cache synchronously
-var categoryProducts = manager.executeQueryLocally(query); 
-</pre>
+    // query the cache synchronously
+    var categoryProducts = manager.executeQueryLocally(query); 
 
 Notice that this particular query addresses a resource named "Product". That seems natural and you might think that an `EntityType` name is always a valid resource name. 
 
@@ -820,41 +798,37 @@ It is not! At least it is not by default. Resource names are typically *server-s
 
 Fortunately, we can associate the `Product` type with additional resources names ... such as the `EntityType` name. That's the point of the `addTypeNameAsResource` method:
 
-<pre class="brush:jscript;">
-// Adds the type's 'shortName' as one of the resource names for the type.
-function addTypeNameAsResource(store, type) {
-    if (!type.isComplexType) { // don't do this for ComplexTypes
-        store.setEntityTypeForResourceName(type.shortName, type);
+    // Adds the type's 'shortName' as one of the resource names for the type.
+    function addTypeNameAsResource(store, type) {
+        if (!type.isComplexType) { // don't do this for ComplexTypes
+            store.setEntityTypeForResourceName(type.shortName, type);
+        }
     }
-}
-</pre>
 
 Note how this method excludes `ComplexType` names. A `ComplexType` is not an entity and is not directly queryable in the cache.
 
 While we can associate an `EntityType` with as many resources names as we wish, we must make sure that a given resource name is associated with exactly one type! There is a remote possibility that our model has two types with the same short name but different namespaces. The way we call this method in `addTypeToStore`, we would unintentionally associate the same resource name with the two different types. We could fix that later by removing one or both of these "shortName" resources and optionally adding fullname resources.
 
-# *You might want to know ...* #
+# *You might want to know ...* 
 
 In this section we talk about some corner cases.
 
-### Define inline validators as strings ###
+### Define inline validators as strings 
 Although the elements of a data property's `validators` array must be instances of the `Validator` class Breeze knows how to turn a JSON string representation of the validator into a `breeze.Validator` object.
 
 We harnessed that trick in a helper function called within the `patchDefaults` helper:
 
-<pre class="brush:jscript;">
-function convertValidators(typeName, propName, propDef) {
-    ...
-    propDef.validators.forEach(function (val, ix) {
+    function convertValidators(typeName, propName, propDef) {
         ...
-        try {
-            validators[ix]=breeze.Validator.fromJSON(val);
-        } catch (ex) {
-           ...
-        }
-    });
-}
-</pre>
+        propDef.validators.forEach(function (val, ix) {
+            ...
+            try {
+                validators[ix]=breeze.Validator.fromJSON(val);
+            } catch (ex) {
+               ...
+            }
+        });
+    }
 
 The pertinent expression in there is
 
@@ -867,7 +841,8 @@ Using this technique, we could have written the `Supplier.phone` property defini
 This `convertValidators` helper also coerces a single validator into a one-element array of validators as Breeze requires.
 
 <a name="invForeignKeyNames"></a>
-### Omitting a navigation property ###
+
+### Omitting a navigation property 
 
 We usually have navigation properties on both sides of an association. The  "Supplier_Products" association, for example, is represented by both a `Suppler.products` and a `Product.supplier` navigation property.
 
@@ -889,7 +864,7 @@ That means the lone remaining navigation property must fulfill the requirement o
 
 We could remove the `Supplier.products` property and keep the `Product.supplier` navigation. `Product.supplier` already identifies the foreign key properties so we don't have to do anything else.
 
->We could ditch the `associationName` as well; it's only required to associate *bi*-directional navigation properties. However, we prefer to retain the `associationName` for future proofing.
+> We could ditch the `associationName` as well; it's only required to associate *bi*-directional navigation properties. However, we prefer to retain the `associationName` for future proofing.
 
 Imagine instead that we want to keep the `Supplier.products` property and remove the `Product.supplier` navigation. In so doing, we'd be removing the `foreignKeyNames` attribute that identifies the foreign keys.
 
