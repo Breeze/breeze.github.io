@@ -323,6 +323,7 @@ Breeze lacks the ability to distinguish the "Customer/Orders" case from the "Ord
 It's up to the application developer to transition the parent order to a changed state if that is the appropriate interpretation in the application domain.
 
 <a name="get-set-property"></a>
+
 ## *getProperty* and *setProperty*
 
 The navigation property syntax shown in our examples is typical for most Breeze applications and is consistent with the Knockout property syntax. Such properties are implemented as `get` and `set` functions; we write `order.Customer()` and `order.Customer(existingCustomer)`.
