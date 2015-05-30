@@ -154,6 +154,7 @@ The following example may clarify the point.
 	var isSameId = acme1.OrderID() === acme2.OrderID(); // false; the temporary keys are different
 
 <a name="OfflineConsiderations"></a>
+
 ## Offline considerations
 
 The ability to export reference entities and unsaved changes to local storage is especially useful in offline and mobile scenarios. Of course there is always a risk of losing data that exist only on the local device. When that risk is worth taking, you can often offer a substantial subset of application value while disconnected for extended periods.
