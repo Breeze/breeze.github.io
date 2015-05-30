@@ -40,6 +40,7 @@ Features include:
 + Validation error messages can be customized or localized.
 
 **Pluggable back-end**
+
 + Full integration with the .NET/Entity Framework, .NET/NHibernate, Java/Hibernate, Node/MongoDb, Node/Sequelize and others.
 + Supports .NET WebAPI, Java Servlet, Node Express and OData back-ends.
 + Works with NoSQL, non-.NET, and SOA back-ends. 
