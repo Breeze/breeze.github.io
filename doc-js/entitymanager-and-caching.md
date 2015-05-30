@@ -29,113 +29,45 @@ The following is a summary of the methods available on the EntityManager arrange
 
 EntityManager methods relating to querying entities, either from remote services or from its own internal entity cache.
 
-<table border="1" cellpadding="1" cellspacing="1">
-<thead>
-<tr>
-<th scope="col">Method</th>
-<th scope="col">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>executeQuery</em></td>
-<td>Asynchronously executes its <em>EntityQuery</em> argument, returning an <em>Promise</em> that in turn will return an array of entities.</td>
-</tr>
-<tr>
-<td><em>executeQueryLocally</em></td>
-<td>Synchonously executes its <em>EntityQuery</em> argument against any entities already in the entity cache, returning an array of entities.</td>
-</tr>
-<tr>
-<td><em>fetchEntityByKey</em></td>
-<td>Asynchronously queries for an entity by its key; returning a <em>Promise</em> that in turn will return the entity.</td>
-</tr>
-</tbody>
-</table>
+| Method | Summary
+| -------| -------
+| *executeQuery* | Asynchronously executes its *EntityQuery* argument, returning an *Promise* that in turn will return an array of entities.
+|*executeQueryLocally* | Synchonously executes its *EntityQuery* argument against any entities already in the entity cache, returning an array of entities.
+|*fetchEntityByKey* | Asynchronously queries for an entity by its key; returning a *Promise* that in turn will return the entity.
+
 
 ##Finding entities in the cache
 
 EntityManager methods that allow for searching and retrieving entities from the local entity cache. 
 
-<table border="1" cellpadding="1" cellspacing="1">
-<thead>
-<tr>
-<th scope="col">Method</th>
-<th scope="col">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><i>executeQueryLocally</i></td>
-<td>(same as above) Synchonously executes its EntityQuery argument against any entities already in the entity cache, returning an array of entities.</td>
-</tr>
-<tr>
-<td><i>getEntityByKey</i></td>
-<td>Synchonously returns an entity from the local entity cache.</td>
-</tr>
-<tr>
-<td><i>getEntities</i></td>
-<td>Synchronously returns an array of entities of specified EntityTypes and EntityStates from the local entity cache.</td>
-</tr>
-<tr>
-<td><i>getChanges</i></td>
-<td>Synchronously returns an array of changed (Modified, Added, Deleted) entities of optionally specified EntityTypes and EntityStates from the local entity cache.</td>
-</tr>
-</tbody>
-</table>
+| Method | Summary
+| ------ | ---------
+| *executeQueryLocally* |(same as above) Synchonously executes its EntityQuery argument against any entities already in the entity cache, returning an array of entities.
+| *getEntityByKey* | Synchonously returns an entity from the local entity cache.
+| *getEntities* | Synchronously returns an array of entities of specified EntityTypes and EntityStates from the local entity cache.
+| *getChanges* | Synchronously returns an array of changed (Modified, Added, Deleted) entities of optionally specified EntityTypes and EntityStates from the local entity cache.
+
 
 ##Adding / attaching and removing entities to and from the cache
 
 EntityManager methods that allow for adding or attaching entities to the local entity cache.  
 
-<table border="1" cellpadding="1" cellspacing="1">
-<thead>
-<tr>
-<th scope="col">Method</th>
-<th scope="col">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><i>addEntity</i></td>
-<td>Adds a new entity to the local entity cache with an EntityState of 'Added'.</td>
-</tr>
-<tr>
-<td><i>attachEntity</i></td>
-<td>Adds an entity to the local entity cache with an arbitrary EntityState.</td>
-</tr>
-<tr>
-<td><i>detachEntity     </i></td>
-<td>Removes an entity from the local entity cache. </td>
-</tr>
-<tr>
-<td><i>createEntity</i></td>
-<td>Creates a new entity (based on preexisting metadata) and adds or attaches it to the local entity cache. </td>
-</tr>
-<tr>
-<td><i>clear</i></td>
-<td>Clears all entities from the local entity cache. </td>
-</tr>
-</tbody>
-</table>
+| Method | Summary
+| ------ | ---------
+|*addEntity* |Adds a new entity to the local entity cache with an EntityState of 'Added'.
+|*attachEntity* |Adds an entity to the local entity cache with an arbitrary EntityState.
+|*detachEntity* | Removes an entity from the local entity cache. 
+|*createEntity* | Creates a new entity (based on preexisting metadata) and adds or attaches it to the local entity cache. 
+|*clear* |Clears all entities from the local entity cache. 
+
 
 ##Saving changes
 
 The EntityManager has exactly one method to save changes to the persistence service.
 
-<table border="1" cellpadding="1" cellspacing="1">
-<thead>
-<tr>
-<th scope="col">Method</th>
-<th scope="col">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><i>saveChanges</i></td>
-<td>Can save either all of the changes (Added, Modified, and Deleted entities) in the local entity cache or any selected subset.</td>
-</tr>
-</tbody>
-</table>
+| Method | Summary
+| ------ | ---------
+|*saveChanges* |Can save either all of the changes (Added, Modified, and Deleted entities) in the local entity cache or any selected subset.
 
 ##Rejecting changes
 
@@ -157,49 +89,19 @@ You should only call `acceptChanges` when you know exactly what you are doing. I
 
 The EntityManager is able to serialize its state to a local persistence store and later rematerialize that state. See the <a href="/doc-js/export-import">Export/Import topic</a> for details.
 
-<table border="1" cellpadding="1" cellspacing="1">
-<thead>
-<tr>
-<th scope="col">Method</th>
-<th scope="col">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><i>exportEntities</i></td>
-<td>Serializes any selected group of entities to a string for storage to HTML5 local storage or IndexedDb or any other local persistence store.</td>
-</tr>
-<tr>
-</tr>
-<tr>
-<td><i>importEntities</i></td>
-<td>Deserializes any previously 'exported' entities into the entity manager.</td>
-</tr>
-</tbody>
-</table>
+| Method | Summary
+| ------ | ---------
+|*exportEntities* |Serializes any selected group of entities to a string for storage to HTML5 local storage or IndexedDb or any other local persistence store.
+|*importEntities* |Deserializes any previously 'exported' entities into the entity manager.
 
 ##Events 
 
 EntityManager events that may be subscribed to and which occur when changes occur within the local entity cache. 
 
-<table border="1" cellpadding="1" cellspacing="1">
-<thead>
-<tr>
-<th scope="col">Event</th>
-<th scope="col">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><i>entityChanged</i></td>
-<td>Fired whenever an entity within the EntityManager has changed.</td>
-</tr>
-<tr>
-<td><i>hasChanges</i></td>
-<td>Fired whenever the state of the EntityManager transistions from a state of having changes to not having changes or vice versa.</td>
-</tr>
-</tbody>
-</table>
+| Event | Summary
+| ------ | ---------
+|*entityChanged* | Fired whenever an entity within the EntityManager has changed.
+|*hasChanges* | Fired whenever the state of the EntityManager transistions from a state of having changes to not having changes or vice versa.
 
 <a name="freshCache"></a>
 
