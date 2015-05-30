@@ -2,53 +2,48 @@
 layout: doc-js
 redirect_from: "/old/documentation/saving-changes.html"
 ---
-<h1>Saving changes</h1>
+# Saving changes
 
-<p>Save changes to entities in cache by calling the <em>EntityManage</em>r&rsquo;s <span class="codeword">saveChanges</span> method. This topic delves more deeply into the save process and how you control it.</p>
+Save changes to entities in cache by calling the *EntityManage*r&'s `saveChanges` method. This topic delves more deeply into the save process and how you control it. 
 
-<p>This page is not ready for publication. It will cover:</p>
+This page is not ready for publication. It will cover: 
 
-<ul>
-	<li>Detecting changes in cache: <span class="codeword">hasChanges</span> and <span class="codeword">getChanges</span></li>
-	<li>Canceling pending changes with <span class="codeword">rejectChanges</span></li>
-	<li>Validation before save</li>
-	<li>The state of entities after save</li>
-	<li>What entities are in <span class="codeword">saveResult.entities</span> collection.</li>
-	<li>Temporary key resolution (&ldquo;id fix-up&rdquo;) and the <span class="codeword">saveResult.keyMappings</span>.</li>
-	<li>Concurrency and the <span class="codeword">DataProperty.concurrencyMode</span></li>
-	<li>Saving selected entities</li>
-	<li>Default and explicit <span class="codeword">SaveOptions</span></li>
-	<li><a href="/doc-cool-breezes/concurrent-saves.html">Guard against accidental double saves</a></li>
-	<li>Saving a change-set to a specific server endpoint with a &quot;<a href="#NamedSave">named save</a>&quot;</li>
-	<li>Saving data to an arbitrary HTTP service</li>
-</ul>
+- Detecting changes in cache: `hasChanges` and `getChanges`
+- Canceling pending changes with `rejectChanges`
+- Validation before save
+- The state of entities after save
+- What entities are in `saveResult.entities` collection.
+- Temporary key resolution ('id fix-up') and the `saveResult.keyMappings`.
+- Concurrency and the `DataProperty.concurrencyMode`
+- Saving selected entities
+- Default and explicit `SaveOptions`
+- <a href="/doc-cool-breezes/concurrent-saves.html">Guard against accidental double saves</a>
+- Saving a change-set to a specific server endpoint with a '<a href="#NamedSave">named save</a>'
+- Saving data to an arbitrary HTTP service
 
-<h2><a name="NamedSave"></a>Custom save operations with &quot;named saves&quot;</h2>
 
-<p>By default the <span class="codeword">EntityManager.saveChanges</span> method sends a save request to a server endpoint called &quot;SaveChanges&quot;.</p>
+## <a name="NamedSave"></a>Custom save operations with 'named saves'
 
-<p>But you might have a specific business process to perform when you save a certain constellation of entities. Perhaps the actual storing of changes in the database is only a part of a much larger server-side workflow. What you really have is a &quot;command&quot; that includes a database update.</p>
+By default the `EntityManager.saveChanges` method sends a save request to a server endpoint called 'SaveChanges'. 
 
-<p>You could route this command through a single &quot;SaveChanges&quot; endpoint and let the corresponding server method dispatch the save request to the appropriate command handler. That could get messy. It can make more sense to POST requests to command-specific endpoints, passing along just the right entity set in the request body.</p>
+But you might have a specific business process to perform when you save a certain constellation of entities. Perhaps the actual storing of changes in the database is only a part of a much larger server-side workflow. What you really have is a 'command' that includes a database update. 
 
-<p>That&#39;s what the &quot;<strong>Named Save</strong>&quot; is for. WIth a &quot;Named Save&quot;, you can re-target a &quot;save&quot; to a custom server endpoint such as an arbitrarily named <em>action </em>method on a separate, dedicated Web API controller.</p>
+You could route this command through a single 'SaveChanges' endpoint and let the corresponding server method dispatch the save request to the appropriate command handler. That could get messy. It can make more sense to POST requests to command-specific endpoints, passing along just the right entity set in the request body. 
 
-<p>You still call <span class="codeword">EntityManager.saveChanges</span>but you pass in a <span class="codeword">SaveOptions</span> object that specifies the <span class="codeword">resourceName</span> to handle the request. The server should route the request to a suitable controller <em>action</em> method. You&#39;d also set the <span class="codeword">SaveOptions.dataService</span> if you need also to target a different controller.</p>
+That's what the '**Named Save**' is for. With a 'Named Save', you can re-target a 'save' to a custom server endpoint such as an arbitrarily named *action *method on a separate, dedicated Web API controller. 
 
-<p>Assuming that you want to save all pending changes to a custom endpoint, you could write:</p>
+You still call `EntityManager.saveChanges`but you pass in a `SaveOptions` object that specifies the `resourceName` to handle the request. The server should route the request to a suitable controller *action* method. You'd also set the `SaveOptions.dataService` if you need also to target a different controller. 
 
-<pre class="brush:jscript;">
-var so = new SaveOptions({ resourceName: &quot;myCustomSave&quot; });
-// null = &#39;all-pending-changes&#39;; saveOptions is the 2nd parameter
-myEntityManager.SaveChanges(null, so ); 
-</pre>
+Assuming that you want to save all pending changes to a custom endpoint, you could write: 
 
-<p>You are more likely to assemble a list of entities to save to that endpoint ... a list consistent with the semantics of &#39;MyCustomSave&#39; in which case you&#39;d probably pass that list in the &quot;saveChanges&quot; call:</p>
+    var so = new SaveOptions({ resourceName: 'myCustomSave' });
+    // null = 'all-pending-changes'; saveOptions is the 2nd parameter
+    myEntityManager.SaveChanges(null, so ); 
 
-<pre class="brush:jscript;">
-myEntityManager.SaveChanges(selectedEntities, so ); 
-</pre>
+You are more likely to assemble a list of entities to save to that endpoint ... a list consistent with the semantics of 'MyCustomSave' in which case you'd probably pass that list in the 'saveChanges' call: 
 
-<p>The Breeze client still sends a JSON change-set bundle to &#39;MyCustomSave&#39; as it would with a normal <span class="codeword">saveChanges </span> call. The POST method on the server that handles the &#39;MyCustomSave&#39; endpoint should have the same as signature as the &#39;SaveChanges&#39; method.</p>
+    myEntityManager.SaveChanges(selectedEntities, so ); 
 
-<p>&nbsp;</p>
+The Breeze client still sends a JSON change-set bundle to 'MyCustomSave' as it would with a normal `saveChanges ` call. The POST method on the server that handles the 'MyCustomSave' endpoint should have the same as signature as the 'SaveChanges' method. 
+
+  
