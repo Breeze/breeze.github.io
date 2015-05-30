@@ -15,6 +15,7 @@ What you're seeing is a representation of metadata *meant for a machine* ... not
 We'll show you how authoring metadata with the Breeze Labs *Metadata-Helper* can be easy and intuitive. 
 
 <a name="metadataHelper"></a>
+
 ##Why use *Metadata-Helper*?
 
 Breeze has [a native API for defining an `EntityType`](/doc-js/api-docs/classes/EntityType.html) and [adding it to a `MetadataStore`](/doc-js/api-docs/classes/MetadataStore.html#method_addEntityType). This API affords great control over every detail of metadata definition. You should learn it.
@@ -23,8 +24,9 @@ We recognize that it can seem a tad verbose and fussy. Sometimes you wish for so
 
 The Metadata-Helper is a domain-specific language (DSL) that strives to minimize the information you have to provide when writing Breeze metadata. It relies on common conventions to make good guesses about the details of your model's types, properties and associations. If it guesses incorrectly about a particular point (or can't guess at all), you can configure that specific point explicitly using the core metadata API.
 
-<p class="note">The Breeze Labs <strong><code>MetadataHelper</code></strong> extension is defined in <em>breeze.metadata-helper.js</em>. <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.<br/><br/>
-It is also available as <a  href="https://www.nuget.org/packages/Breeze.Metadata.Helper/" target="_blank">a NuGet package</a>: <code>Install-Package Breeze.Metadata.Helper</code></p>
+> The Breeze Labs **`MetadataHelper`** extension is defined in *breeze.metadata-helper.js*. <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.
+ 
+> It is also available as <a  href="https://www.nuget.org/packages/Breeze.Metadata.Helper/" target="_blank">a NuGet package</a>: <code>Install-Package Breeze.Metadata.Helper</code></p>
 
 *In this topic*, we'll concentrate on *using the **Metadata-Helper** when it gets it right* ... which is most of the time. 
 
@@ -61,11 +63,11 @@ A *Speaker* may give more than one talk so the *Person* type has a collection of
 ### What you write
 Here is the metadata you might write to describe that model. 
 
->This code extract comes from a [test helper file in the DocCode sample](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/helpers/ccjs.model.metadata.js). See related tests in [*metadataOnClientTests.js*](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/metadataOnClientTests.js).
+> This code extract comes from a [test helper file in the DocCode sample](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/helpers/ccjs.model.metadata.js). See related tests in [*metadataOnClientTests.js*](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/metadataOnClientTests.js).
 >
 >You see these tests [running live in this plunker](http://embed.plnkr.co/A1vPWiMtGJy35MTzPuSb/preview). Feel free to explore these metadata further by adding your own tests right there in plunker.
 
-<p class='note'>Remember to install and enable the Breeze Labs <a href="#metadataHelper"><strong><code>MetadataHelper</code></strong></a>.</p>
+> Remember to install and enable the Breeze Labs <a href="#metadataHelper"><strong><code>MetadataHelper</code></strong></a>.</p>
 
     function fillMetadataStore(store) {
 
@@ -178,6 +180,6 @@ Here is the metadata you might write to describe that model.
         }
     }
 
-##Next steps
+## Next steps
 
-Now you're ready for a more complex, multiple entity, live code example <a href="http://plnkr.co/edit/G4gOH68iKLobAumoEsXx?p=info" target="_blank"><em><strong>in this plunker</em></strong></a>.  Look in particular at the *metadataFactory.js* script.
+Now you're ready for a more complex, multiple entity, live code example <a href="http://plnkr.co/edit/G4gOH68iKLobAumoEsXx?p=info" target="_blank"> **in this plunker**</a>.  Look in particular at the *metadataFactory.js* script.
