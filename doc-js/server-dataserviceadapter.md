@@ -59,9 +59,9 @@ Here is the public API summary (revisited in [detail below](#api-detail)):
 * [**initialize**](#initialize) - setup for a new adapter instance prior to use.
 * [**checkForRecomposition**](#checkForRecomposition) (optional) - what do do when a dependent Breeze adapter is initialized.
 * [**fetchMetadata**](#fetchMetadata) - retrieve the metadata and populate a `MetadataStore`.
-*  [**executeQuery**](#executeQuery) - request data from the server (usually with constraints) and materialize the results as entities.
-*  [**saveChanges**](#saveChanges) - save the pending changes for one or more entities.
-*  [**jsonResultsAdapter**](#jsonResultsAdapter) - returns a [`JsonResultsAdapter`](/doc-js/server-jsonresultsadapter.html) which manipulates query and save result data from the server into a shape that Breeze understands.
+* [**executeQuery**](#executeQuery) - request data from the server (usually with constraints) and materialize the results as entities.
+* [**saveChanges**](#saveChanges) - save the pending changes for one or more entities.
+* [**jsonResultsAdapter**](#jsonResultsAdapter) - returns a [`JsonResultsAdapter`](/doc-js/server-jsonresultsadapter.html) which manipulates query and save result data from the server into a shape that Breeze understands.
 
 Your service may not support one or more of the Breeze operations. Many remote services don't provide metadata or won't accept client changes. That's OK. 
 

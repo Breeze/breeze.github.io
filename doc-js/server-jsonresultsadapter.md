@@ -180,6 +180,7 @@ There are at least four ways to substitute your *jsonResultsAdapter* (jra) for t
    >When you'll re-use this *dataServiceAdapter* version in multiple apps.
 
 <a name='jra-interface'></a>
+
 ## Before you write your own ...
 We strongly recommend that you review a few examples before trying to write your own *JsonResultsAdapter*.
 
@@ -228,9 +229,10 @@ The `visitNode` method takes 3 parameters and returns a single object hash. Bree
    - **entityManager**: The `EntityManager` processing this query/save.
    - **dataService**: The `DataService` instance at the time of request.
    - **mergeOptions**: Options to control how the result of this query/save should be merged into the current EntityManager. It has the following properties:
-         - **mergeStrategy**: A `MergeStrategy` (e.g, `PreserveChanges`).
-         - **noTracking**: A `boolean` indicating whether 'noTracking' was specified. Default must be `false`.
-         - **includeDeleted**: An optional `boolean` indicating whether 'deleted' entities should be returned. Default must be `false`.
+    
+      - **mergeStrategy**: A `MergeStrategy` (e.g, `PreserveChanges`).
+      - **noTracking**: A `boolean` indicating whether 'noTracking' was specified. Default must be `false`.
+      - **includeDeleted**: An optional `boolean` indicating whether 'deleted' entities should be returned. Default must be `false`.
 
 - **nodeContext** - Information about the current node.
  
@@ -238,59 +240,25 @@ The `visitNode` method takes 3 parameters and returns a single object hash. Bree
 
     The remaining `nodeContext` properties vary by `nodeType`.
 
-    <style>
-      td { vertical-align:top; 
-           padding: 12px 4px !important;}
-      th { background-color:#99CCFF;
-           padding: 8px 4px !important;}
-    </style>
-	<table>
-		<tbody>
-			<tr>
-				<th><em>nodeType</em></th>
-				<th>Description</th>
-				<th>Other Properties</th>
-			</tr>
-			<tr>
-				<td>&quot;root&quot;</td>
-				<td>top-level, root node</td>
-				<td><em>no properties</em></td>
-			</tr>
-			<tr>
-				<td>&quot;anonProp&quot;</td>
-				<td>node returned by an anonymous node's scalar property.</td>
-				<td><strong>propertyName</strong>: The name of the scalar property.</td>
-			</tr>
-			<tr>
-				<td>&quot;anonPropItem&quot;</td>
-				<td>node in the array returned by an anonymous node's array property.</td>
-				<td><strong>propertyName</strong>: The name of the array property.</td>
-			</tr>
-			<tr>
-				<td>&quot;navProp&quot;</td>
-				<td>node returned by an entity node's scalar navigation property.</td>
-				<td><strong>navigationProperty</strong>: The <code><a href="/doc-js/api-docs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.</td>
-			</tr>
-			<tr>
-				<td>&quot;navPropItem&quot;</td>
-				<td>node in the array returned by an entity node's navigation array property.</td>
-				<td><strong>navigationProperty</strong>: The <code><a href="/doc-js/api-docs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.</td>
-			</tr>
-		</tbody>
-	</table>
-	</li>
+|`nodeType`  |  Description | Other properties
+| -----------| -------------| ----------------
+| 'root' 	|top-level, root node | *no properties*
+|'anonProp' |node returned by an anonymous node's scalar property. |**propertyName**: The name of the scalar property.
+|'anonPropItem' |node in the array returned by an anonymous node's array property. |**propertyName**: The name of the array property.
+|'navProp' | node returned by an entity node's scalar navigation property. |**navigationProperty**: The <a href="/doc-js/api-docs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</a>.
+| 'navPropItem' |node in the array returned by an entity node's navigation array property. | **navigationProperty**: The <code><a href="/doc-js/api-docs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.
 
-    A node is a **top-level node** if it is *the* object returned by `extractResults` or an object in *the array* returned by `extractResults`.
+   A node is a **top-level node** if it is *the* object returned by `extractResults` or an object in *the array* returned by `extractResults`.
 
-    A node is either an **entity node** (a node associated with a known `EntityType`) or an **anonymous node** as determined by the `visitNode` method.
+   A node is either an **entity node** (a node associated with a known `EntityType`) or an **anonymous node** as determined by the `visitNode` method.
 
-    Breeze walks each node property. 
+   Breeze walks each node property. 
 
-    - If that property returns a **single object**, that object becomes a node and is passed to `visitNode`. It's a **navProp** node if the parent object is an entity node; it's an **anonProp** if the parent object is an anonymous node.
+   - If that property returns a **single object**, that object becomes a node and is passed to `visitNode`. It's a **navProp** node if the parent object is an entity node; it's an **anonProp** if the parent object is an anonymous node.
 
-    - If the property returns an **array**, Breeze inspects each item in that array. If the item is an object, that object becomes a node and is passed to `visitNode`. It's a **navPropItem** node if the parent object is an entity node; it's an **anonPropItem** if the parent object is an anonymous node.
+   - If the property returns an **array**, Breeze inspects each item in that array. If the item is an object, that object becomes a node and is passed to `visitNode`. It's a **navPropItem** node if the parent object is an entity node; it's an **anonPropItem** if the parent object is an anonymous node.
 
-    This node-tree walk continues until Breeze has visited every property of every node.
+   This node-tree walk continues until Breeze has visited every property of every node.
 
 #### Return value:
 
@@ -298,7 +266,7 @@ The `visitNode` method returns a hash that provides additional information about
 
   - **`entityType`** (optional): the metadata `EntityType` for this node. When set, the node becomes an **entity node**. If this property is missing, null, or undefined, the node is an **anonymous** node. 
  
-    Setting the `entityType` is perhaps the most important task of the `visitNode` method. Here's how you might do it:
+  Setting the `entityType` is perhaps the most important task of the `visitNode` method. Here's how you might do it:
 
         var meta = mappingContext.entityManager.metadataStore;
         var type = typeName && meta.getEntityType(typeName, true);
@@ -307,19 +275,19 @@ The `visitNode` method returns a hash that provides additional information about
         ... other stuff ...
         return result;
 
-     How do we determine the `typeName`? That can be easy or difficult. It's easy when the type name was sent by the server as a property of the node (e.g., `node.$type`):
+   How do we determine the `typeName`? That can be easy or difficult. It's easy when the type name was sent by the server as a property of the node (e.g., `node.$type`):
 
         var typeName = meta.normalizeTypeName(node.$type);
 
-     If your server isn't that helpful, you'll have to write code to derive or infer the `EntityType` from the node and/or the `mappingContext`.
+   If your server isn't that helpful, you'll have to write code to derive or infer the `EntityType` from the node and/or the `mappingContext`.
 
   - **nodeId** (optional): The node's serialization id.
 
-    The same object may be represented several times in the payload. The full object data could be repeated in the JSON data each time and that redundancy can bloat the payload significantly. 
+  The same object may be represented several times in the payload. The full object data could be repeated in the JSON data each time and that redundancy can bloat the payload significantly. 
   
-    Some JSON serializers can reduce the bloat by serializing the object just once, assigning a unique serialization id, and subsequently referring to that first instance by its serialization id.
+  Some JSON serializers can reduce the bloat by serializing the object just once, assigning a unique serialization id, and subsequently referring to that first instance by its serialization id.
 
-    For example, given an array with the same person listed twice, a server's serializer might have produced:
+  For example, given an array with the same person listed twice, a server's serializer might have produced:
 
 	
         [{
@@ -331,21 +299,21 @@ The `visitNode` method returns a hash that provides additional information about
           '$ref': '1'
         }]
 
-    >This is the format produced by the Json.NET serializer.
+  > This is the format produced by the Json.NET serializer.
     
-    The *JsonResultsAdapter* supports this approach with its own `nodeId` and `nodeRefId` properties.
+  The *JsonResultsAdapter* supports this approach with its own `nodeId` and `nodeRefId` properties.
 
-    Given the above JSON, our `visitNode` method should set the `nodeId` for the first node like so:
+  Given the above JSON, our `visitNode` method should set the `nodeId` for the first node like so:
 
         result.nodeId = node.$id;
 	
   - **nodeRefId** (optional): a reference to the serialization id of another node. 
 
-    Continuing with the previous example, for the second "Person" node we'd write:
+  Continuing with the previous example, for the second "Person" node we'd write:
 
         result.nodeRefId = node.$ref;
     
-    Nodes can arrive in any order. Breeze might encounter a *nodeRefId* before the object with the corresponding *nodeId*. Breeze defers resolution of such references until after traversing the entire top level graph.
+  Nodes can arrive in any order. Breeze might encounter a *nodeRefId* before the object with the corresponding *nodeId*. Breeze defers resolution of such references until after traversing the entire top level graph.
 
   - **ignore** (boolean optional, default false): the entire node (and all of its subnodes) will not be processed.
 
@@ -360,6 +328,7 @@ The `visitNode` method returns a hash that provides additional information about
     By default Breeze processes and copies each node's properties recursively. Set to `true` if you want to skip processing of an **anonymous node** and simply return it in the results *as is*. This flag is ignored for *entity nodes*.
 
 <a name="nodeChange"></a>
+
 #### Changing the node itself
 
 When the `visitNode` method returns, Breeze takes action based on
@@ -374,9 +343,9 @@ When visiting an **entity node**, Breeze copies "known" properties (properties r
 
 In general, you don't do anything to an entity node as its properties tend to align with the metadata property definitions for that `EntityType`. But you might change node property names or values if Breeze couldn't simply copy them to the entity object. For example, you might rename one node property and set another property value based on local information:
 
-    node.Foo = node.Bar; // the node 'Bar' property should actually be the entity 'Foo' property
-    delete node.Bar;
-    node.LastRetrieved = Date.now();
+      node.Foo = node.Bar; // the node 'Bar' property should actually be the entity 'Foo' property
+      delete node.Bar;
+      node.LastRetrieved = Date.now();
 
 Three important considerations for **entity nodes**:
 
@@ -405,12 +374,12 @@ Breeze traverses the nodes, calling `visitNode` for each node, according to the 
   - **Step 3** (`visitNode` recursion): 
     - If `visitNode` returns a hash with an assigned `entityType` property, Breeze takes over the processing of the remainder of this node by creating a new instance of this `EntityType` and populating it with node data in the following manner:
  
-	   - For each `DataProperty` (identified in the `EntityType.dataProperties` collection), values are copied from the node into the new entity instance.
+   - For each `DataProperty` (identified in the `EntityType.dataProperties` collection), values are copied from the node into the new entity instance.
 	   
-	            // pseudo-code 
-                entity[dataProperty.name] = node[dataProperty.nameOnServer];
+          // pseudo-code 
+          entity[dataProperty.name] = node[dataProperty.nameOnServer];
  
-       - For each `NavigationProperty` (identified in the `EntityType.navigationProperties` collection), property values are copied from the node into the new entity instance. Remember that Breeze looks for a node property that matches the `navigationProperty.nameOnServer`. 
+   - For each `NavigationProperty` (identified in the `EntityType.navigationProperties` collection), property values are copied from the node into the new entity instance. Remember that Breeze looks for a node property that matches the `navigationProperty.nameOnServer`. 
          - If the navigation property value is a scalar, Breeze calls `visitNode` with the property value and a `nodeContext.nodeType` of 'navProp'.
 
          - If the navigation property value is an array, the Breeze calls `visitNode` iteratively for each array value and a `nodeContext.nodeType` of 'navPropItem'. 
