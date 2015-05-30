@@ -84,6 +84,7 @@ One thing you cannot do &ndash; and shouldn't be able to do &ndash; is set the c
     existingCustomer.Orders([]); // DO NOT ATTEMPT. Throws an exception
 
 <a id="ForeignKeys" name="ForeignKeys"></a>
+
 ## Foreign keys
 
 From a domain perspective, a node in a network of relationships could be considered the **root** of an object graph. `Customer` is such a root. You could say that a given customer contains all of the related entities in its graph.
