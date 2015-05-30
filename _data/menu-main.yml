@@ -4,5 +4,5 @@ menuitems:
   - { link: "faq.html", title: FAQ }
   - { link: "github-repositories.html", title: GitHub Repositories }
   - { link: "release-notes.html", title: Release notes }
+  - { link: "community.html", title: Community }
   - { link: "license.html", title: MIT License }
-            
