@@ -4,47 +4,33 @@ redirect_from: "/old/documentation/query-examples.html"
 ---
 # Query examples
 
-<p class="note">Every query example on this page is in one of the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/queryTests.js" target="_blank" title="queryTests.js on github"><strong>queryTests</strong> modules</a> of the <a href="/doc-samples/doccode.html">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.</p>
+> Every query example on this page is in one of the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/queryTests.js" target="_blank" title="queryTests.js on github">**queryTests** modules</a> of the <a href="/doc-samples/doccode.html">DocCode</a>. The tests are yours to explore and modify. Please send us your feedback and contributions.
 
-<div class="index">
-<p><a href="#Setup">Setup</a></p>
-
-<p><a href="#BasicQueries">Basic queries</a></p>
-
-<p><a href="#Where">Filtering with &quot;where&quot;</a></p>
-
-<p style="margin-left: 40px;"><a href="#SimpleName">Simple conditions</a><br />
-<a href="#CompositeWhere">Compound conditions with predicates</a><br />
-<a href="#WhereRelated">Conditions on related properties</a><br />
-<a href="#WhereAnyAll">Conditions involving any/all with related properties</a><br />
-<a href="#WhereODataFunctions">Conditions using OData functions</a></p>
-
-<p><a href="#OrderBy">Sorting with &quot;orderBy&quot;</a></p>
-
-<p style="margin-left: 40px;"><a href="#SinglePropertyOrdering">Single property sorting</a><br />
-<a href="#MultiplePropertyOrdering">Multiple property sorting</a><br />
-<a href="#RelatedPropertyOrdering">Related property sorting</a></p>
-
-<p><a href="#Paging">Paging with &quot;skip&quot; and &quot;take&quot;</a></p>
-
-<p><a href="#Projection">Projection with &quot;select&quot;</a></p>
-
-<p style="margin-left: 40px;"><a href="#SinglePropertyProjection">Single data property projections</a><br />
-<a href="#SingleNavigationProjection">Single navigation property projections</a><br />
-<a href="#MultiplePropertyProjection">Multiple property projections</a><br />
-<a href="#RelatedPropertyProjection">Related property projections</a></p>
-
-<p><a href="#EagerLoading">Eager loading with &quot;expand&quot;</a></p>
-
-<p style="margin-left: 40px;"><a href="#SingleExpand">Single relation expand</a><br />
-<a href="#QueryByKeyWithExpand">Query by key with expand</a><br />
-<a href="#MultipleRelationExpand">Multiple relation expand</a><br />
-<a href="#PropertyPathExpand">Property path expand</a></p>
-
-<p><a href="#QueryByKey">Query by key</a></p>
-
-<p a="" href="#Lookups"><a href="#Lookups">Query a bag of entities</a></p>
-</div>
+- <a href="#Setup">Setup</a>
+- <a href="#BasicQueries">Basic queries</a>
+- <a href="#Where">Filtering with 'where'</a>
+  - <a href="#SimpleName">Simple conditions</a>
+  - <a href="#CompositeWhere">Compound conditions with predicates</a>
+  - <a href="#WhereRelated">Conditions on related properties</a>
+  - <a href="#WhereAnyAll">Conditions involving any/all with related properties</a>
+  - <a href="#WhereODataFunctions">Conditions using OData functions</a>
+- <a href="#OrderBy">Sorting with 'orderBy'</a>
+  - <a href="#SinglePropertyOrdering">Single property sorting</a>
+  - <a href="#MultiplePropertyOrdering">Multiple property sorting</a>
+  - <a href="#RelatedPropertyOrdering">Related property sorting</a>
+- <a href="#Paging">Paging with 'skip' and 'take'</a>
+- <a href="#Projection">Projection with 'select'</a>
+  - <a href="#SinglePropertyProjection">Single data property projections</a>
+  - <a href="#SingleNavigationProjection">Single navigation property projections</a>
+  - <a href="#MultiplePropertyProjection">Multiple property projections</a>
+  - <a href="#RelatedPropertyProjection">Related property projections</a>
+- <a href="#EagerLoading">Eager loading with 'expand'</a>
+  - <a href="#SingleExpand">Single relation expand</a>
+  - <a href="#QueryByKeyWithExpand">Query by key with expand</a>
+  - <a href="#MultipleRelationExpand">Multiple relation expand</a>
+  - <a href="#PropertyPathExpand">Property path expand</a>
+- <a href="#QueryByKey">Query by key</a>
+- <a href="#Lookups">Query a bag of entities</a>
 
 ## <a name="Setup"></a>Setup
 
@@ -417,23 +403,23 @@ and Predicates can even be nested. In this case we are querying for any orders w
 
 ## <a name="QueryByKey"></a>Query by key
 
-<p>Call <em><strong>fetch</strong>EntityByKey </em>directly on the <em>EntityManager</em>. Note the '<strong><em>fetch</em></strong>' prefix.</p>
+Call <em><strong>fetch</strong>EntityByKey </em>directly on the <em>EntityManager</em>. Note the '<strong><em>fetch</em></strong>' prefix.
 
     // Fetch the customer with CustomerID == 42 from the database
     // returns a promise. 
     manager.fetchEntityByKey('Customer', 42)
        .then(fetchSucceeded).fail(fetchFailed);
 
-<p><a href="#QueryByKeyWithExpand">See example above</a> to expand with related entities.</p>
+<a href="#QueryByKeyWithExpand">See example above</a> to expand with related entities.
 
-<p>Add <em><code>checkLocalCacheFirst=true</code></em> parameter to look in the cache first and query the database if not found.</p>
+Add <em><code>checkLocalCacheFirst=true</code></em> parameter to look in the cache first and query the database if not found.
 
     // Look for the customer in manager&#39;s cache first
     // Fetch from the database if not found in cache
     manager.fetchEntityByKey('Customer', 42, true) 
        .then(fetchSucceeded).fail(fetchFailed);
 
-<p>Call <em><strong>get</strong>EntityByKey </em>directly on the <em>EntityManager</em> to extract the entity from cache. Note the '<em><strong>get</strong></em>' prefix.This isn&#39;t really a query because it can only look in cache and never calls the remote service. It returns immediately with the entity or <em>null</em>.</p>
+Call <em><strong>get</strong>EntityByKey </em>directly on the <em>EntityManager</em> to extract the entity from cache. Note the '<em><strong>get</strong></em>' prefix.This isn&#39;t really a query because it can only look in cache and never calls the remote service. It returns immediately with the entity or <em>null</em>.
 
     // Look for entity only in cache. 
     // Returns value (or null) immediately
@@ -441,7 +427,7 @@ and Predicates can even be nested. In this case we are querying for any orders w
 
 <h2><a name="Lookups"></a>Query a bag of entities</h2>
 
-<p>A 'query' can return an object filled with arbitrary collections of entities. Particularly useful when you want to prime your cache with lookup lists. Start on the server with a service query method that returns an object whose properties contain lists of entities. Here&#39;s a Web API controller method example:</p>
+A 'query' can return an object filled with arbitrary collections of entities. Particularly useful when you want to prime your cache with lookup lists. Start on the server with a service query method that returns an object whose properties contain lists of entities. Here&#39;s a Web API controller method example:
 
 <pre class="brush:csharp;">
 [HttpGet]
@@ -456,7 +442,7 @@ public object Lookups()
 }
 </pre>
 
-<p>On the JavaScript client:</p>
+On the JavaScript client:
 
 <pre class="brush:jscript;">
 // Fetch the lookups; ignores the results; entities are in cache
@@ -465,4 +451,4 @@ EntityQuery.from(&#39;Lookups&#39;)
      .using(em).execute()
      .fail(handleFail);</pre>
 
-<p>The <em>Region</em>, <em>Territory</em>, and <em>Category </em>entities are in cache after the query succeeds. See '<a href="/doc-cool-breezes/lookup-lists.html" target="_blank">Lookup Lists</a>' for a richer discussion of this example.</p>
+The <em>Region</em>, <em>Territory</em>, and <em>Category </em>entities are in cache after the query succeeds. See '<a href="/doc-cool-breezes/lookup-lists.html" target="_blank">Lookup Lists</a>' for a richer discussion of this example.
