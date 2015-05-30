@@ -3,32 +3,33 @@ layout: doc-js
 redirect_from: "/old/documentation/ef-design-tool.html"
 ---
 
-#Entity Framework as a metadata design tool#
+# Entity Framework as a metadata design tool
 
 A Breeze application that relies on Entity Framework for data access gets Breeze metadata generation *for free*.
 
 This topic may persuade you to **let Entity Framework generate Breeze metadata** for your .NET classes even **when you aren't using EF in production** or when your service exposes DTO classes that don't map to real database tables.
 
-###Why use EF to generate metadata?###
+### Why use EF to generate metadata?
 
 You can always <a href="/doc-js/metadata-by-hand" title="Metadata By Hand">write metadata by hand</a>. It's not hard. And you'll almost certainly write the metadata by hand if you're building your server in a non-.NET technology.
 
 Let's admit it. Hand-coded metadata is pretty unappealing when you have a large model with a lot of types and you are worried about keeping your metadata in sync as the model evolves. In these circumstances, if you are a .NET developer,  Metadata generation with EF starts to look mighty attractive.
 
->It doesn't have to be "*either/or*". For example, you could generate metadata for most of the types on the server and then add missing types by hand on the client.
+> It doesn't have to be "*either/or*". For example, you could generate metadata for most of the types on the server and then add missing types by hand on the client.
 
-###But I'm not using EF###
+### But I'm not using EF
 
 That's OK. We're not talking about using Entity Framework for data access. You can keep using NHibernate or raw ADO or your other .NET access technology of choice. We're talking strictly about employing EF as a design time tool. You don't have to use EF at runtime. You don't have to include any EF assemblies in production. No one has to know. It can be our secret.
 
-###But I'm using DTOs###
+### But I'm using DTOs
+
 That's OK too. Your DTOs (<a href="http://en.wikipedia.org/wiki/Data_transfer_object" title="DTO defined" target="_blank">Data Transfer Objects</a>) don't have to correspond to any actual database tables. They only have to *look like* they *could* correspond to database tables that might exist in an alternate universe. 
 
->EF is an "Object-Relational Mapping" tool so if we're going to map the DTOs to something that "something" has to be "relational". 
+> EF is an "Object-Relational Mapping" tool so if we're going to map the DTOs to something that "something" has to be "relational". 
 
 Nor will you have to dirty your DTOs with Entity Framework attribute goop. You can keep your DTOs exactly the way they are. We'll use the Code First Fluent API to resolve any mapping issues that can't be handled by EF's conventions.
 
-###How does it work?###
+### How does it work?
 
 In brief, we
 
@@ -40,17 +41,17 @@ In brief, we
 
 * expose a "metadata" endpoint on our service controller that responds with metadata from our metadata-only `EFContextProvider`.
 
-#Example#
+# Example
 
 We'll demonstrate this technique with an example web application that accesses a Microsoft "Northwind" database via DTOs. Those DTOs do not map directly to Northwind tables nor to tables of any other database.
 
-<p class="note">The code in this example is adapted from the <a href="/doc-samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and EF metadata generation in particular through the medium of QUnit tests.</p>
+> The code in this example is adapted from the <a href="/doc-samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and EF metadata generation in particular through the medium of QUnit tests.</p>
 
 There is a `NorthwindDtoController` Web API controller whose methods expose and consume those DTOs which collectively constitute the NorthwindDto service model. 
 
 The Breeze client asks the controller for the metadata it needs  to interpret the JSON objects it receives from the controller. These metadata describe the DTO service model. At no point does the client become aware of the actual entity model on the server.
 
-#The DTO service model #
+# The DTO service model 
 Here is the complete DTO service model
 
     namespace Northwind.DtoModels
@@ -129,9 +130,9 @@ This choice simplified our Code First mapping. `CustomerID`, for example, is aut
 
 It also simplified things for our client where we want to refer to the `Customer` type, not the `CustomerDto` type, the name EF would have generated into the metadata. 
 
->We could finesse that particular complication with more code on both client and server. We don't see the return on that complexity but feel free to give your DTOs custom names (and pay the translation tax) if that's how you roll.
+> We could finesse that particular complication with more code on both client and server. We don't see the return on that complexity but feel free to give your DTOs custom names (and pay the translation tax) if that's how you roll.
 
-#The metadata-only DbContext #
+# The metadata-only DbContext 
 
 We create `NorthwindDtoContext` a special `DbContext` class for our DTOs. This `DbContext` will not be used for data access. In fact, it could not be used for data access because it doesn't correspond to an actual database and there is no connection string for it in the Web.config.
 
@@ -210,7 +211,7 @@ We don't need these configurations if we are willing to dirty our DTO classes wi
     [Required, MaxLength(40)]
     public string CompanyName { get; set; }
 
-#The metadata-only EFContextProvider#
+# The metadata-only EFContextProvider
 
 We'll get metadata from a Breeze.NET `EFContextProvider` wrapped around our metadata-only `DbContext`.
 
@@ -236,7 +237,7 @@ It remains for the web service to expose a "Metadata" endpoint for Breeze client
         return _repository.Metadata;
     }
 
-#Hey ... I said I don't want EF in production#
+# Hey ... I said I don't want EF in production
 
 Of course this approach assumes that EF is part of your runtime environment. 
 
@@ -248,7 +249,7 @@ The client app loads its `MetadataStore` from that JavaScript file rather than a
 
 This important technique is discussed more thoroughly in documentation elsewhere.
 
-#Review#
+# Review
 
 It's easy to let Entity Framework generate Breeze metadata from your .NET service model classes even if EF plays no part in your production application. 
 
