@@ -13,6 +13,7 @@ This topic covers the uses and capabilities of the `ContextProvider`. While ofte
 You can use `ContextProvider` as the basis for transforming BreezeJS query and save requests into actions performed against *any kind of data store*. See, for example, the the [in-memory "No DB" sample](/doc-samples/no-db ""No DB" sample").
 
 <a name="SaveChanges"></a>
+
 ## SaveChanges
 Most of the `ContextProvider` is devoted to saving client changes via the `SaveChanges` method. 
 
@@ -35,6 +36,7 @@ You can attach handlers to the corresponding  delegate properties of a `ContextP
 Each of these methods receives entity change information in the form of an `EntityInfo`. 
 
 <a name="EntityInfo"></a>
+
 ## EntityInfo<a name="EntityInfo"></a>
 
 The `SaveChanges` method translates the incoming JSON change-set (aka "SaveBundle") into a dictionary of `EntityInfo` objects called a "save map". The dictionary is keyed by entity type; the entry itself is a list of `EntityInfo` objects of that particular type.
@@ -68,7 +70,7 @@ An `EntityInfo` describes the entity-to-be-saved and the save operation to be pe
 
 The `EntityInfo.Entity` is an instance of the .NET entity class that corresponds to a BreezeJS client entity. This .NET class may be - and often is - an "entity class" in your ORM model. 
 
->It does not have to be an ORM class. It could be a DTO class that you will later map into a class in your business model via your implementation of `BeforeSaveEntities`.
+> It does not have to be an ORM class. It could be a DTO class that you will later map into a class in your business model via your implementation of `BeforeSaveEntities`.
 
 The `EntityInfo.Entity` properties have been populated with values in the JSON save request payload. These are client-provided values, not the values of a record in the data store. It may have foreign key properties that were set with client values.  Do not assume that the corresponding navigation properties return the association's related entities. Most `ContextProvider` implementations, including `EFContextProvider`, disable the "lazy loading" that would populate these navigation properties for two very good reasons:
 
@@ -76,6 +78,7 @@ The `EntityInfo.Entity` properties have been populated with values in the JSON s
 2. we do not want to confuse related entities retrieved from the data store with the  the related entities that may be in the change-set in an added, modified or deleted state.
 
 <a name="EntityState"></a>
+
 ### EntityState
 
 The `EntityInfo.EntityState` is an enum that describes the current state of the entity in the change-set.
@@ -91,6 +94,7 @@ The `EntityInfo.EntityState` is an enum that describes the current state of the 
 The `ContextProvider` infers the intended save operation from this `EntityState`. For example, values of an entity in the `Modified` state will update the already-existing record in the data store with the matching entity key.
 
 <a name="OriginalValuesMap"></a>
+
 ### OriginalValuesMap
 
 An `EntityInfo` that describes an entity-to-be-updated has an `OriginalValuesMap`. 
@@ -103,7 +107,7 @@ The `ContextProvider` can (and usually will) use this map to update *only the fi
 
 It follows that, when updating an entity, if you change one of its properties on the server and *that property was not changed on the client*, you should also **add the property name to the `OriginalValuesMap`**. 
 
->Alternatively, you can force update of every field by setting `EntityInfo.ForceUpdate = True;`
+> Alternatively, you can force update of every field by setting `EntityInfo.ForceUpdate = True;`
 
 For example, we could calculate an entity property on the server in a <a href="#BeforeSaveEntity">`BeforeSaveEntity` method</a>:
 
@@ -145,22 +149,23 @@ Many apps set audit fields on the server for entities that have them. You might 
 
 The `ContextProvider` itself ignores the pre-change values in the `OriginalValuesMap`.
 
->except for the concurrency field values where the pre-change value is used for optimistic concurrency checking. 
+> except for the concurrency field values where the pre-change value is used for optimistic concurrency checking. 
 
 The pre-change values may be useful to you when pre-processing the `EntityInfo`. 
 
-<p class="note"><b>Beware!</b> The `OriginalValuesMap` was <b>provided by the client</b> as part of its "save changes" request. It is your responsibility to confirm that this user is allowed to save changes to these properties. Before you make use of the pre-change values you should verify that the stated pre-change values actually are the "original values".
+> <b>Beware!</b> The `OriginalValuesMap` was <b>provided by the client</b> as part of its "save changes" request. It is your responsibility to confirm that this user is allowed to save changes to these properties. Before you make use of the pre-change values you should verify that the stated pre-change values actually are the "original values".
 
 The `ContextProvider` assumes that the client request is valid. You are responsible for data integrity and data security. You should scrutinize everything in the change-set to the degree that your business requires. 
 
 The `EntityInfo` and its `OriginalValuesMap` tell you what the client said in its save request. You inspect, validate, and modify that request in your overrides of the `ContextProvider` methods.
 
 <a name="BeforeSaveEntity"></a>
+
 ## BeforeSaveEntity  
 
 `BeforeSaveEntity` is called once for each entity before it is saved. 
 
-	protected virtual bool BeforeSaveEntity(EntityInfo entityInfo) {)
+    protected virtual bool BeforeSaveEntity(EntityInfo entityInfo) {)
 
 Use it to inspect, validate, and potentially modify individual entities.
 
@@ -171,6 +176,7 @@ The base implementation of this method returns `true`;. There is no need to call
 `BeforeSaveEntity` is fine for validating each entity in isolation. Use `BeforeSaveEntities` to validate entities in the context of the entire changes-set (AKA "saveMap").
 
 <a name="BeforeSaveEntities"></a>
+
 ## BeforeSaveEntities 
 
 After `ContextProvider.SaveChanges` calls `BeforeSaveEntity` for each `EntityInfo`, it calls `BeforeSaveEntities` on the entire change-set.
@@ -195,11 +201,10 @@ Then add it to the change-set dictionary.
 The base implementation of this method simply returns the incoming dictionary unchanged. There is no need to call the base implementation in your override.
 
 <a name="AfterSaveEntities"></a>
+
 ## AfterSaveEntities
 
-
-<i>AfterSaveEntities</i> gives access the to entities after they've been saved to the database, and after database-assigned identifiers have been assigned. 
-
+`AfterSaveEntities` gives access the to entities after they've been saved to the database, and after database-assigned identifiers have been assigned. 
 
     protected override void AfterSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings)
 	
@@ -210,6 +215,7 @@ The `keyMappings` parameter provides the mapping of temporary IDs to real, db-as
 Note that `saveMap` and `keyMappings` are the source of the data that forms the `SaveResult` that is sent back to the Breeze client.  Any changes that you make to `saveMap` or `keyMappings` will affect Breeze's ability to update the client with the correct data after the save.
 
 <a name="SaveChangesCore"></a>
+
 ## SaveChangesCore
 
 The `SaveChangesCore` method performs the save operations on the change-set. The `ContextProvider` has no implementation of its own. It's an `abstract` method to be implemented in a derived class.
@@ -220,6 +226,7 @@ You will override it if you write your own `ContextProvider`. That task is beyon
 
 <a name="HelperMethods"></a>
 <a name="helpermethods"></a>
+
 ## ContextProvider helper methods<a name="ContextProvidermethods"></a>
 
 The `ContextProvider` exposes public methods to help in the implementation of your virtual method overrides.
@@ -230,40 +237,41 @@ The following helpers enable re-use of database connections; such re-use reduces
 	
 **EntityConnection** is a read-only property that provides access to the EntityConnection used by the DbContext/ObjectContext.  This is useful when you want to create a second DbContext with the same connection:
 	
-				protected override Dictionary<Type, List<EntityInfo>> BeforeSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap) 
-				{
-					var context2 = new MyDbContext(EntityConnection);    // create a DbContext using the existing connection
-					var orders = saveMap[typeof(Order)];    // get the EntityInfo for all Orders in the saveMap
-					foreach(var orderInfo in orders)
-					{
-						var order = orderInfo.Entity as Order;    // get the order that came from the client
-						var query = context2.Orders.Where(o => o.orderID == order.orderID);
-						var oldOrder = query.FirstOrDefault();    // get the existing order from the database
-						// compare values of order and oldOrder to see what has changed
-						// because we have a business rule that only certain changes are allowed
-						// ...
-					}
-				}
+    protected override Dictionary<Type, List<EntityInfo>> BeforeSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap) 
+    {
+    	var context2 = new MyDbContext(EntityConnection);    // create a DbContext using the existing connection
+    	var orders = saveMap[typeof(Order)];    // get the EntityInfo for all Orders in the saveMap
+    	foreach(var orderInfo in orders)
+    	{
+    		var order = orderInfo.Entity as Order;    // get the order that came from the client
+    		var query = context2.Orders.Where(o => o.orderID == order.orderID);
+    		var oldOrder = query.FirstOrDefault();    // get the existing order from the database
+    		// compare values of order and oldOrder to see what has changed
+    		// because we have a business rule that only certain changes are allowed
+    		// ...
+    	}
+    }
 
 **StoreConnection** is a read-only property that provides access to the StoreConnection used by the DbContext/ObjectContext.  This may be a SqlConnection, OracleConnection, etc. depending upon the provider.  Use StoreConnection to do SQL queryies and updates directly to the database:
 
-			protected override void AfterSaveEntities(Dictionary<Type, List<EntityInfo>> 
-				saveMap, List<KeyMapping> keyMappings) 
-			{
-				// simplistic example of logging the created entity IDs
-				var text = ("insert into AuditAddedEntities (CreatedOn, EntityType, EntityKey) values ('{0}', '{1}', {2})";
-				var time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-				var conn = StoreConnection;    // use the existing StoreConnection
-				var cmd = conn.CreateCommand();
-				foreach (var km in keyMappings) 
-				{
-					// put the real value of the key into the audit table
-					cmd.CommandText = String.Format(text, time, km.EntityTypeName, km.RealValue);
-					cmd.ExecuteNonQuery();
-				}
-			}
+    protected override void AfterSaveEntities(Dictionary<Type, List<EntityInfo>> 
+    	saveMap, List<KeyMapping> keyMappings) 
+    {
+    	// simplistic example of logging the created entity IDs
+    	var text = ("insert into AuditAddedEntities (CreatedOn, EntityType, EntityKey) values ('{0}', '{1}', {2})";
+    	var time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+    	var conn = StoreConnection;    // use the existing StoreConnection
+    	var cmd = conn.CreateCommand();
+    	foreach (var km in keyMappings) 
+    	{
+    		// put the real value of the key into the audit table
+    		cmd.CommandText = String.Format(text, time, km.EntityTypeName, km.RealValue);
+    		cmd.ExecuteNonQuery();
+    	}
+    }
 
 <a name="TransactionSettings"></a>
+
 ## Wrapping the entire save process in a transaction
 
 Most `ContextProvider` implementations wrap the *inner save processing*  within a transaction. The `EFContextProvider` does that. 
@@ -274,31 +282,31 @@ If you need to include `BeforeSave...` and `AfterSaveEntities` processing within
 
 Here's an example:
 
-	public SaveResult SaveWithTransactionScope(JObject saveBundle) {
-	  var txSettings = new TransactionSettings() { TransactionType = TransactionType.TransactionScope };
-
-      // Add the specialized AfterSave handler
-	  ContextProvider.AfterSaveEntitiesDelegate = PerformPostSaveValidation;
-
-	  return ContextProvider.SaveChanges(saveBundle, txSettings);
-	}
+    public SaveResult SaveWithTransactionScope(JObject saveBundle) {
+      var txSettings = new TransactionSettings() { TransactionType = TransactionType.TransactionScope };
+    
+        // Add the specialized AfterSave handler
+      ContextProvider.AfterSaveEntitiesDelegate = PerformPostSaveValidation;
+    
+      return ContextProvider.SaveChanges(saveBundle, txSettings);
+    }
 	
-	private void PerformPostSaveValidation(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings ) {
-	  // do your post save validation stuff here
-	  // and throw an exception if something doesn't validate.
-	
-	}
+    private void PerformPostSaveValidation(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings ) {
+      // do your post save validation stuff here
+      // and throw an exception if something doesn't validate.
+    
+    }
 
 Now the entire save process occurs within a `TransactionScope` including the `BeforeSaveEntities` and the `AfterSaveEntities` invocations. Now you can abort the transaction after saving to the database by throwing an exception in your `AfterSaveEntities` method; doing so will rollback all previous inserts, updates or deletes that were part of the transaction.
 
-<p class="note">This discussion presupposes that the technologies involved support transactions.
+> This discussion presupposes that the technologies involved support transactions.
 
 You may want to call this particular `SaveWithTransactionScope` method only for certain client requests. You can add a dedicated endpoint for that purpose to your Web API controller and call it from the client with a [named save](/doc-js/saving-changes#NamedSave). 
 
-	[HttpPost]
-	public SaveResult SpecialSave(JObject saveBundle) {
-	  return _repository.SaveWithTransactionScope(saveBundle);
-	}
+    [HttpPost]
+    public SaveResult SpecialSave(JObject saveBundle) {
+      return _repository.SaveWithTransactionScope(saveBundle);
+    }
 
 `TransactionSettings` has the following properties:
 
