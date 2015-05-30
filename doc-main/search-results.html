@@ -1,8 +1,25 @@
 ---
 layout: doc-main
-title: Search results
+title: Search Results
 ---
-<h1>Search result</h1>
+<style>
+#search-results .gsc-control-cse,
+#search-results .gsc-control-cse table.gsc-table-result {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#search-results table tr td {
+	border: none;
+}
+
+#search-results .gsc-selected-option-container {
+	width: 140px !important;
+}
+</style>
+
+<h1>Search Results</h1>
+
+<div id="search-results">
 
 <script>
     (function() {
@@ -17,3 +34,5 @@ title: Search results
     })();
 </script>
 <gcse:search linktarget="_parent"></gcse:search>
+
+</div>
