@@ -48,7 +48,9 @@ This "front matter" must be the first thing in the file and must take the form o
     layout: doc-net
     ---
 
-The 'layout' section should appear on every page and will reference one of the files in the **_layouts** directory.  The Html or Markdown text within each file represents the contents of the each page.     
+The 'layout' section should appear on every page and will reference one of the files in the **_layouts** directory.  The Html or Markdown text within each file represents the contents of the each page.
+     
+There should be an 'index.html' file in each of the 'doc-' directories.  This file is the entry page for all of the pages in that directory.     
    
 #Layouts
 
