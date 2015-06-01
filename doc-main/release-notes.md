@@ -5,7 +5,7 @@ layout: doc-main
 
 These are the release notes for the current **1.5.x** and 1.4.x releases.
 
-Prior <a href="/doc-js/previous-release-notes" target="_blank">release notes</a> are also available.
+Prior <a href="/doc-main/previous-release-notes" target="_blank">release notes</a> are also available.
 
 ##1.5.x
 * New json query api and query serialization support.  See: <a href="/doc-js/query-using-json.html">Breeze queries with JSON documentation</a>
