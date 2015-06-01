@@ -1,6 +1,7 @@
 title: Java server + Hibernate
 shorttitle: Java/Hibernate
 menuitems: 
+  - { link: introduction.html, title: Introduction }
   - { link: breeze-hibernate.html, title: Breeze with hibernate }
   - { link: query-processor.html, title: Processing queries }
   - { link: save-processor.html, title: Processing saves }
