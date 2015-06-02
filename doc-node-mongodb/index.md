@@ -1,6 +1,5 @@
 ---
 layout: doc-node-mongodb
-title: Server - Node w/ MongoDB
 redirect_from: "/old/documentation/mongodb.html"
 ---
 

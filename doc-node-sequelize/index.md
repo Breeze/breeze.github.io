@@ -1,6 +1,5 @@
 ---
 layout: doc-node-sequelize
-title: Server - Node w/ Sequelize
 redirect_from: "/old/documentation/sequelize-mysqlpostgressql-lite.html"
 ---
 
