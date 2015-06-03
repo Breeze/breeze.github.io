@@ -109,4 +109,87 @@ An example menu yml file is shown below:
   - **isparent** with a value of 'true' is used if this is a parent menu item.
   - **ischild** with a value of 'true' is used if this is a child menu item.
 
-> Only two levels of menus are supported. So no menuitem should ever have both a **isparent** and **ischild** tag. 
+> Only two levels of menus are supported. So no menuitem should ever have both a **isparent** and **ischild** tag.
+ 
+ ## Styles
+ The **styles** directory contains all of the .css files for the site.  Some of these files are used globally thru-out the entire site:
+ 
+ - **bootstrap.css** : Default Twitter bootstrap css 
+ - **jasy-bootstrap.css**: Bootstrap extensions to support vertical nav bars.
+ - **theme.css** - Theme'd overrides to the bootstrap themes;
+ - **navmenu.css** - Custom Breeze navigation menu css.
+ - **custom.css**  - All other site wide css.
+  
+ > Note that these themes are actually applied in the order listed above. 
+ > Be careful changing these themes as they effect the entire site.
+
+Any other css files in this directory are usually only referenced on a small subset of the pages on the site. 
+
+If you need to use a custom style sheet for any page you can have it included by adding a '**custom-css**' entry to the front-matter of any page that needs your custom style.  For example the 'doc-cs' 'download.html' page has the following front-matter.
+
+    ---  
+    layout: doc-js
+    custom-css: "/styles/download.css"
+    ---
+
+Another option if you want to really localize your css is to include it directly inline on the page itself.  This should be done by using the html 'scoped' tag to the first child.    
+
+    <div>  
+      <style type = "text/css" scoped>
+        .community-logo {
+          list-style-type: none;
+          display:inline;
+          float:left;
+          padding: 25px 10px 10px 10px;
+          ...
+        }
+      </style>
+      Use the style here or below
+    </div>
+
+> This approach should probably only be used on pages that involve small local styles and are not hit much. ( This css will not be cached). 
+
+## Javascript
+All of the javascript on the site can be found in the **js** directory. As with the **styles** directory, some of these files are used on every page. 
+
+- **jquery-xxx.js** :  Allows use of jquery in any other js files 
+- **search-google.js**: The google search widget on the top menu bar
+- **highlightselection.js**: Used to mediate the left nav bar ( This name may change)
+
+All other .js files in this directory are usually only referenced by a few pages on the site.
+
+If you need to use custom javascript for any page you can have it included by adding a '**custom-js**' entry to the front-matter of any page that needs your custom js file.  For example the 'doc-samples' 'index.html' page uses both a custom style and custom javascript via the following front-matter.
+
+     ---
+    layout: doc-samples
+    custom-css: "/styles/sample-chooser.css"
+    custom-js: "/js/sample-chooser.js"
+    redirect_from: "/old/samples/"
+    ---
+
+## Shared HTML
+The **_includes** directory contains all of the 'shared' html/markdown fragments used within the site.  Several of these fragments are global and together provide the overall structure to the site. 
+
+default.html
+defaulthead.html
+defaultbody.html
+defaultheader.html
+defaultfooter.html
+defaultleftnav.html
+
+All of the other files in this directory only appear on selected pages.
+
+In some cases you may want to share a chunk of html between pages. If so add a file containing the html fragment to the **_includes** directory and reference it within your page via 'liquid markup' syntax. This will look something like the following. 
+
+    {% include support-frag.html %}
+
+## Other conventions
+
+- **If you add additional files to the site; use all lower case with '-'s for file names.**  GitHub pages IS case sensitive.  There may be existing files on the site that do no follow this convention.  Leave them alone, they are legacy and too much of a hassle to change.
+
+- **Try to use markdown as much as possible - pages that are heavy on graphics should still be html but just about everything else should be markdown.**
+
+- **Take a look at the other pages on the site and try to follow the same markdown conventions that have already been used.** 
+>  TODO: Detail these
+ 
+        
