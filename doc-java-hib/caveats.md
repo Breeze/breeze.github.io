@@ -3,12 +3,15 @@ layout: doc-java-hib
 ---
 
 ## Caveats and Limitations
+
 #### Foreign Keys Must Be Mapped
 
 Unlike Hibernate itself, Breeze requires foreign keys that are mapped to object properties so Breeze can maintain the relationships on the client side. Here's an example, mapping a relationship from Order to Customer:
 
-	<many-to-one name="Customer" column="`CustomerID`" class="Customer" />
-	<property name="CustomerID" type="System.Guid" insert="false" update="false" />
+```XML
+<many-to-one name="Customer" column="`CustomerID`" class="Customer" />
+<property name="CustomerID" type="System.Guid" insert="false" update="false" />
+```
 
 The "Customer" property is mapped normally, while the "CustomerID" property is mapped with `insert="false"` and `update="false"`. This way, the CustomerID is exposed to Breeze, but Hibernate will perform inserts and updates using the ID of the Customer object itself.
 

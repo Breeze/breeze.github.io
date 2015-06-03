@@ -9,7 +9,15 @@ redirect_from: "/old/documentation/java-server.html"
   <img src="/images/logos/Breeze-java.png" alt="Java" width="100">
 </a> 
 
+Breeze helps you manage data in rich client applications.  It gives you ORM-like data management capability in a JavaScript application.
+
 The [breeze.server.java](https://github.com/Breeze/breeze.server.java) libraries make it easy to write Java servers that work with [Breeze clients](/doc-js/).  They currently support Hibernate, with JPA coming soon. 
+
+<div style="clear:both" ></div>
+
+{% include support-frag.html %}
+
+## Overview
 
 Breeze with Java + Hibernate lets you develop JavaScript client applications using the same powerful idioms you find in Hibernate.  You can
 
@@ -20,57 +28,53 @@ Breeze with Java + Hibernate lets you develop JavaScript client applications usi
 - save all changes in a single transaction
 - use your existing Hibernate entity model on the JavaScript client
 
+### Client vs. Server
 
-<div style="clear:both" />
+Breeze JS is a pure JavaScript library for managing data on the client, much as Hibernate manages it on the server. 
 
-{% include support-frag.html %}
+<style scoped>
+.diagram {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.diagram .diagram-box {
+	border: 2px solid gray; border-radius: 10px;
+	flex: 1;
+	margin: auto;
+}
+.diagram .diagram-box .diagram-box-title {
+	font-size: smaller;
+}
+.diagram .diagram-box .diagram-box-row {
+	margin: 0px 10px;
+	border-top: black solid 1px;
+}
+.diagram .diagram-line {
+	width: 50%;
+	border-right: black solid 3px;
+	text-align: right;
+}
+</style>
 
-## Getting Started
+<div class="diagram" style="width: 400px">
+	<div class="diagram-box" style="width: 250px">
+		<div class="diagram-box-title">Browser</div>
+		<div class="diagram-box-row" style="background-color: rgb(226, 98, 189);">Angular / KO / Aurelia / etc.</div>
+		<div class="diagram-box-row" style="background-color: rgb(126, 197, 238);"><b>Breeze JS</b></div>
+	</div>
 
-### Maven
+	<div class="diagram-line" style="line-height: 40px;">JSON</div>
 
-[Maven](http://maven.apache.org) is a project management system that automatically downloads project dependencies during the build process.  Breeze has a dedicated Maven repository on github.  To use it, you will need to add the repository to your project's POM file:
+	<div class="diagram-box" style="width: 300px">
+		<div class="diagram-box-title">Java Server</div>
+		<div class="diagram-box-row" style="background-color: rgb(113, 159, 192);">Servlet / MVC / JAX-RS / etc.</div>
+		<div class="diagram-box-row" style="background-color: rgb(126, 197, 238);"><b>Breeze Java</b></div>
+		<div class="diagram-box-row" style="background-color: rgb(219, 212, 184);">Hibernate / JPA</div>
+	</div>
+</div>
 
-	  <repositories>
-	    <repository>
-	        <id>maven-breeze</id>
-	        <name>Breeze Repository</name>
-	        <url>https://raw.githubusercontent.com/Breeze/breeze.server.java/master/maven-repo/</url>
-	    </repository>
-	  </repositories>
-
-Then you add the actual dependency information for breeze-hibernate and breeze-webserver:
-
-	<dependency>
-		<groupId>com.breeze</groupId>
-		<artifactId>breeze-hibernate</artifactId>
-		<version>0.1a</version>
-	</dependency>
-	<dependency>
-		<groupId>com.breeze</groupId>
-		<artifactId>breeze-webserver</artifactId>
-		<version>0.1a</version>
-	</dependency>
-
-
-### JAR Download
-
-If you are not using Maven, you can download the JARs manually from github:
-
-[breeze-hibernate-0.1a.jar](https://github.com/Breeze/breeze.server.java/raw/master/maven-repo/com/breeze/breeze-hibernate/0.1a/breeze-hibernate-0.1a.jar)
-
-[breeze-webserver-0.1a.jar](https://github.com/Breeze/breeze.server.java/raw/master/maven-repo/com/breeze/breeze-webserver/0.1a/breeze-webserver-0.1a.jar)
-
-### Build it yourself
-
-The Breeze code is open source and available at [https://github.com/Breeze/breeze.server.java](https://github.com/Breeze/breeze.server.java).  There are four projects:
-
-1. **breeze-hibernate**: Handles metadata, query, and save requests through Hibernate
-2. **breeze-webserver**: Handles HTTP requests and JSON serialization in front of breeze-hibernate.
-3. **breeze-northwind**: Data model for the Northwind database, used for unit testing
-4. **breeze-webtest**: Web app for running breeze unit tests.
-
-It is set up as a Maven project.  The [build](https://github.com/Breeze/breeze.server.java/tree/master/build) directory contains a master pom.xml that builds all the projects in the correct order.
+Breeze on the Java server works with Hibernate to manage persistence for Breeze client applications.  It turns Breeze queries into Hibernate queries, and saves changes to the database using Hibernate.  
 
 # Samples
 
