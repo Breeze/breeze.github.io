@@ -25,18 +25,18 @@ Errors from the database or in other processing are returned as an HTTP 500 resp
 
 #### Example
 The HibernateSaveProcessor is used to implement any endpoint to a breezejs SaveChanges call. In the example below, we are assuming that the java servlet method has been called as a result of a breezeJs *saveChanges* call.  
-```Java
-public void saveChanges(HttpServletRequest request, HttpServletResponse response) {
-    // extractSaveBundle is a method in the breeze-webservice lib
-    // that will be described later.
-    Map saveBundle = extractSaveBundle(request);
-    SaveWorkState sws = new SaveWorkState(saveBundle);
-    SaveProcessor processor = new HibernateSaveProcessor(metadata, sessionFactory);
-    SaveResult sr = processor.saveChanges(saveWorkState);
-    
-    writeSaveResponse(response, sr);
-}
-```    
+
+    public void saveChanges(HttpServletRequest request, HttpServletResponse response) {
+        // extractSaveBundle is a method in the breeze-webservice lib
+        // that will be described later.
+        Map saveBundle = extractSaveBundle(request);
+        SaveWorkState sws = new SaveWorkState(saveBundle);
+        SaveProcessor processor = new HibernateSaveProcessor(metadata, sessionFactory);
+        SaveResult sr = processor.saveChanges(saveWorkState);
+
+        writeSaveResponse(response, sr);
+    }
+  
 
 The *SaveWorkState* object mentioned above is a wrapper over the save data that is passed in from the client saveChanges call.  In addition, the *SaveWorkState* may be subclassed to add custom handling to the save process.  The SaveWorkState has a *beforeSaveEntity*, *beforeSaveEntities* and a *beforeCommit* method that will all be called during save processing.
 These are discussed in more detail in the `breeze-webserver` library section below. 

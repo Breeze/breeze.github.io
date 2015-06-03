@@ -33,30 +33,29 @@ The Breeze client performs saves by sending an array of entities to the server a
 
 [Maven](http://maven.apache.org) is a project management system that automatically downloads project dependencies during the build process.  Breeze has a dedicated Maven repository on github.  To use it, you will need to add the repository to your project's POM file:
 
-```XML
-  <repositories>
-    <repository>
-        <id>maven-breeze</id>
-        <name>Breeze Repository</name>
-        <url>https://raw.githubusercontent.com/Breeze/breeze.server.java/master/maven-repo/</url>
-    </repository>
-  </repositories>
-```
+
+      <repositories>
+        <repository>
+            <id>maven-breeze</id>
+            <name>Breeze Repository</name>
+            <url>https://raw.githubusercontent.com/Breeze/breeze.server.java/master/maven-repo/</url>
+        </repository>
+      </repositories>
+
 
 Then you add the actual dependency information for breeze-hibernate and breeze-webserver:
 
-```XML
-  <dependency>
-	<groupId>com.breeze</groupId>
-	<artifactId>breeze-hibernate</artifactId>
-	<version>0.1a</version>
-  </dependency>
-  <dependency>
-	<groupId>com.breeze</groupId>
-	<artifactId>breeze-webserver</artifactId>
-	<version>0.1a</version>
-  </dependency>
-```
+
+      <dependency>
+        <groupId>com.breeze</groupId>
+        <artifactId>breeze-hibernate</artifactId>
+        <version>0.1a</version>
+      </dependency>
+      <dependency>
+        <groupId>com.breeze</groupId>
+        <artifactId>breeze-webserver</artifactId>
+        <version>0.1a</version>
+      </dependency>
 
 ### JAR Download
 

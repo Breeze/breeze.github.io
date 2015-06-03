@@ -12,55 +12,55 @@ The *HibernateQueryProcessor* constructor takes *Metadata* object created as a r
 
 The HibernateQueryProcessor typically builds Criteria queries from jsonified *EntityQuery* instances.  Each query also needs the Class on which the query operates.  Example:
 
-```Java
-// metadata is the metadata for the hibernate model being queried
-// sessionFactory is a Hibernate SessionFactory
-QueryProcessor qp = new HibernateQueryProcessor(metadata, sessionFactory);
-// First 5 customers in 'Brazil'
-// typically this json string will have come from the client web app. 
-String json = "{ where: { country: 'Brazil' }, take: 5 }";
 
-// and then we execute it.
-QueryResult qr = qp.executeQuery(Customer.class, json);
-Collection results = qr.getResults();
-String jsonResults = qr.toJson();
-```
+    // metadata is the metadata for the hibernate model being queried
+    // sessionFactory is a Hibernate SessionFactory
+    QueryProcessor qp = new HibernateQueryProcessor(metadata, sessionFactory);
+    // First 5 customers in 'Brazil'
+    // typically this json string will have come from the client web app. 
+    String json = "{ where: { country: 'Brazil' }, take: 5 }";
+
+    // and then we execute it.
+    QueryResult qr = qp.executeQuery(Customer.class, json);
+    Collection results = qr.getResults();
+    String jsonResults = qr.toJson();
+
 	
 Behind the scenes, that json string is parsed into an *EntityQuery* object, which is then converted into a Criteria query, which is then executed.  In a Java servelet app, the *QueryResult* object can be converted to json via a 'toJson' call and returned from the HTTP request to the breeze client.
 
 Alternatively the server side breeze EntityQuery can be constructed via the EntityQuery construction api. The construction api provides a more structured, strongly typed alternative for creating a query.
 
-```Java
-// Customers with company names starting with 'A'
-Predicate newPred = new BinaryPredicate(Operator.StartsWith,
-            "companyName", "A");
-EntityQuery eq = new EntityQuery().where(newPred);
-// an alternative to ...
-// EntityQuery eq = new
-// EntityQuery("{ companyName: { startsWith: 'A' }}");
-QueryResult qr = executeQuery(Customer.class, eq);
-String jsonResults = qr.toJson();        
-```
+
+    // Customers with company names starting with 'A'
+    Predicate newPred = new BinaryPredicate(Operator.StartsWith,
+                "companyName", "A");
+    EntityQuery eq = new EntityQuery().where(newPred);
+    // an alternative to ...
+    // EntityQuery eq = new
+    // EntityQuery("{ companyName: { startsWith: 'A' }}");
+    QueryResult qr = executeQuery(Customer.class, eq);
+    String jsonResults = qr.toJson();        
+
 
 ##### Combining client query with additional server query restrictions
 
 In some scenarios, you may want to be able to allow the client to send  queries, but apply additional filters on the server.  Here's one way:
 
-```Java
-// assuming the 'json' var came in via a HttpServlet request.
- 
-// Create an EntityQuery based on what the original query from the client
-EntityQuery eq = new EntityQuery(json);
 
-// now we add an additional where clause and a take clause    
-Predicate newPred = new BinaryPredicate(Operator.StartsWith,
-                "companyName", 'B');
-// create a new EntityQuery object
-eq = eq.where(newPred).take(10);
-QueryResult qr = qp.executeQuery(Customer.class, eq);
-Collection results = qr.getResults();
-String jsonResults = qr.toJson();
-```
+    // assuming the 'json' var came in via a HttpServlet request.
+
+    // Create an EntityQuery based on what the original query from the client
+    EntityQuery eq = new EntityQuery(json);
+
+    // now we add an additional where clause and a take clause    
+    Predicate newPred = new BinaryPredicate(Operator.StartsWith,
+                    "companyName", 'B');
+    // create a new EntityQuery object
+    eq = eq.where(newPred).take(10);
+    QueryResult qr = qp.executeQuery(Customer.class, eq);
+    Collection results = qr.getResults();
+    String jsonResults = qr.toJson();
+
      
 Naturally you would apply appropriate exception handling in a real application.
 
@@ -127,9 +127,7 @@ After the Criteria query is executed, the expands are processed by the Hibernate
 Naturally, the disadvantage of select fetching is that it results in more queries. 
 The performance impacts can be minimized by using [batch fetching](http://docs.jboss.org/hibernate/orm/3.6/reference/en-US/html/performance.html#performance-fetching-batch).  Consider setting the `default_batch_fetch_size` in your Hibernate configuration:
 
-```XML
-<property name="default_batch_fetch_size">32</property>
-```
+    <property name="default_batch_fetch_size">32</property>
 
 You may also consider using a [second-level cache](http://docs.jboss.org/hibernate/orm/3.6/reference/en-US/html/performance.html#performance-cache).
 
