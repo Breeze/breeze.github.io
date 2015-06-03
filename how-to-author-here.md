@@ -132,7 +132,7 @@ If you need to use a custom style sheet for any page you can have it included by
     custom-css: "/styles/download.css"
     ---
 
-Another option if you want to really localize your css is to include it directly inline on the page itself.  This should be done by using the html 'scoped' tag to the first child.    
+Another option if you want to really localize your css is to include it directly inline on the page itself.  This should be done by using the html 'scoped' tag to the first child of any container where the style will be applied.  
 
     <div>  
       <style type = "text/css" scoped>
