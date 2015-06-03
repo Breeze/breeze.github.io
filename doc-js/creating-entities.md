@@ -11,7 +11,7 @@ Entity materialization is largely hidden from the developer. You issue a query; 
 
 ##Don't use "new"
 
-You might expect to make a model object by calling *new *on a constructor function:
+You might expect to make a model object by calling *new* on a constructor function:
 
 	var newCust = new Customer(); // rarely done in Breeze
 
@@ -31,7 +31,7 @@ The first parameter, 'Customer', is the name of the `EntityType`
 
 In this example, we also passed in an optional property *initializer*, a hash that sets the new customer's name: `{name: 'Acme'}`. You may not need an *initializer* but it is often the easiest way to simultaneously create and initialize a new entity. 
 
->If the entity key is ***client*** generated, then you **must** specify the key in the initializer ... or you'll likely get an exception. For example, the Northwind `OrderDetail` has a composite key consisting of its parent order id and product id. You must set both values *before* adding the new entity to the cache.
+>If the entity key is *client-generated*, then you **must** specify the key in the initializer ... or you'll likely get an exception. For example, the Northwind `OrderDetail` has a composite key consisting of its parent order id and product id. You must set both values *before* adding the new entity to the cache.
 >
 	var newOrderDetail = 
 	    manager.createEntity('OrderDetail', {orderId: oid, productId: pid});
@@ -69,7 +69,7 @@ Four important facts about this approach:
 
 The first fact means you don't have to worry about keeping your client-side `Customer` definition aligned with the server-side "Customer" class definition if you're getting your metadata from the server. Change the server-side definition and the client-side definition updates automatically.
 
-The second fact means that `newCust` is shaped to match your model preference. If you configured Breeze for Angular or Aurelia, `newCust` has a `CompanyName` property. If you configured Breeze for Knockout, `newCust` has a `CompanyName()` observable function for getting and setting the name. If you configured Breeze for backbone, `newCust` becomes observable in the backbone manner, e.g. via `get('CompanyName')` and `set('CompanyName', newValue)` function calls.
+The second fact means that `newCust` is shaped to match your model preference. If you configured Breeze for Angular or Aurelia, `newCust` has a `name` property. If you configured Breeze for Knockout, `newCust` has a `name()` observable function for getting and setting the name. If you configured Breeze for backbone, `newCust` becomes observable in the backbone manner, e.g. via `get('name')` and `set('name', newValue)` function calls.
 
 The third fact means `newCust` has embedded Breeze capabilities you can tap into via the `newCust.entityAspect` property. We'll talk about [**`entityAspect`**](/doc-js/inside-entity) in the next topic.
 
