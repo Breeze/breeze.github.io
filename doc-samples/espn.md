@@ -33,6 +33,7 @@ Download the sample from <a href="https://github.com/IdeaBlade/ESPN-Breeze" targ
 6.	Toastr.js
 
 <img alt="Team News" style="width:100%; max-width:800px;" src="/images/samples/mlb.png" />
+
 ## Overview
 Team News is a simple app that consumes ESPN's free public API using Breeze.js for client-caching and using Knockout.js for data-binding.
 
