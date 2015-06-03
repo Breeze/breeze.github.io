@@ -5,7 +5,7 @@ redirect_from: "/old/documentation/creating-entities.html"
 
 #Creating a new entity
 
-Breeze creates new entity instances on two primary occasions: (1) when it "**materializes**" entities from query results and (2) when you ask it to **create **a brand new entity.
+Breeze creates new entity instances on two primary occasions: (1) when it "**materializes**" entities from query results and (2) when you ask it to **create** a brand new entity.
 
 Entity materialization is largely hidden from the developer. You issue a query; you get entities back. Behind the scenes Breeze converts the stream of model object data into entities in cache. The developer only becomes aware of entity creation details when making new model objects.
 
@@ -15,24 +15,24 @@ You might expect to make a model object by calling *new *on a constructor functi
 
 	var newCust = new Customer(); // rarely done in Breeze
 
-You can do it this way ... if you've defined a *Customer *constructor and registered it with Breeze. But most Breeze developers don't define entity constructors or, if they do, they define only a subset of the entity's properties and methods (see the "<a href="/doc-js/extending-entities.html" target="_blank">Extending entities</a>" topic).
+You can do it this way ... if you've defined a `Customer` constructor and registered it with Breeze. But most Breeze developers don't define entity constructors or, if they do, they define only a subset of the entity's properties and methods (see the [Extending entities](/doc-js/extending-entities.html) topic).
 
-It's preferable to let Breeze create the entity based on entity type information gleaned from <a href="/doc-js/extending-entities.html" target="_blank">metadata acquired from the remote data service</a> ... in which case there is no constructor to "*new up*".
+It's preferable to let Breeze create the entity based on entity type information gleaned from [metadata acquired from the remote data service](/doc-js/extending-entities.html) ... in which case there is no constructor to "*new up*".
 
 ##EntityManager.createEntity
 
-The standard approach is to call the Breeze ***createEntity ***factory function on an *EntityManager*:
+The standard approach is to call the Breeze **`createEntity`** factory function on an `EntityManager`:
 
 	var newCust = manager.createEntity('Customer', {name:'Acme'});
 
-The first parameter is the name of the `EntityType`; don't confuse the "type name" ('Customer') with the similar "resource name" ('Customers') that you use in a query.
+The first parameter, 'Customer', is the name of the `EntityType`
 
-In this example, we also passed in an optional property initializer hash that sets the new customer's name: `{name: 'Acme'}`.
+>Don't confuse the *type* name ('Customer') with the similar *resource* name ('Customers') that identifies the server endpoint in a query.
 
-You may not need an initializer. But If the entity key is ***client ***generated, then you **must** specify the key in the initializer ... or you'll likely get an exception.
+In this example, we also passed in an optional property *initializer*, a hash that sets the new customer's name: `{name: 'Acme'}`. You may not need an *initializer* but it is often the easiest way to simultaneously create and initialize a new entity. 
 
-	// The Northwind OrderDetail has a composite key consisting of 
-	// its parent order and product ids.
+>If the entity key is ***client*** generated, then you **must** specify the key in the initializer ... or you'll likely get an exception. For example, the Northwind `OrderDetail` has a composite key consisting of its parent order id and product id. You must set both values *before* adding the new entity to the cache.
+>
 	var newOrderDetail = 
 	    manager.createEntity('OrderDetail', {orderId: oid, productId: pid});
 
@@ -67,14 +67,14 @@ Four important facts about this approach:
 1. The new object is "detached" and does not belong to any *EntityManager *cache until you attach it explicitly
 
 
-The first fact means you don't have to worry about keeping your client-side *Customer *definition aligned with the server-side *Customer *definition if you're getting your metadata from the server. Change the server-side definition and the client-side definition updates automatically.
+The first fact means you don't have to worry about keeping your client-side `Customer` definition aligned with the server-side "Customer" class definition if you're getting your metadata from the server. Change the server-side definition and the client-side definition updates automatically.
 
-The second fact means that *newCust* is shaped to match your model preference. If you configured Breeze for Knockout, *newCust* has a *CompanyName()* observable function for getting and setting the name. If you configured Breeze for backbone, *newCust* understands *get("CompanyName")* and *set("CompanyName")* and the *newCust* is observable in the backbone manner.
+The second fact means that `newCust` is shaped to match your model preference. If you configured Breeze for Angular or Aurelia, `newCust` has a `CompanyName` property. If you configured Breeze for Knockout, `newCust` has a `CompanyName()` observable function for getting and setting the name. If you configured Breeze for backbone, `newCust` becomes observable in the backbone manner, e.g. via `get('CompanyName')` and `set('CompanyName', newValue)` function calls.
 
-The third fact means *newCust* has embedded Breeze capabilities you can tap via the *newCust.entityAspect* property. We'll talk about <a href="/doc-js/inside-entity">***entityAspect*** in the next topic</a>.
+The third fact means `newCust` has embedded Breeze capabilities you can tap into via the `newCust.entityAspect` property. We'll talk about [**`entityAspect`**](/doc-js/inside-entity) in the next topic.
 
-The fourth fact means some of *newCust*'s Breeze capabilities are temporarily disabled until you attach it to the manager. For example, if we stopped at line #3, the *newCust* couldn't navigate to related entities in cache because it's not in a cache. Only after the fourth line ...
+The fourth fact means some of `newCust`'s Breeze capabilities are temporarily disabled until you attach it to the manager. For example, if we stopped at line #3, the `newCust` couldn't navigate to related entities in cache because it's not in a cache. Only after the fourth line ...
 
 	manager.addEntity(newCust);
 	
-... is the *newCust* ready to behave both as a *Customer* and as an *entity*.
+... is the `newCust` object ready to behave both as a `Customer` and as an *entity*.
