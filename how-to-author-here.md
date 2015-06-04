@@ -192,4 +192,11 @@ In some cases you may want to share a chunk of html between pages. If so add a f
 - **Take a look at the other pages on the site and try to follow the same markdown conventions that have already been used.** 
 >  TODO: Detail these
  
-        
+## Breeze/Markdown conventions
+  
+- Use markdown for all documentation pages unless the page really needs to be almost completely HTML.  We only have a few of these.      
+- Use `backticks` (i.e. \`EntityType\`)  for references to inline code (i.e. type names, method names, variable names etc). Optionally, you only need to do this once per paragraph if you use the same reference multiple times within the paragraph.
+> Do NOT use italics for this purpose. 
+- Every page should start with an **< h1\>** header, i.e. # xxx  
+- Use inline html sparingly.  
+          
