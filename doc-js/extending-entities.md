@@ -488,7 +488,7 @@ There's another way too. Suppose you've created and configured a manager and you
     // a new, empty manager with the same configuration including the store
     var em2 = em1.createEmptyCopy();
 
-<a name="Note03"></a>[3] You don't *have *to mention properties that are already defined in metadata coming from the service. But it's harmless if you do.
+<a name="Note03"></a>[3] You don't *have* to mention properties that are already defined in metadata coming from the service. But it's harmless if you do.
 
     function Customer() {
         this.isBeingEdited = ko.observable(false);

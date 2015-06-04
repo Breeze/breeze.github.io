@@ -64,7 +64,7 @@ Four important facts about this approach:
 1. Breeze creates the data properties and entity navigation properties based on metadata.
 1. Breeze defines these properties in the manner appropriate for the model library you choose
 1. The new object is "wired up" as a Breeze entity
-1. The new object is "detached" and does not belong to any *EntityManager *cache until you attach it explicitly
+1. The new object is "detached" and does not belong to any *EntityManager* cache until you attach it explicitly
 
 
 The first fact means you don't have to worry about keeping your client-side `Customer` definition aligned with the server-side "Customer" class definition if you're getting your metadata from the server. Change the server-side definition and the client-side definition updates automatically.

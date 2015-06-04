@@ -18,7 +18,7 @@ When the user enters a description in the big **Todo app** textbox and hits **En
        // ... more
     }
 
-The *initialValues *hash might be:
+The *initialValues* hash might be:
 
     {
         Description: 'Have fun',

@@ -4,11 +4,11 @@ redirect_from: "/old/documentation/query-filter.html"
 ---
 #Query with a filter
 
-> Most of the code snippets on this page are in the <a href="/doc-samples/about-todo">Breeze Todo App</a>; a few are in the **basicTodoTests **module of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
+> Most of the code snippets on this page are in the <a href="/doc-samples/about-todo">Breeze Todo App</a>; a few are in the **basicTodoTests** module of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 
 Our <a href="/doc-js/lap-first-query">first query</a> returned every Todo in the database [<a href="#note 1">1</a>].  That's fine for a short list of Todos; not so great if we're querying for orders of a large company. We need a query that selects a more manageable number of results, preferably the ones that interest the user.
 
-In this app, we can archive the Todos that we want to keep but look at rarely. The `getAllTodos` method in the *dataservice* has an "IncludeArchived" option. If the flag is false, the code adds a "where" clause to filter exclusively for *Todos *that are active (not archived).
+In this app, we can archive the Todos that we want to keep but look at rarely. The `getAllTodos` method in the *dataservice* has an "IncludeArchived" option. If the flag is false, the code adds a "where" clause to filter exclusively for *Todos* that are active (not archived).
 
     function getAllTodos(includeArchived) {
         var query = breeze.EntityQuery
@@ -61,7 +61,7 @@ In addition to 'and', there are also 'or' and 'not' operators for predicates. Yo
 
 We wrote "==" to filter for every Todo whose "*IsArchived*" property equals *false.* Breeze supports a variety of other comparison operators, all of which can be expressed as strings. Maybe you feel queesy about magic strings such as "==". Breeze offers an alternative, a <a href="/doc-js/api-docs/classes/FilterQueryOp.html" target="_blank">FilterQueryOp </a>enumeration. Intellisense for that enumeration reveals the available comparison operators and can eliminate the spelling mistakes that lead to runtime JavaScript errors.
 
-We could have written the previous predicates using the *FilterQueryOp *enumeration:
+We could have written the previous predicates using the *FilterQueryOp* enumeration:
 
     var op = breeze.FilterQueryOp;
     var p1 = new breeze.Predicate("IsArchived", op.Equals,  false);

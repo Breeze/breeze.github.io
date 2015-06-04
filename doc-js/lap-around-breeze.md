@@ -9,7 +9,7 @@ This is a quick spin around Breeze. It sticks to the basics that a JavaScript cl
 
 - how to query the persistence service for entities
 - how to write a query filter on the client and sort the results on the data tier
-- to hold a *promise *from Breeze while you wait for the service to respond; the promise will tell you when the service is ready with results
+- to hold a *promise* from Breeze while you wait for the service to respond; the promise will tell you when the service is ready with results
 - the EntityManager maintains a local cache of entities that you've queried, added to, modified, and marked for deletion 
 - the EntityType describes the details of an entity class, how it's structured and how it behaves
 - how to use the EntityType to create new instances of entities

@@ -49,6 +49,6 @@ Note that projections themselves are not entities and will not be cached on the 
 
 This is a valuable feature and you can use it to query and cache all your pick-lists in the application in a single shot. For example, you might create a service method called 'Lookups' that returns a single object whose properties are arrays of Color, Status, Size, ProductType, ... you get the idea. That object is essentially a bag of lists that you'll use to populate combo boxes.
 
-Then you make a single query to 'Lookups', which returns this bag of lists. Now Breeze doesn't recognize the bag as an entity. But each of the bag's properties is a collection of objects that ***are ***described as entities in metadata: Color is an entity type, Status is a type, Size is a type, ProductType is a type. Breeze recognizes that these nested objects are entities and puts them in cache.
+Then you make a single query to 'Lookups', which returns this bag of lists. Now Breeze doesn't recognize the bag as an entity. But each of the bag's properties is a collection of objects that ***are*** described as entities in metadata: Color is an entity type, Status is a type, Size is a type, ProductType is a type. Breeze recognizes that these nested objects are entities and puts them in cache.
  
 So in a single request, in a single payload, you're able to populate the EntityManager cache with all of the little pick-lists.

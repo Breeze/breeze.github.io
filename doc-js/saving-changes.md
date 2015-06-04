@@ -30,7 +30,7 @@ But you might have a specific business process to perform when you save a certai
 
 You could route this command through a single 'SaveChanges' endpoint and let the corresponding server method dispatch the save request to the appropriate command handler. That could get messy. It can make more sense to POST requests to command-specific endpoints, passing along just the right entity set in the request body. 
 
-That's what the '**Named Save**' is for. With a 'Named Save', you can re-target a 'save' to a custom server endpoint such as an arbitrarily named *action *method on a separate, dedicated Web API controller. 
+That's what the '**Named Save**' is for. With a 'Named Save', you can re-target a 'save' to a custom server endpoint such as an arbitrarily named *action* method on a separate, dedicated Web API controller. 
 
 You still call `EntityManager.saveChanges`but you pass in a `SaveOptions` object that specifies the `resourceName` to handle the request. The server should route the request to a suitable controller *action* method. You'd also set the `SaveOptions.dataService` if you need also to target a different controller. 
 

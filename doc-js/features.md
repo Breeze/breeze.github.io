@@ -26,7 +26,7 @@ Features include:
 **Client-side caching**
 
 + Caching entities locally on the JavaScript client.
-+ Navigation among entities in cache, e.g., *Customer *to *Orders *to *OrderDetails *to *Product *... and back.
++ Navigation among entities in cache, e.g., *Customer* to *Orders* to *OrderDetails* to *Product* ... and back.
 
 **Change tracking**
 

@@ -2,27 +2,27 @@
 layout: doc-js
 redirect_from: "/old/documentation/inside-entity.html"
 ---
-#Inside the Entity
+# Inside the Entity
 
 This topic concentrates on the model object's entity nature, in particular how the entity is **tracked** during its lifetime on the client. You'll learn about the `entityAspect` property through which the developer can access and control the state of the entity within the Breeze system.
 
-> Code snippets on this page are in the ***basicTodoTests ***and  ***entityTests** *modules of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
+> Code snippets on this page are in the **basicTodoTests** and  **entityTests** modules of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 
-###"*Entity-ness*"
+### "*Entity-ness*"
 
 A domain **model object** represents something significant in the application domain. A "Customer", for example, has data properties ("*Name*"), relationships to other entities ("*Orders*") and perhaps some business logic ("*isGoldCustomer*"). We bind these object members to UI controls and reason about them in application code. They are what matters most to users and other application stakeholders. They define "*Customer-ness*".
 
 The "Customer" is also an **entity**, a long-lived object with a permanent key. We can fetch it from a database, hold it in cache, check for changes, validate, and save it. When the developer's attention turns to whether an object has changed or not, what its values used to be, how it is persisted, whether it has validation errors ... the developer is thinking about the object's **entity nature**. Breeze is responsible for the object's entity nature, its "*entity-ness*".  You access an entity's entity nature through its `entityType` and `entityAspect` properties.
 
-#EntityType
+# EntityType
 
-Every Breeze entity instance has an `entityType` property that returns an <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank" title="EntityType API">`EntityType`</a> object which is the <a href="/doc-js/metadata.html" title="Metadata documentation">metadata</a> that describe its properties and other facts about the type.
+Every Breeze entity instance has an `entityType` property that returns an [`EntityType`](/doc-js/api-docs/classes/EntityType.html) object which is the [metadata](/doc-js/metadata.html) that describe its properties and other facts about the type.
 
     var type = someCustomer.entityType;
 
-#EntityAspect
+# EntityAspect
 
-A Breeze entity is "self-tracking". It maintains its own entity state, and the means to change that state, in the ***<a href="/doc-js/api-docs/classes/EntityAspect.html" target="_blank" title="EntityAspect API">EntityAspect</a>*** object returned by its *entityAspect *property.
+A Breeze entity is "self-tracking". It maintains its own entity state, and the means to change that state, in the ***<a href="/doc-js/api-docs/classes/EntityAspect.html" target="_blank" title="EntityAspect API">EntityAspect</a>*** object returned by its *entityAspect* property.
 
 An object becomes a Breeze entity when it acquires its `EntityAspect` which it does when it
 
@@ -32,7 +32,7 @@ An object becomes a Breeze entity when it acquires its `EntityAspect` which it d
 
 The first of any of these actions is sufficient to endow an object with its `EntityAspect` which it retains throughout its client session lifetime.
 
-We'll tackle `EntityAspect`'s key features in four groups.
+We'll tackle the key features of `EntityAspect` in four groups.
 
 - <a href="#EntityState">entityState</a> ... and the methods that can reset that state
 - <a href="#PropertyChanged">propertyChanged </a>event
@@ -40,11 +40,11 @@ We'll tackle `EntityAspect`'s key features in four groups.
 - <a href="#EntityMiscellany">entity miscellany</a>
 
 
-##<a name="EntityState"></a>EntityState
+##<a name="EntityState"></a> EntityState
 
 Is the entity attached to an `EntityManager` and therefore in its cache? Has it changed? If changed, is it a new entity, a modified version of an existing entity from remote storage, or an existing entity that is marked for deletion?
 
-The `entityState` property answers these questions with a value from the *<a href="/doc-js/api-docs/classes/EntityState.html">EntityState</a>* enumeration. Here are the enumeration names and their meanings:
+The `entityState` property answers these questions with a value from the <a href="">[`EntityState`](/doc-js/api-docs/classes/EntityState.html) enumeration. Here are the enumeration names and their meanings:
 
 | EntityState     | Description
 | -----------     | -----------
@@ -64,7 +64,7 @@ You can test the value of an `EntityState` enumeration by comparing its name wit
     if (state.IsAddedModifiedorDeleted())  {/* ... */};     // often useful
 
 
-###EntityState transitions
+### EntityState transitions
 
 As things happen to an entity, Breeze updates its `EntityState` automatically. Here are before and after EntityStates for some of the most common actions:
 
@@ -84,7 +84,7 @@ Two state-changes may surprise you. If you mark an **existing entity** for delet
 
 Deleting a **new entity** detaches it immediately. Breeze doesn't wait for you to call *saveChanges* which is pointless if you're discarding data that have never been saved.
 
-###Detached entities
+### Detached entities
 
 A detached entity does not belong to an `EntityManager`. It's still an entity; it's just not an entity in any cache.
 
@@ -98,7 +98,7 @@ You should initialize a new entity and then immediately add it to an `EntityMana
 
 Entities can become detached deliberately or as a side-effect of another action. The following actions detach an entity:
 
-- explicitly removing it from its `EntityManager` (`manager.detachEntity(*anEntity*)`)
+- explicitly removing it from its `EntityManager` (`manager.detachEntity(anEntity)`)
 - clearing its `EntityManager` (`manager.clear()`)
 - deleting a *new* entity
 - deleting an *existing* entity and then saving it successfully.
@@ -140,7 +140,7 @@ Once you've changed an entity, it stays in a changed state ... even if you manua
     todo.Description("Something new");       // entityState becomes "Modified"
     todo.Description(oldDescription);        // entityState is still "Modified"
 
-Call *rejectChanges *to cancel pending changes, revert properties to their prior values, and set the *entityState *to "Unchanged".
+Call *rejectChanges* to cancel pending changes, revert properties to their prior values, and set the *entityState* to "Unchanged".
 
     var oldDescription = todo.Description();// assume existing "Unchanged" entity
     todo.Description("Something new");      // entityState becomes "Modified"
@@ -153,7 +153,7 @@ You can also call *rejectChanges* on the EntityManager to cancel and revert pend
 
 ###Original values
 
-Breeze remembers the original property values when you change an existing entity. It stores these values in the *EntityAspect*'s ***originalValues***** **hash map. The *originalValues *hash is an empty object while the entity is in the "Unchanged" state. When you change an entity property for the first time, Breeze adds the pre-change value to the *originalValues* hash, using the property name as the key. The keys of the hash are the names of the properties that have been changed since the entity was last queried or saved.
+Breeze remembers the original property values when you change an existing entity. It stores these values in the *EntityAspect*'s `originalValues` hash map. The *originalValues* hash is an empty object while the entity is in the "Unchanged" state. When you change an entity property for the first time, Breeze adds the pre-change value to the *originalValues* hash, using the property name as the key. The keys of the hash are the names of the properties that have been changed since the entity was last queried or saved.
 
 Here's a function to get those keys:
 
@@ -164,7 +164,7 @@ Here's a function to get those keys:
         return names;
     }
 
-Breeze replaces *entityAspect.originalValues* with a new empty hash when any operation restores the entity to the "Unchanged" state. A successful save, *rejectChanges*, *setUnchanged*, and *acceptChanges *all reset the *originalValues* hash.
+Breeze replaces *entityAspect.originalValues* with a new empty hash when any operation restores the entity to the "Unchanged" state. A successful save, *rejectChanges*, *setUnchanged*, and *acceptChanges* all reset the *originalValues* hash.
 
 ##<a name="PropertyChanged"></a>PropertyChanged event
 
@@ -176,17 +176,17 @@ Breeze creates entities in accordance with the model library you selected for yo
 
 Each model library has its own property change subscription mechanism.
 
-Breeze also has a *propertyChanged *event that supplements the model library offering. You can listen for a change to any Breeze-tracked entity property with a single subscription:
+Breeze also has a *propertyChanged* event that supplements the model library offering. You can listen for a change to any Breeze-tracked entity property with a single subscription:
 
      entity.entityAspect.propertyChanged
            .subscribe(function (changeArgs) { /* ... */);});
 
 The properties of the `changeArgs` are
 
-- *entity *- the entity that changed
-- *propertyName *- the name of the property that changed
-- *oldValue *- the value before the property changed
-- *newValue *- the current property value.
+- *entity* - the entity that changed
+- *propertyName* - the name of the property that changed
+- *oldValue* - the value before the property changed
+- *newValue* - the current property value.
 
 
 Capture the subscription token if you need to unsubscribe later.
@@ -200,11 +200,11 @@ Capture the subscription token if you need to unsubscribe later.
 
 Breeze only monitors changes to properties identified in the metadata for this *EntityType*. These properties - mapped and unmapped - are the "*Breeze-tracked entity properties*" mentioned earlier. Breeze doesn't track properties that you add with an entity initialization function (see <a href="/doc-js/extending-entities">Extending Entities</a>) or that you patch into the entity later in its lifetime.
 
-Nor does Breeze raise the *propertyChanged *event when an *EntityAspect *property changes. For example, the *propertyChanged *event does not fire when the <a href="#EntityState">*entityState*</a> changes.
+Nor does Breeze raise the *propertyChanged* event when an *EntityAspect* property changes. For example, the *propertyChanged* event does not fire when the <a href="#EntityState">*entityState*</a> changes.
 
-> You can detect when the *entityState *changes ... using a technique to be described soon.
+> You can detect when the *entityState* changes ... using a technique to be described soon.
 
-Breeze typically raises *propertyChanged *for each property individually. Some operations - such as queries, imports, saves, and *<a href="#RejectChanges">rejectChanges</a>* - update many properties at the same time. Breeze consolidates notification of these changes into a single *propertyChanged *event with a "null" property name. A subscriber learns that at least one property changed but can't know which particular properties changed; if this information is important to you, you'll have to indentify the affected properties in some out-of-band way (see *entityTests* module of the <a href="/doc-samples/doccode">DocCode teaching tests</a> for a suggestion).
+Breeze typically raises *propertyChanged* for each property individually. Some operations - such as queries, imports, saves, and *<a href="#RejectChanges">rejectChanges</a>* - update many properties at the same time. Breeze consolidates notification of these changes into a single *propertyChanged* event with a "null" property name. A subscriber learns that at least one property changed but can't know which particular properties changed; if this information is important to you, you'll have to indentify the affected properties in some out-of-band way (see *entityTests* module of the <a href="/doc-samples/doccode">DocCode teaching tests</a> for a suggestion).
 
 ##<a name="ValidateEntity"></a>ValidateEntity
 
@@ -216,9 +216,9 @@ A validation rule either passes or fails. If it passes, it returns null. If it f
 
 Every `EntityAspect` maintains a `validationErrorsCollection`. The Breeze validation engine adds a new `ValidationError` instance to that collection when a validation rules fails and removes an old `ValidationErrors` instance when its associated validation rule passes.
 
-You can't access the inner `validationErrorsCollection` directly. You can get a copy of its contents by calling *entityAspect*.*<a href="/doc-js/api-docs/classes/EntityAspect.html#method_getValidationErrors" target="_blank">getValidationErrors</a>*. You can also add to or remove *validationError*s from the *<span class="codeword">validationErrorsCollection</span>* programmatically with the *EntityAspect *methods, *<a href="/doc-js/api-docs/classes/EntityAspect.html#method_addValidationError" target="_blank">addValidationError</a>* and *<a href="/doc-js/api-docs/classes/EntityAspect.html#method_removeValidationError" target="_blank">removeValidationError</a>*.
+You can't access the inner `validationErrorsCollection` directly. You can get a copy of its contents by calling *entityAspect*.*<a href="/doc-js/api-docs/classes/EntityAspect.html#method_getValidationErrors" target="_blank">getValidationErrors</a>*. You can also add to or remove *validationError*s from the `validationErrorsCollection` programmatically with the `EntityAspect` methods, *<a href="/doc-js/api-docs/classes/EntityAspect.html#method_addValidationError" target="_blank">addValidationError</a>* and *<a href="/doc-js/api-docs/classes/EntityAspect.html#method_removeValidationError" target="_blank">removeValidationError</a>*.
 
-Breeze raises the *EntityAspect*'s `validationErrorsChanged` event when `ValidationErrors` are added or removed from the entity's `validationErrorsCollection`; you can subscribe to that event:
+Breeze raises the `EntityAspect.validationErrorsChanged` event when `ValidationErrors` are added or removed from the entity's `validationErrorsCollection`; you can subscribe to that event:
 
     entity.entityAspect
          .validationErrorsChanged.subscribe(handleValidationErrorChanged);
@@ -228,28 +228,28 @@ Breeze calls the handler with an `errorsChangedArgs` that tells you what propert
 
 ##<a name="EntityMiscellany"></a>Entity miscellany
 
-This last category is a small menagerie of miscellaneous *EntityAspect *members
+This last category is a small menagerie of miscellaneous *EntityAspect* members
 
 
-- ***entity* **- a backward reference to the entity that holds this *EntityAspect*
-- ***entityManager ***- the *EntityManager *to which this entity is attached ... or was attached. It's null if the entity is new and not yet added to a manager.
-- ***getKey* **- a function returning the entity's *<a href="/doc-js/api-docs/classes/EntityKey.html" target="_blank">EntityKey</a>*. A key is an object that uniquely identifies the entity in cache and in remote storage. The key is not a simple JavaScript value. It's an object the identifies the type of the entity and the value ... or values ... of the key; Breeze supports entities with composite keys.
-- ***isBeingSaved* **- a property that returns *true *if this entity is one in a batch of entities being saved and the save operation is still in progress. Your application may need to prevent further changes to the entity until the save operation completes, successfully or not.
-- ***loadNavigationProperty* **- you can download related entities, on demand, by calling *loadNavigationProperty *as described in the <a href="/doc-js/navigation-properties" target="_blank">Navigation Properties</a> topic.
+- ***entity***- a backward reference to the entity that holds this *EntityAspect*
+- ***entityManager*** - the *EntityManager* to which this entity is attached ... or was attached. It's null if the entity is new and not yet added to a manager.
+- ***getKey*** - a function returning the entity's [`EntityKey`](/doc-js/api-docs/classes/EntityKey.html). A key is an object that uniquely identifies the entity in cache and in remote storage. The key is not a simple JavaScript value. It's an object the identifies the type of the entity and the value ... or values ... of the key; Breeze supports entities with composite keys.
+- ***isBeingSaved*** - a property that returns `true` if this entity is one in a batch of entities being saved and the save operation is still in progress. Your application may need to prevent further changes to the entity until the save operation completes, successfully or not.
+- ***loadNavigationProperty*** - you can download related entities, on demand, by calling `loadNavigationProperty` as described in the [Navigation Properties](/doc-js/navigation-properties.html) topic.
 
 
 #Breeze properties on the entity itself
 
 You typically access the breeze entity infrastructure through the *entityAspect* property. Breeze also injects a few more entity-oriented members into the model object's prototype. These members are visible on the entity's surface API.
 
-***entityType ***- a property that returns the Breeze <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank">type information object</a>, metadata describing this type of entity.
+***entityType*** - a property that returns the Breeze [type information object](/doc-js/api-docs/classes/EntityType.html) metadata describing this type of entity.
 
     var customerType = manager.metadataStore.getEntityType("Customer");
     var customer = customerType.createEntity();
     // customer.entityType === customerType 
 
-***getProperty ***- a function that returns the value of a property
-***setProperty ***- a function that sets a property value
+***getProperty*** - a function that returns the value of a property
+***setProperty*** - a function that sets a property value
 
     var setName = "Ima Something Corp";
     customer.setProperty("CompanyName", setName);
@@ -260,4 +260,4 @@ With `getProperty` and `setProperty`, you can write utilities to access the prop
 
 The `setProperty` function follows the same code path as the model library property accessor and will raise property change events, change the entity state, and trigger validation accordingly. Note that calling setProperty with an 'invalid' propertyName, i.e. one that does NOT have an associated DataProperty or NavigationProperty, will result in model library specific behavior. 
 
-***_$interceptor*** - a Breeze internal function; please leave it alone.
+***\_$interceptor*** - a Breeze internal function; please leave it alone.

@@ -190,7 +190,7 @@ We might write some unit tests that call `validate` with a variety of values, so
 
 # Apply the validator
 
-Now that we've crafted a new validator, it's time to put it to work. Let's add this validator to the property of an Employe. We get the `EntityType` for the Employee from a *MetadataStore *and add the rule to the validators for the Employee type's '*Country*' `DataProperty`:
+Now that we've crafted a new validator, it's time to put it to work. Let's add this validator to the property of an Employe. We get the `EntityType` for the Employee from a *MetadataStore* and add the rule to the validators for the Employee type's '*Country*' `DataProperty`:
 
     var employeeType = manager.metadataStore.getEntityType('Employee');
     employeeType
@@ -206,7 +206,7 @@ It's a general purpose rule that we could apply to any other string property. Fo
         .getProperty('Country') // Customer has 'Country' property too
         .validators.push(countryIsUSValidator);
 
-> The `EntityType` must be present in metadata before you can apply the rule. You can *define *the rule *before *getting the metadata, perhaps immediately after launching the application. But you can't add the validator to the type or any of its properties until the type is defined. For most applications,** you must wait** untl the client has retrieved metadata from the server. You can fetch that metadata explicitly or wait until Breeze gets it implicitly during the first query.
+> The `EntityType` must be present in metadata before you can apply the rule. You can *define* the rule *before* getting the metadata, perhaps immediately after launching the application. But you can't add the validator to the type or any of its properties until the type is defined. For most applications,** you must wait** untl the client has retrieved metadata from the server. You can fetch that metadata explicitly or wait until Breeze gets it implicitly during the first query.
 
 ## Parameterized validator
 
@@ -370,9 +370,9 @@ But there is a special case. When you get your metadata from a local serialized 
 
 For example, suppose you designed your application to load entities from local storage when it starts. In the previous session you exported the entity cache and stowed the serialized cache data to browser local storage (see '<a href="/doc-js/export-import" target="_blank">Export/Import</a>'). Now when you start a new session, your app restores the cache and you pick up where you left off ... without having to hit the server. Pretty cool!
 
-Unfortunately, the app throws an exception when it loads the locally stored data. The exception complains about an unknown, unregistered validation rule ... perhaps that custom *zipCodeValidator *we just created. What happened?
+Unfortunately, the app throws an exception when it loads the locally stored data. The exception complains about an unknown, unregistered validation rule ... perhaps that custom *zipCodeValidator* we just created. What happened?
 
-When you exported the cache of entities, you also exported the metadata; they're part of the serialized cache. Inside that metadata is a reference to a validator named *zipCodeValidator*. The ***name ***of the function is in the serialized metadata; the function ***definition ***is not. The metadata definition of the Customer includes the fact that a customer entity must be validated with something called 'zipCodeValidator'. Unfortunately, Breeze doesn't know what a 'zipCodeValidator' is. When Breeze restores the metadata (and the entities) it needs your help in connecting the name of the validator to the validator function itself. You provide that help by registering your custom validator with the Breeze Validator class:
+When you exported the cache of entities, you also exported the metadata; they're part of the serialized cache. Inside that metadata is a reference to a validator named *zipCodeValidator*. The ***name*** of the function is in the serialized metadata; the function ***definition*** is not. The metadata definition of the Customer includes the fact that a customer entity must be validated with something called 'zipCodeValidator'. Unfortunately, Breeze doesn't know what a 'zipCodeValidator' is. When Breeze restores the metadata (and the entities) it needs your help in connecting the name of the validator to the validator function itself. You provide that help by registering your custom validator with the Breeze Validator class:
 
     Validator.register(zipCodeValidator);
 
@@ -382,7 +382,7 @@ If you created a <a href="#ValidatorFactory">validator factory</a>, you register
 
 Notice the second parameter. That's the registration name and it must be the name of the validator that your factory creates; <a href="#ValidatorFactory">scroll up</a> and you'll find that we named it 'countryValidator'. No, Breeze won't figure that out for you; it would have to execute your factory with a context object to produce a validator with the right name ... but has no way to create a valid context object
 
-Make sure you register your custom validators and validator factories *before *retrieving metadata from local storage.
+Make sure you register your custom validators and validator factories *before* retrieving metadata from local storage.
 
 > We think it's a good practice to register your custom validators although you don't have to unless you'll be getting metadata from a serialized source other than the server.  Play it safe; register them.
 
