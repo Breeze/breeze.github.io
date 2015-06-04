@@ -22,6 +22,12 @@ h6,
 .h6 {
   font-weight: 600;
 }
+h2,
+h3,
+.h2,
+.h3 {
+	color: #777;
+}
 
 .hr {
 	display: block;
