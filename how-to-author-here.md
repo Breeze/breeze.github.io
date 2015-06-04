@@ -105,7 +105,7 @@ An example menu yml file is shown below:
 - The **menuitems** is a collection of items, each of which points to one of the pages within the directory associated with this menu. The order of items within this list of items is the order that the items will appear in the left nav bar. Each item consists of the following tags: 
   - **link** is the name of the html/md file associated with this page.
   > Note: the '.html' extension must be specified and is used regardless of whether the page is an '.md' or a '.html' page.  Both will get converted to '.html' pages and this is what is being ref'd.
-  - **title** is the title of the page itself and will appear both in the left nav bar and will also be combined with the menu title and used as the <title> in the <head> section of the page.
+  - **title** is the title of the page itself and will appear both in the left nav bar and will also be combined with the menu title and used as the *title* in the *head* section of the page.
   - **isparent** with a value of 'true' is used if this is a parent menu item.
   - **ischild** with a value of 'true' is used if this is a child menu item.
 
