@@ -168,7 +168,7 @@ For the `EntityType`, `ComplexType`, `DataProperty` and `NavigationProperty` cla
 
 ## Examples
 
-<a name=importCustomMetadata></a>
+<a name="importCustomMetadata"></a>
 ### Importing custom metadata into an existing store.
        
 	var customMetadata = {
