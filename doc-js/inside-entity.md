@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/inside-entity.html"
 ---
 #Inside the Entity
 
-This topic concentrates on the model object's entity nature, in particular how the entity is **tracked **during its lifetime on the client. You'll learn about the ***<span class="codeword">entityAspect</span> ***property through which the developer can access and control the state of the entity within the Breeze system.
+This topic concentrates on the model object's entity nature, in particular how the entity is **tracked** during its lifetime on the client. You'll learn about the `entityAspect` property through which the developer can access and control the state of the entity within the Breeze system.
 
 > Code snippets on this page are in the ***basicTodoTests ***and  ***entityTests** *modules of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 
@@ -12,7 +12,7 @@ This topic concentrates on the model object's entity nature, in particular how t
 
 A domain **model object** represents something significant in the application domain. A "Customer", for example, has data properties ("*Name*"), relationships to other entities ("*Orders*") and perhaps some business logic ("*isGoldCustomer*"). We bind these object members to UI controls and reason about them in application code. They are what matters most to users and other application stakeholders. They define "*Customer-ness*".
 
-The "Customer" is also an **entity**, a long-lived object with a permanent key. We can fetch it from a database, hold it in cache, check for changes, validate, and save it. When the developer's attention turns to whether an object has changed or not, what its values used to be, how it is persisted, whether it has validation errors ... the developer is thinking about the object's **entity nature**. Breeze is responsible for the object's entity nature, its "*entity-ness*".  You access an entity's entity nature through its ***entityType ***and ***entityAspect ***properties.
+The "Customer" is also an **entity**, a long-lived object with a permanent key. We can fetch it from a database, hold it in cache, check for changes, validate, and save it. When the developer's attention turns to whether an object has changed or not, what its values used to be, how it is persisted, whether it has validation errors ... the developer is thinking about the object's **entity nature**. Breeze is responsible for the object's entity nature, its "*entity-ness*".  You access an entity's entity nature through its `entityType` and `entityAspect` properties.
 
 #EntityType
 
@@ -24,15 +24,15 @@ Every Breeze entity instance has an `entityType` property that returns an <a hre
 
 A Breeze entity is "self-tracking". It maintains its own entity state, and the means to change that state, in the ***<a href="/doc-js/api-docs/classes/EntityAspect.html" target="_blank" title="EntityAspect API">EntityAspect</a>*** object returned by its *entityAspect *property.
 
-An object becomes a Breeze entity when it acquires its *EntityAspect *which it does when it
+An object becomes a Breeze entity when it acquires its `EntityAspect` which it does when it
 
 - first enters the cache as a result of a query or import **OR**
 - is created with the <a href="/doc-js/creating-entities" target="_blank">*EntityType.createEntity*</a> factory method **OR**
 - is explictly added or attached to an EntityManager
 
-The first of any of these actions is sufficient to endow an object with its *EntityAspect *which it retains throughout its client session lifetime.
+The first of any of these actions is sufficient to endow an object with its `EntityAspect` which it retains throughout its client session lifetime.
 
-We'll tackle *EntityAspect*'s key features in four groups.
+We'll tackle `EntityAspect`'s key features in four groups.
 
 - <a href="#EntityState">entityState</a> ... and the methods that can reset that state
 - <a href="#PropertyChanged">propertyChanged </a>event
@@ -42,9 +42,9 @@ We'll tackle *EntityAspect*'s key features in four groups.
 
 ##<a name="EntityState"></a>EntityState
 
-Is the entity attached to an *EntityManager *and therefore in its cache? Has it changed? If changed, is it a new entity, a modified version of an existing entity from remote storage, or an existing entity that is marked for deletion?
+Is the entity attached to an `EntityManager` and therefore in its cache? Has it changed? If changed, is it a new entity, a modified version of an existing entity from remote storage, or an existing entity that is marked for deletion?
 
-The *entityState *property answers these questions with a value from the *<a href="/doc-js/api-docs/classes/EntityState.html">EntityState</a>* enumeration. Here are the enumeration names and their meanings:
+The `entityState` property answers these questions with a value from the *<a href="/doc-js/api-docs/classes/EntityState.html">EntityState</a>* enumeration. Here are the enumeration names and their meanings:
 
 | EntityState     | Description
 | -----------     | -----------
@@ -54,7 +54,7 @@ The *entityState *property answers these questions with a value from the *<a hre
 | **"Deleted"**   | An existing entity in cache that is marked for deletion.
 | **"Detached"**  | 	An entity that is not in cache; its status in the database is unknown.
 			
-You can test the value of an EntityState enumeration by comparing its name with a string. Or you may prefer to test with the enumeration's properties and methods:
+You can test the value of an `EntityState` enumeration by comparing its name with a string. Or you may prefer to test with the enumeration's properties and methods:
 
 
     var state = anEntity.entityAspect.entityState;
@@ -66,7 +66,7 @@ You can test the value of an EntityState enumeration by comparing its name with 
 
 ###EntityState transitions
 
-As things happen to an entity, Breeze updates its *EntityState* automatically. Here are before and after *EntityStates *for some of the most common actions:
+As things happen to an entity, Breeze updates its `EntityState` automatically. Here are before and after EntityStates for some of the most common actions:
 
 | **Before** | **Action** | **After** 
 | --------- | -----------| ----------
@@ -80,52 +80,52 @@ As things happen to an entity, Breeze updates its *EntityState* automatically. H
 | Added | Delete it (or call *<a href="#RejectChanges">rejectChanges</a>*) | 	Detached
 
 
-Two state-changes may surprise you. If you mark an ***existing *entity** for deletion and save it successfully, the entity becomes detached. Breeze can't make the entity disappear; it may still be visible in the UI. But the entity no longer exists on the server so Breeze banishes it from its former *EntityManager *cache.
+Two state-changes may surprise you. If you mark an **existing entity** for deletion and save it successfully, the entity becomes detached. Breeze can't make the entity disappear; it may still be visible in the UI. But the entity no longer exists on the server so Breeze banishes it from its former `EntityManager` cache.
 
-Deleting a ***new *entity** detaches it immediately. Breeze doesn't wait for you to call *saveChanges* which is pointless if you're discarding data that have never been saved.
+Deleting a **new entity** detaches it immediately. Breeze doesn't wait for you to call *saveChanges* which is pointless if you're discarding data that have never been saved.
 
 ###Detached entities
 
-A detached entity does not belong to an *EntityManager*. It's still an entity; it's just not an entity in any cache.
+A detached entity does not belong to an `EntityManager`. It's still an entity; it's just not an entity in any cache.
 
-A detached entities should not be used. Either attach it to an *EntityManager *or release all references to it ... and let it be garbage collected.
+A detached entities should not be used. Either attach it to an `EntityManager` or release all references to it ... and let it be garbage collected.
 
 A detached entity is unreliable. It still has data values and you can still set them. But its <a href="/doc-js/navigation-properties" target="_blank">navigation properties</a> are not dependable and other entity features may behave unexpectedly. You can't tell by inspection whether a detached entity has corresponding data in remote storage.
 
-New entities start as detached entities. You might have to create them where no *EntityManager *is available. More likely, you have to initialize some of the new entity's values before you can add it to an *EntityManager*. For example, because all entities in cache must have unique keys, if the entity key is client-determined (as opposed to store-generated), you must set the key to a unique value before you can attach the entity to an *EntityManager*.
+New entities start as detached entities. You might have to create them where no `EntityManager` is available. More likely, you have to initialize some of the new entity's values before you can add it to an EntityManager. For example, because all entities in cache must have unique keys, if the entity key is client-determined (as opposed to store-generated), you must set the key to a unique value before you can attach the entity to an EntityManager.
 
-You should initialize a new entity and then immediately add it to an *EntityManager  *... unless you have a very good reason to do otherwise.
+You should initialize a new entity and then immediately add it to an `EntityManager  `... unless you have a very good reason to do otherwise.
 
 Entities can become detached deliberately or as a side-effect of another action. The following actions detach an entity:
 
-- explicitly removing it from its *EntityManager* (`manager.detachEntity(*anEntity*)`)
-- clearing its *EntityManager* (`manager.clear()`)
-- deleting a *new *entity
-- deleting an *existing *entity and then saving it successfully.
+- explicitly removing it from its `EntityManager` (`manager.detachEntity(*anEntity*)`)
+- clearing its `EntityManager` (`manager.clear()`)
+- deleting a *new* entity
+- deleting an *existing* entity and then saving it successfully.
 
 Note that removing an entity from cache (detaching it) does not delete it. The data of a pre-existing detached entity remain in remote storage.
 
 ###Force an entityState change
 
-You can change the *entityState *programmatically through one of the *EntityAspect *methods dedicated to that purpose.
+You can change the `entityState` programmatically through one of the `EntityAspect`   methods dedicated to that purpose.
 
-- *setDeleted*()
-- *rejectChanges*()
-- *setModified*()
-- *setUnchanged*()
+- setDeleted()
+- rejectChanges()
+- setModified()
+- setUnchanged()
 - acceptChanges()
 
-Call *setDeleted*() to schedule an entity for deletion as discussed <a href="#DeleteEntity">below</a>.
+Call `setDeleted`() to schedule an entity for deletion as discussed <a href="#DeleteEntity">below</a>.
 
-Call *rejectChanges*() to cancel pending changes as discussed <a href="#RejectChanges">below</a>.
+Call `rejectChanges`() to cancel pending changes as discussed <a href="#RejectChanges">below</a>.
 
-You rarely *see setModified,* *setUnchanged,* or *acceptChanges *in production code; production entities become "Modified" or "Unchanged" as a side-effect of application activity.
+You rarely see `setModified`, `setUnchanged`, or `acceptChanges` in production code; production entities become "Modified" or "Unchanged" as a side-effect of application activity.
 
-You are most likely to call these methods while setting up ***fake entities*** for automated tests because you want to force these fakes into a particular test state. The *setUnchanged* and *acceptChanges *methods also clear the *originalValues* hash map, erasing memory of prior values; you won't be able to revert these entities to their original values.
+You are most likely to call these methods while setting up ***fake entities*** for automated tests because you want to force these fakes into a particular test state. The `setUnchanged` and `acceptChanges` methods also clear the `originalValues` hash map, erasing memory of prior values; you won't be able to revert these entities to their original values.
 
 ###<a name="DeleteEntity"></a> Deleting entities
 
-Deleting an entity begins with an *EntityState* change. Call ***setDeleted()*** to mark an entity for deletion:
+Deleting an entity begins with an `EntityState` change. Call `setDeleted()` to mark an entity for deletion:
 
 
     someEntity.entityAspect.setDeleted(); // mark for deletion
