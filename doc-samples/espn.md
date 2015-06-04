@@ -12,12 +12,8 @@ redirect_from: "/old/samples/espn.html"
 		</tr>
 	</tbody>
 </table>
-<p style="
-    background-color: lightyellow;
-    border-color: red;
-    border-style: solid;
-    padding: 4px;">
-Sadly ESPN decided to retire <b>all</b> of its public APIs ( <a href="http://espn.go.com/static/apis/devcenter/blog/read/publicretirement.html" target="_blank">see announcement</a>). Therefore, this sample no longer runs. We're looking to replace it with something that demonstrates the same ability to consume a 3rd party API. Until then, you may benefit from reading the description and reviewing the code.
+<p style="critical">
+Sadly ESPN decided to retire <b>all</b> of its public APIs (<a href="http://espn.go.com/static/apis/devcenter/blog/read/publicretirement.html" target="_blank">see announcement</a>). Therefore, this sample no longer runs. We're looking to replace it with something that demonstrates the same ability to consume a 3rd party API. Until then, you may benefit from reading the description and reviewing the code.
 </p>
 <a href="https://github.com/PWKad" target="_blank">Patrick Walter's</a> "Not My Server" style application shows Breeze using data from a 3rd party service.
 
