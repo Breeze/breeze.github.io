@@ -16,7 +16,7 @@ The metadata returned from the server as a result of a `fetchMetadata` call may 
    	
     - a JSON object that adheres to the Breeze Metadata JSON schema described below **OR** 
  	
-	- a Microsoft EDMX (CSDL) document serialized as JSON. Such a document is available for any Entity Framework DbContext or ObjectContext instance and is also available for a variety of other Microsoft products such as Sharepoint.<br/><br/> 
+	- a Microsoft EDMX (CSDL) document serialized as JSON. Such a document is available for any Entity Framework DbContext or ObjectContext instance and is also available for a variety of other Microsoft products such as Sharepoint. 
  	    
 1. 	If using the Breeze **OData** DataService adapter, an OData Metadata document per the OData specification. This format requires the use of the Breeze OData DataService adapter.
 
@@ -65,7 +65,7 @@ Alternatively, you can retrieve data **as entities** from such services with two
 
 For example, in Step #1 we define the `Color` entity type in metadata. In Step #2, we tell Breeze how to recognize JSON data in the form `{"Id": 1, "Name": "blue"}` as an instance of the `Color` entity type.
 
-In this topic we'll discuss step #1 - define metadata on the client. Step #2 - write the `JsonResultsAdapter` - is covered elsewhere.
+In this topic we'll discuss step #1 - define metadata on the client. Step #2 - write the `JsonResultsAdapter` - is [covered elsewhere](http://breeze.github.io/doc-js/server-jsonresultsadapter.html).
 
 ## Metadata defined on the client
 
