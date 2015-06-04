@@ -1,3 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
+
+body {
+  /* override bootstrap.css values */
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* override bootstrap.css font-weight (was 500) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 700;
+}
+
 .hr {
 	display: block;
 	position: relative;
@@ -21,8 +46,16 @@
 }
 
 blockquote {
+	background-color: #FFEEEE;
+	border: 1px solid #FFDDDD;
 	font-size: 1em;
-	font-style: italic;
+	/* font-style: italic; */
+}
+
+.critical {
+	background-color: lightyellow;
+	border: 1px solid red;
+	padding: 4px;
 }
 
 /* This is to make <code> and <em> look the same because our markdown code on the site uses *xxx* -> <em>xxx<em> to indicate code
