@@ -4,28 +4,30 @@ redirect_from: "/old/documentation/details.html"
 ---
 # Metadata 
 
-Metadata is used heavily by the Breeze JavaScript client to determine the shape of the entities that it will manage as well as the relationships between these entities. Data validation rules and mechanisms for translating server-side data onto the client may also be specified as metadata.
+The Breeze client needs metadata to determine the shape of the entities that it will manage as well as the relationships among these entities. Data validation rules and mechanisms for translating server-side data onto the client may also be specified as metadata.
 
-This metadata is usually returned from a server as a result of a call to the Breeze `MetadataStore.fetchMetadata` method. This call is made automatically by Breeze just before it attempts to perform it's first query against a remote service (unless it is specifically directed not to). The metadata returned from the server as a result of this call may be in one of the following JSON formats.
+Metadata is typically returned from a server as a result of a call to the Breeze `MetadataStore.fetchMetadata` method. Breeze calls this method automatically just before it attempts its first query to a remote service.
+
+>You can call it yourself or tell Breeze not to call it. 
+
+The metadata returned from the server as a result of a `fetchMetadata` call may be in one of the following JSON formats.
 
 1. 	If using the Breeze **WebApi** DataService adapter (the default)
-   	- a JSON object that adheres to the Breeze Metadata JSON schema described below **OR** 
- 	- a Microsoft EDMX (CSDL) document serialized as JSON. Such a document is available for any Entity Framework DbContext or ObjectContext instance and is also available for a variety of other Microsoft products such as Sharepoint.<br/><br/> 
+   	
+    - a JSON object that adheres to the Breeze Metadata JSON schema described below **OR** 
+ 	
+	- a Microsoft EDMX (CSDL) document serialized as JSON. Such a document is available for any Entity Framework DbContext or ObjectContext instance and is also available for a variety of other Microsoft products such as Sharepoint.<br/><br/> 
  	    
-1. 	If using the Breeze **OData** DataService adapter.
-	-  an OData Metadata document - per the OData specification. This format requires the use of the Breeze OData DataService adapter.
+1. 	If using the Breeze **OData** DataService adapter, an OData Metadata document per the OData specification. This format requires the use of the Breeze OData DataService adapter.
 
-Breeze metadata can also be described completely on the client via either of two methods: 
+When the remote data service is not under the developer's control, we can define the metadata on the client via either of two methods: 
 
-1. By making a series of `MetadataStore.addEntityType` and `MetadataStore.addComplexType` method calls. <br/><br/>
-1. By passing a JSON object that adheres to the schema described below into the `MetadataStore.importMetadata` method. This is the same format that is returned by any call to the `MetadataStore.exportMetadata` method.
+1. Make a series of `MetadataStore.addEntityType` and `MetadataStore.addComplexType` method calls. <br/><br/>
+1. Pass a JSON object that adheres to the schema described below into the `MetadataStore.importMetadata` method. This is the same format that is returned by any call to the `MetadataStore.exportMetadata` method.
 
-As a result of this capability, Web services that are not under the developer's control can be consumed and the data returned can be converted into fully capable breeze entities by performing the following two steps: 
+With the metadata defined, Breeze can convert data returned from the server into fully capable Breeze entities.
 
-1. Define the metadata for the entities returned by the selected web service api.<br/><br/> 
-1. Define a `JsonResultsAdapter` that describes how the results from the web service can be converted into entities. 
-
->Note that even if both of these steps are skipped, any web service call will still return data to the breeze client.  It's just that in this case, the results returned will not be treated as entities. 
+>This assumes Breeze can match the server data to the metadata. You may have to define a `JsonResultsAdapter` that correlates server data with the types defined in your metadata, a subject [covered elsewhere](http://breeze.github.io/doc-js/server-jsonresultsadapter.html).
 
 ## Metadata from the server
 
