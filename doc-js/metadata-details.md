@@ -145,9 +145,9 @@ This is such a common requirement that Breeze allows you to attach "custom" meta
 The `MetadataStore.importMetadata` method supports custom nodes at both the entity and property levels. 
  
 - Breeze native metadata may contain a single "custom" node for each `EntityType`, `ComplexType`, `DataProperty` or `NavigationProperty` node.<br/><br/> 
-- A subset of Breeze native metadata format that only includes node "keys" and "custom" elements is also supported with the "allowMerge" parameter (see example below)
+- A subset of Breeze native metadata format that only includes node "keys" and "custom" elements is also supported with the `allowMerge` parameter: `metadataStore.importMetadata(customMetadata, true);`. See [example below](#importCustomMetadata).
   
-	+ This capability is ONLY supported if the `allowMerge` parameter to the `importMetadata` method is set to `true`. (The default is `false`). 
+	+ This capability is ONLY supported if the second, `allowMerge` parameter to the `importMetadata` method is set to `true` (The default is `false`). 
 	
 	+ The "key" for an `EntityType` or a `ComplexType` is the combination of the "namespace" and "shortName" nodes.
 	
@@ -168,6 +168,7 @@ For the `EntityType`, `ComplexType`, `DataProperty` and `NavigationProperty` cla
 
 ## Examples
 
+<a name=importCustomMetadata></a>
 ### Importing custom metadata into an existing store.
        
 	var customMetadata = {
@@ -212,6 +213,7 @@ For the `EntityType`, `ComplexType`, `DataProperty` and `NavigationProperty` cla
 		}]
 	};
 
+    // import with `allowMerge` parameter set `true`
 	myEntityManager.metadataStore.importMetadata(customMetadata, true);
 
 ### Defining a *DataProperty* with a custom extension 
