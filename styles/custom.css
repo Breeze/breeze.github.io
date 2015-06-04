@@ -7,7 +7,7 @@ body {
   line-height: 1.5;
 }
 
-/* override bootstrap.css font-weight (was 500) */
+/* override bootstrap.css font-weight (was 500), colors, margins */
 h1,
 h2,
 h3,
@@ -21,12 +21,14 @@ h6,
 .h5,
 .h6 {
   font-weight: 600;
+  color: #555;
 }
-h2,
-h3,
-.h2,
-.h3 {
-	color: #777;
+h1,.h1 {
+  color: #444;	
+}
+h4,h5,h6,
+.h4,.h5,.h6 {
+	margin-top: 18px;
 }
 
 .hr {
