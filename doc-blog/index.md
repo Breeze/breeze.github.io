@@ -13,10 +13,10 @@ custom-css: /styles/blog-index.css
 	      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 				{% if post.content contains '<!-- more -->' %}
 				    {{ post.content | split: '<!-- more -->' | first }}
+				    <a href="{{ post.url }}" title="Read more" class="btn blog-btn">Read more</a>
 				{% else %}
 				    {{ post.content }}
 				{% endif %}
-	      <a href="{{ post.url }}" title="Read more" class="btn blog-btn">Read more</a>  
 	    </div>   
     </li>
   {% endfor %}
