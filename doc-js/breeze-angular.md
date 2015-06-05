@@ -114,17 +114,17 @@ function emFactory(breeze) {
 }
 {% endhighlight %}
 
-The Breeze Angular Service is not clairvoyant. It can't configure Breeze for everything your app requires. The second example illustrates configuration of the *NamingConvention* and the remote service endpoint (the *serviceName*), both specific to your application.
+The Breeze Angular Service is not clairvoyant. It can't configure Breeze for everything your app requires. The second example illustrates configuration of the *NamingConvention* and the remote service endpoint (the `serviceName`), both specific to your application.
 
 ##The Breeze service instance
 
-The 'breeze' service that Angular injects is Breeze itself, identical to > window.breeze. Whether you use that service object or refer to the global > breeze object is a matter of style.
+The 'breeze' service that Angular injects is Breeze itself, identical to `window.breeze`. Whether you use that service object or refer to the global `breeze` object is a matter of style.
 
 The "Breeze Angular Service" simply configures Breeze to use
 
 - Angular for data binding 
-- the *$q* service for promises 
-- the *$http* service for ajax calls 
+- the `$q` service for promises 
+- the `$http` service for ajax calls 
 
 The balance of this documentation provides more details about promises and the ajax service.
 
@@ -136,19 +136,19 @@ Breeze and Angular rely on promises to manage chaining of asynchronous method ca
 
 Every Breeze async method returns a ***promise object***. Initially the asynchronous activity is incomplete and the promise object is "unfullfilled". Your code continues without knowing the outcome of that activity. The promise object has a > then() method. You supply success and failure callbacks as parameters to the > then(). When the asynchronous activity completes, the promise is "fullfilled" and it invokes either your success or your failure callback as appropriate.
 
-<a href="https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md" title="'Thenable Promises'">Read more about "Thenable Promises</a>" from the author of the Q.js library, <a href="https://github.com/kriskowal" title="Kris Kowal">Kris Kowal</a>. The Angular *$q* implementation adheres to his description in all essential respects.
+<a href="https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md" title="'Thenable Promises'" target="_blank">Read more about "Thenable Promises</a>" from the author of the Q.js library, <a href="https://github.com/kriskowal" title="Kris Kowal" target="_blank">Kris Kowal</a>. The Angular `$q` implementation adheres to his description in all essential respects.
 
 ###Breeze promises
 
-Out of the box, a Breeze asynchronous method returns a <a href="http://documentup.com/kriskowal/q/" target="_blank">**Q.js** promise</a>, not an AngularJS <a href="http://docs.angularjs.org/api/ng.$q" target="_blank">**$q** promise</a>. Breeze also assumes that you included the Q.js library in your client stack.
+Out of the box, a Breeze asynchronous method returns a <a href="http://documentup.com/kriskowal/q/" target="_blank">**Q.js** promise</a>, not an AngularJS <a href="http://docs.angularjs.org/api/ng.$q" target="_blank">***$q*** promise</a>. Breeze also assumes that you included the Q.js library in your client stack.
 
-While the Q.js default makes good sense in other environments, it is not Angular friendly. First you have to load the Q library. Then you'll find that you often have to convert a Q promise to a *$q* promise because many Angular components don't understand a Q promise. Because the Angular dirty-checking <a href="http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">"Digest" cycle</a> knows nothing of Q, you'll probably have to call <a href="http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">> $scope.$apply</a>. Finally, it's extremely difficult to test with *ng-mocks* when you have a mix of *$q* and Q promises.
+While the Q.js default makes good sense in other environments, it is not Angular friendly. First you have to load the Q library. Then you'll find that you often have to convert a Q promise to a `$q` promise because many Angular components don't understand a Q promise. Because the Angular dirty-checking <a href="http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">"Digest" cycle</a> knows nothing of Q, you'll probably have to call <a href="http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">> $scope.$apply</a>. Finally, it's extremely difficult to test with *ng-mocks* when you have a mix of `$q` and Q promises.
 
-Angular developers should switch to *$q* promises and this Breeze Angular Service does that for you automatically.
+Angular developers should switch to `$q` promises and this Breeze Angular Service does that for you automatically.
 
 ### *$q* usage
 
-There's nothing to it. Breeze async methods now return Angular *$q* promises. Append promise callbacks to those promises per the *$q* API.
+There's nothing to it. Breeze async methods now return Angular `$q` promises. Append promise callbacks to those promises per the `$q` API.
 
 {% highlight javascript linenos=table %}
 var promise = entityManager
@@ -158,19 +158,15 @@ var promise = entityManager
 
 ### exceptions
 
-What if one of the callbacks throws an exception? Per <a href="https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md" title="'Thenable Promises'">the specification</a>, if either the  *successCallback* or *failCallback* throws an exception, the promise returned from *then(...)* is rejected. Don't expect a failed *successCallback* to propagate its error to the sibling *failCallback*.
+What if one of the callbacks throws an exception? Per <a href="https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md" title="'Thenable Promises'" target="_blank">the specification</a>, if either the  `successCallback` or `failCallback` throws an exception, the promise returned from `then(...)` is rejected. Don't expect a failed `successCallback` to propagate its error to the sibling `failCallback`.
 
-Because the *successCallback* is often fragile, especially in tests, we often move the *failCallback* to a separate *then(null, failCallback)* so that it can catch failures either of the original promise or of the "success path" promise.
+Because the `successCallback` is often fragile, especially in tests, we often move the `failCallback` to a separate `then(null, failCallback)` so that it can catch failures either of the original promise or of the "success path" promise.
 
-<blockquote>
-	The *$q* promise sports a "sugar" method, *.catch(failCallback)*, which is the same as *.then(null, failCallback)*.
-</blockquote>
+>The `$q` promise sports a "sugar" method, `.catch(failCallback)`, which is the same as `.then(null, failCallback)`.
 
 You may also need cleanup logic that should run whether the original promise succeeds or fails.
 
-<blockquote>
-	While you could append *.then(wrapUp, wrapUp)*, we prefer another bit of sugar,  *.finally(wrapUp)*.
-</blockquote>
+>While you could append `.then(wrapUp, wrapUp)`, we prefer another bit of sugar,  `.finally(wrapUp)`.
 
 Putting these thoughts together we might write something like this:
 
@@ -182,25 +178,25 @@ var promise = entityManager
        .finally(wrapUp);
 {% endhighlight %}
 
-We encourage you to review the <a href="http://docs.angularjs.org/api/ng.$q" target="_blank">**$q** promises documentation</a> for details.
+We encourage you to review the <a href="http://docs.angularjs.org/api/ng.$q" target="_blank">`$q` promises documentation</a> for details.
 
 ##AJAX
 
-The Breeze *EntityManager* makes HTTP calls to a remote server via an "ajax" adapter. While Breeze ships with both a 'jQuery' and an 'angular' ajax adapter, it defaults to the 'jQuery' adapter which wraps *jquery.ajax*. This Breeze Angular Service re-configures breeze to use the 'angular' adapter which wraps *$http*, ensuring that Breeze receives the specific *$http* service instance that Angular injects into your app module.
+The Breeze `EntityManager` makes HTTP calls to a remote server via an "ajax" adapter. While Breeze ships with both a 'jQuery' and an 'angular' ajax adapter, it defaults to the 'jQuery' adapter which wraps `jquery.ajax`. This Breeze Angular Service re-configures breeze to use the 'angular' adapter which wraps `$http`, ensuring that Breeze receives the specific `$http` service instance that Angular injects into your app module.
 
 Speaking of service instances ...
 
 ##Multiple *$q* and *$http* instances
 
-There is a nuance you may discover in extraordinary circumstances: Angular creates a new *$q* and a new *$http* **for each application module**.
+There is a nuance you may discover in extraordinary circumstances: Angular creates a new `$q` and a new `$http` **for each application module**.
 
-Rare is the application that has multiple app modules. But if you did have multiple app modules, each would have its own *$q* and *$http* instance.
+Rare is the application that has multiple app modules. But if you did have multiple app modules, each would have its own `$q` and `$http` instance.
 
 Breeze expects exactly one promise and ajax implementation across the entire application. That *might* become a problem if you toggled between multiple app modules. You could workaround it by switching the Breeze promise  and ajax implementations every time you switch app modules. The specifics of this technique are beyond the scope of this topic.
 
-You're more likely to become aware of multiple *$q* and *$http* instances during testing. In fact, you can *count on getting a new instance* for each and every test (known as a "spec" in Jasmine).
+You're more likely to become aware of multiple `$q` and `$http` instances during testing. In fact, you can *count on getting a new instance* for each and every test (known as a "spec" in Jasmine).
 
-Fortunately, you get a new instance of the app module too. So when your app module and services load under test, they create a fresh instance of the Breeze Angular service at the same time ... and that new instance will configure Breeze with the current *$q* and *$http* services for each executing test (or "spec").
+Fortunately, you get a new instance of the app module too. So when your app module and services load under test, they create a fresh instance of the Breeze Angular service at the same time ... and that new instance will configure Breeze with the current `$q` and `$http` services for each executing test (or "spec").
 
 Here's an example of a Jasmine "beforeEach" test setup:
 
