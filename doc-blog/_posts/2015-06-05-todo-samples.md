@@ -7,8 +7,6 @@ title: New Todo samples
 > {% include blog-ts.html %}
 
 We have added new versions of the Todo sample to showcase the various platforms supported by Breeze. 
-
- <!-- more -->
  
 Whether you like to use .NET, Java or Node on the server, we've got you covered. Our canonical Todo sample is now available for the various back-ends.
 
