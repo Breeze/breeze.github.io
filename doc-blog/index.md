@@ -11,8 +11,8 @@ custom-css: /styles/blog-index.css
     <li class="blog-item"  >
       <div class="blog-excerpt">
 	      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-				{% if post.content contains '<!--more-->' %}
-				    {{ post.content | split:'<!--more-->' | first }}
+				{% if post.content contains '<!-- more -->' %}
+				    {{ post.content | split: '<!-- more -->' | first }}
 				{% else %}
 				    {{ post.content }}
 				{% endif %}

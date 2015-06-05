@@ -8,7 +8,7 @@ title: Java/Hibernate support added
 
 Breeze with Java + Hibernate lets you develop JavaScript client applications using the same powerful idioms you find in Hibernate. 
 
- <!--more-->
+<!-- more -->
  
  You can
 

@@ -8,7 +8,7 @@ layout: doc-blog
 
 Breeze now provides a server side solution for Node with any MySQL, MariaDB, or PostgreSQL database.
  
- <!--more-->
+<!-- more -->
  
 These pages are still under development. 
 
