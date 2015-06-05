@@ -9,9 +9,11 @@ custom-css: /styles/blog-index.css
 <ul>
   {% for post in site.posts %}
     <li class="blog-item"  >
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-      <a href="{{ post.url }}" title="Read more" class="btn blog-btn">Read more</a>     
+      <div class="blog-excerpt">
+	      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+	      {{ post.excerpt }}
+	      <a href="{{ post.url }}" title="Read more" class="btn blog-btn">Read more</a>  
+	    </div>   
     </li>
   {% endfor %}
 </ul>
