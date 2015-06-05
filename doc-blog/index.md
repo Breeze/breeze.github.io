@@ -9,7 +9,8 @@ custom-css: /styles/blog-index.css
 <ul>
   {% for post in site.posts %}
     <li class="blog-item"  >
-      <div class="blog-excerpt">{{ post.content | split: '<!-- more -->' | first }}</div>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
       <a href="{{ post.url }}" title="Read more" class="btn blog-btn">Read more</a>     
     </li>
   {% endfor %}

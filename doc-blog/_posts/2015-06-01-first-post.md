@@ -1,6 +1,7 @@
 ---
 layout: doc-blog
 title: 1st post
+excerpt_separator: <!-- more -->
 ---
 # 1st post 
 
