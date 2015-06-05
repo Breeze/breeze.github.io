@@ -198,5 +198,8 @@ In some cases you may want to share a chunk of html between pages. If so add a f
 - Use `backticks` (i.e. \`EntityType\`)  for references to inline code (i.e. type names, method names, variable names etc). Optionally, you only need to do this once per paragraph if you use the same reference multiple times within the paragraph.
 > Do NOT use italics for this purpose. 
 - Every page should start with an **< h1\>** header, i.e. # xxx  
-- Use inline html sparingly.  
-          
+- Use inline html sparingly. 
+- **Critical** text tells the user about something terribly important. Wrap that text in an HTML **< p\>** tag styled with the *critical* class:
+      <p class="critical">Don't do this!</p>
+  which is rendered something like:
+<p style="border: 1px solid red; background-color: lightyellow; padding: 4px">Don't do this!</p>Remember that you can't use markdown inside the p-tag.      
