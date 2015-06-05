@@ -10,7 +10,7 @@ custom-css: /styles/blog-index.css
   {% for post in site.posts %}
     <li class="blog-item"  >
       <div class="blog-excerpt">
-	      <h1><a href="{{ post.permalink }}">{{ post.title }}</a></h1>
+	      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 	      <p>{{ post.excerpt }}</p>
 	      <a href="{{ post.url }}" title="Read more" class="btn blog-btn">Read more</a>  
 	    </div>   
