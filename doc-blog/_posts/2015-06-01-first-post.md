@@ -7,7 +7,7 @@ title: 1st post
 
 A test post, our first!
 
-   <!-- more -->
+<!-- more -->
 
 This is our first post in the new breeze documentation blog.
  
