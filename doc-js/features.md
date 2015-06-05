@@ -64,6 +64,7 @@ Features include:
 + Detect and resolve concurrency conflicts.
 
 **Library and Tooling support**
+
 + Out-of-box support for Knockout, Angular, and Backbone.
 + TypeScript support for compile-time type checking, classes, interfaces, and inheritance.
 + IntelliSense support for Visual Studio 2012.
@@ -76,4 +77,3 @@ Features include:
 + Extensive API documentation with examples and links to source code.
 + Quality control through QUnit automated tests.
 + Paid support options, training, and consulting services to ensure that you succeed.
-
