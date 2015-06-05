@@ -106,3 +106,26 @@ table tr th :first-child, table tr td :first-child {
 	margin-top: 0; }
 table tr th :last-child, table tr td :last-child {
 	margin-bottom: 0; }
+
+
+/* formatting for line numbers in code blocks */
+
+table.highlighttable tr {
+    border: 0;
+}
+table.highlighttable tr td {
+    border: 0;
+    padding: 0;
+}
+div.linenodiv pre {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-style: dotted;
+    color: #aaaaaa;
+}
+table.highlighttable div.highlight pre {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+    
