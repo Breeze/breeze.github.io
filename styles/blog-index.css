@@ -1,0 +1,21 @@
+/* custom styles for blog index page which contains a summary of all blog posts */
+
+.blog-item {
+    border: 1px solid blue;
+    margin-bottom: 15px;
+    list-style-type: none;
+}
+
+.blog-excerpt {
+    padding: 20px;
+}
+
+.blog-btn {
+    font-size: 20px;
+}
+
+/*
+.blog-excerpt h1 {
+    font-size: .5em;
+}
+*/

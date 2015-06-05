@@ -1,0 +1,21 @@
+{% assign pagelink = page.url | split: '/' | last  %}
+{% if pagelink == "index.html" %}
+{% assign header-active = "active" %}
+{% endif %}
+<div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+    <a id="menu-header" class="navmenu-brand {{header-active}}" href="/{{page.layout}}/">Blog</a>
+	<ul id="menu-top" class="nav navmenu-nav">
+
+{% for post in site.posts %}
+    {% if page.url == post.url %}
+        {% assign possible-active = "active" %}
+    {% else %}
+        {% assign possible-active = "" %}
+    {% endif %}
+        <li class="{{possible-active}}" >
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span postUrl="{{ post.url }}" pageUrl="{{ page.url }}" />
+        </li>
+{% endfor %}
+	</ul>
+</div>
