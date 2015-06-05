@@ -70,11 +70,49 @@ Now load it in your web page html **after** breeze itself.
 
 **Example #1**: Configure when your application boots
 
-<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1<div class="line number2 index1 alt1">2<div class="line number3 index2 alt2">3<div class="line number4 index3 alt1">4<div class="line number5 index4 alt2">5<div class="line number6 index5 alt1">6<div class="line number7 index6 alt2">7</td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">var <code class="javascript plain">app = angular.module(<code class="javascript string">'app'<code class="javascript plain">, [<div class="line number2 index1 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript comments">// ... other dependencies ...<div class="line number3 index2 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript string">'breeze.angular' <code class="javascript comments">// the breeze service module<div class="line number4 index3 alt1"><code class="javascript plain">]);<div class="line number5 index4 alt2">&nbsp;<div class="line number6 index5 alt1"><code class="javascript comments">// Ensure that breeze is minimally configured by loading it when the app runs<div class="line number7 index6 alt2"><code class="javascript plain">app.run([<code class="javascript string">'breeze'<code class="javascript plain">, <code class="javascript keyword">function <code class="javascript plain">(breeze) { }]); <code class="javascript comments">// doing nothing at the moment</td></tr></tbody></table>
+{% highlight javascript linenos=table %}
+var app = angular.module('app', [
+    // ... other dependencies ...
+    'breeze.angular' // the breeze service module
+]);
+ 
+// Ensure that breeze is minimally configured by loading it when the app runs
+app.run(['breeze', function (breeze) { }]); // doing nothing at the moment
+{% endhighlight %}
+
 
 **Example #2**: Configure upon your first use of Breeze
 
-<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1<div class="line number2 index1 alt1">2<div class="line number3 index2 alt2">3<div class="line number4 index3 alt1">4<div class="line number5 index4 alt2">5<div class="line number6 index5 alt1">6<div class="line number7 index6 alt2">7<div class="line number8 index7 alt1">8<div class="line number9 index8 alt2">9<div class="line number10 index9 alt1">10<div class="line number11 index10 alt2">11<div class="line number12 index11 alt1">12<div class="line number13 index12 alt2">13<div class="line number14 index13 alt1">14<div class="line number15 index14 alt2">15<div class="line number16 index15 alt1">16<div class="line number17 index16 alt2">17<div class="line number18 index17 alt1">18<div class="line number19 index18 alt2">19<div class="line number20 index19 alt1">20<div class="line number21 index20 alt2">21<div class="line number22 index21 alt1">22<div class="line number23 index22 alt2">23<div class="line number24 index23 alt1">24<div class="line number25 index24 alt2">25<div class="line number26 index25 alt1">26<div class="line number27 index26 alt2">27<div class="line number28 index27 alt1">28</td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">var <code class="javascript plain">app = angular.module(<code class="javascript string">'app'<code class="javascript plain">, [<div class="line number2 index1 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript comments">// ... other dependencies ...<div class="line number3 index2 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript string">'breeze.angular' <code class="javascript comments">// the breeze service module<div class="line number4 index3 alt1"><code class="javascript plain">]);<div class="line number5 index4 alt2">&nbsp;<div class="line number6 index5 alt1"><code class="javascript comments">// Any first use of breeze would likely involve the breeze.EntityManager.<div class="line number7 index6 alt2"><code class="javascript comments">// Apps often combine EntityManager and breeze configuration in a "factory".<div class="line number8 index7 alt1"><code class="javascript comments">// This 'entityManagerFactory' creates a new EntityManager<div class="line number9 index8 alt2"><code class="javascript comments">// configured for a specific remote service.<div class="line number10 index9 alt1"><code class="javascript plain">angular.module(<code class="javascript string">'app'<code class="javascript plain">)<div class="line number11 index10 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">.factory(<code class="javascript string">'entityManagerFactory'<code class="javascript plain">, [<code class="javascript string">'breeze'<code class="javascript plain">, emFactory]);<div class="line number12 index11 alt1">&nbsp;<div class="line number13 index12 alt2"><code class="javascript keyword">function <code class="javascript plain">emFactory(breeze) {<div class="line number14 index13 alt1"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript comments">// Convert properties between server-side PascalCase and client-side camelCase<div class="line number15 index14 alt2"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript plain">breeze.NamingConvention.camelCase.setAsDefault();<div class="line number16 index15 alt1">&nbsp;<div class="line number17 index16 alt2"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript comments">// Identify the endpoint for the remote data service<div class="line number18 index17 alt1"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript keyword">var <code class="javascript plain">serviceRoot = window.location.protocol + <code class="javascript string">'//' <code class="javascript plain">+ window.location.host + <code class="javascript string">'/'<code class="javascript plain">;<div class="line number19 index18 alt2"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript keyword">var <code class="javascript plain">serviceName = serviceRoot + <code class="javascript string">'breeze/breeze'<code class="javascript plain">; <code class="javascript comments">// breeze Web API controller<div class="line number20 index19 alt1">&nbsp;<div class="line number21 index20 alt2"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript comments">// the "factory" services exposes two members<div class="line number22 index21 alt1"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript keyword">var <code class="javascript plain">factory = {<div class="line number23 index22 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">newManager: <code class="javascript keyword">function<code class="javascript plain">() {<code class="javascript keyword">return <code class="javascript keyword">new <code class="javascript plain">breeze.EntityManager(serviceName);},<div class="line number24 index23 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">serviceName: serviceName<div class="line number25 index24 alt2"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript plain">};<div class="line number26 index25 alt1">&nbsp;<div class="line number27 index26 alt2"><code class="javascript spaces">&nbsp;&nbsp;<code class="javascript keyword">return <code class="javascript plain">factory;<div class="line number28 index27 alt1"><code class="javascript plain">}</td></tr></tbody></table>
+{% highlight javascript linenos=table %}
+var app = angular.module('app', [
+    // ... other dependencies ...
+    'breeze.angular' // the breeze service module
+]);
+ 
+// Any first use of breeze would likely involve the breeze.EntityManager.
+// Apps often combine EntityManager and breeze configuration in a "factory".
+// This 'entityManagerFactory' creates a new EntityManager
+// configured for a specific remote service.
+angular.module('app')
+       .factory('entityManagerFactory', ['breeze', emFactory]);
+ 
+function emFactory(breeze) {
+  // Convert properties between server-side PascalCase and client-side camelCase
+  breeze.NamingConvention.camelCase.setAsDefault();
+ 
+  // Identify the endpoint for the remote data service
+  var serviceRoot = window.location.protocol + '//' + window.location.host + '/';
+  var serviceName = serviceRoot + 'breeze/breeze'; // breeze Web API controller
+ 
+  // the "factory" services exposes two members
+  var factory = {
+    newManager: function() {return new breeze.EntityManager(serviceName);},
+    serviceName: serviceName
+  };
+ 
+  return factory;
+}
+{% endhighlight %}
 
 The Breeze Angular Service is not clairvoyant. It can't configure Breeze for everything your app requires. The second example illustrates configuration of the *NamingConvention* and the remote service endpoint (the *serviceName*), both specific to your application.
 
@@ -84,11 +122,9 @@ The 'breeze' service that Angular injects is Breeze itself, identical to > windo
 
 The "Breeze Angular Service" simply configures Breeze to use
 
-
-	- Angular for data binding 
-	- the *$q* service for promises 
-	- the *$http* service for ajax calls 
-
+- Angular for data binding 
+- the *$q* service for promises 
+- the *$http* service for ajax calls 
 
 The balance of this documentation provides more details about promises and the ajax service.
 
@@ -114,9 +150,13 @@ Angular developers should switch to *$q* promises and this Breeze Angular Servic
 
 There's nothing to it. Breeze async methods now return Angular *$q* promises. Append promise callbacks to those promises per the *$q* API.
 
-<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1<div class="line number2 index1 alt1">2<div class="line number3 index2 alt2">3</td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">var <code class="javascript plain">promise = entityManager<div class="line number2 index1 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">.executeQuery(query)<div class="line number3 index2 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">.then(successCallback, failCallback); <code class="javascript comments">// not preferred; see next.</td></tr></tbody></table>
+{% highlight javascript linenos=table %}
+var promise = entityManager
+       .executeQuery(query)
+       .then(successCallback, failCallback); // not preferred; see next.
+{% endhighlight %}
 
-###exceptions
+### exceptions
 
 What if one of the callbacks throws an exception? Per <a href="https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md" title="'Thenable Promises'">the specification</a>, if either the  *successCallback* or *failCallback* throws an exception, the promise returned from *then(...)* is rejected. Don't expect a failed *successCallback* to propagate its error to the sibling *failCallback*.
 
@@ -134,7 +174,13 @@ You may also need cleanup logic that should run whether the original promise suc
 
 Putting these thoughts together we might write something like this:
 
-<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1<div class="line number2 index1 alt1">2<div class="line number3 index2 alt2">3<div class="line number4 index3 alt1">4<div class="line number5 index4 alt2">5</td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">var <code class="javascript plain">promise = entityManager<div class="line number2 index1 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">.executeQuery(query)<div class="line number3 index2 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">.then(successCallback)<div class="line number4 index3 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">.<code class="javascript keyword">catch<code class="javascript plain">(failCallback) <div class="line number5 index4 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">.finally(wrapUp);</td></tr></tbody></table>
+{% highlight javascript linenos=table %}
+var promise = entityManager
+       .executeQuery(query)
+       .then(successCallback)
+       .catch(failCallback)
+       .finally(wrapUp);
+{% endhighlight %}
 
 We encourage you to review the <a href="http://docs.angularjs.org/api/ng.$q" target="_blank">**$q** promises documentation</a> for details.
 
@@ -158,4 +204,9 @@ Fortunately, you get a new instance of the app module too. So when your app modu
 
 Here's an example of a Jasmine "beforeEach" test setup:
 
-<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1<div class="line number2 index1 alt1">2<div class="line number3 index2 alt2">3<div class="line number4 index3 alt1">4</td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript plain">beforeEach(<code class="javascript keyword">function <code class="javascript plain">() {<div class="line number2 index1 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">module(<code class="javascript string">'app'<code class="javascript plain">); <code class="javascript comments">// new instance of the 'app' module<div class="line number3 index2 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;<code class="javascript plain">inject(<code class="javascript keyword">function<code class="javascript plain">(breeze){ }); <code class="javascript comments">// just to be sure.<div class="line number4 index3 alt1"><code class="javascript plain">})</td></tr></tbody></table>
+{% highlight javascript linenos=table %}
+beforeEach(function () {
+    module('app'); // new instance of the 'app' module
+    inject(function(breeze){ }); // just to be sure.
+})
+{% endhighlight %}
