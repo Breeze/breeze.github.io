@@ -10,13 +10,13 @@ custom-css: /styles/blog-index.css
   {% for post in site.posts %}
 	<li class="blog-item"  >
 		<div class="blog-excerpt">
-			<p>Posted on: {{ page.date | date: "%Y-%m-%d" }}
 	{% if post.content contains '<!-- more -->' %}
 			{{ post.content | split: '<!-- more -->' | first }}
-				<a href="{{ post.url }}" title="Read more" class="btn btn-default">Read more</a>
+			<a href="{{ post.url }}" title="Read more" class="btn btn-default">Read more</a>
 	{% else %}
-				{{ post.content }}
+			{{ post.content }}
 	{% endif %}
+	    <p>Posted on: {{ page.date | date: "%Y-%m-%d" }}   
 				<a href="{{ post.url }}#disqus_thread" class="btn" title="Comments"></a>
 			</p>
 		</div>   
