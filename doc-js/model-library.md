@@ -19,6 +19,7 @@ Enter the Breeze "Model Library Adapter".
 The "Model Library Adapter" helps Breeze create an entity that conforms to your chosen model library.
 
 Breeze has three adapters at the moment; their names are:
+
 1. "[backingStore](#backingStore)" - for model libraries that get and set model object properties (Angular, Aurelia, React)
 1. "[backbone](#backbone)" - for the Backbone model library
 1. "[ko"](#ko)" - for the Knockout model library
@@ -116,13 +117,13 @@ And a Breeze entity monitors property-level changes. The data and navigation pro
 * record the pre-change value in `entityAspect.originalValues`
 * flip the `entityAspect.entityState` from "Unchanged" to "Modified"
 
-Change tracking is not something that comes naturally to a JavaScript object. Breeze has to wire change tracking into the mechanism for setting entity values. If the model library sets a value through a mutating function, the Model Library Adapter wraps change tracking functionality around that function. If the model library talks directly to entity properties, the Model Library Adapter (most likely the "backingStore" adapter) re-writes each property as an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank">an ECMAScript 5 defined property</a> with a getter and setter.
+Change tracking is not something that comes naturally to a JavaScript object. Breeze has to wire change tracking into the mechanism for setting entity values. If the model library sets a value through a mutating function, the Model Library Adapter wraps change tracking functionality around that function. If the model library talks directly to entity properties, the Model Library Adapter (most likely the "backingStore" adapter) re-writes each property as an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank">ECMAScript 5 defined property</a> with a getter and setter.
 
 ## Model Library Adapter Interface
 
 Writing a Model Library Adapter is an advanced task. If you'd like to write your own, you should first review the current adapters in the <a href="https://github.com/Breeze/breeze.js/tree/master/src" target="_blank">github source</a>. The adapter source file names include the phrase "breeze.modelLibrary".
 
-These Model Library Adapters implement five public members.
+Model Library Adapters implement five public members.
 
 * `name` - the name of the adapter, e.g., "backingStore". Specify this name when choosing this adapter for your app.
 
