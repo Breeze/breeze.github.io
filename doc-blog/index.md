@@ -12,11 +12,11 @@ custom-css: /styles/blog-index.css
       <div class="blog-excerpt">
 				{% if post.content contains '<!-- more -->' %}
 				    {{ post.content | split: '<!-- more -->' | first }}
-				    <a href="{{ post.url }}" title="Read more" class="btn blog-btn">Read more</a>
+				    <a href="{{ post.url }}" title="Read more" class="btn btn-default">Read more</a>
 				{% else %}
 				    {{ post.content }}
 				{% endif %}
-				<a href="{{ post.url }}#disqus_thread" class="btn blog-btn" title="Comments"></a>
+				<a href="{{ post.url }}#disqus_thread" class="btn" title="Comments"></a>
 	    </div>   
     </li>
   {% endfor %}

@@ -6,12 +6,12 @@
     list-style-type: none;
 }
 
-.blog-excerpt {
-    padding: 10px;
+.blog-item h1 {
+    margin-top: 10px; / normally 30 from custom.css
 }
 
-.blog-btn {
-    font-size: 20px;
+.blog-excerpt {
+    padding: 10px;
 }
 
 /*
