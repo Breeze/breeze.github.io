@@ -1,8 +1,8 @@
 /* custom styles for blog index page which contains a summary of all blog posts */
 
 .blog-item {
-    border: 1px solid blue;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
     list-style-type: none;
 }
 
