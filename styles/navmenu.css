@@ -119,13 +119,13 @@ h4, .h4 {
 }
 
 @media (min-width: 1200px) and (max-width: 1500px) {
-  #docpage {
+  #docpage-content {
     padding-right: 100px;
   }
 }
 
 @media (min-width: 1500px) {
-  #docpage {
+  #docpage-content {
     padding-right: 300px;
   }
 }
