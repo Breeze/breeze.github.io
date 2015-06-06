@@ -1,8 +1,8 @@
 ---
 layout: doc-blog
-title: New Todo samples
+title: New Todo Samples
 ---
-# New Todo samples available
+# New Todo Samples
 
 We have added new versions of the Todo sample to showcase the various platforms supported by Breeze. 
  
