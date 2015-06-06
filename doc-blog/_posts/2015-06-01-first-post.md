@@ -3,7 +3,6 @@ layout: doc-blog
 title: 1st post
 ---
 # Our First Test Post
-> {% include blog-ts.html %}
 
 A test post, our first!
 
