@@ -10,7 +10,7 @@ custom-css: /styles/blog-index.css
   {% for post in site.posts %}
     <li class="blog-item"  >
       <div class="blog-excerpt">
-	      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+	      <h1><a href="{{ post.url }}#disqus_thread">{{ post.title }}</a></h1>
 				{% if post.content contains '<!-- more -->' %}
 				    {{ post.content | split: '<!-- more -->' | first }}
 				    <a href="{{ post.url }}" title="Read more" class="btn blog-btn">Read more</a>
@@ -22,4 +22,5 @@ custom-css: /styles/blog-index.css
   {% endfor %}
 </ul>
 
+{% include discus-count.html %}
  
