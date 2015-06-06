@@ -4,8 +4,6 @@ title: New Todo samples
 ---
 # New Todo samples available
 
-> {% include blog-ts.html %}
-
 We have added new versions of the Todo sample to showcase the various platforms supported by Breeze. 
  
 <!-- more -->

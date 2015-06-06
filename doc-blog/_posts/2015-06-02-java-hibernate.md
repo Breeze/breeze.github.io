@@ -4,8 +4,6 @@ title: Java/Hibernate support added
 ---
 # New Java libraries and documentation
 
-> {% include blog-ts.html %}
-
 Breeze with Java + Hibernate lets you develop JavaScript client applications using the same powerful idioms you find in Hibernate. 
 
 <!-- more -->
