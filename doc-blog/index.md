@@ -16,7 +16,7 @@ custom-css: /styles/blog-index.css
 				{% else %}
 				    {{ post.content }}
 				{% endif %}
-				<a href="{{ post.url }}#disqus_thread" title="Comments"></a>
+				<a href="{{ post.url }}#disqus_thread" class="btn blog-btn" title="Comments"></a>
 	    </div>   
     </li>
   {% endfor %}

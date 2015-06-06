@@ -2,12 +2,12 @@
 
 .blog-item {
     border: 1px solid blue;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     list-style-type: none;
 }
 
 .blog-excerpt {
-    padding: 20px;
+    padding: 10px;
 }
 
 .blog-btn {
