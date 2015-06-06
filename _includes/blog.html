@@ -7,8 +7,17 @@
 
 <div id="docpage-outer">
     <div class="container" id="docpage">
-        {{content}}
-    </div>
+        <div id="proserve">
+            <a href="https://www.ideablade.com/services" title="Ask IdeaBlade" style="color: white; text-decoration: none;">
+                <img src="/images/helping-hand.png" height="50px" >
+                Need a hand with your app?
+            </a>
+        </div>
+        <div id="docpage-content">
+            {{content}}
+        </div>
+        {% include discus-comments.html %}
+     </div>
 </div>
 
 {% include defaultfooter.html %}

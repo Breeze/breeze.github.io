@@ -13,4 +13,3 @@ This is our first post in the new breeze documentation blog.
  
 These pages are still under development. 
 
-{% include discus-comments.html %}
