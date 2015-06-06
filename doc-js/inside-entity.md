@@ -20,7 +20,7 @@ Every Breeze entity instance has an `entityType` property that returns an [`Enti
 
     var type = someCustomer.entityType;
 
-# EntityAspect
+# <a name="entityaspect"></a>EntityAspect
 
 A Breeze entity is "self-tracking". It maintains its own entity state, and the means to change that state, in the ***<a href="/doc-js/api-docs/classes/EntityAspect.html" target="_blank" title="EntityAspect API">EntityAspect</a>*** object returned by its *entityAspect* property.
 

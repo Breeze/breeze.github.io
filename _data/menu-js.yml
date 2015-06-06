@@ -1,7 +1,7 @@
 title: JavaScript client
 shorttitle: JS
 menuitems:
-  - { link: download.html, title: Download } 
+  - { link: download.html, title: Download }
   - { link: features.html, title: Features }
   - { link: prerequisites.html, title: Prerequisites }
   - { link: lap-around-breeze.html, title: A lap around Breeze, isparent: true }
@@ -10,24 +10,24 @@ menuitems:
   - { link: lap-add-entity.html, title: Add a new entity, ischild: true }
   - { link: lap-changetracking.html, title: Change Tracking, ischild: true }
   - { link: lap-savechanges.html, title: Save changes, ischild: true }
-  - { link: lap-knockout.html, title: Databinding w/ knockout, ischild: true } 
-  - { link: query.html, title: Querying, isparent: true }   
+  - { link: lap-knockout.html, title: Databinding w/ knockout, ischild: true }
+  - { link: query.html, title: Querying, isparent: true }
   - { link: query-examples.html, title: Query Examples, ischild: true }
   - { link: query-from.html, title: Query From, ischild: true }
   - { link: query-using-json.html, title: Query using json, ischild: true }
   - { link: query-in-depth.html, title: Querying in depth, ischild: true }
-  - { link: query-locally.html, title: Querying locally, ischild: true }  
+  - { link: query-locally.html, title: Querying locally, ischild: true }
   - { link: query-projections.html, title: Query projections, ischild: true }
-  - { link: query-debugging.html, title: Debugging query results, ischild: true }  
+  - { link: query-debugging.html, title: Debugging query results, ischild: true }
   - { link: navigation-properties.html, title: Navigation properties }
-  - { link: complex-properties.html, title: Complex properties }  
+  - { link: complex-properties.html, title: Complex properties }
   - { link: creating-entities.html, title: Creating entities }
   - { link: inside-entity.html, title: Inside the entity }
   - { link: validation.html, title: Validation }
   - { link: entitymanager-and-caching.html, title: EntityManager and caching }
   - { link: saving-changes.html, title: Saving changes }
-  - { link: export-import.html, title: Export/Import }    
-  - { link: entity-serialization.html, title: Entity serialization }  
+  - { link: export-import.html, title: Export/Import }
+  - { link: entity-serialization.html, title: Entity serialization }
   - { link: metadata.html, title: Metadata, isparent: true }
   - { link: metadata-details.html, title: Metadata-details, ischild: true }
   - { link: metadata-load-from-script.html, title: Load metadata from script, ischild: true }
@@ -36,7 +36,8 @@ menuitems:
   - { link: metadata-with-ef.html, title: EF as a design tool, ischild: true }
   - { link: metadata-custom.html, title: Custom metadata, ischild: true }
   - { link: metadata-schema.html, title: Metadata Schema, ischild: true }
-  - { link: extending-entities.html, title: Extending entities }  
+  - { link: model-library.html, title: Model Library}
+  - { link: extending-entities.html, title: Extending entities }
   - { link: date-and-time.html, title: Date & Time }
   - { link: server.html, title: Talking to the server, isparent: true }
   - { link: server-dataserviceadapter.html, title: DataServiceAdapter, ischild: true }
@@ -48,8 +49,3 @@ menuitems:
   - { link: breeze-angular.html, title: Breeze + Angular }
   - { link: testing.html, title: Testing }
   - { link: coding-conventions.html, title: Coding conventions }
-    
-  
-    
-    
-  
