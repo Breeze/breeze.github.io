@@ -1,6 +1,7 @@
 /* custom styles for blog posts */
 
-.blog-footer {
-    margin-top: 15px;
-    font-size: 1.3em;
+#blog-footer {
+    background-color: #FFEEEE;
+    border: 1px solid #FFDDDD;
+    font-size: 1em;
 }
