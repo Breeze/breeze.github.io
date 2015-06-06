@@ -8,6 +8,7 @@
 
 .blog-item h1 {
     margin-top: 10px; / normally 30 from custom.css
+    font-size: .8em;
 }
 
 .blog-excerpt {
