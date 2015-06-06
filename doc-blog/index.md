@@ -17,7 +17,7 @@ custom-css: /styles/blog-index.css
 			{{ post.content }}
 	{% endif %}
 		  <a href="#" class="btn">Posted on: {{ post.date | date: "%Y-%m-%d" }}</a>
-  		<a href="{{ post.url }}#disqus_thread" class="btn" title="Comments"></a>
+  		<a href="{{ post.url }}#disqus_thread" class="btn btn-default" title="Comments"></a>
 		</div>   
 	</li>
   {% endfor %}

@@ -16,6 +16,7 @@
         <div id="docpage-content">
             {{content}}
         </div>
+        <p class="blog-footer">Posted on: {{ post.date | date: "%Y-%m-%d" }}</p>
         {% include discus-comments.html %}
      </div>
 </div>
