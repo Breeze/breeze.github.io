@@ -4,6 +4,8 @@ highlighter: pygments
 redcarpet:
   extensions: ['tables', 'autolink', 'no_intra_emphasis', 'with_toc_data', 'strikethrough']
 
+url: http://breeze.github.io
+
 encoding: utf-8
 gems:
   - jekyll-redirect-from
