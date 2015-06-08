@@ -6,8 +6,6 @@ title: New Todo Samples
 
 We have added new versions of the Todo sample to showcase the various platforms supported by Breeze. 
  
-<!-- more -->
-
 Whether you like to use .NET, Java or Node on the server, we've got you covered. Our canonical Todo sample is now available for the various back-ends.
 
 Todo with Angular and .NET: [http://breeze.github.io/doc-samples/todo-angular.html](http://breeze.github.io/doc-samples/todo-angular.html "Todo with Angular and .NET")
