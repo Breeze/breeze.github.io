@@ -25,4 +25,5 @@ menuitems:
   - { link: "north-breeze.html", title: Northwind app - NHibernate }
   - { link: "temp-hire.html", title: TempHire reference app - Knockout }
   - { link: "temp-hire-angular.html", title: TempHire reference app - Angular  }
+  - { link: "temp-hire-angular-sequelize.html", title: TempHire reference app - Angular w/ Node/Sequelize }
   - { link: "car-bones.html", title: Backbone demo }
