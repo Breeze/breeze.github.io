@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/saving-changes.html"
 ---
 # Saving changes
 
-Save changes to entities in cache by calling the *EntityManage*r&'s `saveChanges` method. This topic delves more deeply into the save process and how you control it. 
+Save changes to entities in cache by calling the *EntityManager*'s `saveChanges` method. This topic delves more deeply into the save process and how you control it. 
 
 This page is not ready for publication. It will cover: 
 

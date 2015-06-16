@@ -129,3 +129,20 @@ table.highlighttable div.highlight pre {
     border-bottom-left-radius: 0;
 }
     
+/* footer at the bottom of the content container */
+
+#content-footer {
+    display:flex;
+    position: relative;
+    left: -15px;
+    height: 30px;
+    color:#eeeeee;
+    background-color: #1c252c;
+    text-align: center;
+    font-size: small;
+    margin-top: 30px;   
+}
+#content-footer div {
+    margin:auto;
+}
+
