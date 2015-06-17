@@ -7,7 +7,7 @@ redirect_from: "/old/documentation/odata.html"
 
 Breeze can consume any <a href="http://www.odata.org/" target="_blank">standard OData</a> feed "as is" when you configure the client for OData.
 
-#Configure the client for your OData service
+# Configure the client for your OData service
 
 Breeze is not configured for OData services out of the box but it's easy to tell Breeze that you want to talk to an OData source. The first step is to configure your Breeze application's "data service adapter" which handles direct communication with remote data services. 
 
@@ -22,75 +22,67 @@ Most industry standard OData services (including Microsoft's WCF OData) *should*
     // "Standard" Web API OData source (e.g., WCF OData)
     breeze.config.initializeAdapterInstance('dataService', 'odata', true);
 
-## ASP.NET Web API OData
+## ASP.NET Web API OData v.3
 
-Breeze core ships with THREE OData service adapters. **Be sure to pick the right adapter for your service!**
+Breeze core ships with multiple OData service adapters. **Be sure to pick the right adapter for your service!**
 
 The "standard" adapter you met earlier; it works with WCF OData.
 
-There are TWO for ASP.NET Web API OData ... because Web API changed the protocol (the URL syntax in particular) at least twice. Pick one of these two configurations as appropriate.
+There is an adapter for ASP.NET Web API OData v.3
+
+    breeze.config.initializeAdapterInstance('dataService', 'webApiOData', true);
+
+>MS introduced a breaking change in December 2014 with the Microsoft.AspNet.WebApi.OData v.5.3.1 nuget package. The v.1.5.5 version of Breeze will compensate. In the short run you may try [this patched version of *breeze.debug.js*](https://github.com/Breeze/breeze.js/blob/e7cb67e44a12262231c92756f5e3f0d7034f9b21/build/breeze.debug.js) temporarily. Be sure to update to the official version as soon as it is released!
+
+We also highly recommend the Pluralsight course &quot;<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank"><strong>Building ASP.NET Web API OData Services</strong></a>&quot; by <a href="http://briannoyes.net/default.aspx" target="_blank">Brian Noyes</a>. The module, "Consuming OData Services ...", demonstrates consuming a Web API OData service with Breeze.
+
+## <a name="data-js"></a>DataJS dependency (v.2-3)
+
+This Breeze client can retrieve standard OData metadata, submit standard OData query requests, and interpret the results as Breeze entities using the OData HTTP URI protocol.
+
+Both of the aforementioned Breeze OData adapters *depend upon* <a href="http://datajs.codeplex.com/documentation" target="_blank"><strong>datajs</strong></a>&nbsp;to handle lower level communications with OData sources. Be sure to include that script before Breeze.js itself.
+
+## ASP.NET Web API OData v.4
+
+We are working on an adapter for ASP.NET Web API OData v.4.
 
     // ASP.NET Web API OData v.4
     breeze.config.initializeAdapterInstance('dataService', 'webApiOData4', true);
 
-    // ASP.NET Web API OData PRIOR to v.4
-    breeze.config.initializeAdapterInstance('dataService', 'webApiOData', true);
+**It isn't ready yet.** Sadly, ***the breaking changes just keep coming*** and there still is no release of the Web API OData that supports the v.4 spec. You can learn more about this in [OData on the Server](/doc-js/server-odata "OData Services")
 
-Sadly, ***the breaking changes just keep coming***. Folks are reporting that some Web API OData services are rejecting the links inside the `saveChanges` multi-part $batch payload. You may have to adjust the way Breeze constructs those links by tweaking the `getRoutePrefix` method. 
+## <a name="olingo-js"></a>Olingo dependency (v.4)
 
-Here is the version currently shipping (December 2014) with both Web API OData adapters.
+The datajs client library does not work with OData **v.4** sources; it's only good for OData v.1-3. 
 
-	function getRoutePrefix (dataService) {
-		// Get the routePrefix from a Web API OData service name.
-		// The routePrefix is presumed to be the pathname within the dataService.serviceName
-		// Examples of servicename -> routePrefix:
-		//   'http://localhost:55802/odata/' -> 'odata/'
-		//   'http://198.154.121.75/service/odata/' -> 'service/odata/'
-		if (typeof document === 'object') { // browser
-		  var parser = document.createElement('a');
-		  parser.href = dataService.serviceName;
-		} else { // node
-		  parser = url.parse(dataService.serviceName);
-		}
+You'll need the [JavaScript client library from Olingo](https://olingo.apache.org/doc/javascript/index.html). Be sure to include that script before Breeze.js itself.
 
-		// YOUR CHANGES GO HERE
-		var prefix = parser.pathname;
-		if (prefix[0] === '/') {
-		  prefix = prefix.substr(1);
-		} // drop leading '/'  (all but IE)
-		if (prefix.substr(-1) !== '/') {
-		  prefix += '/';
-		} // ensure trailing '/'
-		return prefix;
-	};
-
-Feel free to rewrite it to suit your version of the Web API OData service and assign it to the adapter.
-
-    var adapter = breeze.config.initializeAdapterInstance('dataService', 'webApiOData4');
-    adapter.getRoutePrefix = myGetRoutePrefix;
-
-This is an example of a more general problem. The Web API OData simply does not comply with the OData specification for metadata and has other peculiarities that you should consider in your design. Please read about this in [OData on the Server](/doc-js/server-odata "OData Services")
-
-We also highly recommend the Pluralsight course &quot;<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank"><strong>Building ASP.NET Web API OData Services</strong></a>&quot; by <a href="http://briannoyes.net/default.aspx" target="_blank">Brian Noyes</a>. The module, "Consuming OData Services...", demonstrates consuming a Web API OData service with Breeze.
-
-<h2 id="data-js">DataJS dependency</h2>
-
-This Breeze client can retrieve standard OData metadata, submit standard OData query requests, and interpret the results as Breeze entities using the OData HTTP URI protocol.
-
-Both of the aforementioned Breeze OData adapters <strong>depend upon </strong><a href="http://datajs.codeplex.com/documentation" target="_blank"><strong>datajs</strong></a>&nbsp;to handle lower level communications with OData sources. Be sure to include that script before Breeze.js itself.</p>
+>We'll have more to say about this when we release our adapter for OData v.4
 
 ## Setting the service address
 
-You must specify an absolute path for your service address (AKA serviceName), e.g, `"http://localhost:1234/odata"</code> instead of just <code>"/odata"`. Relative paths work for queries but apparently not for `saveChanges`.
+Prior to Breeze v.1.5.5, you must specify an absolute path for your service address (AKA `serviceName`).  Relative paths work for queries but not for `saveChanges` (prior to *Microsoft.AspNet.WebApi.OData* v.5.3.1). For example, you'd set the `serviceName` to "http://localhost:1234/odata" instead of just the odata web api fragment, "odata".
 
-##Adding headers and other configuration
+Here is a general purpose approach to setting the `serviceName` to an absolute path:
 
-The Breeze OData DataService adapters, "OData" and "webApiOData", rely on the DataJS `OData` component to handle AJAX calls. If you need to add custom headers or otherwise manipulate the HTTP request,
- you'll need to configure the `OData.defaultHttpClient` as described in the ["Controlling AJAX calls"](/doc-js/server-ajaxadapter#odata-ajax "OData AJAX") topic.
+    var serviceName = window.location.protocol + '//' + window.location.host + '/odata/';
 
-When you save entities, the entire change-set becomes a $batch request consisting of multiple nested HTTP requests for each entity. The DataService adapters build these requests for you. 
+As of v.1.5.5, Breeze accepts either a *relative* or *absolute* `serviceName`. You'll be able to write:
+
+      var serviceName = 'odata/';
+
+You may still prefer to specify the absolute URL for your service address ... and that's fine with Breeze. The v.1.5.5 adapter converts all *relative* addresses to *absolute* addresses via `webApiODataCtor.prototype.getAbsoluteUrl`. 
+
+## Adding headers and other configuration
+
+The Breeze OData DataService adapters rely on either the [datajs](#data-js) or [olingo](#olingo-js) `OData` clients to handle AJAX calls. If you need to add custom headers or otherwise manipulate the HTTP request, you'll need to configure them appropriately.
+
+With datajs, for example, you would configure `OData.defaultHttpClient` as described in the ["Controlling AJAX calls"](/doc-js/server-ajaxadapter#odata-ajax "OData AJAX") topic.
+
+When you save entities, the entire change-set becomes a `$batch` request whose body consists of multiple nested HTTP requests, one per entity. The DataService adapters build these inner requests for you.
+ 
 You can [adjust the $batch details](/doc-js/server-ajaxadapter#changeRequestInterceptor "Adjust save request data with a changeRequestInterceptor") via each adapter's `changeRequestInterceptor`.
 
-#Support for other OData sources
+# Support for other OData sources
 
-We will be adding more <em>dataService</em>adapters for other popular sources. Stay tuned.
+We will be adding more *dataService* adapters for other popular sources. Stay tuned.
