@@ -13,7 +13,7 @@ Breeze is not configured for OData services out of the box but it's easy to tell
 
 The catch is that you have to pick the right adapter for your OData source. OData may be a "standard" but not all OData services are the same. They often diverge from the specifications in ways that can be painful for you. 
 
-We discuss the diversity of OData services (and the consequences) in a separate topic devoted to [OData on the Server](/doc-js/server-odata "OData Services"). **Be sure to read it carefully**.
+We discuss the diversity of OData services (and the consequences) in a separate topic devoted to [OData on the Server](/doc-net/odata.html "OData Services"). **Be sure to read it carefully**.
 
 ## Industry standard and WCF OData sources
 
@@ -49,7 +49,7 @@ We are working on an adapter for ASP.NET Web API OData v.4.
     // ASP.NET Web API OData v.4
     breeze.config.initializeAdapterInstance('dataService', 'webApiOData4', true);
 
-**It isn't ready yet.** Sadly, ***the breaking changes just keep coming*** and there still is no release of the Web API OData that supports the v.4 spec. You can learn more about this in [OData on the Server](/doc-js/server-odata "OData Services")
+**It isn't ready yet.** Sadly, ***the breaking changes just keep coming*** and there still is no release of the Web API OData that supports the v.4 spec. You can learn more about this in [OData on the .NET Server](/doc-net/odata.html "OData Services")
 
 ## <a name="olingo-js"></a>Olingo dependency (v.4)
 
