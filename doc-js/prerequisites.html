@@ -10,26 +10,26 @@ redirect_from: "/old/documentation/prerequisites.html"
 
 <p><img alt="Supported Browsers" src="/images/browsers.png" style="width: 100%; max-width: 550px;" /></p>
 
-<p>Breeze works out-of-the-box with all modern browsers on desktop and mobile devices. These browsers implement the current JavaScript standard, known as ECMAScript 5 (ES5), which Breeze uses internally.</p>
+<p>Breeze is written to the JavaScript standard known as ECMAScript 5 (ES5) and thus runs properly in all modern browsers on desktop and mobile devices.</p>
 
-<p>Older browsers (such as IE 8) implement the prior ES3 standard. Fortunately, you can enable ES5 syntax on these browsers by adding a JavaScript &quot;shim&quot; library to your page. We recommend <a href="https://github.com/kriskowal/es5-shim">es5-shim.js and es5-sham.js</a>, a trusted tandem of open source,
+<p>Older browsers (such as IE 8, PhantomJS before v.2, and Safari before v.1.5.4) do not fully implement ES5 standards. Fortunately, you can enable ES5 syntax on these browsers by adding a JavaScript &quot;shim&quot; library to your page. We recommend <a href="https://github.com/kriskowal/es5-shim">es5-shim.js and es5-sham.js</a>, a trusted tandem of open source,
  <a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank">MIT licensed</a> libraries. &nbsp;Add <a href="https://github.com/douglascrockford/JSON-js/blob/master/json2.js" target="_blank">json2.js</a> for IE7 support. Place them on your web page above the BreezeJS script tag.</p>
 
-<p>Note: Because of IE8 and shim limitations having to do with Object.defineProperty, the breeze &#39;backingStore&#39; model library is not supported under IE8, however, the &#39;knockout&#39; and &#39;backbone&#39; libraries are supported.&nbsp;</p>
+<blockquote>Because <code>Object.defineProperty</code> cannot be shimmed, the breeze &#39;backingStore&#39; model library is not supported for older browsers such as IE8 and that precludes the combination of breeze and angular. However, the knockout and backbone <a href="/doc-js/model-library.html">model libraries</a> are supported on older browsers.</blockquote>
 
 <p><span style="line-height: 1.6em;">To avoid compatability mode issues with IE browsers, we highly recommend adding the following to your HTML header:</span></p>
 
-<p><strong>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge, chrome=1&quot;/&gt;</strong></p>
+<p style="margin-left: 20px"><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge, chrome=1&quot;/&gt;</code></p>
 
 <p>Please contact us if you have any questions about browser support or the 3rd party libraries we recommend.</p>
 
-<h2>Breeze dependencies</h2>
+<h2>Promises</h2>
 
-<p>Breeze depends on one 3rd party JavaScript library, <strong><a href="https://github.com/kriskowal/q" target="_blank">Q.js</a></strong>, which is included in the NuGet and download packages. Q.js is a popular implementation of the <a href="http://wiki.commonjs.org/wiki/Promises" target="_blank">Common.js promises standard</a> for managing asynchronous JavaScript.</p>
+<p>Breeze async methods return promises. There are numerous promise libraries and breeze can be adapted to use them. Angular applications can use <code>$q</code> promises. Other applications should load <strong><a href="https://github.com/kriskowal/q" target="_blank">Q.js</a></strong> which is included in the NuGet and download packages. Q.js is a popular implementation of the <a href="http://wiki.commonjs.org/wiki/Promises" target="_blank">Common.js promises standard</a> for managing asynchronous JavaScript.</p>
 
 <h2>Breeze application dependencies</h2>
 
-<p>Breeze is responsible for communicating with a remote data service on your behalf. Part of that job involves translating between JSON service data and Breeze JavaScript entity objects that are bindable, change-tracked, and validated.</p>
+<p>Breeze is communicates with a remote data service on your app's behalf. Part of that job involves translating between JSON service data and Breeze JavaScript entity objects that are bindable, change-tracked, and validated.</p>
 
 <p>Breeze does not dictate the data service technology, the JavaScript component that performs AJAX requests, nor the model library for data binding. Those are all Breeze extension points. You&#39;ll find discussion of alternative implementations for each extension point elsewhere in the documentation.</p>
 
@@ -39,21 +39,22 @@ redirect_from: "/old/documentation/prerequisites.html"
 	<li>dataservice: <a href="http://www.asp.net/web-api" target="_blank"><strong>Web API</strong></a></li>
 	<li>ajax: <strong><a href="http://jquery.com/" target="_blank">jQuery</a></strong></li>
 	<li>model library: <a href="http://knockoutjs.com/" target="_blank"><strong>Knockout</strong></a></li>
+	<li>promises: <strong><a href="https://github.com/kriskowal/q" target="_blank">Q.js</a></strong></li>
 </ul>
 
 <p>The <a href="/doc-net/nuget-packages.html">&quot;Breeze.WebApiSample&quot; NuGet package</a> creates an example app with these dependencies in place in about 2 minutes. Except as noted, the <a href="/doc-samples/" target="_blank">other samples</a> also require these libraries and they load the <strong>jQuery </strong>and <strong>Knockout </strong>scripts <em>before</em> the <strong>Q </strong>and <strong>Breeze </strong>scripts. Make sure you either follow their lead ... or know why you&#39;re doing it differently.</p>
 
 <h2>Visual Studio and the Samples</h2>
 
-<p>Many of the current&nbsp;<a href="/doc-samples/">samples</a> demonstrate Breeze clients communicating with an ASP.NET Web API service that delegates data access to the Entity Framework.&nbsp;They were developed with Visual Studio 2012 and run on either .NET 4.0 or .NET 4.5 (both platforms are fine).</p>
+<p>Many of the current&nbsp;<a href="/doc-samples/">samples</a> demonstrate Breeze clients communicating with an ASP.NET Web API service that delegates data access to the Entity Framework.&nbsp;They were developed with Visual Studio 2013 and run on either .NET 4.0 or .NET 4.5 (both platforms are fine).</p>
 
-<p>Most samples get their data from SQL Server Compact&nbsp; 4.0 databases with filenames ending in &quot;.sdf&quot;. SQL Server Compact should have been installed on your machine automatically with VS2012. If you do not have it on your machine, you can <a href="http://www.microsoft.com/en-us/download/details.aspx?id=17876" target="_blank">download and install it yourself</a>. Alternatively, you can <a href="http://nuget.org/packages/Microsoft.SqlServer.Compact/" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">use NuGet to install it </a>f<em>or an individual sample solution</em>.<br />
+<p>Most samples get their data from SQL Server Compact&nbsp; 4.0 databases with filenames ending in &quot;.sdf&quot;. SQL Server Compact may have been installed on your machine automatically with Visual Studio. If you do not have it on your machine, you can <a href="http://www.microsoft.com/en-us/download/details.aspx?id=17876" target="_blank">download and install it yourself</a>. Alternatively, you can <a href="http://nuget.org/packages/Microsoft.SqlServer.Compact/" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">use NuGet to install it </a>f<em>or an individual sample solution</em>.<br />
 &nbsp;<br />
-While <a href="/doc-samples/">our samples</a> are implemented in this fashion today, <strong>Breeze does not require .NET, Visual Studio, Entity Framework, SQL Server, or ASP.NET</strong>. Breeze is not <a href="http://www.getbreezenow.com/blog/handcuffed-microsoft" target="_blank">handcuffed to Microsoft</a>.</p>
+While many of <a href="/doc-samples/">our samples</a> are implemented in this fashion today, <strong>Breeze does not require .NET, Visual Studio, Entity Framework, SQL Server, or ASP.NET</strong>. Breeze is not <a href="http://www.getbreezenow.com/blog/handcuffed-microsoft" target="_blank">handcuffed to Microsoft</a>.</p>
 
-<p>We intend to demonstrate other back-ends as well as show IDEs other than Visual Studio. Your<a href="https://breezejs.uservoice.com/forums/173093-breeze-feature-suggestions/filters/top" target="_blank"> feedback on UserVoice</a> will help us prioritize these plans.</p>
+<p>Many samples demonstrate breeze working with Node, Java, PHP, and Rails back-ends as well. Your<a href="https://breezejs.uservoice.com/forums/173093-breeze-feature-suggestions/filters/top" target="_blank"> feedback on UserVoice</a> will help us prioritize additional samples for other server and storage technologies.</p>
 
-<h3>Visual Studio 2012</h3>
+<h3>Visual Studio 2012 and 2013</h3>
 
 <p>Everything you need is installed by default.</p>
 
@@ -65,7 +66,7 @@ While <a href="/doc-samples/">our samples</a> are implemented in this fashion to
 	<li>ASP.NET MVC 4</li>
 	<li>Web Platform Installer</li>
 	<li>IIS Express</li>
-	<li>SQL Server Compact Edition 4.0</li>
+	<li>SQL Server Compact Edition 4.0 9</li>
 </ul>
 
 <h3>Enable NuGet package restore</h3>
