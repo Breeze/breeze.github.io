@@ -24,13 +24,31 @@ However, Microsoft seem to have <a href="http://blogs.msdn.com/b/odatateam/archi
 
 **Web API OData** is both the present and future of OData services from Microsoft.
 
-It is rapidly evolving and is highly compliant with the latest OData standards while offering a number of superb manageability, security and customization capabilities.
+This is an evolving platform with numerous peculiarities. It has yet to fully comply with the OData standards. There are worrisome implementation decisions that will affect your application design. Read on and proceed with caution.
 
-We highly recommend Brian Noyes' <a href="http://briannoyes.net/2013/02/16/ConsumingAnASPNETWebAPIODataServiceWithBreeze.aspx" target="_blank">brilliant **blog post with step-by-step instructions** for building a Breeze/Web API OData sample</a> which includes a downloadable sample.  We also recommend his Pluralsight course "<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank">**Building ASP.NET Web API OData module, "Consuming OData Services..." module**</a> that demonstrates consuming a Web API OData service with a Breeze client.
+>We highly recommend Brian Noyes' <a href="http://briannoyes.net/2013/02/16/ConsumingAnASPNETWebAPIODataServiceWithBreeze.aspx" target="_blank">brilliant **blog post with step-by-step instructions** for building a Breeze/Web API OData sample</a> which includes a downloadable sample.  We also recommend his Pluralsight course "<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank">**Building ASP.NET Web API OData module, "Consuming OData Services..." module**</a> that demonstrates consuming a Web API OData service with a Breeze client.
 
-You must consider certain peculiarities of the Web API OData that affect your design.
+## Web API OData v.3 or v.4
 
->The [Breeze Web API OData](/doc-samples/web-api-odata) JavaScript sample attempts to mitigate some of the more unfortunate consequences of these "peculiarities".
+The <a href="http://www.odata.org/documentation/" target="_blank">OData spec</a> is continuously evolving. The v.4 is the most recent version.
+
+The Microsoft OData team began publishing a **v.4 version** of their Web API platform in May 2014 and are applying all of their current energies to v.4. The primary nuget package is titled "Microsoft ASP.NET Web API 2.2 for OData v4.0" ; the package name is <a href="https://www.nuget.org/packages/Microsoft.AspNet.OData/" target="_blank">Microsoft.AspNet.OData</a>,
+
+The **v.3 version** of the platform is still available. It is titled "Microsoft ASP.NET Web API 2.2 for OData v1-3" and the package name is <a href="https://www.nuget.org/packages/Microsoft.AspNet.WebApi.OData/" target="_blank">Microsoft.AspNet.WebApi.OData</a>.
+
+>Did you notice the difference between package names,   "Microsoft.AspNet.WebApi.OData" (v3) and "Microsoft.AspNet.OData" (v4)?  They've dropped the "WebApi" from v.4.
+>
+>Both packages have release versions that begin "5.x". They have identical release numbers through "5.5.1"!
+
+These are very different implementations despite the similarity of their package names and release numbers.
+
+Breeze intends to support both of them, albeit with different client-side **DataServiceAdapters** (see the [discussion here](http://breeze.github.io/doc-js/server-odata.html)).
+
+Unfortunately, **Breeze does not yet support Web API OData v.4**. There are many breaking changes and other issues that have delayed Breeze support. We're working through them with the OData team.
+
+## Web API OData v.3
+
+The following discussion in this section concerns Web API OData v.3 only.
 
 ### No transactional save
 
