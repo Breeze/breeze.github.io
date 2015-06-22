@@ -30,7 +30,9 @@ Breeze with Java + Hibernate lets you develop JavaScript client applications usi
 
 ### Client vs. Server
 
-Breeze JS is a pure JavaScript library for managing data on the client, much as Hibernate manages it on the server. 
+**Breeze JS** is a pure JavaScript library for managing data on the client, much as Hibernate/JPA manages it on the server.  
+
+Breeze JS has an [EntityManager](/doc-js/entitymanager-and-caching.html) that queries entities from the server, keeps them in cache, keeps track of the state of each entity, and saves the changes to the server when requested.
 
 <style scoped>
 .diagram {
@@ -48,33 +50,37 @@ Breeze JS is a pure JavaScript library for managing data on the client, much as 
 }
 .diagram .diagram-box .diagram-box-row {
 	margin: 0px 10px;
+	padding: 8px;
 	border-top: black solid 1px;
 }
 .diagram .diagram-line {
 	width: 50%;
+	padding: 10px 3px;
 	border-right: black solid 3px;
 	text-align: right;
 }
 </style>
 
 <div class="diagram" style="width: 400px">
-	<div class="diagram-box" style="width: 250px">
-		<div class="diagram-box-title">Browser</div>
-		<div class="diagram-box-row" style="background-color: rgb(226, 98, 189);">Angular / KO / Aurelia / etc.</div>
-		<div class="diagram-box-row" style="background-color: rgb(126, 197, 238);"><b>Breeze JS</b></div>
-	</div>
-
-	<div class="diagram-line" style="line-height: 40px;">JSON</div>
-
-	<div class="diagram-box" style="width: 300px">
-		<div class="diagram-box-title">Java Server</div>
-		<div class="diagram-box-row" style="background-color: rgb(113, 159, 192);">Servlet / MVC / JAX-RS / etc.</div>
-		<div class="diagram-box-row" style="background-color: rgb(126, 197, 238);"><b>Breeze Java</b></div>
-		<div class="diagram-box-row" style="background-color: rgb(219, 212, 184);">Hibernate / JPA</div>
-	</div>
+<div class="diagram-box" style="width: 250px">
+	<div class="diagram-box-title">Browser</div>
+	<div class="diagram-box-row" style="background-color: rgb(226, 98, 189);">Angular / KO / Aurelia / etc.</div>
+	<div class="diagram-box-row" style="background-color: rgb(126, 197, 238);"><b>Breeze JS</b></div>
 </div>
 
-Breeze on the Java server works with Hibernate to manage persistence for Breeze client applications.  It turns Breeze queries into Hibernate queries, and saves changes to the database using Hibernate.  
+<div class="diagram-line" style="line-height: 40px;">JSON</div>
+
+<div class="diagram-box" style="width: 300px">
+	<div class="diagram-box-title">Java Server</div>
+	<div class="diagram-box-row" style="background-color: rgb(113, 159, 192);">Servlet / MVC / JAX-RS / etc.</div>
+	<div class="diagram-box-row" style="background-color: rgb(126, 197, 238);"><b>Breeze Java</b></div>
+	<div class="diagram-box-row" style="background-color: rgb(219, 212, 184);">Hibernate / JPA</div>
+</div>
+</div>
+
+**Breeze Java** is a server-side library that works with Hibernate/JPA to manage persistence for Breeze client applications.  It turns Breeze queries into Hibernate/JPA queries, and saves changes to the database using Hibernate/JPA.  
+
+The Breeze server is designed to be **stateless**.  A Hibernate Session/JPA EntityManager is created to handle each query or save request, but then discarded.  **No** long-running transactions, detached objects, or disconnected sessions are required.  Entity state is kept on the client, not the server.
 
 # Samples
 

@@ -67,14 +67,15 @@ If you are not using Maven, you can download the JARs manually from github:
 
 ### Build it yourself
 
-If you wish, you can build the Breeze JARs yourself.  The Breeze code is open source and available at [https://github.com/Breeze/breeze.server.java](https://github.com/Breeze/breeze.server.java).  There are four projects:
+If you wish, you can build the Breeze JARs yourself.  The Breeze code is open source and available at [https://github.com/Breeze/breeze.server.java](https://github.com/Breeze/breeze.server.java).  There are five projects:
 
 1. **breeze-hibernate**: Handles metadata, query, and save requests through Hibernate
 2. **breeze-webserver**: Handles HTTP requests and JSON serialization in front of breeze-hibernate.
 3. **breeze-northwind**: Data model for the Northwind database, used for integration testing
 4. **breeze-webtest**: Web app for running breeze integration tests.
+5. **breeze-webtest-jersey**: Jersey web app for running breeze integration tests. 
 
-Only the first two are needed for building a Breeze application.  The last two are for testing the Breeze features during development.  Each project is set up for development using Eclipse and for builds using Maven.  The [build](https://github.com/Breeze/breeze.server.java/tree/master/build) directory contains a master pom.xml that builds all the projects in the correct order.
+Only the first two are needed for building a Breeze application.  The others are for testing the Breeze features during development.  Each project is set up for development using Eclipse and for builds using Maven.  The [build](https://github.com/Breeze/breeze.server.java/tree/master/build) directory contains a master pom.xml that builds all the projects in the correct order.
 
 ### breeze-webserver
 The [breeze-webserver](https://github.com/Breeze/breeze.server.java) library implements servlets to handle requests from the Breeze client.  It extracts the data from the request and passes it on to breeze-hibernate. More information is found in the [breeze-webserver topic page](http://breeze.github.io/doc-java-hib/breeze-webserver.html).
