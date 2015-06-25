@@ -144,7 +144,7 @@ Alternatively, we may be able to include those line items in the same payload as
 
 We call this "eager loading" of the line items and Breeze can do it ... if your server can do it. 
 
->Confirm that your data API supports *expand*. A server written with a combination of ASP.NET Web API and Entity Framework supports it by default. So do many OData data sources. 
+>Confirm that your data API supports *expand*.  The Breeze server libraries for .NET ([breeze.server.net](http://breeze.github.io/doc-net/)), Java ([breeze.server.java](http://breeze.github.io/doc-java-hib/)), and Sequelize ([breeze.server.node](http://breeze.github.io/doc-node-sequelize/)) all support *expand* by default.  A server written with a combination of ASP.NET Web API and Entity Framework supports it by default. So do many [OData](http://www.odata.org/ecosystem/) data sources. 
 
 Here's an example:
 

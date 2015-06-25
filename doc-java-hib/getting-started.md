@@ -1,6 +1,5 @@
 ---
 layout: doc-java-hib
-redirect_from: "/old/documentation/javahibernate.html"
 ---
 # Getting Started
 
@@ -23,7 +22,7 @@ Get [breeze.bridge.angular.js](https://raw.githubusercontent.com/Breeze/breeze.j
     <script src="Scripts/breeze.debug.js"></script>
     <script src="Scripts/breeze.bridge.angular.js"></script>
 
-See the [Todo-Angular-Hibernate](http://breeze.github.io/doc-samples/todo-angular-hibernate.html) sample for an example Angular application.
+See the [Todo-Angular-Hibernate](http://breeze.github.io/doc-samples/todo-angular-hibernate.html) sample for an example Breeze+Angular application.
 
 ##### If you are using [KnockoutJS](http://knockoutjs.com/)
 Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://jquery.com/) (for AJAX).  You will also need the [KO model libary](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.modelLibrary.ko.js) for change tracking between Knockout and Breeze.  In your `index.html` you should have, in order:
