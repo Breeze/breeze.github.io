@@ -22,7 +22,7 @@ Get [breeze.bridge.angular.js](https://raw.githubusercontent.com/Breeze/breeze.j
     <script src="Scripts/breeze.debug.js"></script>
     <script src="Scripts/breeze.bridge.angular.js"></script>
 
-See the [Todo-Angular-Hibernate](http://breeze.github.io/doc-samples/todo-angular-hibernate.html) sample for an example Breeze+Angular application.
+See the [Todo-Angular-Hibernate](/doc-samples/todo-angular-hibernate.html) sample for an example Breeze+Angular application.
 
 ##### If you are using [KnockoutJS](http://knockoutjs.com/)
 Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://jquery.com/) (for AJAX).  You will also need the [KO model libary](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.modelLibrary.ko.js) for change tracking between Knockout and Breeze.  In your `index.html` you should have, in order:
@@ -95,7 +95,7 @@ If you wish, you can build the Breeze JARs yourself.  The Breeze code is open so
 Only the first two are needed for building a Breeze application.  The others are for testing the Breeze features during development.  Each project is set up for development using Eclipse and for builds using Maven.  The [build](https://github.com/Breeze/breeze.server.java/tree/master/build) directory contains a master pom.xml that builds all the projects in the correct order.
 
 ### breeze-webserver
-The [breeze-webserver](https://github.com/Breeze/breeze.server.java) library implements servlets to handle requests from the Breeze client.  It extracts the data from the request and passes it on to breeze-hibernate. More information is found in the [breeze-webserver topic page](http://breeze.github.io/doc-java-hib/breeze-webserver.html).
+The [breeze-webserver](https://github.com/Breeze/breeze.server.java) library implements servlets to handle requests from the Breeze client.  It extracts the data from the request and passes it on to breeze-hibernate. More information is found in the [breeze-webserver topic page](/doc-java-hib/breeze-webserver.html).
 
 ### breeze-hibernate
 

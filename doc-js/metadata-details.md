@@ -14,20 +14,21 @@ The metadata returned from the server as a result of a `fetchMetadata` call may 
 
 1. 	If using the Breeze **WebApi** DataService adapter (the default)
    	
-    - a JSON object that adheres to the Breeze Metadata JSON schema described below **OR** 
- 	
-	- a Microsoft EDMX (CSDL) document serialized as JSON. Such a document is available for any Entity Framework DbContext or ObjectContext instance and is also available for a variety of other Microsoft products such as Sharepoint. 
+  - a JSON object that adheres to the Breeze Metadata JSON schema described below **OR**
+ 
+  - a Microsoft EDMX (CSDL) document serialized as JSON. Such a document is available for any Entity Framework DbContext or ObjectContext instance and is also available for a variety of other Microsoft products such as Sharepoint. 
  	    
 1. 	If using the Breeze **OData** DataService adapter, an OData Metadata document per the OData specification. This format requires the use of the Breeze OData DataService adapter.
 
 When the remote data service is not under the developer's control, we can define the metadata on the client via either of two methods: 
 
-1. Make a series of `MetadataStore.addEntityType` and `MetadataStore.addComplexType` method calls. <br/><br/>
+1. Make a series of `MetadataStore.addEntityType` and `MetadataStore.addComplexType` method calls. 
+
 1. Pass a JSON object that adheres to the schema described below into the `MetadataStore.importMetadata` method. This is the same format that is returned by any call to the `MetadataStore.exportMetadata` method.
 
 With the metadata defined, Breeze can convert data returned from the server into fully capable Breeze entities.
 
->This assumes Breeze can match the server data to the metadata. You may have to define a `JsonResultsAdapter` that correlates server data with the types defined in your metadata, a subject [covered elsewhere](http://breeze.github.io/doc-js/server-jsonresultsadapter.html).
+>This assumes Breeze can match the server data to the metadata. You may have to define a `JsonResultsAdapter` that correlates server data with the types defined in your metadata, a subject [covered elsewhere](/doc-js/server-jsonresultsadapter.html).
 
 ## Metadata from the server
 
@@ -65,7 +66,7 @@ Alternatively, you can retrieve data **as entities** from such services with two
 
 For example, in Step #1 we define the `Color` entity type in metadata. In Step #2, we tell Breeze how to recognize JSON data in the form `{"Id": 1, "Name": "blue"}` as an instance of the `Color` entity type.
 
-In this topic we'll discuss step #1 - define metadata on the client. Step #2 - write the `JsonResultsAdapter` - is [covered elsewhere](http://breeze.github.io/doc-js/server-jsonresultsadapter.html).
+In this topic we'll discuss step #1 - define metadata on the client. Step #2 - write the `JsonResultsAdapter` - is [covered elsewhere](/doc-js/server-jsonresultsadapter.html).
 
 ## Metadata defined on the client
 

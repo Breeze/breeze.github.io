@@ -82,11 +82,11 @@ The [breeze-hibernate](https://github.com/Breeze/breeze.server.java) library run
 
 ### Metadata Requests
 
-The Breeze client requires [metadata](http://breeze.github.io/doc-js/metadata.html) about the entity model in order to know the data types and relationships of the entities.  The breeze-hibernate library uses the [Hibernate metadata API](http://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/metadata/package-summary.html) to extract this information from the application's Hibernate configuration. It creates a data structure that is serialized to JSON and returned to the Breeze client. 
+The Breeze client requires [metadata](/doc-js/metadata.html) about the entity model in order to know the data types and relationships of the entities.  The breeze-hibernate library uses the [Hibernate metadata API](http://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/metadata/package-summary.html) to extract this information from the application's Hibernate configuration. It creates a data structure that is serialized to JSON and returned to the Breeze client. 
 
 ### Query Requests
 
-The Breeze client has a [powerful query language](http://breeze.github.io/doc-js/query-using-json.html) that can send a [variety of queries](http://breeze.github.io/doc-js/query-examples.html) to the server.  These queries are sent to the Java server in JSON format.  The breeze-hibernate library converts these queries into Hibernate [Criteria queries](http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ch17.html) to query the database.
+The Breeze client has a [powerful query language](/doc-js/query-using-json.html) that can send a [variety of queries](/doc-js/query-examples.html) to the server.  These queries are sent to the Java server in JSON format.  The breeze-hibernate library converts these queries into Hibernate [Criteria queries](http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ch17.html) to query the database.
 
 The query results, a collection of entities or graphs of entities, are serialized to JSON and returned to the Breeze client.
 
