@@ -90,6 +90,7 @@ public class NorthwindTestServlet extends BreezeControllerServlet {
 The BreezeControllerServlet will automatically route and handle any servlet requests that the result of client *SaveChanges* operations, i.e. any javascript operations that look like
 
 JavaScript client:
+
 ```javascript
 myEntityManager.saveChanges(...).then(...);
 ```
@@ -102,12 +103,15 @@ This involves simply naming a method in your servlet subclass with the same name
 In the example below, we have created a `SaveWithComment` method to perform a standard save plus the addition of a Comment record for each save operation performed.
 
 JavaScript client:
+
 ```javascript
 // named save using SaveWithComment endpoint
 var so = new SaveOptions({ resourceName: "SaveWithComment", tag: "some additional info" });
 em.saveChanges(null, so).then(...)
 ```
-Java Servlet:  
+
+Java Servlet:
+
 ```java
 public void SaveWithComment(HttpServletRequest request,
         HttpServletResponse response) {
