@@ -133,6 +133,7 @@ table.highlighttable div.highlight pre {
 
 #content-footer {
     display:flex;
+    clear: both;
     position: relative;
     left: -15px;
     height: 30px;
