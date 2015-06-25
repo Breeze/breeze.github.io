@@ -2,32 +2,50 @@
 layout: doc-java-hib
 redirect_from: "/old/documentation/javahibernate.html"
 ---
-# Breeze-Hibernate Introduction
+# Getting Started
 
-Breeze client applications make three basic kinds of AJAX calls:
+As explained in the [introduction](/doc-java-hib/index.html), there are both client and server components to Breeze.  Here we will tell you how to get both.
 
-   1. Breeze metadata 'GET' requests
-   2. Breeze query 'GET' requests
-   3. Breeze save 'POST' requests
+## Downloading Breeze - JavaScript Client
 
-The [breeze-hibernate](https://github.com/Breeze/breeze.server.java) is a Java library that runs on the server and uses Hibernate to handle each of these requests.
+You can get the latest build of BreezeJS from [github](https://github.com/Breeze/breeze.js/tree/master/build).  You'll need either 
+[breeze.debug.js](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/breeze.debug.js) or 
+[breeze.min.js](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/breeze.min.js).
 
-### Metadata Requests
+### Prerequisites and Add-ons
 
-The Breeze client requires [metadata](http://breeze.github.io/doc-js/metadata.html) about the entity model in order to know the data types and relationships of the entities.  The breeze-hibernate library uses the [Hibernate metadata API](http://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/metadata/package-summary.html) to extract this information from the application's Hibernate configuration. It creates a data structure that is serialized to JSON and returned to the Breeze client. 
+BreezeJS requires 3rd-party libraries for its [promise](https://www.promisejs.org/) implementation and for its AJAX implementation.
 
-### Query Requests
+##### If you are using [AngularJS](https://angularjs.org/)
+Get [breeze.bridge.angular.js](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.bridge.angular.js).  This sets up Breeze to use Angular's $q for promises, and $http for AJAX.  In your index.html you should have, in order:
 
-The Breeze client has a [powerful query language](http://breeze.github.io/doc-js/query-using-json.html) that can send a [variety of queries](http://breeze.github.io/doc-js/query-examples.html) to the server.  These queries are sent to the Java server in JSON format.  The breeze-hibernate library converts these queries into Hibernate [Criteria queries](http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ch17.html) to query the database.
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/breeze.debug.js"></script>
+    <script src="Scripts/breeze.bridge.angular.js"></script>
 
-The query results, a collection of entities or graphs of entities, are serialized to JSON and returned to the Breeze client.
+See the [Todo-Angular-Hibernate](http://breeze.github.io/doc-samples/todo-angular-hibernate.html) sample for an example Angular application.
 
-### Save Requests
+##### If you are using [KnockoutJS](http://knockoutjs.com/)
+Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://jquery.com/) (for AJAX).  You will also need the [KO model libary](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.modelLibrary.ko.js) for change tracking between Knockout and Breeze.  In your `index.html` you should have, in order:
 
-The Breeze client performs saves by sending an array of entities to the server as JSON in a POST request.  The entities in the array are separate, i.e. not arranged in a graph. The breeze-hibernate library re-connnects the relationships between the entities, adds them to a Hibernate [Session](http://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/Session.html) (in the appropriate order) as a save, update, or delete, and commits all the changes in a single transaction.
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/knockout.js"></script>
+    <script src="Scripts/q.min.js"></script>
+    <script src="Scripts/breeze.debug.js"></script>
+    <script src="Scripts/breeze.modelLibrary.ko.js"></script>
+
+##### If you are using [BackboneJS](http://backbonejs.org/)
+Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://jquery.com/) (for AJAX).  You will also need the [Backbone model libary](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.modelLibrary.backbone.js) for change tracking between Backbone and Breeze.  In your `index.html` you should have, in order:
+
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/underscore.js"></script>    
+    <script src="Scripts/backbone.js"></script> 
+    <script src="Scripts/q.min.js"></script>
+    <script src="Scripts/breeze.debug.js"></script>
+    <script src="Scripts/breeze.modelLibrary.backbone.js"></script>
 
 
-## Getting Started
+## Downloading Breeze - Java Server
 
 ### Maven
 

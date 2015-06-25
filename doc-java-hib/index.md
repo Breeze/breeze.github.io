@@ -6,7 +6,7 @@ redirect_from: "/old/documentation/java-server.html"
 # Java Server + Hibernate
 
 <a class="logo-inline" href="/doc-java-hib" title="Java">
-  <img src="/images/logos/Breeze-java.png" alt="Java" width="100">
+  <img src="/images/logos/Breeze-java.png" alt="Breeze+Java" width="100">
 </a> 
 
 Breeze helps you manage data in rich client applications.  It gives you ORM-like data management capability in a JavaScript application.
@@ -17,7 +17,7 @@ The [breeze.server.java](https://github.com/Breeze/breeze.server.java) libraries
 
 {% include support-frag.html %}
 
-## Overview
+# Overview
 
 Breeze with Java + Hibernate lets you develop JavaScript client applications using the same powerful idioms you find in Hibernate.  You can
 
@@ -28,7 +28,7 @@ Breeze with Java + Hibernate lets you develop JavaScript client applications usi
 - save all changes in a single transaction
 - use your existing Hibernate entity model on the JavaScript client
 
-### Client vs. Server
+## Client and Server
 
 **Breeze JS** is a pure JavaScript library for managing data on the client, much as Hibernate/JPA manages it on the server.  
 
@@ -81,6 +81,30 @@ Breeze JS has an [EntityManager](/doc-js/entitymanager-and-caching.html) that qu
 **Breeze Java** is a server-side library that works with Hibernate/JPA to manage persistence for Breeze client applications.  It turns Breeze queries into Hibernate/JPA queries, and saves changes to the database using Hibernate/JPA.  
 
 The Breeze server is designed to be **stateless**.  A Hibernate Session/JPA EntityManager is created to handle each query or save request, but then discarded.  **No** long-running transactions, detached objects, or disconnected sessions are required.  Entity state is kept on the client, not the server.
+
+## Client-Server Communication
+
+Breeze client applications make three basic kinds of AJAX calls:
+
+   1. Breeze metadata 'GET' requests
+   2. Breeze query 'GET' requests
+   3. Breeze save 'POST' requests
+
+The [breeze-hibernate](https://github.com/Breeze/breeze.server.java) library runs on the server and uses Hibernate to handle each of these requests.
+
+### Metadata Requests
+
+The Breeze client requires [metadata](http://breeze.github.io/doc-js/metadata.html) about the entity model in order to know the data types and relationships of the entities.  The breeze-hibernate library uses the [Hibernate metadata API](http://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/metadata/package-summary.html) to extract this information from the application's Hibernate configuration. It creates a data structure that is serialized to JSON and returned to the Breeze client. 
+
+### Query Requests
+
+The Breeze client has a [powerful query language](http://breeze.github.io/doc-js/query-using-json.html) that can send a [variety of queries](http://breeze.github.io/doc-js/query-examples.html) to the server.  These queries are sent to the Java server in JSON format.  The breeze-hibernate library converts these queries into Hibernate [Criteria queries](http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ch17.html) to query the database.
+
+The query results, a collection of entities or graphs of entities, are serialized to JSON and returned to the Breeze client.
+
+### Save Requests
+
+The Breeze client performs saves by sending an array of entities to the server as JSON in a POST request.  The entities in the array are separate, i.e. not arranged in a graph. The breeze-hibernate library re-connnects the relationships between the entities, adds them to a Hibernate [Session](http://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/Session.html) (in the appropriate order) as a save, update, or delete, and commits all the changes in a single transaction.
 
 # Samples
 
