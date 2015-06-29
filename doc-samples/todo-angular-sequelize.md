@@ -21,15 +21,16 @@ In this case we're interested in the "Todo-Angular" sample, located in the *node
 
 At the top level you will find:
 
-* a <a href="https://github.com/Breeze/breeze.js.samples/blob/master/node/todo-angular/readme.md" target="_blank" title="readme.md on github"><strong>readme.md</strong></a> explaining how to install and run the app
+* a <a href="https://github.com/Breeze/breeze.js.samples/tree/master/node/todo-angular" target="_blank" title="readme.md on github"><strong>readme.md</strong></a> explaining how to install and run the app
 * the **db-script** folder
 * the **client** folder full of client application **HTML, CSS, and JavaScript**
 * the **server** folder containing the node/express server application JavaScript.
 
 You can view, edit, and run the code in this project using the tools of your choice.
 
-<p class="note">The sample assumes that you've installed <strong>node.js</strong> and <a href="http://www.mysql.com"
-  target="_blank"><strong>MySql</strong></a></p>
+<p class="note">The sample assumes that you've installed <strong>node.js</strong>, <a href="http://www.mysql.com"
+  target="_blank"><strong>MySql</strong></a> and/or <a href="http://www.postgresql.org"
+  target="_blank"><strong>PostgreSQL</strong></a></p>
 
 ##App Architecture
 
@@ -41,7 +42,7 @@ The entire app is organized in 3 folders that host server-side and client-side c
 
 <p><img alt="" src="/images/samples/Todo-Angular-SequelizeServerStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
 
-<p>The server is written for <a href="http://http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a>, and uses a <a href="http://www.mysql.com/" target="_blank">MySql</a> database.</p>
+<p>The server is written for <a href="http://http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a>, and can be run on a <a href="http://www.mysql.com/" target="_blank">MySql</a> or <a href="http://www.postgresql.org/" target="_blank">PostgreSQL</a> database.</p>
 
 <div style="clear:both; margin-bottom: 20px;"></div>
 
