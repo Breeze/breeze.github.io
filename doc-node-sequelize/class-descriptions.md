@@ -33,10 +33,12 @@ If you are not familiar with *Sequelize* then don't worry, you don't actually ha
       - *dbName*: The name of the database.
       - *user*: The user name to authenticate against the database.
 	  - *password*: The password which is used to authenticate against the database.
-   - *sequelizeOptions* -  as defined in the sequelize documentation here: [http://sequelize.readthedocs.org/en/latest/api/sequelize/](http://sequelize.readthedocs.org/en/latest/api/sequelize/ "Sequelize API").  The most important of which are:
+	  
+     - *sequelizeOptions* -  as defined in the sequelize documentation here: [http://sequelize.readthedocs.org/en/latest/api/sequelize/](http://sequelize.readthedocs.org/en/latest/api/sequelize/ "Sequelize API").  The most important of which are:
       - *dialect*: The dialect you of the database you are connecting to. One of 'mysql', 'postgres', 'sqlite', 'mariadb', or 'mssql'
       - *port*: The port of the relational database.
-> 
+      - *host*: The host of the relational database. The default value is 'localhost'.
+ 
 
 - **importMetadata**(*breezeMetadata*):  Instance method that imports breeze metadata into the manager. This metadata is needed for many of the other operations that the manager performs.
 	- *parameter*: breezeMetadata: This can be any metadata that conforms to the breeze metadata specification and may be in either string or json format. For more information, see [/doc-js/metadata/](/doc-js/metadata/ "Breeze metadata")
