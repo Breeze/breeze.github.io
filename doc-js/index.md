@@ -48,7 +48,7 @@ The **bold** terms are clues to the key components and concepts in Breeze.
 
 The Breeze `EntityManager` is both a gateway to the back-end persistence service and a cache of the entities that you're working on locally.
 
-You ask an `EntityManager` to execute queries and save pending changes. The `EntityManage`r builds the requisite requests and handles the asynchronous communications with the back-end service.
+You ask an `EntityManager` to execute queries and save pending changes. The `EntityManager` builds the requisite requests and handles the asynchronous communications with the back-end service.
 
 The objects queried and saved are entities held in the `EntityManager`'s cache. Entities enter the `EntityManager` cache in several ways: as a result of a query, by adding entities directly to the cache, or perhaps by importing them from another source (a file, another `EntityManager`). Entities leave the cache when you remove them manually and after saving entities marked for deletion. You can query the cache in the same way ... with the same query command object ... that you use to query the remote server.
 
