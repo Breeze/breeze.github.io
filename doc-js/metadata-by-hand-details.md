@@ -544,7 +544,7 @@ Notice that the data property has a `validators` array whose elements are instan
 
 We'll use `addTypeToStore` to complete the process of defining metadata for our model.
 
-> The `addTypeToStore` method and related helper functions are are ** part of core Breeze**. They belong to the Breeze Labs `MetadataHelper` extension defined in <em>breeze.metadata-helper.js</em>. <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.
+> The `addTypeToStore` method and related helper functions are **not part of core Breeze**. They belong to the **Breeze Labs `MetadataHelper` extension** defined in <em>breeze.metadata-helper.js</em>. <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.
 
 So far we've created object hashes that describe three entity types - `Category`, `Product`, and `Supplier` - and one complex type, `Location`. Let's turn those hashes into Breeze types and add them to the `MetadataStore` using the `addTypeToStore` helper.
 
