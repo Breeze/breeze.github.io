@@ -15,7 +15,7 @@ You can get the latest build of BreezeJS from [github](https://github.com/Breeze
 
 BreezeJS requires 3rd-party libraries for its [promise](https://www.promisejs.org/) implementation and for its AJAX implementation.
 
-##### If you are using [AngularJS](https://angularjs.org/)
+#### If you are using [AngularJS](https://angularjs.org/)
 Get [breeze.bridge.angular.js](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.bridge.angular.js).  This sets up Breeze to use Angular's $q for promises, and $http for AJAX.  In your index.html you should have, in order:
 
     <script src="Scripts/angular.js"></script>
@@ -24,7 +24,7 @@ Get [breeze.bridge.angular.js](https://raw.githubusercontent.com/Breeze/breeze.j
 
 See the [Todo-Angular-Hibernate](/doc-samples/todo-angular-hibernate.html) sample for an example Breeze+Angular application.
 
-##### If you are using [KnockoutJS](http://knockoutjs.com/)
+#### If you are using [KnockoutJS](http://knockoutjs.com/)
 Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://jquery.com/) (for AJAX).  You will also need the [KO model libary](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.modelLibrary.ko.js) for change tracking between Knockout and Breeze.  In your `index.html` you should have, in order:
 
     <script src="Scripts/jquery.min.js"></script>
@@ -33,7 +33,7 @@ Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://j
     <script src="Scripts/breeze.debug.js"></script>
     <script src="Scripts/breeze.modelLibrary.ko.js"></script>
 
-##### If you are using [BackboneJS](http://backbonejs.org/)
+#### If you are using [BackboneJS](http://backbonejs.org/)
 Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://jquery.com/) (for AJAX).  You will also need the [Backbone model libary](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.modelLibrary.backbone.js) for change tracking between Backbone and Breeze.  In your `index.html` you should have, in order:
 
     <script src="Scripts/jquery.min.js"></script>
@@ -43,6 +43,15 @@ Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://j
     <script src="Scripts/breeze.debug.js"></script>
     <script src="Scripts/breeze.modelLibrary.backbone.js"></script>
 
+### Configuring the Client
+
+There are two different URI formats that the Breeze client can use to send queries to the server: [OData](http://www.odata.org/documentation/odata-version-3-0/url-conventions/#url5) and [JSON](http://breeze.github.io/doc-js/query-using-json.html).  
+
+The Breeze Java Server only understands the JSON format, so you'll need to configure the client:
+
+    breeze.core.config.initializeAdapterInstance("uriBuilder", "json");
+
+  
 
 ## Downloading Breeze - Java Server
 
