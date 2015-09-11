@@ -60,7 +60,7 @@ var manager = new breeze.EntityManager({
 <p>To use &quot;save queuing&quot; do the following:</p>
 <ol>
 	<li>
-		Acquire the<em> breeze.savequeuing.js </em>plugin (e.g., from the <a href="/doc-samples/nodb" target="_blank">NoDb sample</a>).</li>
+        Acquire the<em> breeze.savequeuing.js </em>plugin (e.g., from <a href="https://github.com/Breeze/breeze.js.labs/blob/master/breeze.savequeuing.js" target="_blank">Github</a>).</li>
 	<li>
 		Load it in a script tag just after the BreezeJS script tag.</li>
 	<li>
