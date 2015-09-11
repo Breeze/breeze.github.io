@@ -27,7 +27,7 @@ This page is not ready for publication. It will cover:
 
 - Default and explicit `SaveOptions`
 
-- [Guard against accidental double saves](/doc-cs/concurrent-saves)
+- [Guard against accidental double saves](/doc-cool-breezes/concurrent-saves)
 
 - Saving a change-set to a specific server endpoint with a "[named save](#NamedSave)"
 

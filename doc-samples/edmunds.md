@@ -13,7 +13,7 @@ redirect_from: "/old/samples/edmunds.html"
 	</tbody>
 </table>
 
-<p>BreezeJS is a pure JavaScript library that can manage data from <em>any HTTP source</em>. This sample application reads the &quot;Make&quot; and &quot;Model&quot; data from the <a href="http://developer.edmunds.com/docs" target="_blank"><strong>Edmunds.com Vehicle Information service</strong></a> and translates those data into Breeze entities.</p>
+<p>BreezeJS is a pure JavaScript library that can manage data from <em>any HTTP source</em>. This sample application reads the &quot;Make&quot; and &quot;Model&quot; data from the <a href="http://developer.edmunds.com/" target="_blank"><strong>Edmunds.com Vehicle Information service</strong></a> and translates those data into Breeze entities.</p>
 
 <ul>
 	<li>no ASP.NET</li>
@@ -46,7 +46,7 @@ redirect_from: "/old/samples/edmunds.html"
 
 <p>Locate the <em>index.html</em> file. Double-click it. The app loads in your default browser.</p>
 
-<p>The app presents a list of automobile &quot;Makes&quot; returned by a request to the <a href="http://developer.edmunds.com/docs">Edmunds.com Vehicle Information service</a> API.</p>
+<p>The app presents a list of automobile &quot;Makes&quot; returned by a request to the <a href="http://developer.edmunds.com/">Edmunds.com Vehicle Information service</a> API.</p>
 
 <p>Click a checkbox next to a &quot;Make&quot;, and the application fetches the related &quot;Model&quot; information from the Edmunds model service. In the following image, the app displays the &quot;Aston Martin&quot; models, their names, sizes, and styles.</p>
 
@@ -226,7 +226,7 @@ breeze.config.initializeAdapterInstance(
     &quot;modelLibrary&quot;, &quot;backingStore&quot;, true);
 </pre>
 
-<p>The Edmunds Vehicle Information service is a 3rd party service. That service defines its <a href="http://developer.edmunds.com/docs" title="Edmunds Developer API">own proprietary API</a> over which we have no control. It won&#39;t send us metadata. It will send us data in a non-standard, proprietary JSON format.</p>
+<p>The Edmunds Vehicle Information service is a 3rd party service. That service defines its <a href="http://developer.edmunds.com/" title="Edmunds Developer API">own proprietary API</a> over which we have no control. It won&#39;t send us metadata. It will send us data in a non-standard, proprietary JSON format.</p>
 
 <p>We can&#39;t change the service. We can&#39;t make it adapt to Breeze. We have to adapt to it.</p>
 
@@ -292,7 +292,7 @@ var parameters = {
 
 <p>The format of the JSON payload from the Edmunds service is proprietary and idiosyncratic.</p>
 
-<p>The author of this sample read the definitions for each service response (e.g, the <a href="http://developer.edmunds.com/docs/read/the_vehicle_api/Make_Repository" target="_blank">&quot;Make_Repository&quot; response</a>) on the Edmunds website and translated that information into a <span class="codeword">JsonResultsAdapter</span>. That adapter guides Breeze as it &quot;materializes&quot; <span class="codeword">Make</span> and <span class="codeword">Model</span> entities from Edmunds JSON response data.</p>
+<p>The author of this sample read the definitions for each service response (e.g, the <a href="http://developer.edmunds.com/api-documentation/vehicle/spec_make/v1/" target="_blank">&quot;Make_Repository&quot; response</a>) on the Edmunds website and translated that information into a <span class="codeword">JsonResultsAdapter</span>. That adapter guides Breeze as it &quot;materializes&quot; <span class="codeword">Make</span> and <span class="codeword">Model</span> entities from Edmunds JSON response data.</p>
 
 <p>If this application were more complicated, involving a rich entity model and many different service calls, we&#39;d probably want to write more than one <span class="codeword">JsonResultsAdapter</span> ... perhaps one for each Edmunds service endpoint. But this app is very simple; we can get away with just one <span class="codeword">JsonResultsAdapter</span> for all entity types and service calls.</p>
 
@@ -352,7 +352,7 @@ return { entityType: &quot;Model&quot; };
 
 <p>Of course you&#39;ll need a good network connection to reach the Edmunds service. The Edmunds service is pretty reliable but occasionally fails to respond properly. You&#39;ll see a red error toast when that happens. The app is too simple to auto-recover; simply trying the operation again is usually sufficient.</p>
 
-<p>Edmunds throttles requests, limiting each API key to 4,000 requests daily. In the unlikely event that sample users exceed this threshold, you can <a href="http://developer.edmunds.com/apps/register" title="Get your own Edmunds API key">get your own key from Edmunds</a> and replace the one baked into the sample in the <em>datacontext.js</em>.</p>
+<p>Edmunds throttles requests, limiting each API key to 4,000 requests daily. In the unlikely event that sample users exceed this threshold, you can <a href="http://edmunds.mashery.com/member/register/" title="Get your own Edmunds API key">get your own key from Edmunds</a> and replace the one baked into the sample in the <em>datacontext.js</em>.</p>
 
 <h2>Wrap up</h2>
 

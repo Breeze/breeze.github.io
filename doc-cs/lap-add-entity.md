@@ -79,7 +79,7 @@ var todoType = manager.metadataStore.getEntityType(&quot;TodoItem&quot;);</pre>
 	<li>
 		a Breeze entityAspect property for access to the breezy entity-ness inside.</li>
 </ul>
-<p>We&rsquo;ll look at the properties first and examine the <span class="codeword">entityAspect</span> later when we take up <a href="/docs-cs/lap-change-tracking">Breeze change tracking</a>.</p>
+<p>We&rsquo;ll look at the properties first and examine the <span class="codeword">entityAspect</span> later when we take up <a href="/doc-cs/lap-change-tracking">Breeze change tracking</a>.</p>
 <h2>
 	Property generation</h2>
 <p>The <span class="codeword">createEntity</span> call builds a new entity instance based on metadata. The metadata are typically downloaded from the server. That&#39;s the easy approach adopted by the Todo Application. But it&#39;s not the only approach. You can define your own entity class or take a hybird approach and add properties of your own to the generated entity that the server knows nothing abou (you can learn about that in the <a href="/doc-cs/metadata">&quot;Metadata&quot; topic</a>) &hellip; but it&rsquo;s important to understand right away that you are always in command of of your entity definitions because you control the metadata that describe them.</p>

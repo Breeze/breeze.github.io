@@ -110,7 +110,7 @@ The [breeze-webserver](https://github.com/Breeze/breeze.server.java) library imp
 
 The [breeze-hibernate](https://github.com/Breeze/breeze.server.java) library implements classes to perform the server-side data manipulation with Hibernate.
 
-- Generates [Breeze metadata](http://doc-js/metadata.html) from Hibernate mappings
+- Generates [Breeze metadata](/doc-js/metadata.html) from Hibernate mappings
 - Parses breeze client EntityQuery instances encoded as JSON into [Criteria](http://docs.jboss.org/hibernate/core/3.6/javadocs/org/hibernate/Criteria.html) queries
 - Executes these queries using Hibernate Sessions
 - Expands graphs of related entites using lazy loading.

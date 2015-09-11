@@ -185,7 +185,7 @@ A second service is implemented with the Web API `NorthwindController`. It also 
 
 *Northwind* stores data for the fictional "Northwind" company whose seven employees sell a variety of strangely named food products to some 90+ customers. The database holds orders placed with those customers. Each order has associated order line items called "OrderDetails".
 
->The Northwind database referenced by this test suite is IdeaBlade's slightly altered version of the well-known <a href="http://www.sqltutorial.org/sqlsampledatabase.aspx" target="_blank">Northwind sample database</a> from Microsoft.
+>The Northwind database referenced by this test suite is IdeaBlade's slightly altered version of the well-known <a href="https://northwinddatabase.codeplex.com/" target="_blank">Northwind sample database</a> from Microsoft.
 >
 >This is a  SQL CE database located at *App_Data/NorthwindIB.sdf*. Get the latest Visual Studio tools for SQL CE from <a href="http://sqlcetoolbox.codeplex.com/" target="_blank">here</a> and  <a href="https://visualstudiogallery.msdn.microsoft.com/0e313dfd-be80-4afb-b5e9-6e74d369f7a1/" target="_blank">here</a>. 
 

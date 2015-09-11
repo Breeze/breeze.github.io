@@ -19,7 +19,7 @@ To use this directive in your app, all you do is:
 
 And if there is an error, it displays like this:
 
-<img alt="zValidate error message" src="/sites/default/files/images/z-validate-firstNameRequiredError.png" style="width: 100%; max-width: 726px;" />
+<img alt="zValidate error message" src="/images/samples/z-validate-firstNameRequiredError.png" style="width: 100%; max-width: 726px;" />
 
 ##Breeze validation
 

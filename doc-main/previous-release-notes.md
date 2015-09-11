@@ -80,7 +80,7 @@ layout: doc-main
 <h4>Features</h4>
 
 <ul>
-	<li>Added new <a href="/samples/temphire-sample">TempHire sample</a>.</li>
+	<li>Added new <a href="/doc-samples/temp-hire">TempHire sample</a>.</li>
 </ul>
 
 <h4>Bug fixes</h4>
@@ -160,7 +160,7 @@ public EntityInfo CreateEntityInfo(Object entity, EntityState entityState = Enti
 	<p><strong>OData Write/Save Support</strong> - Calling <em>EntityManager.saveChanges</em> now performs the appropriate OData Multipart MIME POST, MERGE, and DELETE operations. (Previously, only OData read operations were supported).</p>
 
 	<ul>
-		<li>This feature requires that the OData service support OData batch operations. See <a href="http://www.odata.org/documentation/odata-v2-documentation/batch-processing/">http://www.odata.org/documentation/odata-v2-documentation/batch-processing/</a>. Currently Microsoft&#39;s WCF Data Services do support batch operations but the new ASP.NET MVC4 Web API OData library does NOT... (although they say it&#39;s coming).</li>
+		<li>This feature requires that the OData service support OData batch operations. See <a href="http://www.odata.org/documentation/odata-version-2-0/batch-processing/">http://www.odata.org/documentation/odata-version-2-0/batch-processing/</a>. Currently Microsoft&#39;s WCF Data Services do support batch operations but the new ASP.NET MVC4 Web API OData library does NOT... (although they say it&#39;s coming).</li>
 	</ul>
 	</li>
 </ul>

@@ -42,7 +42,7 @@ redirect_from: "/old/samples/car-bones.html"
 
 <h2>Inside the app</h2>
 
-<p><strong>Car Bones </strong>began as an empty MVC4 project. With NuGet, we added the usual <strong>jQuery</strong>, <strong>Modernizr</strong>, <strong>EntityFramework SQL Server CE</strong>, and the base Breeze package, &quot;<strong>Breeze.MVC4WebApi</strong>&quot;. Then we added the <strong>backbone.js</strong> the NuGet package which adds the dependent <a href="http://documentcloud.github.com/underscore/" target="_blank"><strong>underscore.js</strong></a> package. Then we dragged in a copy of the <a href="https://github.com/NYTimes/backbone.stickit" target="_blank">backbone.stickit.js</a>, a model-view binding plugin for backbone. We&#39;ll <a href="#DataBindingWithStickit">explain stickit below</a>.</p>
+<p><strong>Car Bones </strong>began as an empty MVC4 project. With NuGet, we added the usual <strong>jQuery</strong>, <strong>Modernizr</strong>, <strong>EntityFramework SQL Server CE</strong>, and the base Breeze package, &quot;<strong>Breeze.MVC4WebApi</strong>&quot;. Then we added the <strong>backbone.js</strong> the NuGet package which adds the dependent <a href="http://underscorejs.org/" target="_blank"><strong>underscore.js</strong></a> package. Then we dragged in a copy of the <a href="https://github.com/NYTimes/backbone.stickit" target="_blank">backbone.stickit.js</a>, a model-view binding plugin for backbone. We&#39;ll <a href="#DataBindingWithStickit">explain stickit below</a>.</p>
 
 <h3>Server</h3>
 

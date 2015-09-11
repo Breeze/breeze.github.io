@@ -37,7 +37,7 @@ Patrick started this sample to help those looking for help on using Breeze.js wi
 
 ## Technologies
 
-In an effort to see how quickly Patrick could create a working sample, he used the <a href="http://durandaljs.com/pages/downloads" target="_blank">Durandal.js Starter Kit</a> project.  By starting with this kit he was able to add Breeze.js and get the sample up and running in Visual Studio 2012 in about 10 minutes, as opposed to starting with a blank project, stripping it, setting up views and routes, and everything else that can take additional time.
+In an effort to see how quickly Patrick could create a working sample, he used the <a href="http://durandaljs.com/downloads.html" target="_blank">Durandal.js Starter Kit</a> project.  By starting with this kit he was able to add Breeze.js and get the sample up and running in Visual Studio 2012 in about 10 minutes, as opposed to starting with a blank project, stripping it, setting up views and routes, and everything else that can take additional time.
 
 Key functions in this application include datacontext.js, model.js, and jsonResultsAdapter.js files.  
 

@@ -387,7 +387,7 @@ Typically, you define a custom validator, get the metadata from the server (impl
 
 But there is a special case. When you get your metadata from a local serialized source rather than the server, you must take one more step: you must register that validator with Breeze.
 
-For example, suppose you designed your application to load entities from local storage when it starts. In the previous session you exported the entity cache and stowed the serialized cache data to browser local storage (see [Export/Import](/doc-csn/export-import)). Now when you start a new session, your app restores the cache and you pick up where you left off ... without having to hit the server. Pretty cool!
+For example, suppose you designed your application to load entities from local storage when it starts. In the previous session you exported the entity cache and stowed the serialized cache data to browser local storage (see [Export/Import](/doc-cs/export-import)). Now when you start a new session, your app restores the cache and you pick up where you left off ... without having to hit the server. Pretty cool!
 
 Unfortunately, the app throws an exception when it loads the locally stored data. The exception complains about an unknown, unregistered validation rule ... perhaps that custom ***ZipCodeValidator*** we just created. What happened?
 

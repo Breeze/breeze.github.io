@@ -109,7 +109,7 @@ The backbone developer must choose this adapter explicitly by executing the foll
 
 The Model Library Adapter plays an important part in creating an entity object. Clearly, if a model library requires specialized functions to access and mutate entity values, Breeze must add those functions to the model object. But there is plenty more to do even if the model library gets and sets data properties directly.
 
-A Breeze entity object is more than its data values. It has navigation properties to reach related entities. It has an [`entityAspect`](/doc-js/inside-entity.html/#entityaspect) that encapsulates certain "entity-ness" features of the object related to persistence and validation. 
+A Breeze entity object is more than its data values. It has navigation properties to reach related entities. It has an [`entityAspect`](/doc-js/inside-entity.html#entityaspect) that encapsulates certain "entity-ness" features of the object related to persistence and validation. 
 
 And a Breeze entity monitors property-level changes. The data and navigation properties identified in [metadata](/doc-js/metadata) are "tracked" which means Breeze detects when you change a property value and takes one or more actions such as:
 

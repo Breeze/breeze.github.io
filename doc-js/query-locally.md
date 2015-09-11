@@ -40,7 +40,7 @@ The <a href="/doc-js/api-docs/classes/EntityQuery.html#method_executeLocally" ta
 The following methods aren't really queries. They just get entities from the cache directly. They all begin with the *get...* prefix.
 
 - <a href="/doc-js/api-docs/classes/EntityManager.html#method_getChanges" target="_blank">`getChanges([entityTypes])`</a>
-- <a href="/doc-js/api-docs/classes/ntityManager.html#method_getEntities" target="_blank">`getEntities([entityTypes],[entityState])`</a>
+- <a href="/doc-js/api-docs/classes/EntityManager.html#method_getEntities" target="_blank">`getEntities([entityTypes],[entityState])`</a>
 - <a href="/doc-js/api-docs/classes/EntityManager.html#method_getEntityByKey" target="_blank">`getEntityByKey(entityKey)`</a>
 
 ### getChanges

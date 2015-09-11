@@ -8,8 +8,8 @@ Northbreeze is a  simple data-entry demo application that uses the Northwind dat
 
 #Client side
 - [Breeze](http://breezejs.com) data retrieval, validation, change tracking, transactional saves
-- [Angular](http://angularjs.com) JavaScript framework
-- [AngularUI Grid](http://angular-ui.github.io/ng-grid/) with paging
+- [Angular](http://angularjs.org) JavaScript framework
+- [AngularUI Grid](http://ui-grid.info/) with paging
 - [Twitter Bootstrap](http://getbootstrap.com/2.3.2/) styling
 
 NorthBreeze uses an Angular custom directive to apply Bootstrap styles to show validation errors detected by Breeze.
@@ -17,7 +17,7 @@ NorthBreeze uses an Angular custom directive to apply Bootstrap styles to show v
 #Server side
 - Breeze HTTP filters and persistence context
 - ASP.NET [Web API](http://www.asp.net/web-api)
-- [NHibernate](http://nhforge.org/)
+- [NHibernate](http://nhibernate.info/)
 - Northwind data model
 
 NorthBreeze uses metadata provided by NHibernate on the server to control validation on the client.  It saves changes through NHibernate by updating the server-side entity model and persisting it to the database.  It supports OData queries using NHibernate's IQueryable implementation.

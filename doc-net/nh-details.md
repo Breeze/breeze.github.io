@@ -12,7 +12,7 @@ Our [first NHibernate sample](/doc-samples/north-breeze) is available now. Pleas
 
 - **Metadata**
 
-	[Metadata](/doc-js/metadata) generation from the NHibernate model mappings (whether [XML files](http://nhforge.org/doc/nh/en/index.html#mapping), [Fluent](https://github.com/jagregory/fluent-nhibernate/wiki/Getting-started), or [mapping-by-code](http://notherdev.blogspot.com/2012/02/nhibernates-mapping-by-code-summary.html)).
+	[Metadata](/doc-js/metadata) generation from the NHibernate model mappings (whether [XML files](http://nhibernate.info/doc/nh/en/index.html#mapping), [Fluent](https://github.com/jagregory/fluent-nhibernate/wiki/Getting-started), or [mapping-by-code](http://notherdev.blogspot.com/2012/02/nhibernates-mapping-by-code-summary.html)).
 
 - **SaveChanges**
 
@@ -45,7 +45,7 @@ The following instructions assume you're using Visual Studio 2012. Please look a
 
 1. Add another project to your solution for your domain model and NHibernate mappings, and add a reference from your web project.  (See the [Limitations](#limitations) section for more about mappings)
 
-1. In your web project's **web.config** file, add your [NHibernate configuration section](http://bradhe.wordpress.com/2010/06/22/migrating-nhibernate-configuration-in-to-web-config/) and connectionStrings. You can use [another way to configure NHibernate](http://nhforge.org/blogs/nhibernate/archive/2009/07/17/nhibernate-configuration.aspx) if you choose. 
+1. In your web project's **web.config** file, add your [NHibernate configuration section](http://bradhe.wordpress.com/2010/06/22/migrating-nhibernate-configuration-in-to-web-config/) and connectionStrings. You can use [another way to configure NHibernate](http://nhibernate.info/blog/2009/07/17/nhibernate-configuration.html) if you choose. 
 
 1. Add a class to configure your NHibernate model and build the SessionFactory. Here's a simple static example:
 
