@@ -29,11 +29,11 @@ If you are not familiar with *Sequelize* then don't worry, you don't actually ha
 ### Sequelize manager methods:
 
 - **SequelizeManager**(*dbConfig*, *sequelizeOptions*): (class constructor)
-     -  *dbConfig* - the configuration object that consists of the following properties:
+   -  *dbConfig* - the configuration object that consists of the following properties:
       - *dbName*: The name of the database.
       - *user*: The user name to authenticate against the database.
-	  - *password*: The password which is used to authenticate against the database.
-   - *sequelizeOptions* -  as defined in the sequelize documentation here: [http://sequelize.readthedocs.org/en/latest/api/sequelize/](http://sequelize.readthedocs.org/en/latest/api/sequelize/ "Sequelize API").  The most important of which are:
+      - *password*: The password which is used to authenticate against the database.
+   - *sequelizeOptions* -  as defined in the [sequelize documentation](http://docs.sequelizejs.com/en/latest/api/sequelize/). The most important of which are:
       - *dialect*: The dialect you of the database you are connecting to. One of 'mysql', 'postgres', 'sqlite', 'mariadb', or 'mssql'
       - *port*: The port of the relational database.
  
