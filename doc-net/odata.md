@@ -26,7 +26,7 @@ However, Microsoft seem to have <a href="http://blogs.msdn.com/b/odatateam/archi
 
 This is an evolving platform with numerous peculiarities. It has yet to fully comply with the OData standards. There are worrisome implementation decisions that will affect your application design. Read on and proceed with caution.
 
->We highly recommend Brian Noyes' <a href="http://briannoyes.net/2013/02/16/ConsumingAnASPNETWebAPIODataServiceWithBreeze.aspx" target="_blank">brilliant **blog post with step-by-step instructions** for building a Breeze/Web API OData sample</a> which includes a downloadable sample.  We also recommend his Pluralsight course "<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank">**Building ASP.NET Web API OData module, "Consuming OData Services..." module**</a> that demonstrates consuming a Web API OData service with a Breeze client.
+>We highly recommend Brian Noyes' <a href="http://briannoyes.net/consuming-an-asp-net-web-api-odata-service-with-breeze/" target="_blank">brilliant **blog post with step-by-step instructions** for building a Breeze/Web API OData sample</a> which includes a downloadable sample.  We also recommend his Pluralsight course "<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank">**Building ASP.NET Web API OData module, "Consuming OData Services..." module**</a> that demonstrates consuming a Web API OData service with a Breeze client.
 
 ## Web API OData v.3 or v.4
 
