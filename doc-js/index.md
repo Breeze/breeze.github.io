@@ -163,4 +163,3 @@ But it bears repeating: Breeze client is in no way limited to these particular t
 ## What's next?
 
 You now have the big picture. Take a look at Breeze <a href="/doc-js/features.html">Features</a> or run the <a href="http://learn.breezejs.com" target="_blank">Online Tutorial</a>.
-You now have the big picture. Take a look at Breeze <a href="/doc-js/features.html">Features</a> or run the <a href="http://learn.breezejs.com" target="_blank">Online Tutorial</a>.

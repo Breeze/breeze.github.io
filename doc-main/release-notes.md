@@ -5,6 +5,8 @@ layout: doc-main
 
 These are the release notes for the current **1.5.x** and 1.4.x releases.
 
+#### For releases after 2015, please see the separate release notes pages for each technology.
+
 Prior <a href="/doc-main/previous-release-notes" target="_blank">release notes</a> are also available.
 
 ##1.5.x
@@ -22,6 +24,8 @@ See: <a href="/doc-node-sequelize/"> breeze-sequelize package</a>
 * [MongoDB integration](#140)
 * [NHibernate support](/doc-net/nh.html) with an [NHibernate sample](/doc-samples/north-breeze.html)
 * Support for OData V3, Visual Studio 2013, ASP.NET Web API 2.1, and Entity Framework 6
+
+#### For releases after 2015, please see the separate release notes page for each technology.
 
 ###<a name="154"></a>1.5.4 <span class="doc-date">May 5, 2015</span>###
 

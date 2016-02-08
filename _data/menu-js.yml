@@ -1,7 +1,8 @@
 title: JavaScript client
 shorttitle: JS
 menuitems:
-  - { link: download.html, title: Download }
+  - { link: download.html, title: Download, isparent: true }
+  - { link: release-notes.html, title: Release Notes, ischild: true }
   - { link: features.html, title: Features }
   - { link: prerequisites.html, title: Prerequisites }
   - { link: lap-around-breeze.html, title: A lap around Breeze, isparent: true }
