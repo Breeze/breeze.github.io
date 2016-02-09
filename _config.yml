@@ -1,8 +1,9 @@
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 
-redcarpet:
-  extensions: ['tables', 'autolink', 'no_intra_emphasis', 'with_toc_data', 'strikethrough']
+kramdown:
+   input: GFM
+   hard_wrap: false
 
 url: http://breeze.github.io
 

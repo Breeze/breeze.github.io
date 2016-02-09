@@ -19,7 +19,15 @@ Here's a quick lookup table:
 */
 
 html {
-
+  /* commenting out until beta goes live
+   background: url(http://www.breezejs.com/sites/all/themes/breeze/images/main-background.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+	*/
+	
 	background: url(http://breeze.github.io/images/bodybackground.png) repeat-x; 
 	background-color: #f1f1f1;
 	}

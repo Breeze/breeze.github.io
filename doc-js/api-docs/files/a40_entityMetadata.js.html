@@ -145,15 +145,15 @@
             
                 <li><a href="../classes/Validator.html">Validator</a></li>
             
-                <li><a href="../classes/~ajax_interface.html">~ajax_interface</a></li>
+                <li><a href="../classes/{ajax_interface}.html">{ajax_interface}</a></li>
             
-                <li><a href="../classes/~complexArray.html">~complexArray</a></li>
+                <li><a href="../classes/{complexArray}.html">{complexArray}</a></li>
             
-                <li><a href="../classes/~keyGenerator_interface.html">~keyGenerator_interface</a></li>
+                <li><a href="../classes/{keyGenerator_interface}.html">{keyGenerator_interface}</a></li>
             
-                <li><a href="../classes/~primitiveArray.html">~primitiveArray</a></li>
+                <li><a href="../classes/{primitiveArray}.html">{primitiveArray}</a></li>
             
-                <li><a href="../classes/~relationArray.html">~relationArray</a></li>
+                <li><a href="../classes/{relationArray}.html">{relationArray}</a></li>
             
             </ul>
 
@@ -482,7 +482,7 @@ var MetadataStore = (function () {
     var json = (typeof (exportedMetadata) === &quot;string&quot;) ? JSON.parse(exportedMetadata) : exportedMetadata;
 
     if (json.schema) {
-      return CsdlMetadataParser.parse(this, json.schema, json.altMetadata, json.format);
+      return CsdlMetadataParser.parse(this, json.schema, json.altMetadata);
     }
 
     if (json.metadataVersion &amp;&amp; json.metadataVersion !== breeze.metadataVersion) {
@@ -677,13 +677,13 @@ var MetadataStore = (function () {
       // any queries or EntityType.create calls from this point on will call the Customer constructor
       // registered above.
   @method registerEntityTypeCtor
-  @param structuralTypeName {String} The name of the EntityType o0r ComplexType.
+  @param structuralTypeName {String} The name of the EntityType or ComplexType.
   @param aCtor {Function}  The constructor for this EntityType or ComplexType; may be null if all you want to do is set the next parameter.
   @param [initFn] {Function} A function or the name of a function on the entity that is to be executed immediately after the entity has been created
   and populated with any initial values.
   initFn(entity)
   @param initFn.entity {Entity} The entity being created or materialized.
-  @param [noTrackingFn} {Function} A function that is executed immediately after a noTracking entity has been created and whose return
+  @param [noTrackingFn] {Function} A function that is executed immediately after a noTracking entity has been created and whose return
   value will be used in place of the noTracking entity.
   @param noTrackingFn.entity {Object}
   @param noTrackingFn.entityType {EntityType} The entityType that the &#x27;entity&#x27; parameter would be if we were tracking
@@ -957,11 +957,11 @@ var MetadataStore = (function () {
 
 var CsdlMetadataParser = (function () {
 
-  var _isOData4;
-  function parse(metadataStore, schemas, altMetadata, metadataFormat) {
-    _isOData4 = metadataFormat &amp;&amp; metadataFormat.indexOf(&quot;OData4&quot;)&gt;=0;
+  function parse(metadataStore, schemas, altMetadata) {
+
     metadataStore._entityTypeResourceMap = {};
-    __toArray(schemas).forEach(function (schema) {
+    schemas = __toArray(schemas);
+    schemas.forEach(function (schema) {
       if (schema.cSpaceOSpaceMapping) {
         // Web api only - not avail in OData.
         var mappings = JSON.parse(schema.cSpaceOSpaceMapping);
@@ -990,7 +990,7 @@ var CsdlMetadataParser = (function () {
       }
       if (schema.entityType) {
         __toArray(schema.entityType).forEach(function (et) {
-          var entityType = parseCsdlEntityType(et, schema, metadataStore);
+          var entityType = parseCsdlEntityType(et, schema, schemas, metadataStore);
 
         });
       }
@@ -998,8 +998,13 @@ var CsdlMetadataParser = (function () {
     });
     var badNavProps = metadataStore.getIncompleteNavigationProperties();
     if (badNavProps.length &gt; 0) {
-      var msg = badNavProps.map(function (np) {
-        return np.parentType.name + &quot;:&quot; + np.name;
+      var msg = badNavProps.map(function(npa) {
+        if (Array.isArray(npa)) {
+          return npa.map(function(np) {
+            return np.parentType.name + &quot;:&quot; + np.name;
+          }).join(&#x27;, &#x27;);
+        }
+        return npa.parentType.name + &quot;:&quot; + npa.name;
       }).join(&#x27;, &#x27;);
       throw new Error(&quot;Incomplete navigation properties: &quot; + msg);
     }
@@ -1008,10 +1013,8 @@ var CsdlMetadataParser = (function () {
     }
     return metadataStore;
   }
-  
-  
 
-  function parseCsdlEntityType(csdlEntityType, schema, metadataStore) {
+  function parseCsdlEntityType(csdlEntityType, schema, schemas, metadataStore) {
     var shortName = csdlEntityType.name;
     var ns = getNamespaceFor(shortName, schema);
     var entityType = new EntityType({
@@ -1024,7 +1027,7 @@ var CsdlMetadataParser = (function () {
       entityType.baseTypeName = baseTypeName;
       var baseEntityType = metadataStore._getEntityType(baseTypeName, true);
       if (baseEntityType) {
-        completeParseCsdlEntityType(entityType, csdlEntityType, schema, metadataStore);
+        completeParseCsdlEntityType(entityType, csdlEntityType, schema, schemas, metadataStore);
       } else {
         var deferrals = metadataStore._deferredTypes[baseTypeName];
         if (!deferrals) {
@@ -1034,27 +1037,22 @@ var CsdlMetadataParser = (function () {
         deferrals.push({ entityType: entityType, csdlEntityType: csdlEntityType });
       }
     } else {
-      completeParseCsdlEntityType(entityType, csdlEntityType, schema, metadataStore);
+      completeParseCsdlEntityType(entityType, csdlEntityType, schema, schemas, metadataStore);
     }
     // entityType may or may not have been added to the metadataStore at this point.
     return entityType;
 
   }
 
-  function completeParseCsdlEntityType(entityType, csdlEntityType, schema, metadataStore) {
-    var keyNamesOnServer = [];
-    var key = csdlEntityType.key;
-    if (key) {
-      var propRefs = _isOData4 ? key[0].propertyRef : __toArray(key.propertyRef);
-      keyNamesOnServer = propRefs.map(__pluck(&quot;name&quot;));
-    }
+  function completeParseCsdlEntityType(entityType, csdlEntityType, schema, schemas, metadataStore) {
+    var keyNamesOnServer = csdlEntityType.key ? __toArray(csdlEntityType.key.propertyRef).map(__pluck(&quot;name&quot;)) : [];
 
     __toArray(csdlEntityType.property).forEach(function (prop) {
       parseCsdlDataProperty(entityType, prop, schema, keyNamesOnServer);
     });
 
     __toArray(csdlEntityType.navigationProperty).forEach(function (prop) {
-      parseCsdlNavProperty(entityType, prop, schema);
+      parseCsdlNavProperty(entityType, prop, schema, schemas);
     });
 
     metadataStore.addEntityType(entityType);
@@ -1064,7 +1062,7 @@ var CsdlMetadataParser = (function () {
     var deferrals = deferredTypes[entityType.name];
     if (deferrals) {
       deferrals.forEach(function (d) {
-        completeParseCsdlEntityType(d.entityType, d.csdlEntityType, schema, metadataStore);
+        completeParseCsdlEntityType(d.entityType, d.csdlEntityType, schema, schemas, metadataStore);
       });
       delete deferredTypes[entityType.name];
     }
@@ -1162,61 +1160,52 @@ var CsdlMetadataParser = (function () {
 
     return dp;
   }
-  
-  function parseCsdlNavProperty(entityType, csdlProperty, schema) {
-    var cfg = {
-      nameOnServer: csdlProperty.name
+
+  function parseCsdlNavProperty(entityType, csdlProperty, schema, schemas) {
+    var association = getAssociation(csdlProperty, schema, schemas);
+    if (!association) {
+      throw new Error(&quot;Unable to resolve Foreign Key Association: &quot; + csdlProperty.relationship);
     }
-    if (_isOData4) {
-      var typeName = csdlProperty.type;
-      cfg.isScalar = typeName.indexOf(&quot;Collection&quot;) == -1;
-      typeName = cfg.isScalar ? typeName : typeName.substr(10, typeName.length - 11); 
-      
-      cfg.entityTypeName = parseTypeName(typeName).typeName;
-      var refConstraint = csdlProperty.referentialConstraint;
-      if (refConstraint) {
-        cfg.foreignKeyNamesOnServer = refConstraint.map(__pluck(&quot;name&quot;));
+    var toEnd = __arrayFirst(association.end, function (assocEnd) {
+      return assocEnd.role === csdlProperty.toRole;
+    });
+
+    var isScalar = toEnd.multiplicity !== &quot;*&quot;;
+    var dataType = parseTypeNameWithSchema(toEnd.type, schema).typeName;
+
+    var constraint = association.referentialConstraint;
+    if (!constraint) {
+      // TODO: Revisit this later - right now we just ignore many-many and assocs with missing constraints.
+
+      // Think about adding this back later.
+      if (association.end[0].multiplicity == &quot;*&quot; &amp;&amp; association.end[1].multiplicity == &quot;*&quot;) {
+        // ignore many to many relations for now
+        return;
+      } else {
+        // For now assume it will be set later directly on the client.
+        // other alternative is to throw an error:
+        // throw new Error(&quot;Foreign Key Associations must be turned on for this model&quot;);
       }
-//      cfg.associationName
-//      cfg.invForeignKeyNamesOnServer = fkNames;
-//      cfg.foreignKeyNamesOnServer = fkNames;
-    } else {
-      var association = getAssociation(csdlProperty, schema);
-      cfg.associationName = association.name; 
-      var toEnd = __arrayFirst(association.end, function (assocEnd) {
-        return assocEnd.role === csdlProperty.toRole;
-      });
-  
-      cfg.isScalar = toEnd.multiplicity !== &quot;*&quot;;
-      cfg.entityTypeName = parseTypeNameWithSchema(toEnd.type, schema).typeName;
-  
-      var constraint = association.referentialConstraint;
-      if (!constraint) {
-        // TODO: Revisit this later - right now we just ignore many-many and assocs with missing constraints.
-  
-        // Think about adding this back later.
-        if (association.end[0].multiplicity == &quot;*&quot; &amp;&amp; association.end[1].multiplicity == &quot;*&quot;) {
-          // ignore many to many relations for now
-          return;
-        } else {
-          // For now assume it will be set later directly on the client.
-          // other alternative is to throw an error:
-          // throw new Error(&quot;Foreign Key Associations must be turned on for this model&quot;);
-        }
-      }            
-  
-      if (constraint) {
-        var principal = constraint.principal;
-        var dependent = constraint.dependent;
-  
-        var propRefs = __toArray(dependent.propertyRef);
-        var fkNames = propRefs.map(__pluck(&quot;name&quot;));
-        if (csdlProperty.fromRole === principal.role) {
-          cfg.invForeignKeyNamesOnServer = fkNames;
-        } else {
-          // will be used later by np._update
-          cfg.foreignKeyNamesOnServer = fkNames;
-        }
+    }
+
+    var cfg = {
+      nameOnServer: csdlProperty.name,
+      entityTypeName: dataType,
+      isScalar: isScalar,
+      associationName: association.name
+    };
+
+    if (constraint) {
+      var principal = constraint.principal;
+      var dependent = constraint.dependent;
+
+      var propRefs = __toArray(dependent.propertyRef);
+      var fkNames = propRefs.map(__pluck(&quot;name&quot;));
+      if (csdlProperty.fromRole === principal.role) {
+        cfg.invForeignKeyNamesOnServer = fkNames;
+      } else {
+        // will be used later by np._update
+        cfg.foreignKeyNamesOnServer = fkNames;
       }
     }
 
@@ -1308,9 +1297,16 @@ var CsdlMetadataParser = (function () {
   //   match ( associationSet.name == schema.association[].name )
   //      -&gt; association
 
-  function getAssociation(csdlNavProperty, schema) {
-    var assocName = parseTypeNameWithSchema(csdlNavProperty.relationship, schema).shortTypeName;
-    var assocs = schema.association;
+  function getAssociation(csdlNavProperty, containingSchema, schemas) {
+    var assocFullName = parseTypeNameWithSchema(csdlNavProperty.relationship, containingSchema);
+    var assocNamespace = assocFullName.namespace;
+    var assocSchema = __arrayFirst(schemas, function (schema) {
+      return schema.namespace === assocNamespace;
+    });
+    if (!assocSchema) return null;
+    
+    var assocName = assocFullName.shortTypeName;
+    var assocs = assocSchema.association;
     if (!assocs) return null;
     if (!Array.isArray(assocs)) {
       assocs = [assocs];
@@ -1324,7 +1320,7 @@ var CsdlMetadataParser = (function () {
   // schema is only needed for navProperty type name
   function parseTypeNameWithSchema(entityTypeName, schema) {
     var result = parseTypeName(entityTypeName);
-    if (schema) {
+    if (schema &amp;&amp; schema.cSpaceOSpaceMapping) {
       var ns = getNamespaceFor(result.shortTypeName, schema);
       if (ns) {
         result = makeTypeHash(result.shortTypeName, ns);
@@ -2103,7 +2099,7 @@ var EntityType = (function () {
         return coEquals(v1, v2);
       } else {
         var dataType = dp.dataType; // this will be a complexType when dp is a complexProperty
-        return (v1 === v2 || (dataType &amp;&amp; dataType.isDate &amp;&amp; v1 &amp;&amp; v2 &amp;&amp; v1.valueOf() === v2.valueOf()));
+        return (v1 === v2 || (dataType &amp;&amp; dataType.normalize &amp;&amp; v1 &amp;&amp; v2 &amp;&amp; dataType.normalize(v1) === dataType.normalize(v2)));
       }
     });
     return areEqual;
@@ -2865,9 +2861,9 @@ var DataProperty = (function () {
 
   ctor.fromJSON = function (json) {
     json.dataType = DataType.fromName(json.dataType);
-    // dateTime instances require &#x27;extra&#x27; work to deserialize properly.
-    if (json.defaultValue &amp;&amp; json.dataType &amp;&amp; json.dataType.isDate) {
-      json.defaultValue = new Date(Date.parse(json.defaultValue));
+    // Parse default value into correct data type. (dateTime instances require extra work to deserialize properly.)
+    if (json.defaultValue &amp;&amp; json.dataType &amp;&amp; json.dataType.parse) {
+      json.defaultValue = json.dataType.parse(json.defaultValue, typeof json.defaultValue);
     }
 
     if (json.validators) {
