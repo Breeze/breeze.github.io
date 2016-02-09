@@ -285,7 +285,7 @@ Breeze metadata can describe complex documents like the Zza! Order document. Roo
 
 Breeze already supports *scalar* (single valued) complex types for relational databases. Relational databases don't have collection properties. Document databases do. So Breeze supports *arrays* of complex types.
 
-###Schema summary###
+### Schema summary ###
 
 The *OrderStatuses*, *Products*, *ProductOptions*, and *ProductSizes* are relatively static reference data. The application can't change them. Each has a document in its own MongoDB collection.
 

@@ -2,7 +2,7 @@
 layout: doc-samples
 redirect_from: "/old/samples/breeze-webapi-odata.html"
 ---
-#Web API OData and Breeze
+# Web API OData and Breeze
 
 A Breeze application can talk to an ASP.NET Web API 2 OData data service. We show how in this **"BOWA" Web API OData Todo Sample** which you can <a href="/doc-js/download" target="_blank"><strong>download from here</strong></a>.
 
@@ -10,7 +10,7 @@ A Breeze application can talk to an ASP.NET Web API 2 OData data service. We sho
 
 <p class="note">Many thanks to Javier Calvarro Nelson who works on the Microsoft Web API OData team. This sample was Javier's idea, he drove it, and he wrote much of it, most importantly the server-side OData controllers.</p>
 
-#Run the sample
+# Run the sample
 Open in Visual Studio 2013 (It may open in an earlier VS but make sure you're up to the latest because this sample is built for Web API 2 and EF 6).
 
 Build ... let it get its dependent packages from NuGet.  Run without debug (Ctrl-F5) or with debug (F5); make sure VS tells you that it built successfully.
@@ -29,14 +29,14 @@ After making some changes, click "Refresh" to discard them and refresh all data 
 
 Have fun.
 
-#Architecture
+# Architecture
 This sample is a Single Page App" (SPA) within an ASP.NET MVC application. The MVC application was generated from the Visual Studio 2013 "MVC" template with both the "MVC" and "Web API" boxes checked. 
 
 The template scaffolds a web application project with over 30 nuget packages. We updated the "EntityFramework" package to version 6.0.2 and added the "Microsoft.AspNet.WebApi.OData" and "Microsoft.Data.Edm" packages to round out the server-side portfolio.
 
 >We discuss additional client-focused packages below.
 
-#MVC
+# MVC
 **MVC plays no substantive role in this demonstration.** We could have written "BOWA" with no more than a simple *index.html* page. We went the MVC route for two reasons. First, MVC is a comfortable, familiar way to start for many .NET developers. The MVC template gets the ball rolling without surprises. 
 
 Second, many of you have *existing* MVC applications. You probably won't convert them overnight to SPA ... if ever. But one or two Views might be more effective as SPAs and you wonder if it is hard to seamlessly weave SPA pages into your MVC application. This sample proves it's easy.
@@ -75,7 +75,7 @@ These attributes prescribe "required" and "maximum length" validation rules that
 
 We'll soon ask EF to generate metadata about this model. When it does, EF includes these rules in that metadata.  Downstream, Breeze reads the metadata, finds these rules, and applies them on the client. We can give the user immediate feedback about these requirements without writing any code for the purpose ... a point we'll take up at the appropriate time.
 
-#EF DbContext
+# EF DbContext
 
 The Entity Framework `DbContext` is in the *Model* folder as *TodoListContext.cs*. It is simplicity itself:
 
@@ -87,7 +87,7 @@ The Entity Framework `DbContext` is in the *Model* folder as *TodoListContext.cs
 
 >Feel free to mash the sample data. The database initializer re-creates the database every time the server starts.
 
-#Web API OData Controllers
+# Web API OData Controllers
 
 The ASP.NET team recommends a separate Web API `ODataController` for each entity type. You'll find them in the *Controllers* folder as `TodoListsController` and `TodoItemsController`.
 
@@ -127,13 +127,13 @@ Our Breeze client can accomplish all of its appointed query tasks with this sing
 
 > ... returns a JavaScript array with four `TodoItem` entities (but not the parent `TodoList`!). Breeze merged the data for all four into the manager's cache.
 
-###Repositories? Dependency Injection?
+### Repositories? Dependency Injection?
 We discussed it. Some of us wanted them ... badly. These  Web API controller implementations make us cringe. But those who argued that the sample had enough complexity without upping the concept count carried the day.
 
 If these concerns matter to you, we trust that you know how to refactor and that you will cut us some slack. It is a demo.
 
 <a name="WebApiRoute"></a>
-#Web API OData Routing
+# Web API OData Routing
 
 Web API routing directs client requests for data to the proper controller methods. There are several ways to specify those routes. This application does it with global configuration when the server application launches. 
 
@@ -148,7 +148,7 @@ Open the *WebAPIConfig.cs* file in *App_Start* and look for the following code:
 
 `MapODataRoute` configures Web API OData routes. The route specification defines a "routePrefix" for finding Web API controllers and their action methods. It associates the route with an <a href="#BuildEDM">"Entity Data Model" (EDM)</a> that describes the schema for the data model you want to expose on the wire. And it specifies a <a href="#BatchHandler">handler</a> for $batch requests.
 
-##Locating controllers with "routePrefix"
+## Locating controllers with "routePrefix"
 
 A "routePrefix" is a URL path segment that OData expects to see prefixed to the name of the resource of interest. 
 
@@ -161,7 +161,7 @@ The name of the resource is the same as the root name of the targeted OData cont
 The **EDM** is the other side of the route equation ... and we turn to it now.
 
 <a name="BuildEDM"></a>
-##Building the EDM 
+## Building the EDM 
 
 The EDM describes the schema for the model targeted by requests that follow a route. If a client makes a request to the `odata/TodoLists` resource, the route EDM had better describe an `EntitySet` named "TodoLists".
 
@@ -173,7 +173,7 @@ A Breeze client can ask an OData source for metadata.
 
 The OData source satisfies the request by extracting metadata from the route's EDM and forwarding it to the client as XML.
 
-###Don't use *ODataConventionModelBuilder*
+### Don't use *ODataConventionModelBuilder*
 
 The Web API OData literature recommends that you define your EDM using the
 `ODataConventionModelBuilder` as seen in [this Microsoft tutorial](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/creating-an-odata-endpoint). A nice feature of this approach is that you can cherry pick the EntitySets you want to expose to the client. You don't have to send metadata about every set in your `DbContext`.
@@ -184,7 +184,7 @@ Sadly, at this time, the EDM generated by the `ODataConventionModelBuilder` omit
 
 <a name="edmbuilder"></a>
 
-###Use *EdmBuilder*
+### Use *EdmBuilder*
 Fortunately you can build an EDM with  complete metadata using the Breeze Labs **EdmBuilder** class located in the `App_Start` folder.
 
 >You can add it to your own project [with nuget](https://www.nuget.org/packages/Breeze.EdmBuilder/ "EdmBuilder.cs on nuget"): `Install-Package Breeze.EdmBuilder`. You can also [download it from github](https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/EdmBuilder.cs "EdmBuilder.cs on github") and put it in your Web API "App_Start" folder.
@@ -197,7 +197,7 @@ The generated EDM describes every type in your `DbContext`.
 
 <a name="BatchHandler"></a>
 
-##$Batch Handler
+## $Batch Handler
 
 Batching is a Web API feature that allows a developer to pack what would be several API requests one HTTP consolidated request and receive a single HTTP response with embedded responses to the individual requests. Javier Calvarro Nelson wrote a [great post about it](http://aspnetwebstack.codeplex.com/wikipage?title=Web%20API%20Request%20Batching) on the ASP.NET site. 
 
@@ -205,7 +205,7 @@ The "batchHandler" routing parameter is optional for many OData applications. It
 
 >Breeze `saveChanges` does not target the controller save endpoints directly. But the default "$batch" handler, shown in this sample, does re-distribute the sub-requests to these endpoints. As long as you configure the route for the `DefaultBatchHandler`, you must write the controller-level action methods for the save operations you want to support.
 
-#Breeze/Angular Client
+# Breeze/Angular Client
 
 So far we have a vanilla WebApi OData service with batch support. There is no Breeze code on the server ... with the single exception of the `EdmBuilder`, a temporary expedient pending Microsoft's update to its own `ODataConventionModelBuilder`.
 
@@ -215,7 +215,7 @@ We're not going to teach you Angular. You may want to stop and learn about Angul
 
 We're not trying to teach Breeze either. You may want to stop and learn about Breeze elsewhere in the documentation if you lack a basic understanding of  what Breeze is and how it works. The terms "entity" and "EntityManager" should be familiar to you.
 
-###Install 3rd party libraries
+### Install 3rd party libraries
 
 It's time to add Breeze and Angular to the HTML/JavaScript client. You can get everything you need for this sample with these additional NuGet packages:
 
@@ -258,14 +258,14 @@ We're letting ASP.NET bundling load our CSS. In *App_Start/BundleConfig.cs* you'
 
 The *todo.css* and *site.css* are specific to the sample. Examine them at your leisure. 
 
-#Configure Breeze
+# Configure Breeze
 
 We configure Breeze in two steps
 
 1. configure Breeze for Angular
 2. configure Breeze for Web API OData
 
-###Configure for Angular
+### Configure for Angular
 
 The *breeze.angular.js* script defines the "breeze.angular" module. We must list it among the dependencies of our application module when we create that module in <em>app/<strong>app.js</strong></em>:
 
@@ -278,7 +278,7 @@ That step loads the "Breeze Angular" module but doesn't do anything with it yet.
 
 The "opportune" moment is any convenient time before the first call to a Breeze API. In this sample, we know the first component to use Breeze is the `EntityManagerFactory`.
 
-###Configure for Web API OData
+### Configure for Web API OData
 
 Open <em>app/<strong>entityManagerFactory.js</strong></em>. This script defines the service that creates the `EntityManager` for the app, the `EntityManager` that communicates with the OData service. It begins as follows:
 
@@ -300,7 +300,7 @@ The act of injecting the 'breeze' service into *any* application component creat
 Breeze is ready for an Angular app but it doesn't know we're using OData and it doesn't know where the service is yet. 
 
 <a name="DataServiceAdapter"></a>
-###Web API OData DataService Adapter
+### Web API OData DataService Adapter
 
 Breeze abstracts the details of its own communications with the server into a "DataService Adapter". The default adapter is designed for a Breeze-flavored ASP.NET Web API ... which is **not** the same stack as the Web API 2 **OData**. 
 
@@ -311,7 +311,7 @@ We must tell Breeze to use the Web API OData adapter (**'webApiOData'**) like th
 
 >Make sure you pick the 'webApiOData' adapter, **not** the generic 'odata' adapter. The 'webApiOdata' adapter is adjusted for certain peculiarities of the Web API OData implementation.
 
-###NamingConvention 
+### NamingConvention 
 While were at it we should lock in the Breeze [`NamingConvention`](/doc-js/server-namingconvention).
 
 Most JavaScript developers write property names in camelCase ("firstName"). Most .NET developers write property names in PascalCase ("FirstName"). You shouldn't be forced to pick one convention for both platforms. And you don't have to. The Breeze `NamingConvention.camelCase` convention translates PascalCase server-side property names into camelCase client-side property names (and vice-versa). We make that the default for this application:
@@ -321,7 +321,7 @@ Most JavaScript developers write property names in camelCase ("firstName"). Most
 
 >You can create your own convention if you have a more complicated translation scheme.
 
-###Identify the service endpoint 
+### Identify the service endpoint 
 
 In Breeze, the `serviceName` identifies the root of the service endpoint. For a Web API OData service, the `serviceName` is the site's absolute URL plus the <a href="#WebApiRoute">the Web OData route's "<strong>routePrefix"</strong>"</a>. Here's how the sample does it:
 
@@ -342,17 +342,17 @@ The `EntityManager` builds request URLs from that `serviceName`:
     http://localhost:55802/odata/$batch
     http://localhost:55802/odata/TodoLists?$orderby=Created%20desc%2CTitle&$expand=TodoItems
 
-###You're done!
+### You're done!
 
 Not with the app of course. But that's it for configuring Breeze. It's ready for Angular and ready to talk to your Web API OData service.
 
 The rest is HTML/JavaScript application programming with the help of Angular and Breeze. There are <a href="#SaveChanges"><em>almost</em></a> no differences between the way you program the application for Web API OData and the way you'd program it for a different backend. The techniques and guidance are the same.
 
-#Tour of the Client App
+# Tour of the Client App
 
 This isn't the place to learn about programming in Angular and Breeze. But we will give you a tour of the project and highlight some design decisions.
 
-#Files
+# Files
 The ***app*** folder holds all application JavaScript and HTML. This application is so simple that we've kept the file structure flat. Here's the inventory:
 
 - app.js - the application's Angular module
@@ -375,7 +375,7 @@ The ***app*** folder holds all application JavaScript and HTML. This application
 
 - todolists.js - the app's main ViewModel (Controller)
 
-#Views
+# Views
 
 This simple app only has one "screen", composed dynamically from an outer master View and three sub-views. Here's the outer ***todolists.html*** - its sub-views outlined and shaded - followed by the three sub-views themselves:
 
@@ -427,7 +427,7 @@ We trust it's easy to read this HTML at a glance.
 - Angular pulls in the three sub-views with "ng-Include"s
 - The third *todolist-detail* view is repeated for each TodoList
 
-#The ViewModel and "*Controller As*" style
+# The ViewModel and "*Controller As*" style
 
 Open <em>app/<strong>todolists.js</strong></em> which defines the ViewModel (aka "Controller") for the application.
 
@@ -461,7 +461,7 @@ In a glance you grasp the ViewModel's entire binding surface. This style is wide
 
 If you need details, you can always scroll (or search) for the implementation later in the file. Most of the time all you want to know are the features of the ViewModel and what they're called so you can bind to them. The purpose should be clear when we name our members well.
 
-###A digression on controller style
+### A digression on controller style
 The "*Controller As*" style is strictly a matter of taste. We find it easier to read and write. To us it feels truer to the Model-View-ViewModel (MVVM) pattern than the traditional `$scope` controller style.
 
 The web is full of people who "hate on it". We haven't seen a substantive argument against it ... because there can be no such argument. Whether you prefer *Controller As* or $scope style is, as we said, a matter of taste.
@@ -525,7 +525,7 @@ Therefore, this sample's `save` implementation takes a hybrid approach that meet
 
 >We look forward to revising this sample as soon as a transactional alternative becomes available.
 
-#Wrap up
+# Wrap up
 
 We hope you enjoy the sample. Try the Web API OData and Breeze combination in your next application. Let us know how it goes.
 

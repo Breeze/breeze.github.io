@@ -2,7 +2,7 @@
 layout: doc-samples
 redirect_from: "/old/samples/todo-require.html"
 ---
-#Todo-Knockout-Require Sample#
+# Todo-Knockout-Require Sample#
 
 The **Todo-Knockout-Require** sample extends the <a href="/doc-samples/todo-knockout">Todo Knockout</a> sample with **dependency management** and **view composition** using the <a href="http://requirejs.org//" target="_blank">RequireJS</a> library.</p>
 
@@ -10,7 +10,7 @@ The **Todo-Knockout-Require** sample extends the <a href="/doc-samples/todo-knoc
 
 <p><img src="/images/samples/Todo-RequireRunning.png" style="width:100%; max-width:568px;"></p>
 
-#Why Dependency Management?
+# Why Dependency Management?
 
 This Todo Sample is just about the simplest full-CRUD app we could think of. The architecture is deliberately primitive and simplistic. There's only one View, one ViewModel, and one Model type (`TodoItem`). The app has only 5 application files a main script for bootstrapping, html for the view, a ViewModel script, a dataservice to define the model and manage data access, and a logger for diagnostics.
 
@@ -43,13 +43,13 @@ But what if there were ten scripts? Twenty scripts? A modest five screen app cou
 
 This quandry isn't new or limited to JavaScript. It shows up in applications developed with statically typed languages too where complex component dependency graphs are common. The solution there is the same as for JavaScript here: design with <a href="http://en.wikipedia.org/wiki/Dependency_inversion_principle" target="_blank">dependency management</a> in mind and turn to <a href="http://www.martinfowler.com/articles/injection.html" target="_blank">IoC containers</a> for runtime component construction.
 
-#RequireJS
+# RequireJS
 
 As always with JavaScript, you have many libraries to choose from. <a href="http://requirejs.org//" target="_blank">RequireJS</a> is a popular, well-regarded, free, open source choice. Breeze itself is built with Require. This Todo-Require sample demonstrates how to get going with Require *before* your application gets too big.
 
 <p class="note">We don't assume you know Require. On the other hand, this isn't a tutorial on require. We'll explain enough to give you a feel for it. You should turn to the web, starting with the <a href="http://requirejs.org//" target="_blank">RequireJS</a> site itself, to learn the options and details.</p>
 
-#Script tags with Require
+# Script tags with Require
 
 The require.js script has been added to the Scripts folder and the application scripts have been updated to use Require. The script tags in *index.html* reveal the first effects:
 
@@ -61,7 +61,7 @@ Require handles dependency management as we'll see ... and it also downloads scr
 
 >You don't have to load the scripts asynchronously one by one. You can bundle and minify them with require's "r.js" tool.
 
-#*main.js*
+# *main.js*
 
 The *main.js* script is the application bootstrapper. Require finds it, loads it, and everything flows from there.
 
@@ -105,11 +105,11 @@ We'll talk about the complete *main.js* shown here:
 	    });
 	})()
 
-###Configuring RequireJS
+### Configuring RequireJS
 
 The paths in the *requirejs.config* tell RequireJS where to find the 3rd party library scripts and gives them aliases that later code will use to reference these "modules". For example, the first path tells Require that the 'breeze' module should be loaded from the *breeze.debug.js* JavaScript file which is located in the directory above that of *main.js*. We do the same thing for the other libraries, giving aliases to most of the module names that the application expects ("jquery" "ko", and "Q").
 
-###Launching with *define*
+### Launching with *define*
 
 The`define` function call executes immediately and launches the application proper. Its first parameter, a dependency array, announces the need for five dependencies, all of which must be resolved before the application calls the bootstrapping function in `define`'s second parameter. These dependencies are:
 
@@ -135,7 +135,7 @@ The libraries chosen for this particular app are popular and well-known to Breez
 
 >We know that none of these 3rd party libraries depend on breeze so we are not worried that they might ask for the 'breeze' module. On the other hand, the *logger* is an application module and an application module might depend on breeze! In this case, we know that logger does not depend on 'breeze' so it is safe to load it with the other dependencies.
 
-###Dependency resolution in action
+### Dependency resolution in action
 
 The *logger*  module doesn't depend on Breeze. But it does depend upon *toastr.js*. Take a look at the first line of *logger.js*. It calls *define* too, announcing its dependence on *toastr*.
 
@@ -149,11 +149,11 @@ If you peek inside *toastr.js* you'll see that it depends on 'jquery'. Remember 
 
 You don't see any mention of this dependency chain in *main.js* ... nor should you. The point of a dependency management system is to shield you from this madness. Both the author and the reader of *main.js* need only be aware of *main*'s direct dependencies. It is require's job resolve the dependency chain, however tortuous, before calling the boostrapping function.
 
-###Where is Breeze resolved?
+### Where is Breeze resolved?
 
 Notice that the 'breeze' module is never explicitly requested in *main.js*. The defining function in *main.js* doesn't need the 'breeze' module. Other modules do need Breeze. But, as with 'logger', they will trigger 'breeze' loading and resolution when the time is ripe.
 
-###Further dependency resolution with inner *require*
+### Further dependency resolution with inner *require*
 
 As it happens, the "*time is ripe*" almost immediately. After logging that our app is loading, we call the injected `require` function.
 
@@ -163,7 +163,7 @@ As it happens, the "*time is ripe*" almost immediately. After logging that our a
 
 That call injects the application 'viewModel' module. That module depends upon the 'dataservice' module. And the 'dataservice' module depends upon 'breeze'. Ta da!
 
-#View Composition
+# View Composition
 
 The second dependency injects the view. It looks like we are at last ready to load and bind our ViewModel and View ... almost.
 
@@ -224,7 +224,7 @@ Here it is, reduced for exposition:
 	    </body>
 	</html>
 
-#Require-enabled app scripts#
+# Require-enabled app scripts#
 
 Now that you know how Require works in *main.js*, apply the same thinking to the remaining application scripts. Before Require, each was written in the <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript" target="_blank">revealing module pattern</a> style and attached to a namespace called *app*. With Require, the module pattern changes slightly, making use of Require's `define` function to identify its dependencies and encapsulate its implementation.
 	
@@ -237,7 +237,7 @@ Now that you know how Require works in *main.js*, apply the same thinking to the
 	// viewModel
 	define(['ko', 'logger', 'dataservice'], function (ko, logger, dataservice) { ...}
 
-#Loading breeze extensions with require
+# Loading breeze extensions with require
 
 Look again at the `define` call in *dataservice.js*. Focus on the last dependency, 'breeze.savequeuing'.
 
@@ -251,7 +251,7 @@ Look again at the `define` call in *dataservice.js*. Focus on the last dependenc
 
 This is a pretty standard pattern for loading a module extension with requireJS. No component call an extension module directly. It is valuable for its side-effect, the way it modifies the behavior of the module it extends.
 
-#Summary#
+# Summary #
 
 Require saves us from having to write lots of script tags and list them in the right order. Instead of loading all JavaScript files before the app starts - even scripts we may never use - Require can load scripts dynamically as they are needed. We can see any module's dependencies by looking at its first line, making it easier to understand, maintain, and test. And Require helps with view composition, the practice of building up larger views from smaller, potentially reusable view parts.
 

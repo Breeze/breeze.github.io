@@ -2,7 +2,7 @@
 layout: doc-net
 redirect_from: "/old/documentation/odata-server.html"
 ---
-#**OData Services**
+# **OData Services**
 
 A Breeze client can consume any <a href="http://www.odata.org/" target="_blank">standard OData</a> feed "as is" when you configure the client for OData.
 
@@ -14,13 +14,13 @@ If you have no control over the server, you may have to abandon the server's *$m
 
 If you do control the server you *may* be able to make adjustments on the server that improve the situation for the Breeze client. In this topic we explore your options on some well known OData server stacks.
 
-#WCF Data Services (WCF OData)
+# WCF Data Services (WCF OData)
 
 This is Microsoft's original OData implementation. It is the most compliant implementation and Breeze clients should have no trouble with the metadata it generates.
 
 However, Microsoft seem to have <a href="http://blogs.msdn.com/b/odatateam/archive/2014/03/27/future-direction-of-wcf-data-services.aspx" target="_blank" title="Mike Pizzo discusses MS OData roadmap">redirected their energies toward development of **ASP.NET Web API OData**</a> and away from **WCF Data Services**. The future of WCF Data Services is anyone's guess.
 
-#ASP.NET Web API OData Service
+# ASP.NET Web API OData Service
 
 **Web API OData** is both the present and future of OData services from Microsoft.
 
@@ -108,7 +108,7 @@ We summarize here:
             batchHandler: new DefaultODataBatchHandler(GlobalConfiguration.DefaultServer)
         );
 
-###Correcting the namespace for EdmBuilder
+### Correcting the namespace for EdmBuilder
 
 **Beware of model classes with a different namespace!**
 
@@ -126,7 +126,7 @@ When the Breeze client reads the metadata, it's told to expect the "**EF**.Custo
 
 We can suggest a server-side workaround, depending on how you constructed your `DbContext`.
 
-####Code First `DbContext` workaround
+#### Code First `DbContext` workaround
 
 Tell the `EdmBuilder` to generate metadata from a *derived* `DbContext` that you've located in the *same namespace as the model classes*. Let's try it.
 
@@ -162,7 +162,7 @@ Did you see the change?
 
 `model: EdmBuilder.GetEdm<`**MyApp.Models.MyDbContextForEdm**`>(),`
 
-####EDMX-based `DbContext` workaround
+#### EDMX-based `DbContext` workaround
 
 If you maintain your EF model "Database First" with an EDMX, you need a different workaround because the `EdmBuilder` acquires the namespace **from the EDMX** rather than the `DbContext` (whose namespace can by something else entirely).
 

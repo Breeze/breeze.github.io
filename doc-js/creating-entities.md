@@ -3,13 +3,13 @@ layout: doc-js
 redirect_from: "/old/documentation/creating-entities.html"
 ---
 
-#Creating a new entity
+# Creating a new entity
 
 Breeze creates new entity instances on two primary occasions: (1) when it "**materializes**" entities from query results and (2) when you ask it to **create** a brand new entity.
 
 Entity materialization is largely hidden from the developer. You issue a query; you get entities back. Behind the scenes Breeze converts the stream of model object data into entities in cache. The developer only becomes aware of entity creation details when making new model objects.
 
-##Don't use "new"
+## Don't use "new"
 
 You might expect to make a model object by calling *new* on a constructor function:
 
@@ -19,7 +19,7 @@ You can do it this way ... if you've defined a `Customer` constructor and regist
 
 It's preferable to let Breeze create the entity based on entity type information gleaned from [metadata acquired from the remote data service](/doc-js/extending-entities.html) ... in which case there is no constructor to "*new up*".
 
-##EntityManager.createEntity
+## EntityManager.createEntity
 
 The standard approach is to call the Breeze **`createEntity`** factory function on an `EntityManager`:
 
@@ -48,7 +48,7 @@ The `createEntity` method adds the entity to the manager because that's what you
 	// note that the id must be specified when attaching an 'existing' entity
 	var oldCust = manager.createEntity('Customer', {id: 42, name:'Gamma'}, EntityState.Unchanged);
 
-##EntityType.createEntity
+## EntityType.createEntity
 
 The `createEntity` method of the *EntityManager* is shorthand for something like:
 	

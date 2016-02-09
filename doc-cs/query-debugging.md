@@ -3,7 +3,7 @@ layout: doc-cs
 redirect_from: "/old/breeze-sharp-documentation/query-result-debugging.html"
 ---
 
-#Debugging query result mysteries
+# Debugging query result mysteries
 
 What do you do when your Breeze query doesn't return the results you expected? 
 
@@ -15,7 +15,7 @@ If this is not the case, your first step should be to use a tool like Fiddler to
 
 If not, stop. Figure out why the server isn't sending the right data before worrying about what Breeze is doing on the client.
 
-##I'm getting the right data from the server
+## I'm getting the right data from the server
 
 Ok ... you see the data but some or all of the aren't showing up in the entity. One of the first things we do is examine the metadata for a one or more of your `EntityType`s starting with the root type of the query.
 
@@ -41,7 +41,7 @@ Let's look at a query that returns an `Order`, its `OrderDetail`s, and its paren
     
 Run the code to the breakpoint. 
 
-##Are the types defined?
+## Are the types defined?
 
 Make sure each of the types - `orderEntityType`, `orderDetailEntityType`, and `customerEntityType` - are defined. If any of them is null, you have found a problem.
 
@@ -80,7 +80,7 @@ In many applications the client-side spelling of a property name should be diffe
 
 The Breeze [**`NamingConvention`**](/doc-cs/naming-convention) translates between these two spellings. Are you sure that your metadata are governed by the `NamingConvention` you expect? You may *think* you are applying one convention when, in fact, a different convention is controlling the translation. See "[Beware of the baked-in NamingConvention](/doc-cs/naming-convention#NamingConventionInMetadata)".
 
-##Are you missing a navigation property?
+## Are you missing a navigation property?
 
 You were expecting a "navigation property" - a property that returns another entity - and it wasn't listed among the `NavigationProperties`.
 
@@ -92,7 +92,7 @@ Did you define **foreign key (FK) properties**? Developers often neglect to defi
 
 The remainder of this topic assumes you found the expected `Property`.
 
-##Is it the expected kind of property?
+## Is it the expected kind of property?
 
 What kind of property is it? What kind were you expecting? 
 

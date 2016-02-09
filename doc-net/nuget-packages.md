@@ -2,7 +2,7 @@
 layout: doc-net
 redirect_from: "/old/documentation/start-nuget.html"
 ---
-#Breeze NuGet packages
+# Breeze NuGet packages
 Breeze offers several <a href="http://nuget.org/" target="_blank">NuGet</a> packages for the .NET developer.
 
 The package (or packages) you need depend on your development scenario.
@@ -18,7 +18,7 @@ The package (or packages) you need depend on your development scenario.
 * [Try the "Todo" demo package.](#demoPkg)
 
 <a name="learn"></a>
-##Are you new to Breeze?
+## Are you new to Breeze?
 
 We recommend that you look first at Brian Noyes "<a href="http://www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with Angular and Breeze</a>" and "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
 
@@ -31,7 +31,7 @@ John's "HotTowel" nuget packages will soon reflect the recently released Visual 
 
 Your first decision: "*will I have a single project or multiple projects?*"
 
-###Single Web Application Project
+### Single Web Application Project
 If you'd like to start with a single ASP.NET Web Application that holds everything: client application (html,JavaScript, css), Web API, model, data access.
 These packages are best installed in a new ASP.NET MVC 4 Application generated with the "Empty" template.
 
@@ -51,17 +51,17 @@ If you don't want to use the Entity Framework 6, you should install the combinat
 
 **Breeze.Server.ContextProvider** - If you manage data access by some means other than Entity Framework or NHibernate. The EF and NH packages depend upon this one.
 
-###Multiple Application Projects
+### Multiple Application Projects
 
 If you have separate projects for web content, data access and model, you'll want to draw upon these packages.
 
-####Web Application Project
+#### Web Application Project
 
 **Breeze.Client** - Just the client assets (e.g. JavaScript). Install in your web application project.
 
 **Breeze.Server.WebApi2** - Support for Web API 2 (aka v.5). If you combine the client content and the Web API in a single Web Application project (as most people do), you'll install this package with the Breeze.Client package
 
-####Data Access Project
+#### Data Access Project
 
 **Breeze.Server.ContextProvider.EF6** - If you manage data access with Entity Framework 6.
 
@@ -70,7 +70,7 @@ If you have separate projects for web content, data access and model, you'll wan
 **Breeze.Server.ContextProvider** - If you manage data access by some means other than Entity Framework or NHibernate. The EF and NH packages depend upon this one.
 
 <a name="legacy"></a>
-##Visual Studio 2012 and .NET 4
+## Visual Studio 2012 and .NET 4
 
 The following packages are for developers who must target the .4.0 framework or who can't migrate from Visual Studio 2012 technologies to the Web API 2 or Entity Framework 6 that were released with Visual Studio 2013.
 
@@ -100,7 +100,7 @@ To convert a (legacy) Visual Studio 2012 Breeze application to Breeze ASP.NET We
 * Replace references to EF 4/5 namespaces in all of your project files with references to the EF 6 namespaces. Check out the <a href="http://entityframework.codeplex.com/wikipage?title=specs" target="_blank">pertinent Microsoft documentation</a>.
 
 <a name="demoPkg"></a>
-#Get started with the Breeze Demo package
+# Get started with the Breeze Demo package
 
 A quick way to discover Breeze is by building a super-simple example using the ToDo demo NuGet package. You can be up and running in about two minutes.
 
@@ -129,7 +129,7 @@ You'll see an MVC web page which is the shell for the Breeze sample application.
 
 All of the pertinent Breeze client code is in one JavaScript file, *Scripts/app/sampleViewModel.js*.
 
-####Next steps
+#### Next steps
 
 The sample stops at simple query, edit, and save. The entire client application is in one file of less than 100 lines. You can see at a glance the most fundamental mechanics of Breeze.
 

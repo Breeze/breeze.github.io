@@ -2,7 +2,7 @@
 layout: doc-js
 redirect_from: "/old/documentation/complextype-properties.html"
 ---
-#Complex Type properties
+# Complex Type properties
 
 Breeze supports the concept that any data property of an Entity can be an instance of a ***complex type***. A `complexType` property is a data property that represents a defined collection of other data Properties and possibly nested complex type properties. An example might be a `location` property on a `Customer` class, where the location consists of an address, city, state, and zip code. In this case, the `location` property on the `Customer` type is termed a complex property, and the data type of this property would be a complex type of type `location`. The path to a city in this case would be `aCustomer.location.city`.
 Complex types in Breeze are much like entity type's but with some key differences.
@@ -24,7 +24,7 @@ Every instance of a complex type object has two properties automatically added b
 
 - A <a href="/doc-js/api-docs/classes/ComplexAspect.html" target="_blank">complexAspect </a>property - This contains information about the 'parentage' of this instance and any original values for change tracking purposes. The `complexAspect` is analogous to the `entityAspect` property on every Breeze entities.
 
-##Interactions involving Complex types
+## Interactions involving Complex types
 
 **Query/Save**
 

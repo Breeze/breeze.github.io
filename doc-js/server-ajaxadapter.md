@@ -3,7 +3,7 @@ layout: doc-js
 redirect_from: "/old/documentation/controlling-ajax.html"
 ---
 
-#Controlling AJAX calls
+# Controlling AJAX calls
 
 A Breeze [*DataSeviceAdapter*](/doc-js/server-dataserviceadapter.html) makes HTTP calls to a **Breeze AJAX adapter** that wraps a 3rd party low-level AJAX component. 
 
@@ -17,7 +17,7 @@ The *AJAX adapter* and the *DataServiceAdapter* are independent abstractions, a 
 
 For example, your app might communicate with an ASP.NET Web API service, a Node data service, or perhaps a Rails server. Each of these targets requires its own *DataServiceAdapter*, attuned to the specifics of that service's API. But when it comes time to make HTTP requests, your app can speak to any of these services with your preferred AJAX component. 
 
-##Picking an AJAX adapter
+## Picking an AJAX adapter
 
 You can configure your app to use any AJAX adapter that has been registered with Breeze. Angular applications typically designate the 'angular' AJAX adapter that wraps [Angular's `$http`](https://docs.angularjs.org/api/ng/service/$http) (as described [below](#angular)).
 
@@ -38,7 +38,7 @@ You designate the AJAX adapter for your app with an expression like **one** of t
 >The "jQuery" adapter is the default AJAX adapter. You don't have to initialize this adapter as we did here for illustrative purposes.
 
 <a name="angular"></a>
-##The AngularJS $http adapter
+## The AngularJS $http adapter
 
 Many Angular developers prefer to use Angular's native `$http` AJAX component; *we do*.
 
@@ -61,7 +61,7 @@ Then wire it up when your app boots:
 
 Internally, the "Breeze Angular Service" makes the same AJAX adapter configuration shown above ... as well as other configurations.
 
-#Configuring an AJAX adapter
+# Configuring an AJAX adapter
 
 An AJAX adapter may require some setup before it can be used. It's best to pick your adapter and configure it ***before you make any HTTP calls through Breeze***.
 
@@ -97,7 +97,7 @@ For example, the jQuery `ajax` method takes a `settings` configuration object. O
 
 <a name="customAdapter"></a>
 
-##Write your own AJAX adapter
+## Write your own AJAX adapter
 
 You can write your own JavaScript AJAX adapter, one that either replaces or extends one of the stock adapters.
 
@@ -258,7 +258,7 @@ Maybe you don't. All of stock Breeze adapters have a `changeRequestInterceptor` 
 
 <a name="odata-ajax"></a>
 
-##OData AJAX 
+## OData AJAX 
 
 The "OData" and "webApiOData" [OData *DataServiceAdapters*](#dataservice-adapters) **do not use the AJAX adapter**. Therefore, configuring the Breeze AJAX adapter is pointless when using these adapters to access OData sources.
 

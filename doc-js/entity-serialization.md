@@ -3,7 +3,7 @@ layout: doc-js
 redirect_from: "/old/documentation/entity-serialization.html"
 ---
 
-#Entity Serialization
+# Entity Serialization
 
 Breeze serializes entity data when saving to remote storage and when [exporting entities](/doc-js/entitymanager-and-caching "Export/Import") to a string. Sometimes Breeze needs your help in serializing values in the manner your app requires.
 
@@ -18,7 +18,7 @@ Serialization is not as obvious as it might seem. Entities have circular referen
 Breeze uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FJSON%2Fstringify" title="JSON.stringify API" target="_blank">`JSON.stringify`</a> internally to serialize data, subject to policy constraints and customizations attuned to your needs.
 <a name="Unmapped-properties"></a>
 
-##Unmapped properties
+## Unmapped properties
 
 Breeze strives to minimize serialization exceptions. It has a good handle on things that can go wrong in *mapped* properties over which it has a great deal of control. 
 
@@ -32,7 +32,7 @@ Your custom ***unmapped*** properties present a greater challenge. Breeze serial
      
 3. Objects that contain cycles have cyclical properties stubbed out at the point where a previously serialized node is encountered. As with functions, this behavior can be mediated with a `toJSON` property.
 
-##serializerFn
+## serializerFn
 
 You can set an optional `serializerFn` property of the `MetadataStore` and `EntityType` classes with your own serialization function. Breeze calls your function first when serializing entity property values. Then Breeze applies its own serialization to your function's return values, applying the techniques discussed previously. 
 

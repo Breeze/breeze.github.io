@@ -2,7 +2,7 @@
 layout: doc-cs
 redirect_from: "/old/breeze-sharp-documentation/start-nuget.html"
 ---
-#Breeze NuGet packages
+# Breeze NuGet packages
 Breeze offers several <a href="http://nuget.org/" target="_blank">NuGet</a> packages for the .NET developer. 
 
 ## Visual Studio 2013 and .NET 4.5
@@ -42,6 +42,6 @@ A Breeze.sharp application will often have separate projects for separate concer
 - *Breeze.Server.ContextProvider* - If you manage data access by some means other than Entity Framework or NHibernate. The EF and NH packages depend upon this one.
 
 
-####Next steps
+#### Next steps
 
 The Basic Breeze series guides you toward a more sustainable application structure with greater attention to modularity and separation of concerns while introducing fundamental Breeze concepts and techniques.

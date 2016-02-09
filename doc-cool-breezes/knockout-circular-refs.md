@@ -2,7 +2,7 @@
 layout: doc-cool-breezes
 redirect_from: "/old/documentation/knockout-circular-references.html"
 ---
-#Grids and Knockout circular references#
+# Grids and Knockout circular references #
 
 We may run into trouble when we try to display Breeze entities in a vendor grid control.
 
@@ -50,7 +50,7 @@ After <span class="codeword">ko.toJS</span> unwraps the entities, we iterate ove
 
 If the entities had navigation properties that were giving you trouble, you could follow the pattern and zap them too.</p>
 
-##Consider projections instead##
+## Consider projections instead ##
 You may be paying a double performance price when you don't have to. The query may be pulling more data over the wire than you need to display. And <span class="codeword">ko.toJS</span> may be copying values that you aren't going to display either.
 
 The cost may be negligible and having those entities in cache for some future purpose could save you unnecessary server trips down the line. Only you know what's best for your application.

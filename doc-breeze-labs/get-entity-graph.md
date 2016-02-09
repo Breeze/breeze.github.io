@@ -2,7 +2,7 @@
 layout: doc-breeze-labs
 redirect_from: "/old/documentation/getentitygraph.html"
 ---
-#Get entity graph from cache
+# Get entity graph from cache
 
 Sometimes you hold one more root entities and want both those roots **and their related entities** in a single array. That array represents the "entityGraph" of the root(s).
 

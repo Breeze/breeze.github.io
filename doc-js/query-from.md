@@ -46,7 +46,7 @@ Note that, while the absolute URI may be the same as the one breeze would compos
 
 To understand why, we must see how Breeze relates a resource name to an `EntityType`.
 
-##From resource name to EntityType
+## From resource name to EntityType
 
 Breeze does not *have* to know the root `EntityType` targeted in a remote query. For example, the server might return `Order` entity JSON in response to all of these queries:
 
@@ -90,7 +90,7 @@ The server is expecting the comparison value to be a date. It could choose to re
 
 >This *is* the response from a Web API / EF server.
 
-###Cast with *.toType*
+### Cast with *.toType*
 
 The easy solution is to tell Breeze what type to expect with the [`toType` clause](/doc-js/api-docs/classes/EntityQuery.html#method_toType "API Docs: toType") as follows:
 
@@ -101,7 +101,7 @@ The easy solution is to tell Breeze what type to expect with the [`toType` claus
 Now Breeze can determine that the 'OrderDate' property is a `DateTime` type and parse the string date. It composes the proper query URL and the server happily responds with orders and their details.
 
 <a name="defaultResourceName"></a>
-##Default resource name
+## Default resource name
 
 Why didn't we need `.toType` for the first query that targets 'Orders'?
 
@@ -126,7 +126,7 @@ You might have done it yourself, if you coded your [metadata by hand](metadata-b
 >
 >These conventions jointly conspire to yield the happy result that "Orders" is the breeze `defaultResourceName` *and* the endpoint name *and* the EF collection name. It all *just works*.
 
-##The type name is not a resource
+## The type name is not a resource
 
 **Don't confuse the `EntityType` name with a resource name**. The resource name is just a string, one that should identify an endpoint.
 
@@ -143,7 +143,7 @@ You can cure the problem with `.toType` as before.
       .where('OrderDate', '>=', 'January 1, 1998')
       .toType('Order');
 
-##Resource names and local cache queries
+## Resource names and local cache queries
 
 It's easy in Breeze to take the remote service query object and [apply it to the local cache](/doc-js/query-locally.html "querying the local cache"). 
 
@@ -165,7 +165,7 @@ The resource name of a local cache query **must resolve to an `EntityType`**. Br
 
 The example query above works just fine because Breeze can translate from the "Orders" resource name to the `Order` type via the `defaultResourceName`.
 
-##Registering alternative resource names
+## Registering alternative resource names
 
 Some folks want to use the `EntityType` name when targeting the local cache. They want to write `.from('Order')` rather than `.from('Orders')` and they don't want to tack on the `.toType` clause. They often forget to add `.toType` and wonder why the query fails.
 
@@ -201,7 +201,7 @@ Don't stop there. Feel free to register additional resource names:
 
 Notice that the **resource name is the first parameter**, the `EntityType` name is the second parameter. Don't let the `setEntityTypeForResourceName` method name fool you.
 
-##Finding the registered resources
+## Finding the registered resources
 
 [`MetadataStore.getEntityTypeNameForResourceName`](/doc-js/api-docs/classes/MetadataStore.html#method_getEntityTypeNameForResourceName "API Docs: getEntityTypeNameForResourceName") can tell you the `EntityType` for  a resource name. 
 

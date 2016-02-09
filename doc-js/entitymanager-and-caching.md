@@ -2,11 +2,11 @@
 layout: doc-js
 redirect_from: "/old/documentation/entitymanager-and-caching.html"
 ---
-#EntityManager
+# EntityManager
 
 The *EntityManager* is the gateway to the persistence service and holds a cache of entities that the application is working with, including entities that have been queried, added, updated, and marked for deletion. The *EntityManager* is the core class in Breeze, and this page discusses its primary capabilities.
 
-##Overview
+## Overview
 
 The *EntityManager* serves three main functions:
 
@@ -21,11 +21,11 @@ In most cases when you query with an *EntityManager*, you are not just getting t
 
 When you eventually ask the *EntityManager* to save, it finds the changed entities in cache - the ones you've modified, added, and scheduled for deletion - and sends the changes to the *persistence service*. If all goes well, the service reports success and the *EntityManager* adjusts the cached entities to reflect the save by discarding deleted entities and re-setting the ***EntityState*** of the added and modified entities to *Unchanged*.
 
-##Key EntityManager capabilities
+## Key EntityManager capabilities
 
 The following is a summary of the methods available on the EntityManager arranged by task. For a complete list of methods, please see the <a href="/doc-js/api-docs/classes/EntityManager.html">EntityManager API documentation</a>.
 
-##Querying for entities
+## Querying for entities
 
 EntityManager methods relating to querying entities, either from remote services or from its own internal entity cache.
 
@@ -36,7 +36,7 @@ EntityManager methods relating to querying entities, either from remote services
 |*fetchEntityByKey* | Asynchronously queries for an entity by its key; returning a *Promise* that in turn will return the entity.
 
 
-##Finding entities in the cache
+## Finding entities in the cache
 
 EntityManager methods that allow for searching and retrieving entities from the local entity cache. 
 
@@ -48,7 +48,7 @@ EntityManager methods that allow for searching and retrieving entities from the 
 | *getChanges* | Synchronously returns an array of changed (Modified, Added, Deleted) entities of optionally specified EntityTypes and EntityStates from the local entity cache.
 
 
-##Adding / attaching and removing entities to and from the cache
+## Adding / attaching and removing entities to and from the cache
 
 EntityManager methods that allow for adding or attaching entities to the local entity cache.  
 
@@ -61,7 +61,7 @@ EntityManager methods that allow for adding or attaching entities to the local e
 |*clear* |Clears all entities from the local entity cache. 
 
 
-##Saving changes
+## Saving changes
 
 The EntityManager has exactly one method to save changes to the persistence service.
 
@@ -69,7 +69,7 @@ The EntityManager has exactly one method to save changes to the persistence serv
 | ------ | ---------
 |*saveChanges* |Can save either all of the changes (Added, Modified, and Deleted entities) in the local entity cache or any selected subset.
 
-##Rejecting changes
+## Rejecting changes
 
 You can rollback changes ... either all of them at once with `EntityManager.rejectChanges()` or on an entity basis with `entity.entityAspect.rejectChanges()`.
 
@@ -77,7 +77,7 @@ The `rejectChanges` behaves differently depending upon whether the affected enti
 
 If the entity was new (in "Added" state), the previous state is ... nothing. We can't turn an object to "nothing"; your application may still hold a reference to it. So we detach it from its `EntityManager` (the `EntityState` becomes "Detached"). JavaScript will garbage collect it eventually, once no one holds a reference to it.
 
-##Simulating save with `acceptChanges`
+## Simulating save with `acceptChanges`
 
 You can simulate the cached result of a save by "accepting" changes on entities with pending changes. Do that for a specific entity by calling `entity.entityAspect.acceptChanges()`. This action sets the `EntityState` to "Unchanged" and wipes away the memory of previous values (the "original values").
 
@@ -85,7 +85,7 @@ Breeze calls this method after a successful save. Be very careful when you call 
 
 You should only call `acceptChanges` when you know exactly what you are doing. It's useful in test scenarios but hardly ever in production code. That's why there is no `EntityManager.acceptChanges()` method; we think it is simply too dangerous to offer such a sweeping method of such dubious merit. Of course you can easily create this method for yourself by looping through the list of pending changes (see `EntityManager.getChanges`).
 
-##Offline support 
+## Offline support 
 
 The EntityManager is able to serialize its state to a local persistence store and later rematerialize that state. See the <a href="/doc-js/export-import">Export/Import topic</a> for details.
 
@@ -94,7 +94,7 @@ The EntityManager is able to serialize its state to a local persistence store an
 |*exportEntities* |Serializes any selected group of entities to a string for storage to HTML5 local storage or IndexedDb or any other local persistence store.
 |*importEntities* |Deserializes any previously 'exported' entities into the entity manager.
 
-##Events 
+## Events 
 
 EntityManager events that may be subscribed to and which occur when changes occur within the local entity cache. 
 
@@ -105,7 +105,7 @@ EntityManager events that may be subscribed to and which occur when changes occu
 
 <a name="freshCache"></a>
 
-##Keeping a fresh cache
+## Keeping a fresh cache
 
 The Breeze `EntityManager` cache provides a ton of benefits. But some folks are so concerned about stale data that they think they should avoid the cache altogether.
 
@@ -145,7 +145,7 @@ I always have my ViewModels delegate to a data access helper "service" that I mi
 	}
 
 
-###Important Caveats about cache clearing
+### Important Caveats about cache clearing
 
 The reason I'm clearing the cache first is that another user may have deleted some of the invoices that you previously retrieved. I assume you want them removed from your cache so that the user sees only the living invoices.
 
@@ -195,7 +195,7 @@ Well there's a recipe for you too.
 	}
 
 
-#TBD
+# TBD
 
 This rest of this page is not ready for publication. It will cover:
 

@@ -3,7 +3,7 @@ layout: doc-js
 redirect_from: "/old/documentation/breeze-angular.html"
 ---
 
-#Breeze Angular Service
+# Breeze Angular Service
 
 Breeze and Angular work well together. They work *better* together when you configure Breeze to use Angular promises ($q) and Angular's ajax component ($http).
 
@@ -11,7 +11,7 @@ The **Breeze Angular Service** is a Breeze "bridge" adapter that performs this c
 
 > Breeze+Angular is great for modern browsers (ECMAScript 5+) that support <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" style="color: blue">**Object.defineProperty**</a>. If your app must run in IE8 or earlier, the Breeze/Angular combination is not for you. You might consider Breeze+Durandal (Knockout).
 
-##Install it
+## Install it
 
 
 1. acquire the ***breeze.bridge.angular.js*** JavaScript file in one of the ways described below
@@ -23,7 +23,7 @@ The **Breeze Angular Service** is a Breeze "bridge" adapter that performs this c
 1. inject the "breeze" service into *any* application component that runs before invoking a breeze feature; this injection triggers the configuration.
 
 
-###bower
+### bower
 
 The "breeze.angular" service is included among the adapters in the **breeze-client** bower package.
 
@@ -33,7 +33,7 @@ Now load it in your web page html **after** breeze itself.
 
 	<script src="bower_components/breeze-client/adapters/breeze.bridge.angular.js"></script>
 
-###npm
+### npm
 
 The "breeze.angular" service is included among the adapters in the **breeze-client** npm package.
 
@@ -45,14 +45,14 @@ Now load it in your web page html **after** breeze itself.
 
 	<script src="node_modules/breeze-client/adapters/breeze.bridge.angular.js"></script>
 
-###github source
+### github source
 
 
 You can download the <a href="https://github.com/Breeze/breeze.js/blob/master/src/breeze.bridge.angular.js">raw JavaScript file from github</a>. Put it wherever you like.
 Load it in your web page html  **after** breeze itself.
 
 
-###nuget
+### nuget
 
 Visual Studio users can <a href="http://www.nuget.org/packages/Breeze.Angular/" title="breeze.angular on NuGet">install it with NuGet</a>:
 
@@ -66,7 +66,7 @@ Now load it in your web page html **after** breeze itself.
 > The nuget package depends on <a href="http://www.nuget.org/packages/Breeze.Client/">breeze.client</a> and the <a href="http://www.nuget.org/packages/Breeze.Angular.Directives/">breeze.angular.directives package</a> which provides the "zValidate" validation directive. You may be able to install everything you need for Breeze+Angular client development with this one package.
 
 
-##Examples
+## Examples
 
 **Example #1**: Configure when your application boots
 
@@ -116,7 +116,7 @@ function emFactory(breeze) {
 
 The Breeze Angular Service is not clairvoyant. It can't configure Breeze for everything your app requires. The second example illustrates configuration of the *NamingConvention* and the remote service endpoint (the `serviceName`), both specific to your application.
 
-##The Breeze service instance
+## The Breeze service instance
 
 The 'breeze' service that Angular injects is Breeze itself, identical to `window.breeze`. Whether you use that service object or refer to the global `breeze` object is a matter of style.
 
@@ -128,7 +128,7 @@ The "Breeze Angular Service" simply configures Breeze to use
 
 The balance of this documentation provides more details about promises and the ajax service.
 
-##Promises
+## Promises
 
 A **promise** is a pledge to tell you when an asynchronous activity completes.
 
@@ -138,7 +138,7 @@ Every Breeze async method returns a ***promise object***. Initially the asynchro
 
 <a href="https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md" title="'Thenable Promises'" target="_blank">Read more about "Thenable Promises</a>" from the author of the Q.js library, <a href="https://github.com/kriskowal" title="Kris Kowal" target="_blank">Kris Kowal</a>. The Angular `$q` implementation adheres to his description in all essential respects.
 
-###Breeze promises
+### Breeze promises
 
 Out of the box, a Breeze asynchronous method returns a <a href="http://documentup.com/kriskowal/q/" target="_blank">**Q.js** promise</a>, not an AngularJS <a href="http://docs.angularjs.org/api/ng.$q" target="_blank">***$q*** promise</a>. Breeze also assumes that you included the Q.js library in your client stack.
 
@@ -180,13 +180,13 @@ var promise = entityManager
 
 We encourage you to review the <a href="http://docs.angularjs.org/api/ng.$q" target="_blank">`$q` promises documentation</a> for details.
 
-##AJAX
+## AJAX
 
 The Breeze `EntityManager` makes HTTP calls to a remote server via an "ajax" adapter. While Breeze ships with both a 'jQuery' and an 'angular' ajax adapter, it defaults to the 'jQuery' adapter which wraps `jquery.ajax`. This Breeze Angular Service re-configures breeze to use the 'angular' adapter which wraps `$http`, ensuring that Breeze receives the specific `$http` service instance that Angular injects into your app module.
 
 Speaking of service instances ...
 
-##Multiple *$q* and *$http* instances
+## Multiple *$q* and *$http* instances
 
 There is a nuance you may discover in extraordinary circumstances: Angular creates a new `$q` and a new `$http` **for each application module**.
 

@@ -3,7 +3,7 @@ layout: doc-cs
 redirect_from: "/old/breeze-sharp-documentation/creating-entities.html"
 ---
 
-#Creating a new entity
+# Creating a new entity
 
 Breeze creates new entity instances on two primary occasions:
 
@@ -24,7 +24,7 @@ And once you've created the entity and possibly set some of its properties, you 
  
 Alternatively you can use the *EntityManager.CreateEntity* method. 
  
-###The EntityManager.CreateEntity Method
+### The EntityManager.CreateEntity Method
 
 Breeze provides a **CreateEntity()** factory function on an EntityManager.
 
@@ -51,7 +51,7 @@ The **CreateEntity()** method adds the entity to the manager because that's what
 	// Note that the key must be initialized when new entity will be in an attached state
 	var gamma = manager.CreateEntity<Customer>(new { CustomerID = Guid.NewGuid(), CompanyName = "Gamma" }, EntityState.Unchanged);
 
-###The EntityType.CreateEntity Method
+### The EntityType.CreateEntity Method
 
 The **CreateEntity()** method of the EntityManager is shorthand for something like:
 

@@ -1,4 +1,4 @@
-#Metadata schema#
+# Metadata schema #
 
 The following is the schema for breeze metadata described as a json.schema document ( see [http://json-schema.org](http://json-schema.org)  ).
 

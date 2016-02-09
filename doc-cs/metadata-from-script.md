@@ -3,14 +3,14 @@ layout: doc-cs
 redirect_from: "/old/breeze-sharp-documentation/load-metadata-script.html"
 ---
 
-#Load metadata from script#
+# Load metadata from script #
 
 A Breeze app typically retrieves metadata from the server asynchronously. But the typical way is not the only way. 
 
 This topic shows you how to **capture the metadata in a JSON file and load it synchronously at runtime**.
 
 
-#Why?#
+# Why? #
 
 We think a .NET web service *should* support Breeze clients by exposing a "metadata" endpoint. That's what a Breeze.sharp client application expects out-of-the-box.
 
@@ -30,7 +30,7 @@ But retrieving metadata from the web service can be less than ideal for some app
 
 We can ameliorate these problems if metadata are readily available on the client when the application begins.
 
-#Other Options#
+# Other Options #
 
 We could load "launch data" (which includes metadata and lookup data) from local storage. That's a fast operation and it is synchronous on most platforms. 
 
@@ -48,7 +48,7 @@ While we heartily endorse this approach, it can't stand on its own because
 
 But we'd rather use generated metadata when available. Coding metadata by hand - especially for a large model - is tedious, error prone, and requires on-going maintenance. Generated metadata is almost carefree and automatically in-sync with the evolving service model.
 
-#Embed metadata in a text file#
+# Embed metadata in a text file #
 
 We think the best approach is to capture and store the generated metadata in a variable in a "json" text file. The client application reads this file as a string or via a TextReader and imports the Metadata directly via 
 
@@ -61,7 +61,7 @@ The metadata json file is always current because we regenerate it automatically 
 
 Best of all, it's easy to set up. Let's see how.
 <a name="capture"></a>
-#Capture the metadata (quick and dirty)#
+# Capture the metadata (quick and dirty) #
 
 We want to see benefits right away so we'll quickly assemble a *metadata.json* file by grabbing the metadata off the wire.
 
@@ -97,7 +97,7 @@ Here's the procedure:
 Your new *EntityManager* is primed with metadata and no longer requests metadata from the server ... a fact you can confirm by running your application and checking the network traffic. You will not see a call to the "metadata" endpoint.
 
 <a name="writeMetadataJS"></a>
-#A sustainable *metadata.json*#
+# A sustainable *metadata.json* #
 We're a little uncomfortable with the way we created *metadata.json*.
 
 We took a snapshot of the metadata as it is today. As the application evolves, the service model will evolve and the metadata will change. The metadata in our json file will be incorrect triggering a cascade of errors that may be hard to diagnose.
@@ -114,7 +114,7 @@ Notice that we (re)write *metadata.json* from the latest generated metadata ***b
 
 
 
-#Review#
+# Review #
 
 We can get metadata synchronously from a JSON file rather than  asynchronously through a service call. That makes the client-side developer's job a little easier and may help the application launch faster and run offline.
 

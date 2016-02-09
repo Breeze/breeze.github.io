@@ -2,7 +2,7 @@
 layout: doc-js
 redirect_from: "/old/documentation/query-result-debugging.html"
 ---
-#Debugging query result mysteries
+# Debugging query result mysteries
 
 What do you do when your Breeze query doesn't return the results you expected? 
 
@@ -72,7 +72,7 @@ Is your `EntityType` listed ... perhaps with a different spelling?
 
 Figure out why your types are missing before continuing. This topic assumes you have types.
 
-##Did the query return an entity?
+## Did the query return an entity?
 We first want to know if the `order` in the result is an `Entity`. In the console window, try:
 
     order.entityAspect;   // should be the "Order" type
@@ -111,7 +111,7 @@ In many applications the client-side spelling of a property name should be diffe
 
 The Breeze [**`NamingConvention`**](/doc-js/server-namingconvention.html "NamingConvention") translates between these two spellings. Are you sure that your metadata are governed by the `NamingConvention` you expect? You may *think* you are applying one convention when, in fact, a different convention is controlling the translation. See "[Beware of the baked-in NamingConvention](/doc-js/server-namingconvention.html#NamingConventionInMetadata)".
 
-##Are you missing a navigation property?
+## Are you missing a navigation property?
 
 You were expecting a "navigation property" - a property that returns another entity - and it wasn't listed among the `DataProperties`.
 
@@ -123,7 +123,7 @@ Did you define **foreign key (FK) properties**? Developers often neglect to defi
 
 The remainder of this topic assumes you found the expected `DataProperty`.
 
-##Is it the expected kind of property?
+## Is it the expected kind of property?
 
 What kind of property is it? What kind were you expecting? 
 

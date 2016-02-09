@@ -2,7 +2,7 @@
 layout: doc-breeze-labs
 redirect_from: "/old/documentation/breezeajaxpostjs.html"
 ---
-#Breeze queries using POST#
+# Breeze queries using POST #
 This feature is for handling large object graphs as query parameters - object graphs so large that they won't fit in a URL.
 It updates the [Breeze AJAX adapter](/doc-js/server-ajaxadapter) to allow HTTP POST 
 for specially-constructed [.withParameters](/doc-js/api-docs/classes/EntityQuery.html#method_withParameters)
@@ -12,7 +12,7 @@ It works by telling jQuery's AJAX implementation, or Angular's $http service, to
 
 This is an add-on to Breeze, and POST requires changes to the way your `.withParameters` queries are structured, so don't use it unless you really need it.
 
-##Installation
+## Installation
 Get [breeze.ajaxpost.js](https://github.com/Breeze/breeze.js.labs/blob/master/breeze.ajaxpost.js) from GitHub.
 
 In your HTML file (e.g. index.html), add a script tag for **breeze.ajaxpost.js** ***after*** the breeze library:
@@ -34,7 +34,7 @@ That's fine if you're using breeze's *default* ajax adapter. If you change the a
         //... your service logic
     }]);
 
-##Usage
+## Usage
 Server side method using GET (example using .NET Web API):
 
         [HttpGet]
@@ -76,8 +76,8 @@ Special parameters:
 - $encoding: ‘JSON’ or x-www-form-urlencoded (the default)
 - $data: contains the data to be sent to the server
 
-##Examples
-###Live POST queries
+## Examples
+### Live POST queries
 
 A StackOverflow question prompted us to produce [**this plunker example**](http://plnkr.co/edit/nhXIG62BDJpEJE77oLFT?p=info) of an Angular app making POST queries to a cross-origin server. All app JavaScript is in the *script.js* file. Be sure to follow along with the *README.md* which describes the mechanics in detail.
 

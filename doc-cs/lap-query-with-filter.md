@@ -3,7 +3,7 @@ layout: doc-cs
 redirect_from: "/old/breeze-sharp-documentation/query-filter.html"
 ---
 
-#Query with a filter
+# Query with a filter
 
 Our first query returned every Todo in the database (Note 1):
 
@@ -24,7 +24,7 @@ Remember that the filter criteria are applied *on the server side*.  Only those 
 With this approach you can maintain a library of base queries and mint new ones by extension as you need them. For example, the Todo app looks at the Show archived checkbox) to decide if it should add the where clause to the base query (unchecked) or not (checked).
 
 
-###Predicates
+### Predicates
 
 The **Where()** method accepts a delegate (expressed as as lambda expression) called a *predicate*.
 
@@ -44,13 +44,13 @@ Filter constraints can take other forms:
 
 The Breeze query language is capable of answering many complex questions. Check out the query examples for an inventory of possibilities.
 
-##The entity cache
+## The entity cache
 
 The EntityManager maintains a local cache of entities. A query is one of the ways that entities enter its cache. The manager merges entity results into its cache after every successful query. If we query three times for the “Water” Todo, the manager merges it into its cache three times, but only keeps one copy of the “Water” Todo entity. It knows that the “Id” property is the TodoItem primary key. Therefore it can tell that the “Water” Todo is already in cache, even if someone changed its name to “Wine“.
 
 The EntityManager doesn’t replace an entity object in cache after a query. That object stays right where it is. Instead, the manager updates the entity’s property values in place from the data in the query results (Note 3).
 
-###Querying the local cache
+### Querying the local cache
 
 So far we've sent every query to the server to fetch data from afar. You can query the cache in the same way using the same query language. In fact, you can use the same query:
 
@@ -60,7 +60,7 @@ So far we've sent every query to the server to fetch data from afar. You can que
 The entity manager executes the query synchronously and the results are available immediately (unlike **ExecuteQuery()** which is asynchronous and must be awaited)
 
 
-####Notes
+#### Notes
 
 1.	Technically, the query returns every Todo that the persistence service “Todos” method will supply. That service method might have logic to limit the number of Todos returned in a single request.
 

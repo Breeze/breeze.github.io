@@ -2,7 +2,7 @@
 layout: doc-breeze-labs
 redirect_from: "/old/documentation/breezedirectivesfloat.html"
 ---
-#Angular Float Directive
+# Angular Float Directive
 
 The `zFloat` directive tells Angular to display the view value rather than the floating point
 model value when the view and model values are "equivalent".

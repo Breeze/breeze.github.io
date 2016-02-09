@@ -2,7 +2,7 @@
 layout: doc-js
 redirect_from: "/old/documentation/load-metadata-script.html"
 ---
-#Load metadata from script#
+# Load metadata from script #
 
 A Breeze app typically retrieves metadata from the server asynchronously. But the typical way is not the only way. 
 
@@ -12,7 +12,7 @@ This topic shows you how to **capture the metadata in a JavaScript file and load
 <p></p>
 <p class="note">Pablo Romeo proposes an interesting approach to solving a related problem. He doesn't mind that the server provides the metadata and he doesn't want to serve a <em>metadata.js</em> file as described here. He does want the server-supplied metadata to be <b>versioned and cached on the server</b>. If that sounds more like your scenario, take a look at <a href="http://stackoverflow.com/questions/20574310/breeze-metadata-request-url-with-cache-bust/20576539 " title="Versioning and caching metadata on the server" target="_blank">his StackOverflow question and answer</a>.</p>
 
-#Why?#
+# Why? #
 
 We think a .NET web service *should* support Breeze clients by exposing a "metadata" endpoint. That's what a BreezeJS client application expects out-of-the-box.
 
@@ -32,7 +32,7 @@ But retrieving metadata from the web service can be less than ideal for some app
 
 We can ameliorate these problems if metadata are readily available on the client when the application begins.
 
-#Other Options#
+# Other Options #
 
 We could load "launch data" (which includes metadata and lookup data) from browser local storage. That's a fast operation and it is synchronous on most platforms. 
 
@@ -50,7 +50,7 @@ While we heartily endorse this approach, it can't stand on its own because
 
 But we'd rather use generated metadata when available. Coding metadata by hand - especially for a large model - is tedious, error prone, and requires on-going maintenance. Generated metadata is almost carefree and automatically in-sync with the evolving service model.
 
-#Embed metadata in a script#
+# Embed metadata in a script #
 
 We think the best approach is to capture and store the generated metadata in a variable in a JavaScript file. The client application loads this script file as it does all other scripts. On launch, it initializes a `MetadataStore` from the metadata variable and proceeds without delay.
 
@@ -58,7 +58,7 @@ The metadata script is always current because we regenerate it automatically whe
 
 Best of all, it's easy to set up. Let's see how.
 <a name="capture"></a>
-#Capture the metadata (quick and dirty)#
+# Capture the metadata (quick and dirty) #
 
 We want to see benefits right away so we'll quickly assemble a *metadata.js* file by grabbing the metadata off the wire.
 
@@ -131,7 +131,7 @@ Open the JavaScript application file that creates and initializes your `EntityMa
 Your new `EntityManager` is primed with metadata and no longer requests metadata from the server ... a fact you can confirm by running your application and checking the network traffic. You will not see a call to the "metadata" endpoint.
 
 <a name="writeMetadataJS"></a>
-#A sustainable *metadata.js*#
+# A sustainable *metadata.js* #
 We're a little uncomfortable with the way we created *metadata.js*.
 
 We took a snapshot of the metadata as it is today. As the application evolves, the service model will evolve and the metadata will change. The metadata in our script file will be incorrect triggering a cascade of errors that may be hard to diagnose.
@@ -186,7 +186,7 @@ Also remarkable is the voodoo that determines the file location on the server
 
     var fileName = HostingEnvironment.MapPath("~/app/metadata.js");
 
-###Hook into the server start-up pipeline###
+### Hook into the server start-up pipeline ###
 
 We want to write a new *metadata.js* file when the server launches, before it delivers *any* JavaScript files to clients.
 
@@ -201,7 +201,7 @@ We need to hook into the ASP.NET pipeline early. Almost any of the components in
         }
     }
 
-#Review#
+# Review #
 
 We can get metadata synchronously from a JavaScript file rather than  asynchronously through a service call. That makes the client-side developer's job a little easier and may help the application launch faster and run offline.
 

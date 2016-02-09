@@ -52,7 +52,7 @@ The 'layout' section should appear on every page and will reference one of the f
      
 There should be an 'index.html' file in each of the 'doc-' directories.  This file is the entry page for all of the pages in that directory.     
    
-#Layouts
+# Layouts
 
 There should be one html file in the **_layouts** directory with the same name as one of the 'doc-' directories.
 

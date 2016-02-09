@@ -2,7 +2,7 @@
 layout: doc-breeze-labs
 redirect_from: "/old/documentation/saveerrorextensionsjs.html"
 ---
-#saveErrorExtensions.js
+# saveErrorExtensions.js
 
 A Breeze Labs plugin that extends Breeze with a method that creates useful error messages from the error data passed to the failure callback when `EntityManager.saveChanges` fails.
 

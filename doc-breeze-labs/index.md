@@ -10,17 +10,17 @@ These projects leverage the in-depth knowledge of BreezeJS team members and cust
 
 Breeze Labs projects are all open-source. If a project doesn't yet fully meet your specific needs, you are invited to get involved, help out, fork and clone and submit pull requests. 
 
-##Getting Started
+## Getting Started
 
 Each Breeze Labs project is designed to provide drop-in capabilities for your apps, support for your development workflow or example implementations of common Breeze app patterns. Most projects reside on GitHub within the <a href="https://github.com/Breeze/breeze.js.labs" target="_blank">breeze.js.labs repository</a> although some may live in separate repositories. 
 
 Every project has its own guide, either within this documentation, in the project, or both.
 
-##License
+## License
 
 Breeze Labs projects are all released under the <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT license</a>. This license applies ONLY to the labs project-specific source and does not extend to Breeze itself, or any other 3rd party libraries used in a repository. For licensing information about BreezeJS, see the [License Agreement page](/doc-main/license).
 
-##Support
+## Support
 
 While the Breeze Labs projects are stewarded in part by members of the BreezeJS team, these projects are not covered under the support agreements afforded to Breeze commercial and trial license holders. Breeze Labs projects do not provide official Breeze features and are not to be considered part of any version of Breeze. As such, these projects are not officially supported by the BreezeJS team. Any and all support requests should be directed to <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" target="_blank">StackOverflow and tagged with "breeze"</a>.
 

@@ -2,7 +2,7 @@
 layout: doc-js
 redirect_from: "/old/documentation/exportimport.html"
 ---
-#Export and import entities
+# Export and import entities
 
 A mobile application may have to operate where connectivity is poor or non-existent. The user may push it into the background to make room for another application; the operating system could then evict the application from memory in a process called "tomb-stoning". A device could lose power, crash or reboot without warning.
 
@@ -12,7 +12,7 @@ In Breeze it's easy to export and re-import cached entities to any destination, 
 
 > Entity export/import examples on this page are in the **exportImportTests** module of <a href="/doc-samples/doccode" target="_blank">DocCode</a>. These tests are yours to explore and modify. Please send us your feedback and contributions.
 
-##Export cache as a string
+## Export cache as a string
 
 The Breeze `EntityManager` can export some or all of its cached contents as [a serialized string](/doc-js/entity-serialization "Entity Serialization"). Here's how to export its entire cache.
 

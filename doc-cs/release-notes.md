@@ -3,7 +3,7 @@ layout: doc-cs
 redirect_from: "/old/breeze-sharp-documentation/release-notes.html"
 ---
 
-#Release notes
+# Release notes
 These **Breeze Sharp Release Notes** summarize the key changes. Please read the documentation for more details.
 
 ##<a name="0603"></a>0.6.0.3 <span class="doc-date">September 22, 2014</span>##

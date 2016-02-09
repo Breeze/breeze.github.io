@@ -3,7 +3,7 @@ layout: doc-js
 redirect_from: "/old/documentation/change-tracking.html"
 ---
 
-#Change tracking
+# Change tracking
 
 Breeze entities are "self-tracking" which means that each entity instance keeps track of its own changed state ... and much more. At the heart of every Breeze entity is a nugget of "entity-ness", its `EntityAspect`. You access it by calling `theEntity.entityAspect.`
 
@@ -15,7 +15,7 @@ A full discussion of `EntityAspect` awaits you in a [later topic](/doc-js/inside
 
 > Many of the code snippets on this page are in the <a href="/doc-samples/about-todo">Breeze Todo Sample App</a>.
 
-##EntityState
+## EntityState
 
 A Breeze entity is "self-tracking".  Its `entityAspect.entityState` tells you if it is
 
@@ -39,7 +39,7 @@ As things happen to an entity, Breeze updates its `EntityState` automatically. F
 
 You can change any `EntityState` to another state with one of several methods. That's an advanced, potentially risky trick that you can learn about later ... except for one common case, deleting an entity.
 
-###Deleting an entity
+### Deleting an entity
 
 You delete an entity by changing its `EntityState` to "Deleted" like this:
 
@@ -47,7 +47,7 @@ You delete an entity by changing its `EntityState` to "Deleted" like this:
 
 `setDeleted` does not destroy the object locally nor does it remove the entity from the database. The entity simply remains in cache in its new "Deleted" state ... as changed and added entities do. A successful save does delete the entity from the database and remove it from cache.
 
-##PropertyChanged
+## PropertyChanged
 A Breeze entity property raises a `propertyChanged` event when it is changed to a different value. You attach an event handler to that event to listen for changes to *a* specific property of *one specific entity instance* as explained in the [API documentation for this event](/doc-js/api-docs/classes/EntityAspect.html#event_propertyChanged).
 
     // assume order is an order entity attached to an EntityManager.
@@ -59,13 +59,13 @@ A Breeze entity property raises a `propertyChanged` event when it is changed to 
         // ... do something ...
     });
 
-###Entity state change not a property change
+### Entity state change not a property change
 
 The properties of an `EntityAspect` do not raise the `propertyChanged` event. The `EntityAspect.entityState` is such a property. It follows that you cannot listen for a change to an entity's `EntityState` - say from "Unchanged" to "Modified" - by subscribing to `propertyChanged`.
 
 Fortunately, there is a different way to listen for an `EntityState` change: [**listen to the `EntityManager.entityChanged` event instead**](#emEntityChanged).
 
-###Memory leak risk 
+### Memory leak risk 
 
 Now that you've attached a handler, the entity will stay in memory for at least the lifetime of the handler. The handler in this example is an anonymous function that makes no reference to an external object (so far as we know). But if your handler belongs to another object, then the entity lifetime is linked to the lifetime of that object. If that object can't be garbage collected, neither can the entity.
 
@@ -75,14 +75,14 @@ For this reason, `subscribe` returns a token that you can use to `unsubscribe` l
     // ... later, when you know it is the right time to dispose of the listener ...
     order.entityAspect.propertyChanged.unsubcribe(handle);
 
-###Too many listeners?
+### Too many listeners?
 
 You just learned how to listen for a change to *a single property of a single entity instance* and unsubscribe to it. You'll face a major bookkeeping nightmare if you do a lot of this.
 
 Fortunately, there is a better way to listen for changes to many properties on many entities and there is no memory leak risk: [**listen to the `EntityManager.entityChanged` event instead**](#emEntityChanged).
 
 
-###PropertyChanged (Knockout)
+### PropertyChanged (Knockout)
 
 When Breeze detects the presence of the Knockout library, it configures itself to use Knockout observables for entity properties. You can <a href="http://knockoutjs.com/documentation/observables.html" target="_blank">subscribe</a> to changes in individual Knockout properties as shown here:
 
@@ -106,13 +106,13 @@ With the Breeze `EntityAspect.propertyChanged` event, you can listen for a chang
 		
 The `changeArgs` tell you what property changed, its previous value and its new value [<a href="#note 2">2</a>].
 
-###Too many listeners?
+### Too many listeners?
 
 You just learned how to listen for a change to *a single Knockout property of a single entity instance*. There is a better way when you need to listen for changes to many properties on many entities: [**listen to the `EntityManager.entityChanged` event instead**](#emEntityChanged).
 
 <a name="emEntityChanged"></a>
 
-##EntityManager.entityChanged Event
+## EntityManager.entityChanged Event
 
 The `EntityManager` is always watching for changes to entities in its cache and when it detects a change to an entity, it raises the [entityChanged event](/doc-js/api-docs/classes/EntityManager.html#event_entityChanged). 
 
@@ -150,7 +150,7 @@ A listener for `EntityState` changes could be similar:
         });
     }
 
-##Property validation
+## Property validation
 
 Breeze properties aren't just observable. They can [validate changes](/doc-js/validation) based on rules registered in [**metadata**](/doc-js/metadata). Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well.
 
@@ -171,7 +171,7 @@ By default, Breeze validates the entities before saving them to the server; it w
 
 > **Reminder:** Client-side validation improves the user experience. It is not a substitute for validation on the server.
 
-##Reverting a change
+## Reverting a change
 
 Once you've changed an entity, it's in a changed state ... even if you manually restore the original value:
 
@@ -186,11 +186,11 @@ You cancel and roll back changes to an entity by calling rejectChanges.
     todo.entityAspect.rejectChanges();       // entityState restored to "Unchanged"
                                              // todo.Description() === oldDescription
 
-##Saving Changes
+## Saving Changes
 
 Perhaps we have new, changed, and deleted entities in cache that we want to preserve in permanent storage. Learn about saving these changes in the **[next topic](/doc-js/lap-savechanges)**.
 
-##Notes
+## Notes
 
 <a name="note 1"></a>[1] Check out the "*KO property change notifications raised*" test in the ***basicTodoTests*** module of the <a href="/doc-samples/doccode">Teaching Tests</a> for a sense of what that might be like. Ponder the implications for a line-of-business application whose entities have twenty or more properties.
 

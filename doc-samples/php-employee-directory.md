@@ -2,7 +2,7 @@
 layout: doc-samples
 redirect_from: "/old/samples/php-employee-directory.html"
 ---
-#PHP Employee Directory
+# PHP Employee Directory
 
 Adrotec, the developers of [breeze.server.php](https://github.com/adrotec/breeze.server.php), created this [Employee Directory](http://emp-directory.herokuapp.com/) app to demonstrate the features of Breeze with a PHP backend.
 

@@ -3,10 +3,10 @@ layout: doc-cs
 redirect_from: "/old/breeze-sharp-documentation/metadata-hand.html"
 ---
 
-#Metadata by hand#
+# Metadata by hand #
 Sometimes you can't generate Breeze metadata or don't want to do so. This topic explains **how to extend the metadata yourself in .NET on the client**.
 
-#It's not hard
+# It's not hard
 
 We know it seems daunting at first, especially if you've seen the server response from a metadata request. Perhaps you've examined the output from `MetadataStore.ExportMetadata` or rooted around a `MetadataStore` in the debugger.
 

@@ -2,7 +2,7 @@
 layout: doc-js
 redirect_from: "/old/documentation/metadata-hand-depth.html"
 ---
-#Metadata by hand ... in depth#
+# Metadata by hand ... in depth #
 
 The related topic [**"Metadata by Hand"**](/doc-js/metadata-by-hand) is an introduction to writing your own metadata in JavaScript rather than depending on the server to generate it for you.  It tell you all you need to know about writing metadata for your model.
 
@@ -10,7 +10,7 @@ The related topic [**"Metadata by Hand"**](/doc-js/metadata-by-hand) is an intro
 
 > The code shown in this topic is adapted from <i><a href="https://github.com/IdeaBlade/Breeze/blob/master/Samples/DocCode/DocCode/tests/helpers/metadataOnClient.js" title="metadataOnClient.js source code" target="_blank">metadataOnClient.js</a></i>&nbsp;  in the <a href="/doc-samples/doccode" title="DocCode sample">Breeze "DocCode" sample</a>. Try that sample to explore Breeze in general and metadata in particular through the medium of QUnit tests.
 
-##Why "by hand?"##
+## Why "by hand?" ##
 The Breeze client needs metadata *to make entity data work for you*: to compose queries, identify objects by key, navigate to related entities, track changed state, raise property-changed events, validate data entry, and serialize entities to the server or local storage.
 
 Whenever you query the server, Breeze uses metadata to identify entity data in the response and merge those data safely into cache. Whenever you write `manager.createEntity('Foo')`, Breeze uses metadata to construct a new instance of the `Foo` entity type.
@@ -23,7 +23,7 @@ Sometimes you're not that fortunate. Perhaps you can't touch the server (as illu
 
 **You don't have to get the metadata from the server**.  Breeze metadata on the client is just JavaScript. You can write that JavaScript metadata yourself ... as we'll see here.
 
-#How?#
+# How? #
 We'll dedicate a JavaScript file to a module that creates a [MetadataStore](/doc-js/api-docs/classes/MetadataStore.html "MetadataStore API") populated with metadata describing the entity types returned by an HTTP service. 
 
 Then we'll create a new [EntityManager](/doc-js/api-docs/classes/EntityManager.html "EntityManager API") that uses this metadataStore and show that the manager can create and query entities just fine without requesting metadata from the server.
@@ -39,7 +39,7 @@ An [EntityType](/doc-js/api-docs/classes/EntityType.html "EntityType API") has s
 
 Breeze has API methods for defining each of these sub-parts separately. We could build up the metadata by calling each method separately. That works ... but is more verbose than the approach we'll demonstrate here.
 
-#Learn by example#
+# Learn by example #
 
 Let's create a `MetadataStore` for a three-entity model consisting of `Product`, `Category`, and `Supplier` types.  A `Product` belongs to a `Category` and has a single `Supplier`.
 
@@ -270,7 +270,7 @@ We've completed the configuration object for the `Category` type. We're ready to
 
 We'll delve into that function <a href= "#addTypeToStore">later in our story</a>. Let's skip ahead to the definition of the `Product` type where we'll learn about navigation properties.
 
-#Define the Product type#
+# Define the Product type#
 
 We follow the same course when defining the `Product` entity type. Here's a somewhat abbreviated version of the `addProductType` method.
 
@@ -375,7 +375,7 @@ Breeze knows that two navigation properties are related by association when they
 
 <a name="foreignKeyNames"></a>
 
-###foreignKeyNames
+### foreignKeyNames
 
 The `foreignKeyNames` is an array of property names that identify the foreign key properties in this entity that help Breeze implement the association. Usually there is only one foreign key property and thus only one name in the array. 
 

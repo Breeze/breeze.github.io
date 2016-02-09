@@ -2,7 +2,7 @@
 layout: doc-breeze-labs
 redirect_from: "/old/documentation/directivesvalidation.html"
 ---
-#Breeze Labs: AngularJS Validation and Required Indicator Directive
+# Breeze Labs: AngularJS Validation and Required Indicator Directive
 
 The **`zValidate`** Breeze/AngularJS validation directive displays and entity property's validation errors on screen. It can also visually identifies a required property with an asterisk.
 
@@ -21,7 +21,7 @@ And if there is an error, it displays like this:
 
 <img alt="zValidate error message" src="/images/samples/z-validate-firstNameRequiredError.png" style="width: 100%; max-width: 726px;" />
 
-##Breeze validation
+## Breeze validation
 
 Breeze entities have built-in model-level validation driven by metadata that describe client-side validation rules for properties and entities. Breeze invokes these rules automatically during four phases of the entity life-cycle (attached, queried, property changed, saved).  You also can invoke these rules programmatically at any time. 
 
@@ -33,7 +33,7 @@ Those sources describe how to define validation rules and how to invoke them. Th
 
 But we can show you *one way* to present errors that you may use for inspiration or "as is". That's the purpose of this Breeze Lab.
 
-##Display errors with the zValidate directive
+## Display errors with the zValidate directive
 
 The `zValidate` directive is a way to display property validation errors as error messages adjacent to the errant data value.
 
@@ -41,7 +41,7 @@ A <a href="http://docs.angularjs.org/guide/directive" target="_blank"><em>direct
 
 Angular ships with a core set of directives that cover many scenarios. But they can't cover everything and you are encouraged to extend the Angular binding system with your own directives as we are doing in this lab project.
 
-##Sample
+## Sample
 
 Perhaps the best way to understand this directive is to see it in a live example of a "Person Edit" screen.
 
@@ -63,7 +63,7 @@ While this sample demonstrates the `zValidate` directive, it coincidentally demo
 
 Let's tour the sample code.
 
-###Load the directive files
+### Load the directive files
 
 Pick "index.html" from the "Source Code" drop down (you can get back to the displayed result by clicking the "forward" triangle button in the upper right).  Scroll to the scripts near the bottom.
 
@@ -71,7 +71,7 @@ The `zValidate` directive is defined in <a href="https://github.com/Breeze/breez
 
 The directive paints error error messages and the required indicator with default templates that depend upon CSS classes defined in <a href="https://github.com/Breeze/breeze.js.labs/blob/master/breeze.directives.css" target="_blank">breeze.directives.css</a>. Scroll to the top where we loaded that CSS file among the other CSS files. Alternatively, we could have incorporated its contents within the application "style.css".
 
-###Apply the directive
+### Apply the directive
 The application is ready to display property validation errors. 
 
 You decide which data bound HTML controls should have this behavior by applying the `zValidate` directive as an attribute of that control. In this sample, we apply it to every textbox. Here is the markup for the "First Name" textbox:
@@ -99,7 +99,7 @@ Returning to the binding expression, we see that ViewModel (`vm`) exposes a `per
 
 The directive drew a red asterisk next to the textbox to indicate that the first name is required. We'll see how it knew to do that in a little bit.
 
-###Validators
+### Validators
 You can create and remove validation errors by playing with the textbox values. Breeze monitors your changes and updates the validation error(s) for each property accordingly. Angular updates the property with every keystroke so you get an immediate visual response.
 
 Where are the validators defined? Open the "model.js" via the "Source code" combobox. Look at the `configureMetadataStore` method.
@@ -115,11 +115,11 @@ The `configureMetadataStore` method has three steps.
 2. Add the `Person` entity type to the metadata
 3. Discover and register all properties with a "required" validation.
 
-###Create a custom validator
+### Create a custom validator
 
 Most of the Person properties are validated with stock validators, shipped with Breeze. A "twitter" validator is not one of them so we had to write one. Check it out; notice that it's built with the Breeze RegularExpression validator factory method.
 
-###Client-side metadata
+### Client-side metadata
 This sample doesn't get data from a server. We're either editing a faked `Person` or a newly created `Person` entity that we won't save. There is no server. There is no server-supplied metadata.
 
 A Breeze client needs metadata. Fortunately, we can define that metadata in JavaScript on the client ... which we do in the `addPersonType` method.
@@ -135,7 +135,7 @@ firstName:  { dataType: DT.String,
 
 The `firstName` definition includes two stock validators: `required` and `maxLength`. The stock validators are produced by generator functions that are static members of the Breeze `Validator` class. We trust you can follow the pattern for the remaining properties.
 
-###Required property indicator
+### Required property indicator
 
 The directive can paint a ***required property indicator*** next to the input control or combobox bound to a required property.
 
@@ -156,7 +156,7 @@ If you add custom validators that should be treated as required, add `.isRequire
             }
         }
 
-###Reconfiguring the error and required templates
+### Reconfiguring the error and required templates
 
 The `zValidate` directive has a default template for displaying errors and another template for displaying the required indicator. 
 
@@ -173,7 +173,7 @@ The app is resetting the templates (see the`configDirective` method)  during the
 
 >See the Angular <a href="http://docs.angularjs.org/guide/module" target="_blank">documentation for modules</a> to learn about the life-cycle of an Angular module and "configuration blocks" in particular.
 
-##zValidate in a repeater 
+## zValidate in a repeater 
 This sample shows how you can display validation messages while editing a single `Person` entity. What if the screen presented many `Person` entities and you wanted to see all of their property validation error messages?
 
 You can do that in the manner you'd expect.
@@ -185,7 +185,7 @@ You can do that in the manner you'd expect.
 &lt;/li>
 </pre> 
 
-##Why not use HTML5 or Angular validation
+## Why not use HTML5 or Angular validation
 
 HTML 5 defines a collection of <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation" target="_blank">form validation attributes</a>. Angular forms and controls have <a href="http://docs.angularjs.org/guide/forms" target="_blank">built-in validation services</a>. Why not use either of these facilities instead of Breeze validation?
 
@@ -209,23 +209,23 @@ Fortunately, there is a practical argument to bolster the philosophical: **the `
 
 Markup validation makes sense when you are binding to a simple object that doesn't have its own business rules. It is a convenient declarative alternative to writing a lot of validation JavaScript in the ViewModel. But Breeze entities come equipped, out-of-the-box with a metadata-driven, extensible, model validation mechanism which is both more powerful and easier to use. Skip the markup validation and go straight to the source ... with `zValidate`.
 
-##Limitations
+## Limitations
 The approach described and implemented in this directive doesn't cover every scenario.
 
-###Property errors only
+### Property errors only
 
 This directive displays property validation errors only. The entity may have errors that are not specific to a particular entity. You'll need to find another way to display them.
 
-###Message location and format
+### Message location and format
 You can configure the "required" and "error" templates but the directive is written to display those templates in a particular location relative to the data bound HTML control. You'll have to revise the directive if that doesn't suit your needs.
 
-###Only input controls
+### Only input controls
 The directive only works for HTML controls with the `ngModel` directive which is to say, with controls that accept user input. If you wanted to display error messages next to a read-only display of person properties, you would probably revise the directive to get the property info from `ngBind` and devise another way to present the error message. 
 
-###Multiple errors
+### Multiple errors
 A property can have multiple validation errors. This directive concatenates their error messages, separated by semi-colons (;). You'll have to revise the directive if you want different behavior.
 
-##What about Knockout?
+## What about Knockout?
 This directive is an Angular solution.
 
 We love Knockout too. We expect to write a <a href="http://knockoutjs.com/documentation/custom-bindings.html" target="_blank">Knockout Custom Binding</a> that implements the same behavior with the same simplicity of application.

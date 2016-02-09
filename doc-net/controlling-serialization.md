@@ -2,7 +2,7 @@
 layout: doc-net
 redirect_from: "/old/documentation/controlling-serialization.html"
 ---
-#Controlling Serialization
+# Controlling Serialization
 
 If you're serving data with Breeze-flavored ASP.NET Web API controllers, you're using the Newtonsoft.Json .NET library to serialize and de-serialize data. 
 
@@ -10,7 +10,7 @@ All Web API controllers use this library. The native Web API configures it one w
 
 It's important that you stick with the Breeze settings rather than the native ones. For example **do not use Json.Net's camel casing**! Breeze needs to handle casing on the client-side with its own [`NamingConvention.camelCase`](/doc-js/server-namingconvention). You'll mess things up badly if you set Json.Net's camel casing too.
 
-##Custom serialization
+## Custom serialization
 
 You do have some latitude to change some of the Json.Net settings. Be careful and test the results before deploying.
 
@@ -18,7 +18,7 @@ You can probably change *any* of the settings if you know what you're doing and 
 
 Just because you *can* doesn't mean you *should*. Only a few developers have ever needed to change these settings.
 
-##Creating a custom configuration
+## Creating a custom configuration
 
 If you must change a serialization setting, here's how to do it automatically.
 
@@ -47,7 +47,7 @@ You could put this *CustomBreezeConfig.cs* file in the *Controllers* folder of y
 
 >Although `JsonSerializerSettings ` is the only virtual method you can override at this time, `BreezeConfig` is intended to be the locus of future extension points of this kind.
 
-##Use Case: replace the nasty serialized dynamic type names
+## Use Case: replace the nasty serialized dynamic type names
 
 You may have seen the awful type names that Json.Net emits when it serializes the query results of a projection query (a query with a "select" clause). 
 
@@ -68,7 +68,7 @@ In our opinion, you shouldn't care about this ugly name. It's perfectly harmless
 
 As a Breeze developer you'll never see it. You won't find a `$type` property on any entity or JavaScript object returned by a Breeze query. You don't have to worry about payload size either. It looks gigantic when displayed - and you'll see this  monstrosity repeated over and over. But your server and browser should be gzipping the payload;  this bad boy will zip down to irrelevance.
 
-###"Dynamic Type Renaming" to the rescue
+### "Dynamic Type Renaming" to the rescue
 
 Nonetheless, many developers have complained about it. They're worried that external customers of the API will fear it ... and perhaps hate the entire API for no better reason than the evidence of its .NET pedigree in the inner type names (e.g., "System.String, mscorlib").
 

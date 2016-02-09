@@ -2,13 +2,13 @@
 layout: doc-js
 redirect_from: "/old/documentation/extending-entities.html"
 ---
-#Extending Entities
+# Extending Entities
 
 While Breeze can create an entity based exclusively on its metadata description, you can add additional properties and behaviors as needed to support client-side requirements. For example, you may want to add a method that is useful when presenting data to the user. This topic explains how to extend the entity definition with members that are not defined in metadata.
 
 Most of the topic examples are based on tests in the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/entityExtensionTests.js" target="_blank">**entityExtensionTests**</a> module of <a href="/doc-samples/doccode" target="_blank">DocCode</a>.
 
-#Brute force extension
+# Brute force extension
 
 Breeze entities are created by calling the `EntityManager.createEntity` method or they are materialized as a result of an `EntityQuery` or `EntityManager.importEntities`. Let's stick with `createEntity` for the moment.
 
@@ -62,7 +62,7 @@ All of this entity patching is turning into a mess. Imagine trying to patch ever
 
 It isn't *just* a mess. It feels wrong. The `isBeingEdited` property should be part of the `Customer` definition, not something we tack on as an afterthought. We should be able to make it part of the `Customer` definition ... and we can.
 
-#Extend the Type
+# Extend the Type
 
 We'll extend the `Customer` definition by adding information to the `Customer`'s <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank">*EntityType*</a> in the client-side `MetadataStore`.  We'll do this early in the application, before it makes a single call to the backend service.
 
@@ -74,7 +74,7 @@ We can get a `MetadataStore` from an `EntityManager` instance [<a href="#Note02"
 
 Now we have a *store* variable that holds the canonical `MetadataStore` for our application. It's empty at the moment. We'll fill it in as we go.
 
-#Custom constructors
+# Custom constructors
 
 A natural place to extend an entity definition is in its constructor. We generally don't need a constructor; Breeze can use its own default constructor to make instances of any entity type. But we can define our own custom constructor if we wish and it's probably a good idea to do so for our `isBeingEdited` property example. Let's write that constructor.
 
@@ -118,7 +118,7 @@ Now that the manager's `MetadataStore` is fully populated, we are ready to creat
     var isEditing = cust.isBeingEdited();
     var name = cust.CompanyName(); // Also fine.
 
-##*Don't "new" a custom constructor*
+## *Don't "new" a custom constructor*
 
 > We strongly recommend that you do not call an entity constructor function directly. This section explains why. Use one of the two Breeze factory functions instead, either `EntityManager.CreateEntity()` or `EntityType.CreateEntity()`.
 
@@ -152,7 +152,7 @@ The `EntityType.CreateEntity()` factory function does all of all of this for you
 
 We think the `new Customer()` syntax leads to confusion. Avoid it.
 
-##*Whither the unmapped property value?*
+## *Whither the unmapped property value?*
 
 The `isBeingEdited` property is only a property on the client-side `Customer` entity. The "Customer" class on the server does not have an `isBeingEdited` property and the backing database does not have an *isBeingEdited* column in the "Customer" table either.
 
@@ -170,7 +170,7 @@ If it does, you probably want the serialized `Customer` to retain the state of u
 
 >If you ***do not*** want Breeze to remember the state of this property, you should ***not*** define it in the constructor. You may prefer to define it in a post-construction initializer, a feature described later in this topic.
 
-##*Add methods to the constructor*
+## *Add methods to the constructor*
 
 You can extend an entity with methods as well as properties. The methods could be instance methods or methods defined on the prototype. Here's a frivolous example of the more typical prototype method:
 
@@ -187,7 +187,7 @@ You can extend an entity with methods as well as properties. The methods could b
     var hi = cust.sayHi() // 'Hi, my name is Acme'
 
 
-#The post-construction initializer
+# The post-construction initializer
 
 If you need to perform some action after an entity has been created or materialized, you can register that action as **post-construction initializer**.
 
@@ -227,7 +227,7 @@ The post-construction initializer is particularly useful when you must respond t
         };
     }
 
-##*Register both constructor and initializer*
+## *Register both constructor and initializer*
 
 You can register both a custom constructor and an initializer at the same time:
 
@@ -236,7 +236,7 @@ You can register both a custom constructor and an initializer at the same time:
 
     store.registerEntityTypeCtor('Customer', Customer, customerInitializer);
 
-#Entity creation sequence
+# Entity creation sequence
 
 Suppose you've got a custom constructor and a custom initializer function and you create a new entity with an initial values hash object like so:
 
@@ -255,7 +255,7 @@ When Breeze materialize an object through query or entity import, the sequence i
 1. initializer function
 1. merge into cache
 
-#Camel Case properties
+# Camel Case properties
 
 The entity property names on the client exactly match the spelling of the corresponding property names on the server. That's the default Breeze behavior.
 
@@ -265,7 +265,7 @@ You can change it. For example, you can switch to camel casing ("FirstName" on t
 
 You can create your own conventions as well. Learn more in the [NamingConvention](/doc-js/server-namingconvention) topic.
 
-#Temporary key generation
+# Temporary key generation
 
 When the entity key (typically an ID) is determined on the server we say that it is "store generated." We won't know the permanent key value of a new entity until it is saved successfully. Until then, new entity keys must have temporary values.
 
@@ -286,7 +286,7 @@ Fortunately, you can create a custom key generator and register it with an `Enti
 The **entityExtensionTests** module in the DocCode <a href="/doc-samples/doccode">Teaching Tests</a> has a simple example. The Breeze `breeze.KeyGenerator` is the best source of inspiration.
 
 <a name="es5-property"></a>
-#ECMAScript 5 Defined Properties
+# ECMAScript 5 Defined Properties
 
 Modern browsers - those whose JavaScript engines support ECMAScript 5 (ES5) or later -
 can define Object properties with getters and setters. These properties look like the "properties" of earlier JavaScript versions.
@@ -348,25 +348,25 @@ They are also good for calculated properties in Angular apps. Here's a `fullName
     sally.fullName; // Betsy Jones
 
 
-##*"enumerable" and "configurable"*
+## *"enumerable" and "configurable"*
 
 If you're writing an Angular application and you are extending a Breeze entity constructor with an unmapped ES5 defined property **you must set `enumerable: true` and `configurable: true`**.
 
 You want Breeze to watch these properties. You want Breeze to validate and serialize these properties. To do that, Breeze must *discover and wrap* them with behavior to perform these tasks. It can't find them without `enumerable: true`. It can't wrap them without `configurable: true`.
 
-##*More about defined properties*
+## *More about defined properties*
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" title="Defined properties">Learn more about ES5 properties</a> on the web. 
 
 > These techniques only work in ES5+ browsers. The <code>Object.DefineProperty</code> feature cannot be shimmed (aka, "polyfilled") into older browsers. Some browsers, such as IE8, appear to support ES5 defined properties but actually don't.
 
 <a name="ko-computeds"></a>
-#Knockout computed properties
+# Knockout computed properties
 
 <a href="http://knockoutjs.com/documentation/computedObservables.html" target="_blank">Knockout computeds</a> are observable functions that return new values when one (or more) of their dependent observable properties change.
 
 <a name="add-computed-to-initializer"></a>
-##*Add Knockout computeds to the initializer*
+## *Add Knockout computeds to the initializer*
 
 The initializer is an ideal place to define them. 
 
@@ -382,7 +382,7 @@ Here is a computed `fullName` property in an initializer:
 
     store.registerEntityTypeCtor('Employee', null, employeeInitializer);
 
-##*Adding Knockout computeds to the constructor*
+## *Adding Knockout computeds to the constructor*
 
 You might have thought to define the `fullName` in the custom constructor.
 
@@ -431,7 +431,7 @@ There is an alternative syntax for defining a computed property that delays Knoc
 
 The `deferEvaluation: true` tells Knockout to wait.
 
-##*Defining Knockout mapped properties in the constructor*
+## *Defining Knockout mapped properties in the constructor*
 
 In our constructor examples we have only defined extended properties and methods. There is rarely reason to define properties that are already described in metadata. 
 
@@ -454,7 +454,7 @@ Now Knockout can execute the `fullName` computed property immediately upon const
 
 By the way, There is no harm in defining the `FirstName` and the `LastName` properties within the constructor. Breeze recognizes that they are actually mapped to data properties on the server. Their values will be sent with service data during materialization and changed values will be sent to the server during a save. 
 
-#Notes:
+# Notes:
 
 <a name="Note01"></a>[1] In this topic we assume that we're getting most of our metadata from the server via a Breeze Web API controller and that the application should create entities suitable for data binding with <a href="http://knockoutjs.com/documentation/observables.html" target="_blank">**Knockout**</a> (KO). These are the Breeze *dataService* and *modelLibrary* configuration defaults. Learn about alternative Breeze configuration elsewhere in this documentation.
 

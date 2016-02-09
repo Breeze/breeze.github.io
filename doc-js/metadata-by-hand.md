@@ -2,11 +2,11 @@
 layout: doc-js
 redirect_from: "/old/documentation/metadata-by-hand.html"
 ---
-#Metadata by hand#
+# Metadata by hand #
 
 Sometimes you can't generate Breeze metadata on the server or don't want to do so. This topic explains **how to write the metadata yourself on the client in JavaScript**.
 
-#It's not hard
+# It's not hard
 
 We know it seems daunting at first, especially if you've seen the server response from a metadata request. Perhaps you've examined the output from `entityManager.metadataStore.exportMetadata` or rooted around a `MetadataStore` in the debugger.
 
@@ -16,7 +16,7 @@ We'll show you how authoring metadata with the Breeze Labs *Metadata-Helper* can
 
 <a name="metadataHelper"></a>
 
-##Why use *Metadata-Helper*?
+## Why use *Metadata-Helper*?
 
 Breeze has [a native API for defining an `EntityType`](/doc-js/api-docs/classes/EntityType.html) and [adding it to a `MetadataStore`](/doc-js/api-docs/classes/MetadataStore.html#method_addEntityType). This API affords great control over every detail of metadata definition. You should learn it.
 
@@ -32,7 +32,7 @@ The Metadata-Helper is a domain-specific language (DSL) that strives to minimize
 
 The related topic, [**"Metadata by hand (in depth)"**](/doc-js/metadata-by-hand-details) delves into the details of how the helper works, how you can intervene, and how it all relates to the underlying metadata schema that Breeze uses at runtime. Visit that page when you're ready ... if you have to.
 
-#Show me
+# Show me
 
 The following simple example queries the github API for the members of the AngularJS team. The API developers didn't know about breeze and the API doesn't conform to OData. The response from a request for [github Members](https://developer.github.com/v3/orgs/members/) is an array of simple JSON objects with no type information. 
 
@@ -42,7 +42,7 @@ We can't change the github server to suit Breeze. If we want Breeze to treat the
 
 >This sample only works with modern browsers (IE10+, FF, Chrome).
 
-#Go deeper
+# Go deeper
 
 Let's look at the JavaScript metadata for the "Code Camper" model from John Papa's Plural Sight course, "[**Building Data-Centric Single Page Applications with Breeze**](http://www.pluralsight.com/courses/table-of-contents/building-single-page-applications-breeze)".
 

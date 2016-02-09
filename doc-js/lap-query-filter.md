@@ -2,7 +2,7 @@
 layout: doc-js
 redirect_from: "/old/documentation/query-filter.html"
 ---
-#Query with a filter
+# Query with a filter
 
 > Most of the code snippets on this page are in the <a href="/doc-samples/about-todo">Breeze Todo App</a>; a few are in the **basicTodoTests** module of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 

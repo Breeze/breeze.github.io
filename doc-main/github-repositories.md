@@ -13,9 +13,9 @@ An individual repository falls into one of three categories:
 
 Within a category the repositories are specific to a technology such as *JavaScript* or *.NET*.
 
-#CLIENT
+# CLIENT
 
-#[breeze.js](https://github.com/Breeze/breeze.js "BreezeJS client")
+# [breeze.js](https://github.com/Breeze/breeze.js "BreezeJS client")
 
 The Breeze **JavaScript** client source code and libraries are in the [**breeze.js repository**](https://github.com/Breeze/breeze.js "BreezeJS client"). The "compiled" JavaScript libraries are in the */build* directory.
 
@@ -29,15 +29,15 @@ The Breeze **JavaScript** client source code and libraries are in the [**breeze.
 >
 >**breeze.base.min.js** - the minified *breeze.base.debug.js*.
 
-#[breeze.js.labs](https://github.com/Breeze/breeze.js.labs "Breeze JavaScript Labs")
+# [breeze.js.labs](https://github.com/Breeze/breeze.js.labs "Breeze JavaScript Labs")
 
 A collection of small [helper libraries for developing client apps](/doc-breeze-labs/ "Breeze JS Labs documentation"). These libraries are not part of "Breeze core".
 
-#[breeze.sharp](https://github.com/Breeze/breeze.sharp "Breeze Sharp client") 
+# [breeze.sharp](https://github.com/Breeze/breeze.sharp "Breeze Sharp client") 
 
 "Breeze Sharp" is for C#, F#, and VB.NET developers of **.NET** clients. [**Most developers acquire the assemblies via nuget**](https://www.nuget.org/packages/Breeze.Sharp/ "Breeze Sharp on nuget"). You can build it yourself quite easily (there are few dependencies) if you need the latest committed bits.
 
-#SERVER
+# SERVER
 
 The Breeze server repositories hold code that eases the development and maintenance of Breeze application clients.
 
@@ -45,22 +45,22 @@ Breeze clients ***do not require Breeze-aware servers***.  A Breeze client can t
 
 However, if you are writing an application end-to-end, you may be more productive if you build your server with Breeze server-side components housed in one of the following repositories.
 
-#[**breeze.server.net**](https://github.com/Breeze/breeze.server.net "Breeze .NET Server components on github")
+# [**breeze.server.net**](https://github.com/Breeze/breeze.server.net "Breeze .NET Server components on github")
 
 Components for servers built with such .NET technologies as Web API, Entity Framework, and NHibernate.
 
 
-#[**breeze.server.node**](https://github.com/Breeze/breeze.server.node "Breeze Node Server components on github")
+# [**breeze.server.node**](https://github.com/Breeze/breeze.server.node "Breeze Node Server components on github")
 
 Components for node.js developers of who want server-side support for the Breeze client query URLs (OData query syntax) and batched change-set saves. Note especially the *breeze-mongodb/breeze-mongodb.js* library.
 
-#[**breeze.server.java**](https://github.com/Breeze/breeze.server.java "Breeze Java Server components on github")
+# [**breeze.server.java**](https://github.com/Breeze/breeze.server.java "Breeze Java Server components on github")
 
 Components for Java developers of who want server-side support for the Breeze client query URLs (OData query syntax) and  batched change-set saves.
 
-#SAMPLES
+# SAMPLES
 
-#[breeze.js.samples](https://github.com/Breeze/breeze.js.samples "Breeze JavaScript Samples")
+# [breeze.js.samples](https://github.com/Breeze/breeze.js.samples "Breeze JavaScript Samples")
 
 The repository of **Breeze JavaScript Samples** that illustrate JavaScript client application development with Breeze. 
 
@@ -76,7 +76,7 @@ A Breeze client application can work with a wide variety of server technologies,
 >
 >**ruby** - Ruby on Rails. 
 
-#[breeze.sharp.samples](https://github.com/Breeze/breeze.sharp.samples "Breeze Sharp Samples")
+# [breeze.sharp.samples](https://github.com/Breeze/breeze.sharp.samples "Breeze Sharp Samples")
 
 The repository of **Breeze Sharp Samples** that illustrate Breeze client applications written in C#, F# or VB.NET.
 

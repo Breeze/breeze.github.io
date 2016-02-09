@@ -2,7 +2,7 @@
 layout: doc-samples
 redirect_from: "/old/samples/about-samples.html"
 ---
-#About the Breeze JS Samples
+# About the Breeze JS Samples
 
 The *Breeze JavaScript client samples* demonstrate BreezeJS in action in different technology environments. They are maintained (except as noted) by the Breeze core team.
 

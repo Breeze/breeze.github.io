@@ -2,13 +2,13 @@
 layout: doc-net
 redirect_from: "/old/documentation/odata-vs-webapi.html"
 ---
-#OData vs Web Api support in Breeze
+# OData vs Web Api support in Breeze
 
 There are several differences between the capabilities of an OData service and a Web Api service when exposed to Breeze. Most of these differences are simply the result of either the OData specification or the Microsoft 'datajs' JavaScript library for OData (which Breeze uses to provide OData support) not supporting certain capabilities.
 
 These are **NOT** Breeze specific issues.
 
-###Queries
+### Queries
 
 1. OData "selects" involving navigation properties must also include a corresponding "expand". For example:
 
@@ -27,7 +27,7 @@ var query = EntityQuery.from("Customers")
 .expand("orders");
 ```
 
-###Saves
+### Saves
 
 1. OData's HTTP PUT/MERGE semantics **does not** return the entity after an update operation. Breeze Web Api updates **do** return the "updated" entity. This means that Breeze cannot see any server side changes that occur as a result of an update when using OData. As a result:
 

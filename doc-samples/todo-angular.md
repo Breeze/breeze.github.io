@@ -2,7 +2,7 @@
 layout: doc-samples
 redirect_from: "/old/samples/todo-angular.html"
 ---
-#Todo-Angular Sample
+# Todo-Angular Sample
 
 The Todo-Angular sample demonstrates Breeze and <a href="http://angularjs.org/" target="_blank">AngularJS</a> working together in a single page CRUD (Create/Read/Update/Delete) application.
 
@@ -10,17 +10,17 @@ The Todo-Angular sample demonstrates Breeze and <a href="http://angularjs.org/" 
 
 The <a href="/doc-samples/about-todo#TodoUx" target="_blank">user experience</a> is the same for this and <a href="/doc-samples/about-todo">all Todo Sample</a> variations. The source lies within the &quot;Samples&quot; package which you can <a href="/doc-js/download" target="_blank">download here</a>.
 
-##<img alt="" src="/images/samples/Todo-AngularRunning.png" style="max-width: 568px; width: 100%;" />
+## <img alt="" src="/images/samples/Todo-AngularRunning.png" style="max-width: 568px; width: 100%;" />
 
 <p class="note">Todo-Angular runs in modern browsers such as IE9, IE10, and recent Chrome, Safari, Firefox, and WebKit browsers. Breeze does not support AngularJS apps running in older browsers that lack ECMAScript 5 property getters and setters.</p>
 
-##App Architecture
+## App Architecture
 
 Todo is the simplest full-CRUD app we could think of. The architecture is deliberately primitive and simplistic. There&#39;s only one model type (*TodoItem*) and only one screen. It's all about the mechanics of manipulating data and presenting them for user review and edit.
 
 The entire app is organized in a single .NET web application project that hosts both server-side and client-side components. 
 
-##Server
+## Server
 <p><img alt="" src="/images/samples/Todo-AngularServerStack.png" style="width: 150px; float:left; margin-right: 10px;" /></p>
 
 The server is a simple ASP.NET Web Application that acts both as a provider of client-side assets (HTML, CSS, and JavaScript) and as an ASP.NET Web API data service.
@@ -32,7 +32,7 @@ The *Controllers* folder holds a single Breeze-styled Web API controller that si
 The server is identical across all Todo sample variations.
 <div style="clear:both; margin-bottom: 20px;"></div>
 
-##Client
+## Client
 
 <p><img alt="" src="/images/samples/Todo-AngularClientStack.png" style="width: 150px; float:left; margin-right: 10px;" /></p>
 
@@ -82,11 +82,11 @@ We divide the client app into four functional areas:
 	</tbody>
 </table>
 
-##Angular highlights
+## Angular highlights
 
 We assume you&#39;re acquainted with <a href="http://angularjs.org/" target="_blank">AngularJS</a> and that the markup in *index.html* and the JavaScript programming model are familiar to you.
 
-##View
+## View
 
 The Todo app&#39;s&nbsp; &quot;View&quot; is embedded in <em>index.html</em>. You&#39;ll recognize the way Angular markup binds buttons to actions, value attributes to data properties, CSS classes to controller properties, and repeats Todo items within a list using an &lt;li&gt; tag template.
 
@@ -122,7 +122,7 @@ Here's an excerpt from the view showing the repeated TodoItem template within th
 
 We&#39;re using the HTML "data-" prefix for attributes that Angular recognizes as its *directives*.</p>
 
-##Main *app* Module
+## Main *app* Module
 
 Every Angular app needs a main module. *Scripts/app/main.js* defines that module, "**app**".
 
@@ -140,7 +140,7 @@ All application JavaScript files follow the [Immediately Invoked Function Execut
 
     })();
 
-##Controller
+## Controller
 
 The *Scripts/app/controller.js* file defines the Angular controller that is responsible for the presentation of `Todo` items to the user in the "Todo" view.
 
@@ -179,7 +179,7 @@ A controller written in this "MVVM" style makes no references to view elements a
 
 >Angular binding declarations are written in a kind of JavaScript syntax. But, as a matter of principle, we keep those JavaScript expressions clean and free of all decision logic. Logical expressions belong in the controller, not in the HTML.
 
-##Dataservice
+## Dataservice
 
 The *dataservice.js* file handles the creation of new Todo objects and all interactions with the server. It&#39;s written in Breeze and almost all Breeze-related code is in this <em>dataservice</em>. See the &quot;<a href="/doc-samples/about-todo-dataservice">Todo Sample Dataservice</a>&quot; page for details.</p>
 
@@ -236,13 +236,13 @@ We guard against duplicate save by putting save requests on a queue. If there is
 
     manager.enableSaveQueuing(true);
 
-##Logger
+## Logger
 
 The *logger.js* file is an abstraction for logging messages and displaying them to the user. Internally it uses John Papa's open source <a href="https://github.com/CodeSeven/toastr" target="_blank">toastr</a> library to display messages as &quot;toasts&quot; that float up from the bottom right of the screen.
 
 It also relies on Angular's `$log` service to write a second copy of the messages to the browser console window.
 
-##Bonus: live code
+## Bonus: live code
 
 You can explore Breeze + Angular binding with this Todos Plunker.
 

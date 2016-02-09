@@ -2,7 +2,7 @@
 layout: doc-net
 redirect_from: "/old/documentation/server-side-validation.html"
 ---
-#Server-side validation
+# Server-side validation
 
 ## Save validation <a name="Savevalidation"></a>
 
@@ -32,7 +32,7 @@ Server errors are automatically cleared before a save so that they don’t inter
 
 Server side validation errors can be returned in using .Net Validation Attributes or by throwing an *EntityErrorsException* within the server side *BeforeSaveEntities* delegate or virtual method.
 
-###.Net Validation Attributes
+### .Net Validation Attributes
 These validations are automatically executed once declared. (Note this only works for EF DbContext’s (Database First or Code First); old ObjectContext code does not execute .NET validations). 
 	
 	            // Example class and property level custom validators

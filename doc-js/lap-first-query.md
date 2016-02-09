@@ -3,19 +3,19 @@ layout: doc-js
 redirect_from: "/old/documentation/first-query.html"
 ---
 
-#First query
+# First query
 
 Many applications begin with a query for some existing data and that's how we'll begin. We're using the <a href="/doc-samples/about-todo">Breeze Todo Sample App</a> to guide our lap around Breeze. We'll find the **first query** (and all other data service operations) in the *Scripts/services/**dataservice.js*** folder.
 
 The code snippets on this page are in the <a href="/doc-samples/about-todo">Breeze Todo App</a>.
 
-##Setup
+## Setup
 
 **Open** *Scripts/services/**dataservice.js***.
 
 This Todo app works with the <a href="http://knockoutjs.com/" target="_blank">Knockout </a>model library and a <a href="http://www.asp.net/web-api" target="_blank">Web API</a> back-end service. You might prefer a different model library (e.g., "backbone") or a different data service (e.g., "OData") in which case you'd make those preferences known first, at the top of this file (see the <a href="/doc-samples/todo-angular" target="_top">Todo-Angular</a> version for an example). In Basic Breeze we're building with Knockout and the Web API; these are the Breeze defaults so we can proceed without further ado.
 
-##Create an EntityManager
+## Create an EntityManager
 
 A query can't execute itself. We'll need a Breeze ***EntityManager***. The *EntityManager* is a gateway to the persistence service which will execute the query on the backend and return query results in its response. The next few lines give us an *EntityManager*:
 
@@ -26,7 +26,7 @@ A query can't execute itself. We'll need a Breeze ***EntityManager***. The *Enti
 
 The *serviceName* identifies the service end-point, the route to the Web API controller ("breeze/todos") [<a href="#note 1">1</a>]; all *manager* operations will address that controller.
 
-##Todos query
+## Todos query
 
 We're ready to write the first query. The Todo app query method is called *getAllTodos* and it looks like this:
 
@@ -49,7 +49,7 @@ We're ready to write the first query. The Todo app query method is called *getAl
 The string, "Todos", is case sensitive and must match the controller method name *exactly*.
 
 
-##The manager makes a promise
+## The manager makes a promise
 
 We execute the query with the EntityManager
 
@@ -59,7 +59,7 @@ The *executeQuery* method **does not return Todos**. It can't return Todos. A Ja
 
 It must return something and it must do so immediately. The thing it returns is a **promise** [<a href="#note 2">2</a>], a promise to report back when the service response arrives.
 
-##Accepting a promise
+## Accepting a promise
 
 A caller of the `dataservice.getAllTodos` method typically attaches both a success and failure callback to the returned promise. Here's how the Todo app's ***ViewModel*** calls `getAllTodos`:
 
@@ -81,7 +81,7 @@ Notice the use of method chaining:
 
 Both the `then()` and the *fail()* return a promise which means we can chain a sequence of asynchronous steps. Such syntax makes it easy to flatten what might otherwise be a nasty nest of dependent async calls. We don't have dependent async calls in this application... but a real application might... and you'll see plenty of examples among the <a href="/doc-samples/doccode" target="_blank">teaching tests</a> [<a href="#note 3">3</a>].
 
-##Process the query results
+## Process the query results
 
 If the query returns from the server without error, the promise calls the *ViewModel*'s *querySucceeded* method, passing in a data packet from the *EntityManager*. What's in that packet?
 
@@ -100,7 +100,7 @@ The query results of course! Get them from the ***data.results*** property as th
 
 And just like that, the screen fills with *Todos*.  We'll discuss how *that* happens when we peek inside the entity <a href="/doc-js/lap-knockout">later in this tour</a>. Before we do, let's **<a href="/doc-js/lap-query-filter">try another query</a>**.
 
-##Notes
+## Notes
 
 <a name="note 1"></a>[1] Breeze appends the "breeze/todos" service name string to the "site of origin", probably "http://localhost:26843/" if you're playing along at home. The *EntityManager* will send requests to "http://localhost:26843/breeze/todos"; the receiving Web API service routes the request to the TodosController on the server and then the server-side magic happens. You can <a href="/doc-net/webapi-controller">read about this controller</a> later.
 

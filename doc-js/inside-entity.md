@@ -105,7 +105,7 @@ Entities can become detached deliberately or as a side-effect of another action.
 
 Note that removing an entity from cache (detaching it) does not delete it. The data of a pre-existing detached entity remain in remote storage.
 
-###Force an entityState change
+### Force an entityState change
 
 You can change the `entityState` programmatically through one of the `EntityAspect`   methods dedicated to that purpose.
 
@@ -123,7 +123,7 @@ You rarely see `setModified`, `setUnchanged`, or `acceptChanges` in production c
 
 You are most likely to call these methods while setting up ***fake entities*** for automated tests because you want to force these fakes into a particular test state. The `setUnchanged` and `acceptChanges` methods also clear the `originalValues` hash map, erasing memory of prior values; you won't be able to revert these entities to their original values.
 
-###<a name="DeleteEntity"></a> Deleting entities
+### <a name="DeleteEntity"></a> Deleting entities
 
 Deleting an entity begins with an `EntityState` change. Call `setDeleted()` to mark an entity for deletion:
 
@@ -132,7 +132,7 @@ Deleting an entity begins with an `EntityState` change. Call `setDeleted()` to m
 
 `setDeleted` does not destroy the object locally nor does it remove the entity from the database. The entity simply remains in cache in a "Deleted" state ... as changed and added entities do ... until you save. A successful save deletes the entity from the database and removes it from cache.
 
-###<a name="RejectChanges"></a>Cancel with *rejectChanges*
+### <a name="RejectChanges"></a>Cancel with *rejectChanges*
 
 Once you've changed an entity, it stays in a changed state ... even if you manually restore the original values:
 
@@ -151,7 +151,7 @@ You can also call *rejectChanges* on the EntityManager to cancel and revert pend
 
     manager.rejectChanges(); // revert all pending changes in cache
 
-###Original values
+### Original values
 
 Breeze remembers the original property values when you change an existing entity. It stores these values in the *EntityAspect*'s `originalValues` hash map. The *originalValues* hash is an empty object while the entity is in the "Unchanged" state. When you change an entity property for the first time, Breeze adds the pre-change value to the *originalValues* hash, using the property name as the key. The keys of the hash are the names of the properties that have been changed since the entity was last queried or saved.
 
@@ -166,7 +166,7 @@ Here's a function to get those keys:
 
 Breeze replaces *entityAspect.originalValues* with a new empty hash when any operation restores the entity to the "Unchanged" state. A successful save, *rejectChanges*, *setUnchanged*, and *acceptChanges* all reset the *originalValues* hash.
 
-##<a name="PropertyChanged"></a>PropertyChanged event
+## <a name="PropertyChanged"></a>PropertyChanged event
 
 Breeze creates entities in accordance with the model library you selected for your application. If you specified (or accepted) the default Knockout (KO) model library, the entity's properties are KO observables. You can <a href="http://knockoutjs.com/documentation/observables.html">subscribe</a> to individual KO property changes as in this example:
 
@@ -196,7 +196,7 @@ Capture the subscription token if you need to unsubscribe later.
       // ... time passes ...
       entity.entityAspect.propertyChanged.unsubscribe(token);
 
-###Limitations
+### Limitations
 
 Breeze only monitors changes to properties identified in the metadata for this *EntityType*. These properties - mapped and unmapped - are the "*Breeze-tracked entity properties*" mentioned earlier. Breeze doesn't track properties that you add with an entity initialization function (see <a href="/doc-js/extending-entities">Extending Entities</a>) or that you patch into the entity later in its lifetime.
 
@@ -206,7 +206,7 @@ Nor does Breeze raise the *propertyChanged* event when an *EntityAspect* propert
 
 Breeze typically raises *propertyChanged* for each property individually. Some operations - such as queries, imports, saves, and *<a href="#RejectChanges">rejectChanges</a>* - update many properties at the same time. Breeze consolidates notification of these changes into a single *propertyChanged* event with a "null" property name. A subscriber learns that at least one property changed but can't know which particular properties changed; if this information is important to you, you'll have to indentify the affected properties in some out-of-band way (see *entityTests* module of the <a href="/doc-samples/doccode">DocCode teaching tests</a> for a suggestion).
 
-##<a name="ValidateEntity"></a>ValidateEntity
+## <a name="ValidateEntity"></a>ValidateEntity
 
 Breeze properties aren't just observable. They can validate changes based on rules registered in metadata. Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well. See the <a href="/doc-js/validation" target="_blank">Validation topic</a> for details.
 
@@ -226,7 +226,7 @@ Breeze raises the `EntityAspect.validationErrorsChanged` event when `ValidationE
 
 Breeze calls the handler with an `errorsChangedArgs` that tells you what property changed, the `ValidationErrors` that were added, and the `ValidationErrors` that were removed.
 
-##<a name="EntityMiscellany"></a>Entity miscellany
+## <a name="EntityMiscellany"></a>Entity miscellany
 
 This last category is a small menagerie of miscellaneous *EntityAspect* members
 
@@ -238,7 +238,7 @@ This last category is a small menagerie of miscellaneous *EntityAspect* members
 - ***loadNavigationProperty*** - you can download related entities, on demand, by calling `loadNavigationProperty` as described in the [Navigation Properties](/doc-js/navigation-properties.html) topic.
 
 
-#Breeze properties on the entity itself
+# Breeze properties on the entity itself
 
 You typically access the breeze entity infrastructure through the *entityAspect* property. Breeze also injects a few more entity-oriented members into the model object's prototype. These members are visible on the entity's surface API.
 

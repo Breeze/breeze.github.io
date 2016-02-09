@@ -2,11 +2,11 @@
 layout: doc-net
 redirect_from: "/old/documentation/server-side-model.html"
 ---
-#The server-side model
+# The server-side model
 
 In the sample code we implement the persistence service as an ASP.NET Web API that queries and saves entities with the help of the Entity Framework. You can write the service a different way but this is a convenient approach for .NET developers and the one we'll discuss on this page and the ones that follow.
 
-##Entity Framework
+## Entity Framework
 
 <a href="http://msdn.microsoft.com/en-us/data/ef.aspx">Entity Framework</a> (EF) is a .NET data access technology with an Object Relational Mapper (ORM). The ORM maps a domain-specific object model to the schema of a relational database. It uses that map to move data between entity model objects (instances of .NET classes) and the tables and columns of a relational database.
 
@@ -21,7 +21,7 @@ The Breeze.js client does not support "many to many" relationships at this time.
 
 The Breeze.net server components support EF 4.x and 5.x but not EF 6 (which has not been released) nor versions prior to v.4.2 .
 
-##Build your model
+## Build your model
 
 You can build your EF model in two ways:
 
@@ -40,7 +40,7 @@ Both approaches have merit. We can use either to build the model for our Breeze 
 
 > See the [Web Api Configuration](/doc-net/webapi-routing) topic to resolve Entity Framework version issues.
 
-##A simplistic code first model
+## A simplistic code first model
 
 This isn't a lesson in Entity Framework so we'll just pick one &hellip; and we'll pick "code first".
 
@@ -63,7 +63,7 @@ All properties are data properties whose values belong in the database. There ar
 
 The Description is adorned with two validation attributes, one making the Description required, the other limiting its maximum length to 30 characters. Validation aside, the class could hardly be simpler...or less realistic.
 
-##A more realistic code first model
+## A more realistic code first model
 
 Let's try something more ambitious. We'll look at excerpts from three related entity classes in the Northwind model, starting with the Customer class.
 
@@ -91,7 +91,7 @@ Some of the properties are decorated with validation attributes (*Required*, *Ma
 
 We're not going to teach you the intricacies of Entity Framework. Plenty of other books, articles, videos and blog posts cover that ground. And EF is really tangential to the Breeze story. We trust it is sufficient to show you that Breeze can accommodate an EF model of this kind.
 
-##The Order entity
+## The Order entity
 
 The Order entity is on the other end of the *Customer.Orders property. Let's look at it.
 
@@ -123,7 +123,7 @@ Near the bottom is the *Customer* navigation property. This is the inverse of th
 
 Finally, we come to the *OrderDetails* navigation property. This returns an order's line items just as *Customer.Orders* returned a customer's orders. The customer object graph is now three legs long: customer to orders to orderdetails.
 
-##The OrderDetails entity
+## The OrderDetails entity
 
 Here it is:
 
@@ -150,7 +150,7 @@ Here it is:
 
 Can Breeze handle entities with composite keys? It sure can.
 
-##Model Metadata
+## Model Metadata
 
 We could continue by tracing the path from OrderDetail to Product to Supplier, then work our way around to the rest of the model. But you get the idea and you can study the model in the sample code at your leisure.
 

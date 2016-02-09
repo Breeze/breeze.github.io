@@ -1,7 +1,7 @@
 ---
 layout: doc-js
 ---
-#BreezeJS Release Notes
+# BreezeJS Release Notes
 
 These are the release notes for the current **1.5.x** releases of breeze.js only.  
 

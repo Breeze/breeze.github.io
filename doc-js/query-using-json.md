@@ -67,7 +67,7 @@ An additional reason for this format is that it supports the concept of allowing
 
 
 
-###EntityQuery JSON syntax:
+### EntityQuery JSON syntax:
 
 
 | Property | Property value type | Description |

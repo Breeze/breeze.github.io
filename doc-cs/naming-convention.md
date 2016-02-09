@@ -21,13 +21,13 @@ If you create a new `NamingConvention`, you can set it on the MetadataStore via
 
 NamingConventions are immutable, but there are several helper methods on the base NamingConvention class that allow you to create new NamingConvention instances from existing instances. The rest of this section dives deeper into how to create your own NamingConvention.
 
-##Don't try to fix it with formatters##
+## Don't try to fix it with formatters ##
 
 Let's mention what **will not work** before talking about what will work. The server-side JSON formatter is often capable of translating property names from server to client to server. It could translate between Pascal case ("FirstName") and camel case ("firstName") for you. The JSON.NET formatter used by ASP.NET Web API has this feature.
 
 **Don't use it!** You'll confuse Breeze. Yes Breeze uses property names for accessing entity data. But it also uses them to compose the URL when you query for data on the server. URLs are officially case sensitive and so are the property names of classes on the server. When you look for a person whose first name is "Joe", Breeze must know if the query expression should be "FirstName eq 'Joe'" or "firstName eq 'Joe'". Breeze needs the server-side property name to compose the queries correctly. Disguising the problem with server-side formatter configuration will confuse Breeze. Again, **don't do it**.
 
-##Create a custom NamingConvention##
+## Create a custom NamingConvention ##
 
 In essence, a *NamingConvention* is a class that inherits from Breeze.Sharp.NamingConvention and overrides either 2 or 4 methods from the base implementation. Two of these methods are intended for translating property names between client and server and two are for translating type names. 
 
@@ -72,7 +72,7 @@ You can create your own conventions too such as this one for removing underscore
      }
    }
 
-##NamingConvention for EntityType/ComplexType names
+## NamingConvention for EntityType/ComplexType names
 
 You can also create a NamingConvention that performs type name mapping.  There is a very common version of this requirement that simply involves mapping namespaces between server and client, with the rest of the type names staying the same. Because this is so common Breeze adds a separate method to assist with the *WithClientServerNamespaceMapping* method. Example below: 
 
@@ -95,7 +95,7 @@ This same effect could be accomplished by creating your own subclass of NamingCo
       myMetadataStore.NamingConvention = new MyCustomNamingConvention();
 
 <a name="Beware"></a>
-##Beware of exported NamingConventions
+## Beware of exported NamingConventions
 
 Each `MetadataStore` has a no-op `NamingConvention` at birth. 
 

@@ -2,7 +2,7 @@
 layout: doc-js
 redirect_from: "/old/documentation/save-changes.html"
 ---
-#Save changes
+# Save changes
 
 > The code snippets on this page are drawn from the <a href="/doc-samples/about-todo">Breeze Todo Sample App</a> and from the **basicTodoTests** module of the <a href="/doc-samples/doccode">DocCode teaching tests</a>.
 
@@ -69,7 +69,7 @@ You've queried, added new entities, changed others, and perhaps deleted one or t
 
 There are plenty of details to explore in later topics. You'll likely dig deeper as you encounter more challenging scenarios. But now, you're properly equipped to get started building a Breeze app. What's stopping you? Get going! Have fun! And please stay in touch.
 
-##Notes
+## Notes
 
 <a name="note 1"></a>[1] Pass an entity type or array of types into the `hasChanges()` function if you want to know about changes to those types specifically.
 

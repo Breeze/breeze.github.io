@@ -7,11 +7,11 @@ redirect_from: "/old/breeze-sharp-documentation/handling-mismatched-metadata.htm
 
 In some applications, the metadata used on the client may not match exactly that provided by the server.  This might occur for example, if the client uses entities that do not define all of the properties of the corresponding server entities.  By default, Breeze requires that client and server metadata match *exactly* and throws if a mismatch is detected, but it also provides options to selectively allow several types of mismatches.
 
-##The **AllowedMetatdataMismatchTypes** Property##
+## The **AllowedMetatdataMismatchTypes** Property ##
 
 In Breeze, metadata is managed by the **MetadataStore** instance associated with every **EntityManager**.  The **AllowedMetatdataMismatchTypes** property of **MetadataStore** is a bitwise enumeration (**MetadataMismatchTypes**) that allows certain types of mismatches to be permitted.
 
-###Allowable Mismatches###
+### Allowable Mismatches ###
 
 The following types of mismatches may be selectively allowed:
 
@@ -27,7 +27,7 @@ The above values may be "OR-ed" together to allow multiple types of mismatches.
 
 **AllAllowable** is a convenience definition that allows all of the above four mismatches.
 
-###Unallowable Mismatches###
+### Unallowable Mismatches ###
 
 The following types of mismatches are detected but may *not* be allowed; Breeze will **always** throw when they are encountered.
 
@@ -37,7 +37,7 @@ The following types of mismatches are detected but may *not* be allowed; Breeze 
  
 **MissingCLRNamingConvention** Currently under development.
 
-##The **MetadataMismatch** Event
+## The **MetadataMismatch** Event
 
 The **MetadataStore** class also exposes the MetadataMismatch event that is called once for every mismatch detected (whether allowed by setting one or more of the flags described above or not) prior to throwing any exception.  The event argument provides information about the mismatch:
 
@@ -53,7 +53,7 @@ The **MetadataStore** class also exposes the MetadataMismatch event that is call
 
 In addition the boolean **Allow** property may be set to **true** by the event handler to allow an otherwise disallowed mismatch or **false** to disallow a mismatch that is allowed by the **AllowedMetadataMismatchTypes** property.
 
-##Example##
+## Example ##
 
 The server for the Todo sample app defines a **TodoItem** entity in the **Todo.Models** namespace.  We use a client model for the **TodoItem** entity that models only the **Id** and **Description** properties (and is defined in a different namespace):
 

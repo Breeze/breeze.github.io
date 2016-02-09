@@ -44,7 +44,7 @@ This entity-oriented style of data management is familiar to business applicatio
 
 The **bold** terms are clues to the key components and concepts in Breeze.
 
-##EntityManager
+## EntityManager
 
 The Breeze `EntityManager` is both a gateway to the back-end persistence service and a cache of the entities that you're working on locally.
 

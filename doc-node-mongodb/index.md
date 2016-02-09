@@ -159,7 +159,7 @@ Thus a Breeze `EntityQuery` with "Products" in the **EntityQuery.from** clause i
 
 This is the standard template for most queries. The **processResults** method can be reused by all of the query methods discussed in this document.    
 
-####Inside the query method
+#### Inside the query method
 
 `getProducts` composes a query object by parsing the OData-style parameters that the Breeze client has passed in the URL query string and turning them into an equivalent MongoDB query expression. These implementation details are handled automatically by the Breeze *MongoQuery* class that you imported when you called "*require('breeze-mongodb')*".
 
@@ -382,7 +382,7 @@ You will need the following methods if you add a new entity to the saveMap durin
 
 `beforeSaveEntities` must be asynchronous because your method will probably make asynchronous calls of its own. For example, when you cannot trust data from the client (and you usually can't), you should retrieve current data values from the database and compare them with the proposed save-set values from the client. All MongoDB queries are asynchronous.
 
-####Saving entities that are not in the client "saveMap" ####
+#### Saving entities that are not in the client "saveMap" ####
 You can save changes to entities that the client did not include in the `saveMap`. For example, you might log changes to entities in an Audit table by creating "audit entities" on the server. You'll want to create them and add them to the "saveMap" with `addToSaveMap` so that they are saved as part of the "transaction".
 
 > MongoDB doesn't support real transactions so were using the word loosely, meaning "at the same time as".
