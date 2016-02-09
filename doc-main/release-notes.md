@@ -27,7 +27,7 @@ See: <a href="/doc-node-sequelize/"> breeze-sequelize package</a>
 
 #### For releases after 2015, please see the separate release notes page for each technology.
 
-###<a name="154"></a>1.5.4 <span class="doc-date">May 5, 2015</span>###
+### <a name="154"></a>1.5.4 <span class="doc-date">May 5, 2015</span>###
 
 #### Breeze.Js Features
 - Additional support for Java and Node backend servers. [https://github.com/Breeze/breeze.server.java](https://github.com/Breeze/breeze.server.java) and [https://github.com/Breeze/breeze.server.node](https://github.com/Breeze/breeze.server.node)
@@ -165,7 +165,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
  
 #### Breeze.Server.Net Bugs	
 - Custom top level save exception messages thrown with an EntityErrorsException were not being propagated to the client. (D2629)
-###<a name="1416"></a>1.4.16 <span class="doc-date">July 13, 2014</span>###
+### <a name="1416"></a>1.4.16 <span class="doc-date">July 13, 2014</span>###
 
 #### Breeze.JS Features
 - Added new *EntityAspect.isNavigationPropertyLoaded* and *EntityAspect.markNavigationPropertyLoaded* methods.  These methods were added to allow a developer to determine if a navigation property is empty as a result of a fetch or simply because it has not yet been loaded. (F2183)
@@ -215,7 +215,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 - D2567 - Fixed EFContextProvider exception that would occur during the save of a deleted entity with at least one modified enum property. 
 - D2609 - Corrected metadata retrieval to correctly handle Database First defaultValue specifications retrieved from the EntityFramework CSDL.	
 
-###<a name="1413"></a>1.4.13 <span class="doc-date">June 2, 2014</span>###
+### <a name="1413"></a>1.4.13 <span class="doc-date">June 2, 2014</span>###
 
 #### Features
 

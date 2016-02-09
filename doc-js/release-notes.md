@@ -7,7 +7,7 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
-###<a name="155"></a>1.5.5 <span class="doc-date">Feb. 2, 2016</span>###
+### <a name="155"></a>1.5.5 <span class="doc-date">Feb. 2, 2016</span>###
 
 #### Breeze.Js Features
 - Perf: executeQueryLocallyCore replaced `result.push.apply` syntax with `result=result.concat(entities)` (Issue [#105](https://github.com/Breeze/breeze.js/issues/101))

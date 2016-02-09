@@ -40,7 +40,7 @@ We'll tackle the key features of `EntityAspect` in four groups.
 - <a href="#EntityMiscellany">entity miscellany</a>
 
 
-##<a name="EntityState"></a> EntityState
+## <a name="EntityState"></a> EntityState
 
 Is the entity attached to an `EntityManager` and therefore in its cache? Has it changed? If changed, is it a new entity, a modified version of an existing entity from remote storage, or an existing entity that is marked for deletion?
 
@@ -49,7 +49,7 @@ The `entityState` property answers these questions with a value from the <a href
 | EntityState     | Description
 | -----------     | -----------
 | **"Added"**     | A new entity in cache that does not exist in the backend database.
-|	**"Unchanged"** | An existing entity in cache that was queried from the database; the entity has no unsaved changes since it was last retrieved or saved.
+| **"Unchanged"** | An existing entity in cache that was queried from the database; the entity has no unsaved changes since it was last retrieved or saved.
 | **"Modified"**  | An existing entity in cache with pending changes.
 | **"Deleted"**   | An existing entity in cache that is marked for deletion.
 | **"Detached"**  | 	An entity that is not in cache; its status in the database is unknown.
