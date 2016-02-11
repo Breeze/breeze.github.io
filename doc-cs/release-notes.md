@@ -8,10 +8,6 @@ These **Breeze Sharp Release Notes** summarize the key changes. Please read the 
 
 ## <a name="0606"></a>0.6.0.6 <span class="doc-date">February 10, 2016</span>##
 
-#### Features
-+ Support for Windows Phone 8.1.
-+ Support for canceling asynchronous requests.
-
 #### Defects
 + Change LoadNavigationProperty implementation to not re-load the parent entity; fixes issue [#18](https://github.com/Breeze/breeze.sharp/issues/18)
 + Rename flag enum to MetadataMismatchTypes, fixes issue [#6](https://github.com/Breeze/breeze.sharp/issues/6)
