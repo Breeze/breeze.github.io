@@ -11,7 +11,7 @@ A Breeze application can talk to an ASP.NET Web API 2 OData data service. We sho
 <p class="note">Many thanks to Javier Calvarro Nelson who works on the Microsoft Web API OData team. This sample was Javier's idea, he drove it, and he wrote much of it, most importantly the server-side OData controllers.</p>
 
 # Run the sample
-Open in Visual Studio 2013 (It may open in an earlier VS but make sure you're up to the latest because this sample is built for Web API 2 and EF 6).
+Open in Visual Studio 2013/2015 (It may open in an earlier VS but make sure you're up to the latest because this sample is built for Web API 2 and EF 6).
 
 Build ... let it get its dependent packages from NuGet.  Run without debug (Ctrl-F5) or with debug (F5); make sure VS tells you that it built successfully.
 

@@ -6,6 +6,24 @@ redirect_from: "/old/breeze-sharp-documentation/release-notes.html"
 # Release notes
 These **Breeze Sharp Release Notes** summarize the key changes. Please read the documentation for more details.
 
+## <a name="0606"></a>0.6.0.6 <span class="doc-date">February 10, 2016</span>##
+
+#### Features
++ Support for Windows Phone 8.1.
++ Support for canceling asynchronous requests.
+
+#### Defects
++ Change LoadNavigationProperty implementation to not re-load the parent entity; fixes issue [#18](https://github.com/Breeze/breeze.sharp/issues/18)
++ Rename flag enum to MetadataMismatchTypes, fixes issue [#6](https://github.com/Breeze/breeze.sharp/issues/6)
++ Fix Temp key collisions when generator reset, issue [#17](https://github.com/Breeze/breeze.sharp/issues/17)
++ Exported entity manager refuses to import Enum field [#12](https://github.com/Breeze/breeze.sharp/issues/12)
++ Fix bug causing KeyGenerator to be changed to Identity
++ Fixes NamingConvention issue when trying to set WithClientServerNamespaceMapping [#14](https://github.com/Breeze/breeze.sharp/pull/14)
++ SaveException.EntityErrors getter throws NullReferenceException [#10](https://github.com/Breeze/breeze.sharp/issues/10)
+
+## <a name="0605"></a>0.6.0.5 <span class="doc-date">March 25, 2015</span>##
++ Fix to workaround Microsoft's 'cast' bug in their OData implementation 
+
 ## <a name="0603"></a>0.6.0.3 <span class="doc-date">September 22, 2014</span>##
 
 #### Features

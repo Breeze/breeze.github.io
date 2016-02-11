@@ -9,11 +9,11 @@ The package (or packages) you need depend on your development scenario.
 
 * [Learn about Breeze](#learn)
 
-* [Nuget packages for single and multiple project applications built with VS2013 technologies](#current)
+* [Nuget packages for single and multiple project applications built with VS2013/2015 technologies](#current)
 
 * [Nuget packages for .NET 4.0 or "legacy" VS2012 technologies.](#legacy)
 
-* [Upgrade and convert a legacy breeze application to VS2013 technologies.](#convert)
+* [Upgrade and convert a legacy breeze application to VS2013/2015 technologies.](#convert)
 
 * [Try the "Todo" demo package.](#demoPkg)
 
@@ -22,10 +22,10 @@ The package (or packages) you need depend on your development scenario.
 
 We recommend that you look first at Brian Noyes "<a href="http://www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with Angular and Breeze</a>" and "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
 
-John's "HotTowel" nuget packages will soon reflect the recently released Visual Studio 2013 and its family of technology updates.
+John's "HotTowel" nuget packages will reflect Visual Studio 2013/2015 and its family of technology updates.
 
 <a name="current"></a>
-## Visual Studio 2013 and .NET 4.5
+## Visual Studio 2013/2015 and .NET 4.5
 
 [Go here](#legacy) if you must run on the .NET 4.0 platform. These packages are for .NET 4.5 applications only.
 
