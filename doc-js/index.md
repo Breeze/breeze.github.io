@@ -80,7 +80,7 @@ There is no standard observability mechanism in JavaScript. Each UI data binding
 
 ## Query
 
-You retrieve entities from a back-end database by composing an `EntityQuery` object in the Breeze query language and executing that query object with an <span `EntityManager`.
+You retrieve entities from a back-end database by composing an `EntityQuery` object in the Breeze query language and executing that query object with an `EntityManager`.
 
 In the following example, we compose a query for all customers whose name begins with the letter 'C' and sort the results by company name.
 
