@@ -14,15 +14,15 @@ but also via a simple json object hash:
 	var query = new EntityQuery({
       from: "Customers",
       where: {
-       "companyName", { startsWith: "A" }
+       "companyName": { startsWith: "A" }
       }
-    }
+    });
 
 These two formats can mixed within a query as well.
 
-    var whereClause = { "companyName", { startsWith: "A" } }); 
+    var whereClause = { "companyName": { startsWith: "A" } }; 
     var query = EntityQuery.from("Customers")
-        .where( whereClause);
+        .where(whereClause);
        
 **The remainder of this page describes the json format.**
 
@@ -76,7 +76,7 @@ An additional reason for this format is that it supports the concept of allowing
 | **where** | Predicate json object   | The filter to apply |
 | **take/top**|  Number (integer) | The number of items to return |
 | **skip** | Number (integer) | The number of items to skip before returning results |
-| **orderby** | Array of Strings | Each string must be a valid property path, optionally followed by either 'asc' or 'desc' |
+| **orderBy** | Array of Strings | Each string must be a valid property path, optionally followed by either 'asc' or 'desc' |
 | **select** | Array of Strings | Each string must be a valid property path |
 | **expand** | Array of String | Each string must be a valid property path |
 | **inlineCount** | Boolean | Whether of not to include the 'inlineCount' |
