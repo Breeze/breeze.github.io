@@ -91,7 +91,8 @@ An additional reason for this format is that it supports the concept of allowing
      expand: ["orderDetails","orderDetails.product"],
      skip:20,
      take:10,
-     inlineCount:true
+     inlineCount:true,
+     queryOptions: {fetchStrategy:'FromLocalCache', mergeStrategy:'PreserveChanges'}
     }
 
 
