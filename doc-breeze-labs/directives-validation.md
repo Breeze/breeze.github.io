@@ -46,9 +46,9 @@ Angular ships with a core set of directives that cover many scenarios. But they 
 Perhaps the best way to understand this directive is to see it in a live example of a "Person Edit" screen.
 
 <p class="note">The following sample only works with modern browsers (IE10+, FF, Chrome).</p>
-<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/lxPAbIJmRaLmyagXQAFC/preview" style="width: 100%; height: 450px"></iframe></p>
+<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/4OvHDezhjkL1QQYxPLkc/preview" style="width: 100%; height: 450px"></iframe></p>
 
->If you have trouble viewing the plunker sample in your browser, <a href="http://plnkr.co/edit/lxPAbIJmRaLmyagXQAFC?p=preview" target="_blank">try this link</a>.
+>If you have trouble viewing the plunker sample in your browser, <a href="http://plnkr.co/edit/4OvHDezhjkL1QQYxPLkc?p=preview" target="_blank">try this link</a>.
 
 The first and last names are required (hence the red asterisks). Try deleting their values. Try entering extraordinarily long names (they have max length validations too). Play with the other properties too.
 
