@@ -72,7 +72,8 @@ The remainder of the ApiController will then make use of this instance of the EF
 
 <a name="SaveInterception"></a>In many cases, however, it will be important to "intercept" calls to the EFContextProvider and provide additional logic to be performed at specific points in either the query or save pipeline.
 
-These interception points may be accessed by subclassing the EFContextProvider and overriding specific virtual methods. This will look something like:
+
+These interception points may be accessed by subclassing the EFContextProvider and overriding specific virtual methods. This will look something like:
 
 	public class NorthwindContextProvider: EFContextProvider<NorthwindIBContext>  {
 	    public NorthwindContextProvider() : base() { }
@@ -81,7 +82,7 @@ The remainder of the ApiController will then make use of this instance of the EF
 	      // return false if we don't want the entity saved.
 	      // prohibit any additions of entities of type 'Role'
 	      if (entityInfo.Entity.GetType() == typeof(Role)
-	        &amp;&amp; entityInfo.EntityState == EntityState.Added) {
+	        && entityInfo.EntityState == EntityState.Added) {
 	        return false;
 	      } else {
 	        return true;
@@ -114,7 +115,8 @@ The *EFContextProvider calls a virtual method *T CreateContext() when it creates
 
 Override and replace that in your *EFContextProvider* subclass and you will be able to make your context of type 'T' just the way you like it.
 
-**N.B.: The base *EFContextProvider* will still do a little post-creation configuration** to make sure it behaves as the EFContextProvider requires; it does not want the context doing any lazy loading or creating proxies. So if 'T' is an *ObjectContext*, the provider will do this:
+
+**N.B.: The base *EFContextProvider* will still do a little post-creation configuration** to make sure it behaves as the EFContextProvider requires; it does not want the context doing any lazy loading or creating proxies. So if 'T' is an *ObjectContext*, the provider will do this:
 
 	objCtx.ContextOptions.LazyLoadingEnabled = false;
 
@@ -127,9 +129,11 @@ and if 'T' is a *DbContext it will do this:
 
 Both the EF *ObjectContext* and the *DbContext* implement *IDisposable*. In Microsoft Web API controller samples they dispose of the EF context. But the Breeze.NET *EFContextProvider* is **not disposable** and makes no attempt to dispose of the EF context. Is that a mistake?
 
-We think not for a couple of reasons. First, the *EFContextProvider* should have the same lifetime as the *ApiController* and when the API controller is garbage collected any EF resources should be disposed of by the finalizer. Second, Joseph Albahari, the renowned author of "C# 4.0 in a Nutshell", says you don't have to:
+
+We think not for a couple of reasons. First, the *EFContextProvider* should have the same lifetime as the *ApiController* and when the API controller is garbage collected any EF resources should be disposed of by the finalizer. Second, Joseph Albahari, the renowned author of "C# 4.0 in a Nutshell", says you don't have to:
 
 > *Although DataContext/ObjectContext implement IDisposable, you can (in general) get away without disposing instances. Disposing forces the context's connection to dispose - but this is usually unnecessary because [Link to SQL] and EF close connections automatically whenever you finish retrieving results from a query. *[p.352]
 
-Not convinced? You have direct access to the *Context* object; cast it to *IDisposable* and call *Dispose* yourself.
+
+Not convinced? You have direct access to the *Context* object; cast it to *IDisposable* and call *Dispose* yourself.
 
