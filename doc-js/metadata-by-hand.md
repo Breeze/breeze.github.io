@@ -38,7 +38,7 @@ The following simple example queries the github API for the members of the Angul
 
 We can't change the github server to suit Breeze. If we want Breeze to treat these objects as cached entities, we'll have to create their metadata on the client ... which we do in the **`dataservice`** service defined in the *script.js* file. Check out the <em>README.md</em> file for more details. 
 
-<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/sTMzICATSG2cI1LPO1eG/preview" style="width: 100%; height: 300px"></iframe></p>
+<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/E9tAfrn04TUyvrY4W00w/preview" style="width: 100%; height: 300px"></iframe></p>
 
 >This sample only works with modern browsers (IE10+, FF, Chrome).
 

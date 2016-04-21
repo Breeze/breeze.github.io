@@ -7,6 +7,15 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="157"></a>1.5.7 <span class="doc-date">TBA</span>###
+
+#### Breeze.Js Features
+
+
+#### Breeze.Js Fixed Bugs
+- Error in OData dataservice adapter when using breeze.base (Pull request [#134](https://github.com/Breeze/breeze.js/pull/134))
+- Require names don't match bower names for external modules (Issue [#142](https://github.com/Breeze/breeze.js/issues/142))
+
 ### <a name="156"></a>1.5.6 <span class="doc-date">March 31, 2016</span>###
 
 #### Breeze.Js Features

@@ -131,7 +131,9 @@ Open the JavaScript application file that creates and initializes your `EntityMa
 Your new `EntityManager` is primed with metadata and no longer requests metadata from the server ... a fact you can confirm by running your application and checking the network traffic. You will not see a call to the "metadata" endpoint.
 
 <a name="writeMetadataJS"></a>
+
 # A sustainable *metadata.js* #
+
 We're a little uncomfortable with the way we created *metadata.js*.
 
 We took a snapshot of the metadata as it is today. As the application evolves, the service model will evolve and the metadata will change. The metadata in our script file will be incorrect triggering a cascade of errors that may be hard to diagnose.
