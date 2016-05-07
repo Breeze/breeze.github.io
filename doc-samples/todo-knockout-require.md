@@ -241,7 +241,7 @@ Now that you know how Require works in *main.js*, apply the same thinking to the
 
 Look again at the `define` call in *dataservice.js*. Focus on the last dependency, 'breeze.savequeuing'.
 
-'breeze.savequeuing' is a Breeze extension. It's a [Breeze Lab](/doc-breeze-labs/save-queuing "breeze.savequeuing documentation") extension that we [downloaded from from the Breeze source on GitHub](https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.savequeuing.js "breeze.savequeuing source"). 
+'breeze.savequeuing' is a Breeze extension. It's a [Breeze Lab](/doc-breeze-labs/save-queuing "breeze.savequeuing documentation") extension that we [downloaded from from the Breeze source on GitHub](https://github.com/Breeze/breeze.js.labs/blob/master/breeze.savequeuing.js "breeze.savequeuing source"). 
 
 >[Breeze Labs](/doc-breeze-labs/ "Breeze Labs") are code that you might find useful in your application. They aren't part of Breeze and they are not officially supported (although we take good care of them in practice).
 

@@ -222,7 +222,7 @@ The `SaveChangesCore` method performs the save operations on the change-set. The
 
 Most developers rely on a pre-existing derived class such as the `EFContextProvider` to implement this method and there is rarely a need to override that implementation.
 
-You will override it if you write your own `ContextProvider`. That task is beyond the scope of this topic. You'll find clues in the `TodoContext` class of the ["NoDB" sample](/doc-samples/no-db ""NoDB" sample") and in the <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.WebApi.EF/EFContextProvider.cs" title="EFContextProvider on GitHub" target="_blank">source code for the `EFContextProvider`</a>.  There's also a discussion of `ContextProvider` extensibility in [this StackOverflow answer](http://stackoverflow.com/questions/21691579/uninitialised-jsonserializer-in-breeze-savebundletosavemap-sample/27414629#27414629).
+You will override it if you write your own `ContextProvider`. That task is beyond the scope of this topic. You'll find clues in the `TodoContext` class of the ["NoDB" sample](/doc-samples/no-db ""NoDB" sample") and in the <a href="https://github.com/Breeze/breeze.server.net/blob/master/Breeze.ContextProvider.EF6/EFContextProvider.cs" title="EFContextProvider on GitHub" target="_blank">source code for the `EFContextProvider`</a>.  There's also a discussion of `ContextProvider` extensibility in [this StackOverflow answer](http://stackoverflow.com/questions/21691579/uninitialised-jsonserializer-in-breeze-savebundletosavemap-sample/27414629#27414629).
 
 <a name="HelperMethods"></a>
 <a name="helpermethods"></a>

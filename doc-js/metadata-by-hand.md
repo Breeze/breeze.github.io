@@ -24,7 +24,7 @@ We recognize that it can seem a tad verbose and fussy. Sometimes you wish for so
 
 The Metadata-Helper is a domain-specific language (DSL) that strives to minimize the information you have to provide when writing Breeze metadata. It relies on common conventions to make good guesses about the details of your model's types, properties and associations. If it guesses incorrectly about a particular point (or can't guess at all), you can configure that specific point explicitly using the core metadata API.
 
-> The Breeze Labs **`MetadataHelper`** extension is defined in *breeze.metadata-helper.js*. <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.
+> The Breeze Labs **`MetadataHelper`** extension is defined in *breeze.metadata-helper.js*. <a href="https://github.com/Breeze/breeze.js.labs/blob/master/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.
  
 > It is also available as <a  href="https://www.nuget.org/packages/Breeze.Metadata.Helper/" target="_blank">a NuGet package</a>: <code>Install-Package Breeze.Metadata.Helper</code></p>
 
@@ -34,7 +34,7 @@ The related topic, [**"Metadata by hand (in depth)"**](/doc-js/metadata-by-hand-
 
 # Show me
 
-The following simple example queries the github API for the members of the AngularJS team. The API developers didn't know about breeze and the API doesn't conform to OData. The response from a request for [github Members](https://developer.github.com/v3/orgs/members/) is an array of simple JSON objects with no type information. 
+The following simple example queries the github API for the members of the AngularJS team. The API developers didn't know about breeze and the API doesn't conform to OData. The response from a request for <a href="https://developer.github.com/v3/orgs/members/" target="_blank">github Members</a> is an array of simple JSON objects with no type information. 
 
 We can't change the github server to suit Breeze. If we want Breeze to treat these objects as cached entities, we'll have to create their metadata on the client ... which we do in the **`dataservice`** service defined in the *script.js* file. Check out the <em>README.md</em> file for more details. 
 
@@ -44,7 +44,7 @@ We can't change the github server to suit Breeze. If we want Breeze to treat the
 
 # Go deeper
 
-Let's look at the JavaScript metadata for the "Code Camper" model from John Papa's Plural Sight course, "[**Building Data-Centric Single Page Applications with Breeze**](http://www.pluralsight.com/courses/table-of-contents/building-single-page-applications-breeze)".
+Let's look at the JavaScript metadata for the "Code Camper" model from John Papa's Plural Sight course, "<a href="http://www.pluralsight.com/courses/table-of-contents/building-single-page-applications-breeze" target="_blank">**Building Data-Centric Single Page Applications with Breeze**</a>".
 
 ### The Model
 
@@ -61,11 +61,11 @@ These entities are related. A *Session* has a *Room*, *TimeSlot*, *Track*, and a
 A *Speaker* may give more than one talk so the *Person* type has a collection of one or more *Sessions* which you access by writing `person.speakerSessions`.
 
 ### What you write
-Here is the metadata you might write to describe that model. 
+Here is the metadata you might write to describe that model.  <a href="" target="_blank"></a> 
 
-> This code extract comes from a [test helper file in the DocCode sample](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/helpers/ccjs.model.metadata.js). See related tests in [*metadataOnClientTests.js*](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/metadataOnClientTests.js).
+> This code extract comes from a <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/helpers/ccjs.model.metadata.js" target="_blank">test helper file in the DocCode sample</a>. See related tests in <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/metadataOnClientTests.js" target="_blank">*metadataOnClientTests.js*</a>.
 >
->You see these tests [running live in this plunker](http://embed.plnkr.co/3akuBSVVAAhbhMZs2Mcx/preview). Feel free to explore these metadata further by adding your own tests right there in plunker.
+>You see these tests <a href="http://plnkr.co/edit/3akuBSVVAAhbhMZs2Mcx" target="_blank">running live in this plunker</a>. Feel free to explore these metadata further by adding your own tests right there in plunker.
 
 > Remember to install and enable the Breeze Labs <a href="#metadataHelper"><strong><code>MetadataHelper</code></strong></a>.</p>
 
@@ -182,4 +182,4 @@ Here is the metadata you might write to describe that model.
 
 ## Next steps
 
-Now you're ready for a more complex, multiple entity, live code example <a href="http://plnkr.co/edit/qVx4ZfmNmbfWEdEVgZ2o?p=info" target="_blank"> **in this plunker**</a>.  Look in particular at the *metadataFactory.js* script.
+Now you're ready for a more complex, multiple entity, live code example <a href="http://plnkr.co/edit/qVx4ZfmNmbfWEdEVgZ2o?p=info" target="_blank">**in this plunker**</a>.  Look in particular at the *metadataFactory.js* script.

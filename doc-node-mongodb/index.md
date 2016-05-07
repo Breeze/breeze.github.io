@@ -29,7 +29,7 @@ Standard Breeze requirements:
 
 Additional MongoDB requirement: 
 
-+ *Breeze.dataservice.mongo.js*  - a Breeze dataservice adapter that handles all of the MongoDB -specific client-side work involved in communicating with the MongoDB--backed service. Currently <a href="https://raw.github.com/IdeaBlade/Breeze/master/Breeze.Client/Scripts/IBlade/breeze.dataService.mongo.js" target="_blank">available on github</a> and in the [Zza! Node/MongoDB sample](/doc-samples/zza-mongo).
++ *Breeze.dataservice.mongo.js*  - a Breeze dataservice adapter that handles all of the MongoDB -specific client-side work involved in communicating with the MongoDB--backed service. Currently <a href="https://github.com/Breeze/breeze.js/blob/master/src/breeze.dataService.mongo.js" target="_blank">available on github</a> and in the [Zza! Node/MongoDB sample](/doc-samples/zza-mongo).
 
 ### Server side requirements ###
 
