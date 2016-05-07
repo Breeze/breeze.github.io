@@ -65,7 +65,7 @@ Here is the metadata you might write to describe that model.
 
 > This code extract comes from a [test helper file in the DocCode sample](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/helpers/ccjs.model.metadata.js). See related tests in [*metadataOnClientTests.js*](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/metadataOnClientTests.js).
 >
->You see these tests [running live in this plunker](http://embed.plnkr.co/A1vPWiMtGJy35MTzPuSb/preview). Feel free to explore these metadata further by adding your own tests right there in plunker.
+>You see these tests [running live in this plunker](http://embed.plnkr.co/3akuBSVVAAhbhMZs2Mcx/preview). Feel free to explore these metadata further by adding your own tests right there in plunker.
 
 > Remember to install and enable the Breeze Labs <a href="#metadataHelper"><strong><code>MetadataHelper</code></strong></a>.</p>
 
@@ -182,4 +182,4 @@ Here is the metadata you might write to describe that model.
 
 ## Next steps
 
-Now you're ready for a more complex, multiple entity, live code example <a href="http://plnkr.co/edit/G4gOH68iKLobAumoEsXx?p=info" target="_blank"> **in this plunker**</a>.  Look in particular at the *metadataFactory.js* script.
+Now you're ready for a more complex, multiple entity, live code example <a href="http://plnkr.co/edit/qVx4ZfmNmbfWEdEVgZ2o?p=info" target="_blank"> **in this plunker**</a>.  Look in particular at the *metadataFactory.js* script.

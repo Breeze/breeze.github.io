@@ -29,7 +29,7 @@ This is a problem for floating point properties (decimal, single, double, float)
 For example, suppose the user tries to enter the decimal value, 250.05.
 
 <p class="note">The following sample only works with modern browsers (IE10+, FF, Chrome).</p>
-<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/E2HgF7ASNWIdwsvzs5G0/preview" style="width: 100%; height: 560px"></iframe></p>
+<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/DTYukSS0kMYSrRz6STrj/preview" style="width: 100%; height: 560px"></iframe></p>
 
 She types "2", "5", "0". So far so good. Inside the bound model property Breeze
 parses these strings to the integers 2, 25, 250.

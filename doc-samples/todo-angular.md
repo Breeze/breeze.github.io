@@ -248,4 +248,4 @@ You can explore Breeze + Angular binding with this Todos Plunker.
 
 <p class="note">The following sample only works with modern browsers (IE10+, FF, Chrome).</p>
 
-<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/upp7wB" style="width: 100%; height: 300px"></iframe></p>
+<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/SYfw0C" style="width: 100%; height: 300px"></iframe></p>

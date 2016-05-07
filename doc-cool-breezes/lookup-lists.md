@@ -52,7 +52,7 @@ public object Lookups() // returns an object, not an IQueryable
 
 <p class="note">The following "plunker" only works with modern browsers (IE10+, FF, Chrome).</p>
 
-<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/8YZLwxnfzTYWf3wY3HtE/preview" style="width: 100%; height: 300px"></iframe></p>
+<p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/uL8IKna2ZzOh0cfhabFr/preview" style="width: 100%; height: 300px"></iframe></p>
 
 <h2>
 	<a name="FetchOnLaunch"></a>Fetch lookups on launch</h2>

@@ -453,7 +453,7 @@ You'll get a better answer if you can reproduce the problem in code we can all s
 
 **You won't have to give anyone access to your server or your real data**. 
 
-Open a modern browser (*Chrome works well*) and <a href="http://plnkr.co/edit/vQQm2GlBRvatyZjBJCiq?p=info" target="_blank" title="Breeze query debugging on plunker"><strong>go to this plunker</strong></a>. Modify it by following the instructions provided to you there. Here's a summary of those instructions:
+Open a modern browser (*Chrome works well*) and <a href="http://plnkr.co/edit/6ADl0427WQ3fn5kbrZGN?p=info" target="_blank" title="Breeze query debugging on plunker"><strong>go to this plunker</strong></a>. Modify it by following the instructions provided to you there. Here's a summary of those instructions:
 
 * capture the metadata sent to the browser and paste it in the tool
 

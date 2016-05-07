@@ -79,7 +79,7 @@ Special parameters:
 ## Examples
 ### Live POST queries
 
-A StackOverflow question prompted us to produce [**this plunker example**](http://plnkr.co/edit/nhXIG62BDJpEJE77oLFT?p=info) of an Angular app making POST queries to a cross-origin server. All app JavaScript is in the *script.js* file. Be sure to follow along with the *README.md* which describes the mechanics in detail.
+A StackOverflow question prompted us to produce [**this plunker example**](http://plnkr.co/edit/TvjvCpjlB1FyglRJinp5?p=info) of an Angular app making POST queries to a cross-origin server. All app JavaScript is in the *script.js* file. Be sure to follow along with the *README.md* which describes the mechanics in detail.
 
 Features:
 
