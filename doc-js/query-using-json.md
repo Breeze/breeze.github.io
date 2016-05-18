@@ -79,6 +79,7 @@ An additional reason for this format is that it supports the concept of allowing
 | **orderBy** | Array of Strings | Each string must be a valid property path, optionally followed by either 'asc' or 'desc' |
 | **select** | Array of Strings | Each string must be a valid property path |
 | **expand** | Array of String | Each string must be a valid property path |
+| **parameters** | json object | Custom parameters to include in a query (equivalent to .withParameters in the fluent interface) | 
 | **inlineCount** | Boolean | Whether of not to include the 'inlineCount' |
 | **queryOptions** | QueryOptions json object | |
 
@@ -92,6 +93,7 @@ An additional reason for this format is that it supports the concept of allowing
      skip:20,
      take:10,
      inlineCount:true,
+     parameters:{"relatedID":3343},
      queryOptions: {fetchStrategy:'FromLocalCache', mergeStrategy:'PreserveChanges'}
     }
 
