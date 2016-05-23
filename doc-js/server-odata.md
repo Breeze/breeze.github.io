@@ -32,7 +32,20 @@ There is an adapter for ASP.NET Web API OData v.3
 
     breeze.config.initializeAdapterInstance('dataService', 'webApiOData', true);
 
->MS introduced a breaking change in December 2014 with the Microsoft.AspNet.WebApi.OData v.5.3.1 nuget package. The v.1.5.5 version of Breeze will compensate. In the short run you may try [this patched version of *breeze.debug.js*](https://github.com/Breeze/breeze.js/blob/e7cb67e44a12262231c92756f5e3f0d7034f9b21/build/breeze.debug.js) temporarily. Be sure to update to the official version as soon as it is released!
+>MS introduced a breaking change in December 2014 with the Microsoft.AspNet.WebApi.OData v.5.3.1 nuget package. 
+The v.1.5.5+ version of Breeze compensates for this by using absolute URLs for direct calls and inside $batch payloads
+
+If you need to use relative URLs, (compatible with Breeze 1.5.4 and earlier), add `relativeUrl = true` to your adapter instance:
+
+     var ds = breeze.config.initializeAdapterInstance("dataService", "webApiOData");
+     ds.relativeUrl = true; 
+
+If you want to do custom URL mapping, set `relativeUrl` to your mapping function: 
+
+     var ds = breeze.config.initializeAdapterInstance("dataService", "webApiOData");
+     ds.relativeUrl = function(dataService, url) {
+        return somehowConvert(url);
+     }
 
 We also highly recommend the Pluralsight course &quot;<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=aspnetwebapi-odata" target="_blank"><strong>Building ASP.NET Web API OData Services</strong></a>&quot; by <a href="http://briannoyes.net/" target="_blank">Brian Noyes</a>. The module, "Consuming OData Services ...", demonstrates consuming a Web API OData service with Breeze.
 

@@ -30,10 +30,11 @@ In the live code example, an AngularJS UI presents one entity (the "hero") and a
 related mappings to the other type (the "super powers" that a "hero" can have)
 as a collection of checkboxes. The user adds and removes "super power" mappings by checking the checkboxes.
 
-Rather than repeat the details, we refer you to the [***readme.md*** on plunker](http://plnkr.co/edit/qVx4ZfmNmbfWEdEVgZ2o?p=info).
+Rather than repeat the details, we refer you to the <a href="http://plnkr.co/edit/qVx4ZfmNmbfWEdEVgZ2o?p=info" target="_blank">***readme.md*** on plunker</a>.
 
 <a name="livecode"></a>
 ## Live Code
+
 <p class="note">The following live code only works with modern browsers (IE10+, FF, Chrome).</p>
 
 <p style="border: 1px solid lightblue; padding: 4px"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.plnkr.co/qVx4ZfmNmbfWEdEVgZ2o/preview" style="width: 100%; height: 600px"></iframe></p>
