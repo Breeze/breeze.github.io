@@ -33,6 +33,7 @@ as a collection of checkboxes. The user adds and removes "super power" mappings 
 Rather than repeat the details, we refer you to the <a href="http://plnkr.co/edit/qVx4ZfmNmbfWEdEVgZ2o?p=info" target="_blank">***readme.md*** on plunker</a>.
 
 <a name="livecode"></a>
+
 ## Live Code
 
 <p class="note">The following live code only works with modern browsers (IE10+, FF, Chrome).</p>

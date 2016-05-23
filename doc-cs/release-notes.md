@@ -83,6 +83,7 @@ reference a specific instance instead of the singleton; often this is the instan
    + EmailValidator
 
 ## 0.5.x.x# 
+
 ### <a name="05xx"></a>0.5.x.x <span class="doc-date">Apr 1, 2014</span>###
 Initial release.  
 

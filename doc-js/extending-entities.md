@@ -286,6 +286,7 @@ Fortunately, you can create a custom key generator and register it with an `Enti
 The **entityExtensionTests** module in the DocCode <a href="/doc-samples/doccode">Teaching Tests</a> has a simple example. The Breeze `breeze.KeyGenerator` is the best source of inspiration.
 
 <a name="es5-property"></a>
+
 # ECMAScript 5 Defined Properties
 
 Modern browsers - those whose JavaScript engines support ECMAScript 5 (ES5) or later -
@@ -361,11 +362,13 @@ You want Breeze to watch these properties. You want Breeze to validate and seria
 > These techniques only work in ES5+ browsers. The <code>Object.DefineProperty</code> feature cannot be shimmed (aka, "polyfilled") into older browsers. Some browsers, such as IE8, appear to support ES5 defined properties but actually don't.
 
 <a name="ko-computeds"></a>
+
 # Knockout computed properties
 
 <a href="http://knockoutjs.com/documentation/computedObservables.html" target="_blank">Knockout computeds</a> are observable functions that return new values when one (or more) of their dependent observable properties change.
 
 <a name="add-computed-to-initializer"></a>
+
 ## *Add Knockout computeds to the initializer*
 
 The initializer is an ideal place to define them. 

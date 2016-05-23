@@ -18,6 +18,7 @@ The package (or packages) you need depend on your development scenario.
 * [Try the "Todo" demo package.](#demoPkg)
 
 <a name="learn"></a>
+
 ## Are you new to Breeze?
 
 We recommend that you look first at Brian Noyes "<a href="http://www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with Angular and Breeze</a>" and "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
@@ -25,6 +26,7 @@ We recommend that you look first at Brian Noyes "<a href="http://www.pluralsight
 John's "HotTowel" nuget packages will reflect Visual Studio 2013/2015 and its family of technology updates.
 
 <a name="current"></a>
+
 ## Visual Studio 2013/2015 and .NET 4.5
 
 [Go here](#legacy) if you must run on the .NET 4.0 platform. These packages are for .NET 4.5 applications only.
@@ -70,6 +72,7 @@ If you have separate projects for web content, data access and model, you'll wan
 **Breeze.Server.ContextProvider** - If you manage data access by some means other than Entity Framework or NHibernate. The EF and NH packages depend upon this one.
 
 <a name="legacy"></a>
+
 ## Visual Studio 2012 and .NET 4
 
 The following packages are for developers who must target the .4.0 framework or who can't migrate from Visual Studio 2012 technologies to the Web API 2 or Entity Framework 6 that were released with Visual Studio 2013.
@@ -87,6 +90,7 @@ If you aren't using Entity Framework, you might want to load the dependent packa
 **Breeze.Server.WebApi.Core** - For Web Api v.1 but with ORM support. Pick this package when you have your own data access technology. The EF and NH packages depend on this one.
 
 <a name="convert"></a>
+
 ## Convert a "Legacy" Application
 
 To convert a (legacy) Visual Studio 2012 Breeze application to Breeze ASP.NET WebApi 2 and Entity Framework 6 project:
@@ -100,6 +104,7 @@ To convert a (legacy) Visual Studio 2012 Breeze application to Breeze ASP.NET We
 * Replace references to EF 4/5 namespaces in all of your project files with references to the EF 6 namespaces. Check out the <a href="http://entityframework.codeplex.com/wikipage?title=specs" target="_blank">pertinent Microsoft documentation</a>.
 
 <a name="demoPkg"></a>
+
 # Get started with the Breeze Demo package
 
 A quick way to discover Breeze is by building a super-simple example using the ToDo demo NuGet package. You can be up and running in about two minutes.

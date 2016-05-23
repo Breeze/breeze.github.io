@@ -86,6 +86,7 @@ Notice that
 * <span style="color:red;">Red error messages</span> (not shown) appear below the blue WIP messages when something goes wrong ... such as trying to save a TodoItem that has no description.
 
 <a name="WebAPI"></a>
+
 # The Web API Option
 
 If you're on a Windows .NET 4.5 machine you can reconfigure the app to talk to a local ASP.NET Web API service.

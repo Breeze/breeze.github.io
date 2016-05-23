@@ -95,6 +95,7 @@ You don't have to rely on the default convention. You can create a `MetadataStor
     breeze.NamingConvention.instance.name; // default remains 'noChange'
 
 <a name="CreateConvention"></a>
+
 ## Create a custom NamingConvention
 
 You can create your own conventions. Here is one that translates between server property names with underscore ('\_') word separators and camelCase property names on the client.
@@ -274,6 +275,7 @@ The `NamingConvention` translates property names but it can't translate `EntityT
 <p class="note">In fact, at this time the developer would find it extremely difficult to translate <code>EntityType</code> names in Breeze. If you need this feature, please vote for it on <a href="http://breezejs.uservoice.com/forums/173093-1-breezejs-feature-suggestions/suggestions/7079377-namingconvention-for-entitytype-names" "Suggestion on UserVoice" target="_blank">UserVoice</a>.</p>
 
 <a name="NamingConventionInMetadata"></a>
+
 ## Beware of the baked-in NamingConvention
 
 Each `MetadataStore` has a `NamingConvention` at birth. 

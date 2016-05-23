@@ -100,8 +100,7 @@ The easy solution is to tell Breeze what type to expect with the [`toType` claus
 
 Now Breeze can determine that the 'OrderDate' property is a `DateTime` type and parse the string date. It composes the proper query URL and the server happily responds with orders and their details.
 
-<a name="defaultResourceName"></a>
-## Default resource name
+## Default resource name <a name="defaultResourceName"></a>
 
 Why didn't we need `.toType` for the first query that targets 'Orders'?
 

@@ -95,6 +95,7 @@ This same effect could be accomplished by creating your own subclass of NamingCo
       myMetadataStore.NamingConvention = new MyCustomNamingConvention();
 
 <a name="Beware"></a>
+
 ## Beware of exported NamingConventions
 
 Each `MetadataStore` has a no-op `NamingConvention` at birth. 

@@ -46,6 +46,7 @@ We'll tackle ***EntityAspect***'s key features in four groups.
 - [entity miscellany](#EntityMiscellany)
 
 <a name="EntityState"></a>
+
 ## EntityState
 
 Is the entity attached to an ***EntityManager*** and therefore in its cache? Has it changed? If changed, is it a new entity, a modified version of an existing entity from remote storage, or an existing entity that is marked for deletion?
@@ -132,6 +133,7 @@ You rarely call ***AcceptChanges*** in production code; production entities beco
 You are most likely to call this method while setting up fake entities for automated tests because you want to force these fakes into a particular test state. The ***AcceptChanges*** method also clears the ***OriginalValuesMap***, erasing memory of prior values; you won't be able to revert these entities to their original values.
 
 <a name="DeleteEntity"></a>
+
 ### Deleting entities
 
 Deleting an entity begins with an ***EntityState*** change. Call ***Delete***() to mark an entity for deletion:
@@ -141,6 +143,7 @@ Deleting an entity begins with an ***EntityState*** change. Call ***Delete***() 
 `Delete` does not destroy the object locally nor does it remove the entity from the database. The entity simply remains in cache in a “Deleted” state … as changed and added entities do ... until you save. A successful save deletes the entity from the database and removes it from cache.
 
 <a name="RejectChanges"></a>
+
 ### Cancel with ***RejectChanges***
 
 Once you’ve changed an entity, it stays in a changed state … even if you manually restore the original values:
@@ -181,6 +184,7 @@ Here's a method to get those keys:
 Breeze replaces ***EntityAspect.OriginalValuesMap*** with a new empty hash when any operation restores the entity to the "Unchanged" state. A successful save, ***RejectChanges*** and ***AcceptChanges*** all reset the ***OriginalValuesMap***.
 
 <a name="PropertyChanged"></a>
+
 ## PropertyChanged and ErrorsChanged events on the Entity
 
 Breeze creates entities in in the manner appropriate for .Net and WPF. This means that the entity is shaped to match the needs of WPF binding. *INotifyPropertyChanged*, *INotifyDataErrorInfo*, and several other interfaces discovered and used by WPF are defined and implemented by all Breeze entities. To use these methods outside of standard data binding you will need to cast your entity to the appropriate interface. i.e.
@@ -204,6 +208,7 @@ You can listen for a change to any Breeze-tracked entity property with the follo
 Breeze only monitors changes to properties identified in the metadata for this ***EntityType***. These properties - mapped and unmapped - are the "Breeze-tracked entity properties" mentioned earlier. Breeze doesn't track properties that you add with an entity initialization method (see [Extending Entities](/doc-cs/extending-entities)) or that you patch into the entity later in its lifetime.
 
 <a name="ValidateEntity"></a>
+
 ## ValidateEntity
 
 Breeze properties aren’t just observable. They can validate changes based on rules registered in metadata. Some of the validations are registered automatically based on information in the metadata. For example, a key property is automatically required. You can add your own custom validations as well. See the [Validation](/doc-cs/validation) topic for details.
@@ -215,6 +220,7 @@ A validation rule either passes or fails. If it passes, it returns null. If it f
 Every ***EntityAspect*** maintains a `ValidationErrors` collection. The Breeze validation engine adds a new ***ValidationError*** instance to that collection when a validation rules fails and removes an old ***ValidationError*** instance when its associated validation rule passes.
 
 <a name="EntityMiscellany"></a>
+
 ## Entity miscellany
 
 This last category is a small menagerie of miscellaneous EntityAspect members

@@ -91,6 +91,7 @@ Why? Because the metadata it generates don't identify the foreign key properties
 >As yet there is no officially endorsed way to repair the navigation metadata on the client. We cannot stop you from monkey patching the MetadataStore with the missing Foreign Key property information.
 
 <a name="edmBuilder"></a>
+
 ### EdmBuilder workaround
 
 There is an approved workaround if your OData service is backed by the Entity Framework. You can **use the Breeze Labs `EdmBuilder`** to produced the metadata instead of the Web API's own `ODataConventionModelBuilder`. The ["Web API OData and Breeze" sample](/doc-samples/web-api-odata#BuildEDM "Web API OData and Breeze sample") explains why this is necessary and how to wire up the `EdmBuilder`.

@@ -58,6 +58,7 @@ The metadata script is always current because we regenerate it automatically whe
 
 Best of all, it's easy to set up. Let's see how.
 <a name="capture"></a>
+
 # Capture the metadata (quick and dirty) #
 
 We want to see benefits right away so we'll quickly assemble a *metadata.js* file by grabbing the metadata off the wire.

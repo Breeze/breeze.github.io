@@ -106,8 +106,8 @@ You don't have to register the `CustomBreezeConfig` class with Breeze. Breeze wi
 
 >**Do not** reconfigure the formatter to use camel casing on the client. Use the BreezeJS  [`NamingConvention`](/doc-js/metadata#NamingConvention) instead.
 
-
 <a name="breeze-queryable"></a>
+
 # BreezeQueryableAttribute
 
 The `BreezeQueryableAttribute` converts Breeze client query URLs into LINQ expressions ... much as the [Web API `QueryableAttribute`](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options) does.
@@ -134,6 +134,7 @@ The `BreezeControllerAttribute` automatically applies a `BreezeQueryableAttribut
 You don't have to add the attribute to each controller method yourself ... unless you want to do something special with that method.
 
 <a name="limiting-query-options"></a>
+
 ### Limiting query options
 
 You may want to constrain what a particular query can do. In standard Web API, you'd add a `QueryableAttribute` to the controller method and specify the [limiting query options](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options "limiting query options").

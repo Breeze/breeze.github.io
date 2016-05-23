@@ -38,6 +38,7 @@ You designate the AJAX adapter for your app with an expression like **one** of t
 >The "jQuery" adapter is the default AJAX adapter. You don't have to initialize this adapter as we did here for illustrative purposes.
 
 <a name="angular"></a>
+
 ## The AngularJS $http adapter
 
 Many Angular developers prefer to use Angular's native `$http` AJAX component; *we do*.

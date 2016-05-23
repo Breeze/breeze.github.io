@@ -66,6 +66,7 @@ Again, because Breeze is watching, the new order instantly acquires a customer; 
     newOrder.Customer() === existingCustomer; // true
 
 <a name="ko-push"></a>
+
 ### *Orders.push* or *Orders().push*
 
 Notice that we pushed to **`Orders`** (no parentheses) and not **`Orders()`**.
@@ -198,6 +199,7 @@ Please use the `expand` clause judiciously. Consider [delaying retrieval](#on-de
 <p class="note">If expand fails to work as expected, take a look at the "<a href="/doc-js/query-debugging.html#expand" title="Query result debugging">Query result debugging</a>" topic.</p>
 
 <a name="on-demand"></a>
+
 ## Loading related entities on demand
 
 Suppose we are judicious in our use of *expand*. Imagine that we query for orders and do not eagerly load their details. 

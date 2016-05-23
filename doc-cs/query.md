@@ -68,8 +68,10 @@ redirect_from: "/old/breeze-sharp-documentation/query-examples.html"
     var results = await manager.ExecuteQuery(query1a); 
 
 <a name="where" />
+
 ### Filtering with "where"
 <a name="whereSimple" />
+
 #### Simple conditions
 
     // query for Customers whose names start with "A";
@@ -94,6 +96,7 @@ redirect_from: "/old/breeze-sharp-documentation/query-examples.html"
      .Where(cust => cust.CompanyName.Contains('market'));
 
 <a name="whereCompound"/>
+
 #### Compound conditions with predicates
 
     // Start with a base query for all Orders
@@ -134,6 +137,7 @@ redirect_from: "/old/breeze-sharp-documentation/query-examples.html"
     var query5 = baseQuery.where(pred);
 
 <a name="whereRelated" />
+
 #### Conditions on related properties
   
     // Products in a Category whose name starts with "S"
@@ -145,6 +149,7 @@ redirect_from: "/old/breeze-sharp-documentation/query-examples.html"
         .Where(order => order.Customer.Region == "CA");   
 
 <a name="whereAnyall" />
+
 #### Conditions involving any/all with related properties
 
 The following query attempts to find any "Employees" who have placed any orders with a 'freightCost' of more than $950.
@@ -177,6 +182,7 @@ and Predicates can even be nested. In this case we are querying for any orders w
         .Where(c => c.Orders.Any(o => o.OrderDetails.All(od => od.UnitPrice > 200)));
 
 <a name="whereOdata" />
+
 #### Conditions using OData functions 
 
 Several common .NET operations have OData representations. See OData method filter discussion here: <http://msdn.microsoft.com/en-us/library/hh169248(v=nav.71).aspx>
@@ -200,9 +206,11 @@ Several common .NET operations have OData representations. See OData method filt
         .Where(e => e.EmployeeID + e.ReportsToEmployeeID.Value > 3);
 
 <a name="orderby" />
+
 ### Sorting with 'orderBy'
 
 <a name="orderbySingle" />
+
 #### Single property sort
 
     // Products in ascending name order
@@ -213,8 +221,8 @@ Several common .NET operations have OData representations. See OData method filt
         .OrderByDescending(p => p.ProductName);
     
     
-
 <a name="orderbyMultiple" />
+
 #### Multiple property sort
      
     // Customers sorted by country and then by company name
@@ -222,6 +230,7 @@ Several common .NET operations have OData representations. See OData method filt
         .OrderBy(c => c.Country).ThenBy(c => c.CompanyName);
 
 <a name="orderbyRelated" />
+
 #### Related property sorting
 
     // Products sorted by their Category names (in descending order)
@@ -234,6 +243,7 @@ Several common .NET operations have OData representations. See OData method filt
         .ThenByDescending(p => p.ProductName);
 
 <a name="paging" />
+
 #### Paging with 'skip' and 'take'
 
     // Get the first 5 Products
@@ -268,11 +278,13 @@ Several common .NET operations have OData representations. See OData method filt
         .Take(10);
 
 <a name="select" />
+
 ### Projection with 'select'
 
 > Note: All Breeze.Sharp projections must be into a anonymous type. See the examples below:
 
 <a name="selectDp" />
+
 #### Single data property projections
 
     // just the names of the Customers that begin with "C"
@@ -283,6 +295,7 @@ Several common .NET operations have OData representations. See OData method filt
 > Note the "new" in the select clause above; without it the query WILL fail.
 
 <a name="selectNp" />
+
 #### Single navigation property projections
 
     // Orders of the Customers that begin with "C"
@@ -291,6 +304,7 @@ Several common .NET operations have OData representations. See OData method filt
          .Select(c => new { c.Orders });
 
 <a name="selectMultiple" />
+
 #### Multiple property projections
     
     // Selected properties of customers with names starting with "C"
@@ -299,6 +313,7 @@ Several common .NET operations have OData representations. See OData method filt
          .Select(c => new { c.CompanyName, c.Orders });
 
 <a name="selectRelated" />
+
 #### Related property projections 
 
 > These are not yet supported due to a bug in MS OData client
@@ -310,9 +325,11 @@ Several common .NET operations have OData representations. See OData method filt
         .OrderBy(o => Customer.CompanyName);
 
 <a name="expand" />
+
 #### Eager loading with 'expand'
 
 <a name="expandSingle" />
+
 #### Single relation expand
 
     // include the Category in the payload for
@@ -322,6 +339,7 @@ Several common .NET operations have OData representations. See OData method filt
         .Expand(p => p.Category);
 
 <a name="expandKey" />
+
 #### Query by key with expand
 
     // Query for Customer with ID 42
@@ -332,6 +350,7 @@ Several common .NET operations have OData representations. See OData method filt
         .Expand(c => c.Orders);
 
 <a name="expandMulti" />
+
 #### Multiple relation expand
     
     // include both the parent Customers and child OrderDetails
@@ -341,6 +360,7 @@ Several common .NET operations have OData representations. See OData method filt
         .Expand("Customer, OrderDetails");
 
 <a name="expandProppath" />
+
 #### Property path expand
 
     // include the OrderDetails and their parent Products
@@ -351,6 +371,7 @@ Several common .NET operations have OData representations. See OData method filt
            .Expand("OrderDetails.Product");
 
 <a name="queryKey" />
+
 #### Query by key
 Call FetchEntityByKey directly on the EntityManager. Note the 'fetch' prefix.
 
@@ -377,6 +398,7 @@ You can call *GetEntityByKey* directly on the EntityManager to extract the entit
     var customer = manager.getEntityByKey(entityKey);
 
 <a name="queryBag" />
+
 #### Query a bag of entities
 A 'query' can return an object filled with arbitrary collections of entities. Particularly useful when you want to prime your cache with lookup lists. Start on the server with a service query method that returns an object whose properties contain lists of entities. Here's a Web API controller method example:
 

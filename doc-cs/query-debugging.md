@@ -117,6 +117,7 @@ In the list below, find the kind of `DataProperty` that you were expecting and s
 If you still can't figure it out after following these links, <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" title="Breeze StackOverflow" target="_blank">ask a question on StackOverflow</a> and please state what you learned from this metadata analysis.
 
 <a name="SimpleMapped"/>
+
 #### Simple mapped property
 
 	orderEntityType.GetProperty("OrderDate");
@@ -131,6 +132,7 @@ Inspect the result of this expression in the watch window and notice that:
 
 
 <a name="SimpleUnmapped"></a>
+
 #### Simple unmapped property
 
 An "unmapped property" refers to a value that is not persisted in the remote data store. Because an unmapped property is not persisted, it isn't transmitted to the server and changes to  the property values have no effect on the entity's `EntityState`.
@@ -153,6 +155,7 @@ Notice that
 	- `nameOnServer`
 
 <a name="ComplexMapped"></a>
+
 #### Complex mapped property
 
 	orderEntityType.GetProperty("ShipTo");
@@ -166,6 +169,7 @@ If you inspect the result of this expression in the watch window you will notice
 - the name (on the client) matches the name on the server
 
 <a name="NavigationProperties"></a>
+
 #### Navigation properties
 
 You can navigate from an entity to other related entities via *navigation properties* as in
@@ -197,6 +201,7 @@ Breeze supports several association *cardinalities*:
 With this background in mind, let's look at the two types of navigation properties in detail.
 
 <a name="ReferenceNavigation"></a>
+
 #### Reference navigation property
 
 A "reference navigation property" returns a single related entity, typically the "parent" entity (the entity in the "principal" role) of an association. The "Customer" is the parent of an "Order" in this model.
@@ -220,6 +225,7 @@ If you inspect the result of this expression in the watch window you will notice
 Breeze does not require navigation properties for both sides of an association. The `Inverse` navigation property is optional. The `AssociationName` could be omitted if there were no `Inverse` navigation property.
 
 <a name="CollectionNavigation"></a>
+
 #### Collection navigation property
 
 A "collection navigation property" returns an array of related entities, typically the "children" of this "parent" entity.
@@ -251,6 +257,7 @@ But it is quite common to omit the collection navigation property of an associat
 The `AssociationName` could be omitted if there were no `Inverse` navigation property.
 
 <a name="expand"></a>
+
 #### When *.expand(...)* fails
 
 One way to load related entities into cache is to add an [`.expand(...)` clause](/doc-cs/query#Eager%20loading%20%20EntityQuery.expand ""expand" documentation") to your query.
@@ -291,6 +298,7 @@ You'll want to add that `FooId` property to the `Bar` type defined in your serve
 > This point is frequently neglected and misunderstood. See, for example, <a href="http://stackoverflow.com/questions/20692463/issues-including-navigation-properties-in-query" target="_blank">this StackOverflow question</a> wherein the FK is omitted and the author is surprised by the results. The answer explores the symptoms and the resolution in greater detail.
 
 <a name="ForeignKey"></a>
+
 #### Foreign Key (FK) property
 
 A foreign key (FK) property is a simple mapped property with a little extra information, a `RelatedNavigationProperty`. 

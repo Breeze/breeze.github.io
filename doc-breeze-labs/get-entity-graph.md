@@ -90,6 +90,7 @@ It's pretty easy to filter out the deleted entities if you really don't want the
             });
 
 <a name="save-graph"></a>
+
 ## Save the graph of changed entities
 
 A popular use case for `getEntityGraph` is to build a change-set of entities to save that is **limited to the graph of changes to a particular root and its descendants**.

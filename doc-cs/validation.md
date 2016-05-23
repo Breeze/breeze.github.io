@@ -206,8 +206,7 @@ It's a general purpose rule that we could apply to any other string property. Fo
 
 >The *EntityType* must be present in metadata before you can apply the rule. You can <em>define </em>the rule <em>before </em>getting the metadata, perhaps immediately after launching the application. But you can't add the validator to the type or any of its properties until the type is defined. For most applications, **you must wait** until the client has retrieved metadata from the server. You can fetch that metadata explicitly or wait until Breeze gets it implicitly during the first query.
 
-<a name="refNav"></a>
-## Reference navigation validation
+## Reference navigation validation <a name="refNav"></a>
 
 What if a reference navigation is required? How do you validate that?
 

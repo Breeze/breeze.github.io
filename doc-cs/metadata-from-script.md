@@ -61,6 +61,7 @@ The metadata json file is always current because we regenerate it automatically 
 
 Best of all, it's easy to set up. Let's see how.
 <a name="capture"></a>
+
 # Capture the metadata (quick and dirty) #
 
 We want to see benefits right away so we'll quickly assemble a *metadata.json* file by grabbing the metadata off the wire.
@@ -97,7 +98,9 @@ Here's the procedure:
 Your new *EntityManager* is primed with metadata and no longer requests metadata from the server ... a fact you can confirm by running your application and checking the network traffic. You will not see a call to the "metadata" endpoint.
 
 <a name="writeMetadataJS"></a>
+
 # A sustainable *metadata.json* #
+
 We're a little uncomfortable with the way we created *metadata.json*.
 
 We took a snapshot of the metadata as it is today. As the application evolves, the service model will evolve and the metadata will change. The metadata in our json file will be incorrect triggering a cascade of errors that may be hard to diagnose.

@@ -133,6 +133,7 @@ We discussed it. Some of us wanted them ... badly. These  Web API controller imp
 If these concerns matter to you, we trust that you know how to refactor and that you will cut us some slack. It is a demo.
 
 <a name="WebApiRoute"></a>
+
 # Web API OData Routing
 
 Web API routing directs client requests for data to the proper controller methods. There are several ways to specify those routes. This application does it with global configuration when the server application launches. 
@@ -161,6 +162,7 @@ The name of the resource is the same as the root name of the targeted OData cont
 The **EDM** is the other side of the route equation ... and we turn to it now.
 
 <a name="BuildEDM"></a>
+
 ## Building the EDM 
 
 The EDM describes the schema for the model targeted by requests that follow a route. If a client makes a request to the `odata/TodoLists` resource, the route EDM had better describe an `EntitySet` named "TodoLists".
@@ -300,6 +302,7 @@ The act of injecting the 'breeze' service into *any* application component creat
 Breeze is ready for an Angular app but it doesn't know we're using OData and it doesn't know where the service is yet. 
 
 <a name="DataServiceAdapter"></a>
+
 ### Web API OData DataService Adapter
 
 Breeze abstracts the details of its own communications with the server into a "DataService Adapter". The default adapter is designed for a Breeze-flavored ASP.NET Web API ... which is **not** the same stack as the Web API 2 **OData**. 
@@ -506,6 +509,7 @@ Per the "Revealing Module" style, the `datacontext` API is spelled out at the to
 They're are all short, unremarkable functions implemented later in the file.  "Unremarkable" ... except for "save".
 
 <a name="SaveChanges"></a>
+
 ## Batched saves
 Breeze saves **change-sets** consisting of one or more entities, each in some changed state that indicates how the change should be persisted. Some entities may be new ('Added'), some edited ('Modified'), and some may be marked for deletion upon save ('Deleted'). A batch can hold any combination of entity types and changed states.
 

@@ -51,6 +51,7 @@ The **QueryTests** module in DocCode sample demonstrates many of the techniques 
 > This page is under construction. The following is a grab-bag of details concerning the points just enumerated.
 
 <a name="withParameters" />
+
 ## Passing parameters to the server
 
 Often the method on the server does not recognize OData URI query syntax but it does take other parameters passed in the query string of the request.
@@ -81,8 +82,8 @@ Obviously you could have written this as a normal Breeze query but we trust you 
 
 Web API assumes that data for non-simple parameter types will be in the body of the request. GET requests don't have bodies. The Breeze client serialized the array values into the query string of the request URI. This attribute tells the Web API to bind the parameter to those array values in the URI.
 
-
 <a id='paging'></a>
+
 ## Paging with *Skip*, *Take*, and *InlineCount* ##
 
 A query typically returns all entities that satisfy the filter criteria in your `Where` clause(s). It could return a lot of data ... perhaps more data than you need or want right now.
@@ -137,6 +138,7 @@ Breeze does not yet support aggregate queries (count, sum, average, etc.). But w
             
 
 <a name="QueryOptions"></a>
+
 ### Query Options ###
 The [**`QueryOptions`**](/doc-cs/api-docs/html/T_Breeze_Sharp_QueryOptions.htm) object defines two strategies that guide the EntityManager's processing of a query.
 
