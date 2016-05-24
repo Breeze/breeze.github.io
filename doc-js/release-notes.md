@@ -15,6 +15,7 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 #### Breeze.Js Fixed Bugs
 - Error in OData data service adapter when using breeze.base (Pull request [#134](https://github.com/Breeze/breeze.js/pull/134))
 - Require names don't match bower names for external modules (Issue [#142](https://github.com/Breeze/breeze.js/issues/142))
+- Various small fixes for working with Olingo OData (Pull request [#41](https://github.com/Breeze/breeze.js/pull/41)
 
 ### <a name="156"></a>1.5.6 <span class="doc-date">March 31, 2016</span>###
 
