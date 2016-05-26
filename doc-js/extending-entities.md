@@ -26,7 +26,7 @@ Now suppose that, in our client application, we want every `Customer` to have an
 
 Because this is JavaScript, we can extend a customer object simply by patching it with the new property:
 
-    // Angular:
+    // Angular or Aurelia:
     cust.isBeingEdited = false;
 
     // Knockout observable (because we'll bind to it):
@@ -327,7 +327,7 @@ Now when you set `bob.age == 42` in a browser, you'll see a message about the ch
 
 Defined properties are particularly convenient when you want to build behavior into setters ... behavior such as change tracking, change notification, and property validation.
 
->Breeze relies on ES5 defined properties when you choose to build your application with AngularJS and select the "backingStore" model library ... for precisely these reasons.
+>Breeze relies on ES5 defined properties when you choose to build your application with AngularJS or Aurelia and select the "backingStore" model library ... for precisely these reasons.
 
 They are also good for calculated properties in Angular apps. Here's a `fullName` read-only property that Angular can watch.
 

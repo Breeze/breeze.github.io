@@ -24,6 +24,9 @@ Get [breeze.bridge.angular.js](https://raw.githubusercontent.com/Breeze/breeze.j
 
 See the [Todo-Angular-Hibernate](/doc-samples/todo-angular-hibernate.html) sample for an example Breeze+Angular application.
 
+#### If you are using [Aurelia](http://aurelia.io/)
+Get [aurelia-breeze](https://github.com/jdanyow/aurelia-breeze).  This sets up breeze to use ES6 promises and Aurelia's http-client for AJAX.  In your `index.html` you'll have just the bootstrapping code, since Aurelia uses modules.  See the [aurelia-breeze-northwind](https://github.com/jdanyow/aurelia-breeze-northwind) sample.
+
 #### If you are using [KnockoutJS](http://knockoutjs.com/)
 Get [Q.js](https://github.com/kriskowal/q) (for promises) and [jQuery](https://jquery.com/) (for AJAX).  You will also need the [KO model libary](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.modelLibrary.ko.js) for change tracking between Knockout and Breeze.  In your `index.html` you should have, in order:
 

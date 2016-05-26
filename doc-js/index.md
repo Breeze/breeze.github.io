@@ -76,7 +76,7 @@ Many binding frameworks detect changes by listening to a property changed event,
 
 There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular v.2, Aurelia, Backbone, Knockout, ...) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose.
 
->Breeze currently supports AngularJS, Aurelia, Knockout, and BackBone with adapters for other libraries under consideration. We'd be happy to help you write an adapter for a library we don't yet support.
+>Breeze currently supports [Angular 1.x](https://angularjs.org/), [Angular 2](https://angular.io/), [Aurelia](http://aurelia.io/), [Knockout](http://knockoutjs.com/), and [BackBone](http://backbonejs.org/) with adapters for other libraries under consideration. We'd be happy to help you write an adapter for a library we don't yet support.
 
 ## Query
 
