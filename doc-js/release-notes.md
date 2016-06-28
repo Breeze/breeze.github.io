@@ -7,6 +7,13 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="158"></a>1.5.8 <span class="doc-date">TBD</span>###
+
+#### Breeze.Js Features
+
+#### Breeze.Js Fixed Bugs
+- Fix missing `displayName` and `nameOnServer` in [breeze.d.ts](https://github.com/Breeze/breeze.js/blob/master/typescript/typescript/breeze.d.ts)
+
 ### <a name="157"></a>1.5.7 <span class="doc-date">June 8, 2016</span>###
 
 #### Breeze.Js Features
