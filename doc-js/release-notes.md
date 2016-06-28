@@ -12,7 +12,7 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 #### Breeze.Js Features
 
 #### Breeze.Js Fixed Bugs
-- Fix missing `displayName` and `nameOnServer` in [breeze.d.ts](https://github.com/Breeze/breeze.js/blob/master/typescript/typescript/breeze.d.ts)
+- Fix missing `displayName`, `nameOnServer`, `acceptChanges()` and change `module` to `namespace` in [breeze.d.ts](https://github.com/Breeze/breeze.js/blob/master/typescript/typescript/breeze.d.ts)
 
 ### <a name="157"></a>1.5.7 <span class="doc-date">June 8, 2016</span>###
 
