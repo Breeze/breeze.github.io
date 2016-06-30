@@ -10,6 +10,8 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 ### <a name="158"></a>1.5.8 <span class="doc-date">TBD</span>###
 
 #### Breeze.Js Features
+- Restructured NPM package.
+- Typescript definitions included in NPM package to allow consumption of Breeze as an external Typescript module instead of static script with global namespaces.
 
 #### Breeze.Js Fixed Bugs
 - Fix missing `displayName`, `nameOnServer`, `acceptChanges()` and change `module` to `namespace` in [breeze.d.ts](https://github.com/Breeze/breeze.js/blob/master/typescript/typescript/breeze.d.ts)
