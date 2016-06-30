@@ -12,6 +12,7 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 #### Breeze.Js Features
 - Restructured NPM package.
 - Typescript definitions included in NPM package to allow consumption of Breeze as an external Typescript module instead of static script with global namespaces.
+- Allow custom headers on OData requests; fixes issue [#154](https://github.com/Breeze/breeze.js/issues/154)
 
 #### Breeze.Js Fixed Bugs
 - Fix missing `displayName`, `nameOnServer`, `acceptChanges()` and change `module` to `namespace` in [breeze.d.ts](https://github.com/Breeze/breeze.js/blob/master/typescript/typescript/breeze.d.ts)
