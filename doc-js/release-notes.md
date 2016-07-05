@@ -7,7 +7,7 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
-### <a name="158"></a>1.5.8 <span class="doc-date">TBD</span>###
+### <a name="158"></a>1.5.8 <span class="doc-date">July 5, 2016</span>###
 
 #### Breeze.Js Features
 - Restructured NPM package.
