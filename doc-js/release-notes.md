@@ -27,6 +27,7 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 - Require names don't match bower names for external modules (Issue [#142](https://github.com/Breeze/breeze.js/issues/142))
 - Various small fixes for working with Olingo OData (Pull request [#41](https://github.com/Breeze/breeze.js/pull/41))
 - Error when attempting to treat string as a date. (Issue [#151](https://github.com/Breeze/breeze.js/issues/151))
+- Add warning when attempting to re-use ctor. (Issue [#133](https://github.com/Breeze/breeze.js/issues/133))
 
 ### <a name="156"></a>1.5.6 <span class="doc-date">March 31, 2016</span>###
 
