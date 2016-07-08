@@ -102,6 +102,7 @@ Here is what a typical JSON payload looks like when SaveChanges is called (when 
 {% endhighlight %}
 
 A few things to notice:
+
 - The entities are in a flat array.  They are not connected in a graph by their navigation properties as they are when they are in the EntityManager.  For example, the Order in the payload does not have an OrderDetails collection, and the OrderDetail does not have an Order property.  The foreign keys (OrderID) are still populated, and these can be used on the server to identify the relationship.
 - Each entity has an `entityAspect` property, which identifies its `entityTypeName` and `entityState`.  These are used to create the proper type on the server, and determine how to update the persistence layer
 - In this example, each entityState is `Added`, and the OrderID property has a temporary value that will be replaced by the server-generated id. 
@@ -170,6 +171,7 @@ Here is what a typical JSON response looks like when SaveChanges is called (when
 {% endhighlight %}
 
 Here we notice:
+
 - The entities may be connected in a graph, as they would be in a query response.  This is not required, as long as they can be re-connected on the client by their foreign key properties.
 - The `$id` and `$ref` properties are used to identify the relationships between the entities in *this payload only*.  The real entity relationship is established (on server and client) by the OrderID.
 -  The temporary `OrderID` value has been replaced by the server-generated ID.  The `KeyMappings` property identifies the keys that were replaced on the server.  This tells the Breeze client how to update the entities in its cache.  It will find the Order entity with OrderID -1, and change its OrderID to 212008, and change the foreign key in all related entities.
