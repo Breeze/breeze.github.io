@@ -110,6 +110,13 @@ table tr th :last-child, table tr td :last-child {
 
 /* formatting for line numbers in code blocks */
 
+/* hide extra wrapper around line-numbering table */
+figure.highlight > pre {
+    padding: 0;
+    border: 0;
+    background-color: rgba(255,255,255,0);
+}
+
 code table tr {
     border: 0;
 }
