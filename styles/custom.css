@@ -128,6 +128,7 @@ td.gutter pre.lineno {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right-style: dotted;
+    color: #aaaaaa;
 }
 td.code pre {
     border-left: 0;
