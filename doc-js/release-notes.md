@@ -7,6 +7,14 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="159"></a>1.5.9 <span class="doc-date">TBD</span>###
+
+#### Breeze.Js Features
+- Now uses JsonResultsAdapter to extract entities and keyValues from save result, for adaptability when working with different servers.  See [API Doc](/doc-js/api-docs/classes/JsonResultsAdapter.html).
+
+#### Breeze.Js Fixed Bugs
+ - Add missing TypeScript definitions and API docs
+
 ### <a name="158"></a>1.5.8 <span class="doc-date">July 5, 2016</span>###
 
 #### Breeze.Js Features

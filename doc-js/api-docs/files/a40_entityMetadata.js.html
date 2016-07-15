@@ -208,7 +208,7 @@
 
 // Get the promises library called Q
 // define a quick failing version if not found.
-var Q = __requireLibCore(&quot;Q&quot;);
+var Q = core.requireLib(&quot;Q;q&quot;);
 
 if (!Q) {
   // No Q.js! Substitute a placeholder Q which always fails
@@ -1821,6 +1821,9 @@ var EntityType = (function () {
     this.initFn = r.initFn;
     this.noTrackingFn = r.noTrackingFn;
 
+    if (aCtor.prototype._$typeName &amp;&amp; aCtor.prototype._$typeName != this.name) {
+      console.warn(&quot;Registering a constructor for &quot; + this.name + &quot; that is already used for &quot; + aCtor.prototype._$typeName + &quot;.&quot;);
+    }
     aCtor.prototype._$typeName = this.name;
     this._setCtor(aCtor);
     return aCtor;
@@ -2667,6 +2670,20 @@ var DataProperty = (function () {
   **/
 
   /**
+  The display name of this property
+
+  __readOnly__
+  @property displayName {String} 
+  **/
+  
+  /**
+  The name of this property on the server
+
+  __readOnly__
+  @property nameOnServer {String} 
+  **/
+  
+  /**
   The parent type that this property belongs to - will be either a {{#crossLink &quot;EntityType&quot;}}{{/crossLink}} or a {{#crossLink &quot;ComplexType&quot;}}{{/crossLink}}.
 
   __readOnly__
@@ -2963,6 +2980,20 @@ var NavigationProperty = (function () {
   @property name {String}
   **/
 
+  /**
+  The display name of this property
+
+  __readOnly__
+  @property displayName {String} 
+  **/
+  
+  /**
+  The name of this property on the server
+
+  __readOnly__
+  @property nameOnServer {String} 
+  **/
+  
   /**
   The {{#crossLink &quot;EntityType&quot;}}{{/crossLink}} returned by this property.
 
