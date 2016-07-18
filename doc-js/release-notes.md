@@ -7,6 +7,12 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="1510"></a>1.5.10 <span class="doc-date">July 18, 2016</span>###
+
+#### Breeze.Js Fixed Bugs
+ - Add missing TypeScript definitions
+ - Fix errant warning (introduced in 1.5.7) in registerEntityTypeCtor when using a prototype chain
+
 ### <a name="159"></a>1.5.9 <span class="doc-date">July 15, 2016</span>###
 
 #### Breeze.Js Features
