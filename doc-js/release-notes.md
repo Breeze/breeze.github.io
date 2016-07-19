@@ -7,6 +7,13 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="1511"></a>1.5.11 <span class="doc-date">TBD</span>###
+
+#### Breeze.Js Fixed Bugs
+ - OData: fix sticky $batch headers, issue [157](https://github.com/Breeze/breeze.js/issues/157)
+ - OData: fix application/json Accept header, issue [148](https://github.com/Breeze/breeze.js/issues/148)
+ - OData: fix missing data.retrievedEntities in query results
+
 ### <a name="1510"></a>1.5.10 <span class="doc-date">July 18, 2016</span>###
 
 #### Breeze.Js Fixed Bugs
