@@ -13,8 +13,8 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
  - OData: fix sticky $batch headers, issue [157](https://github.com/Breeze/breeze.js/issues/157)
  - OData: fix application/json Accept header, issue [148](https://github.com/Breeze/breeze.js/issues/148)
  - OData: fix missing data.retrievedEntities in query results
- - Rename AMD module names from 'breeze' to 'breeze-client'
- - Fix endless loop when exporting entities with constructor added properties that return entity types
+ - Rename AMD module names from 'breeze' to 'breeze-client', issue [161](https://github.com/Breeze/breeze.js/issues/161)
+ - Fix: EntityType.addProperty now adds property to subtypes
 
 ### <a name="1510"></a>1.5.10 <span class="doc-date">July 18, 2016</span>###
 
