@@ -3,7 +3,7 @@ layout: doc-node-mongodb
 ---
 # breeze-mongodb Release Notes
 
-![npm](https://cldup.com/Rg6WLgqccB.svg) [Install via npm](https://www.npmjs.com/package/breeze-mongodb0
+<img src="https://cldup.com/Rg6WLgqccB.svg" title="npm" width="78px"/> [Install via npm](https://www.npmjs.com/package/breeze-mongodb)
 
 ![github](/images/logos/github-logo.png) [Get it on GitHub](https://github.com/Breeze/breeze.server.node)
 
