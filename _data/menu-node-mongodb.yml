@@ -1,4 +1,5 @@
 title: Node server + MongoDB
 shorttitle: Node/MongoDB
 menuitems: 
+  - { link: "release-notes.html", title: Release Notes }
   - { link: "notes.html", title: Notes }
