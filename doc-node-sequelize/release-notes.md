@@ -5,6 +5,15 @@ layout: doc-node-sequelize
 
 <img src="https://cldup.com/Rg6WLgqccB.svg" title="npm" width="78px"/> [Install via npm](https://www.npmjs.com/package/breeze-sequelize) <img src="/images/logos/github-logo.png" title="github" style="margin-left:30px"/> [Get it on GitHub](https://github.com/Breeze/breeze.server.node)
 
+### <a name="0010"></a>0.1.0 <span class="doc-date">September 17, 2016</span>###
+
+### Bug Fixes
+ - Fix error on urls without query string
+ - Fix attempted transaction rollback on error
+
+### Features
+ - Move 'define' defaults (e.g. freezeTableName) to SequelizeManager so they can be overridden
+
 ### <a name="0019"></a>0.0.19 <span class="doc-date">August 26, 2016</span>###
 
 #### Features
