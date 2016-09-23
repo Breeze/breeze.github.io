@@ -7,6 +7,12 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="1512"></a>1.5.12 <span class="doc-date">TBD</span>###
+
+#### Breeze.Js Fixed Bugs
+ - Fix broken call to __isDate() in core.__isPrimitive()
+ - Fix recursive call in core.toJSONSafe(), replacer function was not always passed
+ 
 ### <a name="1511"></a>1.5.11 <span class="doc-date">August 23, 2016</span>###
 
 #### Breeze.Js Fixed Bugs
