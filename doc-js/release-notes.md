@@ -14,7 +14,7 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
  - Fix recursive call in core.toJSONSafe(), replacer function was not always passed
 
 #### Breeze.Js Breaking Changes ####
-- Update main field in package.json to breeze.base.debug for compatibility with rollup.js and other bundlers. This requires the explicit importing of the required adapters if using bundlers such as rollup.js or webpack.
+- Change main field in package.json to breeze.base.debug for compatibility with rollup.js and other bundlers. This change now requires the explicit importing and initialization of the required adapters when using bundlers such as rollup.js or webpack, as well as Node.js and other systems that read the main field to determine which file to load. These systems will no longer load breeze.debug.js, which contains all adapaters and initilizes some defaults.
 
 ### <a name="1511"></a>1.5.11 <span class="doc-date">August 23, 2016</span>###
 
