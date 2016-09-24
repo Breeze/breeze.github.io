@@ -93,7 +93,10 @@ The [node 'Sequelize' library](https://github.com/sequelize/sequelize "sequelize
 
 Standard usage:
        
-    var breezeSequelize = require("breeze-sequelize");
+    var modelLibrary = require('breeze-client/breeze.modelLibrary.backingStore');
+	var breezeSequelize = require("breeze-sequelize");
+	// Initialize modelLibrary adapter
+	breezeSequelize.breeze.config.initializeAdapterInstance("modelLibrary", "backingStore");
 
 Additional libraries ( not actually required but useful for certain operations)
 
