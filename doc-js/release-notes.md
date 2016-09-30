@@ -7,6 +7,11 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="1513"></a>1.5.13 <span class="doc-date">September 30, 2016</span>###
+
+#### Reverted Breeze.Js Changes ####
+- Change main field in package.json back to breeze.debug.js. This change in 1.5.12 was causing too many headaches and we found a better way to handle rollup.js support without requiring a breaking change to Breeze.
+
 ### <a name="1512"></a>1.5.12 <span class="doc-date">September 23, 2016</span>###
 
 #### Breeze.Js Fixed Bugs
