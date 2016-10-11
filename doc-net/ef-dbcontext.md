@@ -77,7 +77,9 @@ That's just about our last word on Entity Framework. Time to move on to the [Web
 
 ### Appendix: EF Versions
 
-There are many Entity Framework versions floating about. We had to target one of them when we built our *Breeze.WebApi.dll* which you just added to the project. *Breeze.WebApi.dll* was built with Entity Framework version 4.4 for .NET 4.0. Your application may use a different .NET 4.0 version or perhaps your application is built for .NET 4.5 and EF version 5.0.  It there's a mismatch, you could get a runtime exception such as:
+There are many Entity Framework versions floating about.  Our current releases (for WebAPI 2.2) target EF 6.  See the [NuGet Packages page](/doc-net/nuget-packages) for more info.
+
+If there's a version mismatch, you could get a runtime exception such as:
 
 > Could not load file or assembly 'EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
 
@@ -96,3 +98,7 @@ In many cases you can add an <a href="http://msdn.microsoft.com/en-us/library/2f
 In this example, we're redirecting to version 5.0.0.0.
 
 As a last resort, you can download the source code for the *Breeze.WebApi* project, adjust its platform and Entity Framework references, and compile your own version.
+
+You can also try [downloading](/downloads/) Breeze version 1.4.4 or earlier to use on the server.  You can still use the latest version of Breeze on the client. 
+
+

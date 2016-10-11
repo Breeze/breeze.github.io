@@ -17,9 +17,9 @@ A Breeze client model maps easily to (almost) every structure supported by Entit
 	- Inheritance (TPH, TPT, TPC)
 	- Associations: 1-1, 1-M
 
-The Breeze.js client does not support "many to many" relationships at this time. You will have to expose the junction/mapping table as an entity.
+The Breeze.js client does not support "many to many" relationships *without a join entity* at this time. You will have to expose the junction/mapping table as an entity.
 
-The Breeze.net server components support EF 4.x and 5.x but not EF 6 (which has not been released) nor versions prior to v.4.2 .
+The Breeze.net server components support EF 6, EF 5.x, and EF 4.x (but no versions prior to v.4.2).  Support for EF Core is on the way.
 
 ## Build your model
 
