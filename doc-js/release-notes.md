@@ -7,6 +7,13 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="1515"></a>1.5.15 <span class="doc-date">October 25, 2016</span>###
+
+#### Breeze.Js Fixed Bugs
+ - Fix attachment logic to hook up navigation properties on base class when importing
+ - Fix complex property original values not reset on save, issue [#171](https://github.com/Breeze/breeze.js/issues/171)
+ - Fix empty predicate under `any` clause, issue [#172](https://github.com/Breeze/breeze.js/issues/172)
+
 ### <a name="1514"></a>1.5.14 <span class="doc-date">October 7, 2016</span>###
 
 #### Breeze.Js Fixed Bugs
