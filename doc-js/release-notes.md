@@ -7,6 +7,11 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="1516"></a>1.5.16 <span class="doc-date">October 26, 2016</span>###
+
+#### Breeze.Js Fixed Bugs
+ - Fix discovery of inverse navigation properties - fixes (more) issues with relationship hookup on base classes.
+
 ### <a name="1515"></a>1.5.15 <span class="doc-date">October 25, 2016</span>###
 
 #### Breeze.Js Fixed Bugs
