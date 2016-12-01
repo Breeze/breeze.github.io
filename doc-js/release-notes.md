@@ -7,6 +7,11 @@ These are the release notes for the current **1.5.x** releases of breeze.js only
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="160"></a>1.6.0 <span class="doc-date">December 1, 2016</span>###
+
+#### Breeze.Js Features
+ - Server-side deletes are now handled in the DeletedKeys property of the SaveResult.  Entity Manager automatically detaches the entities that were deleted on the server.
+
 ### <a name="1516"></a>1.5.16 <span class="doc-date">October 26, 2016</span>###
 
 #### Breeze.Js Fixed Bugs
