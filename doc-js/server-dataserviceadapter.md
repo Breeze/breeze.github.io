@@ -150,7 +150,7 @@ Time to drill in on each member of the API.
 
 <a name="name"></a>
 
-#### name
+### name
 
 The name of this adapter. Most custom adapters begin as constructor (`ctor`) functions that simply define the adapter name:
 
@@ -167,7 +167,7 @@ Refer to the adapter by this name when configuring Breeze:
 
 <a name="initialize"></a>
            
-#### initialize()
+### initialize()
 
 Called when Breeze creates a new instance of the adapter. This is the best place to initialize values and acquire other services that your adapter requires such as the *AjaxAdapter* with which you'll make web service calls. For example:
 
@@ -184,7 +184,7 @@ Called when Breeze creates a new instance of the adapter. This is the best place
 
 <a name="fetchMetadata"></a>
            
-#### fetchMetadata (*metadataStore*, *dataService*) -> promise
+### fetchMetadata (*metadataStore*, *dataService*) -> promise
 
 Retrieves the metadata for the specified `dataService` into the specified `metadataStore`.
 
@@ -200,7 +200,7 @@ If the *dataService* is configured such that metadata fetches are not supported 
 
 <a name="executeQuery"></a>
 
-#### executeQuery (*mappingContext*) -> promise
+### executeQuery (*mappingContext*) -> promise
 
 Submits a query request to the server and returns a promise for the query results. 
   
@@ -230,7 +230,7 @@ The *queryResults* returned in a fulfilled promise should be an object with foll
                   
 <a name="saveChanges"></a>
          
-#### saveChanges (*saveContext*, *saveBundle*) -> promise
+### saveChanges (*saveContext*, *saveBundle*) -> promise
 
 Performs the actual save and returns a promise for a *saveResult*. 
 
@@ -248,11 +248,11 @@ A typical implementation of `saveChanges` composes a payload from the contents o
 
 When the server responds,  `saveChanges` interprets the response and resolves the deferred promise with either a success or failure *saveResult* object.
 
-##### heterogeneous saves
+#### Heterogeneous Saves
 
 The "saveChanges" feature is designed for batched saves of multiple entities in a single transaction. The entities in the `saveBundle.entities` array may be of different types and have different change-states (Added, Modified, Deleted). The order of entities in the batch is indeterminate; a `saveChanges` implementation is free to re-order the bundle before placing the request to the server.
 
-##### "REST" saves
+#### "REST" Saves
 Many web service save APIs can only process a single entity at a time. For example, a typical "REST" service accepts a PUT, POST, or DELETE request for a single added, modified, or deleted entity. 
 
 You can write a *DataServiceAdapter* that follows this pattern although the power of Breeze transactional batch saves is largely wasted on such services. For examples see the [`AbstractRestDataServiceAdapter`](https://github.com/Breeze/breeze.js.labs/blob/master/breeze.labs.dataservice.abstractrest.js) and its derivatives in [**Breeze Labs**](/doc-breeze-labs/).
@@ -261,15 +261,18 @@ Some services accept a multi-part http POST request consisting of a batch of sev
 
 <a name="successfulSaveResult"></a>
 
-##### a successful *saveResult*
+#### A Successful *saveResult*
 
 When the server reports success, the `saveChanges` method should fulfill the deferred promise with a success *saveResult* object that describes the collection of saved entities. The schema for a *saveResult*  is:
 
 - **entities**: an array of JSON data for the entities that were saved in a form that can be interpreted by this adapter's  `jsonResultsAdapter`. These data will be materialized as entities and merged into the `saveContext.entityManager`.  
 - **keyMappings**: An array of *keyMapping* instances, one for each new entity that was saved with a temporary key. A *keyMapping* has the following properties:
- - **entityTypeName**: the full name of the `EntityType`
- - **tempValue**: the temporary value assigned on the client before the save.
- - **realValue**: the real value assigned on the server (typically by the database).
+    - **entityTypeName**: the full name of the `EntityType`
+    - **tempValue**: the temporary value assigned on the client before the save.
+    - **realValue**: the real value assigned on the server (typically by the database).
+- **deletedKeys**: An array of *entityKey* instances, one for each entity that was deleted on the server (but were not deleted in the save bundle).  Each *entityKey* has the following properties:
+    - **entityTypeName**: the full name of the `EntityType`
+    - **keyValue**: the value of the key for a deleted entity
 - **httpResponse**: The full http response object returned from the server.
 
 As with the `executeQuery` method, the `EntityManager` uses the `JsonResultsAdapter` associated with this *DataServiceAdapter* to materialize entities from the *saveResult*'s `entities` array and merge them into cache. 
@@ -300,11 +303,11 @@ A failed *saveResult* is an error object that may contain specific information a
 - **message**: A high level error message. 
 - **httpResponse**: The full HttpResponse object returned from the server
 - **entityErrors**: An (optional) array of *EntityError* instances. The errors in this collection are associated with and added to the *validationErrors* collection of the corresponding entities in the cache.  An *EntityError* has the following properties:
- - **errorName**: The name for this type of error. This name uniquely identifies the error within the `validationErrors` collection for the corresponding entity. 
- - **entityTypeName**: The name of the `EntityType` for the rejected entity. 
- - **keyValues**: The `EntityKey` values for the rejected entity. You can find that entity (if it is in cache) by combining these values with the `entityTypeName`.
- - **propertyName**: The property name, if available, that triggered the error
- - **errorMessage**: A detailed error message specific to this entity and property.
+    - **errorName**: The name for this type of error. This name uniquely identifies the error within the `validationErrors` collection for the corresponding entity. 
+    - **entityTypeName**: The name of the `EntityType` for the rejected entity. 
+    - **keyValues**: The `EntityKey` values for the rejected entity. You can find that entity (if it is in cache) by combining these values with the `entityTypeName`.
+    - **propertyName**: The property name, if available, that triggered the error
+    - **errorMessage**: A detailed error message specific to this entity and property.
 
 <a name="jsonResultsAdapter"></a>
 
