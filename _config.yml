@@ -8,7 +8,7 @@ kramdown:
 
 url: http://breeze.github.io
 
-exclude: [.settings]
+exclude: [.settings, how-to-author-here.md]
 
 encoding: utf-8
 gems:
