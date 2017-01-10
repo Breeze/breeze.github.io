@@ -68,7 +68,7 @@ However, because this decoration is pretty much the same for each page, except f
 
 The first two lines assign variables that will be used within the 'default.html' file that is referenced in the 3rd line.  This file will be found in the '_includes' directory. 
 
-The text found between the '{%' and '%}' delimiters is termed 'liquid markup' and is described on the Jekyl site.  
+The text found between the <span>'{</span><span>%'</span> and <span>'%</span><span>}'</span> delimiters is termed 'liquid markup' and is described on the Jekyl site.  
 
 Note that there is no actual html in this file even though it has an '.html' extension.  This is because all of the actual html is in the 'default.html' file.
 
