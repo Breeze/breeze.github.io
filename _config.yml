@@ -8,6 +8,8 @@ kramdown:
 
 url: http://breeze.github.io
 
+exclude: [.settings]
+
 encoding: utf-8
 gems:
   - jekyll-redirect-from
