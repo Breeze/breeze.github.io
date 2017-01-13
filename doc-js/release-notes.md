@@ -7,7 +7,11 @@ These are the release notes for the current releases of breeze.js only.
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="162"></a>1.6.2 <span class="doc-date">January 12, 2017</span>
 
+#### Breeze.Js Fixed Bugs
+ - Fix critical bug in getChangesCore
+ 
 ### <a name="161"></a>1.6.1 <span class="doc-date">January 7, 2017</span>
 
 #### Breeze.Js Features
