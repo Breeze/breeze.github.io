@@ -10,7 +10,8 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 ### <a name="163"></a>1.6.3 <span class="doc-date">TBD</span>
 
 #### Breeze.Js Fixed Bugs
- - Fix type definition for `breeze.config.initializeAdpaterInstance()`.
+ - Fix type definition for `breeze.config.initializeAdapterInstance()`.
+ - Make coEquals work on arrays of complex types; fix issue [#183](https://github.com/Breeze/breeze.js/issues/183)
 
 #### Breeze.Js Changes
  - Update type definitions to use ES6 `Promise<T>` interface instead of `breeze.promises.IPromise<T>`. This may be a breaking change for some applications due to the lack of a `finally()` method in `Promise<T>`. Use [promise.q.shim.d.ts](https://github.com/Breeze/breeze.js/blob/master/typescript/promise.q.shim.d.ts) to augment `Promise<T>` with the `finally()` method.
