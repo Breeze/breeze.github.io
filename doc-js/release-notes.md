@@ -10,6 +10,7 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 ### <a name="163"></a>1.6.3 <span class="doc-date">TBD</span>
 
 #### Breeze.Js Fixed Bugs
+ - Fix multilevel inheritance hierarchy bug affecting navigation properties that reference base classes with custom constructors.
  - Fix type definition for `breeze.config.initializeAdapterInstance()`.
  - Make coEquals work on arrays of complex types; fix issue [#183](https://github.com/Breeze/breeze.js/issues/183)
 
