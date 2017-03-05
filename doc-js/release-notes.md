@@ -7,7 +7,7 @@ These are the release notes for the current releases of breeze.js only.
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
-### <a name="163"></a>1.6.3 <span class="doc-date">TBD</span>
+### <a name="163"></a>1.6.3 <span class="doc-date">March 5, 2017</span>
 
 #### Breeze.Js Fixed Bugs
  - Fix multilevel inheritance hierarchy bug affecting navigation properties that reference base classes with custom constructors.
