@@ -200,6 +200,34 @@ Then add it to the change-set dictionary.
 
 The base implementation of this method simply returns the incoming dictionary unchanged. There is no need to call the base implementation in your override.
 
+<a name="SaveAuthorization"></a>
+
+### Save Authorization
+
+In your application, you will need to verify whether the user is allowed to make the changes that they've requested in the change set.
+
+In your BeforeSaveEntities or delegate method, you would check to see if the entities can be saved by the current user. If you find an entity that shouldn't be saved, you can either remove it from the change set, or throw an error and abort the save:
+
+    protected override Dictionary<Type, List<EntityInfo>> BeforeSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap)
+    {
+        var user = GetCurrentUser();  // get user from session
+        foreach (Type type in saveMap.Keys)
+        {
+            foreach (EntityInfo entityInfo in saveMap[type])
+            {
+                if (!UserCanSave(entityInfo, user))  // implement business rules
+                {
+                    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Forbidden)
+                        { ReasonPhrase = "Not authorized to make these changes" });
+                }
+            }
+        }
+        return saveMap;
+    }
+
+You will need to determine whether the user should be allowed to save a particular entity. This could be based on the role of the user and/or some other attribute, e.g. users in the Sales role can only save Client records that belong to their own SalesRegion.
+
+
 <a name="AfterSaveEntities"></a>
 
 ## AfterSaveEntities
