@@ -5,6 +5,11 @@ layout: doc-node-sequelize
 
 <img src="https://cldup.com/Rg6WLgqccB.svg" title="npm" width="78px"/> [Install via npm](https://www.npmjs.com/package/breeze-sequelize) <img src="/images/logos/github-logo.png" title="github" style="margin-left:30px"/> [Get it on GitHub](https://github.com/Breeze/breeze.server.node)
 
+### <a name="0020"></a>0.2.0 <span class="doc-date">November 21, 2017</span>###
+
+### Features
+ - Update to support Sequelize 4.x
+
 ### <a name="0010"></a>0.1.0 <span class="doc-date">September 17, 2016</span>###
 
 ### Bug Fixes
