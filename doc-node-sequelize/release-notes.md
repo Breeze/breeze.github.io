@@ -7,30 +7,27 @@ layout: doc-node-sequelize
 
 ### <a name="0021"></a>0.2.1 <span class="doc-date">December 7, 2017</span>
 
-### Bug Fixes
+#### Bug Fixes
 
  - Fix handling of "not in" queries
- - Fix merging of multiple "include" clauses, pull request [#29](https://github.com/Breeze/breeze.server.node/pull/29)
- - Fix handling of binary concurrency property, pull request [#31](https://github.com/Breeze/breeze.server.node/pull/31)
- - Use toposort to save entities of the same type in the correct order, pull request [#33](https://github.com/Breeze/breeze.server.node/pull/33)
+ - Fix merging of multiple "include" clauses, PR [#29](https://github.com/Breeze/breeze.server.node/pull/29)
+ - Fix handling of binary concurrency property, PR [#31](https://github.com/Breeze/breeze.server.node/pull/31)
+ - Use toposort to save entities of the same type in the correct order, PR [#33](https://github.com/Breeze/breeze.server.node/pull/33)
 
 Special thanks to **iz-iznogood** for the pull requests.
 
-### Features
- - Update to support Sequelize 4.x
-
 ### <a name="0020"></a>0.2.0 <span class="doc-date">November 21, 2017</span>
 
-### Features
+#### Features
  - Update to support Sequelize 4.x
 
 ### <a name="0010"></a>0.1.0 <span class="doc-date">September 17, 2016</span>
 
-### Bug Fixes
+#### Bug Fixes
  - Fix error on urls without query string
  - Fix attempted transaction rollback on error
 
-### Features
+#### Features
  - Move 'define' defaults (e.g. freezeTableName) to SequelizeManager so they can be overridden
 
 ### <a name="0019"></a>0.0.19 <span class="doc-date">August 26, 2016</span>
