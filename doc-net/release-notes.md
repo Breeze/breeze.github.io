@@ -9,7 +9,7 @@ layout: doc-net
 
 #### Breeze.Server.NET Fixed Bugs
 - EFContextProvider: Fixed bug causing Enum properties to have their EF `OriginalValues` set incorrectly.
-- EFContextProvider: Fixed bug causing EF `OriginalValues` to be set incorrectly for other properties when one OriginalValue was null.
+- EFContextProvider: Fixed bug causing EF `OriginalValues` to be set incorrectly for some properties when  OriginalValues were null for other properties.
 - Removed unneeded dependency on WebActivatorEx.
 
 ### <a name="165"></a>1.6.5 <span class="doc-date">June 1, 2017</span>
