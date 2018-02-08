@@ -7,7 +7,10 @@ These are the release notes for the current releases of breeze.js only.
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
-### <a name="164"></a>1.6.4 <span class="doc-date">TBD</span>
+### <a name="170"></a>1.7.0 <span class="doc-date">February 8, 2018</span>
+
+#### Breeze.Js Features
+ - Added new `mergeAdds` flag to EntityManager's `importEntities` method, to force merging of entities in `Added` state that have the same temporary key values
 
 #### Breeze.Js Fixed Bugs
  - Fix several TypeScript type definitions.
