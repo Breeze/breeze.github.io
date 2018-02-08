@@ -12,7 +12,7 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 #### Breeze.Js Fixed Bugs
  - Fix several TypeScript type definitions.
  
- ### <a name="163"></a>1.6.3 <span class="doc-date">March 5, 2017</span>
+### <a name="163"></a>1.6.3 <span class="doc-date">March 5, 2017</span>
 
 #### Breeze.Js Fixed Bugs
  - Fix multilevel inheritance hierarchy bug affecting navigation properties that reference base classes with custom constructors.
