@@ -7,6 +7,11 @@ These are the release notes for the current releases of breeze.js only.
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="171"></a>1.7.1 <span class="doc-date">April 4, 2018</span>
+
+#### Breeze.Js Fixed Bugs
+ - Fix traversal of foreign keys during PK update when using inheritance
+
 ### <a name="170"></a>1.7.0 <span class="doc-date">February 8, 2018</span>
 
 #### Breeze.Js Features
