@@ -26,7 +26,7 @@ The Metadata-Helper is a domain-specific language (DSL) that strives to minimize
 
 > The Breeze Labs **`MetadataHelper`** extension is defined in *breeze.metadata-helper.js*. <a href="https://github.com/Breeze/breeze.js.labs/blob/master/breeze.metadata-helper.js" target="_blank"><strong>Download it from GitHub</strong></a> and install it on your page <em>after loading breeze</em>.
  
-> It is also available as <a  href="https://www.nuget.org/packages/Breeze.Metadata.Helper/" target="_blank">a NuGet package</a>: <code>Install-Package Breeze.Metadata.Helper</code></p>
+> It is also available as <a  href="https://www.nuget.org/packages/Breeze.Metadata.Helper/" target="_blank">a NuGet package</a>: <code>Install-Package Breeze.Metadata.Helper</code>
 
 *In this topic*, we'll concentrate on *using the **Metadata-Helper** when it gets it right* ... which is most of the time. 
 

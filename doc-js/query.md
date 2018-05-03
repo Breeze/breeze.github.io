@@ -10,7 +10,7 @@ In this topic we explore Breeze query features and techniques. The following sub
 + the resource name: a Rose is not a rose
 + how the client query becomes an URL in OData query syntax
 + getting data from an arbitrary HTTP source
-+ <a href='#QueryOptions'>`queryOptions`</a> control how queried entities are found and merged into the cache</li>
++ <a href="#QueryOptions">`queryOptions`</a> control how queried entities are found and merged into the cache
 + the query result data package
 + query the local cache with `executeQueryLocally`
 + combining remote and local query for a refreshed cache perspective on the results
@@ -25,7 +25,7 @@ In this topic we explore Breeze query features and techniques. The following sub
 + using `fromEntityKey` to get an entity when you know its key
 + using `fromEntityNavigation` to load related entities on-demand
 + include related entities in the query result payload with `expand`
-+ <a href='#paging'>paging with `skip`, `take`, `top`, and `inlineCount`</a>
++ <a href="#paging">paging with `skip`, `take`, `top`, and `inlineCount`</a>
 + projection queries to select a subset of properties and flatten object graphs
 + `orderBy` to sort results on the data tier
 + shape the base query on the server with custom query actions

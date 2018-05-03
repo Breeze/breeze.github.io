@@ -300,8 +300,8 @@ and Predicates can even be nested. In this case we are querying for any orders w
     var query1 = EntityQuery.from('Products')
         .take(5);
 
-    // Get the first 5 Products beginning with &#39;C&#39;
-    // and also get the total of all products beginning with &#39;C&#39;
+    // Get the first 5 Products beginning with 'C';
+    // and also get the total of all products beginning with 'C';
     var query2 = EntityQuery.from('Products')
         .where('ProductName', 'startsWith', 'C')
         .take(5)
@@ -337,14 +337,14 @@ and Predicates can even be nested. In this case we are querying for any orders w
 
 ### <a name="SinglePropertyProjection"></a>Single data property projections
 
-    // just the names of the Customers that begin with &#39;C&#39;
+    // just the names of the Customers that begin with 'C';
     var query = EntityQuery.from('Customers')
          .where('CompanyName', 'startsWith', 'C')
          .select('CompanyName');
 
 ### <a name="SingleNavigationProjection"></a>Single navigation property projections
 
-    // Orders of the Customers that begin with &#39;C&#39;
+    // Orders of the Customers that begin with 'C';
     var query = EntityQuery.from('Customers')
          .where('CompanyName', 'startsWith', 'C')
          .select('Orders');
@@ -370,7 +370,7 @@ and Predicates can even be nested. In this case we are querying for any orders w
 ### <a name="SingleExpand"></a>Single relation expand
 
     // include the Category in the payload for
-    // Products whose Category names start with &#39;S&#39;
+    // Products whose Category names start with 'S';
     var query = EntityQuery.from('Products')
         .where('Category.CategoryName', 'startswith', 'S')
         .expand('Category');
@@ -414,12 +414,12 @@ Call <em><strong>fetch</strong>EntityByKey </em>directly on the <em>EntityManage
 
 Add <em><code>checkLocalCacheFirst=true</code></em> parameter to look in the cache first and query the database if not found.
 
-    // Look for the customer in manager&#39;s cache first
+    // Look for the customer in manager's cache first
     // Fetch from the database if not found in cache
     manager.fetchEntityByKey('Customer', 42, true) 
        .then(fetchSucceeded).fail(fetchFailed);
 
-Call <em><strong>get</strong>EntityByKey </em>directly on the <em>EntityManager</em> to extract the entity from cache. Note the '<em><strong>get</strong></em>' prefix.This isn&#39;t really a query because it can only look in cache and never calls the remote service. It returns immediately with the entity or <em>null</em>.
+Call <em><strong>get</strong>EntityByKey </em>directly on the <em>EntityManager</em> to extract the entity from cache. Note the '<em><strong>get</strong></em>' prefix.  This isn't really a query because it can only look in cache and never calls the remote service. It returns immediately with the entity or <em>null</em>.
 
     // Look for entity only in cache. 
     // Returns value (or null) immediately
@@ -444,11 +444,10 @@ public object Lookups()
 
 On the JavaScript client:
 
-<pre class="brush:jscript;">
-// Fetch the lookups; ignores the results; entities are in cache
-// see the DocCode queryTests module for details
-EntityQuery.from(&#39;Lookups&#39;)
-     .using(em).execute()
-     .fail(handleFail);</pre>
+    // Fetch the lookups; ignores the results; entities are in cache
+    // see the DocCode queryTests module for details
+    EntityQuery.from('Lookups')
+        .using(em).execute()
+        .fail(handleFail);
 
 The <em>Region</em>, <em>Territory</em>, and <em>Category </em>entities are in cache after the query succeeds. See '<a href="/doc-cool-breezes/lookup-lists.html" target="_blank">Lookup Lists</a>' for a richer discussion of this example.

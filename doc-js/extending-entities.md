@@ -411,7 +411,7 @@ Your first attempt might be something like this:
     });
     var name = emp.fullName(); // 'John Doe'
 
-This will not turn out well. The moment you create an `Employee` you'll get an error complaining that "*the object doesn't **support property or method 'FirstName'*."
+This will not turn out well. The moment you create an `Employee` you'll get an error complaining that "*the object doesn't support property or method 'FirstName'*."
 
 This `FirstName` property is defined for the `Employee` **EntityType**. But the property doesn't exist yet on the instance returned by the constructor. Check again to confirm that the only "property" defined in the constructor is "fullName". The new instance has no `FirstName` property. 
 
