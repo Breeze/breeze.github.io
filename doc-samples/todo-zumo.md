@@ -3,11 +3,11 @@ layout: doc-samples
 redirect_from: "/old/samples/todo-zumo.html"
 ---
 
-# The Breeze/Angular Todo-Zumo (Azure) App
+# The Breeze/AngularJS Todo-Zumo (Azure) App
 
 <img src="/images/samples/BreezeZumo.png" alt="Todo App with Azure" style="float:left; height:70px; margin-right: 8px;"/>
 
-"**todo-zumo**" is a simple **one-screen Angular Todo app**  that demonstrates features of a Breeze + Angular.
+"**todo-zumo**" is a simple **one-screen AngularJS Todo app**  that demonstrates features of a Breeze + AngularJS.
 
 To keep your attention squarely on client development, this app can run without defining a server on your machine. By default it queries and saves data to a **Microsoft Azure Mobile Services** (AKA "Zumo") back-end that is waiting for your call.
 

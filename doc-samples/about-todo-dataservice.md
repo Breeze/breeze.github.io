@@ -43,18 +43,18 @@ redirect_from: "/old/samples/todo-dataservice.html"
 
 <h2>Setup</h2>
 
-<p>A Breeze application can be configured to work with a variety of remote services, to use a custom Ajax helper, and to create entities shaped to support a variety of model binding libraries such as <a href="http://knockoutjs.com/" target="_blank">Knockout</a>, <a href="http://backbonejs.org/" target="_blank">Backbone</a>, and <a href="http://angularjs.org/" target="_blank">Angular</a>.</p>
+<p>A Breeze application can be configured to work with a variety of remote services, to use a custom Ajax helper, and to create entities shaped to support a variety of model binding libraries such as <a href="http://knockoutjs.com/" target="_blank">Knockout</a>, <a href="http://backbonejs.org/" target="_blank">Backbone</a>, and <a href="http://angularjs.org/" target="_blank">AngularJS</a>.</p>
 
 <p>Out of the box, Breeze is ready to talk to an ASP.NET Web API service, using <a href="http://api.jquery.com/jQuery.ajax/" target="_blank">jQuery&#39;s Ajax</a> component, and it will create entities for us with Knockout which means that the entity properties will be Knockout observables.</p>
 
 <p>The most basic Todo sample uses all three defaults; its dataservice needs no special configuration.</p>
 
-<p>The Todo-Angular sample differs only it its choice of model library (AngularJS) so it needs one extra line of configuration:</p>
+<p>The Todo-AngularJS sample differs only it its choice of model library (AngularJS) so it needs one extra line of configuration:</p>
 
 <pre>
 breeze.config.initializeAdapterInstance(&quot;modelLibrary&quot;, &quot;backingStore&quot;, true);</pre>
 
-<p>The &quot;backingStore&quot; library is Breeze&#39;s native model library which happens to be well suited to support Angular applications.</p>
+<p>The &quot;backingStore&quot; library is Breeze&#39;s native model library which happens to be well suited to support AngularJS applications.</p>
 
 <h2>EntityManager</h2>
 
@@ -104,7 +104,7 @@ breeze.config.initializeAdapterInstance(&quot;modelLibrary&quot;, &quot;backingS
 	<li>add the new <em>TodoItem </em>to the manager.</li>
 </ul>
 
-<p>The new <em>TodoItem </em>instance is shaped to suit the application&#39;s model library. If this is a Knockout application, the properties of the Todo are Knockout observables. If it&#39;s an Angular application, it has ECMAScript 5 properties with getters and setters.</p>
+<p>The new <em>TodoItem </em>instance is shaped to suit the application&#39;s model library. If this is a Knockout application, the properties of the Todo are Knockout observables. If it&#39;s an AngularJS application, it has ECMAScript 5 properties with getters and setters.</p>
 
 <p>The Todo also has a Breeze <em>EntityAspect</em>. This is a doorway to important features of every Breeze entity. The ViewModel calls upon two of these features: the <em>propertyChanged</em> event and the <em>setDeleted</em> method. The <em>propertyChanged</em> event is raised when a data property changes; the ViewModel listens to that event to learn when it should save those changes. If the user clicks the &quot;X&quot; next to the Todo description, the ViewModel will calls the <em>setDeleted</em> method to put the Todo in a &quot;Deleted&quot; state and then saves this change; on the server, entities marked for delete are removed from the database.</p>
 

@@ -38,7 +38,7 @@ Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server 
 ### <a name="161"></a>1.6.1 <span class="doc-date">January 7, 2017</span>
 
 #### Breeze.Js Features
- - Support for Angular 1.6 $http function, issue [#177](https://github.com/Breeze/breeze.js/issues/177)
+ - Support for AngularJS 1.6 $http function, issue [#177](https://github.com/Breeze/breeze.js/issues/177)
 
 #### Breeze.Js Fixed Bugs
  - Fix 'Maximum call stack size exceeded', issue [#182](https://github.com/Breeze/breeze.js/issues/182)

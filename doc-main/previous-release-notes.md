@@ -358,7 +358,7 @@ metadataStore.addEntityType({
 <h3>New Tutorial<span class="doc-date">Mar. 12, 2013</span></h3>
 
 <ul>
-	<li><a href="http://learn.breezejs.com/">Angular tutorial</a> added. Select it from the drop down menu inside the tutorial link.</li>
+	<li><a href="http://learn.breezejs.com/">AngularJS tutorial</a> added. Select it from the drop down menu inside the tutorial link.</li>
 </ul>
 
 <h2><a id="11x" name="11x"></a>1.1.x</h2>
@@ -611,7 +611,7 @@ If you rely on NuGet package updates, you will need to remove any old Breeze pac
 		<li><a href="http://www.breezejs.com/samples/car-bones">Car Bones</a></li>
 		<li><a href="http://www.breezejs.com/samples/doccode">DocCode</a></li>
 		<li><a href="http://www.breezejs.com/samples/todo">Todo-Knockout</a></li>
-		<li><a href="http://www.breezejs.com/samples/todo-angular">Todo-Angular</a></li>
+		<li><a href="http://www.breezejs.com/samples/todo-angular">Todo-AngularJS</a></li>
 		<li><a href="http://www.breezejs.com/samples/todo-require">Todo-Require</a></li>
 	</ul>
 	</li>
@@ -720,7 +720,7 @@ breeze.DataType.String.parse =
 <ul>
 	<li>Added a new <em>BreezeControllerAttribute </em>class. The [<em>BreezeController</em>] attribute should now be applied to all Breeze WebApi Api Controller classes instead of the formerly recommended &quot;[JsonFormatter, ODataActionFilter]&quot; pair. This change is particularly <strong>important </strong>when you apply the Breeze.MVC4WebApiClientSample NuGet package to an MVC 4 project generated from the <strong>MVC 4 SPA Template</strong>.</li>
 	<li>The Breeze client only understands JSON formatted content. The AJAX POST triggered by the Breeze client <em>EntityManager.saveChanges</em> method now specifies &quot;dataType: &#39;json&#39;&quot; which resolves to an Accept header requesting save results formatted as JSON. This addresses certain scenarios (e.g, CORS) in which the browser requested content formatted as XML.</li>
-	<li>Updated&nbsp;the ToDo and ToDo-Angular samples to use the latest NuGet package and with CORS support.</li>
+	<li>Updated&nbsp;the ToDo and ToDo-AngularJS samples to use the latest NuGet package and with CORS support.</li>
 </ul>
 
 <h3>0.78.2<span class="doc-date">Dec. 17, 2012</span></h3>
@@ -829,7 +829,7 @@ breeze.DataType.String.parse =
 <h3>New sample<span class="doc-date">Dec. 1, 2012</span></h3>
 
 <ul>
-	<li>Added a new Todo-Angular sample that shows how to use AngularJS with Breeze.</li>
+	<li>Added a new Todo-AngularJS sample that shows how to use AngularJS with Breeze.</li>
 </ul>
 
 <h3>0.74.2<span class="doc-date">Nov. 29, 2012</span></h3>

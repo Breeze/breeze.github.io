@@ -50,7 +50,7 @@ Breeze JS has an [EntityManager](/doc-js/entitymanager-and-caching.html) that qu
 <div class="diagram" style="width: 400px">
 <div class="diagram-box" style="width: 250px">
 	<div class="diagram-box-title">Browser</div>
-	<div class="diagram-box-row" style="background-color: rgb(226, 98, 189);">Angular / KO / Aurelia / etc.</div>
+	<div class="diagram-box-row" style="background-color: rgb(226, 98, 189);">AngularJS / KO / Aurelia / etc.</div>
 	<div class="diagram-box-row" style="background-color: rgb(126, 197, 238);"><b>Breeze JS</b></div>
 </div>
 

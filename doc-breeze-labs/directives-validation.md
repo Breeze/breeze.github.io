@@ -6,12 +6,12 @@ redirect_from: "/old/documentation/directivesvalidation.html"
 
 The **`zValidate`** Breeze/AngularJS validation directive displays and entity property's validation errors on screen. It can also visually identifies a required property with an asterisk.
 
-<p class="note">You can <a href="http://www.nuget.org/packages/Breeze.Angular.Directives" title="Breeze Angular Directives on NuGet" target="_blank">use NuGet to install</a> the JavaScript and CSS files in your .NET web application project. Or you can download the <a href="https://github.com/breeze/breeze.js.labs/blob/master/breeze.directives.js" title="breeze.directives.js" target="_blank">JavaScript</a> and <a href="https://github.com/breeze/breeze.js.labs/blob/master/breeze.directives.css" title="breeze.directives.css" target="_blank">CSS</a> files manually from GitHub.</p>
+<p class="note">You can <a href="http://www.nuget.org/packages/Breeze.Angular.Directives" title="Breeze AngularJS Directives on NuGet" target="_blank">use NuGet to install</a> the JavaScript and CSS files in your .NET web application project. Or you can download the <a href="https://github.com/breeze/breeze.js.labs/blob/master/breeze.directives.js" title="breeze.directives.js" target="_blank">JavaScript</a> and <a href="https://github.com/breeze/breeze.js.labs/blob/master/breeze.directives.css" title="breeze.directives.css" target="_blank">CSS</a> files manually from GitHub.</p>
 
 To use this directive in your app, all you do is:
 
 1. include the Breeze validation directive JavaScript and CSS files,
-2. add `z-validate` to your HTML control as you would any Angular directive.
+2. add `z-validate` to your HTML control as you would any AngularJS directive.
 
 <pre class="brush:jscript;">
 &lt;input data-ng-model="vm.person.firstName" data-z-validate >
@@ -37,9 +37,9 @@ But we can show you *one way* to present errors that you may use for inspiration
 
 The `zValidate` directive is a way to display property validation errors as error messages adjacent to the errant data value.
 
-A <a href="http://docs.angularjs.org/guide/directive" target="_blank"><em>directive</em></a> is the AngularJS mechanism for manipulating the browser DOM programmatically as part of the Angular binding process. 
+A <a href="http://docs.angularjs.org/guide/directive" target="_blank"><em>directive</em></a> is the AngularJS mechanism for manipulating the browser DOM programmatically as part of the AngularJS binding process. 
 
-Angular ships with a core set of directives that cover many scenarios. But they can't cover everything and you are encouraged to extend the Angular binding system with your own directives as we are doing in this lab project.
+AngularJS ships with a core set of directives that cover many scenarios. But they can't cover everything and you are encouraged to extend the AngularJS binding system with your own directives as we are doing in this lab project.
 
 ## Sample
 
@@ -82,31 +82,31 @@ You decide which data bound HTML controls should have this behavior by applying 
 
 The `zValidate` directive depends upon the `ngModel` binding expression which it examines to determine the entity and property that might have a validation error.
 
-> We use the "data-" HTML 5 prefix for our Angular attribute directives.
+> We use the "data-" HTML 5 prefix for our AngularJS attribute directives.
 
 The `ngModel` binding specifies a property path starting from a variable named "vm".
 
-We're using the "*Controller as*" technique for binding a view to a ViewModel. Scroll up a bit to see that we told Angular to treat the "*personEditController*" as a ViewModel named "vm":
+We're using the "*Controller as*" technique for binding a view to a ViewModel. Scroll up a bit to see that we told AngularJS to treat the "*personEditController*" as a ViewModel named "vm":
 
 <pre class="brush:jscript;">
 &lt;body data-ng-app="app" 
       data-ng-controller="personEditController as vm">
 </pre>
 
->"*Controller as*" is directly supported as of Angular release v1.2 although you could always use a similar style with earlier releases. We like this approach for our applications but not everyone does. Adapt this example to suit your preference.
+>"*Controller as*" is directly supported as of AngularJS release v1.2 although you could always use a similar style with earlier releases. We like this approach for our applications but not everyone does. Adapt this example to suit your preference.
 
 Returning to the binding expression, we see that ViewModel (`vm`) exposes a `person` property which is the Person entity to edit and this textbox is bound to the `firstName` property.
 
 The directive drew a red asterisk next to the textbox to indicate that the first name is required. We'll see how it knew to do that in a little bit.
 
 ### Validators
-You can create and remove validation errors by playing with the textbox values. Breeze monitors your changes and updates the validation error(s) for each property accordingly. Angular updates the property with every keystroke so you get an immediate visual response.
+You can create and remove validation errors by playing with the textbox values. Breeze monitors your changes and updates the validation error(s) for each property accordingly. AngularJS updates the property with every keystroke so you get an immediate visual response.
 
 Where are the validators defined? Open the "model.js" via the "Source code" combobox. Look at the `configureMetadataStore` method.
 
 >The `configureMetadataStore` method is called by the `datacontext` (see the *datacontext.js* file). The `datacontext` is a service that encapsulates the mundane details of data access. It also encapsulates many of the application's interactions with Breeze.
 
->A typical `datacontext` (AKA "dataservice") would query and save data to a remote service at the request of an Angular controller. This sample doesn't have a service. So this `datacontext` returns fake Person data.
+>A typical `datacontext` (AKA "dataservice") would query and save data to a remote service at the request of an AngularJS controller. This sample doesn't have a service. So this `datacontext` returns fake Person data.
 
 
 The `configureMetadataStore` method has three steps.
@@ -141,7 +141,7 @@ The directive can paint a ***required property indicator*** next to the input co
 
 Breeze itself has no native notion of a "required" property. You can't ask the metadata for the required properties. This directive infers that a property is required and should display the required indicator by inspecting each property's validators. It treats a property as required if one of its validators is either named "required" or its context object has an`.isRequired` property that is `true`.
 
-If you add custom validators that should be treated as required, add `.isRequired = true;` to the validator's context object as seen in this example from the "model.validation.js" in John Papa's PluralSight course, "[Building Apps with Angular and Breeze](http://pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze "Building Apps with Angular and Breeze").
+If you add custom validators that should be treated as required, add `.isRequired = true;` to the validator's context object as seen in this example from the "model.validation.js" in John Papa's PluralSight course, "[Building Apps with AngularJS and Breeze](http://pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze "Building Apps with AngularJS and Breeze").
 
         function createRequireReferenceValidator() {
             var name = 'requireReferenceEntity';
@@ -171,7 +171,7 @@ Open the *app.js* file.
 
 The app is resetting the templates (see the`configDirective` method)  during the application module's "config" phase. Because this is the "config" phase, we inject the `zDirectivesConfigProvider` into the `configDirective` method rather than the `zDirectivesConfig` service. 
 
->See the Angular <a href="http://docs.angularjs.org/guide/module" target="_blank">documentation for modules</a> to learn about the life-cycle of an Angular module and "configuration blocks" in particular.
+>See the AngularJS <a href="http://docs.angularjs.org/guide/module" target="_blank">documentation for modules</a> to learn about the life-cycle of an AngularJS module and "configuration blocks" in particular.
 
 ## zValidate in a repeater 
 This sample shows how you can display validation messages while editing a single `Person` entity. What if the screen presented many `Person` entities and you wanted to see all of their property validation error messages?
@@ -185,9 +185,9 @@ You can do that in the manner you'd expect.
 &lt;/li>
 </pre> 
 
-## Why not use HTML5 or Angular validation
+## Why not use HTML5 or AngularJS validation
 
-HTML 5 defines a collection of <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation" target="_blank">form validation attributes</a>. Angular forms and controls have <a href="http://docs.angularjs.org/guide/forms" target="_blank">built-in validation services</a>. Why not use either of these facilities instead of Breeze validation?
+HTML 5 defines a collection of <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation" target="_blank">form validation attributes</a>. AngularJS forms and controls have <a href="http://docs.angularjs.org/guide/forms" target="_blank">built-in validation services</a>. Why not use either of these facilities instead of Breeze validation?
 
 The answer boils down to a fundamental **difference between "Markup validation" and "Model validation"**.
 
@@ -195,7 +195,7 @@ We could argue from principle. Validations are business rules. Business rules be
 
 While all true, most of us are unmoved by this kind of philosophical reasoning. We are practical people, trying to get the job done efficiently.
 
-Fortunately, there is a practical argument to bolster the philosophical: **the `zValidate` directive is easier to write and maintain** than either HTML or Angular markup.
+Fortunately, there is a practical argument to bolster the philosophical: **the `zValidate` directive is easier to write and maintain** than either HTML or AngularJS markup.
 
 * The person who writes the markup doesn't have to know the validation rules for each field; she just writes `z-validate`. 
 
@@ -226,7 +226,7 @@ The directive only works for HTML controls with the `ngModel` directive which is
 A property can have multiple validation errors. This directive concatenates their error messages, separated by semi-colons (;). You'll have to revise the directive if you want different behavior.
 
 ## What about Knockout?
-This directive is an Angular solution.
+This directive is an AngularJS solution.
 
 We love Knockout too. We expect to write a <a href="http://knockoutjs.com/documentation/custom-bindings.html" target="_blank">Knockout Custom Binding</a> that implements the same behavior with the same simplicity of application.
 

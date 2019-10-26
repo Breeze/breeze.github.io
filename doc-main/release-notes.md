@@ -226,7 +226,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 	
 #### Bugs
 - D2574 - Fixed multiple bugs related to using Breeze with Microsoft's WebApiOData.
-- D2599 - The Breeze EntityQuery.withParameters method when using the Angular dataservice adapter now handles null parameters according to JQuery ajax conventions.  Previously null parameters were handled in an ambiguous manner.
+- D2599 - The Breeze EntityQuery.withParameters method when using the AngularJS dataservice adapter now handles null parameters according to JQuery ajax conventions.  Previously null parameters were handled in an ambiguous manner.
 - D2600 - Improved error messages when missing foreign key props in metadata.  
 - D2601 - Fixed NHibernate bug involving a nullReference with nested expand.
 	
@@ -243,7 +243,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 - D2257 - Improved data type inference for unmapped properties defined in a constructor. 
 - Improved documentation on Breeze web site and in API Docs.
 <a name="todoZumo"></a>
-- Added ["Todo-Zumo" to Breeze samples](/doc-samples/todo-zumo): Breeze + Angular + Azure Mobile Services
+- Added ["Todo-Zumo" to Breeze samples](/doc-samples/todo-zumo): Breeze + AngularJS + Azure Mobile Services
 - Additional samples in the Breeze samples zip.
 	
 #### Bugs
@@ -267,13 +267,13 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 #### Features
 +  Performance improvements with large saves and large queries that overwrite existing modified entities. 
 +  <a name="WebApiOData"></a>New [**Web API OData Sample**](/doc-samples/web-api-odata), an MVC/SPA hybrid written with Javier Calvarro  Nelson, a member of the Microsoft Web API OData team. This effort prompted numerous small changes to Breeze core that enriched exposed functionality w/o changing underlying behavior.
-+  The [Angular Todo Sample](/doc-samples/todo-angular) has been spruced up. It's been upgraded to Angular v.1.2 and the new ["Breeze Angular Service"](/doc-js/breeze-angular) module.
++  The [AngularJS Todo Sample](/doc-samples/todo-angular) has been spruced up. It's been upgraded to AngularJS v.1.2 and the new ["Breeze AngularJS Service"](/doc-js/breeze-angular) module.
 +  Breeze 'ajax' adapters accept headers configuration; useful to authors of Breeze 'dataService' adapters. 
 +  `EntityQuery.fromEntityKey` specifically targets the `EntityType` of the `EntityKey` and casts query results into that `EntityType`.
 
 + New or changed in Breeze Labs
 
-	+ **Breeze Angular Service**, a new [*breeze.angular.js*](/doc-js/breeze-angular) module that configures your Breeze/Angular client app for Angular in "Angular-style". Sets the right 'model library', `$q` for promises, and `$http` for ajax calls. It has its own [nuget package](https://www.nuget.org/packages/Breeze.Angular/).
+	+ **Breeze AngularJS Service**, a new [*breeze.angular.js*](/doc-js/breeze-angular) module that configures your Breeze/AngularJS client app for AngularJS in "AngularJS-style". Sets the right 'model library', `$q` for promises, and `$http` for ajax calls. It has its own [nuget package](https://www.nuget.org/packages/Breeze.Angular/).
 
 	+ **getEntityGraph** extends `EntityManager` so you can retrieve a root entity *and its related entities* from cache as an array. [Read why and how](/doc-breeze-labs/get-entity-graph) in the breeze labs documentation.
 	
@@ -281,18 +281,18 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 	
     + **EdmBuilder**, a tiny C# class that generates Breeze-compatible metadata for a Web API OData backend. See the [Web API OData sample](/doc-samples/web-api-odata).
 
- 	+ **SharePoint 2013 + Angular + Breeze** - a composite [nuget package](https://www.nuget.org/packages/Breeze.Angular.SharePoint/) that delivers in one package all the Breeze stuff you need to build the app. We're really close to  announcing a SharePoint/Angular/Breeze sample built by Andrew Connell.     
+ 	+ **SharePoint 2013 + AngularJS + Breeze** - a composite [nuget package](https://www.nuget.org/packages/Breeze.Angular.SharePoint/) that delivers in one package all the Breeze stuff you need to build the app. We're really close to  announcing a SharePoint/Angular/Breeze sample built by Andrew Connell.     
 
-	+ **SharePoint 2013 OData DataService Adapter**, included in the SharePoint/Angular package, this is independent of Angular and therefore suitable for a Breeze application that doesn't use Angular. Best acquired [from nuget](https://www.nuget.org/packages/Breeze.DataService.SharePoint/).
+	+ **SharePoint 2013 OData DataService Adapter**, included in the SharePoint/AngularJS package, this is independent of AngularJS and therefore suitable for a Breeze application that doesn't use AngularJS. Best acquired [from nuget](https://www.nuget.org/packages/Breeze.DataService.SharePoint/).
 
 	+ **breeze.directives.validation** is in the middle of a rewrite to enable richer options for developer configuration. The code has changed, the behavior ... not yet (at least not intentionally).
 
-	+ **Angular.MidwayTester** - a [nuget package](https://www.nuget.org/packages/Angular.MidwayTester/), delivering [Matias Niemelä's Angular test library](https://github.com/yearofmoo/ngMidwayTester) (with his kind permission) for async testing. Great for testing that your Breeze client is talking to your server in the ways you expect.
+	+ **AngularJS.MidwayTester** - a [nuget package](https://www.nuget.org/packages/Angular.MidwayTester/), delivering [Matias Niemelä's AngularJS test library](https://github.com/yearofmoo/ngMidwayTester) (with his kind permission) for async testing. Great for testing that your Breeze client is talking to your server in the ways you expect.
 
 + Deprecated in Breeze Labs
 
-	+ *breeze.angular.q* - use the "Breeze Angular Service" instead
-	+ *to$q* - de-documented; use "Breeze Angular Service"  
+	+ *breeze.angular.q* - use the "Breeze AngularJS Service" instead
+	+ *to$q* - de-documented; use "Breeze AngularJS Service"  
 	
 #### Bugs
 + ( v 1.4.9 - removed and replaced with this version)
@@ -328,7 +328,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 	
 #### Bugs
 
-+ Corrected issue where Breeze tries to load Angular with RequireJS when it shouldn't.
++ Corrected issue where Breeze tries to load AngularJS with RequireJS when it shouldn't.
 + Metadata resolution fix to remove inadvertent dependence on foreign key naming conventions.   
 + Fixed bug with query filters against Int64 fields.
 + Fixed bugs with query filters using OData numeric and date functions not functioning properly for local queries.
@@ -542,13 +542,13 @@ None
 + Added OData V3 support. Previously only OData V2 was supported.    
 + Added *EntityManager.acceptChanges* and *EntityManager.rejectChanges* methods. These methods basically call *EntityAspect.acceptChanges/rejectChanges* for every changed entity within an *EntityManager*. 
 + Added support for [custom metadata](/doc-js/metadata-by-hand).
-+ Added an **Angular** Ajax adapter.  The new adapter can be initialized by calling
++ Added an **AngularJS** Ajax adapter.  The new adapter can be initialized by calling
 
             breeze.config.initializeAdapterInstance("ajax", "angular");  
 
-    The default Breeze Ajax adapter is still jQuery.  The new angular adapter should be used if you do not want to use jQuery at all within an Angular application.
+    The default Breeze Ajax adapter is still jQuery.  The new angular adapter should be used if you do not want to use jQuery at all within an AngularJS application.
 
-    This adapter makes use of Angular's $http to perform any Ajax calls.  By default, Breeze will create isolated $http and $rootScope instances for these calls in order to avoid Angular side effects.  If you want to provide your own $http instance instead you can use the *setHttp* method on the adapter instance itself. 
+    This adapter makes use of AngularJS's $http to perform any Ajax calls.  By default, Breeze will create isolated $http and $rootScope instances for these calls in order to avoid AngularJS side effects.  If you want to provide your own $http instance instead you can use the *setHttp* method on the adapter instance itself. 
 
              var instance = breeze.config.initializeAdapterInstance("ajax", "angular");
              instance.setHttp($http);
@@ -682,7 +682,7 @@ must be replaced with
 
         // returns just the count of employees
 	    var query = breeze.EntityQuery.from("Employees").take(0).inlineCount(true);
-+ ES5 properties defined within an inheritance hierarchy via JavaScript's *Object.defineProperty* method are now fully supported in any custom constructors registered with Breeze.  This support is currently limited to Angular (via the backingStore adapter) and Knockout. Backbone support for this feature is coming soon.  
++ ES5 properties defined within an inheritance hierarchy via JavaScript's *Object.defineProperty* method are now fully supported in any custom constructors registered with Breeze.  This support is currently limited to AngularJS (via the backingStore adapter) and Knockout. Backbone support for this feature is coming soon.  
 
 + Typescript breeze.d.ts file updated for TypeScript 0.9.1
 

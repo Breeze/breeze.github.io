@@ -48,7 +48,7 @@ public object Lookups() // returns an object, not an IQueryable
 <p>The first element of the query results is a JavaScript object representing the anonymous object from the server. It has three properties, {<em>regions</em>, <em>territories</em>, <em>categories</em>}, each returning an array of <em>Region</em>, <em>Territory</em> and <em>Category </em>entities.</p>
 <p><strong>These are real entities in the <em>manager </em>cache</strong>. The <em>lookups </em>object that holds these lists is <em>not </em>an entity; it&#39;s an arbitrary JavaScript object. Breeze took a look at it on the way in and didn&#39;t recognize it. Breeze doesn&#39;t mind; it just passes it along in the query result ... in the same way that it returns the results of a <a href="/doc-js/query-projections" target="_blank">projection query</a>. But before returning it, Breeze inspects its contents. In each of the three list properties Breeze finds instances of entity types that it recognizes from metadata. Remember what we stipulated early on: the members of the lookup lists are entities on the server and therefore (thanks to metadata) they are entities on the Breeze client.</p>
 
-<p>Here's a live code, Angular version of what we're talking about .</p>
+<p>Here's a live code, AngularJS version of what we're talking about .</p>
 
 <p class="note">The following "plunker" only works with modern browsers (IE10+, FF, Chrome).</p>
 
@@ -110,7 +110,7 @@ app.vm.productEditor = (function (datacontext) {
 &lt;/div&gt;
 </pre>
 
-<h4>Combobox binding in Angular</h4>
+<h4>Combobox binding in AngularJS</h4>
 <pre class="brush:jscript;">
     <select ng-model="vm.product.Category" ng-options="cat.CategoryName for cat in vm.categories">
       <option value="">-- choose category --</option>

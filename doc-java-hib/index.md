@@ -21,6 +21,6 @@ The [breeze.server.java](https://github.com/Breeze/breeze.server.java) libraries
 
 <a href="/doc-samples/todo-angular-hibernate.html">
         <img src="/images/logos/angular-logo-new.png" width="100">
-        <p>Todo Angular Hibernate</p>
+        <p>Todo AngularJS Hibernate</p>
 </a>
 

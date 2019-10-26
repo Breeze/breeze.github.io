@@ -33,7 +33,7 @@ Download the sample from <a href="https://github.com/IdeaBlade/ESPN-Breeze" targ
 ## Overview
 Team News is a simple app that consumes ESPN's free public API using Breeze.js for client-caching and using Knockout.js for data-binding.
 
-Patrick started this sample to help those looking for help on using Breeze.js with Knockout.js.  The Breeze website has sample using the [Edmunds API and Angular.js](/doc-samples/edmunds), and Patrick felt that Knockout.js needed its own 3rd-party data sample to make the learning process easier. Durandal’s Starter Kit also includes Twitter Bootstrap for front-end design and Sammy.js for routing. 
+Patrick started this sample to help those looking for help on using Breeze.js with Knockout.js.  The Breeze website has sample using the [Edmunds API and AngularJS](/doc-samples/edmunds), and Patrick felt that Knockout.js needed its own 3rd-party data sample to make the learning process easier. Durandal’s Starter Kit also includes Twitter Bootstrap for front-end design and Sammy.js for routing. 
 
 ## Technologies
 

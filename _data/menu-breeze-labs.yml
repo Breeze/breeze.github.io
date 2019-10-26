@@ -9,5 +9,5 @@ menuitems:
   - { link: metadata-helper.html, title: Metadata helper }
   - { link: save-error-extensions.html, title: SaveError extensions }
   - { link: save-queuing.html, title: Save Queuing }
-  - { link: angular-q.html, title: Angular with Q (deprecated) }
-  - { link: to-q.html, title: Angular to Q bridge (deprecated) }
+  - { link: angular-q.html, title: AngularJS with Q (deprecated) }
+  - { link: to-q.html, title: AngularJS to Q bridge (deprecated) }

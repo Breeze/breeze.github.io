@@ -27,5 +27,5 @@ While the Breeze Labs projects are stewarded in part by members of the BreezeJS 
 ## Revision History
 The true history is the record of commits in the [Breeze Labs github repository](https://github.com/Breeze/breeze.js.labs). Here we only record the landmark changes.
 
-#### Breeze.Angular promoted to core
-The Breeze Labs **Breeze Angular Service** was promoted to Breeze client core in January, 2015. The former *breeze.angular.js* file was relocated to the [breeze.js repository](https://github.com/Breeze/breeze.js/blob/master/src/breeze.bridge.angular.js) and renamed *breeze.bridge.angular.js*. The documentation was relocated to the "Client Breeze" section.
+#### Breeze.AngularJS promoted to core
+The Breeze Labs **Breeze AngularJS Service** was promoted to Breeze client core in January, 2015. The former *breeze.angular.js* file was relocated to the [breeze.js repository](https://github.com/Breeze/breeze.js/blob/master/src/breeze.bridge.angular.js) and renamed *breeze.bridge.angular.js*. The documentation was relocated to the "Client Breeze" section.

@@ -3,13 +3,13 @@ layout: doc-js
 redirect_from: "/old/documentation/breeze-angular.html"
 ---
 
-# Breeze Angular Service
+# Breeze AngularJS Service
 
-Breeze and Angular work well together. They work *better* together when you configure Breeze to use Angular promises ($q) and Angular's ajax component ($http).
+Breeze and AngularJS work well together. They work *better* together when you configure Breeze to use AngularJS promises ($q) and AngularJS's ajax component ($http).
 
-The **Breeze Angular Service** is a Breeze "bridge" adapter that performs this configuration for you in an "ngNatural" way.
+The **Breeze AngularJS Service** is a Breeze "bridge" adapter that performs this configuration for you in an "ngNatural" way.
 
-> Breeze+Angular is great for modern browsers (ECMAScript 5+) that support <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" style="color: blue">**Object.defineProperty**</a>. If your app must run in IE8 or earlier, the Breeze/Angular combination is not for you. You might consider Breeze+Durandal (Knockout).
+> Breeze+AngularJS is great for modern browsers (ECMAScript 5+) that support <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" style="color: blue">**Object.defineProperty**</a>. If your app must run in IE8 or earlier, the Breeze/AngularJS combination is not for you. You might consider Breeze+Durandal (Knockout).
 
 ## Install it
 
@@ -63,7 +63,7 @@ Now load it in your web page html **after** breeze itself.
 	<script src="Scripts/breeze.bridge.angular.js"></script>
 
 
-> The nuget package depends on <a href="http://www.nuget.org/packages/Breeze.Client/">breeze.client</a> and the <a href="http://www.nuget.org/packages/Breeze.Angular.Directives/">breeze.angular.directives package</a> which provides the "zValidate" validation directive. You may be able to install everything you need for Breeze+Angular client development with this one package.
+> The nuget package depends on <a href="http://www.nuget.org/packages/Breeze.Client/">breeze.client</a> and the <a href="http://www.nuget.org/packages/Breeze.Angular.Directives/">breeze.angular.directives package</a> which provides the "zValidate" validation directive. You may be able to install everything you need for Breeze+AngularJS client development with this one package.
 
 
 ## Examples
@@ -114,15 +114,15 @@ function emFactory(breeze) {
 }
 {% endhighlight %}
 
-The Breeze Angular Service is not clairvoyant. It can't configure Breeze for everything your app requires. The second example illustrates configuration of the *NamingConvention* and the remote service endpoint (the `serviceName`), both specific to your application.
+The Breeze AngularJS Service is not clairvoyant. It can't configure Breeze for everything your app requires. The second example illustrates configuration of the *NamingConvention* and the remote service endpoint (the `serviceName`), both specific to your application.
 
 ## The Breeze service instance
 
-The 'breeze' service that Angular injects is Breeze itself, identical to `window.breeze`. Whether you use that service object or refer to the global `breeze` object is a matter of style.
+The 'breeze' service that AngularJS injects is Breeze itself, identical to `window.breeze`. Whether you use that service object or refer to the global `breeze` object is a matter of style.
 
-The "Breeze Angular Service" simply configures Breeze to use
+The "Breeze AngularJS Service" simply configures Breeze to use
 
-- Angular for data binding 
+- AngularJS for data binding 
 - the `$q` service for promises 
 - the `$http` service for ajax calls 
 
@@ -132,23 +132,23 @@ The balance of this documentation provides more details about promises and the a
 
 A **promise** is a pledge to tell you when an asynchronous activity completes.
 
-Breeze and Angular rely on promises to manage chaining of asynchronous method calls such as a sequence of data queries.
+Breeze and AngularJS rely on promises to manage chaining of asynchronous method calls such as a sequence of data queries.
 
 Every Breeze async method returns a ***promise object***. Initially the asynchronous activity is incomplete and the promise object is "unfullfilled". Your code continues without knowing the outcome of that activity. The promise object has a > then() method. You supply success and failure callbacks as parameters to the > then(). When the asynchronous activity completes, the promise is "fullfilled" and it invokes either your success or your failure callback as appropriate.
 
-<a href="https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md" title="'Thenable Promises'" target="_blank">Read more about "Thenable Promises</a>" from the author of the Q.js library, <a href="https://github.com/kriskowal" title="Kris Kowal" target="_blank">Kris Kowal</a>. The Angular `$q` implementation adheres to his description in all essential respects.
+<a href="https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md" title="'Thenable Promises'" target="_blank">Read more about "Thenable Promises</a>" from the author of the Q.js library, <a href="https://github.com/kriskowal" title="Kris Kowal" target="_blank">Kris Kowal</a>. The AngularJS `$q` implementation adheres to his description in all essential respects.
 
 ### Breeze promises
 
 Out of the box, a Breeze asynchronous method returns a <a href="http://documentup.com/kriskowal/q/" target="_blank">**Q.js** promise</a>, not an AngularJS <a href="http://docs.angularjs.org/api/ng.$q" target="_blank">***$q*** promise</a>. Breeze also assumes that you included the Q.js library in your client stack.
 
-While the Q.js default makes good sense in other environments, it is not Angular friendly. First you have to load the Q library. Then you'll find that you often have to convert a Q promise to a `$q` promise because many Angular components don't understand a Q promise. Because the Angular dirty-checking <a href="http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">"Digest" cycle</a> knows nothing of Q, you'll probably have to call <a href="http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">> $scope.$apply</a>. Finally, it's extremely difficult to test with *ng-mocks* when you have a mix of `$q` and Q promises.
+While the Q.js default makes good sense in other environments, it is not AngularJS friendly. First you have to load the Q library. Then you'll find that you often have to convert a Q promise to a `$q` promise because many AngularJS components don't understand a Q promise. Because the AngularJS dirty-checking <a href="http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">"Digest" cycle</a> knows nothing of Q, you'll probably have to call <a href="http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">> $scope.$apply</a>. Finally, it's extremely difficult to test with *ng-mocks* when you have a mix of `$q` and Q promises.
 
-Angular developers should switch to `$q` promises and this Breeze Angular Service does that for you automatically.
+AngularJS developers should switch to `$q` promises and this Breeze AngularJS Service does that for you automatically.
 
 ### *$q* usage
 
-There's nothing to it. Breeze async methods now return Angular `$q` promises. Append promise callbacks to those promises per the `$q` API.
+There's nothing to it. Breeze async methods now return AngularJS `$q` promises. Append promise callbacks to those promises per the `$q` API.
 
 {% highlight javascript linenos=table %}
 var promise = entityManager
@@ -182,13 +182,13 @@ We encourage you to review the <a href="http://docs.angularjs.org/api/ng.$q" tar
 
 ## AJAX
 
-The Breeze `EntityManager` makes HTTP calls to a remote server via an "ajax" adapter. While Breeze ships with both a 'jQuery' and an 'angular' ajax adapter, it defaults to the 'jQuery' adapter which wraps `jquery.ajax`. This Breeze Angular Service re-configures breeze to use the 'angular' adapter which wraps `$http`, ensuring that Breeze receives the specific `$http` service instance that Angular injects into your app module.
+The Breeze `EntityManager` makes HTTP calls to a remote server via an "ajax" adapter. While Breeze ships with both a 'jQuery' and an 'angular' ajax adapter, it defaults to the 'jQuery' adapter which wraps `jquery.ajax`. This Breeze AngularJS Service re-configures breeze to use the 'angular' adapter which wraps `$http`, ensuring that Breeze receives the specific `$http` service instance that AngularJS injects into your app module.
 
 Speaking of service instances ...
 
 ## Multiple *$q* and *$http* instances
 
-There is a nuance you may discover in extraordinary circumstances: Angular creates a new `$q` and a new `$http` **for each application module**.
+There is a nuance you may discover in extraordinary circumstances: AngularJS creates a new `$q` and a new `$http` **for each application module**.
 
 Rare is the application that has multiple app modules. But if you did have multiple app modules, each would have its own `$q` and `$http` instance.
 
@@ -196,7 +196,7 @@ Breeze expects exactly one promise and ajax implementation across the entire app
 
 You're more likely to become aware of multiple `$q` and `$http` instances during testing. In fact, you can *count on getting a new instance* for each and every test (known as a "spec" in Jasmine).
 
-Fortunately, you get a new instance of the app module too. So when your app module and services load under test, they create a fresh instance of the Breeze Angular service at the same time ... and that new instance will configure Breeze with the current `$q` and `$http` services for each executing test (or "spec").
+Fortunately, you get a new instance of the app module too. So when your app module and services load under test, they create a fresh instance of the Breeze AngularJS service at the same time ... and that new instance will configure Breeze with the current `$q` and `$http` services for each executing test (or "spec").
 
 Here's an example of a Jasmine "beforeEach" test setup:
 

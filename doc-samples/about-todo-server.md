@@ -23,7 +23,7 @@ redirect_from: "/old/samples/todo-server.html"
 	JavaScript Libraries</h2>
 <p>All third party libraries are in the <strong><em>Scripts </em>folder</strong>. In our own applications, we tend to put them in to a <em>Scripts/lib</em> folder. But NuGet insists on deploying them to the <em>Scripts </em>directory and we let that be.</p>
 <p>We installed <strong>jQuery </strong>and <strong>toastr </strong>with NuGet in all sample variations. We use the <a href="https://github.com/CodeSeven/toastr" target="_blank"><strong>toastr </strong>library</a> to display process and error messages in pop up &quot;toast&quot; windows.</p>
-<p>For the Todo-Knockout variations we installed the &quot;<strong>knockoutjs</strong>&quot; NuGet package. For the Todo-Angular variations, we downloaded and added <strong><em>angular.js</em></strong> and <strong><em>angular.min.js</em></strong> directly to the <em>Scripts </em>directory; the Angular NuGet package installs far too many unwanted scripts for our tastes.</p>
+<p>For the Todo-Knockout variations we installed the &quot;<strong>knockoutjs</strong>&quot; NuGet package. For the Todo-AngularJS variations, we downloaded and added <strong><em>angular.js</em></strong> and <strong><em>angular.min.js</em></strong> directly to the <em>Scripts </em>directory; the AngularJS NuGet package installs far too many unwanted scripts for our tastes.</p>
 <p>For Todo-Require we installed the &quot;<strong>RequireJS</strong>&quot; NuGet package.</p>
 <h2>
 	content</h2>

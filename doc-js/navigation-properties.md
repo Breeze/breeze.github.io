@@ -12,7 +12,7 @@ Each leg of the property path is represented by a **navigation** property. The `
 
 ## Accessing navigation properties in Knockout
 
-> We present navigation properties in <strong>knockout</strong> style throughout most of the topic. In Knockout, entity properties are implemented as observable functions.<br/><br/>If you're writing your app in Angular, you should ignore these nuances and simply read and set the navigation property values directly. The larger points about navigation still apply to you.<br/><br/>Other frameworks have their own syntax. The concepts and techniques are the same regardless of the binding framework. Learn more in the <a href="#get-set-property">discussion  below</a>.
+> We present navigation properties in <strong>knockout</strong> style throughout most of the topic. In Knockout, entity properties are implemented as observable functions.<br/><br/>If you're writing your app in AngularJS, you should ignore these nuances and simply read and set the navigation property values directly. The larger points about navigation still apply to you.<br/><br/>Other frameworks have their own syntax. The concepts and techniques are the same regardless of the binding framework. Learn more in the <a href="#get-set-property">discussion  below</a>.
 
 Read a navigation property in the same way you would any observable property. Here we get the customer from an order in cache:
 

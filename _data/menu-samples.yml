@@ -6,7 +6,7 @@ menuitems:
   - { link: "about-todo-server.html", title: About the application server, ischild: true }
   - { link: "about-todo-viewmodel.html", title: About the view model design, ischild: true }
   - { link: "about-todo-dataservice.html", title: About the data service, ischild: true }
-  - { link: "todo-angular.html", title: ToDo w/ Angular }
+  - { link: "todo-angular.html", title: ToDo w/ AngularJS }
   - { link: "todo-knockout.html", title: ToDo w/ Knockout  }
   - { link: "todo-knockout-require.html", title: ToDo w/ Knockout & Require  }
   - { link: "todo-angular-sequelize.html", title: ToDo w/ Node/Sequelize  }
@@ -24,6 +24,6 @@ menuitems:
   - { link: "php-employee-directory.html", title: Employee directory - PHP }
   - { link: "north-breeze.html", title: Northwind app - NHibernate }
   - { link: "temp-hire.html", title: TempHire reference app - Knockout }
-  - { link: "temp-hire-angular.html", title: TempHire reference app - Angular  }
-  - { link: "temp-hire-angular-sequelize.html", title: TempHire reference app - Angular w/ Node/Sequelize }
+  - { link: "temp-hire-angular.html", title: TempHire reference app - AngularJS  }
+  - { link: "temp-hire-angular-sequelize.html", title: TempHire reference app - AngularJS w/ Node/Sequelize }
   - { link: "car-bones.html", title: Backbone demo }

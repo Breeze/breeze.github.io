@@ -65,7 +65,7 @@ Features include:
 
 **Library and Tooling support**
 
-+ Out-of-box support for Knockout, Angular, and Backbone.
++ Out-of-box support for Knockout, AngularJS, and Backbone.
 + TypeScript support for compile-time type checking, classes, interfaces, and inheritance.
 + IntelliSense support for Visual Studio 2012.
 + RequireJS-enabled for modular applications.

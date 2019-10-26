@@ -4,15 +4,15 @@ redirect_from: "/old/samples/northbreeze.html"
 ---
 # NorthBreeze NHibernate demo
 
-Northbreeze is a  simple data-entry demo application that uses the Northwind data model.  This sample demonstrates how to use Breeze with NHibernate on the server, and Breeze with Angular on the client.  
+Northbreeze is a  simple data-entry demo application that uses the Northwind data model.  This sample demonstrates how to use Breeze with NHibernate on the server, and Breeze with AngularJS on the client.  
 
 # Client side
 - [Breeze](http://breezejs.com) data retrieval, validation, change tracking, transactional saves
-- [Angular](http://angularjs.org) JavaScript framework
+- [AngularJS](http://angularjs.org) JavaScript framework
 - [AngularUI Grid](http://ui-grid.info/) with paging
 - [Twitter Bootstrap](http://getbootstrap.com/2.3.2/) styling
 
-NorthBreeze uses an Angular custom directive to apply Bootstrap styles to show validation errors detected by Breeze.
+NorthBreeze uses an AngularJS custom directive to apply Bootstrap styles to show validation errors detected by Breeze.
 
 # Server side
 - Breeze HTTP filters and persistence context

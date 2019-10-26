@@ -2,12 +2,12 @@
 layout: doc-cool-breezes
 redirect_from: "/old/documentation/presenting-many-many.html"
 ---
-# Presenting a Many-to-Many association with Checkboxes in Breeze and Angular
+# Presenting a Many-to-Many association with Checkboxes in Breeze and AngularJS
 
 It is surprisingly difficult to write an intuitive UI with which
 a user can maintain many-to-many associations. This "Cool Breeze" describes one way to do it ... with a live code example (see <a href="#livecode">below</a>)
 
-![Many-to-Many CheckBoxes in Breeze and Angular](/images/ManyToManyCheckboxes.png)
+![Many-to-Many CheckBoxes in Breeze and AngularJS](/images/ManyToManyCheckboxes.png)
 
 Breeze does not (yet) 
 directly support a many-to-many association between two EntityTypes. 

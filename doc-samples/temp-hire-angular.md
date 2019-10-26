@@ -26,7 +26,7 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p>TempHire is designed to be a completely modular single-page application (SPA). It&rsquo;s written in JavaScript, so it works on the platforms your customers use today&mdash;and will still be using tomorrow.</p>
 
-<p>TempHire reduces complexity by leveraging frameworks like <a href="http://angularjs.org">Angular</a> for presentation and libraries like Breeze for data management, so developers can focus on solving business problems rather than the plumbing and wiring.</p>
+<p>TempHire reduces complexity by leveraging frameworks like <a href="http://angularjs.org">AngularJS</a> for presentation and libraries like Breeze for data management, so developers can focus on solving business problems rather than the plumbing and wiring.</p>
 
 <p>Even better, through the use of proven architecture and design patterns, multiple developers can work independently on specific views, models, and workflows without impacting other modules.</p>
 
@@ -78,13 +78,13 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <h2>App</h2>
 
-<p>The App folder contains the core components of the TempHire client: Angular, Client Services, ViewModel code, the HTML Views, and main.js, the script that bundles the app&rsquo;s scripts into a single package.</p>
+<p>The App folder contains the core components of the TempHire client: AngularJS, Client Services, ViewModel code, the HTML Views, and main.js, the script that bundles the app&rsquo;s scripts into a single package.</p>
 
-<p>We&rsquo;re assuming you&rsquo;re familiar with the basics, so the most interesting components here are likely App/Angular and App/ Services.</p>
+<p>We&rsquo;re assuming you&rsquo;re familiar with the basics, so the most interesting components here are likely App/AngularJS and App/ Services.</p>
 
-<h3>Angular</h3>
+<h3>AngularJS</h3>
 
-<p>Angular is a very popular front end SPA framework created by Google.  For this sample, we are using a preliminary version of Angular 1.4 as well as it's <a href="https://github.com/angular/router">new router</a>. Please note that there may be issues that will be resolved once the router is final and we upgrade the sample to Angular 1.4 final release.</p>
+<p>AngularJS is a very popular front end SPA framework created by Google.  For this sample, we are using a preliminary version of AngularJS 1.4 as well as it's <a href="https://github.com/angular/router">new router</a>. Please note that there may be issues that will be resolved once the router is final and we upgrade the sample to AngularJS 1.4 final release.</p>
 
 <h3>Services</h3>
 
@@ -138,7 +138,7 @@ redirect_from: "/old/samples/temphire-angular.html"
 
 <p><img src="/images/logos/jquery.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 
-<p><a href="http://jquery.com/"><strong>jQuery</strong></a> is a dependency for some of TempHire&rsquo;s libraries and templates. Bootstrap, Breeze, and Angular rely on one bit of jQuery or another.&nbsp;</p>
+<p><a href="http://jquery.com/"><strong>jQuery</strong></a> is a dependency for some of TempHire&rsquo;s libraries and templates. Bootstrap, Breeze, and AngularJS rely on one bit of jQuery or another.&nbsp;</p>
 
 <p><img src="/images/logos/moment.png" style="border-width: 0px; border-style: solid; width: 100px; height: 50px;" /></p>
 

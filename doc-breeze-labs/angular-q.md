@@ -2,13 +2,13 @@
 layout: doc-breeze-labs
 redirect_from: "/old/documentation/breezeangularqjs.html"
 ---
-# Breeze Angular Q-Promises
+# Breeze AngularJS Q-Promises
 
-<p class="note"><strong>This <em>breeze.angular.q</em> library has been deprecated</strong>. It is superseded by the <a href="/doc-js/breeze-angular" title="Breeze Angular Service"><strong>Breeze Angular Service</strong></a> which more cleanly configures breeze for Angular development.<br/><br/>The Breeze Angular Service  tells Breeze to use Angular's <code>$q</code> for promises and to use Angular's <code>$http</code>for ajax calls.<br/></br>The <em>breeze.angular.q</em> library has been from removed Breeze Labs. As always, you can retrieve <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.angular.q.js" target="_blank">the frozen copy from github</a>.</p>
+<p class="note"><strong>This <em>breeze.angular.q</em> library has been deprecated</strong>. It is superseded by the <a href="/doc-js/breeze-angular" title="Breeze AngularJS Service"><strong>Breeze AngularJS Service</strong></a> which more cleanly configures breeze for AngularJS development.<br/><br/>The Breeze AngularJS Service  tells Breeze to use AngularJS's <code>$q</code> for promises and to use AngularJS's <code>$http</code>for ajax calls.<br/></br>The <em>breeze.angular.q</em> library has been from removed Breeze Labs. As always, you can retrieve <a href="https://github.com/IdeaBlade/Breeze/blob/master/Breeze.Client/Scripts/Labs/breeze.angular.q.js" target="_blank">the frozen copy from github</a>.</p>
 
-### Migration to "Breeze Angular Service"
+### Migration to "Breeze AngularJS Service"
 
-Some outdated examples and PluralSight courses still refer to "breeze.angular.q" library and `use$q`. If you followed their lead, here's how to migrate your app to the *Breeze Angular Service*.
+Some outdated examples and PluralSight courses still refer to "breeze.angular.q" library and `use$q`. If you followed their lead, here's how to migrate your app to the *Breeze AngularJS Service*.
 
 1. Remove the *breeze.angular.q.js* script from your project.
 
@@ -52,7 +52,7 @@ You should also track down and eliminate code that configures Breeze to use the 
         var ajax = breeze.config.initializeAdapterInstance('ajax', 'angular');
         ajax.setHttp($http);
 
-        // the native Breeze 'backingStore' works for Angular
+        // the native Breeze 'backingStore' works for AngularJS
         breeze.config.initializeAdapterInstance('modelLibrary', 'backingStore', true);
 
         breeze.NamingConvention.camelCase.setAsDefault();

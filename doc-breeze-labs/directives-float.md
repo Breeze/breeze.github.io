@@ -2,18 +2,18 @@
 layout: doc-breeze-labs
 redirect_from: "/old/documentation/breezedirectivesfloat.html"
 ---
-# Angular Float Directive
+# AngularJS Float Directive
 
-The `zFloat` directive tells Angular to display the view value rather than the floating point
+The `zFloat` directive tells AngularJS to display the view value rather than the floating point
 model value when the view and model values are "equivalent".
 
 # What's the problem
 
-Without this directive, Angular data binding can erase the user's input as she
+Without this directive, AngularJS data binding can erase the user's input as she
 is typing, making it difficult for her to complete her intended data value.
 
-The cause is Angular's eager data binding. 
-Angular sends *each keystroke* through to the data bound model property.
+The cause is AngularJS's eager data binding. 
+AngularJS sends *each keystroke* through to the data bound model property.
 
 That becomes a problem when Breeze parses data entry before
 the user has finished typing. The user could be in the middle of data entry
@@ -41,13 +41,13 @@ Breeze parses it to its numerical equivalent, the integer 250. The parsed value
 is the same as a moment ago so Breeze makes no change to the model property. 
 But the viewValue ("250.") and the parsed value (250) are no longer identical.
 
-Without "zFloat", the Angular digest cycle re-reads the model property, 
+Without "zFloat", the AngularJS digest cycle re-reads the model property, 
 sees integer 250, and revises the input box viewValue dropping the decimal point. 
 **The user never has a chance to enter the digits *after* the decimal point.**
 
 >The same thing happens when the user enters '0's after the decimal.
 The user wants to enter "250.05" but can't type the "zero" after the decimal
-because Breeze keeps parsing the value to the integer 250 and Angular keeps
+because Breeze keeps parsing the value to the integer 250 and AngularJS keeps
 re-updating the input box, wiping out the user's last "zero" keystroke.
 
 You can experience these unwanted behaviors in the "**Without zFloat**" textbox.
@@ -62,7 +62,7 @@ This formatter compares the "viewValue" and "modelValue" and returns
 the "viewValue" if that string representation is deemed "equivalent" 
 to the numeric representation in the model.
 
-Because "250." is equivalent to the parsed integer 250, Angular displays
+Because "250." is equivalent to the parsed integer 250, AngularJS displays
 the "250." viewValue ... and the user can continue typing "0", "5" yielding
 the intended value of 250.05.
 

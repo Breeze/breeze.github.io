@@ -4,11 +4,11 @@ layout: doc-js
 # Model Library
 Breeze JS applications typically rely on some 3rd party library to display entity values in HTML and update entity values from user input entered through HTML controls. Breeze refers to these as "**model libraries**".
 
-Popular model libraries include [Angular](https://angular.io/), [Aurelia](http://aurelia.io/), [Backbone](http://backbonejs.org/), [Ember](http://emberjs.com/), [Knockout](http://knockoutjs.com/), and [React](https://facebook.github.io/react/). 
+Popular model libraries include [AngularJS](https://angular.io/), [Aurelia](http://aurelia.io/), [Backbone](http://backbonejs.org/), [Ember](http://emberjs.com/), [Knockout](http://knockoutjs.com/), and [React](https://facebook.github.io/react/). 
 
 Each library has its own approach to constructing the HTML and wiring that HTML to the model objects that Breeze calls "entities" such that data can flow to and from the HTML without the developer's direct intervention.
 
-Each library expects to get and set model values in its own way. Some libraries (Angular, Aurelia, React) get and set values through the model object's own properties. Other libraries (Backbone, Ember, Knockout) get and set values through special "property accessor and mutator" functions.
+Each library expects to get and set model values in its own way. Some libraries (AngularJS, Aurelia, React) get and set values through the model object's own properties. Other libraries (Backbone, Ember, Knockout) get and set values through special "property accessor and mutator" functions.
 
 These differences mean that there is no universal way for Breeze to create an entity. When Breeze creates an entity, as it does when you call `createEntity` or when materializing query results, it has to adapt each entity instance to the requirements of the model library you've chosen for your application.
 
@@ -20,7 +20,7 @@ The "Model Library Adapter" helps Breeze create an entity that conforms to your 
 
 Breeze has three adapters at the moment; their names are:
 
-1. "[backingStore](#backingStore)" - for model libraries that get and set model object properties (Angular, Aurelia, React)
+1. "[backingStore](#backingStore)" - for model libraries that get and set model object properties (AngularJS, Aurelia, React)
 1. "[backbone](#backbone)" - for the Backbone model library
 1. "[ko"](#ko)" - for the Knockout model library
 
@@ -39,7 +39,7 @@ The "adapter-name" is likely to be one of the three names listed above.  If you 
 
 If you specify a Model Library Adapter, you must do so ***before* fetching or creating any metadata**. If you create a [`MetadataStore`](/doc-js/metadata) first, it will be configured for the ambient Model Library Adapter which may not be the one you want.
 
-For any given application, there can be **one and only one *active* Model Library Adapter**. The application can't switch Model Library Adapters. You can't have one entity model configured for Knockout and another entity model configured for Angular ... not in the same application. Think of the active Model Library Adapter as a static Breeze service.
+For any given application, there can be **one and only one *active* Model Library Adapter**. The application can't switch Model Library Adapters. You can't have one entity model configured for Knockout and another entity model configured for AngularJS ... not in the same application. Think of the active Model Library Adapter as a static Breeze service.
 
 >We do switch adapters in our tests; you can see that in the <a href="https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/entityExtensionTests.js" target="_blank">entityExtensionTests.js</a> of our DocCode sample. But this isn't something you should be doing.
 
@@ -59,9 +59,9 @@ Use the "backingStore" adapter when your model library expects to get and set mo
     customer.name = 'Acme';       // set the 'name' property
     var custName = customer.name; // get the 'name' property
 
-This is the right adapter choice for Angular, Aurelia, and React. 
+This is the right adapter choice for AngularJS, Aurelia, and React. 
 
->The [breeze-angular bridge](/doc-js/breeze-angular) selects this adapter for you automatically while also configuring Breeze to use other Angular components.
+>The [breeze-angular bridge](/doc-js/breeze-angular) selects this adapter for you automatically while also configuring Breeze to use other AngularJS components.
 
 **The "backingStore" adapter is the default adapter** (but see the ["ko" exception](#ko) below) so you don't have to choose it explicitly. But you can be explicit if you wish by executing the following statement *before* defining a `MetadataStore`.
 

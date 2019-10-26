@@ -16,13 +16,13 @@ You can get the latest build of BreezeJS from [github](https://github.com/Breeze
 BreezeJS requires 3rd-party libraries for its [promise](https://www.promisejs.org/) implementation and for its AJAX implementation.
 
 #### If you are using [AngularJS](https://angularjs.org/)
-Get [breeze.bridge.angular.js](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.bridge.angular.js).  This sets up Breeze to use Angular's $q for promises, and $http for AJAX.  In your index.html you should have, in order:
+Get [breeze.bridge.angular.js](https://raw.githubusercontent.com/Breeze/breeze.js/master/build/adapters/breeze.bridge.angular.js).  This sets up Breeze to use AngularJS's $q for promises, and $http for AJAX.  In your index.html you should have, in order:
 
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/breeze.debug.js"></script>
     <script src="Scripts/breeze.bridge.angular.js"></script>
 
-See the [Todo-Angular-Hibernate](/doc-samples/todo-angular-hibernate.html) sample for an example Breeze+Angular application.
+See the [Todo-AngularJS-Hibernate](/doc-samples/todo-angular-hibernate.html) sample for an example Breeze+AngularJS application.
 
 #### If you are using [Aurelia](http://aurelia.io/)
 Get [aurelia-breeze](https://github.com/jdanyow/aurelia-breeze).  This sets up breeze to use ES6 promises and Aurelia's http-client for AJAX.  In your `index.html` you'll have just the bootstrapping code, since Aurelia uses modules.  See the [aurelia-breeze-northwind](https://github.com/jdanyow/aurelia-breeze-northwind) sample.

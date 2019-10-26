@@ -87,7 +87,7 @@ redirect_from: "/old/samples/edmunds.html"
 
 <p>The <em>index.html</em> file loads CSS, 3rd party libraries, and the application scripts.</p>
 
-<p>The UI is a single &quot;view&quot; defined within the &lt;body&gt; tag. The HTML is marked up with Angular.js binding &quot;directives&quot;:</p>
+<p>The UI is a single &quot;view&quot; defined within the &lt;body&gt; tag. The HTML is marked up with AngularJS.js binding &quot;directives&quot;:</p>
 
 <pre class="brush:xml;">
 &lt;div&gt;
@@ -123,7 +123,7 @@ redirect_from: "/old/samples/edmunds.html"
 	<p>A checkbox for toggling the display of &quot;Models&quot; for the given &quot;Make&quot;. It&#39;s bound to the <span class="codeword">make</span>&#39;s <span class="codeword">showModels</span> field.</p>
 	</li>
 	<li>
-	<p>An Angular &quot;interpolation&quot; to show the name of the &quot;Make&quot;</p>
+	<p>An AngularJS &quot;interpolation&quot; to show the name of the &quot;Make&quot;</p>
 	</li>
 	<li>
 	<p>A table to display the &quot;Models&quot; for the current <span class="codeword">make</span></p>
@@ -133,7 +133,7 @@ redirect_from: "/old/samples/edmunds.html"
 	</li>
 </ul>
 
-<p>This is standard Angular fare.</p>
+<p>This is standard AngularJS fare.</p>
 
 <h3>Application JavaScript</h3>
 
@@ -155,9 +155,9 @@ redirect_from: "/old/samples/edmunds.html"
 
 <p>This file defines the application module, `app, and the controller for the application&#39;s only view, <em>index.html</em>.</p>
 
-<p>The <span class="codeword">app</span> module is the only object added to the global namespace; it serves as both module and application namespace. As you look at other the other application JavaScript files, you&#39;ll see that each adds itself as a &quot;service&quot; to the <span class="codeword">app</span> module through one of the Angular configuration methods: <span class="codeword">controller</span>, <span class="codeword">factory</span>, or <span class="codeword">value</span>.</p>
+<p>The <span class="codeword">app</span> module is the only object added to the global namespace; it serves as both module and application namespace. As you look at other the other application JavaScript files, you&#39;ll see that each adds itself as a &quot;service&quot; to the <span class="codeword">app</span> module through one of the AngularJS configuration methods: <span class="codeword">controller</span>, <span class="codeword">factory</span>, or <span class="codeword">value</span>.</p>
 
-<p>Note how the controller factory method relies on Angular to inject the application&#39;s <span class="codeword">datacontext</span> and <span class="codeword">logger</span> services at runtime.</p>
+<p>Note how the controller factory method relies on AngularJS to inject the application&#39;s <span class="codeword">datacontext</span> and <span class="codeword">logger</span> services at runtime.</p>
 
 <pre class="brush:jscript;">
 app.controller(&#39;EdmundsCtrl&#39;, function ($scope, datacontext, logger) {
@@ -167,7 +167,7 @@ app.controller(&#39;EdmundsCtrl&#39;, function ($scope, datacontext, logger) {
 
 <p>You&#39;ll see this pattern repeated in the other scripts that define components with application service dependencies.</p>
 
-<p>The &#39;EdmundsCtrl&#39; controller governs the view through the Angular <span class="codeword">$scope</span> variable which it configures with properties and methods. The <span class="codeword">makes</span> array is one of those properties; it holds the &quot;Make&quot; entities fetched from the Edmunds service by the <span class="codeword">getMakes</span> method:</p>
+<p>The &#39;EdmundsCtrl&#39; controller governs the view through the AngularJS <span class="codeword">$scope</span> variable which it configures with properties and methods. The <span class="codeword">makes</span> array is one of those properties; it holds the &quot;Make&quot; entities fetched from the Edmunds service by the <span class="codeword">getMakes</span> method:</p>
 
 <pre class="brush:jscript;">
 function getMakes() {
@@ -219,7 +219,7 @@ function getModels(make) {
 
 <p>The <em>datacontext</em> is a client-side application &quot;service&quot; responsible for fetching data from the remote Edmonds services and turning those data into Breeze entities.</p>
 
-<p>These will be Angular entities so we have to configure Breeze accordingly. Breeze makes Knockout-ready entities by default. The following line tells Breeze to use its native &quot;backingStore&quot; modeling adapter instead (the adapter appropriate for AngularJS entities).</p>
+<p>These will be AngularJS entities so we have to configure Breeze accordingly. Breeze makes Knockout-ready entities by default. The following line tells Breeze to use its native &quot;backingStore&quot; modeling adapter instead (the adapter appropriate for AngularJS entities).</p>
 
 <pre class="brush:jscript;">
 breeze.config.initializeAdapterInstance(
@@ -245,7 +245,7 @@ var manager = new breeze.EntityManager({dataService: ds});
 
 <p>Note that the Edmunds service is hosted hosted in a different domain than our application. The browser&#39;s <a href="http://en.wikipedia.org/wiki/Same_origin_policy" title="Same Origin Policy">Same Origin Policy</a> prevents us from accessing the service through regular AJAX calls. We&#39;ll only GET data so we can use the <a href="http://en.wikipedia.org/wiki/JSONP" title="JSONP protocol">JSONP protocol</a> to circumvent that policy (Edmunds supports that protocol).</p>
 
-<p>The <span class="codeword">manager</span> will need metadata to create, materialize, and manage Edmunds data as Breeze entities. The <em>remote </em>Edmunds service won&#39;t give us metadata. So with this next line of initialization code, we&#39;ll get metadata via the <em>local</em> <span class="codeword">model</span> service which we wrote in JavaScript and arranged for Angular to inject into the <em>datacontext</em>.</p>
+<p>The <span class="codeword">manager</span> will need metadata to create, materialize, and manage Edmunds data as Breeze entities. The <em>remote </em>Edmunds service won&#39;t give us metadata. So with this next line of initialization code, we&#39;ll get metadata via the <em>local</em> <span class="codeword">model</span> service which we wrote in JavaScript and arranged for AngularJS to inject into the <em>datacontext</em>.</p>
 
 <pre class="brush:jscript;">
 model.initialize(manager.metadataStore);

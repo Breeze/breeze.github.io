@@ -21,7 +21,7 @@ The package (or packages) you need depend on your development scenario.
 
 ## Are you new to Breeze?
 
-We recommend that you look first at Brian Noyes "<a href="http://www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with Angular and Breeze</a>" and "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
+We recommend that you look first at Brian Noyes "<a href="http://www.pluralsight.com/courses/building-single-page-applications-breeze" target="_blank">Building Data-Centric Single Page Apps with Breeze</a>" and at John Papa's two courses, "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Building Apps with AngularJS and Breeze</a>" and "<a href="http://www.pluralsight.com/training/Courses/TableOfContents/build-apps-angular-breeze" target="_blank">Single Page Apps JumpStart with Durandal, Knockout and Breeze</a>"
 
 John's "HotTowel" nuget packages will reflect Visual Studio 2013/2015 and its family of technology updates.
 
@@ -116,7 +116,8 @@ This 10 minute video demonstrates the process and walks you through the material
 
 > This video refers to the breeze package which has been renamed to "Breeze.WebApi.Sample". It targets Web API (v.1) and EF 5. Please adjust accordingly.
 
-<iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/ItvUb0kjEss" width="420"></iframe>
+
+<iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/ItvUb0kjEss" width="420"></iframe>
 
 In brief, 
 
@@ -130,7 +131,8 @@ Try it by running without debug (Ctrl F5) ... or with debug (F5) if you prefer.
 
 You'll see an MVC web page which is the shell for the Breeze sample application. You'll be able to edit the sample "todos", mark them done or not-done, save the changes, and toggle the query to show either not-done todos or all todos (done and not-done) as shown here:
 
-<img alt="" src="/images/samples/BreezeNugetSampleRunning01.png" style="height: 400px; width: 362px;" />
+
+<img alt="" src="/images/samples/BreezeNugetSampleRunning01.png" style="height: 400px; width: 362px;" />
 
 All of the pertinent Breeze client code is in one JavaScript file, *Scripts/app/sampleViewModel.js*.
 

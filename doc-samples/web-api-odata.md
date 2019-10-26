@@ -46,7 +46,7 @@ All we did was add a razor page named "BOWA" (*~/views/home/bowa.cshtml*) to the
 
 1. A place to land; a place you can navigate to amidst the other MVC pages.
 2. The vehicle for delivering static assets specific to the SPA including CSS and JavaScript files.
-3. An HTML container for the SPA; Angular injects the SPA views into that container.
+3. An HTML container for the SPA; AngularJS injects the SPA views into that container.
 
 The container takes one line of HTML:
 
@@ -54,9 +54,9 @@ The container takes one line of HTML:
 
 <div>
 <img src="/images/samples/WebApiODataSampleStack.png" alt="WebAPI OData Sample Stack" style="float:left"/>
-<p>Everything the user sees takes place inside that shell <code>&lt;div/></code>. Its contents are constructed dynamically on the client in HTML and JavaScript with the help of Angular and Breeze.</p>
+<p>Everything the user sees takes place inside that shell <code>&lt;div/></code>. Its contents are constructed dynamically on the client in HTML and JavaScript with the help of AngularJS and Breeze.</p>
 
-<p>Angular provides the data binding and other presentation infrastructure behind the user experience. The app adopts a "Model-View-ViewModel" (MVVM) style for separating layout (HTML) from logic (JavaScript) </p><p>On the server stack is your business model and data, communicated to the client with Web API and OData, queried and stored with Entity Framework and SQL Server.</p>
+<p>AngularJS provides the data binding and other presentation infrastructure behind the user experience. The app adopts a "Model-View-ViewModel" (MVVM) style for separating layout (HTML) from logic (JavaScript) </p><p>On the server stack is your business model and data, communicated to the client with Web API and OData, queried and stored with Entity Framework and SQL Server.</p>
 </div><div style="clear:both"></div>
 
 # Server Model
@@ -207,23 +207,23 @@ The "batchHandler" routing parameter is optional for many OData applications. It
 
 >Breeze `saveChanges` does not target the controller save endpoints directly. But the default "$batch" handler, shown in this sample, does re-distribute the sub-requests to these endpoints. As long as you configure the route for the `DefaultBatchHandler`, you must write the controller-level action methods for the save operations you want to support.
 
-# Breeze/Angular Client
+# Breeze/AngularJS Client
 
 So far we have a vanilla WebApi OData service with batch support. There is no Breeze code on the server ... with the single exception of the `EdmBuilder`, a temporary expedient pending Microsoft's update to its own `ODataConventionModelBuilder`.
 
 In this section we'll show you where to find things on the client and explain some of our design choices. 
 
-We're not going to teach you Angular. You may want to stop and learn about Angular from other sources if you aren't familiar with the Angular terms "module", "service", "controller" and "dependency injection".
+We're not going to teach you AngularJS. You may want to stop and learn about AngularJS from other sources if you aren't familiar with the AngularJS terms "module", "service", "controller" and "dependency injection".
 
 We're not trying to teach Breeze either. You may want to stop and learn about Breeze elsewhere in the documentation if you lack a basic understanding of  what Breeze is and how it works. The terms "entity" and "EntityManager" should be familiar to you.
 
 ### Install 3rd party libraries
 
-It's time to add Breeze and Angular to the HTML/JavaScript client. You can get everything you need for this sample with these additional NuGet packages:
+It's time to add Breeze and AngularJS to the HTML/JavaScript client. You can get everything you need for this sample with these additional NuGet packages:
 
-    AngularJS.Core    // Angular
-    AngularJS.Animate // Angular animation library
-    Breeze.Angular    // adds Breeze.Angular.Directives and Breeze.Client packages
+    AngularJS.Core    // AngularJS
+    AngularJS.Animate // AngularJS animation library
+    Breeze.AngularJS    // adds Breeze.AngularJS.Directives and Breeze.Client packages
     datajs            // AJAX OData service access 
     toastr            // Pop-up toast messages
 
@@ -264,10 +264,10 @@ The *todo.css* and *site.css* are specific to the sample. Examine them at your l
 
 We configure Breeze in two steps
 
-1. configure Breeze for Angular
+1. configure Breeze for AngularJS
 2. configure Breeze for Web API OData
 
-### Configure for Angular
+### Configure for AngularJS
 
 The *breeze.angular.js* script defines the "breeze.angular" module. We must list it among the dependencies of our application module when we create that module in <em>app/<strong>app.js</strong></em>:
 
@@ -276,7 +276,7 @@ The *breeze.angular.js* script defines the "breeze.angular" module. We must list
         ... other dependent modules ...
     ]);
 
-That step loads the "Breeze Angular" module but doesn't do anything with it yet. We have to pick the opportune moment to tell it to "*configure Breeze now for the running application*". 
+That step loads the "Breeze AngularJS" module but doesn't do anything with it yet. We have to pick the opportune moment to tell it to "*configure Breeze now for the running application*". 
 
 The "opportune" moment is any convenient time before the first call to a Breeze API. In this sample, we know the first component to use Breeze is the `EntityManagerFactory`.
 
@@ -289,17 +289,17 @@ Open <em>app/<strong>entityManagerFactory.js</strong></em>. This script defines 
 
     function emFactory(breeze) { ... }
 
-At runtime, Angular injects 'breeze' (the "breeze service") into the factory definition function. 
+At runtime, AngularJS injects 'breeze' (the "breeze service") into the factory definition function. 
 
 >The 'breeze' service is defined in the 'breeze.angular' module we loaded earlier.
 
 The act of injecting the 'breeze' service into *any* application component creates the 'breeze' service and triggers configuration which includes:
 
-- choosing the appropriate "modelLibrary" adapter for Angular.
+- choosing the appropriate "modelLibrary" adapter for AngularJS.
 - setting the Breeze promise implementation to the running app's `$q` promise service.
 - choosing the Breeze 'angular' ajax adapter and telling it to use the app's `$http` service.
 
-Breeze is ready for an Angular app but it doesn't know we're using OData and it doesn't know where the service is yet. 
+Breeze is ready for an AngularJS app but it doesn't know we're using OData and it doesn't know where the service is yet. 
 
 <a name="DataServiceAdapter"></a>
 
@@ -347,18 +347,18 @@ The `EntityManager` builds request URLs from that `serviceName`:
 
 ### You're done!
 
-Not with the app of course. But that's it for configuring Breeze. It's ready for Angular and ready to talk to your Web API OData service.
+Not with the app of course. But that's it for configuring Breeze. It's ready for AngularJS and ready to talk to your Web API OData service.
 
-The rest is HTML/JavaScript application programming with the help of Angular and Breeze. There are <a href="#SaveChanges"><em>almost</em></a> no differences between the way you program the application for Web API OData and the way you'd program it for a different backend. The techniques and guidance are the same.
+The rest is HTML/JavaScript application programming with the help of AngularJS and Breeze. There are <a href="#SaveChanges"><em>almost</em></a> no differences between the way you program the application for Web API OData and the way you'd program it for a different backend. The techniques and guidance are the same.
 
 # Tour of the Client App
 
-This isn't the place to learn about programming in Angular and Breeze. But we will give you a tour of the project and highlight some design decisions.
+This isn't the place to learn about programming in AngularJS and Breeze. But we will give you a tour of the project and highlight some design decisions.
 
 # Files
 The ***app*** folder holds all application JavaScript and HTML. This application is so simple that we've kept the file structure flat. Here's the inventory:
 
-- app.js - the application's Angular module
+- app.js - the application's AngularJS module
 
 - commandbar.html - the view of the "Save", "Add" and "Refresh" buttons at the top
 
@@ -427,7 +427,7 @@ For example, this is the outer *todolists.html*:
 We trust it's easy to read this HTML at a glance. 
 
 - The view declares its master controller, "todolists", in "*Controller As*" style
-- Angular pulls in the three sub-views with "ng-Include"s
+- AngularJS pulls in the three sub-views with "ng-Include"s
 - The third *todolist-detail* view is repeated for each TodoList
 
 # The ViewModel and "*Controller As*" style
@@ -487,9 +487,9 @@ Poke around in the <em>app/<strong>todolists.js</strong></em> ViewModel and you'
 
 We're strict about this separation of concerns; we suggest you adopt the same rigor.
 
-Notice that `datacontext.getTodoLists` returns an object with a `then(...)` method. That object is a **promise** to call you back when the server responds, either with the query results or with an error. `getTodoLists` is an asynchronous method that fetches data from the server. **All asynchronous methods in this application return Angular `$q` promises**.
+Notice that `datacontext.getTodoLists` returns an object with a `then(...)` method. That object is a **promise** to call you back when the server responds, either with the query results or with an error. `getTodoLists` is an asynchronous method that fetches data from the server. **All asynchronous methods in this application return AngularJS `$q` promises**.
 
-Let's see what happens when the server replies with "TodoList" data. The promise is fulfilled triggering the ViewModel callback function which receives an array of Breeze "TodoList" entities. The callback assigns this array of entities to the ViewModel's `todoLists` property. This property is bound to the *todolists.html* view via an `ng-repeat`. Angular detects the change to the todoLists array and presents each of its TodoLists in a separate instance of the *todolist-detail.html* sub-view.
+Let's see what happens when the server replies with "TodoList" data. The promise is fulfilled triggering the ViewModel callback function which receives an array of Breeze "TodoList" entities. The callback assigns this array of entities to the ViewModel's `todoLists` property. This property is bound to the *todolists.html* view via an `ng-repeat`. AngularJS detects the change to the todoLists array and presents each of its TodoLists in a separate instance of the *todolist-detail.html* sub-view.
 
 # Inside the *datacontext*
 

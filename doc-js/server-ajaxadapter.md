@@ -19,7 +19,7 @@ For example, your app might communicate with an ASP.NET Web API service, a Node 
 
 ## Picking an AJAX adapter
 
-You can configure your app to use any AJAX adapter that has been registered with Breeze. Angular applications typically designate the 'angular' AJAX adapter that wraps [Angular's `$http`](https://docs.angularjs.org/api/ng/service/$http) (as described [below](#angular)).
+You can configure your app to use any AJAX adapter that has been registered with Breeze. AngularJS applications typically designate the 'angular' AJAX adapter that wraps [AngularJS's `$http`](https://docs.angularjs.org/api/ng/service/$http) (as described [below](#angular)).
 
 Breeze core offers two adapters *out of the box* and you can [write your own](#customAdapter). 
 
@@ -41,26 +41,26 @@ You designate the AJAX adapter for your app with an expression like **one** of t
 
 ## The AngularJS $http adapter
 
-Many Angular developers prefer to use Angular's native `$http` AJAX component; *we do*.
+Many AngularJS developers prefer to use AngularJS's native `$http` AJAX component; *we do*.
 
 You *could* designate this as your AJAX adapter as follows:
 
     angular.module('app').run(['$http', function($http) {
         var ajax = breeze.config.initializeAdapterInstance('ajax', 'angular');
-        ajax.setHttp($http); // use the $http instance that Angular injected into your app.
+        ajax.setHttp($http); // use the $http instance that AngularJS injected into your app.
     }]);
 
-However, there's **a much better way to prepare Breeze for Angular**, a way that not only selects the Breeze 'angular' AJAX adapter but also **configures Breeze to us Angular's `$q` promises** and chooses the best Breeze **'modelLibrary' adapter for data binding** with Angular.
+However, there's **a much better way to prepare Breeze for AngularJS**, a way that not only selects the Breeze 'angular' AJAX adapter but also **configures Breeze to us AngularJS's `$q` promises** and chooses the best Breeze **'modelLibrary' adapter for data binding** with AngularJS.
 
-It's an Angular module called the "**Breeze Angular Service**".  You can download it from github or install the package [as described here](breeze-angular "Breeze Angular Service"). 
+It's an AngularJS module called the "**Breeze AngularJS Service**".  You can download it from github or install the package [as described here](breeze-angular "Breeze AngularJS Service"). 
 
 Then wire it up when your app boots:
 
     angular.module('app', ['breeze.angular'])
-           // merely depending on the 'breeze' service configures Breeze for Angular
+           // merely depending on the 'breeze' service configures Breeze for AngularJS
            .run(['breeze', function() {/* noop - unless you want do do something */}]);
 
-Internally, the "Breeze Angular Service" makes the same AJAX adapter configuration shown above ... as well as other configurations.
+Internally, the "Breeze AngularJS Service" makes the same AJAX adapter configuration shown above ... as well as other configurations.
 
 # Configuring an AJAX adapter
 
@@ -128,7 +128,7 @@ You have no obligation to implement the "defaultSettings" or the [`requestInterc
 
 #### The *config* parameter
 
-The `config` parameter passed to the `ajax` method conforms to a Breeze-specific interface. It is **not** the same as the `setting` parameter you'd pass to jQuery's `$.ajax` or Angular's `$http()`. 
+The `config` parameter passed to the `ajax` method conforms to a Breeze-specific interface. It is **not** the same as the `setting` parameter you'd pass to jQuery's `$.ajax` or AngularJS's `$http()`. 
 
 The `config` parameter is designed for consumption by a Breeze [*DataSeviceAdapter*](/doc-js/server-dataserviceadapter.html). 
 
@@ -198,7 +198,7 @@ This means the developer can
 
 - wrap or replace the `success` and `error` callbacks to change or supplement behavior. This is an opportunity to modify the raw JSON response before any downstream Breeze or application process sees it.
 
-Here's how you could set a 5 second timeout for the adapter (works for both `jQuery.ajax` and Angular's `$http`):
+Here's how you could set a 5 second timeout for the adapter (works for both `jQuery.ajax` and AngularJS's `$http`):
 
     var ajaxAdapter = breeze.config.getAdapterInstance('ajax');
     ajaxAdapter.requestInterceptor = function (requestInfo) {
@@ -212,7 +212,7 @@ blog post, "<a href="http://odetocode.com/blogs/scott/archive/2014/04/24/canceli
 
 #### Timeout and Cancel examples
 
-The samples on github illustrate both cancel and timeout with these adapters. For users of the jQuery AJAX component there is [***DocCode**:jQueryAjaxAdapterTests.js*](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/jQueryAjaxAdapterTests.js "DocCode jQuery adapter tests"). For users of Angular's `$http` there is the [***Zza-Node-Mongo**:ajax-adapter.async.spec.js*](https://github.com/Breeze/breeze.js.samples/blob/master/node/zza-node-mongo/client/test/specs.async/ajax-adapter.async.spec.js "Zza angular adapter tests").
+The samples on github illustrate both cancel and timeout with these adapters. For users of the jQuery AJAX component there is [***DocCode**:jQueryAjaxAdapterTests.js*](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/jQueryAjaxAdapterTests.js "DocCode jQuery adapter tests"). For users of AngularJS's `$http` there is the [***Zza-Node-Mongo**:ajax-adapter.async.spec.js*](https://github.com/Breeze/breeze.js.samples/blob/master/node/zza-node-mongo/client/test/specs.async/ajax-adapter.async.spec.js "Zza angular adapter tests").
 
 >It's best if you can run the samples but if you can't (perhaps because you don't use one of the technologies involved), the test files are easy to read and we trust you can glean ideas that will help.
 

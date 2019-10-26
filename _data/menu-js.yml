@@ -47,6 +47,6 @@ menuitems:
   - { link: server-namingconvention.html, title: Configuring naming conventions, ischild: true }
   - { link: server-ajaxadapter.html, title: Controlling AJAX calls, ischild: true }
   - { link: server-odata.html, title: OData, ischild: true }
-  - { link: breeze-angular.html, title: Breeze + Angular }
+  - { link: breeze-angular.html, title: Breeze + AngularJS }
   - { link: testing.html, title: Testing }
   - { link: coding-conventions.html, title: Coding conventions }

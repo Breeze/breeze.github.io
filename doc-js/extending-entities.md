@@ -26,7 +26,7 @@ Now suppose that, in our client application, we want every `Customer` to have an
 
 Because this is JavaScript, we can extend a customer object simply by patching it with the new property:
 
-    // Angular or Aurelia:
+    // AngularJS or Aurelia:
     cust.isBeingEdited = false;
 
     // Knockout observable (because we'll bind to it):
@@ -329,7 +329,7 @@ Defined properties are particularly convenient when you want to build behavior i
 
 >Breeze relies on ES5 defined properties when you choose to build your application with AngularJS or Aurelia and select the "backingStore" model library ... for precisely these reasons.
 
-They are also good for calculated properties in Angular apps. Here's a `fullName` read-only property that Angular can watch.
+They are also good for calculated properties in AngularJS apps. Here's a `fullName` read-only property that AngularJS can watch.
 
     Object.defineProperty(Person.prototype, 'fullName', {
         enumerable:   true,
@@ -351,7 +351,7 @@ They are also good for calculated properties in Angular apps. Here's a `fullName
 
 ## *"enumerable" and "configurable"*
 
-If you're writing an Angular application and you are extending a Breeze entity constructor with an unmapped ES5 defined property **you must set `enumerable: true` and `configurable: true`**.
+If you're writing an AngularJS application and you are extending a Breeze entity constructor with an unmapped ES5 defined property **you must set `enumerable: true` and `configurable: true`**.
 
 You want Breeze to watch these properties. You want Breeze to validate and serialize these properties. To do that, Breeze must *discover and wrap* them with behavior to perform these tasks. It can't find them without `enumerable: true`. It can't wrap them without `configurable: true`.
 

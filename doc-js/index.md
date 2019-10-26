@@ -72,11 +72,11 @@ Data binding can push a new value to the UI when it detects that an entity prope
 
 Many binding frameworks detect changes by listening to a property changed event, which means the entity properties must be observable. Breeze entity properties are observable.
 
->Angular v.1.x does not rely on observable properties. It detects property changes by comparing current and previous values ("dirty checking"). That works for Breeze models too although even an Angular app can benefit from observable models.
+>AngularJS v.1.x does not rely on observable properties. It detects property changes by comparing current and previous values ("dirty checking"). That works for Breeze models too although even an AngularJS app can benefit from observable models.
 
-There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular v.2, Aurelia, Backbone, Knockout, ...) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose.
+There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular 2, Vue, Aurelia, Backbone, Knockout, ...) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose.
 
->Breeze currently supports [Angular 1.x](https://angularjs.org/), [Angular 2](https://angular.io/), [Aurelia](http://aurelia.io/), [Knockout](http://knockoutjs.com/), and [BackBone](http://backbonejs.org/) with adapters for other libraries under consideration. We'd be happy to help you write an adapter for a library we don't yet support.
+>Breeze currently supports [AngularJS 1.x](https://angularjs.org/), [Angular 2](https://angular.io/), [Aurelia](http://aurelia.io/), [Knockout](http://knockoutjs.com/), and [BackBone](http://backbonejs.org/) with adapters for other libraries under consideration. We'd be happy to help you write an adapter for a library we don't yet support.
 
 ## Query
 

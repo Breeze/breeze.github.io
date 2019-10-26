@@ -171,7 +171,7 @@ DocCode is written as a Knockout (KO) application sample and you'll see evidence
 	var desc = todo.Description();       // get the value
     todo.Description('New description'); // set the value
 
-Don't despair if you're not using Knockout. These teaching tests illustrate features of Breeze. Almost all of those features apply to entity models written for *any* presentation framework: Angular, React, Backbone, Ember, etc. Getting and setting property values is almost never the point.
+Don't despair if you're not using Knockout. These teaching tests illustrate features of Breeze. Almost all of those features apply to entity models written for *any* presentation framework: AngularJS, React, Backbone, Ember, etc. Getting and setting property values is almost never the point.
 
 So please do your best to look past the KO-isms and glean insights about Breeze.
 

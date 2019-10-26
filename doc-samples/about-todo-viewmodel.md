@@ -8,7 +8,7 @@ redirect_from: "/old/samples/todo-viewmodel.html"
 <h2>
 	Query Todos</h2>
 <p>When the viewmodel is created, it calls its own <em>getAllTodos</em> method which delegates to the dataservice (the dataservice is a separate JavaScript component that handles all data operations using Breeze). When the query succeeds, the controller pours the retrieved <em>TodoItems</em> into its <em>items</em> array.</p>
-<p>The model library (<em>Knockout</em>, <em>Angular</em>, ...) binds the <em>items</em> array to the unordered list in the view, using an &lt;li&gt; template. Suddenly todos appear on screen.</p>
+<p>The model library (<em>Knockout</em>, <em>AngularJS</em>, ...) binds the <em>items</em> array to the unordered list in the view, using an &lt;li&gt; template. Suddenly todos appear on screen.</p>
 <p>Checking the &quot;Show archived&quot; checkbox triggers a re-query of Todos.</p>
 <p><img alt="" src="/images/samples/BreezeTodoShowArchived.png" style="width: 160px; height: 31px;" /></p>
 <p>If the checkbox is checked, the query retrieves every Todo, both the active and the archived. If the checkbox is clear, the query retrieves only the active Todos (those whose isArchived flag is false). Look at the dataservice <em>getAllTodos</em> method to see how this query condition is constructed.</p>
@@ -43,7 +43,7 @@ redirect_from: "/old/samples/todo-viewmodel.html"
 <p>Like <em>markAllCompleted</em>, the ViewModel&#39;s <em>archiveCompletedItems</em> method suspends save while it sets the <em>IsArchived</em> flag of one or more Todos. Then it saves all updated Todos as a single batch.</p>
 <p>The ViewModel&#39;s <em>getState</em> method handles the bookkeeping about how many active Todos are left and how many are archivable. This <em>getState</em> method is called by two message building methods: <em>itemsLeftMessage</em> and <em>archiveCompleted</em>.</p>
 <p>In the Knockout-based <em>viewModel.js</em>, these methods are Knockout computeds that update the UI when Todos are added or removed from the <em>items</em> array or when any Todo&#39;s <em>IsDone</em> or <em>IsArchived</em> changes. It may seem like magic. But it&#39;s a consequence of the fact that these methods rely on <em>getState()</em> which evaluates the <em>items</em> array and every Todo&#39;s <em>IsDone</em> or <em>IsArchived</em> property ... all of which are Knockout observables. Knockout computeds respond to changes in every dependent Knockout observable, no matter how deep in the call chain.</p>
-<p>In the Angular-based <em>controller.js</em>, Angular regularlly polls the controller&#39;s <em>itemsLeftMessage</em> and <em>archiveCompletedMessage</em> methods to freshen the messages on screen.</p>
+<p>In the AngularJS-based <em>controller.js</em>, AngularJS regularlly polls the controller&#39;s <em>itemsLeftMessage</em> and <em>archiveCompletedMessage</em> methods to freshen the messages on screen.</p>
 <h2>
 	Purge and Reset</h2>
 <p>After playing with Todo for a while, you can accumulate a great many junk Todos. You can delete every Todo in the database with the &quot;purge&quot; feature or reset the database to it&#39;s initial condition with &quot;reset&quot;.</p>

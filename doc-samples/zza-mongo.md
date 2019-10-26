@@ -132,15 +132,15 @@ A single web page, *index.html*, frames the story. Most of it is css and JavaScr
         <!-- App javascript libraries -->
     </body>
 
-# Angular.js ##
+# AngularJS ##
 
-<a href="http://angularjs.org/" target="_blank">Angular.js</a> is running the show. It asynchronously loads header and footer HTML. 
+<a href="http://angularjs.org/" target="_blank">AngularJS.js</a> is running the show. It asynchronously loads header and footer HTML. 
 
-In the middle are three `<div>` tags each with a `data-ui-view` attribute. Angular dynamically loads templated views into these tags based on a "route". The middle `<div>` called "shell-content" displays most of what you see. It could show the "Home" page with the picture of "Zza"; it could show the "About" page; it could display a product menu page, an order page, or the cart page. It all depends upon the route ... which you see in the address bar:
+In the middle are three `<div>` tags each with a `data-ui-view` attribute. AngularJS dynamically loads templated views into these tags based on a "route". The middle `<div>` called "shell-content" displays most of what you see. It could show the "Home" page with the picture of "Zza"; it could show the "About" page; it could display a product menu page, an order page, or the cart page. It all depends upon the route ... which you see in the address bar:
 
 ![Pizza menu](/images/samples/ZzaRoute.jpg)
 
-In this example, the route identifies the pizza product whose id is "3". Angular uses **route information** (in *public/app/services/routes.js*) to download the correct **view** (a file in the *public/app/views* directory) and marry it to a **controller** (a JavaScript file in the *public/app/controllers* directory).
+In this example, the route identifies the pizza product whose id is "3". AngularJS uses **route information** (in *public/app/services/routes.js*) to download the correct **view** (a file in the *public/app/views* directory) and marry it to a **controller** (a JavaScript file in the *public/app/controllers* directory).
 
 All the displayed values are **data bound** either to a controller (e.g., `orderItem` defined in *app/order/orderItem.js*) or to a **Breeze entity** exposed by the controller (e.g., `Product`)
 
@@ -169,7 +169,7 @@ That's what we mean by "higher level data abstraction". If it reminds you of the
 
 ### The Zza! client is server agnostic ###
 
-**The client-side code is virtually unaware of the server technology**. Everything you've learned about programming in Angular and Breeze applies without alteration.
+**The client-side code is virtually unaware of the server technology**. Everything you've learned about programming in AngularJS and Breeze applies without alteration.
 
 To prove that point, the exact same Zza! client - HTML, JavaScript and CSS - runs in front of a .NET server, hosted on IIS, running the Web API, Entity Framework, and SQL Server.
 

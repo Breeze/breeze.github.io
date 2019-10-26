@@ -15,15 +15,15 @@ redirect_from: "/old/samples/todo.html"
 <p>BreezeJS is designed to work with a variety of JavaScript libraries. To make that point, this Todo Sample comes in several flavors, each one a variation in the client implementation.</p>
 
 <ul>
-	<li><a href="/doc-samples/todo-angular.html"><strong>Todo-Angular</strong></a><br />
+	<li><a href="/doc-samples/todo-angular.html"><strong>Todo-AngularJS</strong></a><br />
 	Built with AngularJS against a .NET server.</li>
 	<li><a href="/doc-samples/todo-knockout.html"><strong>Todo-Knockout</strong></a><br />
 	Built with KnockoutJS against a .NET server.</li>
 	<li><a href="/doc-samples/todo-knockout-require.html"><strong>Todo-Knockout-Require</strong></a><br />
 	Introduces dependency management with RequireJS to the base KO version.</li>
-	<li><a href="/doc-samples/todo-angular-hibernate.html"><strong>Todo-Angular-Hibernate</strong></a><br />
+	<li><a href="/doc-samples/todo-angular-hibernate.html"><strong>Todo-AngularJS-Hibernate</strong></a><br />
   Built with AngularJS against a Java/Hibernate server</li>
-  <li><a href="/doc-samples/todo-angular-sequelize.html"><strong>Todo-Angular-Sequelize</strong></a><br />
+  <li><a href="/doc-samples/todo-angular-sequelize.html"><strong>Todo-AngularJS-Sequelize</strong></a><br />
     Built with AngularJS against a Node/Sequelize server</li>
 </ul>
 

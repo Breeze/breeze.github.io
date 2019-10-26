@@ -8,7 +8,7 @@ It updates the [Breeze AJAX adapter](/doc-js/server-ajaxadapter) to allow HTTP P
 for specially-constructed [.withParameters](/doc-js/api-docs/classes/EntityQuery.html#method_withParameters)
  queries.  
 
-It works by telling jQuery's AJAX implementation, or Angular's $http service, to use POST instead of GET.  
+It works by telling jQuery's AJAX implementation, or AngularJS's $http service, to use POST instead of GET.  
 
 This is an add-on to Breeze, and POST requires changes to the way your `.withParameters` queries are structured, so don't use it unless you really need it.
 
@@ -22,13 +22,13 @@ In your HTML file (e.g. index.html), add a script tag for **breeze.ajaxpost.js**
 
 The *ajaxpost* script immediately wraps the current Breeze ajax adapter and plugs itself into the *breeze* namespace.
 
-That's fine if you're using breeze's *default* ajax adapter. If you change the adapter ... as you do for an Angular app by way of the *breeze.angular* module ... you'll have to wrap the replacement adapter by calling `breeze.ajaxPost()` explicitly after the change as in this example.
+That's fine if you're using breeze's *default* ajax adapter. If you change the adapter ... as you do for an AngularJS app by way of the *breeze.angular* module ... you'll have to wrap the replacement adapter by calling `breeze.ajaxPost()` explicitly after the change as in this example.
 
     // app module definition
     var app = angular.module('app', ['breeze.angular']);  // add other dependencies
 
     // this data service abstraction definition function injects the 'breeze.angular' service
-    // which configures breeze for angular use including choosing $http as the ajax adapter
+    // which configures breeze for angularjs use including choosing $http as the ajax adapter
     app.factory('datacontext', ['breeze', function (breeze) {    // probably inject other stuff too
         breeze.ajaxPost(); // wraps the now-current $http adapter
         //... your service logic
@@ -80,7 +80,7 @@ Special parameters:
 
 ### Live POST queries
 
-A StackOverflow question prompted us to produce <a href="http://plnkr.co/edit/TvjvCpjlB1FyglRJinp5?p=info" target="_blank">**this plunker example**</a> of an Angular app making POST queries to a cross-origin server. All app JavaScript is in the *script.js* file.  Be sure to follow along with the *README.md* which describes the mechanics in detail.
+A StackOverflow question prompted us to produce <a href="http://plnkr.co/edit/TvjvCpjlB1FyglRJinp5?p=info" target="_blank">**this plunker example**</a> of an AngularJS app making POST queries to a cross-origin server. All app JavaScript is in the *script.js* file.  Be sure to follow along with the *README.md* which describes the mechanics in detail.
 
 Features:
 
