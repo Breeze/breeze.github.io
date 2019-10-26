@@ -3,11 +3,17 @@ layout: doc-main
 ---
 # Breeze Release Notes
 
-These are the release notes for the current **1.5.x** and 1.4.x releases.
+#### Please see the individual release notes for each technology:
 
-#### For releases after 2015, please see the separate release notes pages for each technology.
+- <a href="/doc-js/release-notes.html">BreezeJS Release Notes</a>
+- <a href="/doc-cs/release-notes.html">BreezeSharp Release Notes</a>
+- <a href="/doc-net/release-notes.html">Breeze.Server.NET Release Notes</a>
+- <a href="/doc-node-mongodb/release-notes.html">Breeze Node MongoDB Release Notes</a>
+- <a href="/doc-node-sequelize/release-notes.html">Breeze Node Sequelize Release Notes</a>
 
-Prior <a href="/doc-main/previous-release-notes" target="_blank">release notes</a> are also available.
+## Older Releases (before 2015)
+
+Below are the release notes for the older 1.5.x and 1.4.x releases.
 
 ## 1.5.x
 * New json query api and query serialization support.  See: <a href="/doc-js/query-using-json.html">Breeze queries with JSON documentation</a>
@@ -15,7 +21,7 @@ Prior <a href="/doc-main/previous-release-notes" target="_blank">release notes</
 See: <a href="/doc-node-sequelize/"> breeze-sequelize package</a>
 * Support for ASP.NET WebApi 2.2
 
-## 1.4.x#
+## 1.4.x
 * Query support for Any/All.
 * [Web API OData Sample](#WebApiOData)
 * [Ruby on Rails sample](#ruby)
@@ -787,3 +793,8 @@ With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Valid
 + The ContextProvider base class has been changed - 3 new abstract methods were added and one method signature was changed.  This change will ONLY affect developers who directly subclassed the ContextProvider base class.  The EFContextProvider experienced no breaking changes.
     + New methods
     + Changed method
+
+## Older Releases (before 1.4)
+
+Prior <a href="/doc-main/previous-release-notes" target="_blank">release notes</a> are also available.
+

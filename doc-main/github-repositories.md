@@ -15,7 +15,11 @@ Within a category the repositories are specific to a technology such as *JavaScr
 
 # CLIENT
 
-# [breeze.js](https://github.com/Breeze/breeze.js "BreezeJS client")
+# [breeze-client](https://github.com/Breeze/breeze-client)
+
+The Breeze **TypeScript** source code, including the main Breeze library and the adapters.
+
+# [breeze.js](https://github.com/Breeze/breeze.js "BreezeJS client") (OLD)
 
 The Breeze **JavaScript** client source code and libraries are in the [**breeze.js repository**](https://github.com/Breeze/breeze.js "BreezeJS client"). The "compiled" JavaScript libraries are in the */build* directory.
 
