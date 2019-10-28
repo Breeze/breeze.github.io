@@ -12,13 +12,7 @@ redirect_from: "/old/documentation/introduction.html"
 Welcome to **BreezeJS** by [**IdeaBlade**](http://www.ideablade.com "IdeaBlade website"), the data management library 
 for developers of rich client applications written in **JavaScript**.
 
-If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
-
 <div style="clear:both"/>
-
-{% include support-frag.html %}
- 
-## BreezeJS 
 
 **BreezeJS is a JavaScript library that helps you manage data in rich client applications**. If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
 
@@ -163,3 +157,6 @@ But it bears repeating: Breeze client is in no way limited to these particular t
 ## What's next?
 
 You now have the big picture. Take a look at Breeze <a href="/doc-js/features.html">Features</a> or run the <a href="http://learn.breezejs.com" target="_blank">Online Tutorial</a>.
+
+{% include support-frag.html %}
+ 

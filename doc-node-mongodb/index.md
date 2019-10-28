@@ -17,8 +17,6 @@ This topic explains how.
 
 <div style="clear:both"/>
 
-{% include support-frag.html %}
-
 ### Client side Requirements: ###
 
 Standard Breeze requirements:
@@ -414,3 +412,4 @@ Add 5% to the freight cost on every order saved.
         callback();
     }
 
+{% include support-frag.html %}

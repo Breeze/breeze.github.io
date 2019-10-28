@@ -12,10 +12,7 @@ The ASP.NET Web API is a popular technology for providing data services over HTT
 
 <div style="clear:both"/>
 
-{% include support-frag.html %}
-
-## ASP.NET Web API
-
+## ASP.NET Web API with Breeze
 
 There are many ways to write your service with the ASP.NET Web API. We group them here in three categories:
 
@@ -53,3 +50,5 @@ Breeze clients work well with these APIs too. You have to do a bit more work to 
 ASP.NET provides a special set of components and techniques for building an <a href="http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api" target="_blank" title="OData Support in Web API">OData service in Web API</a>.
 
 Such a service can be consumed by any client that understands the <a href="http://www.odata.org/" target="_blank" title="OData.org">OData protocol</a> ... a set that includes Breeze clients.  If you're writing an OData Web API service, you have implementation choices with consequences for client application developers. To learn how these choices affect Breeze clients, start with the topic "[OData on the Server](/doc-net/odata)".
+
+{% include support-frag.html %}
