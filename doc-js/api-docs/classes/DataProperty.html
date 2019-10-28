@@ -1,1822 +1,933 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="default no-js">
 <head>
-    <meta charset="utf-8">
-    <title>DataProperty</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
-
-	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-    <script src="http://yui.yahooapis.com/combo?3.5.1/build/yui/yui-min.js"></script>
-	<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-34729465-1']);
-  _gaq.push(['_setDomainName', 'breezejs.com']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DataProperty | breeze-client</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body class="yui3-skin-sam">
-<script type="text/javascript">
-  var uvOptions = {};
-  (function() {
-    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/GHug452CgVREu58xjoDg.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-  })();
-</script>
-<div id="wrap">
-
-<div id="doc">
-<div class="header">
-<div class="logo">
-	<a href="http://www.breezejs.com/home"><img src="http://breeze.github.io/images/logos/breeze_large.png" /></a>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">breeze-client</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
 	</div>
-
-    <div class="primary-nav">
-<ul>
-
-		<li>
-			<a href="http://breeze.github.io/doc-js/download.html" target="_blank">Download</a></li>
-		<li>
-			<a href="http://learn.breezejs.com/" target="_blank">Tutorials</a></li>
-		<li>
-			<a href="http://breeze.github.io/doc-js">Docs</a></li>
-		<li>
-			<a href="http://breeze.github.io/doc-samples/">Samples</a></li>
-		<li>
-			<a href="http://www.getbreezenow.com/support" target="_blank">Support</a></li>
-		<li>
-			<a href="http://www.getbreezenow.com/blog" target="_blank">Blog</a></li>
-
-	</ul>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="dataproperty.html">DataProperty</a>
+				</li>
+			</ul>
+			<h1>Class DataProperty</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A DataProperty describes the metadata for a single property of an  <a href="entitytype.html">EntityType</a> that contains simple data.</p>
+					</div>
+					<p>Instances of the DataProperty class are constructed automatically during Metadata retrieval. However it is also possible to construct them
+					directly via the constructor.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">DataProperty</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#baseproperty" class="tsd-kind-icon">base<wbr>Property</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#complextype" class="tsd-kind-icon">complex<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#complextypename" class="tsd-kind-icon">complex<wbr>Type<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#concurrencymode" class="tsd-kind-icon">concurrency<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#custom" class="tsd-kind-icon">custom</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#datatype" class="tsd-kind-icon">data<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#defaultvalue" class="tsd-kind-icon">default<wbr>Value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#displayname" class="tsd-kind-icon">display<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#enumtype" class="tsd-kind-icon">enum<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#inversenavigationproperty" class="tsd-kind-icon">inverse<wbr>Navigation<wbr>Property</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#iscomplexproperty" class="tsd-kind-icon">is<wbr>Complex<wbr>Property</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#isdataproperty" class="tsd-kind-icon">is<wbr>Data<wbr>Property</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#isnavigationproperty" class="tsd-kind-icon">is<wbr>Navigation<wbr>Property</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#isnullable" class="tsd-kind-icon">is<wbr>Nullable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#ispartofkey" class="tsd-kind-icon">is<wbr>Part<wbr>OfKey</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#issettable" class="tsd-kind-icon">is<wbr>Settable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#isunmapped" class="tsd-kind-icon">is<wbr>Unmapped</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#nameonserver" class="tsd-kind-icon">name<wbr>OnServer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#parenttype" class="tsd-kind-icon">parent<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#rawtypename" class="tsd-kind-icon">raw<wbr>Type<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#relatednavigationproperty" class="tsd-kind-icon">related<wbr>Navigation<wbr>Property</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#validators" class="tsd-kind-icon">validators</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#formatname" class="tsd-kind-icon">format<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#getallvalidators" class="tsd-kind-icon">get<wbr>All<wbr>Validators</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#resolveproperty" class="tsd-kind-icon">resolve<wbr>Property</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#setproperties" class="tsd-kind-icon">set<wbr>Properties</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="dataproperty.html#tojson" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="dataproperty.html#fromjson" class="tsd-kind-icon">fromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="dataproperty.html#getrawvaluefromclient" class="tsd-kind-icon">get<wbr>Raw<wbr>Value<wbr>From<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="dataproperty.html#getrawvaluefromserver" class="tsd-kind-icon">get<wbr>Raw<wbr>Value<wbr>From<wbr>Server</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Data<wbr>Property<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/datapropertyconfig.html" class="tsd-signature-type">DataPropertyConfig</a><span class="tsd-signature-symbol"> | </span><a href="dataproperty.html" class="tsd-signature-type">DataProperty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1997">entity-metadata.ts:1997</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>DataProperty constructor</p>
+									<blockquote>
+										<pre><code> let lastNameProp = new DataProperty( {
+<span class="hljs-symbol">     name:</span> <span class="hljs-string">"lastName"</span>,
+<span class="hljs-symbol">     dataType:</span> DataType.String,
+<span class="hljs-symbol">     isNullable:</span> true,
+<span class="hljs-symbol">     maxLength:</span> <span class="hljs-number">20</span>
+ });
+ <span class="hljs-comment">// assuming personEntityType is a newly constructed EntityType</span>
+ personEntityType.addProperty(lastNameProperty);</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>config: <a href="../interfaces/datapropertyconfig.html" class="tsd-signature-type">DataPropertyConfig</a><span class="tsd-signature-symbol"> | </span><a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A configuration Object or a DataProperty</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="baseproperty" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> base<wbr>Property</h3>
+					<div class="tsd-signature tsd-kind-icon">base<wbr>Property<span class="tsd-signature-symbol">:</span> <a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1997">entity-metadata.ts:1997</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Property on the base type that this property is inherited from. Will be null if the property is not on the base type. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="complextype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> complex<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">complex<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="complextype.html" class="tsd-signature-type">ComplexType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1959">entity-metadata.ts:1959</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="complextype.html">ComplexType</a> associated with this property; may be undefined. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="complextypename" class="tsd-anchor"></a>
+					<h3>complex<wbr>Type<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">complex<wbr>Type<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1957">entity-metadata.ts:1957</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name of the <a href="complextype.html">ComplexType</a> associated with this property; may be null. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="concurrencymode" class="tsd-anchor"></a>
+					<h3>concurrency<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">concurrency<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1975">entity-metadata.ts:1975</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="custom" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> custom</h3>
+					<div class="tsd-signature tsd-kind-icon">custom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1988">entity-metadata.ts:1988</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A free form object that can be used to define any custom metadata for this DataProperty. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="datatype" class="tsd-anchor"></a>
+					<h3>data<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">data<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="datatype.html" class="tsd-signature-type">DataType</a><span class="tsd-signature-symbol"> | </span><a href="complextype.html" class="tsd-signature-type">ComplexType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1955">entity-metadata.ts:1955</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="datatype.html">DataType</a> of this property. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="defaultvalue" class="tsd-anchor"></a>
+					<h3>default<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1967">entity-metadata.ts:1967</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The default value for this property. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="displayname" class="tsd-anchor"></a>
+					<h3>display<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">display<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1982">entity-metadata.ts:1982</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The display name of this property. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="enumtype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> enum<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">enum<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1984">entity-metadata.ts:1984</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="inversenavigationproperty" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> inverse<wbr>Navigation<wbr>Property</h3>
+					<div class="tsd-signature tsd-kind-icon">inverse<wbr>Navigation<wbr>Property<span class="tsd-signature-symbol">:</span> <a href="navigationproperty.html" class="tsd-signature-type">NavigationProperty</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1990">entity-metadata.ts:1990</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="iscomplexproperty" class="tsd-anchor"></a>
+					<h3>is<wbr>Complex<wbr>Property</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Complex<wbr>Property<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1961">entity-metadata.ts:1961</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether the contents of this property is an instance of a <a href="complextype.html">ComplexType</a>. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="isdataproperty" class="tsd-anchor"></a>
+					<h3>is<wbr>Data<wbr>Property</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Data<wbr>Property<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1947">entity-metadata.ts:1947</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Is this a DataProperty? - always true here. Allows polymorphic treatment of DataProperties and NavigationProperties. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="isnavigationproperty" class="tsd-anchor"></a>
+					<h3>is<wbr>Navigation<wbr>Property</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Navigation<wbr>Property<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1949">entity-metadata.ts:1949</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Is this a NavigationProperty? - always false here.  Allows polymorphic treatment of DataProperties and NavigationProperties. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="isnullable" class="tsd-anchor"></a>
+					<h3>is<wbr>Nullable</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Nullable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1963">entity-metadata.ts:1963</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether this property is nullable. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="ispartofkey" class="tsd-anchor"></a>
+					<h3>is<wbr>Part<wbr>OfKey</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Part<wbr>OfKey<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1969">entity-metadata.ts:1969</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether this property is a &#39;key&#39; property. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="isscalar" class="tsd-anchor"></a>
+					<h3>is<wbr>Scalar</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Scalar<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1965">entity-metadata.ts:1965</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether this property is scalar (i.e., returns a single value as opposed to an array). <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="issettable" class="tsd-anchor"></a>
+					<h3>is<wbr>Settable</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Settable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1973">entity-metadata.ts:1973</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether this property is &#39;settable&#39;. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="isunmapped" class="tsd-anchor"></a>
+					<h3>is<wbr>Unmapped</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Unmapped<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1971">entity-metadata.ts:1971</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether this property is an &#39;unmapped&#39; property. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="maxlength" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> max<wbr>Length</h3>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1977">entity-metadata.ts:1977</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The maximum length for the value of this property. Only meaningful for strings. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1951">entity-metadata.ts:1951</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name of this property. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="nameonserver" class="tsd-anchor"></a>
+					<h3>name<wbr>OnServer</h3>
+					<div class="tsd-signature tsd-kind-icon">name<wbr>OnServer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1953">entity-metadata.ts:1953</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name of this property on the server. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="parenttype" class="tsd-anchor"></a>
+					<h3>parent<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../globals.html#structuraltype" class="tsd-signature-type">StructuralType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1995">entity-metadata.ts:1995</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The parent type that this property belongs to - will be either a <a href="entitytype.html">EntityType</a> or a <a href="complextype.html">ComplexType</a>. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="rawtypename" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> raw<wbr>Type<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">raw<wbr>Type<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1986">entity-metadata.ts:1986</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The raw type name of this property. will only be defined for properties with a DataType of &#39;Undefined&#39;</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="relatednavigationproperty" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> related<wbr>Navigation<wbr>Property</h3>
+					<div class="tsd-signature tsd-kind-icon">related<wbr>Navigation<wbr>Property<span class="tsd-signature-symbol">:</span> <a href="navigationproperty.html" class="tsd-signature-type">NavigationProperty</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1993">entity-metadata.ts:1993</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The navigation property related to this property.  Will only be set if this is a foreign key property. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="validators" class="tsd-anchor"></a>
+					<h3>validators</h3>
+					<div class="tsd-signature tsd-kind-icon">validators<span class="tsd-signature-symbol">:</span> <a href="validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L1980">entity-metadata.ts:1980</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="validator.html">Validator</a> instances that are associated with this property. Validators can be added and
+							removed from this collection. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="formatname" class="tsd-anchor"></a>
+					<h3>format<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">format<wbr>Name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L2102">entity-metadata.ts:2102</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getallvalidators" class="tsd-anchor"></a>
+					<h3>get<wbr>All<wbr>Validators</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>All<wbr>Validators<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L2123">entity-metadata.ts:2123</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="resolveproperty" class="tsd-anchor"></a>
+					<h3>resolve<wbr>Property</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Property<span class="tsd-signature-symbol">(</span>propName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L2092">entity-metadata.ts:2092</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>propName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="setproperties" class="tsd-anchor"></a>
+					<h3>set<wbr>Properties</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Properties<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L2116">entity-metadata.ts:2116</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>General purpose property set method</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager</span>
+ let prop = myEntityType.getProperty(<span class="hljs-string">"myProperty"</span>);
+ prop.setProperties( {
+<span class="hljs-symbol">     custom:</span> { <span class="hljs-string">foo:</span> <span class="hljs-number">7</span>, <span class="hljs-string">bar:</span> <span class="hljs-string">"test"</span> }
+ });</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>config: <span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A configuration object.</p>
+									</div>
+									<ul class="tsd-parameters">
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="tojson" class="tsd-anchor"></a>
+					<h3>toJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L2133">entity-metadata.ts:2133</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="fromjson" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> fromJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L2157">entity-metadata.ts:2157</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>json: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="getrawvaluefromclient" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Raw<wbr>Value<wbr>From<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Raw<wbr>Value<wbr>From<wbr>Client<span class="tsd-signature-symbol">(</span>rawEntity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, dp<span class="tsd-signature-symbol">: </span><a href="dataproperty.html" class="tsd-signature-type">DataProperty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L2087">entity-metadata.ts:2087</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rawEntity: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+								<li>
+									<h5>dp: <a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="getrawvaluefromserver" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Raw<wbr>Value<wbr>From<wbr>Server</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Raw<wbr>Value<wbr>From<wbr>Server<span class="tsd-signature-symbol">(</span>rawEntity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, dp<span class="tsd-signature-symbol">: </span><a href="dataproperty.html" class="tsd-signature-type">DataProperty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-metadata.ts#L2078">entity-metadata.ts:2078</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rawEntity: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+								<li>
+									<h5>dp: <a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="dataproperty.html" class="tsd-kind-icon">Data<wbr>Property</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#baseproperty" class="tsd-kind-icon">base<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#complextype" class="tsd-kind-icon">complex<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#complextypename" class="tsd-kind-icon">complex<wbr>Type<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#concurrencymode" class="tsd-kind-icon">concurrency<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#custom" class="tsd-kind-icon">custom</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#datatype" class="tsd-kind-icon">data<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#defaultvalue" class="tsd-kind-icon">default<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#displayname" class="tsd-kind-icon">display<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#enumtype" class="tsd-kind-icon">enum<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#inversenavigationproperty" class="tsd-kind-icon">inverse<wbr>Navigation<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#iscomplexproperty" class="tsd-kind-icon">is<wbr>Complex<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#isdataproperty" class="tsd-kind-icon">is<wbr>Data<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#isnavigationproperty" class="tsd-kind-icon">is<wbr>Navigation<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#isnullable" class="tsd-kind-icon">is<wbr>Nullable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#ispartofkey" class="tsd-kind-icon">is<wbr>Part<wbr>OfKey</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#issettable" class="tsd-kind-icon">is<wbr>Settable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#isunmapped" class="tsd-kind-icon">is<wbr>Unmapped</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#nameonserver" class="tsd-kind-icon">name<wbr>OnServer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#parenttype" class="tsd-kind-icon">parent<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#rawtypename" class="tsd-kind-icon">raw<wbr>Type<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#relatednavigationproperty" class="tsd-kind-icon">related<wbr>Navigation<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#validators" class="tsd-kind-icon">validators</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#formatname" class="tsd-kind-icon">format<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#getallvalidators" class="tsd-kind-icon">get<wbr>All<wbr>Validators</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#resolveproperty" class="tsd-kind-icon">resolve<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#setproperties" class="tsd-kind-icon">set<wbr>Properties</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="dataproperty.html#tojson" class="tsd-kind-icon">toJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="dataproperty.html#fromjson" class="tsd-kind-icon">fromJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="dataproperty.html#getrawvaluefromclient" class="tsd-kind-icon">get<wbr>Raw<wbr>Value<wbr>From<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="dataproperty.html#getrawvaluefromserver" class="tsd-kind-icon">get<wbr>Raw<wbr>Value<wbr>From<wbr>Server</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
 </div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
-    <div id="bd" class="yui3-g">
-
-        <div class="yui3-u-1-4">
-            <div id="docs-sidebar" class="sidebar apidocs">
-                <div id="api-list">
-    <h2 class="off-left">APIs</h2>
-    <div id="api-tabview" class="tabview">
-        <ul class="tabs">
-            <li><a href="#api-classes">Classes</a></li>
-            <li><a href="#api-modules">Modules</a></li>
-        </ul>
-
-        <div id="api-tabview-filter">
-            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-        </div>
-
-        <div id="api-tabview-panel">
-            <ul id="api-classes" class="apis classes">
-            
-                <li><a href="../classes/AutoGeneratedKeyType.html">AutoGeneratedKeyType</a></li>
-            
-                <li><a href="../classes/ComplexAspect.html">ComplexAspect</a></li>
-            
-                <li><a href="../classes/ComplexType.html">ComplexType</a></li>
-            
-                <li><a href="../classes/config.html">config</a></li>
-            
-                <li><a href="../classes/DataProperty.html">DataProperty</a></li>
-            
-                <li><a href="../classes/DataService.html">DataService</a></li>
-            
-                <li><a href="../classes/DataType.html">DataType</a></li>
-            
-                <li><a href="../classes/EntityAction.html">EntityAction</a></li>
-            
-                <li><a href="../classes/EntityAspect.html">EntityAspect</a></li>
-            
-                <li><a href="../classes/EntityKey.html">EntityKey</a></li>
-            
-                <li><a href="../classes/EntityManager.html">EntityManager</a></li>
-            
-                <li><a href="../classes/EntityQuery.html">EntityQuery</a></li>
-            
-                <li><a href="../classes/EntityState.html">EntityState</a></li>
-            
-                <li><a href="../classes/EntityType.html">EntityType</a></li>
-            
-                <li><a href="../classes/Enum.html">Enum</a></li>
-            
-                <li><a href="../classes/EnumSymbol.html">EnumSymbol</a></li>
-            
-                <li><a href="../classes/Event.html">Event</a></li>
-            
-                <li><a href="../classes/FetchStrategy.html">FetchStrategy</a></li>
-            
-                <li><a href="../classes/FilterQueryOp.html">FilterQueryOp</a></li>
-            
-                <li><a href="../classes/HttpResponse.html">HttpResponse</a></li>
-            
-                <li><a href="../classes/JsonResultsAdapter.html">JsonResultsAdapter</a></li>
-            
-                <li><a href="../classes/LocalQueryComparisonOptions.html">LocalQueryComparisonOptions</a></li>
-            
-                <li><a href="../classes/MergeStrategy.html">MergeStrategy</a></li>
-            
-                <li><a href="../classes/MetadataStore.html">MetadataStore</a></li>
-            
-                <li><a href="../classes/NamingConvention.html">NamingConvention</a></li>
-            
-                <li><a href="../classes/NavigationProperty.html">NavigationProperty</a></li>
-            
-                <li><a href="../classes/Predicate.html">Predicate</a></li>
-            
-                <li><a href="../classes/Promise.html">Promise</a></li>
-            
-                <li><a href="../classes/QueryOptions.html">QueryOptions</a></li>
-            
-                <li><a href="../classes/SaveOptions.html">SaveOptions</a></li>
-            
-                <li><a href="../classes/ValidationError.html">ValidationError</a></li>
-            
-                <li><a href="../classes/ValidationOptions.html">ValidationOptions</a></li>
-            
-                <li><a href="../classes/Validator.html">Validator</a></li>
-            
-                <li><a href="../classes/{ajax_interface}.html">{ajax_interface}</a></li>
-            
-                <li><a href="../classes/{complexArray}.html">{complexArray}</a></li>
-            
-                <li><a href="../classes/{keyGenerator_interface}.html">{keyGenerator_interface}</a></li>
-            
-                <li><a href="../classes/{primitiveArray}.html">{primitiveArray}</a></li>
-            
-                <li><a href="../classes/{relationArray}.html">{relationArray}</a></li>
-            
-            </ul>
-
-            <ul id="api-modules" class="apis modules">
-            
-                <li><a href="../modules/breeze.html">breeze</a></li>
-            
-                <li><a href="../modules/core.html">core</a></li>
-            
-            </ul>
-        </div>
-    </div>
-</div>
-
-            </div>
-        </div>
-        <div class="yui3-u-3-4">
-                <div id="api-options">
-        Show:
-        <label for="api-show-inherited">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </div>
-
-
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        <h1>DataProperty Class</h1>
-<div class="box meta">
-    
-
-    
-
-    
-        <div class="foundat">
-            Defined in: <a href="../files/a40_entityMetadata.js.html#l2340"><code>a40_entityMetadata.js:2340</code></a>
-        </div>
-    
-
-    
-        
-            Module: <a href="../modules/breeze.html">breeze</a>
-        
-    
-
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>A DataProperty describes the metadata for a single property of an  <a href="../classes/EntityType.html" class="crosslink">EntityType</a> that contains simple data.</p>
-<p>Instances of the DataProperty class are constructed automatically during Metadata retrieval. However it is also possible to construct them
-directly via the constructor.</p>
-
-</div>
-
-
-
-<div id="classdocs" class="tabview">
-    <ul class="api-class-tabs">
-        <li class="api-class-tab index"><a href="#index">Index</a></li>
-
-        
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
-        
-        
-            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
-        
-        
-        
-    </ul>
-
-    <div>
-        <div id="index" class="api-class-tabpanel index">
-            <h2 class="off-left">Item Index</h2>
-
-            
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                        
-                            <li class="index-item method">
-                                <a href="#method_&lt;ctor&gt; DataProperty">&lt;ctor&gt; DataProperty</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_setProperties">setProperties</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-                <div class="index-section properties">
-                    <h3>Properties</h3>
-
-                    <ul class="index-list properties">
-                        
-                            <li class="index-item property">
-                                <a href="#property_baseProperty">baseProperty</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_complexTypeName">complexTypeName</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_concurrencyMode">concurrencyMode</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_custom">custom</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_dataType">dataType</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_defaultValue">defaultValue</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_displayName">displayName</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_isComplexProperty">isComplexProperty</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_isDataProperty">isDataProperty</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_isNavigationProperty">isNavigationProperty</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_isNullable">isNullable</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_isPartOfKey">isPartOfKey</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_isScalar">isScalar</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_isUnmapped">isUnmapped</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_maxLength">maxLength</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_name">name</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_nameOnServer">nameOnServer</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_parentType">parentType</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_relatedNavigationProperty">relatedNavigationProperty</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_validators">validators</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-
-            
-        </div>
-
-        
-            <div id="methods" class="api-class-tabpanel">
-                <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_&lt;ctor&gt; DataProperty" class="method item">
-    <h3 class="name"><code>&lt;ctor&gt; DataProperty</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>config</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2348"><code>a40_entityMetadata.js:2348</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">config</code>
-                        <span class="type">Configuration Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                        <ul class="params-list">
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[name]</code>
-                                    <span class="type">String</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    <p>The name of this property.</p>
-
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[nameOnServer]</code>
-                                    <span class="type">String</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    <p>Same as above but the name is that defined on the server.
-Either this or the &#39;name&#39; above must be specified. Whichever one is specified the other will be computed using
-the NamingConvention on the MetadataStore associated with the EntityType to which this will be added.</p>
-
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[dataType=DataType.String]</code>
-                                    <span class="type"><a href="../classes/DataType.html" class="crosslink">DataType</a></span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[complexTypeName]</code>
-                                    <span class="type">String</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[isNullable=true]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[isScalar=true]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[defaultValue]</code>
-                                    <span class="type">Any</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[isPartOfKey=false]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[isUnmapped=false]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[concurrencyMode]</code>
-                                    <span class="type">String</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[maxLength]</code>
-                                    <span class="type">Integer</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    <p>Only meaningfull for DataType.String</p>
-
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[validators]</code>
-                                    <span class="type">Array of Validator</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[custom]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                        </ul>
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var lastNameProp = new DataProperty( {
-    name: &quot;lastName&quot;,
-    dataType: DataType.String,
-    isNullable: true,
-    maxLength: 20
-});
-// assuming personEntityType is a newly constructed EntityType
-personEntityType.addProperty(lastNameProperty);</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-                    <div id="method_setProperties" class="method item">
-    <h3 class="name"><code>setProperties</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>config</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2622"><code>a40_entityMetadata.js:2622</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>General purpose property set method</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">config</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>[object]</p>
-
-                    </div>
-
-                    
-                        <ul class="params-list">
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[custom]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                                
-                            </li>
-                            
-                        </ul>
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>// assume em1 is an EntityManager
-var prop = myEntityType.getProperty(&quot;myProperty&quot;);
-prop.setProperties( {
-    custom: { foo: 7, bar: &quot;test&quot; }
-});</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-            </div>
-        
-
-        
-            <div id="properties" class="api-class-tabpanel">
-                <h2 class="off-left">Properties</h2>
-
-                
-                    <div id="property_baseProperty" class="property item">
-    <h3 class="name"><code>baseProperty</code></h3>
-    <span class="type"><a href="../classes/DataProperty.html" class="crosslink">DataProperty</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2524"><code>a40_entityMetadata.js:2524</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Property on the base type that this property is inherited from. Will be null if the property is not on the base type.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_complexTypeName" class="property item">
-    <h3 class="name"><code>complexTypeName</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2496"><code>a40_entityMetadata.js:2496</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The name of the <a href="../classes/ComplexType.html" class="crosslink">ComplexType</a> associated with this property; may be null.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_concurrencyMode" class="property item">
-    <h3 class="name"><code>concurrencyMode</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2545"><code>a40_entityMetadata.js:2545</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p><strong>Describe this</strong></p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_custom" class="property item">
-    <h3 class="name"><code>custom</code></h3>
-    <span class="type">Object</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2581"><code>a40_entityMetadata.js:2581</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>A free form object that can be used to define any custom metadata for this DataProperty.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_dataType" class="property item">
-    <h3 class="name"><code>dataType</code></h3>
-    <span class="type"><a href="../classes/DataType.html" class="crosslink">DataType</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2489"><code>a40_entityMetadata.js:2489</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The <a href="../classes/DataType.html" class="crosslink">DataType</a> of this property.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_defaultValue" class="property item">
-    <h3 class="name"><code>defaultValue</code></h3>
-    <span class="type">Any</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2567"><code>a40_entityMetadata.js:2567</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The default value for this property.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_displayName" class="property item">
-    <h3 class="name"><code>displayName</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2468"><code>a40_entityMetadata.js:2468</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The display name of this property</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_isComplexProperty" class="property item">
-    <h3 class="name"><code>isComplexProperty</code></h3>
-    <span class="type">Bool</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2503"><code>a40_entityMetadata.js:2503</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Whether the contents of this property is an instance of a <a href="../classes/ComplexType.html" class="crosslink">ComplexType</a>.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_isDataProperty" class="property item">
-    <h3 class="name"><code>isDataProperty</code></h3>
-    <span class="type">Boolean</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2588"><code>a40_entityMetadata.js:2588</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Is this a DataProperty? - always true here
-Allows polymorphic treatment of DataProperties and NavigationProperties.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_isNavigationProperty" class="property item">
-    <h3 class="name"><code>isNavigationProperty</code></h3>
-    <span class="type">Boolean</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2596"><code>a40_entityMetadata.js:2596</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Is this a NavigationProperty? - always false here
-Allows polymorphic treatment of DataProperties and NavigationProperties.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_isNullable" class="property item">
-    <h3 class="name"><code>isNullable</code></h3>
-    <span class="type">Boolean</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2510"><code>a40_entityMetadata.js:2510</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Whether this property is nullable.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_isPartOfKey" class="property item">
-    <h3 class="name"><code>isPartOfKey</code></h3>
-    <span class="type">Boolean</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2531"><code>a40_entityMetadata.js:2531</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Whether this property is a &#39;key&#39; property.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_isScalar" class="property item">
-    <h3 class="name"><code>isScalar</code></h3>
-    <span class="type">Boolean</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2517"><code>a40_entityMetadata.js:2517</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Whether this property is scalar (i.e., returns a single value).</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_isUnmapped" class="property item">
-    <h3 class="name"><code>isUnmapped</code></h3>
-    <span class="type">Boolean</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2538"><code>a40_entityMetadata.js:2538</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Whether this property is an &#39;unmapped&#39; property.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_maxLength" class="property item">
-    <h3 class="name"><code>maxLength</code></h3>
-    <span class="type">Number</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2552"><code>a40_entityMetadata.js:2552</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The maximum length for the value of this property.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_name" class="property item">
-    <h3 class="name"><code>name</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2461"><code>a40_entityMetadata.js:2461</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The name of this property</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_nameOnServer" class="property item">
-    <h3 class="name"><code>nameOnServer</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2475"><code>a40_entityMetadata.js:2475</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The name of this property on the server</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_parentType" class="property item">
-    <h3 class="name"><code>parentType</code></h3>
-    <span class="type"><a href="../classes/EntityType.html" class="crosslink">EntityType</a> | <a href="../classes/ComplexType.html" class="crosslink">ComplexType</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2482"><code>a40_entityMetadata.js:2482</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The parent type that this property belongs to - will be either a <a href="../classes/EntityType.html" class="crosslink">EntityType</a> or a <a href="../classes/ComplexType.html" class="crosslink">ComplexType</a>.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_relatedNavigationProperty" class="property item">
-    <h3 class="name"><code>relatedNavigationProperty</code></h3>
-    <span class="type"><a href="../classes/NavigationProperty.html" class="crosslink">NavigationProperty</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2574"><code>a40_entityMetadata.js:2574</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The navigation property related to this property.  Will only be set if this is a foreign key property.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_validators" class="property item">
-    <h3 class="name"><code>validators</code></h3>
-    <span class="type">Array of Validator</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a40_entityMetadata.js.html#l2559"><code>a40_entityMetadata.js:2559</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The <a href="../classes/Validator.html" class="crosslink">Validator</a>s that are associated with this property. Validators can be added and
-removed from this collection.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
-        
-
-        
-
-        
-    </div>
-</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="primary-nav-foot">
-  <ul>
-    <li>
-      <a href="http://breeze.github.io/doc-js/download.html" target="_blank">Download</a></li>
-    <li>
-      <a href="http://learn.breezejs.com/" target="_blank">Tutorials</a></li>
-    <li>
-      <a href="http://breeze.github.io/doc-js/">Docs</a></li>
-    <li>
-      <a href="http://breeze.github.io/doc-samples/">Samples</a></li>
-    <li>
-      <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" target="_blank">Questions</a></li>
-    <li>
-      <a href="http://www.getbreezenow.com/support" target="_blank">Support</a></li>
-  </ul>
-</div>
-</div>
-</div>
-<script src="../assets/vendor/prettify/prettify-min.js"></script>
-<script>prettyPrint();</script>
-<script src="../assets/js/yui-prettify.js"></script>
-<script src="../assets/../api.js"></script>
-<script src="../assets/js/api-filter.js"></script>
-<script src="../assets/js/api-list.js"></script>
-<script src="../assets/js/api-search.js"></script>
-<script src="../assets/js/apidocs.js"></script>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

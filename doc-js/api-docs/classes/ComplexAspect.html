@@ -1,738 +1,368 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="default no-js">
 <head>
-    <meta charset="utf-8">
-    <title>ComplexAspect</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
-
-	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-    <script src="http://yui.yahooapis.com/combo?3.5.1/build/yui/yui-min.js"></script>
-	<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-34729465-1']);
-  _gaq.push(['_setDomainName', 'breezejs.com']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ComplexAspect | breeze-client</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body class="yui3-skin-sam">
-<script type="text/javascript">
-  var uvOptions = {};
-  (function() {
-    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/GHug452CgVREu58xjoDg.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-  })();
-</script>
-<div id="wrap">
-
-<div id="doc">
-<div class="header">
-<div class="logo">
-	<a href="http://www.breezejs.com/home"><img src="http://breeze.github.io/images/logos/breeze_large.png" /></a>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">breeze-client</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
 	</div>
-
-    <div class="primary-nav">
-<ul>
-
-		<li>
-			<a href="http://breeze.github.io/doc-js/download.html" target="_blank">Download</a></li>
-		<li>
-			<a href="http://learn.breezejs.com/" target="_blank">Tutorials</a></li>
-		<li>
-			<a href="http://breeze.github.io/doc-js">Docs</a></li>
-		<li>
-			<a href="http://breeze.github.io/doc-samples/">Samples</a></li>
-		<li>
-			<a href="http://www.getbreezenow.com/support" target="_blank">Support</a></li>
-		<li>
-			<a href="http://www.getbreezenow.com/blog" target="_blank">Blog</a></li>
-
-	</ul>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="complexaspect.html">ComplexAspect</a>
+				</li>
+			</ul>
+			<h1>Class ComplexAspect</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An ComplexAspect instance is associated with every complex object instance and is accessed via the complex object&#39;s &#39;complexAspect&#39; property.</p>
+					</div>
+					<p>The ComplexAspect itself provides properties to determine the parent object, parent property and original values for the complex object.</p>
+					<p>A ComplexAspect will almost never need to be constructed directly. You will usually get an ComplexAspect by accessing
+						an entities &#39;complexAspect&#39; property.  This property will be automatically attached when an complex object is created as part of an
+					entity via either a query, import or EntityManager.createEntity call.</p>
+					<blockquote>
+						<pre><code> <span class="hljs-comment">// assume address is a complex property on the 'Customer' type</span>
+ var <span class="hljs-class"><span class="hljs-keyword">aspect</span> </span>= aCustomer.address.complexAspect;
+ <span class="hljs-comment">// aCustomer === aspect.parent;</span></code></pre></blockquote>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ComplexAspect</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-external"><a href="complexaspect.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="complexaspect.html#complexobject" class="tsd-kind-icon">complex<wbr>Object</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="complexaspect.html#extrametadata" class="tsd-kind-icon">extra<wbr>Metadata</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="complexaspect.html#originalvalues" class="tsd-kind-icon">original<wbr>Values</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="complexaspect.html#parent" class="tsd-kind-icon">parent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="complexaspect.html#parentproperty" class="tsd-kind-icon">parent<wbr>Property</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="complexaspect.html#getentityaspect" class="tsd-kind-icon">get<wbr>Entity<wbr>Aspect</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Complex<wbr>Aspect<span class="tsd-signature-symbol">(</span>complexObject<span class="tsd-signature-symbol">: </span><a href="../interfaces/complexobject.html" class="tsd-signature-type">ComplexObject</a>, parent<span class="tsd-signature-symbol">: </span><a href="../globals.html#structuralobject" class="tsd-signature-type">StructuralObject</a>, parentProperty<span class="tsd-signature-symbol">: </span><a href="dataproperty.html" class="tsd-signature-type">DataProperty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="complexaspect.html" class="tsd-signature-type">ComplexAspect</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-aspect.ts#L907">entity-aspect.ts:907</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>You will rarely, if ever, create a ComplexAspect directly.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>complexObject: <a href="../interfaces/complexobject.html" class="tsd-signature-type">ComplexObject</a></h5>
+								</li>
+								<li>
+									<h5>parent: <a href="../globals.html#structuralobject" class="tsd-signature-type">StructuralObject</a></h5>
+								</li>
+								<li>
+									<h5>parentProperty: <a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="complexaspect.html" class="tsd-signature-type">ComplexAspect</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="complexobject" class="tsd-anchor"></a>
+					<h3>complex<wbr>Object</h3>
+					<div class="tsd-signature tsd-kind-icon">complex<wbr>Object<span class="tsd-signature-symbol">:</span> <a href="../interfaces/complexobject.html" class="tsd-signature-type">ComplexObject</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-aspect.ts#L898">entity-aspect.ts:898</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The complex object that this aspect is associated with. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="extrametadata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> extra<wbr>Metadata</h3>
+					<div class="tsd-signature tsd-kind-icon">extra<wbr>Metadata<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-aspect.ts#L907">entity-aspect.ts:907</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="originalvalues" class="tsd-anchor"></a>
+					<h3>original<wbr>Values</h3>
+					<div class="tsd-signature tsd-kind-icon">original<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__type</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-aspect.ts#L902">entity-aspect.ts:902</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &#39;original values&#39; of this complex object where they are different from the &#39;current values&#39;.
+								This is a map where the key is a property name and the value is the &#39;original value&#39; of the property.
+							<strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="parent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> parent</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <a href="../globals.html#structuralobject" class="tsd-signature-type">StructuralObject</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-aspect.ts#L904">entity-aspect.ts:904</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The parent object that to which this aspect belongs; this will either be an entity or another complex object. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="parentproperty" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> parent<wbr>Property</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<wbr>Property<span class="tsd-signature-symbol">:</span> <a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-aspect.ts#L906">entity-aspect.ts:906</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="dataproperty.html">DataProperty</a> on the &#39;parent&#39; that contains this complex object. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getentityaspect" class="tsd-anchor"></a>
+					<h3>get<wbr>Entity<wbr>Aspect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>Aspect<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-aspect.ts#L953">entity-aspect.ts:953</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the EntityAspect for the top level entity that contains this complex object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="complexaspect.html" class="tsd-kind-icon">Complex<wbr>Aspect</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+								<a href="complexaspect.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="complexaspect.html#complexobject" class="tsd-kind-icon">complex<wbr>Object</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="complexaspect.html#extrametadata" class="tsd-kind-icon">extra<wbr>Metadata</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="complexaspect.html#originalvalues" class="tsd-kind-icon">original<wbr>Values</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="complexaspect.html#parent" class="tsd-kind-icon">parent</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="complexaspect.html#parentproperty" class="tsd-kind-icon">parent<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="complexaspect.html#getentityaspect" class="tsd-kind-icon">get<wbr>Entity<wbr>Aspect</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
 </div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
-    <div id="bd" class="yui3-g">
-
-        <div class="yui3-u-1-4">
-            <div id="docs-sidebar" class="sidebar apidocs">
-                <div id="api-list">
-    <h2 class="off-left">APIs</h2>
-    <div id="api-tabview" class="tabview">
-        <ul class="tabs">
-            <li><a href="#api-classes">Classes</a></li>
-            <li><a href="#api-modules">Modules</a></li>
-        </ul>
-
-        <div id="api-tabview-filter">
-            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-        </div>
-
-        <div id="api-tabview-panel">
-            <ul id="api-classes" class="apis classes">
-            
-                <li><a href="../classes/AutoGeneratedKeyType.html">AutoGeneratedKeyType</a></li>
-            
-                <li><a href="../classes/ComplexAspect.html">ComplexAspect</a></li>
-            
-                <li><a href="../classes/ComplexType.html">ComplexType</a></li>
-            
-                <li><a href="../classes/config.html">config</a></li>
-            
-                <li><a href="../classes/DataProperty.html">DataProperty</a></li>
-            
-                <li><a href="../classes/DataService.html">DataService</a></li>
-            
-                <li><a href="../classes/DataType.html">DataType</a></li>
-            
-                <li><a href="../classes/EntityAction.html">EntityAction</a></li>
-            
-                <li><a href="../classes/EntityAspect.html">EntityAspect</a></li>
-            
-                <li><a href="../classes/EntityKey.html">EntityKey</a></li>
-            
-                <li><a href="../classes/EntityManager.html">EntityManager</a></li>
-            
-                <li><a href="../classes/EntityQuery.html">EntityQuery</a></li>
-            
-                <li><a href="../classes/EntityState.html">EntityState</a></li>
-            
-                <li><a href="../classes/EntityType.html">EntityType</a></li>
-            
-                <li><a href="../classes/Enum.html">Enum</a></li>
-            
-                <li><a href="../classes/EnumSymbol.html">EnumSymbol</a></li>
-            
-                <li><a href="../classes/Event.html">Event</a></li>
-            
-                <li><a href="../classes/FetchStrategy.html">FetchStrategy</a></li>
-            
-                <li><a href="../classes/FilterQueryOp.html">FilterQueryOp</a></li>
-            
-                <li><a href="../classes/HttpResponse.html">HttpResponse</a></li>
-            
-                <li><a href="../classes/JsonResultsAdapter.html">JsonResultsAdapter</a></li>
-            
-                <li><a href="../classes/LocalQueryComparisonOptions.html">LocalQueryComparisonOptions</a></li>
-            
-                <li><a href="../classes/MergeStrategy.html">MergeStrategy</a></li>
-            
-                <li><a href="../classes/MetadataStore.html">MetadataStore</a></li>
-            
-                <li><a href="../classes/NamingConvention.html">NamingConvention</a></li>
-            
-                <li><a href="../classes/NavigationProperty.html">NavigationProperty</a></li>
-            
-                <li><a href="../classes/Predicate.html">Predicate</a></li>
-            
-                <li><a href="../classes/Promise.html">Promise</a></li>
-            
-                <li><a href="../classes/QueryOptions.html">QueryOptions</a></li>
-            
-                <li><a href="../classes/SaveOptions.html">SaveOptions</a></li>
-            
-                <li><a href="../classes/ValidationError.html">ValidationError</a></li>
-            
-                <li><a href="../classes/ValidationOptions.html">ValidationOptions</a></li>
-            
-                <li><a href="../classes/Validator.html">Validator</a></li>
-            
-                <li><a href="../classes/{ajax_interface}.html">{ajax_interface}</a></li>
-            
-                <li><a href="../classes/{complexArray}.html">{complexArray}</a></li>
-            
-                <li><a href="../classes/{keyGenerator_interface}.html">{keyGenerator_interface}</a></li>
-            
-                <li><a href="../classes/{primitiveArray}.html">{primitiveArray}</a></li>
-            
-                <li><a href="../classes/{relationArray}.html">{relationArray}</a></li>
-            
-            </ul>
-
-            <ul id="api-modules" class="apis modules">
-            
-                <li><a href="../modules/breeze.html">breeze</a></li>
-            
-                <li><a href="../modules/core.html">core</a></li>
-            
-            </ul>
-        </div>
-    </div>
-</div>
-
-            </div>
-        </div>
-        <div class="yui3-u-3-4">
-                <div id="api-options">
-        Show:
-        <label for="api-show-inherited">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </div>
-
-
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        <h1>ComplexAspect Class</h1>
-<div class="box meta">
-    
-
-    
-
-    
-        <div class="foundat">
-            Defined in: <a href="../files/a30_entityAspect.js.html#l840"><code>a30_entityAspect.js:840</code></a>
-        </div>
-    
-
-    
-        
-            Module: <a href="../modules/breeze.html">breeze</a>
-        
-    
-
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>An ComplexAspect instance is associated with every complex object instance and is accessed via the complex object&#39;s &#39;complexAspect&#39; property.</p>
-<p>The ComplexAspect itself provides properties to determine the parent object, parent property and original values for the complex object.</p>
-<p>A ComplexAspect will almost never need to be constructed directly. You will usually get an ComplexAspect by accessing
-an entities &#39;complexAspect&#39; property.  This property will be automatically attached when an complex object is created as part of an
-entity via either a query, import or EntityManager.createEntity call.</p>
-
-</div>
-
-
-
-<div id="classdocs" class="tabview">
-    <ul class="api-class-tabs">
-        <li class="api-class-tab index"><a href="#index">Index</a></li>
-
-        
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
-        
-        
-            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
-        
-        
-        
-    </ul>
-
-    <div>
-        <div id="index" class="api-class-tabpanel index">
-            <h2 class="off-left">Item Index</h2>
-
-            
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                        
-                            <li class="index-item method">
-                                <a href="#method_getEntityAspect">getEntityAspect</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_getPropertyPath">getPropertyPath</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-                <div class="index-section properties">
-                    <h3>Properties</h3>
-
-                    <ul class="index-list properties">
-                        
-                            <li class="index-item property">
-                                <a href="#property_complexObject">complexObject</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_originalValues">originalValues</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_parent">parent</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_parentProperty">parentProperty</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-
-            
-        </div>
-
-        
-            <div id="methods" class="api-class-tabpanel">
-                <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_getEntityAspect" class="method item">
-    <h3 class="name"><code>getEntityAspect</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityAspect.js.html#l924"><code>a30_entityAspect.js:924</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Returns the EntityAspect for the top level entity tht contains this complex object.</p>
-
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">String</span>:
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-                
-                    <div id="method_getPropertyPath" class="method item">
-    <h3 class="name"><code>getPropertyPath</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>propName</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityAspect.js.html#l941"><code>a30_entityAspect.js:941</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Executes the specified query against this EntityManager&#39;s local cache.</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">propName</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The property name of a property on this complex aspect for which we want the full path.</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">String</span>:
-                    
-                    <p>The &#39;property path&#39; from the top level entity that contains this complex object to this object.</p>
-
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-                
-            </div>
-        
-
-        
-            <div id="properties" class="api-class-tabpanel">
-                <h2 class="off-left">Properties</h2>
-
-                
-                    <div id="property_complexObject" class="property item">
-    <h3 class="name"><code>complexObject</code></h3>
-    <span class="type">Entity</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityAspect.js.html#l895"><code>a30_entityAspect.js:895</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The complex object that this aspect is associated with.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_originalValues" class="property item">
-    <h3 class="name"><code>originalValues</code></h3>
-    <span class="type">Object</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityAspect.js.html#l916"><code>a30_entityAspect.js:916</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The &#39;original values&#39; of this complex object where they are different from the &#39;current values&#39;.
-This is a map where the key is a property name and the value is the &#39;original value&#39; of the property.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_parent" class="property item">
-    <h3 class="name"><code>parent</code></h3>
-    <span class="type">Entity | ComplexObject</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityAspect.js.html#l902"><code>a30_entityAspect.js:902</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The parent object that to which this aspect belongs; this will either be an entity or another complex object.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_parentProperty" class="property item">
-    <h3 class="name"><code>parentProperty</code></h3>
-    <span class="type"><a href="../classes/DataProperty.html" class="crosslink">DataProperty</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityAspect.js.html#l909"><code>a30_entityAspect.js:909</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The <a href="../classes/DataProperty.html" class="crosslink">DataProperty</a> on the &#39;parent&#39; that contains this complex object.</p>
-<p><strong>readOnly</strong></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
-        
-
-        
-
-        
-    </div>
-</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="primary-nav-foot">
-  <ul>
-    <li>
-      <a href="http://breeze.github.io/doc-js/download.html" target="_blank">Download</a></li>
-    <li>
-      <a href="http://learn.breezejs.com/" target="_blank">Tutorials</a></li>
-    <li>
-      <a href="http://breeze.github.io/doc-js/">Docs</a></li>
-    <li>
-      <a href="http://breeze.github.io/doc-samples/">Samples</a></li>
-    <li>
-      <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" target="_blank">Questions</a></li>
-    <li>
-      <a href="http://www.getbreezenow.com/support" target="_blank">Support</a></li>
-  </ul>
-</div>
-</div>
-</div>
-<script src="../assets/vendor/prettify/prettify-min.js"></script>
-<script>prettyPrint();</script>
-<script src="../assets/js/yui-prettify.js"></script>
-<script src="../assets/../api.js"></script>
-<script src="../assets/js/api-filter.js"></script>
-<script src="../assets/js/api-list.js"></script>
-<script src="../assets/js/api-search.js"></script>
-<script src="../assets/js/apidocs.js"></script>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

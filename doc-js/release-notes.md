@@ -31,6 +31,7 @@ API is almost identical to the original (breezejs 1.x) but small changes are not
  - The `initializeAdapterInstances` method is removed; use the singular `config.initializeAdapterInstance` method.
 
  #### Adapter Changes
+ 
  The names of the adapter files have changed.  E.g. `breeze.dataService.webApi` is now `adapter-data-service-webapi`, 
  and the locations have changed due to Angular-compatible bundling.
 

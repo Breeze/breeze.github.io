@@ -1,1256 +1,824 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="default no-js">
 <head>
-    <meta charset="utf-8">
-    <title>EntityState</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
-
-	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-    <script src="http://yui.yahooapis.com/combo?3.5.1/build/yui/yui-min.js"></script>
-	<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-34729465-1']);
-  _gaq.push(['_setDomainName', 'breezejs.com']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>EntityState | breeze-client</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body class="yui3-skin-sam">
-<script type="text/javascript">
-  var uvOptions = {};
-  (function() {
-    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/GHug452CgVREu58xjoDg.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-  })();
-</script>
-<div id="wrap">
-
-<div id="doc">
-<div class="header">
-<div class="logo">
-	<a href="http://www.breezejs.com/home"><img src="http://breeze.github.io/images/logos/breeze_large.png" /></a>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">breeze-client</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
 	</div>
-
-    <div class="primary-nav">
-<ul>
-
-		<li>
-			<a href="http://breeze.github.io/doc-js/download.html" target="_blank">Download</a></li>
-		<li>
-			<a href="http://learn.breezejs.com/" target="_blank">Tutorials</a></li>
-		<li>
-			<a href="http://breeze.github.io/doc-js">Docs</a></li>
-		<li>
-			<a href="http://breeze.github.io/doc-samples/">Samples</a></li>
-		<li>
-			<a href="http://www.getbreezenow.com/support" target="_blank">Support</a></li>
-		<li>
-			<a href="http://www.getbreezenow.com/blog" target="_blank">Blog</a></li>
-
-	</ul>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="entitystate.html">EntityState</a>
+				</li>
+			</ul>
+			<h1>Class EntityState</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>EntityState is an &#39;Enum&#39; containing all of the valid states for an &#39;Entity&#39;.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="breezeenum.html" class="tsd-signature-type">BreezeEnum</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">EntityState</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-inherited tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="entitystate.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="entitystate.html#__typename" class="tsd-kind-icon">_$type<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="entitystate.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="entitystate.html#added" class="tsd-kind-icon">Added</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="entitystate.html#deleted" class="tsd-kind-icon">Deleted</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="entitystate.html#detached" class="tsd-kind-icon">Detached</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="entitystate.html#modified" class="tsd-kind-icon">Modified</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="entitystate.html#unchanged" class="tsd-kind-icon">Unchanged</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitystate.html#isadded" class="tsd-kind-icon">is<wbr>Added</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitystate.html#isaddedmodifiedordeleted" class="tsd-kind-icon">is<wbr>Added<wbr>Modified<wbr>OrDeleted</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitystate.html#isdeleted" class="tsd-kind-icon">is<wbr>Deleted</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitystate.html#isdetached" class="tsd-kind-icon">is<wbr>Detached</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitystate.html#ismodified" class="tsd-kind-icon">is<wbr>Modified</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitystate.html#isunchanged" class="tsd-kind-icon">is<wbr>Unchanged</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitystate.html#isunchangedormodified" class="tsd-kind-icon">is<wbr>Unchanged<wbr>OrModified</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="entitystate.html#tojson" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="entitystate.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="entitystate.html#contains" class="tsd-kind-icon">contains</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="entitystate.html#fromname" class="tsd-kind-icon">from<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="entitystate.html#getnames" class="tsd-kind-icon">get<wbr>Names</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="entitystate.html#getsymbols" class="tsd-kind-icon">get<wbr>Symbols</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="entitystate.html#resolvesymbols" class="tsd-kind-icon">resolve<wbr>Symbols</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Entity<wbr>State<span class="tsd-signature-symbol">(</span>propertiesObj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L57">enum.ts:57</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> propertiesObj: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="entitystate.html" class="tsd-signature-type">EntityState</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="__typename" class="tsd-anchor"></a>
+					<h3>_$type<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">_$type<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#__typename">_$typeName</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L55">enum.ts:55</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Type of the enum; set in prototype of each enum</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#name">name</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L53">enum.ts:53</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name of this symbol</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="added" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Added</h3>
+					<div class="tsd-signature tsd-kind-icon">Added<span class="tsd-signature-symbol">:</span> <a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> =&nbsp;new EntityState()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L11">entity-state.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &#39;Added&#39; state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="deleted" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Deleted</h3>
+					<div class="tsd-signature tsd-kind-icon">Deleted<span class="tsd-signature-symbol">:</span> <a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> =&nbsp;new EntityState()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L15">entity-state.ts:15</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &#39;Deleted&#39; state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="detached" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Detached</h3>
+					<div class="tsd-signature tsd-kind-icon">Detached<span class="tsd-signature-symbol">:</span> <a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> =&nbsp;new EntityState()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L17">entity-state.ts:17</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &#39;Detached&#39; state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="modified" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Modified</h3>
+					<div class="tsd-signature tsd-kind-icon">Modified<span class="tsd-signature-symbol">:</span> <a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> =&nbsp;new EntityState()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L13">entity-state.ts:13</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &#39;Modified&#39; state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="unchanged" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Unchanged</h3>
+					<div class="tsd-signature tsd-kind-icon">Unchanged<span class="tsd-signature-symbol">:</span> <a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> =&nbsp;new EntityState()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L9">entity-state.ts:9</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &#39;Unchanged&#39; state.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="isadded" class="tsd-anchor"></a>
+					<h3>is<wbr>Added</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Added<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L40">entity-state.ts:40</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return whether an entityState instance is EntityState.Added.</p>
+								</div>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">var</span> es = anEntity.entityAspect.entityState;
+<span class="hljs-keyword">return</span> es.isAdded();</code></pre></blockquote>
+								<p>is the same as</p>
+								<blockquote>
+								<pre><code><span class="hljs-attribute">return es</span> === EntityState.Added;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="isaddedmodifiedordeleted" class="tsd-anchor"></a>
+					<h3>is<wbr>Added<wbr>Modified<wbr>OrDeleted</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Added<wbr>Modified<wbr>OrDeleted<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L100">entity-state.ts:100</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether an entityState instance is EntityState.Added or EntityState.Modified or EntityState.Deleted.</p>
+									<blockquote>
+										<pre><code><span class="hljs-keyword">var</span> es = anEntity.entityAspect.entityState;
+<span class="hljs-keyword">return</span> es.isAddedModifiedOrDeleted();</code></pre></blockquote>
+								</div>
+								<p>is the same as</p>
+								<blockquote>
+								<pre><code><span class="hljs-keyword">return</span> es === EntityState.Added |<span class="hljs-type">| es</span> === EntityState.Modified |<span class="hljs-type">| es</span> === EntityState.Deleted</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="isdeleted" class="tsd-anchor"></a>
+					<h3>is<wbr>Deleted</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Deleted<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L65">entity-state.ts:65</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether an entityState instance is EntityState.Deleted.</p>
+									<blockquote>
+										<pre><code><span class="hljs-keyword">var</span> es = anEntity.entityAspect.entityState;
+<span class="hljs-keyword">return</span> es.isDeleted();</code></pre></blockquote>
+								</div>
+								<p>is the same as</p>
+								<blockquote>
+								<pre><code><span class="hljs-attribute">return es</span> === EntityState.Deleted;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="isdetached" class="tsd-anchor"></a>
+					<h3>is<wbr>Detached</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Detached<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L77">entity-state.ts:77</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether an entityState instance is EntityState.Detached.</p>
+									<blockquote>
+										<pre><code><span class="hljs-keyword">var</span> es = anEntity.entityAspect.entityState;
+<span class="hljs-keyword">return</span> es.isDetached();</code></pre></blockquote>
+								</div>
+								<p>is the same as</p>
+								<blockquote>
+								<pre><code><span class="hljs-attribute">return es</span> === EntityState.Detached;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="ismodified" class="tsd-anchor"></a>
+					<h3>is<wbr>Modified</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Modified<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L52">entity-state.ts:52</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether an entityState instance is EntityState.Modified.</p>
+									<blockquote>
+										<pre><code><span class="hljs-keyword">var</span> es = anEntity.entityAspect.entityState;
+<span class="hljs-keyword">return</span> es.isModified();</code></pre></blockquote>
+								</div>
+								<p>is the same as</p>
+								<blockquote>
+								<pre><code><span class="hljs-attribute">return es</span> === EntityState.Modified;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="isunchanged" class="tsd-anchor"></a>
+					<h3>is<wbr>Unchanged</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Unchanged<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L27">entity-state.ts:27</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether an entityState instance is EntityState.Unchanged.</p>
+									<blockquote>
+										<pre><code><span class="hljs-keyword">var</span> es = anEntity.entityAspect.entityState;
+<span class="hljs-keyword">return</span> es.isUnchanged();</code></pre></blockquote>
+								</div>
+								<p>is the same as</p>
+								<blockquote>
+								<pre><code><span class="hljs-attribute">return es</span> === EntityState.Unchanged;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="isunchangedormodified" class="tsd-anchor"></a>
+					<h3>is<wbr>Unchanged<wbr>OrModified</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Unchanged<wbr>OrModified<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-state.ts#L89">entity-state.ts:89</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether an entityState instance is EntityState.Unchanged or EntityState.Modified.</p>
+									<blockquote>
+										<pre><code><span class="hljs-keyword">var</span> es = anEntity.entityAspect.entityState;
+<span class="hljs-keyword">return</span> es.isUnchangedOrModified();</code></pre></blockquote>
+								</div>
+								<p>is the same as</p>
+								<blockquote>
+								<pre><code><span class="hljs-keyword">return</span> es === EntityState.Unchanged |<span class="hljs-type">| es</span> === EntityState.Modified</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="tojson" class="tsd-anchor"></a>
+					<h3>toJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#tojson">toJSON</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L153">enum.ts:153</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return enum name and symbol name</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#tostring">toString</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L148">enum.ts:148</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the string name of this Enum</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="contains" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> contains</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">contains<span class="tsd-signature-symbol">(</span>sym<span class="tsd-signature-symbol">: </span><a href="breezeenum.html" class="tsd-signature-type">BreezeEnum</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#contains">contains</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L127">enum.ts:127</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether an Enum contains a specified symbol.</p>
+									<blockquote>
+										<pre><code><span class="hljs-keyword">let</span> symbol = DayOfWeek.Friday;
+<span class="hljs-keyword">if</span> (<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DayOfWeek</span>.</span></span>contains(symbol)) {
+    <span class="hljs-comment">// do something</span>
+}</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sym: <a href="breezeenum.html" class="tsd-signature-type">BreezeEnum</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object or symbol to test.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether this Enum contains the specified symbol.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="fromname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Name<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#fromname">fromName</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L91">enum.ts:91</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an Enum symbol given its name.</p>
+									<blockquote>
+										<pre><code><span class="hljs-keyword">let</span> dayOfWeek = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DayOfWeek</span>.</span></span>from(<span class="hljs-string">"Thursday"</span>);
+<span class="hljs-comment">// nowdayOfWeek === DayOfWeek.Thursday</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Name for which an enum symbol should be returned.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>The symbol that matches the name or &#39;undefined&#39; if not found.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="getnames" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Names</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Names<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#getnames">getNames</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L80">enum.ts:80</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the names of all of the symbols contained within this Enum.</p>
+									<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> symbols = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DayOfWeek</span>.</span></span>get<span class="hljs-constructor">Names()</span>;</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>All of the names of the symbols contained within this Enum.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="getsymbols" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Symbols</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Symbols<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="breezeenum.html" class="tsd-signature-type">BreezeEnum</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#getsymbols">getSymbols</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L71">enum.ts:71</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns all of the symbols contained within this Enum.</p>
+									<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> symbols = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DayOfWeek</span>.</span></span>get<span class="hljs-constructor">Symbols()</span>;</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="breezeenum.html" class="tsd-signature-type">BreezeEnum</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>All of the symbols contained within this Enum.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="resolvesymbols" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> resolve<wbr>Symbols</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Symbols<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="breezeenum.html">BreezeEnum</a>.<a href="breezeenum.html#resolvesymbols">resolveSymbols</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/enum.ts#L100">enum.ts:100</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Seals this enum so that no more symbols may be added to it. This should only be called after all symbols
+									have already been added to the Enum. This method also sets the &#39;name&#39; property on each of the symbols.</p>
+									<blockquote>
+									<pre><code><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DayOfWeek</span>.</span></span>resolve<span class="hljs-constructor">Symbols()</span>;</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="entitystate.html" class="tsd-kind-icon">Entity<wbr>State</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="entitystate.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="entitystate.html#__typename" class="tsd-kind-icon">_$type<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="entitystate.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="entitystate.html#added" class="tsd-kind-icon">Added</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="entitystate.html#deleted" class="tsd-kind-icon">Deleted</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="entitystate.html#detached" class="tsd-kind-icon">Detached</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="entitystate.html#modified" class="tsd-kind-icon">Modified</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="entitystate.html#unchanged" class="tsd-kind-icon">Unchanged</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitystate.html#isadded" class="tsd-kind-icon">is<wbr>Added</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitystate.html#isaddedmodifiedordeleted" class="tsd-kind-icon">is<wbr>Added<wbr>Modified<wbr>OrDeleted</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitystate.html#isdeleted" class="tsd-kind-icon">is<wbr>Deleted</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitystate.html#isdetached" class="tsd-kind-icon">is<wbr>Detached</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitystate.html#ismodified" class="tsd-kind-icon">is<wbr>Modified</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitystate.html#isunchanged" class="tsd-kind-icon">is<wbr>Unchanged</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitystate.html#isunchangedormodified" class="tsd-kind-icon">is<wbr>Unchanged<wbr>OrModified</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="entitystate.html#tojson" class="tsd-kind-icon">toJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="entitystate.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="entitystate.html#contains" class="tsd-kind-icon">contains</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="entitystate.html#fromname" class="tsd-kind-icon">from<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="entitystate.html#getnames" class="tsd-kind-icon">get<wbr>Names</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="entitystate.html#getsymbols" class="tsd-kind-icon">get<wbr>Symbols</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="entitystate.html#resolvesymbols" class="tsd-kind-icon">resolve<wbr>Symbols</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
 </div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
-    <div id="bd" class="yui3-g">
-
-        <div class="yui3-u-1-4">
-            <div id="docs-sidebar" class="sidebar apidocs">
-                <div id="api-list">
-    <h2 class="off-left">APIs</h2>
-    <div id="api-tabview" class="tabview">
-        <ul class="tabs">
-            <li><a href="#api-classes">Classes</a></li>
-            <li><a href="#api-modules">Modules</a></li>
-        </ul>
-
-        <div id="api-tabview-filter">
-            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-        </div>
-
-        <div id="api-tabview-panel">
-            <ul id="api-classes" class="apis classes">
-            
-                <li><a href="../classes/AutoGeneratedKeyType.html">AutoGeneratedKeyType</a></li>
-            
-                <li><a href="../classes/ComplexAspect.html">ComplexAspect</a></li>
-            
-                <li><a href="../classes/ComplexType.html">ComplexType</a></li>
-            
-                <li><a href="../classes/config.html">config</a></li>
-            
-                <li><a href="../classes/DataProperty.html">DataProperty</a></li>
-            
-                <li><a href="../classes/DataService.html">DataService</a></li>
-            
-                <li><a href="../classes/DataType.html">DataType</a></li>
-            
-                <li><a href="../classes/EntityAction.html">EntityAction</a></li>
-            
-                <li><a href="../classes/EntityAspect.html">EntityAspect</a></li>
-            
-                <li><a href="../classes/EntityKey.html">EntityKey</a></li>
-            
-                <li><a href="../classes/EntityManager.html">EntityManager</a></li>
-            
-                <li><a href="../classes/EntityQuery.html">EntityQuery</a></li>
-            
-                <li><a href="../classes/EntityState.html">EntityState</a></li>
-            
-                <li><a href="../classes/EntityType.html">EntityType</a></li>
-            
-                <li><a href="../classes/Enum.html">Enum</a></li>
-            
-                <li><a href="../classes/EnumSymbol.html">EnumSymbol</a></li>
-            
-                <li><a href="../classes/Event.html">Event</a></li>
-            
-                <li><a href="../classes/FetchStrategy.html">FetchStrategy</a></li>
-            
-                <li><a href="../classes/FilterQueryOp.html">FilterQueryOp</a></li>
-            
-                <li><a href="../classes/HttpResponse.html">HttpResponse</a></li>
-            
-                <li><a href="../classes/JsonResultsAdapter.html">JsonResultsAdapter</a></li>
-            
-                <li><a href="../classes/LocalQueryComparisonOptions.html">LocalQueryComparisonOptions</a></li>
-            
-                <li><a href="../classes/MergeStrategy.html">MergeStrategy</a></li>
-            
-                <li><a href="../classes/MetadataStore.html">MetadataStore</a></li>
-            
-                <li><a href="../classes/NamingConvention.html">NamingConvention</a></li>
-            
-                <li><a href="../classes/NavigationProperty.html">NavigationProperty</a></li>
-            
-                <li><a href="../classes/Predicate.html">Predicate</a></li>
-            
-                <li><a href="../classes/Promise.html">Promise</a></li>
-            
-                <li><a href="../classes/QueryOptions.html">QueryOptions</a></li>
-            
-                <li><a href="../classes/SaveOptions.html">SaveOptions</a></li>
-            
-                <li><a href="../classes/ValidationError.html">ValidationError</a></li>
-            
-                <li><a href="../classes/ValidationOptions.html">ValidationOptions</a></li>
-            
-                <li><a href="../classes/Validator.html">Validator</a></li>
-            
-                <li><a href="../classes/{ajax_interface}.html">{ajax_interface}</a></li>
-            
-                <li><a href="../classes/{complexArray}.html">{complexArray}</a></li>
-            
-                <li><a href="../classes/{keyGenerator_interface}.html">{keyGenerator_interface}</a></li>
-            
-                <li><a href="../classes/{primitiveArray}.html">{primitiveArray}</a></li>
-            
-                <li><a href="../classes/{relationArray}.html">{relationArray}</a></li>
-            
-            </ul>
-
-            <ul id="api-modules" class="apis modules">
-            
-                <li><a href="../modules/breeze.html">breeze</a></li>
-            
-                <li><a href="../modules/core.html">core</a></li>
-            
-            </ul>
-        </div>
-    </div>
-</div>
-
-            </div>
-        </div>
-        <div class="yui3-u-3-4">
-                <div id="api-options">
-        Show:
-        <label for="api-show-inherited">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </div>
-
-
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        <h1>EntityState Class</h1>
-<div class="box meta">
-    
-
-    
-
-    
-        <div class="foundat">
-            Defined in: <a href="../files/a30_entityState.js.html#l6"><code>a30_entityState.js:6</code></a>
-        </div>
-    
-
-    
-        
-            Module: <a href="../modules/breeze.html">breeze</a>
-        
-    
-
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>EntityState is an &#39;Enum&#39; containing all of the valid states for an &#39;Entity&#39;.</p>
-
-</div>
-
-
-
-<div id="classdocs" class="tabview">
-    <ul class="api-class-tabs">
-        <li class="api-class-tab index"><a href="#index">Index</a></li>
-
-        
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
-        
-        
-            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
-        
-        
-        
-    </ul>
-
-    <div>
-        <div id="index" class="api-class-tabpanel index">
-            <h2 class="off-left">Item Index</h2>
-
-            
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                        
-                            <li class="index-item method">
-                                <a href="#method_isAdded">isAdded</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_isAddedModifiedOrDeleted">isAddedModifiedOrDeleted</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_isDeleted">isDeleted</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_isDetached">isDetached</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_isModified">isModified</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_isUnchanged">isUnchanged</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_isUnchangedOrModified">isUnchangedOrModified</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-                <div class="index-section properties">
-                    <h3>Properties</h3>
-
-                    <ul class="index-list properties">
-                        
-                            <li class="index-item property">
-                                <a href="#property_Added">Added</a>
-
-                                
-                                    <span class="flag static">static</span>
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_Deleted">Deleted</a>
-
-                                
-                                    <span class="flag static">static</span>
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_Detached">Detached</a>
-
-                                
-                                    <span class="flag static">static</span>
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_Modified">Modified</a>
-
-                                
-                                    <span class="flag static">static</span>
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_Unchanged">Unchanged</a>
-
-                                
-                                    <span class="flag static">static</span>
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-
-            
-        </div>
-
-        
-            <div id="methods" class="api-class-tabpanel">
-                <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_isAdded" class="method item">
-    <h3 class="name"><code>isAdded</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">Boolean</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l26"><code>a30_entityState.js:26</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">Boolean</span>:
-                    
-                    <p>Whether an entityState instance is EntityState.Added.</p>
-
-                
-            </div>
-        </div>
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var es = anEntity.entityAspect.entityState;
-return es.isAdded();</code></pre>
-<p>is the same as</p>
-<pre class="code prettyprint"><code>return es === EntityState.Added;</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-                    <div id="method_isAddedModifiedOrDeleted" class="method item">
-    <h3 class="name"><code>isAddedModifiedOrDeleted</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">Boolean</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l91"><code>a30_entityState.js:91</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">Boolean</span>:
-                    
-                    <p>Whether an entityState instance is EntityState.Added or EntityState.Modified or EntityState.Deleted.</p>
-
-                
-            </div>
-        </div>
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var es = anEntity.entityAspect.entityState;
-return es.isAddedModifiedOrDeleted();</code></pre>
-<p>is the same as</p>
-<pre class="code prettyprint"><code>return es === EntityState.Added || es === EntityState.Modified || es === EntityState.Deleted</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-                    <div id="method_isDeleted" class="method item">
-    <h3 class="name"><code>isDeleted</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">Boolean</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l52"><code>a30_entityState.js:52</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">Boolean</span>:
-                    
-                    <p>Whether an entityState instance is EntityState.Deleted.</p>
-
-                
-            </div>
-        </div>
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var es = anEntity.entityAspect.entityState;
-return es.isDeleted();</code></pre>
-<p>is the same as</p>
-<pre class="code prettyprint"><code>return es === EntityState.Deleted;</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-                    <div id="method_isDetached" class="method item">
-    <h3 class="name"><code>isDetached</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">Boolean</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l65"><code>a30_entityState.js:65</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">Boolean</span>:
-                    
-                    <p>Whether an entityState instance is EntityState.Detached.</p>
-
-                
-            </div>
-        </div>
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var es = anEntity.entityAspect.entityState;
-return es.isDetached();</code></pre>
-<p>is the same as</p>
-<pre class="code prettyprint"><code>return es === EntityState.Detached;</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-                    <div id="method_isModified" class="method item">
-    <h3 class="name"><code>isModified</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">Boolean</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l39"><code>a30_entityState.js:39</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">Boolean</span>:
-                    
-                    <p>Whether an entityState instance is EntityState.Modified.</p>
-
-                
-            </div>
-        </div>
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var es = anEntity.entityAspect.entityState;
-return es.isModified();</code></pre>
-<p>is the same as</p>
-<pre class="code prettyprint"><code>return es === EntityState.Modified;</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-                    <div id="method_isUnchanged" class="method item">
-    <h3 class="name"><code>isUnchanged</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">Boolean</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l13"><code>a30_entityState.js:13</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">Boolean</span>:
-                    
-                    <p>Whether an entityState instance is EntityState.Unchanged.</p>
-
-                
-            </div>
-        </div>
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var es = anEntity.entityAspect.entityState;
-return es.isUnchanged();</code></pre>
-<p>is the same as</p>
-<pre class="code prettyprint"><code>return es === EntityState.Unchanged;</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-                    <div id="method_isUnchangedOrModified" class="method item">
-    <h3 class="name"><code>isUnchangedOrModified</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">Boolean</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l78"><code>a30_entityState.js:78</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">Boolean</span>:
-                    
-                    <p>Whether an entityState instance is EntityState.Unchanged or EntityState.Modified.</p>
-
-                
-            </div>
-        </div>
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var es = anEntity.entityAspect.entityState;
-return es.isUnchangedOrModified();</code></pre>
-<p>is the same as</p>
-<pre class="code prettyprint"><code>return es === EntityState.Unchanged || es === EntityState.Modified</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-            </div>
-        
-
-        
-            <div id="properties" class="api-class-tabpanel">
-                <h2 class="off-left">Properties</h2>
-
-                
-                    <div id="property_Added" class="property item">
-    <h3 class="name"><code>Added</code></h3>
-    <span class="type"><a href="../classes/EntityState.html" class="crosslink">EntityState</a></span>
-
-    
-
-    
-
-    
-        <span class="flag final">final</span>
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l117"><code>a30_entityState.js:117</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The &#39;Added&#39; state.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_Deleted" class="property item">
-    <h3 class="name"><code>Deleted</code></h3>
-    <span class="type"><a href="../classes/EntityState.html" class="crosslink">EntityState</a></span>
-
-    
-
-    
-
-    
-        <span class="flag final">final</span>
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l133"><code>a30_entityState.js:133</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The &#39;Deleted&#39; state.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_Detached" class="property item">
-    <h3 class="name"><code>Detached</code></h3>
-    <span class="type"><a href="../classes/EntityState.html" class="crosslink">EntityState</a></span>
-
-    
-
-    
-
-    
-        <span class="flag final">final</span>
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l141"><code>a30_entityState.js:141</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The &#39;Detached&#39; state.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_Modified" class="property item">
-    <h3 class="name"><code>Modified</code></h3>
-    <span class="type"><a href="../classes/EntityState.html" class="crosslink">EntityState</a></span>
-
-    
-
-    
-
-    
-        <span class="flag final">final</span>
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l125"><code>a30_entityState.js:125</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The &#39;Modified&#39; state.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_Unchanged" class="property item">
-    <h3 class="name"><code>Unchanged</code></h3>
-    <span class="type"><a href="../classes/EntityState.html" class="crosslink">EntityState</a></span>
-
-    
-
-    
-
-    
-        <span class="flag final">final</span>
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/a30_entityState.js.html#l109"><code>a30_entityState.js:109</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The &#39;Unchanged&#39; state.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
-        
-
-        
-
-        
-    </div>
-</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="primary-nav-foot">
-  <ul>
-    <li>
-      <a href="http://breeze.github.io/doc-js/download.html" target="_blank">Download</a></li>
-    <li>
-      <a href="http://learn.breezejs.com/" target="_blank">Tutorials</a></li>
-    <li>
-      <a href="http://breeze.github.io/doc-js/">Docs</a></li>
-    <li>
-      <a href="http://breeze.github.io/doc-samples/">Samples</a></li>
-    <li>
-      <a href="http://stackoverflow.com/questions/tagged/breeze?sort=newest" target="_blank">Questions</a></li>
-    <li>
-      <a href="http://www.getbreezenow.com/support" target="_blank">Support</a></li>
-  </ul>
-</div>
-</div>
-</div>
-<script src="../assets/vendor/prettify/prettify-min.js"></script>
-<script>prettyPrint();</script>
-<script src="../assets/js/yui-prettify.js"></script>
-<script src="../assets/../api.js"></script>
-<script src="../assets/js/api-filter.js"></script>
-<script src="../assets/js/api-list.js"></script>
-<script src="../assets/js/api-search.js"></script>
-<script src="../assets/js/apidocs.js"></script>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

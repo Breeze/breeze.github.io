@@ -33,7 +33,7 @@ See: <a href="/doc-node-sequelize/"> breeze-sequelize package</a>
 
 #### For releases after 2015, please see the separate release notes page for each technology.
 
-### <a name="154"></a>1.5.4 <span class="doc-date">May 5, 2015</span>###
+### <a name="154"></a>1.5.4 <span class="doc-date">May 5, 2015</span>
 
 #### Breeze.Js Features
 - Additional support for Java and Node backend servers. [https://github.com/Breeze/breeze.server.java](https://github.com/Breeze/breeze.server.java) and [https://github.com/Breeze/breeze.server.node](https://github.com/Breeze/breeze.server.node)
@@ -57,7 +57,7 @@ See: <a href="/doc-node-sequelize/"> breeze-sequelize package</a>
 #### Breeze.server.net Features
 - Converted existing CORS samples to use Web API 2 CORS support
 
-### <a name="153"></a>1.5.3 <span class="doc-date">Jan 21, 2015</span>###
+### <a name="153"></a>1.5.3 <span class="doc-date">Jan 21, 2015</span>
 <a name="breeze-client-news"></a>
 #### Breeze Package Revisions
 
@@ -102,7 +102,7 @@ The *breeze-client* package has three levels:
 -  Breeze's internal ES5 checking logic can no longer collide with external library implementions. (D2664)
 -  Fixed breeze adapters to work properly when loading breeze adapters with requireJs. (D2666)
 
-### <a name="152"></a>1.5.2 <span class="doc-date">Dec 10, 2014</span>###
+### <a name="152"></a>1.5.2 <span class="doc-date">Dec 10, 2014</span>
 
 #### Breeze.JS Features
 - Xml files used for Visual Studio intellisense are now included in Breeze zip download. (F2293)
@@ -122,7 +122,7 @@ The *breeze-client* package has three levels:
 - Fix for bug where a "(" is encountered on on the right hand side of a predicate expression. (D2653)
 - Fix to Breeze.base.js so that it does not to initialize ANY breeze adapters. If you want to compose a breeze package with breeze.base.js, you must provide at least one instance of each adapter explicitly. (D2654)
 
-### <a name="151"></a>1.5.1 <span class="doc-date">Sept 24, 2014</span>###
+### <a name="151"></a>1.5.1 <span class="doc-date">Sept 24, 2014</span>
 
 #### Breeze.JS Features
 
@@ -148,12 +148,12 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 #### Breeze.Server.NET Features
 - Added **`EnableBreezeQuery`** attribute to support WebApi 2.2. This replaces and supersedes the `BreezeQueryable` attribute which is deprecated. 
 
-### <a name="1500"></a>1.5.0 <span class="doc-date">Aug 30, 2014</span>###
+### <a name="1500"></a>1.5.0 <span class="doc-date">Aug 30, 2014</span>
 
 #### Breeze.JS Features
 -  Support for ASP.NET WebApi 2.2
 
-### <a name="1417"></a>1.4.17 <span class="doc-date">Aug 19, 2014</span>###
+### <a name="1417"></a>1.4.17 <span class="doc-date">Aug 19, 2014</span>
 
 #### Breeze.JS Features
 -  Added *DataProperty.getAllValidators*, *NavigationProperty.getAllValidators* and *StructuralType.getAllValidators* methods. The methods are useful because they  drill into the type hierarchy to discover all appropriate validations. (F2280)
@@ -171,7 +171,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
  
 #### Breeze.Server.Net Bugs	
 - Custom top level save exception messages thrown with an EntityErrorsException were not being propagated to the client. (D2629)
-### <a name="1416"></a>1.4.16 <span class="doc-date">July 13, 2014</span>###
+### <a name="1416"></a>1.4.16 <span class="doc-date">July 13, 2014</span>
 
 #### Breeze.JS Features
 - Added new *EntityAspect.isNavigationPropertyLoaded* and *EntityAspect.markNavigationPropertyLoaded* methods.  These methods were added to allow a developer to determine if a navigation property is empty as a result of a fetch or simply because it has not yet been loaded. (F2183)
@@ -196,7 +196,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 - Fixed issues with inheritance and *Backbone*.  The *breeze.modelLibrary.backbone.js* library now correctly handles all inheritance hierarchies that the 'backingStore' and 'knockout' model libraries do. (D2624)
 - Removed inadvertent global instance of <em>breeze </em>when using 'requireJs'. (D2618)
 
-### <a name="1414"></a>1.4.14 <span class="doc-date">June 23, 2014</span>###
+### <a name="1414"></a>1.4.14 <span class="doc-date">June 23, 2014</span>
 
 #### Features
 - Additional OData documentation.
@@ -221,7 +221,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 - D2567 - Fixed EFContextProvider exception that would occur during the save of a deleted entity with at least one modified enum property. 
 - D2609 - Corrected metadata retrieval to correctly handle Database First defaultValue specifications retrieved from the EntityFramework CSDL.	
 
-### <a name="1413"></a>1.4.13 <span class="doc-date">June 2, 2014</span>###
+### <a name="1413"></a>1.4.13 <span class="doc-date">June 2, 2014</span>
 
 #### Features
 
@@ -241,7 +241,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 
 - D2602 - "After save the `entityAspect.propertyChanged` event is no longer raised for a property that was changed on the server". Actually propertyChanged **is still raised** in that situation. But Breeze only **raises the event once**. The value of the `propertyChangedArgs.propertyName` is `null` which means "many properties changed". This behavior [**was described in the API documentation**](/doc-js/api-docs/classes/EntityAspect.html#event_propertyChanged).   Previously Breeze raised a separate event for *each changed property individually* for every merged entity ... which may have been convenient but was not correct . If you relied on the (incorrect) behavior, you will experience the proper behavior as a breaking change.
 
-### <a name="1412"></a>1.4.12 <span class="doc-date">May 9, 2014</span>###
+### <a name="1412"></a>1.4.12 <span class="doc-date">May 9, 2014</span>
 
 #### Features
 
@@ -268,7 +268,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 #### Notes
 + We have just released a [*Breeze.sharp*]  (/doc-cs/) product that is fully compliant with any server built for Breeze.JS.  This is a .NET client that has an almost identical API to that of the Breeze.JS product. We are also working on a *Breeze.java* client.             
 
-### <a name="1411"></a>1.4.11 <span class="doc-date">Mar 7, 2014</span>###
+### <a name="1411"></a>1.4.11 <span class="doc-date">Mar 7, 2014</span>
 
 #### Features
 +  Performance improvements with large saves and large queries that overwrite existing modified entities. 
@@ -323,7 +323,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 #### Breaking changes
 + None                
 
-### <a name="148"></a>1.4.8<span class="doc-date">Jan 7, 2014</span>###
+### <a name="148"></a>1.4.8<span class="doc-date">Jan 7, 2014</span>
 
 #### Features
 + Updated Breeze-MongoDB npm package ( version: 0.0.6). 
@@ -357,7 +357,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
          // should be converted to 
          var q = EntityQuery.from("Employees").where("lastName", "contains", "O'Malley");
              
-### <a name="147"></a>1.4.7<span class="doc-date">Dec 12, 2013</span>###
+### <a name="147"></a>1.4.7<span class="doc-date">Dec 12, 2013</span>
 
 #### Features
 + New and Updated documentation:
@@ -378,7 +378,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 + Fixed the *EntityQuery.noTracking* method to insure that the method always returns a cloned query. ( like all of the other EntityQuery builder methods). 
 + Fixed IE8/ES5 property descriptor bug.
 
-### <a name="146"></a>1.4.6<span class="doc-date">Nov 23, 2013</span>###
+### <a name="146"></a>1.4.6<span class="doc-date">Nov 23, 2013</span>
 
 #### Features
 
