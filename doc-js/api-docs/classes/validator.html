@@ -1,0 +1,1609 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Validator | breeze-client</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">breeze-client</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="validator.html">Validator</a>
+				</li>
+			</ul>
+			<h1>Class Validator</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Validator constructor - This method is used to create create custom validations.  Several
+							basic &quot;Validator&quot; construction methods are also provided as static methods to this class. These methods
+						provide a simpler syntax for creating basic validations.</p>
+					</div>
+					<p>Many of these stock validators are inspired by and implemented to conform to the validators defined at
+					<a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx">http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx</a></p>
+					<p>Sometimes a custom validator will be required.</p>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><p>Most validators will be &#39;property&#39; level validators, like this.</p>
+						</dd>
+						<dt>example</dt>
+						<dd><p>// v is this function is the value to be validated, in this case a &quot;country&quot; string.
+								var valFn = function (v) {
+								if (v == null) return true;
+								return (core.stringStartsWith(v, &quot;US&quot;));
+								};
+								var countryValidator = new Validator(&quot;countryIsUS&quot;, valFn, {
+								displayName: &quot;Country&quot;,
+								messageTemplate: &quot;&#39;%displayName%&#39; must start with &#39;US&#39;&quot;
+							});</p>
+							<p>// Now plug it into Breeze.
+								// Assume em1 is a preexisting EntityManager.
+								var custType = metadataStore.getEntityType(&quot;Customer&quot;);
+								var countryProp = custType.getProperty(&quot;Country&quot;);
+								// Note that validator is added to a &#39;DataProperty&#39; validators collection.
+								prop.validators.push(countryValidator);
+							Entity level validators are also possible</p>
+						</dd>
+						<dt>example</dt>
+						<dd><p>function isValidZipCode(value) {
+								var re = /^\d{5}([-]\d{4})?$/;
+								return (re.test(value));
+							}</p>
+							<p>// v in this case will be a Customer entity
+								var valFn = function (v) {
+								// This validator only validates US Zip Codes.
+								if ( v.getProperty(&quot;Country&quot;) === &quot;USA&quot;) {
+								var postalCode = v.getProperty(&quot;PostalCode&quot;);
+								return isValidZipCode(postalCode);
+								}
+								return true;
+								};
+								var zipCodeValidator = new Validator(&quot;zipCodeValidator&quot;, valFn,
+							{ messageTemplate: &quot;For the US, this is not a valid PostalCode&quot; });</p>
+							<p>// Now plug it into Breeze.
+								// Assume em1 is a preexisting EntityManager.
+								var custType = em1.metadataStore.getEntityType(&quot;Customer&quot;);
+								// Note that validator is added to an &#39;EntityType&#39; validators collection.
+								custType.validators.push(zipCodeValidator);
+								What is commonly needed is a way of creating a parameterized function that will itself
+							return a new Validator.  This requires the use of a &#39;context&#39; object.</p>
+						</dd>
+						<dt>example</dt>
+						<dd><p>// create a function that will take in a config object
+								// and will return a validator
+								var numericRangeValidator = function(context) {
+								var valFn = function(v, ctx) {
+								if (v == null) return true;
+								if (typeof(v) !== &quot;number&quot;) return false;
+								if (ctx.min != null &amp;&amp; v &lt; ctx.min) return false;
+								if (ctx.max != null &amp;&amp; v &gt; ctx.max) return false;
+								return true;
+								};
+								// The last parameter below is the &#39;context&#39; object that will be passed into the &#39;ctx&#39; parameter above
+								// when this validator executes. Several other properties, such as displayName will get added to this object as well.
+								return new Validator(&quot;numericRange&quot;, valFn, {
+								messageTemplate: &quot;&#39;%displayName%&#39; must be a number between the values of %min% and %max%&quot;,
+								min: context.min,
+								max: context.max
+								});
+								};
+								// Assume that freightProperty is a DataEntityProperty that describes numeric values.
+								// register the validator
+							freightProperty.validators.push(numericRangeValidator({ min: 100, max: 500 }));</p>
+							<p>Breeze substitutes context values and functions for the tokens in the messageTemplate when preparing the runtime error message;
+							&#39;displayName&#39; is a pre-defined context function that is always available.</p>
+							<p>Please note that Breeze substitutes the empty string for falsey parameters. That usually works in your favor.
+								Sometimes it doesn&#39;t as when the &#39;min&#39; value is zero in which case the message text would have a hole
+							where the &#39;min&#39; value goes, saying: &quot;... an integer between the values of and ...&quot;. That is not what you want.</p>
+							<p>To avoid this effect, you may can bake certain of the context values into the &#39;messageTemplate&#39; itself
+							as shown in this revision to the pertinent part of the previous example:</p>
+						</dd>
+						<dt>example</dt>
+						<dd><p>// ... as before
+								// ... but bake the min/max values into the message template.
+								var template = breeze.core.formatString(
+								&quot;&#39;%displayName%&#39; must be a number between the values of %1 and %2&quot;,
+								context.min, context.max);
+								return new Validator(&quot;numericRange&quot;, valFn, {
+								messageTemplate: template,
+								min: context.min,
+								max: context.max
+							});</p>
+						</dd>
+						<dt>method</dt>
+						<dd><p><ctor> Validator</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>The name of this validator.</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>A function to perform validation.</p>
+							<p>validatorFn(value, context)</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Value to be validated</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>The same context object passed into the constructor with the following additional properties if not
+							otherwise specified.</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>The value being validated.</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>The name of the validator being executed.</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>This will be either the value of the property&#39;s &#39;displayName&#39; property or
+							the value of its &#39;name&#39; property or the string &#39;Value&#39;</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>This will either be the value of Validator.messageTemplates[ {this validators name}] or null. Validator.messageTemplates
+								is an object that is keyed by validator name and that can be added to in order to &#39;register&#39; your own message for a given validator.
+							The following property can also be specified for any validator to force a specific errorMessage string</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>If this property is set it will be used instead of the &#39;messageTemplate&#39; property when an
+							error message is generated.</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>A free form object whose properties will made available during the validation and error message creation process.
+								This object will be passed into the Validator&#39;s validation function whenever &#39;validate&#39; is called. See above for a description
+							of additional properties that will be automatically added to this object if not otherwise specified.</p>
+						</dd>
+						<dt>dynamic</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Validator</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-external"><a href="validator.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="validator.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="validator.html#currentcontext" class="tsd-kind-icon">current<wbr>Context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="validator.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="validator.html#valfn" class="tsd-kind-icon">val<wbr>Fn</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#double" class="tsd-kind-icon">double</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#int64" class="tsd-kind-icon">int64</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#makeregexpvalidator" class="tsd-kind-icon">make<wbr>Reg<wbr>Exp<wbr>Validator</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#single" class="tsd-kind-icon">single</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="validator.html#getmessage" class="tsd-kind-icon">get<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="validator.html#tojson" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="validator.html#validate" class="tsd-kind-icon">validate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#bool" class="tsd-kind-icon">bool</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#byte" class="tsd-kind-icon">byte</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#creditcard" class="tsd-kind-icon">credit<wbr>Card</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#date" class="tsd-kind-icon">date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#duration" class="tsd-kind-icon">duration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#emailaddress" class="tsd-kind-icon">email<wbr>Address</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#fromjson" class="tsd-kind-icon">fromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#guid" class="tsd-kind-icon">guid</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#int16" class="tsd-kind-icon">int16</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#int32" class="tsd-kind-icon">int32</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#integer" class="tsd-kind-icon">integer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#none" class="tsd-kind-icon">none</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#number" class="tsd-kind-icon">number</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#phone" class="tsd-kind-icon">phone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#register" class="tsd-kind-icon">register</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#registerfactory" class="tsd-kind-icon">register<wbr>Factory</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#regularexpression" class="tsd-kind-icon">regular<wbr>Expression</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#required" class="tsd-kind-icon">required</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#string" class="tsd-kind-icon">string</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#stringlength" class="tsd-kind-icon">string<wbr>Length</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#url" class="tsd-kind-icon">url</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="validator.html#messagetemplates" class="tsd-kind-icon">message<wbr>Templates</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Validator<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, valFn<span class="tsd-signature-symbol">: </span><a href="../interfaces/validationfn.html" class="tsd-signature-type">ValidationFn</a>, context<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L179">validate.ts:179</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>valFn: <a href="../interfaces/validationfn.html" class="tsd-signature-type">ValidationFn</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <a href="../interfaces/validationcontext.html" class="tsd-signature-type">ValidationContext</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L177">validate.ts:177</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="currentcontext" class="tsd-anchor"></a>
+					<h3>current<wbr>Context</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L178">validate.ts:178</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L175">validate.ts:175</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="valfn" class="tsd-anchor"></a>
+					<h3>val<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">val<wbr>Fn<span class="tsd-signature-symbol">:</span> <a href="../interfaces/validationfn.html" class="tsd-signature-type">ValidationFn</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L176">validate.ts:176</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="double" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> double</h3>
+					<div class="tsd-signature tsd-kind-icon">double<span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">number</a><span class="tsd-signature-symbol"> =&nbsp;Validator.number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L535">validate.ts:535</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="int64" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> int64</h3>
+					<div class="tsd-signature tsd-kind-icon">int64<span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">integer</a><span class="tsd-signature-symbol"> =&nbsp;Validator.integer</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L560">validate.ts:560</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="makeregexpvalidator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> make<wbr>Reg<wbr>Exp<wbr>Validator</h3>
+					<div class="tsd-signature tsd-kind-icon">make<wbr>Reg<wbr>Exp<wbr>Validator<span class="tsd-signature-symbol">:</span> <a href="../globals.html#makeregexpvalidator" class="tsd-signature-type">makeRegExpValidator</a><span class="tsd-signature-symbol"> =&nbsp;makeRegExpValidator</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L817">validate.ts:817</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Creates a regular expression validator with a fixed expression.
+								Many of the stock validators are built with this factory method.
+								Their expressions are often derived from
+								<a href="https://github.com/srkirkland/DataAnnotationsExtensions/blob/master/DataAnnotationsExtensions">https://github.com/srkirkland/DataAnnotationsExtensions/blob/master/DataAnnotationsExtensions</a>
+							You can try many of them at <a href="http://dataannotationsextensions.org/">http://dataannotationsextensions.org/</a></p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><p>// Make a zipcode validator
+									function zipValidator = Validator.makeRegExpValidator(
+									&quot;zipVal,
+									/^\d{5}([-]\d{4})?$/,
+									&quot;The %displayName% &#39;%value%&#39; is not a valid U.S. zipcode&quot;);
+									// Register it.
+									Validator.register(zipValidator);
+									// Add it to a data property. Assume em is a preexisting EntityManager.
+									var custType = em.metadataStore.getEntityType(&quot;Customer&quot;);
+									var zipProperty = custType.getProperty(&quot;PostalCode&quot;);
+								zipProperty.validators.push(zipValidator);</p>
+							</dd>
+							<dt>method</dt>
+							<dd><p>makeRegExpValidator</p>
+							</dd>
+							<dt>static</dt>
+							<dd></dd>
+							<dt>param</dt>
+							<dd><p>name of this validator</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>regular expression to apply</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>default message for failed validations</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>optional parameters to pass through to validation constructor</p>
+							</dd>
+							<dt>returns</dt>
+							<dd><p>A new Validator</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="single" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> single</h3>
+					<div class="tsd-signature tsd-kind-icon">single<span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">number</a><span class="tsd-signature-symbol"> =&nbsp;Validator.number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L536">validate.ts:536</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getmessage" class="tsd-anchor"></a>
+					<h3>get<wbr>Message</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Message<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L265">validate.ts:265</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the message generated by the most recent execution of this Validator.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>var v0 = Validator.maxLength({ maxLength: 5, displayName: &quot;City&quot; });
+											v0.validate(&quot;adasdfasdf&quot;);
+										var errMessage = v0.getMessage());</p>
+									</dd>
+									<dt>method</dt>
+									<dd><p>getMessage</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="tojson" class="tsd-anchor"></a>
+					<h3>toJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L285">validate.ts:285</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="validate" class="tsd-anchor"></a>
+					<h3>validate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">validate<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, additionalContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validationerror.html" class="tsd-signature-type">ValidationError</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L232">validate.ts:232</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Run this validator against the specified value.  This method will usually be called internally either
+										automatically by an property change, entity attach, query or save operation, or manually as a result of
+										a validateEntity call on the EntityAspect. The resulting ValidationResults are available via the
+									EntityAspect.getValidationErrors method.</p>
+								</div>
+								<p>However, you can also call a validator directly either for testing purposes or some other reason if needed.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>// using one of the predefined validators
+											var validator = Validator.maxLength({ maxLength: 5, displayName: &quot;City&quot; });
+											// should be ok because &quot;asdf&quot;.length &lt; 5
+											var result = validator.validate(&quot;asdf&quot;);
+											ok(result === null);
+											result = validator.validate(&quot;adasdfasdf&quot;);
+											// extract all of the properties of the &#39;result&#39;
+											var errMsg = result.errorMessage;
+											var context = result.context;
+										var sameValidator = result.validator;</p>
+									</dd>
+									<dt>method</dt>
+									<dd><p>validate</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to validate</p>
+									</div>
+								</li>
+								<li>
+									<h5>additionalContext: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Any additional contextual information that the Validator
+										can make use of.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validationerror.html" class="tsd-signature-type">ValidationError</a></h4>
+							<p>A ValidationError if validation fails, null otherwise</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="bool" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> bool</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">bool<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L622">validate.ts:622</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard boolean data type Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="byte" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> byte</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">byte<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L606">validate.ts:606</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard byte data type Validator. (This is a integer between 0 and 255 inclusive for js purposes).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="creditcard" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> credit<wbr>Card</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">credit<wbr>Card<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L683">validate.ts:683</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a credit card number validator
+										Performs a luhn algorithm checksum test for plausability
+									catches simple mistakes; only service knows for sure</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="date" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L650">validate.ts:650</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard date data type Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="duration" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> duration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">duration<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L503">validate.ts:503</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a ISO 8601 duration string  Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="emailaddress" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> email<wbr>Address</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">email<wbr>Address<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L737">validate.ts:737</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the email address validator</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="fromjson" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> fromJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L295">validate.ts:295</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a validator instance from a JSON object or an array of instances from an array of JSON objects.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>fromJSON</p>
+									</dd>
+									<dt>static</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>json: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>JSON object that represents the serialized version of a validator.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="guid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> guid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">guid<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L483">validate.ts:483</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a Guid data type Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="int16" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> int16</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">int16<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L589">validate.ts:589</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard 16 bit integer data type Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="int32" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> int32</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">int32<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L573">validate.ts:573</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard 32 bit integer data type Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="integer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> integer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">integer<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L550">validate.ts:550</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard large integer data type - 64 bit - Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="maxlength" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> max<wbr>Length</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">max<wbr>Length<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L415">validate.ts:415</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard maximum string length Validator; the maximum length must be specified</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="none" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> none</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">none<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L630">validate.ts:630</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="number" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> number</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">number<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L525">validate.ts:525</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard numeric data type Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="phone" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> phone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">phone<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L766">validate.ts:766</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the phone validator
+										Provides basic assertions on the format and will help to eliminate most nonsense input
+										Matches:
+									International dialing prefix: {{}, +, 0, 0000} (with or without a trailing break character, if not &#39;+&#39;: [-/. ])</p>
+									<blockquote>
+										<p>((+)|(0(\d+)?[-/.\s]))
+											Country code: {{}, 1, ..., 999} (with or without a trailing break character: [-/. ])
+											[1-9]\d{,2}[-/.\s]?
+											Area code: {(0), ..., (000000), 0, ..., 000000} (with or without a trailing break character: [-/. ])
+											(((\d{1,6})|\d{1,6})[-/.\s]?)?
+											Local: {0, ...}+ (with or without a trailing break character: [-/. ])
+										(\d+[-/.\s]?)+\d+</p>
+									</blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="register" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> register</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>validator<span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L318">validate.ts:318</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Register a validator instance so that any deserialized metadata can reference it.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>register</p>
+									</dd>
+									<dt>static</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>validator: <a href="validator.html" class="tsd-signature-type">Validator</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Validator to register.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="registerfactory" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> register<wbr>Factory</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Factory<span class="tsd-signature-symbol">(</span>validatorFactory<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L331">validate.ts:331</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Register a validator factory so that any deserialized metadata can reference it.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>registerFactory</p>
+									</dd>
+									<dt>static</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>validatorFactory: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A function that optionally takes a context property and returns a Validator instance.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the validator.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="regularexpression" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> regular<wbr>Expression</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">regular<wbr>Expression<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L709">validate.ts:709</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a regular expression validator; the expression must be specified</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="required" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> required</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L389">validate.ts:389</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard &#39;required value&#39; Validator</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="string" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> string</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">string<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L463">validate.ts:463</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard string dataType Validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="stringlength" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> string<wbr>Length</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">string<wbr>Length<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L440">validate.ts:440</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a standard string length Validator; both minimum and maximum lengths must be specified.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="url" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> url</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L785">validate.ts:785</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the URL (protocol required) validator</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
+							<p>A new Validator</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="messagetemplates" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> message<wbr>Templates</h3>
+					<div class="tsd-signature tsd-kind-icon">message<wbr>Templates<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L354">validate.ts:354</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Map of standard error message templates keyed by validator name.
+							You can add to or modify this object to customize the template used for any validation error message.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><p>// v is this function is the value to be validated, in this case a &quot;country&quot; string.
+									var valFn = function (v) {
+									if (v == null) return true;
+									return (core.stringStartsWith(v, &quot;US&quot;));
+									};
+									var countryValidator = new Validator(&quot;countryIsUS&quot;, valFn, { displayName: &quot;Country&quot; });
+									Validator.messageTemplates.countryIsUS = &quot;&#39;%displayName%&#39; must start with &#39;US&#39;&quot;;
+									// This will have a similar effect to this
+									var countryValidator = new Validator(&quot;countryIsUS&quot;, valFn, {
+									displayName: &quot;Country&quot;,
+									messageTemplate: &quot;&#39;%displayName%&#39; must start with &#39;US&#39;&quot;
+								});</p>
+							</dd>
+							<dt>property</dt>
+							<dd><p>messageTemplates {Object}</p>
+							</dd>
+							<dt>static</dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.bool-1" class="tsd-anchor"></a>
+						<h3>bool</h3>
+						<div class="tsd-signature tsd-kind-icon">bool<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be a &#x27;true&#x27; or &#x27;false&#x27; value&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L355">validate.ts:355</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.creditcard-1" class="tsd-anchor"></a>
+						<h3>credit<wbr>Card</h3>
+						<div class="tsd-signature tsd-kind-icon">credit<wbr>Card<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;The %displayName% is not a valid credit card number&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L356">validate.ts:356</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.date-1" class="tsd-anchor"></a>
+						<h3>date</h3>
+						<div class="tsd-signature tsd-kind-icon">date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be a date&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L357">validate.ts:357</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.duration-1" class="tsd-anchor"></a>
+						<h3>duration</h3>
+						<div class="tsd-signature tsd-kind-icon">duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be a ISO8601 duration string, such as &#x27;P3H24M60S&#x27;&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L358">validate.ts:358</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.emailaddress-1" class="tsd-anchor"></a>
+						<h3>email<wbr>Address</h3>
+						<div class="tsd-signature tsd-kind-icon">email<wbr>Address<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;The %displayName% &#x27;%value%&#x27; is not a valid email address&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L359">validate.ts:359</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.guid-1" class="tsd-anchor"></a>
+						<h3>guid</h3>
+						<div class="tsd-signature tsd-kind-icon">guid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be a GUID&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L360">validate.ts:360</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.integer-1" class="tsd-anchor"></a>
+						<h3>integer</h3>
+						<div class="tsd-signature tsd-kind-icon">integer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be an integer&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L361">validate.ts:361</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.integerrange" class="tsd-anchor"></a>
+						<h3>integer<wbr>Range</h3>
+						<div class="tsd-signature tsd-kind-icon">integer<wbr>Range<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be an integer between the values of %minValue% and %maxValue%&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L362">validate.ts:362</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.maxlength-1" class="tsd-anchor"></a>
+						<h3>max<wbr>Length</h3>
+						<div class="tsd-signature tsd-kind-icon">max<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be a string with %maxLength% characters or less&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L363">validate.ts:363</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.number-1" class="tsd-anchor"></a>
+						<h3>number</h3>
+						<div class="tsd-signature tsd-kind-icon">number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be a number&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L364">validate.ts:364</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.phone-1" class="tsd-anchor"></a>
+						<h3>phone</h3>
+						<div class="tsd-signature tsd-kind-icon">phone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;The %displayName% &#x27;%value%&#x27; is not a valid phone number&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L365">validate.ts:365</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.regularexpression-1" class="tsd-anchor"></a>
+						<h3>regular<wbr>Expression</h3>
+						<div class="tsd-signature tsd-kind-icon">regular<wbr>Expression<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;The %displayName% &#x27;%value%&#x27; does not match &#x27;%expression%&#x27;&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L366">validate.ts:366</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.required-1" class="tsd-anchor"></a>
+						<h3>required</h3>
+						<div class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; is required&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L367">validate.ts:367</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.string-1" class="tsd-anchor"></a>
+						<h3>string</h3>
+						<div class="tsd-signature tsd-kind-icon">string<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be a string&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L368">validate.ts:368</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.stringlength-1" class="tsd-anchor"></a>
+						<h3>string<wbr>Length</h3>
+						<div class="tsd-signature tsd-kind-icon">string<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&#x27;%displayName%&#x27; must be a string with between %minLength% and %maxLength% characters&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L369">validate.ts:369</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="messagetemplates.url-1" class="tsd-anchor"></a>
+						<h3>url</h3>
+						<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;The %displayName% &#x27;%value%&#x27; is not a valid url&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/validate.ts#L370">validate.ts:370</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="validator.html" class="tsd-kind-icon">Validator</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+								<a href="validator.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="validator.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="validator.html#currentcontext" class="tsd-kind-icon">current<wbr>Context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="validator.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="validator.html#valfn" class="tsd-kind-icon">val<wbr>Fn</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#double" class="tsd-kind-icon">double</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#int64" class="tsd-kind-icon">int64</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#makeregexpvalidator" class="tsd-kind-icon">make<wbr>Reg<wbr>Exp<wbr>Validator</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#single" class="tsd-kind-icon">single</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="validator.html#getmessage" class="tsd-kind-icon">get<wbr>Message</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="validator.html#tojson" class="tsd-kind-icon">toJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="validator.html#validate" class="tsd-kind-icon">validate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#bool" class="tsd-kind-icon">bool</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#byte" class="tsd-kind-icon">byte</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#creditcard" class="tsd-kind-icon">credit<wbr>Card</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#date" class="tsd-kind-icon">date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#duration" class="tsd-kind-icon">duration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#emailaddress" class="tsd-kind-icon">email<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#fromjson" class="tsd-kind-icon">fromJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#guid" class="tsd-kind-icon">guid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#int16" class="tsd-kind-icon">int16</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#int32" class="tsd-kind-icon">int32</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#integer" class="tsd-kind-icon">integer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#none" class="tsd-kind-icon">none</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#number" class="tsd-kind-icon">number</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#phone" class="tsd-kind-icon">phone</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#register" class="tsd-kind-icon">register</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#registerfactory" class="tsd-kind-icon">register<wbr>Factory</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#regularexpression" class="tsd-kind-icon">regular<wbr>Expression</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#required" class="tsd-kind-icon">required</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#string" class="tsd-kind-icon">string</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#stringlength" class="tsd-kind-icon">string<wbr>Length</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#url" class="tsd-kind-icon">url</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="validator.html#messagetemplates" class="tsd-kind-icon">message<wbr>Templates</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

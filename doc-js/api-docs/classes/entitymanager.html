@@ -1,0 +1,2615 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>EntityManager | breeze-client</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">breeze-client</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="entitymanager.html">EntityManager</a>
+				</li>
+			</ul>
+			<h1>Class EntityManager</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Instances of the EntityManager contain and manage collections of entities, either retrieved from a backend datastore or created on the client.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">EntityManager</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Events</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#entitychanged" class="tsd-kind-icon">entity<wbr>Changed</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#haschangeschanged" class="tsd-kind-icon">has<wbr>Changes<wbr>Changed</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#validationerrorschanged" class="tsd-kind-icon">validation<wbr>Errors<wbr>Changed</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#dataservice" class="tsd-kind-icon">data<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#isloading" class="tsd-kind-icon">is<wbr>Loading</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#isrejectingchanges" class="tsd-kind-icon">is<wbr>Rejecting<wbr>Changes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#keygenerator" class="tsd-kind-icon">key<wbr>Generator</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#keygeneratorctor" class="tsd-kind-icon">key<wbr>Generator<wbr>Ctor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#metadatastore" class="tsd-kind-icon">metadata<wbr>Store</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#queryoptions" class="tsd-kind-icon">query<wbr>Options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#saveoptions" class="tsd-kind-icon">save<wbr>Options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#servicename" class="tsd-kind-icon">service<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#validationoptions" class="tsd-kind-icon">validation<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#acceptchanges" class="tsd-kind-icon">accept<wbr>Changes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#addentity" class="tsd-kind-icon">add<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#attachentity" class="tsd-kind-icon">attach<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#clear" class="tsd-kind-icon">clear</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#createemptycopy" class="tsd-kind-icon">create<wbr>Empty<wbr>Copy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#createentity" class="tsd-kind-icon">create<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#detachentity" class="tsd-kind-icon">detach<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#executequery" class="tsd-kind-icon">execute<wbr>Query</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#executequerylocally" class="tsd-kind-icon">execute<wbr>Query<wbr>Locally</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#exportentities" class="tsd-kind-icon">export<wbr>Entities</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#fetchentitybykey" class="tsd-kind-icon">fetch<wbr>Entity<wbr>ByKey</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#fetchmetadata" class="tsd-kind-icon">fetch<wbr>Metadata</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#findentitybykey" class="tsd-kind-icon">find<wbr>Entity<wbr>ByKey</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#generatetempkeyvalue" class="tsd-kind-icon">generate<wbr>Temp<wbr>Key<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#getchanges" class="tsd-kind-icon">get<wbr>Changes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#getentities" class="tsd-kind-icon">get<wbr>Entities</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#getentitybykey" class="tsd-kind-icon">get<wbr>Entity<wbr>ByKey</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#haschanges" class="tsd-kind-icon">has<wbr>Changes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#importentities" class="tsd-kind-icon">import<wbr>Entities</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#rejectchanges" class="tsd-kind-icon">reject<wbr>Changes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#savechanges" class="tsd-kind-icon">save<wbr>Changes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#savechangesvalidateonclient" class="tsd-kind-icon">save<wbr>Changes<wbr>Validate<wbr>OnClient</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#setproperties" class="tsd-kind-icon">set<wbr>Properties</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="entitymanager.html#importentities-1" class="tsd-kind-icon">import<wbr>Entities</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-external"><a href="entitymanager.html#helper" class="tsd-kind-icon">helper</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Entity<wbr>Manager<span class="tsd-signature-symbol">(</span>emConfig<span class="tsd-signature-symbol">?: </span><a href="../interfaces/entitymanagerconfig.html" class="tsd-signature-type">EntityManagerConfig</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L290">entity-manager.ts:290</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>EntityManager constructor.</p>
+								</div>
+								<p>At its most basic an EntityManager can be constructed with just a service name</p>
+								<blockquote>
+								<pre><code><span class="hljs-keyword">let</span> entityManager = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager( <span class="hljs-string">"breeze/NorthwindIBModel"</span>)</span>;</code></pre></blockquote>
+								<p>This is the same as calling it with the following configuration object</p>
+								<blockquote>
+								<pre><code><span class="hljs-keyword">let</span> entityManager = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager( {<span class="hljs-params">serviceName</span>: <span class="hljs-string">"breeze/NorthwindIBModel"</span> })</span>;</code></pre></blockquote>
+								<p>Usually however, configuration objects will contain more than just the &#39;serviceName&#39;;</p>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> metadataStore = <span class="hljs-keyword">new</span> MetadataStore();
+<span class="hljs-keyword">let</span> entityManager = <span class="hljs-keyword">new</span> EntityManager( {
+  serviceName: <span class="hljs-string">"breeze/NorthwindIBModel"</span>,
+  metadataStore: metadataStore
+});</code></pre></blockquote>
+								<p>or</p>
+								<blockquote>
+									<pre><code><span class="hljs-string">return</span> <span class="hljs-string">new</span> <span class="hljs-string">QueryOptions({</span>
+<span class="hljs-attr">    mergeStrategy:</span> <span class="hljs-string">obj,</span>
+<span class="hljs-attr">    fetchStrategy:</span> <span class="hljs-string">this.fetchStrategy</span>
+<span class="hljs-string">});</span>
+<span class="hljs-string">let</span> <span class="hljs-string">queryOptions</span> <span class="hljs-string">=</span> <span class="hljs-string">new</span> <span class="hljs-string">QueryOptions({</span>
+<span class="hljs-attr">    mergeStrategy:</span> <span class="hljs-string">MergeStrategy.OverwriteChanges,</span>
+<span class="hljs-attr">    fetchStrategy:</span> <span class="hljs-string">FetchStrategy.FromServer</span>
+<span class="hljs-string">});</span>
+<span class="hljs-string">let</span> <span class="hljs-string">validationOptions</span> <span class="hljs-string">=</span> <span class="hljs-string">new</span> <span class="hljs-string">ValidationOptions({</span>
+<span class="hljs-attr">    validateOnAttach:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+<span class="hljs-attr">    validateOnSave:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+<span class="hljs-attr">    validateOnQuery:</span> <span class="hljs-literal">false</span>
+<span class="hljs-string">});</span>
+<span class="hljs-string">let</span> <span class="hljs-string">entityManager</span> <span class="hljs-string">=</span> <span class="hljs-string">new</span> <span class="hljs-string">EntityManager({</span>
+<span class="hljs-attr">    serviceName:</span> <span class="hljs-string">"breeze/NorthwindIBModel"</span><span class="hljs-string">,</span>
+<span class="hljs-attr">    queryOptions:</span> <span class="hljs-string">queryOptions,</span>
+<span class="hljs-attr">    validationOptions:</span> <span class="hljs-string">validationOptions</span>
+<span class="hljs-string">});</span></code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> emConfig: <a href="../interfaces/entitymanagerconfig.html" class="tsd-signature-type">EntityManagerConfig</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Configuration settings or a service name.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Events</h2>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-external">
+					<a name="entitychanged" class="tsd-anchor"></a>
+					<h3>entity<wbr>Changed</h3>
+					<div class="tsd-signature tsd-kind-icon">entity<wbr>Changed<span class="tsd-signature-symbol">:</span> <a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/entitychangedeventargs.html" class="tsd-signature-type">EntityChangedEventArgs</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L232">entity-manager.ts:232</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A <a href="breezeevent.html">BreezeEvent</a> that fires whenever a change to any entity in this EntityManager occurs. <strong>Read Only</strong></p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>eventargs</dt>
+							<dd><p>-</p>
+								<ul>
+									<li>entityAction - The <a href="entityaction.html">EntityAction</a> that occured.</li>
+									<li>entity - The entity that changed.  If this is null, then all entities in the entityManager were affected.</li>
+									<li>args - Additional information about this event. This will differ based on the entityAction.</li>
+								</ul>
+								<blockquote>
+									<pre><code> let em = <span class="hljs-built_in">new</span> EntityManager( {serviceName: "breeze/NorthwindIBModel" });
+ em.entityChanged.subscribe(<span class="hljs-keyword">function</span>(changeArgs) {
+     // This code will be executed <span class="hljs-keyword">any</span> <span class="hljs-type">time</span> <span class="hljs-keyword">any</span> entity <span class="hljs-keyword">within</span> the entityManager
+     // <span class="hljs-keyword">is</span> added, modified, deleted <span class="hljs-keyword">or</span> detached <span class="hljs-keyword">for</span> <span class="hljs-keyword">any</span> reason.
+     let action = changeArgs.entityAction;
+     let entity = changeArgs.entity;
+     // .. <span class="hljs-keyword">do</span> something <span class="hljs-keyword">to</span> this entity <span class="hljs-keyword">when</span> it <span class="hljs-keyword">is</span> changed.
+ });</code></pre><p> });</p>
+								</blockquote>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-external">
+					<a name="haschangeschanged" class="tsd-anchor"></a>
+					<h3>has<wbr>Changes<wbr>Changed</h3>
+					<div class="tsd-signature tsd-kind-icon">has<wbr>Changes<wbr>Changed<span class="tsd-signature-symbol">:</span> <a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L270">entity-manager.ts:270</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A <a href="breezeevent.html">BreezeEvent</a> that fires whenever an EntityManager transitions to or from having changes. <strong>Read Only</strong></p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>eventargs</dt>
+							<dd><p>-</p>
+								<ul>
+									<li>entityManager - The EntityManager whose &#39;hasChanges&#39; status has changed.</li>
+									<li>hasChanges - Whether or not this EntityManager has changes.</li>
+								</ul>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> EntityManager( {<span class="hljs-attr">serviceName</span>: <span class="hljs-string">"breeze/NorthwindIBModel"</span> });
+ em.hasChangesChanged.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">args</span>) </span>{
+         <span class="hljs-keyword">let</span> hasChangesChanged = args.hasChanges;
+         <span class="hljs-keyword">let</span> entityManager = args.entityManager;
+     });
+ });</code></pre></blockquote>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-external">
+					<a name="validationerrorschanged" class="tsd-anchor"></a>
+					<h3>validation<wbr>Errors<wbr>Changed</h3>
+					<div class="tsd-signature tsd-kind-icon">validation<wbr>Errors<wbr>Changed<span class="tsd-signature-symbol">:</span> <a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L254">entity-manager.ts:254</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An <a href="breezeevent.html">BreezeEvent</a> that fires whenever validationErrors change for any entity in this EntityManager. <strong>Read Only</strong></p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>eventargs</dt>
+							<dd><p>-</p>
+								<ul>
+									<li>entity - The entity on which the validation errors have been added or removed.</li>
+									<li>added - An array containing any newly added <a href="validationerror.html">ValidationError</a>s</li>
+									<li>removed - An array containing any newly removed <a href="validationerror.html">ValidationError</a>s. This is those errors that have been &#39;fixed&#39;</li>
+								</ul>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> EntityManager( {<span class="hljs-attr">serviceName</span>: <span class="hljs-string">"breeze/NorthwindIBModel"</span> });
+ em.validationErrorsChanged.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">changeArgs</span>) </span>{
+         <span class="hljs-comment">// This code will be executed any time any entity within the entityManager experiences a change to its validationErrors collection.</span>
+         <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">validationChangeArgs</span>) </span>{
+             <span class="hljs-keyword">let</span> entity == validationChangeArgs.entity;
+             <span class="hljs-keyword">let</span> errorsAdded = validationChangeArgs.added;
+             <span class="hljs-keyword">let</span> errorsCleared = validationChangeArgs.removed;
+             <span class="hljs-comment">// ... do something interesting with the order.</span>
+         });
+     });
+ });</code></pre></blockquote>
+							</dd>
+						</dl>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="dataservice" class="tsd-anchor"></a>
+					<h3>data<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">data<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="dataservice.html" class="tsd-signature-type">DataService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L196">entity-manager.ts:196</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The DataService associated with this EntityManager. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="isloading" class="tsd-anchor"></a>
+					<h3>is<wbr>Loading</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Loading<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L209">entity-manager.ts:209</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="isrejectingchanges" class="tsd-anchor"></a>
+					<h3>is<wbr>Rejecting<wbr>Changes</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Rejecting<wbr>Changes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L210">entity-manager.ts:210</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="keygenerator" class="tsd-anchor"></a>
+					<h3>key<wbr>Generator</h3>
+					<div class="tsd-signature tsd-kind-icon">key<wbr>Generator<span class="tsd-signature-symbol">:</span> <a href="keygenerator.html" class="tsd-signature-type">KeyGenerator</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L204">entity-manager.ts:204</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="keygenerator.html">KeyGenerator</a> associated with this EntityManager. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="keygeneratorctor" class="tsd-anchor"></a>
+					<h3>key<wbr>Generator<wbr>Ctor</h3>
+					<div class="tsd-signature tsd-kind-icon">key<wbr>Generator<wbr>Ctor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L206">entity-manager.ts:206</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="keygenerator.html">KeyGenerator</a> constructor associated with this EntityManager. <strong>Read Only</strong></p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="metadatastore" class="tsd-anchor"></a>
+					<h3>metadata<wbr>Store</h3>
+					<div class="tsd-signature tsd-kind-icon">metadata<wbr>Store<span class="tsd-signature-symbol">:</span> <a href="metadatastore.html" class="tsd-signature-type">MetadataStore</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L208">entity-manager.ts:208</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="metadatastore.html">MetadataStore</a> associated with this EntityManager. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="queryoptions" class="tsd-anchor"></a>
+					<h3>query<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">query<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="queryoptions.html" class="tsd-signature-type">QueryOptions</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L198">entity-manager.ts:198</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="queryoptions.html">QueryOptions</a> associated with this EntityManager. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="saveoptions" class="tsd-anchor"></a>
+					<h3>save<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">save<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="saveoptions.html" class="tsd-signature-type">SaveOptions</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L200">entity-manager.ts:200</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="saveoptions.html">SaveOptions</a> associated with this EntityManager. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="servicename" class="tsd-anchor"></a>
+					<h3>service<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">service<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L194">entity-manager.ts:194</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The service name associated with this EntityManager. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="validationoptions" class="tsd-anchor"></a>
+					<h3>validation<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">validation<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="validationoptions.html" class="tsd-signature-type">ValidationOptions</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L202">entity-manager.ts:202</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="validationoptions.html">ValidationOptions</a> associated with this EntityManager. <strong>Read Only</strong></p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="acceptchanges" class="tsd-anchor"></a>
+					<h3>accept<wbr>Changes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">accept<wbr>Changes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L478">entity-manager.ts:478</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Calls <a href="entityaspect.html#acceptchanges">EntityAspect.acceptChanges</a> on every changed entity in this EntityManager.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="addentity" class="tsd-anchor"></a>
+					<h3>add<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Entity<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L731">entity-manager.ts:731</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Attaches an entity to this EntityManager with an  <a href="entitystate.html">EntityState</a> of &#39;Added&#39;.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
+<span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+<span class="hljs-keyword">let</span> cust1 = custType.create<span class="hljs-constructor">Entity()</span>;
+em1.add<span class="hljs-constructor">Entity(<span class="hljs-params">cust1</span>)</span>;</code></pre></blockquote>
+								</div>
+								<p>Note that this is the same as using &#39;attachEntity&#39; with an <a href="entitystate.html">EntityState</a> of &#39;Added&#39;.</p>
+								<blockquote>
+									<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
+<span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+<span class="hljs-keyword">let</span> cust1 = custType.create<span class="hljs-constructor">Entity()</span>;
+em1.attach<span class="hljs-constructor">Entity(<span class="hljs-params">cust1</span>, EntityState.Added)</span>;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entity to add.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h4>
+							<p>The added entity.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="attachentity" class="tsd-anchor"></a>
+					<h3>attach<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">attach<wbr>Entity<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a>, entityState<span class="tsd-signature-symbol">?: </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a>, mergeStrategy<span class="tsd-signature-symbol">?: </span><a href="mergestrategy.html" class="tsd-signature-type">MergeStrategy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L746">entity-manager.ts:746</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Attaches an entity to this EntityManager with a specified <a href="entitystate.html">EntityState</a>.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
+<span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+<span class="hljs-keyword">let</span> cust1 = custType.create<span class="hljs-constructor">Entity()</span>;
+em1.attach<span class="hljs-constructor">Entity(<span class="hljs-params">cust1</span>, EntityState.Added)</span>;</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entity to add.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entityState: <a href="entitystate.html" class="tsd-signature-type">EntityState</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>(default=EntityState.Unchanged) The EntityState of the newly attached entity. If omitted this defaults to EntityState.Unchanged.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> mergeStrategy: <a href="mergestrategy.html" class="tsd-signature-type">MergeStrategy</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>(default = MergeStrategy.Disallowed) How the specified entity should be merged into the EntityManager if this EntityManager already contains an entity with the same key.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h4>
+							<p>The attached entity.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="clear" class="tsd-anchor"></a>
+					<h3>clear</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L687">entity-manager.ts:687</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clears this EntityManager&#39;s cache but keeps all other settings. Note that this
+										method is not as fast as creating a new EntityManager via &#39;new EntityManager&#39;.
+									This is because clear actually detaches all of the entities from the EntityManager.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
+e<span class="hljs-name">m1.</span>clear<span class="hljs-comment">()</span>;
+<span class="hljs-comment">// em1 is will now contain no entities, but all other setting will be maintained.</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="createemptycopy" class="tsd-anchor"></a>
+					<h3>create<wbr>Empty<wbr>Copy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Empty<wbr>Copy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L709">entity-manager.ts:709</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an empty copy of this EntityManager but with the same DataService, MetadataStore, QueryOptions, SaveOptions, ValidationOptions, etc.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
+let e<span class="hljs-name">m2</span> = e<span class="hljs-name">m1.</span>createEmptyCopy<span class="hljs-comment">()</span>;
+<span class="hljs-comment">// em2 is a new EntityManager with all of em1's settings</span>
+<span class="hljs-comment">// but no entities.</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></h4>
+							<p>A new EntityManager.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="createentity" class="tsd-anchor"></a>
+					<h3>create<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Entity<span class="tsd-signature-symbol">(</span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, initialValues<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Object</span>, entityState<span class="tsd-signature-symbol">?: </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a>, mergeStrategy<span class="tsd-signature-symbol">?: </span><a href="mergestrategy.html" class="tsd-signature-type">MergeStrategy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Entity<span class="tsd-signature-symbol">(</span>entityType<span class="tsd-signature-symbol">: </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a>, initialValues<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Object</span>, entityState<span class="tsd-signature-symbol">?: </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a>, mergeStrategy<span class="tsd-signature-symbol">?: </span><a href="mergestrategy.html" class="tsd-signature-type">MergeStrategy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L404">entity-manager.ts:404</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new entity of a specified type and optionally initializes it. By default the new entity is created with an EntityState of Added
+										but you can also optionally specify an EntityState.  An EntityState of &#39;Detached&#39; will insure that the entity is created but not yet added
+									to the EntityManager.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-comment">// create and add an entity;</span>
+ <span class="hljs-keyword">let</span> emp1 = em1.create<span class="hljs-constructor">Entity(<span class="hljs-string">"Employee"</span>)</span>;
+ <span class="hljs-comment">// create and add an initialized entity;</span>
+ <span class="hljs-keyword">let</span> emp2 = em1.create<span class="hljs-constructor">Entity(<span class="hljs-string">"Employee"</span>, { <span class="hljs-params">lastName</span>: <span class="hljs-string">"Smith"</span>, <span class="hljs-params">firstName</span>: <span class="hljs-string">"John"</span> })</span>;
+ <span class="hljs-comment">// create and attach (not add) an initialized entity</span>
+ <span class="hljs-keyword">let</span> emp3 = em1.create<span class="hljs-constructor">Entity(<span class="hljs-string">"Employee"</span>, { <span class="hljs-params">id</span>: 435, <span class="hljs-params">lastName</span>: <span class="hljs-string">"Smith"</span>, <span class="hljs-params">firstName</span>: <span class="hljs-string">"John"</span> }, EntityState.Unchanged)</span>;
+ <span class="hljs-comment">// create but don't attach an entity;</span>
+ <span class="hljs-keyword">let</span> emp4 = em1.create<span class="hljs-constructor">Entity(<span class="hljs-string">"Employee"</span>, { <span class="hljs-params">id</span>: 435, <span class="hljs-params">lastName</span>: <span class="hljs-string">"Smith"</span>, <span class="hljs-params">firstName</span>: <span class="hljs-string">"John"</span> }, EntityState.Detached)</span>;</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>typeName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The name of the EntityType for which an instance should be created.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialValues: <span class="tsd-signature-type">Object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default=null) Configuration object of the properties to set immediately after creation.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entityState: <a href="entitystate.html" class="tsd-signature-type">EntityState</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default = <a href="entitystate.html#added">EntityState.Added</a>) The EntityState of the entity after being created and added to this EntityManager.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> mergeStrategy: <a href="mergestrategy.html" class="tsd-signature-type">MergeStrategy</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default = <a href="mergestrategy.html#disallowed">MergeStrategy.Disallowed</a>) - How to handle conflicts if an entity with the same key already exists within this EntityManager.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h4>
+							<p>A new Entity of the specified type.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L405">entity-manager.ts:405</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new entity of a specified type and optionally initializes it. By default the new entity is created with an EntityState of Added
+										but you can also optionally specify an EntityState.  An EntityState of &#39;Detached&#39; will insure that the entity is created but not yet added
+									to the EntityManager.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-comment">// create and add an entity;</span>
+ <span class="hljs-keyword">let</span> emp1 = em1.create<span class="hljs-constructor">Entity(<span class="hljs-string">"Employee"</span>)</span>;
+ <span class="hljs-comment">// create and add an initialized entity;</span>
+ <span class="hljs-keyword">let</span> emp2 = em1.create<span class="hljs-constructor">Entity(<span class="hljs-string">"Employee"</span>, { <span class="hljs-params">lastName</span>: <span class="hljs-string">"Smith"</span>, <span class="hljs-params">firstName</span>: <span class="hljs-string">"John"</span> })</span>;
+ <span class="hljs-comment">// create and attach (not add) an initialized entity</span>
+ <span class="hljs-keyword">let</span> emp3 = em1.create<span class="hljs-constructor">Entity(<span class="hljs-string">"Employee"</span>, { <span class="hljs-params">id</span>: 435, <span class="hljs-params">lastName</span>: <span class="hljs-string">"Smith"</span>, <span class="hljs-params">firstName</span>: <span class="hljs-string">"John"</span> }, EntityState.Unchanged)</span>;
+ <span class="hljs-comment">// create but don't attach an entity;</span>
+ <span class="hljs-keyword">let</span> emp4 = em1.create<span class="hljs-constructor">Entity(<span class="hljs-string">"Employee"</span>, { <span class="hljs-params">id</span>: 435, <span class="hljs-params">lastName</span>: <span class="hljs-string">"Smith"</span>, <span class="hljs-params">firstName</span>: <span class="hljs-string">"John"</span> }, EntityState.Detached)</span>;</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityType: <a href="entitytype.html" class="tsd-signature-type">EntityType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The EntityType of the type for which an instance should be created.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialValues: <span class="tsd-signature-type">Object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default=null) Configuration object of the properties to set immediately after creation.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entityState: <a href="entitystate.html" class="tsd-signature-type">EntityState</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default = <a href="entitystate.html#added">EntityState.Added</a>) The EntityState of the entity after being created and added to this EntityManager.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> mergeStrategy: <a href="mergestrategy.html" class="tsd-signature-type">MergeStrategy</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default = <a href="mergestrategy.html#disallowed">MergeStrategy.Disallowed</a>) - How to handle conflicts if an entity with the same key already exists within this EntityManager.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h4>
+							<p>A new Entity of the specified type.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="detachentity" class="tsd-anchor"></a>
+					<h3>detach<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">detach<wbr>Entity<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L811">entity-manager.ts:811</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Detaches an entity from this EntityManager.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
+<span class="hljs-comment">// assume cust1 is a customer Entity previously attached to em1</span>
+em1.detach<span class="hljs-constructor">Entity(<span class="hljs-params">cust1</span>)</span>;
+<span class="hljs-comment">// em1 will now no longer contain cust1 and cust1 will have an</span>
+<span class="hljs-comment">// entityAspect.entityState of EntityState.Detached</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entity to detach.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>Whether the entity could be detached. This will return false if the entity is already detached or was never attached.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="executequery" class="tsd-anchor"></a>
+					<h3>execute<wbr>Query</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Query<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">?: </span><a href="../interfaces/querysuccesscallback.html" class="tsd-signature-type">QuerySuccessCallback</a>, errorCallback<span class="tsd-signature-symbol">?: </span><a href="../interfaces/queryerrorcallback.html" class="tsd-signature-type">QueryErrorCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/queryresult.html" class="tsd-signature-type">QueryResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Query<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a>, callback<span class="tsd-signature-symbol">?: </span><a href="../interfaces/querysuccesscallback.html" class="tsd-signature-type">QuerySuccessCallback</a>, errorCallback<span class="tsd-signature-symbol">?: </span><a href="../interfaces/queryerrorcallback.html" class="tsd-signature-type">QueryErrorCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/queryresult.html" class="tsd-signature-type">QueryResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L864">entity-manager.ts:864</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Executes the specified query. <strong>Async</strong></p>
+								</div>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
+<span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>;
+em.execute<span class="hljs-constructor">Query(<span class="hljs-params">query</span>)</span>.<span class="hljs-keyword">then</span>( <span class="hljs-keyword">function</span>(data) {
+    <span class="hljs-keyword">let</span> orders = data.results;<span class="hljs-operator">
+    ... </span>query results processed here
+}).fail( <span class="hljs-keyword">function</span>(err) {<span class="hljs-operator">
+    ... </span>query failure processed here
+});</code></pre></blockquote>
+								<p>or with callbacks</p>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> EntityManager(serviceName);
+<span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Orders"</span>);
+em.executeQuery(query,
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-keyword">let</span> orders = data.results;
+        ... query results processed here
+    },
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+        ... query failure processed here
+    });</code></pre></blockquote>
+								<p>Either way this method is the same as calling the The <a href="entityquery.html">EntityQuery</a> &#39;execute&#39; method.</p>
+								<blockquote>
+									<pre><code>let em = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityManager</span>(serviceName);
+let query = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityQuery</span>(<span class="hljs-string">"Orders"</span>).<span class="hljs-keyword">using</span>(em);
+query.execute().then( <span class="hljs-function"><span class="hljs-keyword">function</span></span>(data) {
+    let orders = data.results;
+    ... query results processed <span class="hljs-keyword">here</span>
+}).fail( <span class="hljs-function"><span class="hljs-keyword">function</span></span>(err) {
+    ... query failure processed <span class="hljs-keyword">here</span>
+});</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>query: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entityquery.html">EntityQuery</a> or OData query string to execute.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <a href="../interfaces/querysuccesscallback.html" class="tsd-signature-type">QuerySuccessCallback</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Function called on success.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorCallback: <a href="../interfaces/queryerrorcallback.html" class="tsd-signature-type">QueryErrorCallback</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>{Function} Function called on failure.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/queryresult.html" class="tsd-signature-type">QueryResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Promise of</p>
+							<ul>
+								<li>results - An array of entities</li>
+								<li>retrievedEntities - A array of all of the entities returned by the query.  Differs from results (above) when .expand() is used.</li>
+								<li>query - The original <a href="entityquery.html">EntityQuery</a> or query string</li>
+								<li>entityManager -  The EntityManager.</li>
+								<li>httpResponse - The [[IHttpResponse]] returned from the server.</li>
+								<li>inlineCount -  Only available if &#39;inlineCount(true)&#39; was applied to the query.  Returns the count of
+									items that would have been returned by the query before applying any skip or take operators, but after any filter/where predicates
+								would have been applied.</li>
+							</ul>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L865">entity-manager.ts:865</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Executes the specified query. <strong>Async</strong></p>
+								</div>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
+<span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>;
+em.execute<span class="hljs-constructor">Query(<span class="hljs-params">query</span>)</span>.<span class="hljs-keyword">then</span>( <span class="hljs-keyword">function</span>(data) {
+    <span class="hljs-keyword">let</span> orders = data.results;<span class="hljs-operator">
+    ... </span>query results processed here
+}).fail( <span class="hljs-keyword">function</span>(err) {<span class="hljs-operator">
+    ... </span>query failure processed here
+});</code></pre></blockquote>
+								<p>or with callbacks</p>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> EntityManager(serviceName);
+<span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Orders"</span>);
+em.executeQuery(query,
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-keyword">let</span> orders = data.results;
+        ... query results processed here
+    },
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+        ... query failure processed here
+    });</code></pre></blockquote>
+								<p>Either way this method is the same as calling the The <a href="entityquery.html">EntityQuery</a> &#39;execute&#39; method.</p>
+								<blockquote>
+									<pre><code>let em = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityManager</span>(serviceName);
+let query = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityQuery</span>(<span class="hljs-string">"Orders"</span>).<span class="hljs-keyword">using</span>(em);
+query.execute().then( <span class="hljs-function"><span class="hljs-keyword">function</span></span>(data) {
+    let orders = data.results;
+    ... query results processed <span class="hljs-keyword">here</span>
+}).fail( <span class="hljs-function"><span class="hljs-keyword">function</span></span>(err) {
+    ... query failure processed <span class="hljs-keyword">here</span>
+});</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>query: <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entityquery.html">EntityQuery</a> or OData query string to execute.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <a href="../interfaces/querysuccesscallback.html" class="tsd-signature-type">QuerySuccessCallback</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Function called on success.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorCallback: <a href="../interfaces/queryerrorcallback.html" class="tsd-signature-type">QueryErrorCallback</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>{Function} Function called on failure.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/queryresult.html" class="tsd-signature-type">QueryResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Promise of</p>
+							<ul>
+								<li>results - An array of entities</li>
+								<li>retrievedEntities - A array of all of the entities returned by the query.  Differs from results (above) when .expand() is used.</li>
+								<li>query - The original <a href="entityquery.html">EntityQuery</a> or query string</li>
+								<li>entityManager -  The EntityManager.</li>
+								<li>httpResponse - The [[IHttpResponse]] returned from the server.</li>
+								<li>inlineCount -  Only available if &#39;inlineCount(true)&#39; was applied to the query.  Returns the count of
+									items that would have been returned by the query before applying any skip or take operators, but after any filter/where predicates
+								would have been applied.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="executequerylocally" class="tsd-anchor"></a>
+					<h3>execute<wbr>Query<wbr>Locally</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Query<wbr>Locally<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L955">entity-manager.ts:955</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Executes the specified query against this EntityManager&#39;s local cache.</p>
+								</div>
+								<p>Because this method is executed immediately there is no need for a promise or a callback</p>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
+<span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>;
+<span class="hljs-keyword">let</span> orders = em.execute<span class="hljs-constructor">QueryLocally(<span class="hljs-params">query</span>)</span>;</code></pre></blockquote>
+								<p>Note that this can also be accomplished using the &#39;executeQuery&#39; method with
+								a FetchStrategy of FromLocalCache and making use of the Promise or callback</p>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
+<span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>.using(FetchStrategy.FromLocalCache);
+em.execute<span class="hljs-constructor">Query(<span class="hljs-params">query</span>)</span>.<span class="hljs-keyword">then</span>( <span class="hljs-keyword">function</span>(data) {
+    <span class="hljs-keyword">let</span> orders = data.results;<span class="hljs-operator">
+    ... </span>query results processed here
+}).fail( <span class="hljs-keyword">function</span>(err) {<span class="hljs-operator">
+    ... </span>query failure processed here
+});</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>query: <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The <a href="entityquery.html">EntityQuery</a> to execute.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>Array of entities from cache that satisfy the query</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="exportentities" class="tsd-anchor"></a>
+					<h3>export<wbr>Entities</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">export<wbr>Entities<span class="tsd-signature-symbol">(</span>entities<span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, exportConfig<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L545">entity-manager.ts:545</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Exports selected entities, all entities of selected types, or an entire EntityManager cache.</p>
+								</div>
+								<p>This method takes a snapshot of an EntityManager that can be stored offline or held in memory.
+									Use the <a href="entitymanager.html#importentities-1">EntityManager.importEntities</a> method to restore or merge the snapshot
+								into another EntityManager at some later time.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// let em1 be an EntityManager containing a number of existing entities.</span>
+<span class="hljs-comment">// export every entity in em1.</span>
+<span class="hljs-keyword">let</span> bundle = em1.export<span class="hljs-constructor">Entities()</span>;
+<span class="hljs-comment">// save to the browser's local storage</span>
+window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">"myEntityManager"</span>, <span class="hljs-params">bundle</span>)</span>;
+<span class="hljs-comment">// later retrieve the export</span>
+<span class="hljs-keyword">let</span> bundleFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">"myEntityManager"</span>)</span>;
+<span class="hljs-comment">// import the retrieved export bundle into another manager</span>
+<span class="hljs-keyword">let</span> em2 = em1.create<span class="hljs-constructor">EmptyCopy()</span>;
+em2.import<span class="hljs-constructor">Entities(<span class="hljs-params">bundleFromStorage</span>)</span>;
+<span class="hljs-comment">// em2 now has a complete, faithful copy of the entities that were in em1</span></code></pre></blockquote>
+								<p>You can also control exactly which entities are exported.</p>
+								<blockquote>
+									<pre><code><span class="hljs-comment">// get em1's unsaved changes (an array) and export them.</span>
+<span class="hljs-keyword">let</span> changes = em1.get<span class="hljs-constructor">Changes()</span>;
+<span class="hljs-keyword">let</span> bundle = em1.export<span class="hljs-constructor">Entities(<span class="hljs-params">changes</span>)</span>;
+<span class="hljs-comment">// merge these entities into em2 which may contains some of the same entities.</span>
+<span class="hljs-comment">// do NOT overwrite the entities in em2 if they themselves have unsaved changes.</span>
+em2.import<span class="hljs-constructor">Entities(<span class="hljs-params">bundle</span>, { <span class="hljs-params">mergeStrategy</span>: MergeStrategy.PreserveChanges} )</span>;</code></pre></blockquote>
+								<p>Metadata are included in an export by default. You may want to exclude the metadata
+								especially if you&#39;re exporting just a few entities for local storage.</p>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> bundle = em1.export<span class="hljs-constructor">Entities(<span class="hljs-params">arrayOfSelectedEntities</span>, {<span class="hljs-params">includeMetadata</span>: <span class="hljs-params">false</span>})</span>;
+window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">"goodStuff"</span>, <span class="hljs-params">bundle</span>)</span>;</code></pre></blockquote>
+								<p>You may still express this option as a boolean value although this older syntax is deprecated.</p>
+								<blockquote>
+									<pre><code><span class="hljs-comment">// Exclude the metadata (deprecated syntax)</span>
+<span class="hljs-keyword">let</span> bundle = em1.export<span class="hljs-constructor">Entities(<span class="hljs-params">arrayOfSelectedEntities</span>, <span class="hljs-params">false</span>)</span>;</code></pre></blockquote>
+								<p>You can export all entities of one or more specified EntityTypes.</p>
+								<blockquote>
+									<pre><code>// Export <span class="hljs-keyword">all</span> Customer <span class="hljs-keyword">and</span> Employee entities (<span class="hljs-keyword">and</span> <span class="hljs-keyword">also</span> <span class="hljs-keyword">exclude</span> metadata)
+let bundle = em1.exportEntities([<span class="hljs-string">'Customer'</span>, <span class="hljs-string">'Employee'</span>], {includeMetadata: <span class="hljs-keyword">false</span>});</code></pre></blockquote>
+								<p>All of the above examples return an export bundle as a string which is the default format.
+								You can export the bundle as JSON if you prefer by setting the <code>asString</code> option to false.</p>
+								<blockquote>
+									<pre><code><span class="hljs-regexp">//</span> Export all Customer <span class="hljs-keyword">and</span> Employee entities <span class="hljs-keyword">as</span> JSON <span class="hljs-keyword">and</span> exclude the metadata
+let bundle = em1.exportEntities([<span class="hljs-string">'Customer'</span>, <span class="hljs-string">'Employee'</span>],
+                                {asString: <span class="hljs-literal">false</span>, includeMetadata: <span class="hljs-literal">false</span>});
+<span class="hljs-regexp">//</span> store JSON bundle somewhere ... perhaps indexDb ... <span class="hljs-keyword">and</span> later <span class="hljs-keyword">import</span> <span class="hljs-keyword">as</span> we <span class="hljs-keyword">do</span> here.
+em2.importEntities(bundle);</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entities: <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entities to export or the EntityType(s) of the entities to export;
+										all entities are exported if this parameter is omitted or null.</p>
+									</div>
+								</li>
+								<li>
+									<h5>exportConfig: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Export configuration options or a boolean</p>
+										<ul>
+											<li>asString - (boolean) - If true (default), return export bundle as a string.</li>
+											<li>includeMetadata - (boolean) - If true (default), include metadata in the export bundle.</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
+							<p>The export bundle either serialized (default) or as a JSON object.
+								The bundle contains the metadata (unless excluded) and the entity data grouped by type.
+							The entity data include property values, change-state, and temporary key mappings (if any).</p>
+							<p>The export bundle internals are deliberately undocumented.  This Breeze-internal representation of entity data is
+								suitable for export, storage, and import. The schema and contents of the bundle may change in future versions of Breeze.
+							Manipulate it at your own risk with appropriate caution.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="fetchentitybykey" class="tsd-anchor"></a>
+					<h3>fetch<wbr>Entity<wbr>ByKey</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Entity<wbr>ByKey<span class="tsd-signature-symbol">(</span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, keyValues<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, checkLocalCacheFirst<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ientitybykeyresult.html" class="tsd-signature-type">IEntityByKeyResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Entity<wbr>ByKey<span class="tsd-signature-symbol">(</span>entityType<span class="tsd-signature-symbol">: </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a>, keyValues<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, checkLocalCacheFirst<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ientitybykeyresult.html" class="tsd-signature-type">IEntityByKeyResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Entity<wbr>ByKey<span class="tsd-signature-symbol">(</span>entityKey<span class="tsd-signature-symbol">: </span><a href="entitykey.html" class="tsd-signature-type">EntityKey</a>, checkLocalCacheFirst<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ientitybykeyresult.html" class="tsd-signature-type">IEntityByKeyResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1211">entity-manager.ts:1211</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Attempts to fetch an entity from the server by its <a href="entitykey.html">EntityKey</a> with
+										an option to check the local cache first. Note the this EntityManager&#39;s queryOptions.mergeStrategy
+									will be used to merge any server side entity returned by this method.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+<span class="hljs-keyword">let</span> employeeType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Employee"</span>)</span>;
+<span class="hljs-keyword">let</span> employeeKey = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityKey(<span class="hljs-params">employeeType</span>, 1)</span>;
+em1.fetch<span class="hljs-constructor">EntityByKey(<span class="hljs-params">employeeKey</span>)</span>.<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span>(result) {
+  <span class="hljs-keyword">let</span> employee = result.entity;
+  <span class="hljs-keyword">let</span> entityKey = result.entityKey;
+  <span class="hljs-keyword">let</span> fromCache = result.fromCache;
+});</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>typeName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The EntityType name for this key.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>keyValues: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The values for this key - will usually just be a single value; an array is only needed for multipart keys.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> checkLocalCacheFirst: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default = false) - Whether to check this EntityManager first before going to the server. By default, the query will NOT do this.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ientitybykeyresult.html" class="tsd-signature-type">IEntityByKeyResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<ul>
+								<li>Properties on the promise success result</li>
+								<li>entity {Object} The entity returned or null</li>
+								<li>entityKey {EntityKey} The entityKey of the entity to fetch.</li>
+								<li>fromCache {Boolean} Whether this entity was fetched from the server or was found in the local cache.</li>
+							</ul>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1212">entity-manager.ts:1212</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Attempts to fetch an entity from the server by its <a href="entitykey.html">EntityKey</a> with
+										an option to check the local cache first. Note the this EntityManager&#39;s queryOptions.mergeStrategy
+									will be used to merge any server side entity returned by this method.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+<span class="hljs-keyword">let</span> employeeType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Employee"</span>)</span>;
+<span class="hljs-keyword">let</span> employeeKey = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityKey(<span class="hljs-params">employeeType</span>, 1)</span>;
+em1.fetch<span class="hljs-constructor">EntityByKey(<span class="hljs-params">employeeKey</span>)</span>.<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span>(result) {
+  <span class="hljs-keyword">let</span> employee = result.entity;
+  <span class="hljs-keyword">let</span> entityKey = result.entityKey;
+  <span class="hljs-keyword">let</span> fromCache = result.fromCache;
+});</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityType: <a href="entitytype.html" class="tsd-signature-type">EntityType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The EntityType for this key.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>keyValues: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The values for this key - will usually just be a single value; an array is only needed for multipart keys.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> checkLocalCacheFirst: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default = false) - Whether to check this EntityManager first before going to the server. By default, the query will NOT do this.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ientitybykeyresult.html" class="tsd-signature-type">IEntityByKeyResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<ul>
+								<li>Properties on the promise success result</li>
+								<li>entity {Object} The entity returned or null</li>
+								<li>entityKey {EntityKey} The entityKey of the entity to fetch.</li>
+								<li>fromCache {Boolean} Whether this entity was fetched from the server or was found in the local cache.</li>
+							</ul>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1213">entity-manager.ts:1213</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Attempts to fetch an entity from the server by its <a href="entitykey.html">EntityKey</a> with
+										an option to check the local cache first. Note the this EntityManager&#39;s queryOptions.mergeStrategy
+									will be used to merge any server side entity returned by this method.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+<span class="hljs-keyword">let</span> employeeType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Employee"</span>)</span>;
+<span class="hljs-keyword">let</span> employeeKey = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityKey(<span class="hljs-params">employeeType</span>, 1)</span>;
+em1.fetch<span class="hljs-constructor">EntityByKey(<span class="hljs-params">employeeKey</span>)</span>.<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span>(result) {
+  <span class="hljs-keyword">let</span> employee = result.entity;
+  <span class="hljs-keyword">let</span> entityKey = result.entityKey;
+  <span class="hljs-keyword">let</span> fromCache = result.fromCache;
+});</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityKey: <a href="entitykey.html" class="tsd-signature-type">EntityKey</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitykey.html">EntityKey</a> of the Entity to be located.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> checkLocalCacheFirst: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(default = false) - Whether to check this EntityManager first before going to the server. By default, the query will NOT do this.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ientitybykeyresult.html" class="tsd-signature-type">IEntityByKeyResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<ul>
+								<li>Properties on the promise success result</li>
+								<li>entity {Object} The entity returned or null</li>
+								<li>entityKey {EntityKey} The entityKey of the entity to fetch.</li>
+								<li>fromCache {Boolean} Whether this entity was fetched from the server or was found in the local cache.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="fetchmetadata" class="tsd-anchor"></a>
+					<h3>fetch<wbr>Metadata</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Metadata<span class="tsd-signature-symbol">(</span>dataService<span class="tsd-signature-symbol">?: </span><a href="dataservice.html" class="tsd-signature-type">DataService</a>, callback<span class="tsd-signature-symbol">?: </span><a href="../interfaces/callback.html" class="tsd-signature-type">Callback</a>, errorCallback<span class="tsd-signature-symbol">?: </span><a href="../interfaces/errorcallback.html" class="tsd-signature-type">ErrorCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L847">entity-manager.ts:847</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches the metadata associated with the EntityManager&#39;s current &#39;serviceName&#39;.  This call
+										occurs internally before the first query to any service if the metadata hasn&#39;t already been
+									loaded. <strong>Async</strong></p>
+								</div>
+								<p>Usually you will not actually process the results of a fetchMetadata call directly, but will instead
+								ask for the metadata from the EntityManager after the fetchMetadata call returns.</p>
+								<blockquote>
+									<pre><code><span class="hljs-keyword">let</span> em1 = <span class="hljs-keyword">new</span> EntityManager( <span class="hljs-string">"breeze/NorthwindIBModel"</span>);
+em1.fetchMetadata()
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">let</span> metadataStore = em1.metadataStore;
+      <span class="hljs-comment">// do something with the metadata</span>
+  }).fail(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exception</span>) </span>{
+      <span class="hljs-comment">// handle exception here</span>
+  });</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> dataService: <a href="dataservice.html" class="tsd-signature-type">DataService</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <a href="../interfaces/callback.html" class="tsd-signature-type">Callback</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function called on success.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorCallback: <a href="../interfaces/errorcallback.html" class="tsd-signature-type">ErrorCallback</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function called on failure.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<ul>
+								<li>schema {Object} The raw Schema object from metadata provider - Because this schema will differ depending on the metadata provider
+								it is usually better to access metadata via the &#39;metadataStore&#39; property of the EntityManager instead of using this &#39;raw&#39; data.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="findentitybykey" class="tsd-anchor"></a>
+					<h3>find<wbr>Entity<wbr>ByKey</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Entity<wbr>ByKey<span class="tsd-signature-symbol">(</span>entityKey<span class="tsd-signature-symbol">: </span><a href="entitykey.html" class="tsd-signature-type">EntityKey</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1259">entity-manager.ts:1259</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>[Deprecated] - Attempts to locate an entity within this EntityManager by its  <a href="entitykey.html">EntityKey</a>.</p>
+									<blockquote>
+										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+<span class="hljs-keyword">let</span> employeeType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Employee"</span>)</span>;
+<span class="hljs-keyword">let</span> employeeKey = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityKey(<span class="hljs-params">employeeType</span>, 1)</span>;
+<span class="hljs-keyword">let</span> employee = em1.find<span class="hljs-constructor">EntityByKey(<span class="hljs-params">employeeKey</span>)</span>;
+<span class="hljs-comment">// employee will either be an entity or null.</span></code></pre></blockquote>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>Use getEntityByKey instead</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityKey: <a href="entitykey.html" class="tsd-signature-type">EntityKey</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The  <a href="entitykey.html">EntityKey</a> of the Entity to be located.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h4>
+							<p>An Entity or null;</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="generatetempkeyvalue" class="tsd-anchor"></a>
+					<h3>generate<wbr>Temp<wbr>Key<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Temp<wbr>Key<wbr>Value<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1289">entity-manager.ts:1289</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generates a temporary key for the specified entity.  This is used to insure that newly
+										created entities have unique keys and to register that these keys are temporary and
+									need to be automatically replaced with &#39;real&#39; key values once these entities are saved.</p>
+								</div>
+								<p>The <a href="entitymanager.html#keygeneratorctor">EntityManager.keyGeneratorCtor</a> property is used internally by this method to actually generate
+									the keys - See the  KeyGenerator interface interface description to see
+								how a custom key generator can be plugged in.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> customer = custType.create<span class="hljs-constructor">Entity()</span>;
+ <span class="hljs-keyword">let</span> customerId = em.generate<span class="hljs-constructor">TempKeyValue(<span class="hljs-params">customer</span>)</span>;
+ <span class="hljs-comment">// The 'customer' entity 'CustomerID' property is now set to a newly generated unique id value</span>
+ <span class="hljs-comment">// This property will change again after a successful save of the 'customer' entity.</span>
+
+ em1.save<span class="hljs-constructor">Changes()</span>.<span class="hljs-keyword">then</span>( <span class="hljs-keyword">function</span>( data) {
+     <span class="hljs-keyword">let</span> sameCust1 = data.results<span class="hljs-literal">[<span class="hljs-number">0</span>]</span>;
+     <span class="hljs-comment">// cust1 === sameCust1;</span>
+     <span class="hljs-comment">// but cust1.getProperty("CustomerId") != customerId</span>
+     <span class="hljs-comment">// because the server will have generated a new id</span>
+     <span class="hljs-comment">// and the client will have been updated with this</span>
+     <span class="hljs-comment">// new id.</span>
+ })</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The Entity to generate a key for.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>The new key value</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getchanges" class="tsd-anchor"></a>
+					<h3>get<wbr>Changes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Changes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Changes<span class="tsd-signature-symbol">(</span>entityTypeNames<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Changes<span class="tsd-signature-symbol">(</span>entityTypes<span class="tsd-signature-symbol">: </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1348">entity-manager.ts:1348</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a array of all changed entities of the specified <a href="entitytype.html">EntityType</a>s. A &#39;changed&#39; Entity has
+									has an <a href="entitystate.html">EntityState</a> of either Added, Modified or Deleted.</p>
+								</div>
+								<p>This method can be used to get all of the changed entities within an EntityManager</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> changedEntities = em1.get<span class="hljs-constructor">Changes()</span>;</code></pre></blockquote>
+								<p>or you can specify that you only want the changes on a specific <a href="entitytype.html">EntityType</a></p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> changedCustomers = em1.get<span class="hljs-constructor">Changes(<span class="hljs-params">custType</span>)</span>;</code></pre></blockquote>
+								<p>or to a collection of <a href="entitytype.html">EntityType</a>s</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">let</span> changedCustomersAndOrders = em1.get<span class="hljs-constructor">Changes([<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>])</span>;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>An array of Entities</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1349">entity-manager.ts:1349</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a array of all changed entities of the specified <a href="entitytype.html">EntityType</a>s. A &#39;changed&#39; Entity has
+									has an <a href="entitystate.html">EntityState</a> of either Added, Modified or Deleted.</p>
+								</div>
+								<p>This method can be used to get all of the changed entities within an EntityManager</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> changedEntities = em1.get<span class="hljs-constructor">Changes()</span>;</code></pre></blockquote>
+								<p>or you can specify that you only want the changes on a specific <a href="entitytype.html">EntityType</a></p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> changedCustomers = em1.get<span class="hljs-constructor">Changes(<span class="hljs-params">custType</span>)</span>;</code></pre></blockquote>
+								<p>or to a collection of <a href="entitytype.html">EntityType</a>s</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">let</span> changedCustomersAndOrders = em1.get<span class="hljs-constructor">Changes([<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>])</span>;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityTypeNames: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitytype.html">EntityType</a> name or names for which &#39;changed&#39; entities will be found.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>An array of Entities</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1350">entity-manager.ts:1350</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a array of all changed entities of the specified <a href="entitytype.html">EntityType</a>s. A &#39;changed&#39; Entity has
+									has an <a href="entitystate.html">EntityState</a> of either Added, Modified or Deleted.</p>
+								</div>
+								<p>This method can be used to get all of the changed entities within an EntityManager</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> changedEntities = em1.get<span class="hljs-constructor">Changes()</span>;</code></pre></blockquote>
+								<p>or you can specify that you only want the changes on a specific <a href="entitytype.html">EntityType</a></p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> changedCustomers = em1.get<span class="hljs-constructor">Changes(<span class="hljs-params">custType</span>)</span>;</code></pre></blockquote>
+								<p>or to a collection of <a href="entitytype.html">EntityType</a>s</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">let</span> changedCustomersAndOrders = em1.get<span class="hljs-constructor">Changes([<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>])</span>;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityTypes: <a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitytype.html">EntityType</a> or EntityTypes for which &#39;changed&#39; entities will be found.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>An array of Entities</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getentities" class="tsd-anchor"></a>
+					<h3>get<wbr>Entities</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entities<span class="tsd-signature-symbol">(</span>entityTypeNames<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, entityStates<span class="tsd-signature-symbol">?: </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> | </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entities<span class="tsd-signature-symbol">(</span>entityTypes<span class="tsd-signature-symbol">?: </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol">[]</span>, entityStates<span class="tsd-signature-symbol">?: </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> | </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1401">entity-manager.ts:1401</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a array of all entities of the specified <a href="entitytype.html">EntityType</a>s with the specified <a href="entitystate.html">EntityState</a>s.</p>
+								</div>
+								<p>This method can be used to get all of the entities within an EntityManager</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> entities = em1.get<span class="hljs-constructor">Entities()</span>;</code></pre></blockquote>
+								<p>or you can specify that you only want the changes on a specific <a href="entitytype.html">EntityType</a></p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> customers = em1.get<span class="hljs-constructor">Entities(<span class="hljs-params">custType</span>)</span>;</code></pre></blockquote>
+								<p>or to a collection of <a href="entitytype.html">EntityType</a>s</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">let</span> customersAndOrders = em1.get<span class="hljs-constructor">Changes([<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>])</span>;</code></pre></blockquote>
+								<p>You can also ask for entities with a particular <a href="entitystate.html">EntityState</a> or EntityStates.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">let</span> addedCustomersAndOrders = em1.get<span class="hljs-constructor">Entities([<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>], EntityState.Added)</span>;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entityTypeNames: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entityStates: <a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> | </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitystate.html">EntityState</a>s for which entities will be found.
+											If this parameter is omitted, entities of all EntityStates are returned.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>An array of Entities</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1402">entity-manager.ts:1402</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a array of all entities of the specified <a href="entitytype.html">EntityType</a>s with the specified <a href="entitystate.html">EntityState</a>s.</p>
+								</div>
+								<p>This method can be used to get all of the entities within an EntityManager</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> entities = em1.get<span class="hljs-constructor">Entities()</span>;</code></pre></blockquote>
+								<p>or you can specify that you only want the changes on a specific <a href="entitytype.html">EntityType</a></p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> customers = em1.get<span class="hljs-constructor">Entities(<span class="hljs-params">custType</span>)</span>;</code></pre></blockquote>
+								<p>or to a collection of <a href="entitytype.html">EntityType</a>s</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">let</span> customersAndOrders = em1.get<span class="hljs-constructor">Changes([<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>])</span>;</code></pre></blockquote>
+								<p>You can also ask for entities with a particular <a href="entitystate.html">EntityState</a> or EntityStates.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">let</span> addedCustomersAndOrders = em1.get<span class="hljs-constructor">Entities([<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>], EntityState.Added)</span>;</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entityTypes: <a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitytype.html">EntityType</a> or EntityTypes for which entities will be found.
+											If this parameter is omitted, all EntityTypes are searched.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entityStates: <a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol"> | </span><a href="entitystate.html" class="tsd-signature-type">EntityState</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitystate.html">EntityState</a>s for which entities will be found.
+											If this parameter is omitted, entities of all EntityStates are returned.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>An array of Entities</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getentitybykey" class="tsd-anchor"></a>
+					<h3>get<wbr>Entity<wbr>ByKey</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>ByKey<span class="tsd-signature-symbol">(</span>entityKey<span class="tsd-signature-symbol">: </span><a href="entitykey.html" class="tsd-signature-type">EntityKey</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>ByKey<span class="tsd-signature-symbol">(</span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, keyValues<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>ByKey<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a>, keyValues<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1172">entity-manager.ts:1172</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> employeeType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Employee"</span>)</span>;
+ <span class="hljs-keyword">let</span> employeeKey = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityKey(<span class="hljs-params">employeeType</span>, 1)</span>;
+ <span class="hljs-keyword">let</span> employee = em1.get<span class="hljs-constructor">EntityByKey(<span class="hljs-params">employeeKey</span>)</span>;
+ <span class="hljs-comment">// employee will either be an entity or null.</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityKey: <a href="entitykey.html" class="tsd-signature-type">EntityKey</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitykey.html">EntityKey</a> of the Entity to be located.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
+							<p>An Entity or null;</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1179">entity-manager.ts:1179</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> employee = em1.get<span class="hljs-constructor">EntityByKey(<span class="hljs-string">"Employee"</span>, 1)</span>;
+ <span class="hljs-comment">// employee will either be an entity or null.</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>typeName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The EntityType name for this key.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>keyValues: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The values for this key - will usually just be a single value; an array is only needed for multipart keys.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
+							<p>An Entity or null;</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1187">entity-manager.ts:1187</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> employeeType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Employee"</span>)</span>;
+ <span class="hljs-keyword">let</span> employee = em1.get<span class="hljs-constructor">EntityByKey(<span class="hljs-params">employeeType</span>, 1)</span>;
+ <span class="hljs-comment">// employee will either be an entity or null.</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="entitytype.html" class="tsd-signature-type">EntityType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitytype.html">EntityType</a> for this key.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>keyValues: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The values for this key - will usually just be a single value; an array is only needed for multipart keys.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
+							<p>An Entity or null;</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="haschanges" class="tsd-anchor"></a>
+					<h3>has<wbr>Changes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Changes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Changes<span class="tsd-signature-symbol">(</span>entityTypeNames<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Changes<span class="tsd-signature-symbol">(</span>entityTypes<span class="tsd-signature-symbol">: </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1300">entity-manager.ts:1300</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether there are any changed entities of the specified <a href="entitytype.html">EntityType</a>s. A &#39;changed&#39; Entity has
+									has an <a href="entitystate.html">EntityState</a> of either Added, Modified or Deleted.</p>
+								</div>
+								<p>This method can be used to determine if an EntityManager has any changes</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">if</span> ( em1.hasChanges() {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+								<p>or if it has any changes on to a specific <a href="entitytype.html">EntityType</a>.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">if</span> ( em1.has<span class="hljs-constructor">Changes(<span class="hljs-params">custType</span>)</span> {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+								<p>or to a collection of <a href="entitytype.html">EntityType</a>s</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">if</span> ( em1.has<span class="hljs-constructor">Changes( [<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>])</span> {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether there are any changed entities that match the types specified..</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1301">entity-manager.ts:1301</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether there are any changed entities of the specified <a href="entitytype.html">EntityType</a>s. A &#39;changed&#39; Entity has
+									has an <a href="entitystate.html">EntityState</a> of either Added, Modified or Deleted.</p>
+								</div>
+								<p>This method can be used to determine if an EntityManager has any changes</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">if</span> ( em1.hasChanges() {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+								<p>or if it has any changes on to a specific <a href="entitytype.html">EntityType</a>.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">if</span> ( em1.has<span class="hljs-constructor">Changes(<span class="hljs-params">custType</span>)</span> {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+								<p>or to a collection of <a href="entitytype.html">EntityType</a>s</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">if</span> ( em1.has<span class="hljs-constructor">Changes( [<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>])</span> {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityTypeNames: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitytype.html">EntityType</a> name or names for which &#39;changed&#39; entities will be found.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether there are any changed entities that match the types specified..</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1302">entity-manager.ts:1302</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether there are any changed entities of the specified <a href="entitytype.html">EntityType</a>s. A &#39;changed&#39; Entity has
+									has an <a href="entitystate.html">EntityState</a> of either Added, Modified or Deleted.</p>
+								</div>
+								<p>This method can be used to determine if an EntityManager has any changes</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">if</span> ( em1.hasChanges() {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+								<p>or if it has any changes on to a specific <a href="entitytype.html">EntityType</a>.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">if</span> ( em1.has<span class="hljs-constructor">Changes(<span class="hljs-params">custType</span>)</span> {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+								<p>or to a collection of <a href="entitytype.html">EntityType</a>s</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> custType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Customer"</span>)</span>;
+ <span class="hljs-keyword">let</span> orderType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Order"</span>)</span>;
+ <span class="hljs-keyword">if</span> ( em1.has<span class="hljs-constructor">Changes( [<span class="hljs-params">custType</span>, <span class="hljs-params">orderType</span>])</span> {
+     <span class="hljs-comment">// do something interesting</span>
+ }</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entityTypes: <a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <a href="entitytype.html">EntityType</a> or EntityTypes for which &#39;changed&#39; entities will be found.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether there are any changed entities that match the types specified..</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="importentities" class="tsd-anchor"></a>
+					<h3>import<wbr>Entities</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">import<wbr>Entities<span class="tsd-signature-symbol">(</span>exportedString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, config<span class="tsd-signature-symbol">?: </span><a href="../interfaces/importconfig.html" class="tsd-signature-type">ImportConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">import<wbr>Entities<span class="tsd-signature-symbol">(</span>exportedData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, config<span class="tsd-signature-symbol">?: </span><a href="../interfaces/importconfig.html" class="tsd-signature-type">ImportConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L582">entity-manager.ts:582</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Imports a previously exported result into this EntityManager.</p>
+								</div>
+								<p>This method can be used to make a complete copy of any previously created entityManager, even if created
+									in a previous session and stored in localStorage. The static version of this method performs a
+								very similar process.</p>
+								<blockquote>
+									<pre><code>// <span class="hljs-keyword">assume</span> em1 <span class="hljs-keyword">is</span> an EntityManager containing a number <span class="hljs-keyword">of</span> existing entities.
+<span class="hljs-keyword">let</span> bundle = em1.exportEntities();
+// bundle can <span class="hljs-keyword">be</span> stored <span class="hljs-keyword">in</span> window.localStorage <span class="hljs-keyword">or</span> just held <span class="hljs-keyword">in</span> memory.
+<span class="hljs-keyword">let</span> em2 = new EntityManager({
+    serviceName: em1.serviceName,
+    metadataStore: em1.metadataStore
+});
+em2.importEntities(bundle);
+// em2 will <span class="hljs-keyword">now</span> have a complete copy <span class="hljs-keyword">of</span> what was <span class="hljs-keyword">in</span> em1</code></pre></blockquote>
+								<p>It can also be used to merge the contents of a previously created EntityManager with an
+								existing EntityManager with control over how the two are merged.</p>
+								<blockquote>
+									<pre><code>let bundle = em1.exportEntities();
+// assume em2 <span class="hljs-keyword">is</span> another entityManager containing <span class="hljs-keyword">some</span> <span class="hljs-keyword">of</span> the same entities possibly <span class="hljs-keyword">with</span> modifications.
+em2.importEntities(bundle, { mergeStrategy: MergeStrategy.PreserveChanges} );
+// em2 will now contain <span class="hljs-keyword">all</span> <span class="hljs-keyword">of</span> the entities <span class="hljs-keyword">from</span> <span class="hljs-keyword">both</span> em1 <span class="hljs-keyword">and</span> em2.  <span class="hljs-keyword">Any</span> em2 entities <span class="hljs-keyword">with</span> previously
+// made modifications will <span class="hljs-keyword">not</span> have been touched, but <span class="hljs-keyword">all</span> other entities <span class="hljs-keyword">from</span> em1 will have been imported.</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>exportedString: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The result of a previous &#39;export&#39; call.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <a href="../interfaces/importconfig.html" class="tsd-signature-type">ImportConfig</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>result</p>
+							<ul>
+								<li>result.entities {Array of Entities} The entities that were imported.</li>
+								<li>result.tempKeyMap {Object} Mapping from original EntityKey in the import bundle to its corresponding EntityKey in this EntityManager.</li>
+							</ul>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L583">entity-manager.ts:583</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Imports a previously exported result into this EntityManager.</p>
+								</div>
+								<p>This method can be used to make a complete copy of any previously created entityManager, even if created
+									in a previous session and stored in localStorage. The static version of this method performs a
+								very similar process.</p>
+								<blockquote>
+									<pre><code>// <span class="hljs-keyword">assume</span> em1 <span class="hljs-keyword">is</span> an EntityManager containing a number <span class="hljs-keyword">of</span> existing entities.
+<span class="hljs-keyword">let</span> bundle = em1.exportEntities();
+// bundle can <span class="hljs-keyword">be</span> stored <span class="hljs-keyword">in</span> window.localStorage <span class="hljs-keyword">or</span> just held <span class="hljs-keyword">in</span> memory.
+<span class="hljs-keyword">let</span> em2 = new EntityManager({
+    serviceName: em1.serviceName,
+    metadataStore: em1.metadataStore
+});
+em2.importEntities(bundle);
+// em2 will <span class="hljs-keyword">now</span> have a complete copy <span class="hljs-keyword">of</span> what was <span class="hljs-keyword">in</span> em1</code></pre></blockquote>
+								<p>It can also be used to merge the contents of a previously created EntityManager with an
+								existing EntityManager with control over how the two are merged.</p>
+								<blockquote>
+									<pre><code>let bundle = em1.exportEntities();
+// assume em2 <span class="hljs-keyword">is</span> another entityManager containing <span class="hljs-keyword">some</span> <span class="hljs-keyword">of</span> the same entities possibly <span class="hljs-keyword">with</span> modifications.
+em2.importEntities(bundle, { mergeStrategy: MergeStrategy.PreserveChanges} );
+// em2 will now contain <span class="hljs-keyword">all</span> <span class="hljs-keyword">of</span> the entities <span class="hljs-keyword">from</span> <span class="hljs-keyword">both</span> em1 <span class="hljs-keyword">and</span> em2.  <span class="hljs-keyword">Any</span> em2 entities <span class="hljs-keyword">with</span> previously
+// made modifications will <span class="hljs-keyword">not</span> have been touched, but <span class="hljs-keyword">all</span> other entities <span class="hljs-keyword">from</span> em1 will have been imported.</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>exportedData: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <a href="../interfaces/importconfig.html" class="tsd-signature-type">ImportConfig</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>result</p>
+							<ul>
+								<li>result.entities {Array of Entities} The entities that were imported.</li>
+								<li>result.tempKeyMap {Object} Mapping from original EntityKey in the import bundle to its corresponding EntityKey in this EntityManager.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="rejectchanges" class="tsd-anchor"></a>
+					<h3>reject<wbr>Changes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">reject<wbr>Changes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1386">entity-manager.ts:1386</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rejects (reverses the effects) all of the additions, modifications and deletes from this EntityManager.
+									Calls <a href="entityaspect.html#rejectchanges">EntityAspect.rejectChanges</a> on every changed entity in this EntityManager.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> entities = em1.reject<span class="hljs-constructor">Changes()</span>;</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>The entities whose changes were rejected. These entities will all have EntityStates of
+							either &#39;Unchanged&#39; or &#39;Detached&#39;</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="savechanges" class="tsd-anchor"></a>
+					<h3>save<wbr>Changes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">save<wbr>Changes<span class="tsd-signature-symbol">(</span>entities<span class="tsd-signature-symbol">?: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, saveOptions<span class="tsd-signature-symbol">?: </span><a href="saveoptions.html" class="tsd-signature-type">SaveOptions</a>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span>, errorCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/saveresult.html" class="tsd-signature-type">SaveResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1006">entity-manager.ts:1006</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Saves either a list of specified entities or all changed entities within this EntityManager. If there are no changes to any of the entities
+									specified then there will be no server side call made but a valid &#39;empty&#39; saveResult will still be returned. <strong>Async</strong></p>
+								</div>
+								<p>Often we will be saving all of the entities within an EntityManager that are either added, modified or deleted
+								and we will let the &#39;saveChanges&#39; call determine which entities these are.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-comment">// This could include added, modified and deleted entities.</span>
+ em.saveChanges().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">saveResult</span>) </span>{
+     <span class="hljs-keyword">let</span> savedEntities = saveResult.entities;
+     <span class="hljs-keyword">let</span> keyMappings = saveResult.keyMappings;
+ }).fail(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+     <span class="hljs-comment">// e is any exception that was thrown.</span>
+ });</code></pre></blockquote>
+								<p>But we can also control exactly which entities to save and can specify specific SaveOptions</p>
+								<blockquote>
+									<pre><code> <span class="hljs-comment">// assume entitiesToSave is an array of entities to save.</span>
+ <span class="hljs-keyword">let</span> saveOptions = <span class="hljs-keyword">new</span> <span class="hljs-constructor">SaveOptions({ <span class="hljs-params">allowConcurrentSaves</span>: <span class="hljs-params">true</span> })</span>;
+ em.save<span class="hljs-constructor">Changes(<span class="hljs-params">entitiesToSave</span>, <span class="hljs-params">saveOptions</span>)</span>.<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span>(saveResult) {
+     <span class="hljs-keyword">let</span> savedEntities = saveResult.entities;
+     <span class="hljs-keyword">let</span> keyMappings = saveResult.keyMappings;
+ }).fail(<span class="hljs-keyword">function</span> (e) {
+     <span class="hljs-comment">// e is any exception that was thrown.</span>
+ });</code></pre></blockquote>
+								<p>Callback methods can also be used</p>
+								<blockquote>
+									<pre><code> em.saveChanges(entitiesToSave, <span class="hljs-literal">null</span>,
+     <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">saveResult</span>) </span>{
+         <span class="hljs-keyword">let</span> savedEntities = saveResult.entities;
+         <span class="hljs-keyword">let</span> keyMappings = saveResult.keyMappings;
+     }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+         <span class="hljs-comment">// e is any exception that was thrown.</span>
+     }
+ );</code></pre></blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entities: <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The list of entities to save.
+											Every entity in that list will be sent to the server, whether changed or unchanged,
+											as long as it is attached to this EntityManager.
+											If this parameter is omitted, null or empty (the usual case),
+										every entity with pending changes in this EntityManager will be saved.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> saveOptions: <a href="saveoptions.html" class="tsd-signature-type">SaveOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="saveoptions.html">SaveOptions</a> for the save - will default to
+										<a href="entitymanager.html#saveoptions">EntityManager.saveOptions</a> if null.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function called on success.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorCallback: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function called on failure.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/saveresult.html" class="tsd-signature-type">SaveResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Promise</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="savechangesvalidateonclient" class="tsd-anchor"></a>
+					<h3>save<wbr>Changes<wbr>Validate<wbr>OnClient</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">save<wbr>Changes<wbr>Validate<wbr>OnClient<span class="tsd-signature-symbol">(</span>entitiesToSave<span class="tsd-signature-symbol">: </span><a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L1143">entity-manager.ts:1143</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Run the &quot;saveChanges&quot; pre-save client validation logic.</p>
+								</div>
+								<p>This is NOT a general purpose validation method.
+									It is intended for utilities that must know if saveChanges
+								would reject the save due to client validation errors.</p>
+								<p>It only validates entities if the EntityManager&#39;s
+								<a href="validationoptions.html">ValidationOptions</a>.validateOnSave is true.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entitiesToSave: <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The list of entities to save (to validate).</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Error</span></h4>
+							<p>Validation error or null if no error</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="setproperties" class="tsd-anchor"></a>
+					<h3>set<wbr>Properties</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Properties<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/entitymanagerconfig.html" class="tsd-signature-type">EntityManagerConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L363">entity-manager.ts:363</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>General purpose property set method.  Any of the properties in the <a href="../interfaces/entitymanagerconfig.html">EntityManagerConfig</a>
+									may be set.</p>
+									<blockquote>
+										<pre><code> // assume em1 <span class="hljs-keyword">is</span> a previously created EntityManager
+ // <span class="hljs-keyword">where</span> we want <span class="hljs-keyword">to</span> change <span class="hljs-keyword">some</span> <span class="hljs-keyword">of</span> its settings.
+ em1.setProperties( {
+     serviceName: "breeze/foo"
+ });</code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>config: <a href="../interfaces/entitymanagerconfig.html" class="tsd-signature-type">EntityManagerConfig</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An object containing the selected properties and values to set.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="importentities-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> import<wbr>Entities</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">import<wbr>Entities<span class="tsd-signature-symbol">(</span>exportedString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, config<span class="tsd-signature-symbol">?: </span><a href="../interfaces/importconfig.html" class="tsd-signature-type">ImportConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></li>
+						<li class="tsd-signature tsd-kind-icon">import<wbr>Entities<span class="tsd-signature-symbol">(</span>exportedData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, config<span class="tsd-signature-symbol">?: </span><a href="../interfaces/importconfig.html" class="tsd-signature-type">ImportConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L443">entity-manager.ts:443</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new EntityManager and imports a previously exported result into it.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> bundle = em1.export<span class="hljs-constructor">Entities()</span>;
+ <span class="hljs-comment">// can be stored via the web storage api</span>
+ window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">"myEntityManager"</span>, <span class="hljs-params">bundle</span>)</span>;
+ <span class="hljs-comment">// assume the code below occurs in a different session.</span>
+ <span class="hljs-keyword">let</span> bundleFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">"myEntityManager"</span>)</span>;
+ <span class="hljs-comment">// and imported</span>
+ <span class="hljs-keyword">let</span> em2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityManager</span>.</span></span>import<span class="hljs-constructor">Entities(<span class="hljs-params">bundleFromStorage</span>)</span>;
+ <span class="hljs-comment">// em2 will now have a complete copy of what was in em1</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>exportedString: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The result of a previous &#39;exportEntities&#39; call as a string</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <a href="../interfaces/importconfig.html" class="tsd-signature-type">ImportConfig</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A configuration object.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></h4>
+							<p>A new EntityManager.  Note that the return value of this method call is different from that
+								provided by the same named method on an EntityManager instance. Use that method if you need additional information
+							regarding the imported entities.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L444">entity-manager.ts:444</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new EntityManager and imports a previously exported result into it.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of preexisting entities.</span>
+ <span class="hljs-keyword">let</span> bundle = em1.export<span class="hljs-constructor">Entities()</span>;
+ <span class="hljs-comment">// can be stored via the web storage api</span>
+ window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">"myEntityManager"</span>, <span class="hljs-params">bundle</span>)</span>;
+ <span class="hljs-comment">// assume the code below occurs in a different session.</span>
+ <span class="hljs-keyword">let</span> bundleFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">"myEntityManager"</span>)</span>;
+ <span class="hljs-comment">// and imported</span>
+ <span class="hljs-keyword">let</span> em2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityManager</span>.</span></span>import<span class="hljs-constructor">Entities(<span class="hljs-params">bundleFromStorage</span>)</span>;
+ <span class="hljs-comment">// em2 will now have a complete copy of what was in em1</span></code></pre></blockquote>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>exportedData: <span class="tsd-signature-type">Object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The result of a previous &#39;exportEntities&#39; call as an Object.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <a href="../interfaces/importconfig.html" class="tsd-signature-type">ImportConfig</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A configuration object.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></h4>
+							<p>A new EntityManager.  Note that the return value of this method call is different from that
+								provided by the same named method on an EntityManager instance. Use that method if you need additional information
+							regarding the imported entities.</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class tsd-is-external">
+					<a name="helper" class="tsd-anchor"></a>
+					<h3>helper</h3>
+					<div class="tsd-signature tsd-kind-icon">helper<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L286">entity-manager.ts:286</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="helper.unwrapchangedvalues" class="tsd-anchor"></a>
+						<h3>unwrap<wbr>Changed<wbr>Values</h3>
+						<div class="tsd-signature tsd-kind-icon">unwrap<wbr>Changed<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unwrapChangedValues</span><span class="tsd-signature-symbol"> =&nbsp;unwrapChangedValues</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L289">entity-manager.ts:289</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="helper.unwrapinstance" class="tsd-anchor"></a>
+						<h3>unwrap<wbr>Instance</h3>
+						<div class="tsd-signature tsd-kind-icon">unwrap<wbr>Instance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unwrapInstance</span><span class="tsd-signature-symbol"> =&nbsp;unwrapInstance</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L287">entity-manager.ts:287</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="helper.unwraporiginalvalues" class="tsd-anchor"></a>
+						<h3>unwrap<wbr>Original<wbr>Values</h3>
+						<div class="tsd-signature tsd-kind-icon">unwrap<wbr>Original<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unwrapOriginalValues</span><span class="tsd-signature-symbol"> =&nbsp;unwrapOriginalValues</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/b989e15/src/entity-manager.ts#L288">entity-manager.ts:288</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="entitymanager.html" class="tsd-kind-icon">Entity<wbr>Manager</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#entitychanged" class="tsd-kind-icon">entity<wbr>Changed</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#haschangeschanged" class="tsd-kind-icon">has<wbr>Changes<wbr>Changed</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#validationerrorschanged" class="tsd-kind-icon">validation<wbr>Errors<wbr>Changed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#dataservice" class="tsd-kind-icon">data<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#isloading" class="tsd-kind-icon">is<wbr>Loading</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#isrejectingchanges" class="tsd-kind-icon">is<wbr>Rejecting<wbr>Changes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#keygenerator" class="tsd-kind-icon">key<wbr>Generator</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#keygeneratorctor" class="tsd-kind-icon">key<wbr>Generator<wbr>Ctor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#metadatastore" class="tsd-kind-icon">metadata<wbr>Store</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#queryoptions" class="tsd-kind-icon">query<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#saveoptions" class="tsd-kind-icon">save<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#servicename" class="tsd-kind-icon">service<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#validationoptions" class="tsd-kind-icon">validation<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#acceptchanges" class="tsd-kind-icon">accept<wbr>Changes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#addentity" class="tsd-kind-icon">add<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#attachentity" class="tsd-kind-icon">attach<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#clear" class="tsd-kind-icon">clear</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#createemptycopy" class="tsd-kind-icon">create<wbr>Empty<wbr>Copy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#createentity" class="tsd-kind-icon">create<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#detachentity" class="tsd-kind-icon">detach<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#executequery" class="tsd-kind-icon">execute<wbr>Query</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#executequerylocally" class="tsd-kind-icon">execute<wbr>Query<wbr>Locally</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#exportentities" class="tsd-kind-icon">export<wbr>Entities</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#fetchentitybykey" class="tsd-kind-icon">fetch<wbr>Entity<wbr>ByKey</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#fetchmetadata" class="tsd-kind-icon">fetch<wbr>Metadata</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#findentitybykey" class="tsd-kind-icon">find<wbr>Entity<wbr>ByKey</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#generatetempkeyvalue" class="tsd-kind-icon">generate<wbr>Temp<wbr>Key<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#getchanges" class="tsd-kind-icon">get<wbr>Changes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#getentities" class="tsd-kind-icon">get<wbr>Entities</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#getentitybykey" class="tsd-kind-icon">get<wbr>Entity<wbr>ByKey</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#haschanges" class="tsd-kind-icon">has<wbr>Changes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#importentities" class="tsd-kind-icon">import<wbr>Entities</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#rejectchanges" class="tsd-kind-icon">reject<wbr>Changes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#savechanges" class="tsd-kind-icon">save<wbr>Changes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#savechangesvalidateonclient" class="tsd-kind-icon">save<wbr>Changes<wbr>Validate<wbr>OnClient</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#setproperties" class="tsd-kind-icon">set<wbr>Properties</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="entitymanager.html#importentities-1" class="tsd-kind-icon">import<wbr>Entities</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-external">
+								<a href="entitymanager.html#helper" class="tsd-kind-icon">helper</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
