@@ -7,6 +7,40 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="201"></a>2.0.1 <span class="doc-date">November 5, 2019</span>
+
+#### Features
+
+ - Add `getEntityGraph` mixin as part of breeze-client package (was a [Breeze Lab](http://breeze.github.io/doc-breeze-labs/get-entity-graph.html))
+ - Add `enableSaveQueuing` mixin as part of breeze-client package (was a [Breeze Lab](http://breeze.github.io/doc-breeze-labs/save-queuing.html))
+
+**Mixin: getEntityGraph** allows getting a graph of entities from the EntityManager.  See [Get Entity Graph](http://breeze.github.io/doc-breeze-labs/get-entity-graph.html) for usage.  To use it in TypeScript/ES6, you would: 
+```
+import { EntityManager } from 'breeze-client';
+import { HasEntityGraph, mixinEntityGraph } from 'breeze-client/mixin-get-entity-graph';
+...
+// Ensures that mixin won't be tree-shaken away. 
+// Called with EntityManager class, not an instance.
+mixinEntityGraph(EntityManager);  
+...
+let graph = (manager as HasEntityGraph).getEntityGraph(customer, 'orders.orderDetails');
+```
+
+**Mixin: enableSaveQueuing** automatically queues a `saveChanges()` call on an EntityManager if another save is still in process. _Use at your own risk_.
+See [the source code comments](https://github.com/Breeze/breeze-client/blob/master/src/mixin-save-queuing.ts) for more information, 
+and the [DocCode tests](https://github.com/Breeze/breeze.js.samples/blob/master/net/DocCode/DocCode/tests/saveQueuingTests.js) 
+for example usage.
+
+To use it in TypeScript/ES6, you would:
+```
+import { enableSaveQueuing } from 'breeze-client/mixin-save-queuing';
+...
+// Enable on an EntityManager instance
+enableSaveQueuing(myManager);
+...
+myManager.saveChanges();
+```
+
 ### <a name="200"></a>2.0.0 <span class="doc-date">October 26, 2019</span>
 
 Complete rewrite of the Breeze source code in TypeScript.  Moved repo to https://github.com/Breeze/breeze-client.
