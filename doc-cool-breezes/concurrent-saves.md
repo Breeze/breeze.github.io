@@ -21,7 +21,7 @@ redirect_from: "/old/documentation/concurrent-saves.html"
 <pre class="brush:jscript;">
 manager.saveChanges()
              .then(success)
-             .fail(fail);
+             .catch(fail);
 
 function success(saveResult) {
    /* do your post-save work here */
@@ -84,7 +84,7 @@ manager.enableSaveQueuing(true);</pre>
 <p>Here&#39;s your save call ... showing no signs of the queuing within</p>
 <pre class="brush:jscript;">
 return manager.saveChanges();</pre>
-<p>The caller should append the appropriate <span class="codeword">then(saveSuccess)</span> and <span class="codeword">fail(saveFailure)</span> callbacks to the returned promise.</p>
+<p>The caller should append the appropriate <span class="codeword">then(saveSuccess)</span> and <span class="codeword">catch(saveFailure)</span> callbacks to the returned promise.</p>
 <h3>
 	<a name="timedelayedsaves"></a>Time-delayed saves</h3>
 <p>You may have seen an alternative &quot;time-delayed&quot; approach to preventing concurrent saves. Here&#39;s an excerpt from the <em>dataservice.js</em> in the <strong>Todo sample</strong></p>
@@ -98,8 +98,8 @@ return manager.saveChanges();</pre>
     _isSaving = true;
     manager.saveChanges()
            .then(saveSucceeded)
-           .fail(saveFailed)
-           .fin(saveFinished);
+           .catch(saveFailed)
+           .finally(saveFinished);
 
     ... implementations of saveSucceeded, saveFailed, saveFinished
 }

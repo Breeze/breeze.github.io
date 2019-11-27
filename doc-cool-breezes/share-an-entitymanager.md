@@ -48,7 +48,7 @@ app.ThisViewModel = (function (ko, datacontext) {
    }
 
    function refresh() {
-      return datacontext.getThis(thisList).fail(queryFailed);   
+      return datacontext.getThis(thisList).catch(queryFailed);   
    }
 
    function queryFailed(error) { ... }

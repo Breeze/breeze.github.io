@@ -55,7 +55,7 @@ redirect_from: "/old/documentation/query-examples.html"
     // execute one of them
     manager.executeQuery(query1a) // returns a promise
          .then(querySucceeded)  // process results
-         .fail(queryFailed);    // handle error
+         .catch(queryFailed);    // handle error
 
 ## <a name="Where"></a>Filtering with "where"
 
@@ -408,7 +408,7 @@ Call <em><strong>fetch</strong>EntityByKey </em>directly on the <em>EntityManage
     // Fetch the customer with CustomerID == 42 from the database
     // returns a promise. 
     manager.fetchEntityByKey('Customer', 42)
-       .then(fetchSucceeded).fail(fetchFailed);
+       .then(fetchSucceeded).catch(fetchFailed);
 
 <a href="#QueryByKeyWithExpand">See example above</a> to expand with related entities.
 
@@ -417,7 +417,7 @@ Add <em><code>checkLocalCacheFirst=true</code></em> parameter to look in the cac
     // Look for the customer in manager's cache first
     // Fetch from the database if not found in cache
     manager.fetchEntityByKey('Customer', 42, true) 
-       .then(fetchSucceeded).fail(fetchFailed);
+       .then(fetchSucceeded).catch(fetchFailed);
 
 Call <em><strong>get</strong>EntityByKey </em>directly on the <em>EntityManager</em> to extract the entity from cache. Note the '<em><strong>get</strong></em>' prefix.  This isn't really a query because it can only look in cache and never calls the remote service. It returns immediately with the entity or <em>null</em>.
 
@@ -448,6 +448,6 @@ On the JavaScript client:
     // see the DocCode queryTests module for details
     EntityQuery.from('Lookups')
         .using(em).execute()
-        .fail(handleFail);
+        .catch(handleFail);
 
 The <em>Region</em>, <em>Territory</em>, and <em>Category </em>entities are in cache after the query succeeds. See '<a href="/doc-cool-breezes/lookup-lists.html" target="_blank">Lookup Lists</a>' for a richer discussion of this example.

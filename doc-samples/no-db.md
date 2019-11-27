@@ -163,7 +163,7 @@ var query = EntityQuery.for(&quot;TodoList&quot;);
 // first query implicitly asks for metadata
 manager.executeQuery(query)
        .then(querySucceeded)
-       .fail(queryFailed); // 404 - Resource not found</pre>
+       .catch(queryFailed); // 404 - Resource not found</pre>
 <p>It&#39;s going to bomb with a 404 on the first query. Instead, we prepare a BreezeJS <span class="codeword">DataService</span> object whose <span class="codeword">hasServerMetadata</span> flag is set false. Then we create a new <span class="codeword">EntityManager</span> with this configuration and we are good to go:</p>
 <pre class="brush:jscript;">
 var dataService = new breeze.DataService({

@@ -103,8 +103,8 @@ Test modules follow a common pattern that merits examination. Here's the beginni
             stop();                     // going async ... tell test runner to wait
             newEm().executeQuery(query)
               .then(assertGotCustomers) // success callback
-              .fail(handleFail)         // failure callback
-              .fin(start);              // 'fin' always called.
+              .catch(handleFail)        // failure callback
+              .finally(start);          // 'finally' always called.
         });</pre>
 
 The module is an anonymous function, wrapped in a requireJS `define` method call:
@@ -194,8 +194,8 @@ Here's the same test without the benefit of `verifyQuery`.
         stop();                         // [2] going async, stop the test runner 
         newEm().executeQuery(query)     // [3] query and wait ...
           .then(assertGotCustomers)     // [4] do this if query succeeds
-          .fail(handleFail)             // [5] do that if the query fails
-          .fin(start);                  // [6] resume test runner.
+          .catch(handleFail)            // [5] do that if the query fails
+          .finally(start);              // [6] resume test runner.
     });
 
 We rarely change the way we deal with test failure which is why a single `handleFail` method does the job for almost all of our tests.
@@ -232,8 +232,8 @@ Fortunately, an asynchronous testing pattern is pretty easy to follow with the a
          queryForOne(em, alfredsFirstOrderQuery)     // [2]
          .then(queryOrderDetailsfromEntityNavigation)// [3]
          .then(assertCanNavigateOrderOrderDetails)   // [4]
-         .fail(handleFail)                           // [5]
-         .fin(start);                                // [6]
+         .catch(handleFail)                          // [5]
+         .finally(start);                            // [6]
     
      });
 
@@ -249,8 +249,8 @@ To recap:
 - Begin with synchronous setup code
 - Call `stop()` just before the first async method
 - Chain async methods together using promises `then(&hellip;)` function
-- Catch failure with '`.fail(handleFail)`'
-- Re-start the test runner with a final '`.fin(start)`'
+- Catch failure with '`.catch(handleFail)`'
+- Re-start the test runner with a final '`.finally(start)`'
 
 
 ## QUnit assertions

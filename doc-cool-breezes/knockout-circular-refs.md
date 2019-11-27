@@ -34,7 +34,7 @@ The first step is to unwrap the KO observable object(s) with the <span class="co
 Because your entity has no navigation properties (*it is not related to anything*), you only have to worry about the circularity created by the Breeze <span class="codeword">entityAspect</span> property. The following approach may work for you:</p>
 
 <pre class="brush:jscript;">
-manager.executeQuery(query).then(success).fail(handleFailure);
+manager.executeQuery(query).then(success).catch(handleFailure);
 
 function success(data) {
     var unwrapped = ko.toJS(data.results).map(

@@ -220,7 +220,7 @@ Breeze has an easy way to load the entities of a navigation property:
 
     selectedOrder
         .entityAspect.loadNavigationProperty('OrderDetails')
-        .fail(handleFail);
+        .catch(handleFail);
 
 The `loadNavigationProperty` method builds a navigation query and executes it, returning a promise. 
 

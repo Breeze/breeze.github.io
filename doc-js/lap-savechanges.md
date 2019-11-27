@@ -14,7 +14,7 @@ Here's one way to save using the `EntityManager.saveChanges` method:
         if (manager.hasChanges()) {
             manager.saveChanges()
                 .then(saveSucceeded)
-                .fail(saveFailed);
+                .catch(saveFailed);
         } else {
             logger.info("Nothing to save");
         };

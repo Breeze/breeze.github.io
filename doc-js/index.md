@@ -88,7 +88,7 @@ Then we create an `EntityManager` and execute the query.
 	var manager = new breeze.EntityManager(serviceName);
 	manager.executeQuery(query)  // [1]
 	       .then(querySucceeded) // [2]
-	       .fail(queryFailed);   // [3]
+	       .catch(queryFailed);   // [3]
 
 Notice that [1] the `executeQuery` method is asynchronous and returns a <a href="https://github.com/kriskowal/q">promise</a> to call back either [2] the `querySucceeded` method if the query succeeds or [3] the `queryFailed` method if query execution fails with an exception.
 
@@ -125,7 +125,7 @@ The user could make changes to many different entities before saving them as a b
 
 	manager.saveChanges()       // returns a promise
 	       .then(saveSucceeded) // if save succeeds
-	       .fail(saveFailed);   // if save throws an exception
+	       .catch(saveFailed);   // if save throws an exception
 
 The manager bundles every changed entity into a batch, runs validations over those entities and, if they all pass, posts a request to the persistence service to save the batch.
 

@@ -171,7 +171,7 @@ app.controller(&#39;EdmundsCtrl&#39;, function ($scope, datacontext, logger) {
 
 <pre class="brush:jscript;">
 function getMakes() {
-    datacontext.getMakes().then(succeeded).fail(queryFailed);
+    datacontext.getMakes().then(succeeded).catch(queryFailed);
 
     function succeeded(results) {
         $scope.makes = results;

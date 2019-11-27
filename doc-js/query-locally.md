@@ -108,7 +108,7 @@ You may want to query the cache with an asynchronous syntax. External conditions
 
     // somewhere in a view model
     service.getCustomersStartingWith(searchText)
-           .then(success).fail(handleFailure);
+           .then(success).catch(handleFailure);
     ...
 
 The service makes a decision to go remote or query the cache based on the current connection status:

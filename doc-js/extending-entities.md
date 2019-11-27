@@ -50,7 +50,7 @@ When executed, the query will return `Customer` entities that may or may not alr
                 c.isBeingEdited = ko.observable(false); }
         });
       })
-      .fail(handleFail);
+      .catch(handleFail);
 
 Notice that I had to check for the presence of the `isBeingEdited` property. A customer in the query-results set may already be in cache in which case it already has the `isBeingEdited` property.
 
@@ -105,7 +105,7 @@ Now we can query for customers:
               if (customer.isBeingEdited() === false) {/* ... */}
           });
       })
-      .fail(handleFail);
+      .catch(handleFail);
 
 Because this is the manager's first service request. Breeze implicitly fetches the metadata from the service and blends it with the type information in the manager's `MetadataStore`. The queried customer data are materialized as `Customer` entities each with the full complement of mapped data properties (e.g, `Name`) and with the custom `isBeingEdited` property.
 
@@ -506,4 +506,4 @@ However, if your application might consume metadata before the first query - for
 
     manager.fetchMetadata()
            .then(startTheApp)
-           .fail(terminateImmediately);
+           .catch(terminateImmediately);

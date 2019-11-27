@@ -37,7 +37,7 @@ public object Lookups() // returns an object, not an IQueryable
             .using(manager)
             .execute()
             .then(querySucceeded)
-            .fail(queryFailed);
+            .catch(queryFailed);
    };</pre>
 <p>This is just like other Breeze query methods you&#39;ve written before ... except, perhaps, for the <em>from(...)</em> clause. You&#39;re used to seeing the name of an entity collection as the argument; a name such as &quot;<em>Customers</em>&quot; or &quot;<em>Orders</em>&quot; would be typical. Here the argument is &#39;<em>Lookups</em>&quot; ... the name we gave to the GET action method on the controller [<a href="#Note01">1</a>].&nbsp; Here is <em>querySucceeded</em>:</p>
 <pre class="brush:jscript;">
@@ -72,7 +72,7 @@ public object Lookups() // returns an object, not an IQueryable
 <pre class="brush:jscript;">
    dataservice.initialize()
        .then(go)
-       .fail(failedInitialization);
+       .catch(failedInitialization);
 
    function go() {
       // setup views, view models, routing, etc.

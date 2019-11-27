@@ -10,7 +10,7 @@ All server side validation errors go to the ‘fail’ promise. Server side vali
 	
 	            em.saveChanges().then(function (sr) {
 	                   …
-	            }).fail(function (e) {
+	            }).catch(function (e) {
 	                 var entityErrors = e.entityErrors;
 	                 var entityErrors = entityErrors.length; // number of errors
 	                 // handle the errors...
@@ -93,7 +93,7 @@ These validations are automatically executed once declared. (Note this only work
 
 By throwing an *EntityErrorsException* within the server side *BeforeSaveEntities* delegate or virtual method.  The *EntityErrorsException* ctor takes a *IEnumerable* of *EntityError*. 
 	    
-Each *EntityError* within this exception will be sent back to the Breeze client and converted into a client side 'entityError' within the promise.fail branch.  The *EntityError* class consists of the following properties.  
+Each *EntityError* within this exception will be sent back to the Breeze client and converted into a client side 'entityError' within the promise.catch branch.  The *EntityError* class consists of the following properties.  
 
 + **ErrorMessage**: String - The actual error message
 + **ErrorName**: String - A 'name' for the error "type". This will be used in conjunction with the property name to uniquely identify the error with an entity's validation errors collection. 

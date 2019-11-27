@@ -68,7 +68,7 @@ A caller of the `dataservice.getAllTodos` method typically attaches both a succe
     function getTodos() {
       dataservice.getAllTodos(includeArchived)
         .then(querySucceeded)
-        .fail(queryFailed);
+        .catch(queryFailed);
     }
 
 
@@ -76,10 +76,10 @@ Notice the use of method chaining:
 
 - the *dataservice* returned a promise;
 - the *ViewModel* called the promise's `then( ... )` method for the success path
-- the *ViewModel* called the promise's `fail( ... )` method for the failure path.
+- the *ViewModel* called the promise's `catch( ... )` method for the failure path.
 
 
-Both the `then()` and the *fail()* return a promise which means we can chain a sequence of asynchronous steps. Such syntax makes it easy to flatten what might otherwise be a nasty nest of dependent async calls. We don't have dependent async calls in this application... but a real application might... and you'll see plenty of examples among the <a href="/doc-samples/doccode" target="_blank">teaching tests</a> [<a href="#note 3">3</a>].
+Both the `then()` and the `catch()` return a promise which means we can chain a sequence of asynchronous steps. Such syntax makes it easy to flatten what might otherwise be a nasty nest of dependent async calls. We don't have dependent async calls in this application... but a real application might... and you'll see plenty of examples among the <a href="/doc-samples/doccode" target="_blank">teaching tests</a> [<a href="#note 3">3</a>].
 
 ## Process the query results
 

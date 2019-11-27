@@ -43,7 +43,7 @@ myManager.saveChanges();
 
 ### <a name="200"></a>2.0.0 <span class="doc-date">October 26, 2019</span>
 
-Complete rewrite of the Breeze source code in TypeScript.  Moved repo to https://github.com/Breeze/breeze-client.
+Complete rewrite of the Breeze source code in TypeScript.  Moved repo to [https://github.com/Breeze/breeze-client](https://github.com/Breeze/breeze-client).
 
 #### Features
 
@@ -64,7 +64,7 @@ API is almost identical to the original (breezejs 1.x) but small changes are not
  - The `DataServiceOptions` interface is now `DataServiceConfig` to be consistent with other naming
  - The `initializeAdapterInstances` method is removed; use the singular `config.initializeAdapterInstance` method.
 
- #### Adapter Changes
+#### Adapter Changes
  
  The names of the adapter files have changed.  E.g. `breeze.dataService.webApi` is now `adapter-data-service-webapi`, 
  and the locations have changed due to Angular-compatible bundling.
