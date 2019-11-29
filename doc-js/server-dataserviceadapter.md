@@ -406,7 +406,7 @@ You'll find examples in the [changeRequestInterceptorTests](https://github.com/B
     // ... later
 
     employee.setProperty('Notes', someNotes);
-    em.saveChanges().then(inspect).fin(start);
+    em.saveChanges().then(inspect).finally(start);
 
     function inspect(saveResult) {
         var empData = saveResult.entities[0];
