@@ -2,13 +2,13 @@
 layout: doc-net
 redirect_from: "/old/documentation/aspnet-web-api.html"
 ---
-# ASP.NET Web API
+# ASP.NET Core Web API / and legacy ASP.NET Web API
 
 <a class="logo-inline" href="/doc-net" title="ASP.NET">
   <img src="/images/logos/Breeze-aspnet.png" alt="ASP.NET" width="100">
 </a>
 
-The ASP.NET Web API is a popular technology for providing data services over HTTP. This section describes how specific Web API service implementations influence Breeze client development.
+Within the .NET community, ASP.NET and ASP.NET Core web applications are typically written using .NET's Web API technology. This technology provides mechanisms for supporting a range of data services over HTTP. This section describes how specific Web API service implementations influence Breeze client development.
 
 <div style="clear:both"/>
 
@@ -18,7 +18,7 @@ There are many ways to write your service with the ASP.NET Web API. We group the
 
 1. Breeze Web API
 1. Conventional Web API
-1. OData Web API
+1. OData Web API - ( not supported on ASP.NET Core)
 
 ## Breeze Web API
 
@@ -46,6 +46,7 @@ Breeze clients work well with these APIs too. You have to do a bit more work to 
 > You do have to learn how. Documentation for this path is not yet available but is on the way.
 
 ## OData Web API
+Prior to the advent of ASP.NET Core, OData was a important part of the .NET ecosystem.  **This is no longer the case.**  As a result Breeze only retains its OData support for legacy ASP.NET Web API applications. 
 
 ASP.NET provides a special set of components and techniques for building an <a href="http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api" target="_blank" title="OData Support in Web API">OData service in Web API</a>.
 
