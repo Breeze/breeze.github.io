@@ -4,7 +4,6 @@ menuitems:
   - { link: "nuget-packages.html", title: Start with Nuget }
   - { link: "download.html", title: Download, isparent: true }
   - { link: "release-notes.html", title: Release Notes, ischild: true }
-  - { link: "hosting-in-aspnet.html", title: Hosting in ASP.NET }
   - { link: "webapi-routing.html", title: Web API Routing }
   - { link: "webapi-controller.html", title: The Web API Controller }
   - { link: "contextprovider.html", title: The ContextProvider }
