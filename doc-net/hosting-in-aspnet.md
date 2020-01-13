@@ -7,7 +7,11 @@ redirect_from: "/old/documentation/hosting-aspnet.html"
 
 Breeze is fundamentally a library for easing development of HTML/JavaScript client applications that fetch and store remote data. BreezeJs doesn't dictate the server technology. It doesn't dictate the remote service API. Although you can write a Breeze application entirely on the client with mock data, ultimately the app will communicate through a web-facing service API to a server and a database.
 
-Breeze ships with out-of-the-box support for the ASP.NET Web API and Entity Framework. The easy route to a Breeze application runs through ASP MVC 4 and the Web API. The Breeze sample applications are MVC 4 applications with a Web API controller, a C# entity model, and the Entity Framework mediating between the model and a SQL Server database. This topic and the ones that follow describe this path in detail.
+Breeze ships with out-of-the-box support for the ASP.NET Web API and Entity Framework. The easy route to a Breeze application is shown in the following repo: https://github.com/Breeze/northwind-core-ng-demo. 
+
+See https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS.md for a step by step review on how to build a .NET Server. 
+
+The Breeze sample applications are applications with a Web API controller, a C# entity model, and the Entity Framework mediating between the model and a SQL Server database.
 
 ## Breeze NuGet Packages
 
@@ -22,7 +26,7 @@ Breeze ships with out-of-the-box support for the ASP.NET Web API and Entity Fram
     - Breeze.Persistence
     - Breeze.Persistence.EFCore ( support for EF Core)
     - Breeze.Persistence.NH   ( support for NHibernate)
-
+    <br>
 
 - For .NET Framework 4.7.x  and Entity Framework 6 
 
@@ -33,6 +37,7 @@ Breeze ships with out-of-the-box support for the ASP.NET Web API and Entity Fram
      - Breeze.Server.ContextProvider
      - Breeze.Server.ContextProvider.EF6  ( support for EF6)
      - Breeze.Server.ContextProvider.NH ( support for NHibernate)
+     <br>
 
 - For .NET Framework 4.x and Entity Framework 5   
 
@@ -41,7 +46,7 @@ Breeze ships with out-of-the-box support for the ASP.NET Web API and Entity Fram
      - Breeze.WebApi
      - Breeze.Server.WebApi.Core
      - Breeze.Server.WebApi.EF
-
+     <br>
 
 ## Pick an ASP.NET project template
 
