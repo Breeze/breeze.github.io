@@ -26,7 +26,7 @@ The Breeze sample applications are applications with a Web API controller, a C# 
     - Breeze.Persistence
     - Breeze.Persistence.EFCore ( support for EF Core)
     - Breeze.Persistence.NH   ( support for NHibernate)
-    <br>
+    <br/><br/>
 
 - For .NET Framework 4.7.x  and Entity Framework 6 
 
@@ -37,7 +37,7 @@ The Breeze sample applications are applications with a Web API controller, a C# 
      - Breeze.Server.ContextProvider
      - Breeze.Server.ContextProvider.EF6  ( support for EF6)
      - Breeze.Server.ContextProvider.NH ( support for NHibernate)
-     <br>
+     <br><br>
 
 - For .NET Framework 4.x and Entity Framework 5   
 
@@ -46,7 +46,7 @@ The Breeze sample applications are applications with a Web API controller, a C# 
      - Breeze.WebApi
      - Breeze.Server.WebApi.Core
      - Breeze.Server.WebApi.EF
-     <br>
+     <br/><br/>
 
 ## Pick an ASP.NET project template
 
