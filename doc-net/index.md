@@ -26,7 +26,7 @@ A "Breeze-flavored" Web API is the quickest, most productive path to an HTTP ser
 
 The following topics cover various aspects of this Breeze-flavored approach
 
-* [Hosting in ASP.NET](/doc-net/hosting-in-aspnet)
+* [Start with Nuget](/doc-net/nuget-packages)
 * [Web API Routing](/doc-net/webapi-routing)
 * [The Web API controller](/doc-net/webapi-controller)
 * [The ContextProvider](/doc-net/ef-efcontextprovider)

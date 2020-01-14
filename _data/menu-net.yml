@@ -4,10 +4,9 @@ menuitems:
   - { link: "nuget-packages.html", title: Start with Nuget }
   - { link: "download.html", title: Download, isparent: true }
   - { link: "release-notes.html", title: Release Notes, ischild: true }
-  - { link: "webapi-routing.html", title: Web API Routing }
-  - { link: "webapi-controller.html", title: The Web API Controller }
+  - { link: "creating-breeze-server.html", title: Creating a Breeze Server }
+  - { link: "webapi-controller.html", title: The Web API Controller  }
   - { link: "contextprovider.html", title: The ContextProvider }
-  - { link: "controlling-serialization.html", title: Controlling Serialization }
   - { link: "ef.html", title: Entity Framework, isparent: true }
   - { link: "ef-serverside-model.html", title: The server side model, ischild: true }
   - { link: "ef-dbcontext.html", title: The DBContext, ischild: true }
@@ -16,6 +15,6 @@ menuitems:
   - { link: "nh.html", title: NHibernate, isparent: true }
   - { link: "nh-details.html", title: NHibernate details,  ischild: true }
   - { link: "odata.html", title: Support for OData }
-  - { link: "odata-vs-webapi.html", title: OData vs. WebApi }
+  
   
   
