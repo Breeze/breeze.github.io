@@ -6,7 +6,7 @@ redirect_from: "/old/documentation/web-api-controller.html"
 
 The Basic Breeze teaching tests in the [DocCode sample](/doc-samples/doccode "Breeze 'DocCode' teaching sample") demonstrate the Breeze `EntityManager` making requests of a **Breeze ASP.NET Web API controller**.
 
-The [ASP.NET Web API](http://www.asp.net/web-api "Microsoft ASP.NET Web API ") is a framework for building HTTP services. Its simplicity has made it instantly popular with .NET backend developers who are used to struggling with Microsoft’s enormously complex, SOAP-based, WCF communications stack.
+The [ASP.NET Web API](https://dotnet.microsoft.com/apps/aspnet/apis "Microsoft ASP.NET Web API ") is a framework for building HTTP services. Its simplicity has made it instantly popular with .NET backend developers who are used to struggling with Microsoft’s enormously complex, SOAP-based, WCF communications stack.
 
 In a nutshell, the Web API routes an HTTP request (GET, POST, PUT, DELETE, etc) to an action method of a controller. The controller developer has easy access to the complete client request but is usually most interested in the URL query parameters or the body of the request. There's more to it of course but that's the gist of it.
 
@@ -16,7 +16,7 @@ The Breeze Controller is just one of many ways to serve a Breeze client with eit
 
 When targeting a Breeze client, it is usually preferable to write a Web API **controller per *service***. 
 
-The [DocCode teaching tests](/doc-samples/doccode "Breeze 'DocCode' teaching sample") target a couple of different "services" each with its own entity model. For example, some DocCode tests aim at the "Todos" model and other tests aim at the "Northwind" model.  The DocCode sample has two corresponding Web API controllers, `TodosController` and `NorthwindController`.
+The [Breeze Getting Started tutorial](https://github.com/Breeze/northwind-core-ng-demo) creates a selection of endpoints grouped into a single 'Controller' on a single entity model. This is our recommended pattern for Breeze services. Note that if you have more than one entity model, we recommend a seperate controller for each.
 
 ### Controller-per-type
 
@@ -28,128 +28,145 @@ But this is tedious and usually unnecessary. As we'll see, Breeze can radically 
 
 If you followed the *controller-per-type* approach, you'd be writing numerous controllers, each with a single method ... the query method. In our opinion, that's a maintenance burden without a compensating benefit. 
 
-We recommend instead that you consolidate into one Web API controller *per service*. The notion of "service" typically is aligned with a "feature set" and corresponding business model ... just like our "Todos" and "Northwind" services.
+We recommend instead that you consolidate into one Web API controller *per service*. The notion of "service" typically is aligned with a "feature set" and corresponding business model. 
 
-# TodosController example
+# A single BreezeController example
 
-The "Todos" model only has one entity so its Web API controller is small, making it a good place for us to start. Here’s the `TodosController`:
+The "NorthwindCore" model only has a few entity types so its Web API controller is small, making it a good place for us to start. Here’s a `BreezeController` associated with the NorthwindCore model:
 
-	[BreezeController]
-	public class TodosController : ApiController {
+### Add query methods to the BreezeController
 
-		readonly EFContextProvider<TodoDbContext> _contextProvider = 
-			new EFContextProvider<TodoDbContext>();
+Add a HttpGet method returning `IQueryable<>` for each of the `Customer`, `Order`, and `Product` types in the data model.  We won't do one for `OrderItem` because we will only query those with an `Order`
+```
 
-		// ~/breeze/todos/Metadata 
-		[HttpGet]
-		public string Metadata() {
-			return _contextProvider.Metadata();
-		}
+  [Route("api/[controller]/[action]")]   \\ Note that the `Route` attribute specifies the `[action]` as part of the path.
+  [BreezeQueryFilter]
+  public class BreezeController : Controller
+    \\ Add a new `persistenceManager` field to the `BreezeController` class, and add a constructor that takes a NorthwindCoreContext and sets the `persistenceManager` 
+    \\ field.  This will be called by dependency injection.
 
-		// ~/breeze/todos/Todos
-		// ~/breeze/todos/Todos?$filter=IsArchived eq false&$orderby=CreatedAt 
-		[HttpGet]
-		public IQueryable<TodoItem> Todos() {
-			return _contextProvider.Context.Todos;
-		}
+    private NorthwindCorePersistenceManager persistenceManager;
+    public BreezeController(NorthwindCoreContext dbContext) {
+        persistenceManager = new NorthwindCorePersistenceManager(dbContext);
+    }
 
-		// ~/breeze/todos/SaveChanges
-		[HttpPost]
-		public SaveResult SaveChanges(JObject saveBundle) {
-			return _contextProvider.SaveChanges(saveBundle);
-		}
-	}
+    [HttpGet]
+    public IQueryable<Customer> Customers() {
+        return persistenceManager.Context.Customer;
+    }
+
+    [HttpGet]
+    public IQueryable<Order> Orders() {
+        return persistenceManager.Context.Order;
+    }
+
+    [HttpGet]
+    public IQueryable<Product> Products() {
+        return persistenceManager.Context.Product;
+    }
+    ...   
+  }   
+```  
 
 # It's just a Web API Controller
 
 A "Breeze Controller"  is just a Web API controller that has been extended to support a "happy path" for Breeze .NET developers.
  
-Notice that there is no Breeze base class. The `TodosController` inherits directly from the `ApiController` Web API base class. A Breeze Controller fits into the Web API [router and action](http://www.asp.net/web-api/overview/web-api-routing-and-actions) pipeline like other controllers. It works with the same [**Web API security schemes**](http://www.asp.net/web-api/overview/security "Web API Security") as other controllers.
+Notice that there is no Breeze base class. The `BreezeController` inherits directly from the `Controller` Web API base class. A Breeze Controller fits into the Web API  pipeline like other controllers. It works with the same **Web API security schemes** as other controllers.
 
 # BreezeControllerAttribute
 
-A Breeze Web API controller and an out-of-the-box Breeze client share a common understanding about the nature and format of HTTP requests, responses, and payloads. The `BreezeControllerAttribute` configures the Web API pipeline to conform to that understanding. 
+A Breeze Web API controller and an out-of-the-box Breeze client share a common understanding about the nature and format of HTTP requests, responses, and payloads. The `BreezeQueryFilter` configures the Web API pipeline to conform to that understanding when interpreting breeze queries. 
 
->Your Breeze Web API Controller may co-habitate with other, non-Breeze controllers that have different requirements. The `BreezeControllerAttribute` configuration applies to *this controller only*.
+>Your Breeze Web API Controller may co-habitate with other, non-Breeze controllers that have different requirements. The `BreezeQueryFilter` attribute configuration applies to *this controller only*.
 
-When the Web API routes a request to the `TodosController`, it creates a new instance of that controller type and then calls the `BreezeControllerAttribute` to configure the Web API pipeline for this controller. The attribute first removes filters that could interfere with behavior that the Breeze client expects (e.g, all `MediaTypeFormatters`). Then it adds its own `BreezeJsonFormatter` and substitutes the `BreezeQueryableAttribute` for the Web API's own `QueryableAttribute`.
 
->You could make these adjustments yourself instead of applying the `BreezeControllerAttribute`. But be careful: you also have to remove the Web API pipeline filters that interfere with Breeze. Unless you have a compelling reason to do otherwise it is best to keep it simple: **always decorate your Breeze controller with the `BreezeControllerAttribute`**.
+# Configuring Serialization, Exceptions and Connection strings
 
-# Serialization
+Listed below is a code fragment from our [Creating a Breeze Server example.] (https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS-Server-Core3.md)
 
-The data that flow between Breeze clients and Web API controllers are formatted as JSON. A Web API formatter serializes .NET objects as JSON. Out-of-the box, the Web API installs a `JsonMediaTypeFormatter` as the global default formatter ... but this formatter isn't configured optimally for Breeze clients.
+In this fragment in the `ConfigureServices` method, we need to 
+1. Enable MVC, so our `BreezeController` class can be used to handle requests
+2. Set JSON serialization options so the client-side Breeze can send and receive entities. All communications between Breeze clients and Web API controllers are formatted as JSON. A Web API formatter serializes .NET objects as JSON. Out-of-the box, the Web API installs a very simple default formatter that isn't configured optimally for Breeze clients. Note that we explicitly reconfigure the formatter to remove the default behaviour that automatically renames entity and property names during serialization.  Instead we will use the BreezeJS  [`NamingConvention`](/doc-js/metadata#NamingConvention) mechanism instead.
+3. Add an exception filter, so errors are communicated to the Breeze client
+4. Add the DbContext to dependency injection, so our BreezeController can receive it
 
-A Breeze controller uses this same `JsonMediaTypeFormatter` *class* for its client/server communications but replaces the default formatter *instance* with one that is setup for Breeze clients; see the `Breeze.WebApi.JsonFormatter` class for details.
+add some MVC options to let the Breeze client communicate with the server:
 
-### Customize the JsonMediaTypeFormatter
+```
+  namespace NorthwindServer {
+    public class Startup     {
+      private IConfiguration configuration;
+      public Startup(IConfiguration configuration) {
+          this.configuration = configuration;
+      }
 
-The Breeze formatter settings are prescribed in the `BreezeConfig.CreateJsonSerializerSettings` method. You can modify these settings to suit your needs as long as you avoid settings that that would confuse the Breeze client.
+      // This method gets called by the runtime. Use this method to add services to the container.
+      // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+      public void ConfigureServices(IServiceCollection services)  {
+        var mvcBuilder = services.AddMvc();
 
-For example, the default method tells the formatter to send null values: if the "Description" property value is null, the formatter will still send the property. It would be a pretty small optimization if you wanted to suppress this behavior.  We **don't** actually recommend this because most of the time the price of sending null values is a negligible increase in payload size, And ... It's an optimization that may not work well in your application; a value of null often has a very specific meaning ( as opposed to not being sent at all). 
+        services.AddControllers().AddNewtonsoftJson(opt => {
+            // Set Breeze defaults for entity serialization
+            var ss = JsonSerializationFns.UpdateWithDefaults(opt.SerializerSettings);
+            if (ss.ContractResolver is DefaultContractResolver resolver)
+            {
+                resolver.NamingStrategy = null;  // remove json camelCasing; names are converted on the client.
+            }
+            ss.Formatting = Newtonsoft.Json.Formatting.Indented; // format JSON for debugging
+        });
+        // Add Breeze exception filter to send errors back to the client
+        mvcBuilder.AddMvcOptions(o => { o.Filters.Add(new GlobalExceptionFilter()); });
 
-All that said, you can change it so that null values *are excluded* in the serialized output sent to the client.
+        // Add DbContext using connection string
+        var connectionString = configuration.GetConnectionString("NorthwindCore");
+        services.AddDbContext<NorthwindCoreContext>(options => options.UseSqlServer(connectionString));
 
-	public class CustomBreezeConfig : Breeze.ContextProvider.BreezeConfig {
+      }
 
-		///<summary> Disable sending of null values to the client. </summary>
-		protected override JsonSerializerSettings CreateJsonSerializerSettings() { 
-			var baseSettings = base.CreateJsonSerializerSettings(); 
-			baseSettings.NullValueHandling = NullValueHandling.Ignore; // DON'T SEND NULL VALUES
-			return baseSettings; 
-		} 
-	}
+    ...
 
-You don't have to register the `CustomBreezeConfig` class with Breeze. Breeze will discover it in your Web API controller assembly and use the custom class instead of its own. Please note that you may have only one `BreezeConfig` sub-class per assembly.
-
-**Important**: you are responsible for ensuring that your changes do not conflict with Breeze client expectations. Test your changes thoroughly. If you're not sure, ask us first (e.g., on [StackOverflow tagged with "breeze"](http://stackoverflow.com/questions/tagged/breeze?sort=newest "StackOverflow tagged with 'breeze'")).
-
->**Do not** reconfigure the formatter to use camel casing on the client. Use the BreezeJS  [`NamingConvention`](/doc-js/metadata#NamingConvention) instead.
-
-<a name="breeze-queryable"></a>
-
-# BreezeQueryableAttribute
-
-The `BreezeQueryableAttribute` converts Breeze client query URLs into LINQ expressions ... much as the [Web API `QueryableAttribute`](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options) does.
-
-Breeze clients query for data by sending HTTP GET requests to the controller formatted as [OData Query URLs](http://www.odata.org/documentation/odata-version-3-0/url-conventions/ "OData URL conventions"). For example, a client could query for active (non-archived) Todos, sorted by creation date, with this URL.
-
-    .../breeze/todos/Todos?$filter=IsArchived eq false&$orderby=CreatedAt 
-
-The Web API router finds a corresponding controller GET action method ... which is the `Todos` method of our `TodosController`:
-
-    [HttpGet]
-    public IQueryable<TodoItem> Todos() {
-    	return _contextProvider.Context.Todos;
     }
+  }
+```
 
-The `BreezeQueryableAttribute` translates the URL Query parameters into a revision of the LINQ `IQueryable` returned by controller method, resulting in LINQ query expressions such as this one:
 
-    Todos.Where(t => t.IsArchived == false).OrderBy('CreatedAt');
+<a name="breeze-query-filter"></a>
+
+# BreezeQueryFilterAttribute
+
+The `BreezeQueryFilterAttribute` converts Breeze client query URLs into LINQ expressions.
+
+For example, a client could query for Customers with 'City' names starting with 'C', sorted by 'Company Name', with this Breeze query on the client. 
+```
+  const query = new EntityQuery('Customers')
+    .where('lastName', 'startsWith', 'C')
+    .orderBy('companyName);
+  const customers = await this.entityManager.executeQuery(query);
+```  
+ This in turn would be converted to the following URL formatted with an encoded json query string. 
+
+```
+  .../api/Breeze/Customers?%7B%22where%22%3A%7B%22City%22%3A%7B%22startswith%22%3A%22C%22%7D%7D%2C%22orderBy%22%3A%5B%22CompanyName%22%5D%7D
+```
+
+The Web API router finds a corresponding controller GET action method ... which is the `Customers` method of our `BreezeController`:
+```
+    [HttpGet]
+    public IQueryable<Customer> Customers() {
+    	return _contextProvider.Context.Customer;
+    }
+```
+The `BreezeQueryFilterAttribute` translates the URL Query parameters into a revision of the LINQ `IQueryable` returned by controller method, resulting in LINQ query expressions such as this one:
+
+    Customers.Where(c => c.StartsWith('C').OrderBy(c => c.CompanyName));
 
 Then the Web API takes over, executes the query (invoking the query's LINQ provider), and serializes the query results back to the client.
 
-The `BreezeControllerAttribute` automatically applies a `BreezeQueryableAttribute` to every controller GET method that returns an `IQueryable`.
+The `BreezeControllerAttribute` automatically applies a `BreezeQueryFilterAttribute` to every controller GET method that returns an `IQueryable`.
 
 You don't have to add the attribute to each controller method yourself ... unless you want to do something special with that method.
 
-<a name="limiting-query-options"></a>
-
-### Limiting query options
-
-You may want to constrain what a particular query can do. In standard Web API, you'd add a `QueryableAttribute` to the controller method and specify the [limiting query options](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options "limiting query options").
-
-You can do the same thing with the `BreezeQueryableAttribute`. For example, you can restrict a query to allow only $skip and $top, to support paging and nothing else
-
-    [BreezeQueryable(AllowedQueryOptions=
-        AllowedQueryOptions.Skip | AllowedQueryOptions.Top)]
-
-The `BreezeQueryableAttribute` derives from the `QueryableAttribute`, adding capabilities not yet implemented in the Web API. You can still use all of the features of the base `QueryableAttribute` class.
-
->We are aware that Web API's `QueryableAttribute` has been deprecated in favor of `EnableQueryAttribute` in Web API v.1.5. Please stick with `BreezeQueryable` until we've had a chance to write a corresponding derived attribute for `EnableQuery`.
-
-
-> ***Always* use the `BreezeQueryable` attribute. DO NOT USE the Web API's `Queryable` attribute!** The latter overwrites Breeze’s JSON.Net configuration so the client may not be able to interpret the JSON query result correctly.
 
 # EFContextProvider
 
