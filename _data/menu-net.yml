@@ -6,11 +6,11 @@ menuitems:
   - { link: "release-notes.html", title: Release Notes, ischild: true }
   - { link: "creating-breeze-server.html", title: Creating a Breeze Server }
   - { link: "webapi-controller.html", title: The Web API Controller  }
-  - { link: "contextprovider.html", title: The ContextProvider }
+  - { link: "persistencemanager.html", title: The PersistenceManager }
   - { link: "ef.html", title: Entity Framework, isparent: true }
   - { link: "ef-serverside-model.html", title: The server side model, ischild: true }
   - { link: "ef-dbcontext.html", title: The DBContext, ischild: true }
-  - { link: "ef-efcontextprovider.html", title: The EFContextProvider, ischild: true }        
+  - { link: "ef-efpersistencemanager.html", title: The EFPersistenceManager, ischild: true }        
   - { link: "ef-serverside-validation.html", title: Server-side validation, ischild: true }
   - { link: "nh.html", title: NHibernate, isparent: true }
   - { link: "nh-details.html", title: NHibernate details,  ischild: true }
