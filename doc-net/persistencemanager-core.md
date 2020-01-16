@@ -1,23 +1,26 @@
 ---
 layout: doc-net
-redirect_from: "/old/documentation/contextprovider.html"
 ---
-# ContextProvider
+# PersistenceManager
 
-The `ContextProvider` is a server-side component for managing data access and business validation with .NET technologies.
+> **NOTE: This page is for Breeze running on .NET Core**
 
-`ContextProvider` is the base class for the [`EFContextProvider`](/doc-net/ef-efcontextprovider) and the `NHContextProvider` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.
+> [Go here for .NET 4.x version](/doc-net/contextprovider-4x)
 
-This topic covers the uses and capabilities of the `ContextProvider`. While often described in connection with the `EFContextProvider`, please remember that it is more general than that.
+The `PersistenceManager` is a server-side component for managing data access and business validation with .NET technologies.
 
-You can use `ContextProvider` as the basis for transforming BreezeJS query and save requests into actions performed against *any kind of data store*. See, for example, the the [in-memory "No DB" sample](/doc-samples/no-db ""No DB" sample").
+`PersistenceManager` is the base class for the [`EFPersistenceManager`](/doc-net/ef-efpersistencemanager) and the `NHPersistenceManager` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.
+
+This topic covers the uses and capabilities of the `PersistenceManager`. While often described in connection with the `EFPersistenceManager`, please remember that it is more general than that.
+
+You can use `PersistenceManager` as the basis for transforming BreezeJS query and save requests into actions performed against *any kind of data store*.
 
 <a name="SaveChanges"></a>
 
 ## SaveChanges
-Most of the `ContextProvider` is devoted to saving client changes via the `SaveChanges` method. 
+Most of the `PersistenceManager` is devoted to saving client changes via the `SaveChanges` method. 
 
-Typically, a Breeze client posts a `saveChanges` request to a web api controller which routes the request and its payload to a `ContextProvider.SaveChanges` method.
+Typically, a Breeze client posts a `saveChanges` request to a web api controller which routes the request and its payload to a `PersistenceManager.SaveChanges` method.
 
 The request payload, called the "saveBundle", is a BreezeJS JSON  object (a JSON.NET `JObject`) that describes an entity change-set.  An "entity change-set" is an arbitrary collection of entities to be saved. Each entity in the change-set is paired with a save-operation  - add, update, delete - to be performed on that entity.
 
@@ -29,7 +32,7 @@ The `BeforeSave...` methods are your opportunity to validate the entities-to-be-
 
 In `AfterSaveEntities` you have access to the entities after they've been saved successfully. New entities now have their store-generated keys. This is your opportunity to perform-post save operations and manipulate the saved entities in memory before they are returned to the caller.
 
-You do not have to subclass a `ContextProvider` to provide *before-* and *after-save*  logic. 
+You do not have to subclass a `PersistenceManager` to provide *before-* and *after-save*  logic. 
 
 You can attach handlers to the corresponding  delegate properties of a `ContextProvider` instance: `BeforeSaveEntityDelegate`, `BeforeSaveEntitiesDelegate` and `AfterSaveEntitiesDelegate`. There is no difference in functionality. Choose the approach that suits your architectural style.
 
@@ -72,7 +75,7 @@ The `EntityInfo.Entity` is an instance of the .NET entity class that corresponds
 
 > It does not have to be an ORM class. It could be a DTO class that you will later map into a class in your business model via your implementation of `BeforeSaveEntities`.
 
-The `EntityInfo.Entity` properties have been populated with values in the JSON save request payload. These are client-provided values, not the values of a record in the data store. It may have foreign key properties that were set with client values.  Do not assume that the corresponding navigation properties return the association's related entities. Most `ContextProvider` implementations, including `EFContextProvider`, disable the "lazy loading" that would populate these navigation properties for two very good reasons:
+The `EntityInfo.Entity` properties have been populated with values in the JSON save request payload. These are client-provided values, not the values of a record in the data store. It may have foreign key properties that were set with client values.  Do not assume that the corresponding navigation properties return the association's related entities. Most `PersistenceManager` implementations, including `EFPersistenceManager`, disable the "lazy loading" that would populate these navigation properties for two very good reasons:
 
 1. we do not want to incur the performance cost of unnecessarily querying the data store during a save.
 2. we do not want to confuse related entities retrieved from the data store with the  the related entities that may be in the change-set in an added, modified or deleted state.
@@ -91,7 +94,7 @@ The `EntityInfo.EntityState` is an enum that describes the current state of the 
 	    Modified = 16,
 	}
 
-The `ContextProvider` infers the intended save operation from this `EntityState`. For example, values of an entity in the `Modified` state will update the already-existing record in the data store with the matching entity key.
+The `PersistenceManager` infers the intended save operation from this `EntityState`. For example, values of an entity in the `Modified` state will update the already-existing record in the data store with the matching entity key.
 
 <a name="OriginalValuesMap"></a>
 
@@ -101,7 +104,7 @@ An `EntityInfo` that describes an entity-to-be-updated has an `OriginalValuesMap
 
 This `OriginalValuesMap` is a {key,value} dictionary identifying which properties have changed and their pre-change values.
 
-The `ContextProvider` can (and usually will) use this map to update *only the fields* of the corresponding entity record in the data store that *are keys of the `OriginalValuesMap`*. You should assume that if a property is not a key in the `OriginalValuesMap`, that field will not be updated. 
+The `PersistenceManager` can (and usually will) use this map to update *only the fields* of the corresponding entity record in the data store that *are keys of the `OriginalValuesMap`*. You should assume that if a property is not a key in the `OriginalValuesMap`, that field will not be updated. 
 
 ##### Updating a property
 
@@ -147,7 +150,7 @@ Many apps set audit fields on the server for entities that have them. You might 
 
 ##### Pre-change values
 
-The `ContextProvider` itself ignores the pre-change values in the `OriginalValuesMap`.
+The `PersistenceManager` itself ignores the pre-change values in the `OriginalValuesMap`.
 
 > except for the concurrency field values where the pre-change value is used for optimistic concurrency checking. 
 
@@ -155,9 +158,9 @@ The pre-change values may be useful to you when pre-processing the `EntityInfo`.
 
 > <b>Beware!</b> The `OriginalValuesMap` was <b>provided by the client</b> as part of its "save changes" request. It is your responsibility to confirm that this user is allowed to save changes to these properties. Before you make use of the pre-change values you should verify that the stated pre-change values actually are the "original values".
 
-The `ContextProvider` assumes that the client request is valid. You are responsible for data integrity and data security. You should scrutinize everything in the change-set to the degree that your business requires. 
+The `PersistenceManager` assumes that the client request is valid. You are responsible for data integrity and data security. You should scrutinize everything in the change-set to the degree that your business requires. 
 
-The `EntityInfo` and its `OriginalValuesMap` tell you what the client said in its save request. You inspect, validate, and modify that request in your overrides of the `ContextProvider` methods.
+The `EntityInfo` and its `OriginalValuesMap` tell you what the client said in its save request. You inspect, validate, and modify that request in your overrides of the `PersistenceManager` methods.
 
 <a name="BeforeSaveEntity"></a>
 
@@ -179,7 +182,7 @@ The base implementation of this method returns `true`;. There is no need to call
 
 ## BeforeSaveEntities 
 
-After `ContextProvider.SaveChanges` calls `BeforeSaveEntity` for each `EntityInfo`, it calls `BeforeSaveEntities` on the entire change-set.
+After `PersistenceManager.SaveChanges` calls `BeforeSaveEntity` for each `EntityInfo`, it calls `BeforeSaveEntities` on the entire change-set.
 
     protected virtual Dictionary<Type, List<EntityInfo>> BeforeSaveEntities(
                       Dictionary<Type, List<EntityInfo>> saveMap)
@@ -246,22 +249,22 @@ Note that `saveMap` and `keyMappings` are the source of the data that forms the 
 
 ## SaveChangesCore
 
-The `SaveChangesCore` method performs the save operations on the change-set. The `ContextProvider` has no implementation of its own. It's an `abstract` method to be implemented in a derived class.
+The `SaveChangesCore` method performs the save operations on the change-set. The `PersistenceManager` has no implementation of its own. It's an `abstract` method to be implemented in a derived class.
 
-Most developers rely on a pre-existing derived class such as the `EFContextProvider` to implement this method and there is rarely a need to override that implementation.
+Most developers rely on a pre-existing derived class such as the `EFPersistenceManager` to implement this method and there is rarely a need to override that implementation.
 
-You will override it if you write your own `ContextProvider`. That task is beyond the scope of this topic. You'll find clues in the `TodoContext` class of the ["NoDB" sample](/doc-samples/no-db ""NoDB" sample") and in the <a href="https://github.com/Breeze/breeze.server.net/blob/master/Breeze.ContextProvider.EF6/EFContextProvider.cs" title="EFContextProvider on GitHub" target="_blank">source code for the `EFContextProvider`</a>.  There's also a discussion of `ContextProvider` extensibility in [this StackOverflow answer](http://stackoverflow.com/questions/21691579/uninitialised-jsonserializer-in-breeze-savebundletosavemap-sample/27414629#27414629).
+You will override it if you write your own `PersistenceManager`. 
 
 <a name="HelperMethods"></a>
 <a name="helpermethods"></a>
 
-## ContextProvider helper methods<a name="ContextProvidermethods"></a>
+## PersistenceManager helper methods<a name="ContextProvidermethods"></a>
 
-The `ContextProvider` exposes public methods to help in the implementation of your virtual method overrides.
+The `PersistenceManager` exposes public methods to help in the implementation of your virtual method overrides.
 
 The following helpers enable re-use of database connections; such re-use reduces the need for distributed transactions:
 
-**GetDbConnection** provides access to the underlying connection to the database.  This is the same connection that ContextProvider uses to save the entity changes to the database.  Re-using this same connection allows you to perform queries and updates without a separate connection which might cause a distributed transaction.  The return value may be a EntityConnection, SqlConnection, etc. depending upon the specific ContextProvider implementation.  For Entity Framework, use the `EntityConnection` and `StoreConnection` properties below.
+**GetDbConnection** provides access to the underlying connection to the database.  This is the same connection that PersistenceManager uses to save the entity changes to the database.  Re-using this same connection allows you to perform queries and updates without a separate connection which might cause a distributed transaction.  The return value may be a EntityConnection, SqlConnection, etc. depending upon the specific PersistenceManager implementation.  For Entity Framework, use the `EntityConnection` and `StoreConnection` properties below.
 	
 **EntityConnection** is a read-only property that provides access to the EntityConnection used by the DbContext/ObjectContext.  This is useful when you want to create a second DbContext with the same connection:
 	
@@ -302,7 +305,7 @@ The following helpers enable re-use of database connections; such re-use reduces
 
 ## Wrapping the entire save process in a transaction
 
-Most `ContextProvider` implementations wrap the *inner save processing*  within a transaction. The `EFContextProvider` does that. 
+Most `PersistenceManager` implementations wrap the *inner save processing*  within a transaction. The `EFPersistenceManager` does that. 
 
 But the actions of the `BeforeSave...` and `AfterSaveEntities` methods fall ***outside*** the boundaries of this particular transaction.
 
@@ -314,9 +317,9 @@ Here's an example:
       var txSettings = new TransactionSettings() { TransactionType = TransactionType.TransactionScope };
     
         // Add the specialized AfterSave handler
-      ContextProvider.AfterSaveEntitiesDelegate = PerformPostSaveValidation;
+      PersistenceManager.AfterSaveEntitiesDelegate = PerformPostSaveValidation;
     
-      return ContextProvider.SaveChanges(saveBundle, txSettings);
+      return PersistenceManager.SaveChanges(saveBundle, txSettings);
     }
 	
     private void PerformPostSaveValidation(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings ) {
