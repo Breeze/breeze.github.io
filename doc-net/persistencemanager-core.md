@@ -3,8 +3,7 @@ layout: doc-net
 ---
 # PersistenceManager
 
-> **NOTE: This page is for Breeze running on .NET Core**
-
+> **NOTE: This page is for Breeze running on .NET Core**<br><br>
 > [Go here for .NET 4.x version](/doc-net/contextprovider-4x)
 
 The `PersistenceManager` is a server-side component for managing data access and business validation with .NET technologies.
@@ -122,7 +121,7 @@ For example, we could calculate an entity property on the server in a <a href="#
             var cust = (Customer) info.Entity;
             cust.MOL = meaningOfLife();
 
-            // Add property to map so that ContextProvider updates db
+            // Add property to map so that PersistenceManager updates db
             // original values don't matter
             info.OriginalValuesMap["MOL"] = null;
         }
@@ -140,7 +139,7 @@ Many apps set audit fields on the server for entities that have them. You might 
             auditable.Modified = DateTime.UtcNow;
 			auditable.UserId   = CurrentUser.Id;
 
-            // Add property to map so that ContextProvider updates db
+            // Add property to map so that PersistenceManager updates db
             // original values don't matter
             info.OriginalValuesMap["Modified"] = null;
             info.OriginalValuesMap["UserId"] = null;
@@ -255,52 +254,6 @@ Most developers rely on a pre-existing derived class such as the `EFPersistenceM
 
 You will override it if you write your own `PersistenceManager`. 
 
-<a name="HelperMethods"></a>
-<a name="helpermethods"></a>
-
-## PersistenceManager helper methods<a name="ContextProvidermethods"></a>
-
-The `PersistenceManager` exposes public methods to help in the implementation of your virtual method overrides.
-
-The following helpers enable re-use of database connections; such re-use reduces the need for distributed transactions:
-
-**GetDbConnection** provides access to the underlying connection to the database.  This is the same connection that PersistenceManager uses to save the entity changes to the database.  Re-using this same connection allows you to perform queries and updates without a separate connection which might cause a distributed transaction.  The return value may be a EntityConnection, SqlConnection, etc. depending upon the specific PersistenceManager implementation.  For Entity Framework, use the `EntityConnection` and `StoreConnection` properties below.
-	
-**EntityConnection** is a read-only property that provides access to the EntityConnection used by the DbContext/ObjectContext.  This is useful when you want to create a second DbContext with the same connection:
-	
-    protected override Dictionary<Type, List<EntityInfo>> BeforeSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap) 
-    {
-    	var context2 = new MyDbContext(EntityConnection);    // create a DbContext using the existing connection
-    	var orders = saveMap[typeof(Order)];    // get the EntityInfo for all Orders in the saveMap
-    	foreach(var orderInfo in orders)
-    	{
-    		var order = orderInfo.Entity as Order;    // get the order that came from the client
-    		var query = context2.Orders.Where(o => o.orderID == order.orderID);
-    		var oldOrder = query.FirstOrDefault();    // get the existing order from the database
-    		// compare values of order and oldOrder to see what has changed
-    		// because we have a business rule that only certain changes are allowed
-    		// ...
-    	}
-    }
-
-**StoreConnection** is a read-only property that provides access to the StoreConnection used by the DbContext/ObjectContext.  This may be a SqlConnection, OracleConnection, etc. depending upon the provider.  Use StoreConnection to do SQL queryies and updates directly to the database:
-
-    protected override void AfterSaveEntities(Dictionary<Type, List<EntityInfo>> 
-    	saveMap, List<KeyMapping> keyMappings) 
-    {
-    	// simplistic example of logging the created entity IDs
-    	var text = ("insert into AuditAddedEntities (CreatedOn, EntityType, EntityKey) values ('{0}', '{1}', {2})";
-    	var time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-    	var conn = StoreConnection;    // use the existing StoreConnection
-    	var cmd = conn.CreateCommand();
-    	foreach (var km in keyMappings) 
-    	{
-    		// put the real value of the key into the audit table
-    		cmd.CommandText = String.Format(text, time, km.EntityTypeName, km.RealValue);
-    		cmd.ExecuteNonQuery();
-    	}
-    }
-
 <a name="TransactionSettings"></a>
 
 ## Wrapping the entire save process in a transaction
@@ -312,7 +265,7 @@ But the actions of the `BeforeSave...` and `AfterSaveEntities` methods fall ***o
 If you need to include `BeforeSave...` and `AfterSaveEntities` processing within the save transaction, you must supply the optional `TransactionSettings` parameter to the `SaveChanges` call.
 
 Here's an example:
-
+    [HttpPost]
     public SaveResult SaveWithTransactionScope(JObject saveBundle) {
       var txSettings = new TransactionSettings() { TransactionType = TransactionType.TransactionScope };
     
