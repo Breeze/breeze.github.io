@@ -39,11 +39,11 @@ The "NorthwindCore" model only has a few entity types so its Web API controller 
 Add a HttpGet method returning `IQueryable<>` for each of the `Customer`, `Order`, and `Product` types in the data model.  We won't do one for `OrderItem` because we will only query those with an `Order`
 ```
 
-  [Route("api/[controller]/[action]")]   \\ Note that the `Route` attribute specifies the `[action]` as part of the path.
+  [Route("api/[controller]/[action]")]   // Note that the `Route` attribute specifies the `[action]` as part of the path.
   [BreezeQueryFilter]
   public class BreezeController : Controller
-    \\ Add a new `persistenceManager` field to the `BreezeController` class, and add a constructor that takes a NorthwindCoreContext and sets the `persistenceManager` 
-    \\ field.  This will be called by dependency injection.
+    // Add a new `persistenceManager` field to the `BreezeController` class, and add a constructor that takes a NorthwindCoreContext and sets the `persistenceManager` 
+    // field.  This will be called by dependency injection.
 
     private NorthwindCorePersistenceManager persistenceManager;
     public BreezeController(NorthwindCoreContext dbContext) {
@@ -83,7 +83,7 @@ A Breeze Web API controller and an out-of-the-box Breeze client share a common u
 
 # Configuring Serialization, Exceptions and Connection strings
 
-Listed below is a code fragment from our [Creating a Breeze Server example.] (https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS-Server-Core3.md)
+Listed below is a code fragment from our [Creating a Breeze Server example](https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS-Server-Core3.md).
 
 In this fragment in the `ConfigureServices` method, we need to 
 1. Enable MVC, so our `BreezeController` class can be used to handle requests
@@ -167,112 +167,63 @@ The `BreezeControllerAttribute` automatically applies a `BreezeQueryFilterAttrib
 
 You don't have to add the attribute to each controller method yourself ... unless you want to do something special with that method.
 
+Note that the 'HttpGet' method returns an `IQueryable` of an entity type in the model, the `Customer` type in this case. 
 
-# EFContextProvider
+The `IQueryable<Customer>` is important. It means that this action does not return data!  Instead, it returns a LINQ query object that can be extended with additional query parameters to filter, order, page, project, and expand the query results. 
 
-Many .NET server developers turn to the Microsoft's [Entity Framework](http://msdn.microsoft.com/en-us/data/ef.aspx) for relational data modeling and relational data access. It's so popular that Breeze offers a special [`EFContextProvider` class](/doc-net/ef-efcontextprovider) to facilitate development of .NET servers for Breeze clients.
+The Web API executes the query after the `BreezeQueryFilter` applies these parameters to the LINQ expression (the `IQueryable`) returned by the method as we discussed above.
 
-This provider encapsulates three main functions:
+Thanks to the power and flexibility of the Breeze query syntax, a single controller action method can satisfy all of this particular application’s `Customer` query requirements. We don’t have to write a separate query action method for every application query request.
+
+
+# PersistenceManager and EFPersistenceManager
+
+The `PersistenceManager` is a abstract Breeze class that encapsulates three main functions:
 
 1. Instantiation of a context for accessing the data store
 1. Generation (or acquisition) of metadata to send to Breeze clients
 1. Processing "change-set" save requests
 
-The `TodosController` defines a `_contextProvider` field, initialized to a fresh instance of `EFContextProvider<T>`.:
+The base Breeze `PersistenceManager` class is intended to be extended depending on the kind of backend services that you need to support. 
 
-    readonly EFContextProvider<TodoDbContext> _contextProvider =
-        new EFContextProvider<TodoDbContext>();
+Many .NET server developers turn to the Microsoft's [Entity Framework](https://docs.microsoft.com/en-us/ef/) for relational data modeling and relational data access. It's so popular that Breeze offers a special [`EFPersistenceManager` class](/doc-net/ef-efpersistencemanager) to facilitate development of .NET servers for Breeze clients.
 
-`EFContextProvider<T>` is a generic class that wraps a single EF model’s `DbContext`.
+The `EFPersistenceManager`, which derives from the Breeze `PersistenceManager`, wraps an Entity Framework DbContext to provide Breeze data management.
 
->If you wrote an EF "database first" model rather than a "code first" model, you *may* have an `ObjectContext` instead of a `DbContext`. Pass your `ObjectContext` as the type parameter instead of a `DbContext`.
+```
+public class NorthwindCorePersistenceManager : EFPersistenceManager<NorthwindCoreContext> {
+  // Add a constructor to create it from our DbContext
+  public NorthwindCorePersistenceManager(NorthwindCoreContext dbContext) : base(dbContext) {}
+  ...
 
-### Better style
+}
+```
 
-Your controller could instantiate an out-of-the-box `EFContextProvider` from Breeze exactly as we show here. 
+Next, in our example, the `NorthwindController` defines a `persistenceManager` field, initialized to a fresh instance of `EFPersistenceManager<T>`.:
 
-We don't do that in real world code. The approach you see here is fine for demos but it isn't clean, robust or testable.
-
-1. The controller and the context are separate concerns and we prefer to define them in separate classes. We'd start by sub-classing `EFContextProvider<TodoDbContext>` as `TodoContext`.
-
-1. We prefer that the controller work with a higher level abstraction such as a "repository" class than work directly with a context provider. We might write a `TodoRepository` that instantiates the `TodoContext` and have it implement `ITodoRepository` for improved testability.
-
-1. We'd make our controllers easier to test by injecting the `ITodoRepository` rather than "new-ing" the concrete `TodoRepository`. The Web API is [friendly to dependency injection](http://www.asp.net/web-api/overview/extensibility/using-the-web-api-dependency-resolver).
+```
+  private NorthwindCorePersistenceManager persistenceManager;
+  public BreezeController(NorthwindCoreContext dbContext)
+  {
+      persistenceManager = new NorthwindCorePersistenceManager(dbContext);
+  }
+```    
 
 ### Alternatives to Entity Framework
 
-The `EFContextProvider` derives from the Breeze [`ContextProvider`](/doc-net/ef-efcontextprovider "ContextProvider") which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
+The `EFPersistenceManager` derives from the Breeze `PersistenceManager` which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
 
-Breeze ships [components for NHibernate](/doc-net/nh-details) developers.  The [in-memory "No DB" sample](/doc-samples/no-db) has a custom `ContextProvider` that doesn't write to a database. The source for any of these providers can guide you in writing your own provider.
+Breeze also ships [components for NHibernate](/doc-net/nh-details) developers.   The source for any of these providers can guide you in writing your own provider.
 
 But back to our story .. and the first of the "Breeze Controller"  specialty methods.
 
-## The Metadata controller method
 
-The Breeze JavaScript client requires metadata to query the service, create new entities, and save changes. These metadata describe the client-side entity model and how to translate it into the service model that is understood by the persistence service.
-
-As we saw earlier, it takes a fair amount of [metadata](/doc-js/metadata) to adequately describe a model. Fortunately, an `EFContextProvider` tell Entity Framework to generate metadata for the Breeze client so that the JavaScript developer doesn’t have to [write it by hand](/doc-js/metadata-by-hand). 
-
-The Breeze client requests metadata from the server by calling upon the controller's `Metadata` method.
-
-    // ~/breeze/todos/Metadata 
-    [HttpGet]
-    public string Metadata() {   
-        return _contextProvider.Metadata(); // delegate to the ContextProvider
-    }
-
-## A query controller method
-
-The `TodosController` has only one model type so it has just one query method
-
-    // ~/breeze/todos/Todos
-    // ~/breeze/todos/Todos?$filter=IsArchived eq false&$orderby=CreatedAt 
-    [HttpGet]
-    public IQueryable<TodoItem> Todos() {
-        return _contextProvider.Context.Todos;
-    }
-
-This method returns an `IQueryable` of an entity type in the model, the `TodoItem` type in this case. 
-
-The `IQueryable<TodoItem>` is important. It means that this action does not return data!  Instead, it returns a LINQ query object that can be extended with additional query parameters to filter, order, page, project, and expand the query results. A comment shows two URL examples that Web API would route to this method. The first gets all `TodoItems`; the second returns non-archived `TodoItems`, sorted by creation date. 
-
-The Web API executes the query after the `BreezeQueryableAttribute` applies these parameters to the LINQ expression (the `IQueryable`) returned by the method [as we discussed above](#breeze-queryable).
-
-Thanks to the power and flexibility of OData query syntax, a single controller action method can satisfy all of this particular application’s `TodoItem` query requirements. We don’t have to write a separate query action method for every application query request.
-
-### Query actions per entity type
-
-The "Todos" model only has one entity so the `TodosController` only has one query action.  The "Northwind" model exposes many more entity types … and its `NorthwindController` has corresponding query actions, implemented in the same manner, as seen in this elided extract:
-
-    BreezeController]
-    public class NorthwindController : ApiController {
-
-      [HttpGet]
-      public IQueryable<Customer> Customers() {
-    	return _contextProvider.Context.Customers;
-      }
-    
-      [HttpGet]
-      public IQueryable<Order> Orders() {
-    	return _contextProvider.Context.Orders;
-      }
-    
-      [HttpGet]
-      public IQueryable<OrderDetail> OrderDetails() {
-    	return _contextProvider.Context.OrderDetails;
-      }
-    
-      [HttpGet]
-      public IQueryable<Product> Products() {
-    	return _contextProvider.Context.Products;
-      }
-    }
 
 ### Client-initiated "eager" queries
 
 You do not have to publish a query method for every entity type. For example, you might choose not to publish an `OrderDetails` action; `OrderDetail` entities belong exclusively to their parent `Orders`. You might feel that a client should only access them through their parent orders.
 
-How do you get the `OrderDetails` to the client if there is no controller action for them? Using OData "expand". Here's an example Breeze JS client query:
+How do you get the `OrderDetails` to the client if there is no controller action for them? Using "expand". Here's an example Breeze JS client query:
 
     breeze.EntityQuery.from('Orders')
           .where('CustomerID', '==', alfredsID)
@@ -280,7 +231,7 @@ How do you get the `OrderDetails` to the client if there is no controller action
           .using(manager).execute()
           .then(successCallback).catch(failCallback); 
 
-On the server, the `BreezeQueryableAttribute` adds an Entity Framework "include" clause. The executed LINQ query returns the "Alfreds" order and that order's line items in the same payload.
+On the server, the `BreezeQueryFilterAttribute` adds an Entity Framework "include" clause. The executed LINQ query returns the "Alfreds" order and that order's line items in the same payload.
 
 After eagerly fetching the related order line items with this query, the client can navigate from an order to its details (e.g, in Knockout you could write `someOrder.OrderDetails()`) without first loading those details in a separate step.
 
@@ -291,7 +242,7 @@ Suppose you don't want to expose an "OrderDetails" controller method and you don
     [HttpGet]
     public IQueryable<Order> OrdersAndDetails()
     {
-        return _contextProvider.Context.Orders.Include('OrderDetails');
+        return persistenceManager.Context.Orders.Include('OrderDetails');
     }
 
 This time the client queries for orders by targeting the “OrdersAndDetails” endpoint. The method ensures that the line items come along for the ride. The client developer can still filter and page the orders, but he doesn’t have to specify the expansion.
@@ -314,11 +265,11 @@ The Web API delivers the bundle to the controller’s `SaveChanges` method as a 
 
     [HttpPost]
     public SaveResult SaveChanges(JObject saveBundle) {
-      return _contextProvider.SaveChanges(saveBundle);
+      return persistenceManager.SaveChanges(saveBundle);
     }
 
 ### Server-side Validation
 
 Are alarm bells ringing when you read this code? We shouldn't blithely save everything the client tells us to save. We should inspect every request, making sure that the changes are valid and that the user is authorized to make them.
 
-Learn how to do that with [a custom EFContextProvider and save interception](/doc-net/ef-efcontextprovider#SaveInterception).
+Learn how to do that with [a custom EFPersistenceManager and save interception](/doc-net/ef-efpersistencemanager#SaveInterception).
