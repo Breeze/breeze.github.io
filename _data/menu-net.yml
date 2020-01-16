@@ -9,15 +9,14 @@ menuitems:
   - { link: "webapi-controller-core.html", title: The Web API Controller, ischild: true  }
   - { link: "persistencemanager-core.html", title: The PersistenceManager, ischild: true }
   - { link: "breeze-server-4x", title: For .NET 4.x, isparent: true }
-  - { link: "web-api-routing-4x", title: Web API routing, ischild: true }
+  - { link: "webapi-routing-4x", title: Web API routing, ischild: true }
   - { link: "webapi-controller-4x.html", title: The Web API Controller, ischild: true  }
-  - { link: "persistencemanager-4x.html", title: The PersistenceManager, ischild: true  }
+  - { link: "contextprovider-4x.html", title: The ContextProvider, ischild: true  }
   - { link: "controlling-serialization-4x.html", title: Controlling Serialization, ischild: true  }
-  - { link: "ef.html", title: Entity Framework, isparent: true, ischild: true  }
-  - { link: "ef-serverside-model.html", title: The server side model, ischild: true  }
-  - { link: "ef-dbcontext.html", title: The DBContext, ischild: true }
-  - { link: "ef-efpersistencemanager.html", title: The EFPersistenceManager, ischild: true, isparent: true }        
-  - { link: "ef-serverside-validation.html", title: Server-side validation, ischild: true }
+  - { link: "ef-serverside-model-4x.html", title: EF - Server side model, ischild: true  }
+  - { link: "ef-dbcontext-4x.html", title: EF - DBContext, ischild: true }
+  - { link: "ef-efcontextprovider-4x.html", title: EF - Context Provider, ischild: true }        
+  - { link: "ef-serverside-validation-4x.html", title: EF - Server-side validation, ischild: true }
   - { link: "nh.html", title: NHibernate Server, isparent: true,  }
   - { link: "nh-details.html", title: NHibernate details,  ischild: true }
   - { link: "odata.html", title: Support for OData }

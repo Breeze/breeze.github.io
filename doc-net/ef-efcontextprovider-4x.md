@@ -1,6 +1,7 @@
 ---
 layout: doc-net
 redirect_from: "/old/documentation/efcontextprovider.html"
+redirect_from: "/dotnet/efcontextprovider.html"
 ---
 # EFContextProvider
 
