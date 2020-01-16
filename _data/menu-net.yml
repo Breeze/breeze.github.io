@@ -13,7 +13,7 @@ menuitems:
   - { link: "webapi-controller-4x.html", title: The Web API Controller, ischild: true  }
   - { link: "persistencemanager-4x.html", title: The PersistenceManager, ischild: true  }
   - { link: "controlling-serialization-4x.html", title: Controlling Serialization, ischild: true  }
-  - { link: "ef.html", title: Entity Framework, isparent: true, , ischild: true  }
+  - { link: "ef.html", title: Entity Framework, isparent: true, ischild: true  }
   - { link: "ef-serverside-model.html", title: The server side model, ischild: true  }
   - { link: "ef-dbcontext.html", title: The DBContext, ischild: true }
   - { link: "ef-efpersistencemanager.html", title: The EFPersistenceManager, ischild: true, isparent: true }        
