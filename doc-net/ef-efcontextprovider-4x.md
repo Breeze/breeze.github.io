@@ -5,6 +5,8 @@ redirect_from: "/doc-net/efcontextprovider.html"
 ---
 # EFContextProvider
 
+> **NOTE: This page is for Breeze running on .NET 4.x**<br>
+
 Many application servers use an ASP.NET Web API controller to handle the client's HTTP requests. And they use the Entity Framework (EF) to model and access a SQL database. Breeze has an ***EFContextProvider** component to make controller interactions with EF a little easier. It's basically a wrapper around your application's *ObjectContext* or *DbContext* that mediates between the Breeze controller and EF. It takes care of a lot of routine plumbing.
 
 You can use the EFContextProvider "as is", right out-of-the-box when you're getting started. But you will almost certainly customize it to add your application's business logic. For example, you will want to **[intercept save requests and validate them](#SaveInterception)**. You may want to do something special immediately before or after the provider tells EF to save entities to the database. And you may want to dynamically control how the provider creates the EntityFramework ObjectContext or DbContext at the core of the EF operations.

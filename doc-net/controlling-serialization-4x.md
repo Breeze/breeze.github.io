@@ -5,7 +5,7 @@ redirect_from: "/doc-net/controlling-serialization.html"
 ---
 # Controlling Serialization
 
-> **NOTE: This page is for Breeze running on .NET 4.x**
+> **NOTE: This page is for Breeze running on .NET 4.x**<br>
 
 If you're serving data with Breeze-flavored ASP.NET Web API controllers, you're using the Newtonsoft.Json .NET library to serialize and de-serialize data. 
 

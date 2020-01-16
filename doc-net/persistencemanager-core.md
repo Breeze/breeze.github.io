@@ -3,7 +3,7 @@ layout: doc-net
 ---
 # PersistenceManager
 
-> **NOTE: This page is for Breeze running on .NET Core**<br><br>
+> **NOTE: This page is for Breeze running on .NET Core**<br>
 > [Go here for .NET 4.x version](/doc-net/contextprovider-4x)
 
 The `PersistenceManager` is a server-side component for managing data access and business validation with .NET technologies.
@@ -33,7 +33,7 @@ In `AfterSaveEntities` you have access to the entities after they've been saved 
 
 You do not have to subclass a `PersistenceManager` to provide *before-* and *after-save*  logic. 
 
-You can attach handlers to the corresponding  delegate properties of a `ContextProvider` instance: `BeforeSaveEntityDelegate`, `BeforeSaveEntitiesDelegate` and `AfterSaveEntitiesDelegate`. There is no difference in functionality. Choose the approach that suits your architectural style.
+You can attach handlers to the corresponding  delegate properties of a `PersistenceManager` instance: `BeforeSaveEntityDelegate`, `BeforeSaveEntitiesDelegate` and `AfterSaveEntitiesDelegate`. There is no difference in functionality. Choose the approach that suits your architectural style.
 
 Each of these methods receives entity change information in the form of an `EntityInfo`. 
 
@@ -45,11 +45,11 @@ The `SaveChanges` method translates the incoming JSON change-set (aka "SaveBundl
 
 An `EntityInfo` describes the entity-to-be-saved and the save operation to be performed on it. Here is its annotated interface:
 
-    // A back reference to the concrete ContextProvider that created it
-    ContextProvider ContextProvider { get; internal set; }
+    // A back reference to the concrete PersistenceManager that created it
+    PersistenceManager ContextProvider { get; internal set; }
 
     // The values to save represented as an instance of a .NET class
-    // Created for you by the ContextProvider
+    // Created for you by the PersistenceManager
     Object Entity { get; internal set; }
 
     // Whether the entity is to be added, updated, or deleted
