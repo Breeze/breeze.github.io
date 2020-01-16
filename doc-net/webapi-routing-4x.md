@@ -5,6 +5,10 @@ redirect_from: "/doc-net/webapi-routing.html"
 ---
 # Web API Routing
 
+**NOTE: This page is for Breeze running on .NET 4.x**
+
+[Go here for .NET Core version](/doc-net/webapi-controller-core)
+
 We've built a Breeze controller that Web API will discover automatically. Now we must teach the Web API to route Breeze client requests to this controller and configure the Web API to use the controller properly.
 
 # Web API routes

@@ -4,7 +4,6 @@ menuitems:
   - { link: "nuget-packages.html", title: Start with Nuget }
   - { link: "download.html", title: Download, isparent: true }
   - { link: "release-notes.html", title: Release Notes, ischild: true }
-  - { link: "creating-breeze-server.html", title: Creating a Breeze Server }
   - { link: "breeze-server-core", title: For .NET Core, isparent: true }
   - { link: "webapi-controller-core.html", title: The Web API Controller, ischild: true  }
   - { link: "persistencemanager-core.html", title: The PersistenceManager, ischild: true }
