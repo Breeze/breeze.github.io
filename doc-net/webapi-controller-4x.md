@@ -5,8 +5,7 @@ redirect_from: "/doc-net/webapi-controller.html"
 ---
 # The ASP.NET Web API controller
 
-> **NOTE: This page is for Breeze running on .NET 4.x**
-
+> **NOTE: This page is for Breeze running on .NET 4.x**<br>
 > [Go here for .NET Core version](/doc-net/webapi-controller-core)
 
 The Basic Breeze teaching tests in the [DocCode sample](/doc-samples/doccode "Breeze 'DocCode' teaching sample") demonstrate the Breeze `EntityManager` making requests of a **Breeze ASP.NET Web API controller**.
