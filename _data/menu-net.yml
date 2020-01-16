@@ -17,7 +17,6 @@ menuitems:
   - { link: "ef-serverside-model.html", title: The server side model, ischild: true  }
   - { link: "ef-dbcontext.html", title: The DBContext, ischild: true }
   - { link: "ef-efpersistencemanager.html", title: The EFPersistenceManager, ischild: true, isparent: true }        
-  
   - { link: "ef-serverside-validation.html", title: Server-side validation, ischild: true }
   - { link: "nh.html", title: NHibernate Server, isparent: true,  }
   - { link: "nh-details.html", title: NHibernate details,  ischild: true }
