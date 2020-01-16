@@ -4,6 +4,10 @@ redirect_from: "/old/documentation/web-api-controller.html"
 ---
 # The ASP.NET Web API controller
 
+       **NOTE: This page is for Breeze running on .NET 4.x**
+
+       [Go here for .NET Core version](/doc-net/webapi-controller-core)
+
 The Basic Breeze teaching tests in the [DocCode sample](/doc-samples/doccode "Breeze 'DocCode' teaching sample") demonstrate the Breeze `EntityManager` making requests of a **Breeze ASP.NET Web API controller**.
 
 The [ASP.NET Web API](https://dotnet.microsoft.com/apps/aspnet/apis "Microsoft ASP.NET Web API ") is a framework for building HTTP services. Its simplicity has made it instantly popular with .NET backend developers who are used to struggling with Microsoft’s enormously complex, SOAP-based, WCF communications stack.
