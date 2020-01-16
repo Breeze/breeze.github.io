@@ -1,14 +1,14 @@
-title: .NET Server + EF or NHibernate
+title: .NET Server
 shorttitle: .NET
 menuitems: 
   - { link: "nuget-packages.html", title: Start with Nuget }
   - { link: "download.html", title: Download, isparent: true }
   - { link: "release-notes.html", title: Release Notes, ischild: true }
   - { link: "creating-breeze-server.html", title: Creating a Breeze Server }
-  - { link: "breeze-server-core", title: Breeze Server for .NET Core, isparent: true }
+  - { link: "breeze-server-core", title: For .NET Core, isparent: true }
   - { link: "webapi-controller-core.html", title: The Web API Controller, ischild: true  }
   - { link: "persistencemanager-core.html", title: The PersistenceManager, ischild: true }
-  - { link: "breeze-server-4x", title: Breeze Server for .NET 4.x, isparent: true }
+  - { link: "breeze-server-4x", title: For .NET 4.x, isparent: true }
   - { link: "web-api-routing-4x", title: Web API routing, ischild: true }
   - { link: "webapi-controller-4x.html", title: The Web API Controller, ischild: true  }
   - { link: "persistencemanager-4x.html", title: The PersistenceManager, ischild: true  }
