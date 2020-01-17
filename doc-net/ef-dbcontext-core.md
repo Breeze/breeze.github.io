@@ -4,7 +4,8 @@ redirect_from: "/old/documentation/entity-framework-dbcontext.html"
 ---
 # DbContext
 
-> **NOTE: This page is for Breeze running on .NET 4.x**<br>
+> **NOTE: This page is for Breeze running on .NET Core**<br>
+> [Go here for .NET 4.x version](/doc-net/ef-dbcontext-4x)
 
 The Basic Breeze teaching tests make requests for data services to an ASP.NET Web API controller. The controller forwards those requests to the .NET Entity Framework (EF).
 

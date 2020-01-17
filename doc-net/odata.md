@@ -4,6 +4,13 @@ redirect_from: "/old/documentation/odata-server.html"
 ---
 # **OData Services**
 
+Prior to the advent of ASP.NET Core, OData was a important part of the .NET ecosystem.  **This is no longer the case.**  As a result Breeze only retains its OData support for legacy ASP.NET Web API applications. 
+
+ASP.NET provides a special set of components and techniques for building an <a href="http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api" target="_blank" title="OData Support in Web API">OData service in Web API</a>.
+
+Such a service can be consumed by any client that understands the <a href="http://www.odata.org/" target="_blank" title="OData.org">OData protocol</a> ... a set that includes Breeze clients.  If you're writing an OData Web API service, you have implementation choices with consequences for client application developers. To learn how these choices affect Breeze clients, start with the topic "[OData on the Server](/doc-net/odata)".
+
+
 A Breeze client can consume any <a href="http://www.odata.org/" target="_blank">standard OData</a> feed "as is" when you configure the client for OData.
 
 Topics elsewhere cover configuring for [OData BreezeJS Clients](/doc-js/server-odata) and for [OData Breeze Sharp clients](/doc-cs/odata).
