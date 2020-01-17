@@ -31,21 +31,20 @@ Controller code to support the URL's above might look something like this:
   [Route("breeze/[controller]/[action]")]  
   [BreezeQueryFilter]   // Described later
   public class PetsController : Controller {
-    private PetsPersistenceManager PersistenceManager; // Described later
 
     [HttpGet]
     public IQueryable<Order> Dogs() {
-      return PersistenceManager.Context.Orders;
+      ...
     }
 
     [HttpGet]
     public IQueryable<Employee> Cats() {
-      return PersistenceManager.Context.Employees;
+      ...
     }
 
     [HttpPost]
     public SaveResult SaveChanges([FromBody] JObject saveBundle) {
-      return PersistenceManager.SaveChanges(saveBundle);
+      ...
     }
 ```
 # "*One controller to rule them all ...*"
@@ -110,66 +109,11 @@ A "Breeze Controller"  is just a Web API controller that has been extended to su
  
 Notice that there is no Breeze base class. The `NorthwindController` inherits directly from the `Controller` Web API base class. A Breeze Controller fits into the Web API  pipeline like other controllers. It works with the same **Web API security schemes** as other controllers.
 
-# BreezeControllerAttribute
+# BreezeQueryFilterAttribute
 
 A Breeze Web API controller and an out-of-the-box Breeze client share a common understanding about the nature and format of HTTP requests, responses, and payloads. The `BreezeQueryFilter` configures the Web API pipeline to conform to that understanding when interpreting breeze queries. 
 
 >Your Breeze Web API Controller may co-habitate with other, non-Breeze controllers that have different requirements. The `BreezeQueryFilter` attribute configuration applies to *this controller only*.
-
-
-# Configuring Serialization, Exceptions and Connection strings
-
-Listed below is a code fragment from our [Creating a Breeze Server example](https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS-Server-Core3.md).
-
-In this fragment in the `ConfigureServices` method, we need to 
-1. Enable MVC, so our `NorthwindController` class can be used to handle requests
-2. Set JSON serialization options so the client-side Breeze can send and receive entities. All communications between Breeze clients and Web API controllers are formatted as JSON. A Web API formatter serializes .NET objects as JSON. Out-of-the box, the Web API installs a very simple default formatter that isn't configured optimally for Breeze clients. Note that we explicitly reconfigure the formatter to remove the default behaviour that automatically renames entity and property names during serialization.  Instead we will use the BreezeJS  [`NamingConvention`](/doc-js/metadata#NamingConvention) mechanism instead.
-3. Add an exception filter, so errors are communicated to the Breeze client
-4. Add the DbContext to dependency injection, so our `NorthwindController` can receive it
-
-add some MVC options to let the Breeze client communicate with the server:
-
-```
-  namespace NorthwindServer {
-    public class Startup     {
-      private IConfiguration configuration;
-      public Startup(IConfiguration configuration) {
-          this.configuration = configuration;
-      }
-
-      // This method gets called by the runtime. Use this method to add services to the container.
-      // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-      public void ConfigureServices(IServiceCollection services)  {
-        var mvcBuilder = services.AddMvc();
-
-        services.AddControllers().AddNewtonsoftJson(opt => {
-            // Set Breeze defaults for entity serialization
-            var ss = JsonSerializationFns.UpdateWithDefaults(opt.SerializerSettings);
-            if (ss.ContractResolver is DefaultContractResolver resolver) {
-                resolver.NamingStrategy = null;  // remove json camelCasing; names are converted on the client.
-            }
-            ss.Formatting = Newtonsoft.Json.Formatting.Indented; // format JSON for debugging
-        });
-
-        // Add Breeze exception filter to send errors back to the client
-        mvcBuilder.AddMvcOptions(o => { o.Filters.Add(new GlobalExceptionFilter()); });
-
-        // Add DbContext using connection string ( for Dependency injection)
-        var connectionString = configuration.GetConnectionString("NorthwindCore");
-        services.AddDbContext<NorthwindCoreContext>(options => options.UseSqlServer(connectionString));
-
-      }
-
-    ...
-
-    }
-  }
-```
-
-
-<a name="breeze-query-filter"></a>
-
-# BreezeQueryFilterAttribute
 
 The `BreezeQueryFilterAttribute` converts Breeze client query URLs into LINQ expressions.
 
@@ -227,9 +171,9 @@ Many .NET server developers turn to the Microsoft's [Entity Framework](https://d
 The `EFPersistenceManager`, which derives from the Breeze `PersistenceManager`, wraps an Entity Framework DbContext to provide Breeze data management.
 
 ```
-public class NorthwindCorePersistenceManager : EFPersistenceManager<NorthwindCoreContext> {
+public class NorthwindPersistenceManager : EFPersistenceManager<NorthwindDbContext> {
   // Add a constructor to create it from our DbContext
-  public NorthwindCorePersistenceManager(NorthwindCoreContext dbContext) : base(dbContext) {}
+  public NorthwindPersistenceManager(NorthwindDbContext dbContext) : base(dbContext) {}
   ...
 
 }
@@ -238,22 +182,19 @@ public class NorthwindCorePersistenceManager : EFPersistenceManager<NorthwindCor
 Next, in our example, the `NorthwindController` defines a `persistenceManager` field, initialized to a fresh instance of `EFPersistenceManager<T>`.:
 
 ```
-  private NorthwindCorePersistenceManager persistenceManager;
-  public BreezeController(NorthwindCoreContext dbContext)
-  {
-      persistenceManager = new NorthwindCorePersistenceManager(dbContext);
+  private NorthwindPersistenceManager persistenceManager;
+  public NorthwindController(NorthwindDbContext dbContext) {
+    persistenceManager = new NorthwindPersistenceManager(dbContext);
   }
 ```    
 
 ### Alternatives to Entity Framework
 
-The `EFPersistenceManager` derives from the Breeze `PersistenceManager` which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
+The `EFPersistenceManager` derives from the Breeze `PersistenceManager` which can be the base class for alternative providers that don't involve Entity Framework ... and / or possibly don't store data in a relational database either. 
 
 Breeze also ships [components for NHibernate](/doc-net/nh-details) developers.   The source for any of these providers can guide you in writing your own provider.
 
-But back to our story .. and the first of the "Breeze Controller"  specialty methods.
-
-
+But back to our story .. 
 
 ### Client-initiated "eager" queries
 
@@ -276,8 +217,7 @@ After eagerly fetching the related order line items with this query, the client 
 Suppose you don't want to expose an "OrderDetails" controller method and you don't want clients to send query requests with the "expand" clause. You can write a specialized controller query method that internally includes the `OrderDetails` in the payload automatically:
 
     [HttpGet]
-    public IQueryable<Order> OrdersAndDetails()
-    {
+    public IQueryable<Order> OrdersAndDetails() {
         return persistenceManager.Context.Orders.Include('OrderDetails');
     }
 
@@ -297,7 +237,7 @@ When the Breeze client calls `saveChanges()`, the `EntityManager` posts a bundle
 
 The bundle could contain a mix of different types (`Customer`, `Order`, `OrderDetail`) and different operations (add, update, delete). They all travel together in the body of the POST.
 
-The Web API delivers the bundle to the controller’s `SaveChanges` method as a JSON object (`JObject`). You could unpack that bundle yourself but it is far more convenient to let the `_contextProvider.SaveChanges` method handle that … and save those changes in EF as a single transaction:
+The Web API delivers the bundle to the controller’s `SaveChanges` method as a JSON object (`JObject`). You could unpack that bundle yourself but it is far more convenient to let the `persistenceManager.SaveChanges` method handle that … and save those changes in EF as a single transaction:
 
     [HttpPost]
     public SaveResult SaveChanges(JObject saveBundle) {
@@ -309,3 +249,52 @@ The Web API delivers the bundle to the controller’s `SaveChanges` method as a 
 Are alarm bells ringing when you read this code? We shouldn't blithely save everything the client tells us to save. We should inspect every request, making sure that the changes are valid and that the user is authorized to make them.
 
 Learn how to do that with [a custom EFPersistenceManager and save interception](/doc-net/ef-efpersistencemanager#SaveInterception).
+
+# Configuring Serialization, Exceptions and Connection strings
+
+Listed below is a code fragment from our [Creating a Breeze Server example](https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS-Server-Core3.md).
+
+In this fragment in the `ConfigureServices` method, we need to 
+1. Enable MVC, so our `NorthwindController` class can be used to handle requests
+2. Set JSON serialization options so the client-side Breeze can send and receive entities. All communications between Breeze clients and Web API controllers are formatted as JSON. A Web API formatter serializes .NET objects as JSON. Out-of-the box, the Web API installs a very simple default formatter that isn't configured optimally for Breeze clients. Note that we explicitly reconfigure the formatter to remove the default behaviour that automatically renames entity and property names during serialization.  Instead we will use the BreezeJS  [`NamingConvention`](/doc-js/metadata#NamingConvention) mechanism instead.
+3. Add an exception filter, so errors are communicated to the Breeze client
+4. Add the DbContext to dependency injection, so our `NorthwindController` can receive it
+
+add some MVC options to let the Breeze client communicate with the server:
+
+```
+  namespace NorthwindServer {
+    public class Startup     {
+      private IConfiguration configuration;
+      public Startup(IConfiguration configuration) {
+          this.configuration = configuration;
+      }
+
+      // This method gets called by the runtime. Use this method to add services to the container.
+      // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+      public void ConfigureServices(IServiceCollection services)  {
+        var mvcBuilder = services.AddMvc();
+
+        services.AddControllers().AddNewtonsoftJson(opt => {
+            // Set Breeze defaults for entity serialization
+            var ss = JsonSerializationFns.UpdateWithDefaults(opt.SerializerSettings);
+            if (ss.ContractResolver is DefaultContractResolver resolver) {
+                resolver.NamingStrategy = null;  // remove json camelCasing; names are converted on the client.
+            }
+            ss.Formatting = Newtonsoft.Json.Formatting.Indented; // format JSON for debugging
+        });
+
+        // Add Breeze exception filter to send errors back to the client
+        mvcBuilder.AddMvcOptions(o => { o.Filters.Add(new GlobalExceptionFilter()); });
+
+        // Add DbContext using connection string ( for Dependency injection)
+        var connectionString = configuration.GetConnectionString("NorthwindCore");
+        services.AddDbContext<NorthwindCoreContext>(options => options.UseSqlServer(connectionString));
+
+      }
+
+    ...
+
+    }
+  }
+```
