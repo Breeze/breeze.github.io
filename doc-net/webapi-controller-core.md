@@ -6,14 +6,48 @@ layout: doc-net
 > **NOTE: This page is for Breeze running on .NET Core**<br>
 > [Go here for .NET 4.x version](/doc-net/webapi-controller-4x)
 
-The Basic Breeze teaching tests in the [DocCode sample](/doc-samples/doccode "Breeze 'DocCode' teaching sample") demonstrate the Breeze `EntityManager` making requests of a **Breeze ASP.NET Web API controller**.
-
 The [ASP.NET Web API](https://dotnet.microsoft.com/apps/aspnet/apis "Microsoft ASP.NET Web API ") is a framework for building HTTP services. Its simplicity has made it instantly popular with .NET backend developers who are used to struggling with Microsoft’s enormously complex, SOAP-based, WCF communications stack.
 
 In a nutshell, the Web API routes an HTTP request (GET, POST, PUT, DELETE, etc) to an action method of a controller. The controller developer has easy access to the complete client request but is usually most interested in the URL query parameters or the body of the request. There's more to it of course but that's the gist of it.
 
 The Breeze Controller is just one of many ways to serve a Breeze client with either .NET or non-Net technologies. It is among the easiest and most capable server stacks available to .Net developers. You'll see it driving many of the Breeze samples. 
 
+###	Breeze Web API route
+
+ASP.NET Core has a rich set of rules that allow you to determine which method in a controller is called for any specific HTTP request. We recommend an ASP.NET Core mechanism know as [Attribute Routing](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-3.1#attribute-routing) to accomplish this
+
+Typical Breeze requests look like:
+
+	GET http://my.site.com/breeze/Pets/Cats
+	GET http://my.site.com/breeze/Pets/Dogs/$filter=id eq 42
+	POST http://my.site.com/breeze/Pets/SaveChanges
+
+Notice that the last path segment (before the optional query string) is a word. The words "Cats", "Dogs", and "SaveChanges" map to like-named action methods on the *PetsController.* The first queries for all cats. The second queries for Dogs with id=42, and the third POSTs a change-set which could include any added, modified or deleted cats and dogs.
+
+Notice that the controller name in all three examples is "Pets". In general, a Breeze application has only one Web API controller, the *PetsController *in this example.
+
+Controller code to support the URL's above might look something like this:
+```
+  [Route("breeze/[controller]/[action]")]  
+  [BreezeQueryFilter]   // Described later
+  public class PetsController : Controller {
+    private PetsPersistenceManager PersistenceManager; // Described later
+
+    [HttpGet]
+    public IQueryable<Order> Dogs() {
+      return PersistenceManager.Context.Orders;
+    }
+
+    [HttpGet]
+    public IQueryable<Employee> Cats() {
+      return PersistenceManager.Context.Employees;
+    }
+
+    [HttpPost]
+    public SaveResult SaveChanges([FromBody] JObject saveBundle) {
+      return PersistenceManager.SaveChanges(saveBundle);
+    }
+```
 # "*One controller to rule them all ...*"
 
 When targeting a Breeze client, it is usually preferable to write a Web API **controller per *service***. 
@@ -41,15 +75,15 @@ The "NorthwindCore" model only has a few entity types so its Web API controller 
 Add a HttpGet method returning `IQueryable<>` for each of the `Customer`, `Order`, and `Product` types in the data model.  We won't do one for `OrderItem` because we will only query those with an `Order`
 ```
 
-  [Route("api/[controller]/[action]")]   // Note that the `Route` attribute specifies the `[action]` as part of the path.
+  [Route("breeze/[controller]/[action]")]   // Note that the `Route` attribute specifies the `[action]` as part of the path.
   [BreezeQueryFilter]
-  public class BreezeController : Controller
-    // Add a new `persistenceManager` field to the `BreezeController` class, and add a constructor that takes a NorthwindCoreContext and sets the `persistenceManager` 
-    // field.  This will be called by dependency injection.
+  public class NorthwindController : Controller
 
-    private NorthwindCorePersistenceManager persistenceManager;
-    public BreezeController(NorthwindCoreContext dbContext) {
-        persistenceManager = new NorthwindCorePersistenceManager(dbContext);
+    // Add a new `persistenceManager` field to the `NorthwindController` class, and add a constructor that takes a NorthwindDbContext and sets the `persistenceManager` 
+    // field.  This will be called by dependency injection.
+    private NorthwindPersistenceManager persistenceManager;
+    public NorthwindController(NorthwindDbContext dbContext) {
+        persistenceManager = new NorthwindPersistenceManager(dbContext);
     }
 
     [HttpGet]
@@ -74,7 +108,7 @@ Add a HttpGet method returning `IQueryable<>` for each of the `Customer`, `Order
 
 A "Breeze Controller"  is just a Web API controller that has been extended to support a "happy path" for Breeze .NET developers.
  
-Notice that there is no Breeze base class. The `BreezeController` inherits directly from the `Controller` Web API base class. A Breeze Controller fits into the Web API  pipeline like other controllers. It works with the same **Web API security schemes** as other controllers.
+Notice that there is no Breeze base class. The `NorthwindController` inherits directly from the `Controller` Web API base class. A Breeze Controller fits into the Web API  pipeline like other controllers. It works with the same **Web API security schemes** as other controllers.
 
 # BreezeControllerAttribute
 
@@ -88,10 +122,10 @@ A Breeze Web API controller and an out-of-the-box Breeze client share a common u
 Listed below is a code fragment from our [Creating a Breeze Server example](https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS-Server-Core3.md).
 
 In this fragment in the `ConfigureServices` method, we need to 
-1. Enable MVC, so our `BreezeController` class can be used to handle requests
+1. Enable MVC, so our `NorthwindController` class can be used to handle requests
 2. Set JSON serialization options so the client-side Breeze can send and receive entities. All communications between Breeze clients and Web API controllers are formatted as JSON. A Web API formatter serializes .NET objects as JSON. Out-of-the box, the Web API installs a very simple default formatter that isn't configured optimally for Breeze clients. Note that we explicitly reconfigure the formatter to remove the default behaviour that automatically renames entity and property names during serialization.  Instead we will use the BreezeJS  [`NamingConvention`](/doc-js/metadata#NamingConvention) mechanism instead.
 3. Add an exception filter, so errors are communicated to the Breeze client
-4. Add the DbContext to dependency injection, so our BreezeController can receive it
+4. Add the DbContext to dependency injection, so our `NorthwindController` can receive it
 
 add some MVC options to let the Breeze client communicate with the server:
 
@@ -111,16 +145,16 @@ add some MVC options to let the Breeze client communicate with the server:
         services.AddControllers().AddNewtonsoftJson(opt => {
             // Set Breeze defaults for entity serialization
             var ss = JsonSerializationFns.UpdateWithDefaults(opt.SerializerSettings);
-            if (ss.ContractResolver is DefaultContractResolver resolver)
-            {
+            if (ss.ContractResolver is DefaultContractResolver resolver) {
                 resolver.NamingStrategy = null;  // remove json camelCasing; names are converted on the client.
             }
             ss.Formatting = Newtonsoft.Json.Formatting.Indented; // format JSON for debugging
         });
+
         // Add Breeze exception filter to send errors back to the client
         mvcBuilder.AddMvcOptions(o => { o.Filters.Add(new GlobalExceptionFilter()); });
 
-        // Add DbContext using connection string
+        // Add DbContext using connection string ( for Dependency injection)
         var connectionString = configuration.GetConnectionString("NorthwindCore");
         services.AddDbContext<NorthwindCoreContext>(options => options.UseSqlServer(connectionString));
 
