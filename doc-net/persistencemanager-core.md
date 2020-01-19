@@ -19,7 +19,7 @@ You can use `PersistenceManager` as the basis for transforming BreezeJS query an
 ## SaveChanges
 Most of the `PersistenceManager` is devoted to saving client changes via the `SaveChanges` method. 
 
-Typically, a Breeze client posts a `saveChanges` request to a web api controller which routes the request and its payload to a `PersistenceManager.SaveChanges` method.
+The Breeze client (described elsewhere) automatically keeps track of any entities that have been added, modified or deleted and for any modifications exactly what was modified. When a Breeze client `saveChanges` call is made, the client posts a bundle of these changes as a request to a web api controller which routes the request and its payload to a `PersistenceManager.SaveChanges` method.
 
 The request payload, called the "saveBundle", is a BreezeJS JSON  object (a JSON.NET `JObject`) that describes an entity change-set.  An "entity change-set" is an arbitrary collection of entities to be saved. Each entity in the change-set is paired with a save-operation  - add, update, delete - to be performed on that entity.
 
@@ -157,7 +157,7 @@ The pre-change values may be useful to you when pre-processing the `EntityInfo`.
 
 > <b>Beware!</b> The `OriginalValuesMap` was <b>provided by the client</b> as part of its "save changes" request. It is your responsibility to confirm that this user is allowed to save changes to these properties. Before you make use of the pre-change values you should verify that the stated pre-change values actually are the "original values".
 
-The `PersistenceManager` assumes that the client request is valid. You are responsible for data integrity and data security. You should scrutinize everything in the change-set to the degree that your business requires. 
+The `PersistenceManager` assumes that the client request is valid. You are responsible for data integrity and data security. The `BeforeSaveEntity` and `BeforSaveEntities` methods are where you should perform such logic. You should scrutinize everything in the change-set to the degree that your business requires. 
 
 The `EntityInfo` and its `OriginalValuesMap` tell you what the client said in its save request. You inspect, validate, and modify that request in your overrides of the `PersistenceManager` methods.
 

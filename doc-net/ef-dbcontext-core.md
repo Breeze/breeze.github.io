@@ -1,6 +1,6 @@
 ---
 layout: doc-net
-redirect_from: "/old/documentation/entity-framework-dbcontext.html"
+
 ---
 # DbContext
 

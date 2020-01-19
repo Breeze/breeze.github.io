@@ -1,15 +1,11 @@
 ---
 layout: doc-net
-redirect_from: "/old/documentation/server-side-model.html"
 ---
-# The server-side model
+# The server-side model when using Entity Framework
 
 > **NOTE: This page is for Breeze running on .NET Core**<br>
 > [Go here for .NET 4.x version](/doc-net/ef-serverside-model-4x)
 
-In the sample code we implement the persistence service as an ASP.NET Web API that queries and saves entities with the help of the Entity Framework. You can write the service a different way but this is a convenient approach for .NET developers and the one we'll discuss on this page and the ones that follow.
-
-## Entity Framework
 
 <a href="http://msdn.microsoft.com/en-us/data/ef.aspx">Entity Framework</a> (EF) is a .NET data access technology with an Object Relational Mapper (ORM). The ORM maps a domain-specific object model to the schema of a relational database. It uses that map to move data between entity model objects (instances of .NET classes) and the tables and columns of a relational database.
 
@@ -22,26 +18,18 @@ A Breeze client model maps easily to (almost) every structure supported by Entit
 
 The Breeze.js client does not support "many to many" relationships *without a join entity* at this time. You will have to expose the junction/mapping table as an entity.
 
-The Breeze.net server components support EF 6, EF 5.x, and EF 4.x (but no versions prior to v.4.2).  See the [NuGet Packages page](/doc-net/nuget-packages) for more info.
-
 ## Build your model
 
 You can build your EF model in two ways:
 
-
+  - Write your .NET entity classes first, then tell EF to how to amp these classes to your database.
 	- Start from an existing database, derive a conceptual model from the database schema, and generate entity classes from that conceptual model.
-	- Write your .NET entity classes first, then tell EF to derive the conceptual model and database mapping from your classes.
+	
+The first approach is called "**code first**". You write your entity classes to suit your application needs with comparatively little regard for the database, the EF, or its mapping.  You then describe the mapping between these classes and properties and tables and fields from your database.  This is done either by by decorating your classes with helpful attributes or more explicitly through EF's "fluent" mapping API.
 
-
-The first approach is called "**database first**". You point EF's model design tool at a database and it produces an XML description of the mapping called an EDMX file. You'll see this artifact in the .NET model project.
-
-The second approach is called "**code first**". You write your entity classes to suit your application needs with comparatively little regard for the database, the EF, or its mapping. There is no EDMX file.
-
-The "code first" approach rarely works in the pristine way I described. You usually have to take EF by the hand and walk it in the right direction, perhaps by decorating your classes with helpful attributes or perhaps more explicitly through EF's "fluent" mapping API.
+The second approach is called "**database first**". In practice this involves pointing an [EF Database scaffolding tool](https://docs.microsoft.com/en-us/ef/core/managing-schemas/scaffolding) at a database which in turn generates the Entity Framework **code first** model described above.
 
 Both approaches have merit. We can use either to build the model for our Breeze application.
-
-> See the [Web Api Configuration](/doc-net/webapi-routing) topic to resolve Entity Framework version issues.
 
 ## A simplistic code first model
 
@@ -87,11 +75,9 @@ Let's try something more ambitious. We'll look at excerpts from three related en
 	}
 
 
-Some of the properties are decorated with validation attributes (*Required*, *MaxLength*). Entity Framework can use this information to validate changed entities before saving them. [So can Breeze](/doc-net/ef-serverside-validation).
-
+Some of the properties are decorated with validation attributes (*Required*, *MaxLength*). These attribute values are available on the server inside of the `BeforeSaveEntities` method but they are also part of the client side metadata that the Breeze client uses to validate any data before it is sent to the server to be saved.  In general, simple validations specified thru attributes are caught on the client before they ever get to the server.  However, more complex validations should be handled inside the `BeforeSaveEntities` method on the PersistenceManager: See [EF Server side validation](/doc-net/ef-serverside-validation-core).
 
 Notice the *Orders* navigation property returns a collection of type Order. Customer has a one-to-many relationship with Order and this property implements that relationship in the server-side class model. Expect to see that same relationship implemented in the Order property of Customer entity in the Breeze JavaScript client-side model.
-
 
 One more thing before we look at other entity classes. The *CustomerID* is the customer primary key. Entity Framework recognizes that fact but it doesn't know who is responsible for setting the key when adding new customers. By convention, EF assumes the client will set it. That not true in our sample where the Northwind database sets the key. We'll have to tell EF about that...which we could do with another attribute...or we could do with EF's "fluent API" for configuring the model mapping. We used the fluent API in our sample code; look for the *CustomerConfiguration* class when you have a moment.
 
@@ -190,4 +176,4 @@ Imagine a model with 30, 50, 100, or 200 entities, each with an average of 10 pr
 
 You don't have to with Breeze. There's a .NET Breeze component that scoops up this information and packages it as a metadata document. Your persistence service can send this document to the Breeze client. The Breeze client interprets the metadata and builds a conforming JavaScript model with the same structure and constraints as the server-side model.
 
-We'll see how this works when we get to the client. Our next stop is the [Entity Framework *DbContext*](/doc-net/ef-dbcontext) which is the gateway to the database.
+We'll see how this works when we get to the client. Our next stop is the [Entity Framework *DbContext*](/doc-net/ef-dbcontext-core) which is the gateway to the database.
