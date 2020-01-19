@@ -2,7 +2,7 @@
 layout: doc-net
 redirect_from: "/old/documentation/aspnet-web-api.html"
 ---
-# ASP.NET Web API 
+# Building a Breeze server using ASP.NET Web API 
 
 <a class="logo-inline" href="/doc-net" title="ASP.NET">
   <img src="/images/logos/Breeze-aspnet.png" alt="ASP.NET" width="100">
