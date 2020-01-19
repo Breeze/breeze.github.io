@@ -8,7 +8,7 @@ layout: doc-net
 
 Many application servers use an ASP.NET Web API controller to handle the client's HTTP requests. And they use the Entity Framework (EF) to model and access a SQL database. Breeze has an ***EFPersistenceManager** component to make controller interactions with EF a little easier. It's basically a wrapper around your application's *DbContext* that mediates between the Breeze controller and EF. It takes care of a lot of routine plumbing.
 
-You can use the EFPersistenceManager "as is", right out-of-the-box when you're getting started. But you will almost certainly customize it to add your application's business logic. For example, you will want to **[intercept save requests and validate them](#SaveInterception)**. You may want to do something special immediately before or after the provider tells EF to save entities to the database. And you may want to dynamically control how the provider creates the EntityFramework ObjectContext or DbContext at the core of the EF operations.
+You can use the EFPersistenceManager "as is", right out-of-the-box when you're getting started. But you will almost certainly customize it to add your application's business logic. For example, you will want to intercept save requests and validate them. You may want to do something special immediately before or after the provider tells EF to save entities to the database. And you may want to dynamically control how the provider creates the EntityFramework ObjectContext or DbContext at the core of the EF operations.
 
 This topic explores the *EFPersistenceManager* in greater detail and explains how to subclass it to get the behavior you need.
 
@@ -22,7 +22,7 @@ Any Breeze application that will be communicating with an Entity Framework backe
 		public virtual DbSet<Order> Orders { get; set; }
 		public virtual DbSet<Customer> Customers { get; set; }
 		public virtual DbSet<Role> Roles { get; set; }
-
+		...
 	}
 ```
 
@@ -53,6 +53,7 @@ These interception points may be accessed by subclassing the EFPersistenceManage
 			// return a map of those entities we want saved.
 			return saveMap;
 		}
+		...
 	}
 	
 ```
@@ -64,22 +65,22 @@ These interception points may be accessed by subclassing the EFPersistenceManage
   [BreezeQueryFilter]
   public class NorthwindController : Controller
 
-    // Add a new `persistenceManager` field to the `NorthwindController` class, and add a constructor that takes a NorthwindDbContext and sets the `persistenceManager` 
-    // field.  This will be called by dependency injection.
-    private NorthwindPersistenceManager persistenceManager;
-    public NorthwindController(NorthwindDbContext dbContext) {
-        persistenceManager = new NorthwindPersistenceManager(dbContext);
-    }
+		// Add a new `persistenceManager` field to the `NorthwindController` class, and add a constructor that takes a NorthwindDbContext and sets the `persistenceManager` 
+		// field.  This will be called by dependency injection.
+		private NorthwindPersistenceManager persistenceManager;
+		public NorthwindController(NorthwindDbContext dbContext) {
+				persistenceManager = new NorthwindPersistenceManager(dbContext);
+		}
 
-    [HttpGet]
-    public IQueryable<Customer> Customers() {
-        return persistenceManager.Context.Customers;
-    }
+		[HttpGet]
+		public IQueryable<Customer> Customers() {
+				return persistenceManager.Context.Customers;
+		}
 
-    [HttpGet]
-    public IQueryable<Order> Orders() {
-        return persistenceManager.Context.Orders;
-    }
+		[HttpGet]
+		public IQueryable<Order> Orders() {
+				return persistenceManager.Context.Orders;
+		}
 
 		[HttpGet]
 		public IQueryable<Customer> CustomersAndOrders() {
@@ -91,11 +92,12 @@ These interception points may be accessed by subclassing the EFPersistenceManage
 			return  persistenceManager.Context.Customers
 					.Where(c => c.CompanyName.StartsWith("A"));
 		}
-	
+
 		[HttpPost]
 		public SaveResult SaveChanges(JObject saveBundle) {
 			return persistenceManager.SaveChanges(saveBundle);
 		}
-		
+		...
+	}		
 ```					 
 
