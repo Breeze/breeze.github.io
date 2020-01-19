@@ -22,8 +22,9 @@ The Breeze.js client does not support "many to many" relationships *without a jo
 
 You can build your EF model in two ways:
 
-  - Write your .NET entity classes first, then tell EF to how to amp these classes to your database.
-	- Start from an existing database, derive a conceptual model from the database schema, and generate entity classes from that conceptual model.
+- Write your .NET entity classes first, then tell EF to how to amp these classes to your database.
+- Start from an existing database, derive a conceptual model from the database schema, and generate entity classes from that conceptual model.
+
 	
 The first approach is called "**code first**". You write your entity classes to suit your application needs with comparatively little regard for the database, the EF, or its mapping.  You then describe the mapping between these classes and properties and tables and fields from your database.  This is done either by by decorating your classes with helpful attributes or more explicitly through EF's "fluent" mapping API.
 

@@ -8,7 +8,7 @@ menuitems:
   - { link: "webapi-controller-core.html", title: The Web API Controller, ischild: true  }
   - { link: "persistencemanager-core.html", title: The PersistenceManager, ischild: true }
   - { link: "ef-serverside-model-core.html", title: EF - Server side model, ischild: true  }
-  - { link: "ef-efperistencemanager-core.html", title: The EFPersistenceManager, ischild: true }        
+  - { link: "ef-efpersistencemanager-core.html", title: The EFPersistenceManager, ischild: true }        
   - { link: "ef-serverside-validation-core.html", title: EF - Server-side validation, ischild: true }
   - { link: "breeze-server-4x", title: For .NET 4.x, isparent: true }
   - { link: "webapi-routing-4x", title: Web API routing, ischild: true }
