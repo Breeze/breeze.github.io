@@ -99,8 +99,3 @@ These interception points may be accessed by subclassing the EFPersistenceManage
 		
 ```					 
 
-
-
-
-The current interception points for the EFContextProvider are described below. However, we do expect this list to grow as we receive additional feedback from all of you. Please feel free to contribute to our UserVoice regarding any specific extension that you think would be useful here.
-
