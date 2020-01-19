@@ -14,14 +14,8 @@ This topic explores the *EFContextProvider* in greater detail and explains how t
 Any Breeze application that will be communicating with an Entity Framework backed domain model will contain either an *ObjectContext* or a *DbContext* that looks something like what is shown below:
 
 
-      public partial class NorthwindIBContext : System.Data.Objects.ObjectContext {
-      // automatically generated code from the EDMX designer
-      }
-
-Or
-
 	public partial class NorthwindIBContext : System.Data.Entity.DbContext {
-	  // Code-First DBSet definitions and any model initialization code
+
 	}
 
 This ObjectContext or DbContext will in turn be wrapped in an **EFContextProvider**. The Breeze.WebApi.EFContextProvider class may be found in the Breeze.WebApi dll. An instance of this EFContextProvider is then used to provide services to a standard .NET MVC 4 ApiController (Sytem.Web.Http.ApiControllerApiController). This will look something like:

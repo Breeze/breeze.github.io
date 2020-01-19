@@ -8,7 +8,7 @@ layout: doc-net
 
 ## Save validation <a name="Savevalidation"></a>
 
-All server side validation errors go to the `catch` promise. Server side validation errors appear as a property called `entityErrors` that contains an array of server errors.  
+All server side validation errors are returned to the your Breeze client via a `catch` promise. Server side validation errors appear as a property called `entityErrors` that contains an array of server errors.  
 	
 	             em.saveChanges().then(function (sr) {
 	                   …
@@ -54,7 +54,7 @@ Example:
 	
 	        [HttpPost]
 	        public SaveResult SaveWithEntityErrorsException(JObject saveBundle) {
-	          ContextProvider.BeforeSaveEntitiesDelegate = ThrowEntityErrorsException;
+	          PersistenceManager.BeforeSaveEntitiesDelegate = ThrowEntityErrorsException;
 	          return ContextProvider.SaveChanges(saveBundle);
 	        }
 	
