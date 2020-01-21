@@ -85,13 +85,13 @@ The `EntityInfo.Entity` properties have been populated with values in the JSON s
 
 The `EntityInfo.EntityState` is an enum that describes the current state of the entity in the change-set.
 
-	public enum EntityState {
-	    Detached = 1,
-	    Unchanged = 2,
-	    Added = 4,
-	    Deleted = 8,
-	    Modified = 16,
-	}
+  public enum EntityState {
+      Detached = 1,
+      Unchanged = 2,
+      Added = 4,
+      Deleted = 8,
+      Modified = 16,
+  }
 
 The `PersistenceManager` infers the intended save operation from this `EntityState`. For example, values of an entity in the `Modified` state will update the already-existing record in the data store with the matching entity key.
 
@@ -112,41 +112,37 @@ It follows that, when updating an entity, if you change one of its properties on
 > Alternatively, you can force update of every field by setting `EntityInfo.ForceUpdate = True;`
 
 For example, we could calculate an entity property on the server in a <a href="#BeforeSaveEntity">`BeforeSaveEntity` method</a>:
+```
+  public bool BeforeSaveEntity(EntityInfo info)  {
 
-      public bool BeforeSaveEntity(EntityInfo info)
-      {
-        if (info.EntityState == EntityState.Modified && 
-            info.Entity is Customer)
-        {
-            var cust = (Customer) info.Entity;
-            cust.MOL = meaningOfLife();
+    if (info.EntityState == EntityState.Modified && info.Entity is Customer) {
+      var cust = (Customer) info.Entity;
+      cust.MOL = meaningOfLife();
 
-            // Add property to map so that PersistenceManager updates db
-            // original values don't matter
-            info.OriginalValuesMap["MOL"] = null;
-        }
-          // ... more stuff
-     }
-
+      // Add property to map so that PersistenceManager updates db
+      // original values don't matter
+      info.OriginalValuesMap["MOL"] = null;
+    }
+      // ... more stuff
+  }
+```
 Many apps set audit fields on the server for entities that have them. You might set them this way:
 
-      public bool BeforeSaveEntity(EntityInfo info)
-      {
-        if (info.EntityState == EntityState.Modified && 
-            info.Entity is IAuditable)
-        {
-            var auditable = (IAuditable) info.Entity;
-            auditable.Modified = DateTime.UtcNow;
-			auditable.UserId   = CurrentUser.Id;
+```
+  public bool BeforeSaveEntity(EntityInfo info)  {
+    if (info.EntityState == EntityState.Modified && info.Entity is IAuditable) {
+      var auditable = (IAuditable) info.Entity;
+      auditable.Modified = DateTime.UtcNow;
+      auditable.UserId   = CurrentUser.Id;
 
-            // Add property to map so that PersistenceManager updates db
-            // original values don't matter
-            info.OriginalValuesMap["Modified"] = null;
-            info.OriginalValuesMap["UserId"] = null;
-        }
-          // ... more stuff
-     }
-
+      // Add property to map so that PersistenceManager updates db
+      // original values don't matter
+      info.OriginalValuesMap["Modified"] = null;
+      info.OriginalValuesMap["UserId"] = null;
+    }
+    // ... more stuff
+  }
+```
 ##### Pre-change values
 
 The `PersistenceManager` itself ignores the pre-change values in the `OriginalValuesMap`.
@@ -210,23 +206,20 @@ In your application, you will need to verify whether the user is allowed to make
 
 In your BeforeSaveEntities or delegate method, you would check to see if the entities can be saved by the current user. If you find an entity that shouldn't be saved, you can either remove it from the change set, or throw an error and abort the save:
 
-    protected override Dictionary<Type, List<EntityInfo>> BeforeSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap)
-    {
-        var user = GetCurrentUser();  // get user from session
-        foreach (Type type in saveMap.Keys)
-        {
-            foreach (EntityInfo entityInfo in saveMap[type])
-            {
-                if (!UserCanSave(entityInfo, user))  // implement business rules
-                {
-                    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Forbidden)
-                        { ReasonPhrase = "Not authorized to make these changes" });
-                }
-            }
+```
+  protected override Dictionary<Type, List<EntityInfo>> BeforeSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap) {
+    var user = GetCurrentUser();  // get user from session
+    foreach (Type type in saveMap.Keys)  {
+      foreach (EntityInfo entityInfo in saveMap[type]) {
+        if (!UserCanSave(entityInfo, user)) { // implement business rules
+          throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Forbidden)
+              { ReasonPhrase = "Not authorized to make these changes" });
         }
-        return saveMap;
+      }
     }
-
+    return saveMap;
+  }
+```
 You will need to determine whether the user should be allowed to save a particular entity. This could be based on the role of the user and/or some other attribute, e.g. users in the Sales role can only save Client records that belong to their own SalesRegion.
 
 
@@ -237,7 +230,7 @@ You will need to determine whether the user should be allowed to save a particul
 `AfterSaveEntities` gives access the to entities after they've been saved to the database, and after database-assigned identifiers have been assigned. 
 
     protected override void AfterSaveEntities(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings)
-	
+  
 The `saveMap` parameter provides access to the full set of entities that were saved.
 
 The `keyMappings` parameter provides the mapping of temporary IDs to real, db-assigned IDs.
@@ -265,22 +258,23 @@ But the actions of the `BeforeSave...` and `AfterSaveEntities` methods fall ***o
 If you need to include `BeforeSave...` and `AfterSaveEntities` processing within the save transaction, you must supply the optional `TransactionSettings` parameter to the `SaveChanges` call.
 
 Here's an example:
-    [HttpPost]
-    public SaveResult SaveWithTransactionScope(JObject saveBundle) {
-      var txSettings = new TransactionSettings() { TransactionType = TransactionType.TransactionScope };
-    
-        // Add the specialized AfterSave handler
-      PersistenceManager.AfterSaveEntitiesDelegate = PerformPostSaveValidation;
-    
-      return PersistenceManager.SaveChanges(saveBundle, txSettings);
-    }
-	
-    private void PerformPostSaveValidation(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings ) {
-      // do your post save validation stuff here
-      // and throw an exception if something doesn't validate.
-    
-    }
+```
+  [HttpPost]
+  public SaveResult SaveWithTransactionScope(JObject saveBundle) {
+    var txSettings = new TransactionSettings() { TransactionType = TransactionType.TransactionScope };
+  
+      // Add the specialized AfterSave handler
+    PersistenceManager.AfterSaveEntitiesDelegate = PerformPostSaveValidation;
+  
+    return PersistenceManager.SaveChanges(saveBundle, txSettings);
+  }
 
+  private void PerformPostSaveValidation(Dictionary<Type, List<EntityInfo>> saveMap, List<KeyMapping> keyMappings ) {
+    // do your post save validation stuff here
+    // and throw an exception if something doesn't validate.
+  
+  }
+```
 Now the entire save process occurs within a `TransactionScope` including the `BeforeSaveEntities` and the `AfterSaveEntities` invocations. Now you can abort the transaction after saving to the database by throwing an exception in your `AfterSaveEntities` method; doing so will rollback all previous inserts, updates or deletes that were part of the transaction.
 
 > This discussion presupposes that the technologies involved support transactions.
@@ -301,7 +295,7 @@ You may want to call this particular `SaveWithTransactionScope` method only for 
    * **DbTransaction** - use the database native transactions (recommended for Oracle)
    
    * **None** (the default; provided for backward compatibility with prior Breeze releases)
-	
+  
 * **IsolationLevel**: Defines the transaction isolation, using the [System.Transactions.IsolationLevel](http://msdn.microsoft.com/en-us/library/system.transactions.isolationlevel.aspx) values.  Defaults to ReadCommitted.  When using TransactionType.DbTransaction, the supported levels depend upon the data provider.
-	
+  
 * **Timeout**: The timeout period for the transaction.  Only applies to TransactionType.TransactionScope.  Default is TransactionManager.DefaultTimeout, which can be set in web.config.
