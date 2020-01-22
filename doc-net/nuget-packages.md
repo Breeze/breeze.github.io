@@ -35,12 +35,13 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
          If you are running ASP.NET Core 2/.NET Core 2 or EF Core 2 you will need to use the 1.x version of these packages.
          Please note that only the Version 3.x packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
     
-    - Breeze.AspNetCore.NetCore
-    - Breeze.Core
-    - Breeze.Persistence
-    - Breeze.Persistence.EFCore ( support for EF Core)
-    - Breeze.Persistence.NH   ( support for NHibernate)
-    <br><br>
+      - <a href="https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/" target="_blank">Breeze.AspNetCore.NetCore</a><br />
+      - <a href="https://www.nuget.org/packages/Breeze.Core/" target="_blank">Breeze.Core</a><br />
+      - <a href="https://www.nuget.org/packages/Breeze.Persistence/" target="_blank">Breeze.Persistence</a><br />
+      - <a href="https://www.nuget.org/packages/Breeze.Persistence.EFCore/"  target="_blank">Breeze.Persistence.EFCore (support for EF Core)</a>
+      - <a href="https://www.nuget.org/packages/Breeze.Persistence.NH/" target="_blank">Breeze.Persistence.NH (Support for NHibernate)</a>
+
+  <br>
 
 - For .NET Framework 4.7.x  and Entity Framework 6 
 

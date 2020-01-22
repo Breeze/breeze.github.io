@@ -9,14 +9,7 @@ layout: doc-net
 
 <a href="http://msdn.microsoft.com/en-us/data/ef.aspx">Entity Framework</a> (EF) is a .NET data access technology with an Object Relational Mapper (ORM). The ORM maps a domain-specific object model to the schema of a relational database. It uses that map to move data between entity model objects (instances of .NET classes) and the tables and columns of a relational database.
 
-A Breeze client model maps easily to (almost) every structure supported by Entity Framework 4.x, including:
-
-	- All simple data types
-	- Complex types
-	- Inheritance (TPH, TPT, TPC)
-	- Associations: 1-1, 1-M
-
-The Breeze.js client does not support "many to many" relationships *without a join entity* at this time. You will have to expose the junction/mapping table as an entity.
+A Breeze client model maps easily to (almost) every structure supported by Entity Framework Core. 
 
 ## Build your model
 
@@ -24,7 +17,6 @@ You can build your EF model in two ways:
 
 - Write your .NET entity classes first, then tell EF to how to amp these classes to your database.
 - Start from an existing database, derive a conceptual model from the database schema, and generate entity classes from that conceptual model.
-
 	
 The first approach is called "**code first**". You write your entity classes to suit your application needs with comparatively little regard for the database, the EF, or its mapping.  You then describe the mapping between these classes and properties and tables and fields from your database.  This is done either by by decorating your classes with helpful attributes or more explicitly through EF's "fluent" mapping API.
 
@@ -177,4 +169,4 @@ Imagine a model with 30, 50, 100, or 200 entities, each with an average of 10 pr
 
 You don't have to with Breeze. There's a .NET Breeze component that scoops up this information and packages it as a metadata document. Your persistence service can send this document to the Breeze client. The Breeze client interprets the metadata and builds a conforming JavaScript model with the same structure and constraints as the server-side model.
 
-We'll see how this works when we get to the client. Our next stop is the [Entity Framework *DbContext*](/doc-net/ef-dbcontext-core) which is the gateway to the database.
+
