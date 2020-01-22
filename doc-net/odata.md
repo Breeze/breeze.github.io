@@ -4,7 +4,7 @@ redirect_from: "/old/documentation/odata-server.html"
 ---
 # **OData Services**
 
-Prior to the advent of ASP.NET Core, OData was a important part of the .NET ecosystem.  **This is no longer the case.**  As a result Breeze only retains its OData support for legacy ASP.NET Web API applications. 
+Prior to the advent of ASP.NET Core, OData was a important part of the .NET ecosystem.  **This is no longer the case.**  As a result Breeze only retains its OData support for Net 4.x ASP.NET Web API applications. **We will not be supporting OData for .NET Core.** 
 
 ASP.NET provides a special set of components and techniques for building an <a href="http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api" target="_blank" title="OData Support in Web API">OData service in Web API</a>.
 

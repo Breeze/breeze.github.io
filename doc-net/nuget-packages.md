@@ -41,6 +41,7 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
     - [Breeze.Persistence.EFCore (support for EF Core)](https://www.nuget.org/packages/Breeze.Persistence.EFCore/)
     - [Breeze.Persistence.NH (support for NHibernate)](https://www.nuget.org/packages/Breeze.Persistence.NH/)
 
+<br>
 - For .NET Framework 4.7.x  and Entity Framework 6 
 
       These packages are no longer being maintained. Please migrate to .NET Core 3 versions.
@@ -50,6 +51,8 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
     - [Breeze.Server.ContextProvider](https://www.nuget.org/packages/Breeze.Server.ContextProvider/)
     - [Breeze.Server.ContextProvider.EF6  ( support for EF6)](https://www.nuget.org/packages/Breeze.Server.ContextProvider.EF6/)
     - [Breeze.Server.ContextProvider.NH ( support for NHibernate)](https://www.nuget.org/packages/Breeze.Server.ContextProvider.NH/)
+    
+<br>    
   
 - For .NET Framework 4.x and Entity Framework 5   
 
@@ -59,10 +62,3 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
      - Breeze.Server.WebApi.Core
      - Breeze.Server.WebApi.EF
 
-## Pick an ASP.NET project template
-
-
-## Next step
-
-
-Now that we have a basic Web Application project, we're ready start building our app...starting with [the server-side model](/doc-net/ef-serverside-model)
