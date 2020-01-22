@@ -3,6 +3,16 @@ layout: doc-net
 ---
 # Breeze.Server.NET Release Notes
 
+## .NET Core Release Notes
+
+### <a name="Core102"></a>1.0.3 <span class="doc-date">December 12, 2019</span>
+ - Initial release of .NET Core 3 libraries
+
+### <a name="Core101"></a>1.0.1 <span class="doc-date">December 12, 2018</span>
+ - Initial release of .NET Core 2 libraries
+
+## .NET 4.x Release Notes 
+
 > **Please update to 1.6.5 or later**.  All previous breeze.server.net releases have a security vulnerability in JSON deserialization.
 
 ### <a name="166"></a>1.6.6 <span class="doc-date">February 2, 2018</span>
