@@ -41,24 +41,16 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
     - [Breeze.Persistence.EFCore (support for EF Core)](https://www.nuget.org/packages/Breeze.Persistence.EFCore/)
     - [Breeze.Persistence.NH (support for NHibernate)](https://www.nuget.org/packages/Breeze.Persistence.NH/)
 
-  <a href="https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/" target="_blank">Breeze.AspNetCore.NetCore</a><br/>
-  <a href="https://www.nuget.org/packages/Breeze.Core/" target="_blank">Breeze.Core</a><br/>
-  <a href="https://www.nuget.org/packages/Breeze.Persistence/" target="_blank">Breeze.Persistence</a><br/>
-  <a href="https://www.nuget.org/packages/Breeze.Persistence.EFCore/"  target="_blank">Breeze.Persistence.EFCore (support for EF Core)</a><br/>
-  <a href="https://www.nuget.org/packages/Breeze.Persistence.NH/" target="_blank">Breeze.Persistence.NH (Support for NHibernate)</a><br/>
-  <br><br>
-
 - For .NET Framework 4.7.x  and Entity Framework 6 
 
       These packages are no longer being maintained. Please migrate to .NET Core 3 versions.
 
-     - Breeze.WebApi2.EF6  ( composite package for EF6 - includes next 3)
-     - Breeze.Server.WebApi2
-     - Breeze.Server.ContextProvider
-     - Breeze.Server.ContextProvider.EF6  ( support for EF6)
-     - Breeze.Server.ContextProvider.NH ( support for NHibernate)
-     <br><br>
-
+    - [Breeze.WebApi2.EF6  ( composite package for EF6 - includes next 3)](https://www.nuget.org/packages/Breeze.WebApi2.EF6)
+    - [Breeze.Server.WebApi2](https://www.nuget.org/packages/Breeze.Server.WebApi2/)
+    - [Breeze.Server.ContextProvider](https://www.nuget.org/packages/Breeze.Server.ContextProvider/)
+    - [Breeze.Server.ContextProvider.EF6  ( support for EF6)](https://www.nuget.org/packages/Breeze.Server.ContextProvider.EF6/)
+    - [Breeze.Server.ContextProvider.NH ( support for NHibernate)](https://www.nuget.org/packages/Breeze.Server.ContextProvider.NH/)
+  
 - For .NET Framework 4.x and Entity Framework 5   
 
       These packages are no longer being maintained. Please migrate to .NET Core 3 versions.

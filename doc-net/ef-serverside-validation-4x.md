@@ -4,6 +4,9 @@ redirect_from: "/old/documentation/server-side-validation.html"
 ---
 # Server-side validation
 
+> **NOTE: This page is for Breeze running on .NET 4.x**<br>
+> [Go here for .NET Core version](/doc-net/ef-serverside-validation-core)
+
 ## Save validation <a name="Savevalidation"></a>
 
 All server side validation errors go to the `catch` promise. Server side validation errors appear as a property called `entityErrors` that contains an array of server errors.  
