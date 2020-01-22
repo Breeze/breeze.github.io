@@ -34,12 +34,19 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
          Version 3.x of the packages below is for .NET Core 3, whereas Version 1.x is for .NET Core 2.
          If you are running ASP.NET Core 2/.NET Core 2 or EF Core 2 you will need to use the 1.x version of these packages.
          Please note that only the Version 3.x packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
-    
-      - <a href="https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/" target="_blank">Breeze.AspNetCore.NetCore</a><br />
-      - <a href="https://www.nuget.org/packages/Breeze.Core/" target="_blank">Breeze.Core</a><br />
-      - <a href="https://www.nuget.org/packages/Breeze.Persistence/" target="_blank">Breeze.Persistence</a><br />
-      - <a href="https://www.nuget.org/packages/Breeze.Persistence.EFCore/"  target="_blank">Breeze.Persistence.EFCore (support for EF Core)</a>
-      - <a href="https://www.nuget.org/packages/Breeze.Persistence.NH/" target="_blank">Breeze.Persistence.NH (Support for NHibernate)</a>
+
+      - [Breeze.AspNetCore.NetCore](https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/)
+      - [Breeze.Core](https://www.nuget.org/packages/Breeze.Core/)
+      - [Breeze.Persistence](https://www.nuget.org/packages/Breeze.Persistence/)
+      - [Breeze.Persistence.EFCore (support for EF Core)](https://www.nuget.org/packages/Breeze.Persistence.EFCore/)
+      - [Breeze.Persistence.NH (support for NHibernate)](https://www.nuget.org/packages/Breeze.Persistence.NH/)
+      
+
+  <a href="https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/" target="_blank">Breeze.AspNetCore.NetCore</a><br />
+  <a href="https://www.nuget.org/packages/Breeze.Core/" target="_blank">Breeze.Core</a><br />
+  <a href="https://www.nuget.org/packages/Breeze.Persistence/" target="_blank">Breeze.Persistence</a><br />
+  <a href="https://www.nuget.org/packages/Breeze.Persistence.EFCore/"  target="_blank">Breeze.Persistence.EFCore (support for EF Core)</a>
+  <a href="https://www.nuget.org/packages/Breeze.Persistence.NH/" target="_blank">Breeze.Persistence.NH (Support for NHibernate)</a>
 
   <br>
 
