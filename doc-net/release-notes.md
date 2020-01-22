@@ -5,6 +5,8 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+> **Please note that all further Breeze Server development will be on the .NET Core platform.  .Net 4.x Breeze Server development has been frozen **
+
 ### <a name="Core102"></a>1.0.3 <span class="doc-date">December 12, 2019</span>
  - Initial release of .NET Core 3 libraries
 
