@@ -41,7 +41,7 @@ Features include:
 
 **Pluggable back-end**
 
-+ Full integration with the .NET/Entity Framework, .NET/NHibernate, Java/Hibernate, Node/MongoDb, Node/Sequelize and others.
++ Full integration with the .NET/Entity Framework, .NET/NHibernate, Java/Hibernate, Node/MongoDb, Node/Sequelize and others. Support for both .NET and .NET Core including EF6+ and EF Core.
 + Supports .NET WebAPI, Java Servlet, Node Express and OData back-ends.
 + Works with NoSQL, non-.NET, and SOA back-ends. 
 
@@ -65,15 +65,14 @@ Features include:
 
 **Library and Tooling support**
 
-+ Out-of-box support for Knockout, AngularJS, and Backbone.
++ Out-of-box support for Angular, React, View, AngularJS and many others.
 + TypeScript support for compile-time type checking, classes, interfaces, and inheritance.
-+ IntelliSense support for Visual Studio 2012.
-+ RequireJS-enabled for modular applications.
++ IntelliSense support for Visual Studio/Visual Studio Code.
 + Open API that allows additional front or back-ends to be plugged in.
 
 **Supported by IdeaBlade**
 
 + Developed and supported by IdeaBlade, since 2001 a leader in rich client application libraries.
 + Extensive API documentation with examples and links to source code.
-+ Quality control through QUnit automated tests.
++ Quality control through automated tests.
 + Paid support options, training, and consulting services to ensure that you succeed.
