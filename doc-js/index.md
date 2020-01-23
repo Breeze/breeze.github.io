@@ -66,11 +66,11 @@ Data binding can push a new value to the UI when it detects that an entity prope
 
 Many binding frameworks detect changes by listening to a property changed event, which means the entity properties must be observable. Breeze entity properties are observable.
 
->AngularJS v.1.x does not rely on observable properties. It detects property changes by comparing current and previous values ("dirty checking"). That works for Breeze models too although even an AngularJS app can benefit from observable models.
+There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular, React, Vue, Aurelia ...) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose. 
 
-There is no standard observability mechanism in JavaScript. Each UI data binding library (Angular 2, Vue, Aurelia, Backbone, Knockout, ...) has its own observability scheme. Without Breeze, you could write your model object properties to conform to the dictates of the library you picked. That's grunt work. Breeze writes observable properties for you in the style of the library you choose.
+>Breeze currently supports [AngularJS 1.x](https://angularjs.org/), [Angular 2+](https://angular.io/), [React](https://reactjs.org/), [Vue](https://vuejs.org/), [Aurelia](http://aurelia.io/) with adapters for other libraries under consideration, if needed. Note however, that you may not need anything new.  The current adapters already work for many libraries other than those listed above.  The list above is simply those that we have actually tested.
 
->Breeze currently supports [AngularJS 1.x](https://angularjs.org/), [Angular 2](https://angular.io/), [Aurelia](http://aurelia.io/), [Knockout](http://knockoutjs.com/), and [BackBone](http://backbonejs.org/) with adapters for other libraries under consideration. We'd be happy to help you write an adapter for a library we don't yet support.
+We'd be happy to help you write an adapter for a library we don't yet support.
 
 ## Query
 
@@ -92,13 +92,7 @@ Then we create an `EntityManager` and execute the query.
 
 Notice that [1] the `executeQuery` method is asynchronous and returns a <a href="https://github.com/kriskowal/q">promise</a> to call back either [2] the `querySucceeded` method if the query succeeds or [3] the `queryFailed` method if query execution fails with an exception.
 
-Breeze resolves this query into an HTTP GET request to a persistence service endpoint. The request URI's query string holds the query specification, formatted either as <a href="http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html" target="_blank">OData</a> or as URI encoded JSON.
-
-The OData format would look like this
-
-       http://www.example.com/**api/Northwind/Customers?$filter=startswith(CompanyName,'C') eq true&amp;$orderby=CompanyName**      
-
-> The OData query syntax is just one part of the OData cross-vendor, open standard. It can be interpreted by a wide variety of server technologies that may be otherwise ignorant of OData protocols.
+Breeze resolves this query into an HTTP GET request to a persistence service endpoint. The request URI's query string holds the query specification. Typically this query string is expressed as URI encoded JSON. However Breeze also provides the mechanisms for substituting you own query encoding in the event you want to use a nonstandard server implementation.
 
 The server returns query results as JSON. The Breeze `EntityManager` reshapes the JSON data into entities and merges them into its cache. Finally it passes these entities to the promise object which forwards them to the caller's success callback (the `querySucceeded` method in the example).
 
