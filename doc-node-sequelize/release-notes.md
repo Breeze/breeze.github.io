@@ -5,6 +5,18 @@ layout: doc-node-sequelize
 
 <img src="https://cldup.com/Rg6WLgqccB.svg" title="npm" width="78px"/> [Install via npm](https://www.npmjs.com/package/breeze-sequelize) <img src="/images/logos/github-logo.png" title="github" style="margin-left:30px"/> [Get it on GitHub](https://github.com/Breeze/breeze.server.node)
 
+### <a name="0041"></a>0.4.1 <span class="doc-date">January 31, 2020</span>
+
+#### Features
+ - Separate `entityQueryFromUrl()` function from EntityQuery class
+ - Change dependencies `breeze-client`, `sequelize`, and `lodash` to **peerDependencies**
+
+### <a name="0040"></a>0.4.0 <span class="doc-date">January 22, 2020</span>
+
+#### Features
+ - Support Sequelize 5.x
+ - Convert source code to TypeScript, for maintainability and type definitions
+
 ### <a name="0021"></a>0.2.1 <span class="doc-date">December 7, 2017</span>
 
 #### Bug Fixes
