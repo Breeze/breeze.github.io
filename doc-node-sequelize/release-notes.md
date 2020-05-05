@@ -5,6 +5,14 @@ layout: doc-node-sequelize
 
 <img src="https://cldup.com/Rg6WLgqccB.svg" title="npm" width="78px"/> [Install via npm](https://www.npmjs.com/package/breeze-sequelize) <img src="/images/logos/github-logo.png" title="github" style="margin-left:30px"/> [Get it on GitHub](https://github.com/Breeze/breeze.server.node)
 
+### <a name="0055"></a>0.5.5 <span class="doc-date">May 5, 2020</span>
+
+#### Features
+ - New [BreezeExpressDemo](https://github.com/Breeze/breeze.server.node/tree/master/breeze-sequelize/test/BreezeExpressDemo) demonstrates usage with TypeScript
+ - Improved query logging
+    -	Only log if `options.logging` is set when creating the `SequelizeManager`.  It’s the same setting that Sequelize itself uses to control logging of the generated SQL.
+    -	But, always log the query when an error is thrown.
+
 ### <a name="0041"></a>0.4.1 <span class="doc-date">January 31, 2020</span>
 
 #### Features
