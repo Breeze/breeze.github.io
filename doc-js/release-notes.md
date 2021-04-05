@@ -7,6 +7,23 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="209"></a>2.0.9 <span class="doc-date">April 4, 2021</span>
+
+ - Updated default property interceptor to handle detached object ([#30](https://github.com/Breeze/breeze-client/issues/30))
+ - Fixed issue with extra ampersand being included right after question mark ([#34](https://github.com/Breeze/breeze-client/issues/34))
+ - Add `custom` property to EntityError ([#42](https://github.com/Breeze/breeze-client/issues/42))
+ - Fix Predicate `combine` function when expr1 is a number ([#43](https://github.com/Breeze/breeze-client/issues/43))
+
+### <a name="208"></a>2.0.8 <span class="doc-date">March 10, 2021</span>
+
+- Add ComplexObject to type exports
+- Update devDependencies
+
+### <a name="207"></a>2.0.7 <span class="doc-date">February 10, 2020</span>
+
+- Fix ajax-fetch-adapter to handle parameter passing like jquery
+- Fix data type exports
+
 ### <a name="201"></a>2.0.1 <span class="doc-date">November 5, 2019</span>
 
 #### Features
