@@ -241,7 +241,7 @@ The `Category` type doesn't have navigation properties. Although there is a rela
 
 * if it is the entity key or [part of the key](/doc-js/api-docs/classes/DataProperty.html#property_isPartOfKey "DataProperty.isPartOfKey API") [defaults to `false`]
 
-* if it is required or [isNullable](/doc-js/api-docs/classes/DataProperty.html#property_isNullable "DataProperty.isNullable API") [defaults to `false`]
+* if it is required or [isNullable](/doc-js/api-docs/classes/DataProperty.html#property_isNullable "DataProperty.isNullable API") [defaults to `true`]
 
 * if its value has a [maximum length](/doc-js/api-docs/classes/DataProperty.html#property_maxLength "DataProperty.maxLength API") [optional]
 
