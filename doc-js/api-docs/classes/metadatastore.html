@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>MetadataStore | breeze-client</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -120,11 +120,14 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#addentitytype" class="tsd-kind-icon">add<wbr>Entity<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#exportmetadata" class="tsd-kind-icon">export<wbr>Metadata</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#fetchmetadata" class="tsd-kind-icon">fetch<wbr>Metadata</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#getascomplextype" class="tsd-kind-icon">get<wbr>AsComplex<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#getasentitytype" class="tsd-kind-icon">get<wbr>AsEntity<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#getdataservice" class="tsd-kind-icon">get<wbr>Data<wbr>Service</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#getentitytype" class="tsd-kind-icon">get<wbr>Entity<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#getentitytypenameforresourcename" class="tsd-kind-icon">get<wbr>Entity<wbr>Type<wbr>Name<wbr>For<wbr>Resource<wbr>Name</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#getentitytypes" class="tsd-kind-icon">get<wbr>Entity<wbr>Types</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#getincompletenavigationproperties" class="tsd-kind-icon">get<wbr>Incomplete<wbr>Navigation<wbr>Properties</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#getstructuraltype" class="tsd-kind-icon">get<wbr>Structural<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#hasmetadatafor" class="tsd-kind-icon">has<wbr>Metadata<wbr>For</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#importmetadata" class="tsd-kind-icon">import<wbr>Metadata</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="metadatastore.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
@@ -152,7 +155,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L109">entity-metadata.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L110">src/entity-metadata.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -160,13 +163,17 @@
 									<p>Constructs a new MetadataStore.</p>
 								</div>
 								<blockquote>
-								<pre><code>let <span class="hljs-keyword">ms</span> <span class="hljs-title">= new</span> MetadataStore();</code></pre></blockquote>
+									<pre><code>let <span class="hljs-keyword">ms</span> <span class="hljs-title">= new</span> MetadataStore();
+</code></pre>
+								</blockquote>
 								<p>The store can then be associated with an EntityManager</p>
 								<blockquote>
 									<pre><code><span class="hljs-keyword">let</span> entityManager = <span class="hljs-keyword">new</span> EntityManager( {
-    serviceName: <span class="hljs-string">"breeze/NorthwindIBModel"</span>,
+    serviceName: <span class="hljs-string">&quot;breeze/NorthwindIBModel&quot;</span>,
     metadataStore: ms
-});</code></pre></blockquote>
+});
+</code></pre>
+								</blockquote>
 								<p>or for an existing EntityManager</p>
 								<blockquote>
 									<p>   // Assume em1 is an existing EntityManager
@@ -204,7 +211,7 @@
 					<div class="tsd-signature tsd-kind-icon">metadata<wbr>Fetched<span class="tsd-signature-symbol">:</span> <a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/metadatafetchedeventargs.html" class="tsd-signature-type">MetadataFetchedEventArgs</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L91">entity-metadata.ts:91</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L92">src/entity-metadata.ts:92</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -218,11 +225,13 @@
 									<li>metadataStore - The MetadataStore into which the metadata was fetched.</li>
 									<li>dataService - The <a href="dataservice.html">DataService</a> that metadata was fetched from.</li>
 									<li>rawMetadata - {Object} The raw metadata returned from the service. (It will have already been processed by this point).<blockquote>
-											<pre><code> <span class="hljs-keyword">let</span> ms = myEntityManager.metadataStore;
- ms.metadataFetched.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">args</span>) </span>{
-     <span class="hljs-keyword">let</span> metadataStore = args.metadataStore;
-     <span class="hljs-keyword">let</span> dataService = args.dataService;
- });</code></pre></blockquote>
+											<pre><code> <span class="hljs-built_in">let</span> ms = myEntityManager.metadataStore;
+ ms.metadataFetched.subscribe(function(<span class="hljs-built_in">args</span>) {
+     <span class="hljs-built_in">let</span> metadataStore = <span class="hljs-built_in">args</span>.metadataStore;
+     <span class="hljs-built_in">let</span> dataService = <span class="hljs-built_in">args</span>.dataService;
+ });
+</code></pre>
+										</blockquote>
 									</li>
 								</ul>
 							</dd>
@@ -238,7 +247,7 @@
 					<div class="tsd-signature tsd-kind-icon">data<wbr>Services<span class="tsd-signature-symbol">:</span> <a href="dataservice.html" class="tsd-signature-type">DataService</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L70">entity-metadata.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L71">src/entity-metadata.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -248,7 +257,7 @@
 					<div class="tsd-signature tsd-kind-icon">local<wbr>Query<wbr>Comparison<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="localquerycomparisonoptions.html" class="tsd-signature-type">LocalQueryComparisonOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L75">entity-metadata.ts:75</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L76">src/entity-metadata.ts:76</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -263,7 +272,7 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L69">entity-metadata.ts:69</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L70">src/entity-metadata.ts:70</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -273,7 +282,7 @@
 					<div class="tsd-signature tsd-kind-icon">naming<wbr>Convention<span class="tsd-signature-symbol">:</span> <a href="namingconvention.html" class="tsd-signature-type">NamingConvention</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L73">entity-metadata.ts:73</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L74">src/entity-metadata.ts:74</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -285,17 +294,17 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="serializerfn" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> serializer<wbr>Fn</h3>
-					<div class="tsd-signature tsd-kind-icon">serializer<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<div class="tsd-signature tsd-kind-icon">serializer<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>prop<span class="tsd-signature-symbol">: </span><a href="../globals.html#entityproperty" class="tsd-signature-type">EntityProperty</a>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L76">entity-metadata.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L77">src/entity-metadata.ts:77</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
 									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>prop<span class="tsd-signature-symbol">: </span><a href="../globals.html#entityproperty" class="tsd-signature-type">EntityProperty</a>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
@@ -319,10 +328,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="metadataversion" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> metadata<wbr>Version</h3>
-					<div class="tsd-signature tsd-kind-icon">metadata<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;1.0.5&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">metadata<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;1.0.5&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L67">entity-metadata.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L68">src/entity-metadata.ts:68</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -334,10 +343,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="normalizetypename" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> normalize<wbr>Type<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">normalize<wbr>Type<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;core.memoize(function (rawTypeName: string) {return rawTypeName &amp;&amp; MetadataStore.parseTypeName(rawTypeName).typeName;})</span></div>
+					<div class="tsd-signature tsd-kind-icon">normalize<wbr>Type<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = core.memoize(function (rawTypeName: string) {return rawTypeName &amp;&amp; MetadataStore.parseTypeName(rawTypeName).typeName;})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L154">entity-metadata.ts:154</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L155">src/entity-metadata.ts:155</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -354,7 +363,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L185">entity-metadata.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L186">src/entity-metadata.ts:186</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -392,7 +401,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L212">entity-metadata.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L213">src/entity-metadata.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -421,7 +430,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L281">entity-metadata.ts:281</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L282">src/entity-metadata.ts:282</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -431,11 +440,13 @@
 									<blockquote>
 										<pre><code> <span class="hljs-comment">// assume ms is a previously created MetadataStore</span>
  <span class="hljs-keyword">let</span> metadataAsString = ms.export<span class="hljs-constructor">Metadata()</span>;
- window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">"metadata"</span>, <span class="hljs-params">metadataAsString</span>)</span>;
+ window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">&quot;metadata&quot;</span>, <span class="hljs-params">metadataAsString</span>)</span>;
  <span class="hljs-comment">// and later, usually in a different session imported</span>
- <span class="hljs-keyword">let</span> metadataFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">"metadata"</span>)</span>;
+ <span class="hljs-keyword">let</span> metadataFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">&quot;metadata&quot;</span>)</span>;
  <span class="hljs-keyword">let</span> newMetadataStore = <span class="hljs-keyword">new</span> <span class="hljs-constructor">MetadataStore()</span>;
- newMetadataStore.import<span class="hljs-constructor">Metadata(<span class="hljs-params">metadataFromStorage</span>)</span>;</code></pre></blockquote>
+ newMetadataStore.import<span class="hljs-constructor">Metadata(<span class="hljs-params">metadataFromStorage</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -447,13 +458,13 @@
 					<a name="fetchmetadata" class="tsd-anchor"></a>
 					<h3>fetch<wbr>Metadata</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Metadata<span class="tsd-signature-symbol">(</span>dataService<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="dataservice.html" class="tsd-signature-type">DataService</a>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, errorCallback<span class="tsd-signature-symbol">?: </span><a href="../interfaces/errorcallback.html" class="tsd-signature-type">ErrorCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Metadata<span class="tsd-signature-symbol">(</span>dataService<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="dataservice.html" class="tsd-signature-type">DataService</a>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, errorCallback<span class="tsd-signature-symbol">?: </span><a href="../interfaces/errorcallback.html" class="tsd-signature-type">ErrorCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L420">entity-metadata.ts:420</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L423">src/entity-metadata.ts:423</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -464,14 +475,16 @@
 								<p>Usually you will not actually process the results of a fetchMetadata call directly, but will instead
 								ask for the metadata from the EntityManager after the fetchMetadata call returns.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> ms = <span class="hljs-keyword">new</span> MetadataStore();
+									<pre><code> let ms = <span class="hljs-keyword">new</span> MetadataStore();
  <span class="hljs-comment">// or more commonly</span>
  <span class="hljs-comment">// let ms = anEntityManager.metadataStore;</span>
- ms.fetchMetadata(<span class="hljs-string">"breeze/NorthwindIBModel"</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(rawMetadata)</span> </span>{
+ ms.fetchMetadata(<span class="hljs-string">&quot;breeze/NorthwindIBModel&quot;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rawMetadata</span>) </span>{
        <span class="hljs-comment">// do something with the metadata</span>
- }).<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(exception)</span> </span>{
+ }).<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-built_in">exception</span></span>) </span>{
      <span class="hljs-comment">// handle exception here</span>
- });</code></pre></blockquote>
+ });
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -482,13 +495,13 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-type">function</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Function called on success.</p>
 									</div>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -518,6 +531,98 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getascomplextype" class="tsd-anchor"></a>
+					<h3>get<wbr>AsComplex<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>AsComplex<wbr>Type<span class="tsd-signature-symbol">(</span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, okIfNotFound<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="complextype.html" class="tsd-signature-type">ComplexType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L566">src/entity-metadata.ts:566</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an <a href="entitytype.html">EntityType</a> or null given its name.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is a preexisting EntityManager</span>
+ <span class="hljs-keyword">let</span> locType = em1.metadataStore.get<span class="hljs-constructor">AsComplexType(<span class="hljs-string">&quot;Location&quot;</span>)</span>;
+</code></pre>
+									</blockquote>
+								</div>
+								<p>or to throw an error if the type is not found</p>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> badType = em1.metadataStore.get<span class="hljs-constructor">AsComplexType(<span class="hljs-string">&quot;Foo&quot;</span>, <span class="hljs-params">false</span>)</span>;
+ <span class="hljs-comment">// badType will not get set and an exception will be thrown.</span>
+</code></pre>
+								</blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>typeName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> okIfNotFound: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>(default=false) Whether to throw an error if the specified EntityType is not found.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="complextype.html" class="tsd-signature-type">ComplexType</a></h4>
+							<p>The EntityType. ComplexType or &#39;null&#39; if not not found.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getasentitytype" class="tsd-anchor"></a>
+					<h3>get<wbr>AsEntity<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>AsEntity<wbr>Type<span class="tsd-signature-symbol">(</span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, okIfNotFound<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L541">src/entity-metadata.ts:541</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an <a href="entitytype.html">EntityType</a> or null given its name.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is a preexisting EntityManager</span>
+ <span class="hljs-keyword">let</span> odType = em1.metadataStore.get<span class="hljs-constructor">AsEntityType(<span class="hljs-string">&quot;OrderDetail&quot;</span>)</span>;
+</code></pre>
+									</blockquote>
+								</div>
+								<p>or to throw an error if the type is not found</p>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> badType = em1.metadataStore.get<span class="hljs-constructor">AsEntityType(<span class="hljs-string">&quot;Foo&quot;</span>, <span class="hljs-params">false</span>)</span>;
+ <span class="hljs-comment">// badType will not get set and an exception will be thrown.</span>
+</code></pre>
+								</blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>typeName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> okIfNotFound: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>(default=false) Whether to throw an error if the specified EntityType is not found.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="entitytype.html" class="tsd-signature-type">EntityType</a></h4>
+							<p>The EntityType. ComplexType or &#39;null&#39; if not not found.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
 					<a name="getdataservice" class="tsd-anchor"></a>
 					<h3>get<wbr>Data<wbr>Service</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -527,7 +632,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L392">entity-metadata.ts:392</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L395">src/entity-metadata.ts:395</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -535,8 +640,10 @@
 									<p>Returns the DataService for a specified service name</p>
 									<blockquote>
 										<pre><code> <span class="hljs-comment">// Assume em1 is an existing EntityManager.</span>
- <span class="hljs-keyword">let</span> ds = em1.metadataStore.get<span class="hljs-constructor">DataService(<span class="hljs-string">"breeze/NorthwindIBModel"</span>)</span>;
- <span class="hljs-keyword">let</span> adapterName = ds.adapterName; <span class="hljs-comment">// may be null</span></code></pre></blockquote>
+ <span class="hljs-keyword">let</span> ds = em1.metadataStore.get<span class="hljs-constructor">DataService(<span class="hljs-string">&quot;breeze/NorthwindIBModel&quot;</span>)</span>;
+ <span class="hljs-keyword">let</span> adapterName = ds.adapterName; <span class="hljs-comment">// may be null</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -557,47 +664,42 @@
 					<a name="getentitytype" class="tsd-anchor"></a>
 					<h3>get<wbr>Entity<wbr>Type</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>Type<span class="tsd-signature-symbol">(</span>structuralTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, okIfNotFound<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="complextype.html" class="tsd-signature-type">ComplexType</a></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>Type<span class="tsd-signature-symbol">(</span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, okIfNotFound<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#structuraltype" class="tsd-signature-type">StructuralType</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L538">entity-metadata.ts:538</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L587">src/entity-metadata.ts:587</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns an <a href="entitytype.html">EntityType</a> or a <a href="complextype.html">ComplexType</a> given its name.</p>
-									<blockquote>
-										<pre><code> <span class="hljs-comment">// assume em1 is a preexisting EntityManager</span>
- <span class="hljs-keyword">let</span> odType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"OrderDetail"</span>)</span>;</code></pre></blockquote>
 								</div>
-								<p>or to throw an error if the type is not found</p>
-								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> badType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Foo"</span>, <span class="hljs-params">false</span>)</span>;
- <span class="hljs-comment">// badType will not get set and an exception will be thrown.</span></code></pre></blockquote>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>Replaced by getStructuralType but ... it is probably more usefull to call either getAsEntityType or getAsComplexType instead</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structuralTypeName: <span class="tsd-signature-type">string</span></h5>
+									<h5>typeName: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Either the fully qualified name or a short name may be used. If a short name is specified and multiple types share
 										that same short name an exception will be thrown.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> okIfNotFound: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> okIfNotFound: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>(default=false) Whether to throw an error if the specified EntityType is not found.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="entitytype.html" class="tsd-signature-type">EntityType</a>
-								<span class="tsd-signature-symbol"> | </span>
-								<a href="complextype.html" class="tsd-signature-type">ComplexType</a>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#structuraltype" class="tsd-signature-type">StructuralType</a></h4>
 							<p>The EntityType. ComplexType or &#39;null&#39; if not not found.</p>
 						</li>
 					</ul>
@@ -612,7 +714,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L580">entity-metadata.ts:580</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L642">src/entity-metadata.ts:642</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -635,13 +737,13 @@
 					<a name="getentitytypes" class="tsd-anchor"></a>
 					<h3>get<wbr>Entity<wbr>Types</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>Types<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="complextype.html" class="tsd-signature-type">ComplexType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>Types<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#structuraltype" class="tsd-signature-type">StructuralType</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L566">entity-metadata.ts:566</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L628">src/entity-metadata.ts:628</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -649,10 +751,12 @@
 									<p>Returns an array containing all of the <a href="entitytype.html">EntityType</a>s or <a href="complextype.html">ComplexType</a>s in this MetadataStore.</p>
 									<blockquote>
 										<pre><code> <span class="hljs-comment">// assume em1 is a preexisting EntityManager</span>
- <span class="hljs-keyword">let</span> allTypes = em1.metadataStore.get<span class="hljs-constructor">EntityTypes()</span>;</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> allTypes = em1.metadataStore.get<span class="hljs-constructor">EntityTypes()</span>;
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><a href="complextype.html" class="tsd-signature-type">ComplexType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#structuraltype" class="tsd-signature-type">StructuralType</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -666,10 +770,65 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L570">entity-metadata.ts:570</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L632">src/entity-metadata.ts:632</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getstructuraltype" class="tsd-anchor"></a>
+					<h3>get<wbr>Structural<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Structural<wbr>Type<span class="tsd-signature-symbol">(</span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, okIfNotFound<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#structuraltype" class="tsd-signature-type">StructuralType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L605">src/entity-metadata.ts:605</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an <a href="entitytype.html">EntityType</a> or a <a href="complextype.html">ComplexType</a> given its name.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-comment">// assume em1 is a preexisting EntityManager</span>
+ <span class="hljs-keyword">let</span> odType = em1.metadataStore.get<span class="hljs-constructor">StructuralType(<span class="hljs-string">&quot;OrderDetail&quot;</span>)</span>;
+</code></pre>
+									</blockquote>
+								</div>
+								<p>or to throw an error if the type is not found</p>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> badType = em1.metadataStore.get<span class="hljs-constructor">StructuralType(<span class="hljs-string">&quot;Foo&quot;</span>, <span class="hljs-params">false</span>)</span>;
+ <span class="hljs-comment">// badType will not get set and an exception will be thrown.</span>
+</code></pre>
+								</blockquote>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>Preferably use either getAsEntityType or getAsComplexType.  Get</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>typeName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Either the fully qualified name or a short name may be used. If a short name is specified and multiple types share
+										that same short name an exception will be thrown.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> okIfNotFound: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>(default=false) Whether to throw an error if the specified EntityType is not found.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#structuraltype" class="tsd-signature-type">StructuralType</a></h4>
+							<p>The EntityType. ComplexType or &#39;null&#39; if not not found.</p>
 						</li>
 					</ul>
 				</section>
@@ -683,17 +842,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L380">entity-metadata.ts:380</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L383">src/entity-metadata.ts:383</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns whether Metadata has been retrieved for a specified service name.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// Assume em1 is an existing EntityManager.</span>
- <span class="hljs-keyword">if</span> (!em1<span class="hljs-selector-class">.metadataStore</span><span class="hljs-selector-class">.hasMetadataFor</span>(<span class="hljs-string">"breeze/NorthwindIBModel"</span>))) {
-     <span class="hljs-comment">// do something interesting</span>
- }</code></pre></blockquote>
+										<pre><code> <span class="hljs-regexp">//</span> Assume em1 is an existing EntityManager.
+ <span class="hljs-keyword">if</span> (!em1.metadataStore.hasMetadataFor(<span class="hljs-string">&quot;breeze/NorthwindIBModel&quot;</span>))) {
+     <span class="hljs-regexp">//</span> <span class="hljs-keyword">do</span> something interesting
+ }
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -720,7 +881,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L309">entity-metadata.ts:309</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L310">src/entity-metadata.ts:310</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -730,11 +891,13 @@
 								<blockquote>
 									<pre><code> <span class="hljs-comment">// assume ms is a previously created MetadataStore</span>
  <span class="hljs-keyword">let</span> metadataAsString = ms.export<span class="hljs-constructor">Metadata()</span>;
- window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">"metadata"</span>, <span class="hljs-params">metadataAsString</span>)</span>;
+ window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">&quot;metadata&quot;</span>, <span class="hljs-params">metadataAsString</span>)</span>;
  <span class="hljs-comment">// and later, usually in a different session</span>
- <span class="hljs-keyword">let</span> metadataFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">"metadata"</span>)</span>;
+ <span class="hljs-keyword">let</span> metadataFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">&quot;metadata&quot;</span>)</span>;
  <span class="hljs-keyword">let</span> newMetadataStore = <span class="hljs-keyword">new</span> <span class="hljs-constructor">MetadataStore()</span>;
- newMetadataStore.import<span class="hljs-constructor">Metadata(<span class="hljs-params">metadataFromStorage</span>)</span>;</code></pre></blockquote>
+ newMetadataStore.import<span class="hljs-constructor">Metadata(<span class="hljs-params">metadataFromStorage</span>)</span>;
+</code></pre>
+								</blockquote>
 								<dl class="tsd-comment-tags">
 									<dt>chainable</dt>
 									<dd></dd>
@@ -749,7 +912,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> allowMerge: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> allowMerge: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Allows custom metadata to be merged into existing metadata types.</p>
 									</div>
@@ -770,17 +933,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L521">entity-metadata.ts:521</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L524">src/entity-metadata.ts:524</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns whether this MetadataStore contains any metadata yet.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// assume em1 is a preexisting EntityManager;</span>
- <span class="hljs-keyword">if</span> (em1<span class="hljs-selector-class">.metadataStore</span><span class="hljs-selector-class">.isEmpty</span>()) {
-     <span class="hljs-comment">// do something interesting</span>
- }</code></pre></blockquote>
+										<pre><code> <span class="hljs-regexp">//</span> assume em1 is a preexisting EntityManager;
+ <span class="hljs-keyword">if</span> (em1.metadataStore.isEmpty()) {
+     <span class="hljs-regexp">//</span> <span class="hljs-keyword">do</span> something interesting
+ }
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -791,13 +956,13 @@
 					<a name="registerentitytypector" class="tsd-anchor"></a>
 					<h3>register<wbr>Entity<wbr>Type<wbr>Ctor</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Entity<wbr>Type<wbr>Ctor<span class="tsd-signature-symbol">(</span>structuralTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aCtor<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, initFn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span>, noTrackingFn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Entity<wbr>Type<wbr>Ctor<span class="tsd-signature-symbol">(</span>structuralTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aCtor<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, initFn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, noTrackingFn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L489">entity-metadata.ts:489</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L492">src/entity-metadata.ts:492</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -809,15 +974,17 @@
 									Metadata discovery.</p>
 									<blockquote>
 										<pre><code> <span class="hljs-keyword">let</span> Customer = <span class="hljs-keyword">function</span> <span class="hljs-literal">()</span> {
-         this.miscData = <span class="hljs-string">"asdf"</span>;
+         this.miscData = <span class="hljs-string">&quot;asdf&quot;</span>;
      };
  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Customer</span>.</span></span>prototype.<span class="hljs-keyword">do</span><span class="hljs-constructor">Foo()</span> {<span class="hljs-operator">
          ...
      </span>}
  <span class="hljs-comment">// assume em1 is a preexisting EntityManager;</span>
- em1.metadataStore.register<span class="hljs-constructor">EntityTypeCtor(<span class="hljs-string">"Customer"</span>, Customer)</span>;
+ em1.metadataStore.register<span class="hljs-constructor">EntityTypeCtor(<span class="hljs-string">&quot;Customer&quot;</span>, Customer)</span>;
  <span class="hljs-comment">// any queries or EntityType.create calls from this point on will call the Customer constructor</span>
- <span class="hljs-comment">// registered above.</span></code></pre></blockquote>
+ <span class="hljs-comment">// registered above.</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -835,7 +1002,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initFn: <span class="tsd-signature-type">Function</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initFn: <span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A function or the name of a function on the entity that is to be executed immediately after the entity has been created
 										and populated with any initial values. Called with &#39;initFn(entity)&#39;</p>
@@ -863,7 +1030,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L595">entity-metadata.ts:595</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L657">src/entity-metadata.ts:657</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -904,7 +1071,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L172">entity-metadata.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L173">src/entity-metadata.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -914,11 +1081,13 @@
 								<blockquote>
 									<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
 em1.metadataStore.setProperties( {
-    version: <span class="hljs-string">"6.1.3"</span>,
+    version: <span class="hljs-string">&quot;6.1.3&quot;</span>,
     serializerFn: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(prop, value)</span> </span>{
     <span class="hljs-keyword">return</span> (prop.isUnmapped) ? <span class="hljs-literal">undefined</span> : value;
     }
-)};</code></pre></blockquote>
+)};
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -943,7 +1112,7 @@ em1.metadataStore.setProperties( {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L458">entity-metadata.ts:458</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L461">src/entity-metadata.ts:461</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -981,7 +1150,7 @@ em1.metadataStore.setProperties( {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L365">entity-metadata.ts:365</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L368">src/entity-metadata.ts:368</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -990,10 +1159,12 @@ em1.metadataStore.setProperties( {
 									<blockquote>
 										<pre><code> <span class="hljs-comment">// assume ms is a previously created MetadataStore</span>
  <span class="hljs-keyword">let</span> metadataAsString = ms.export<span class="hljs-constructor">Metadata()</span>;
- window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">"metadata"</span>, <span class="hljs-params">metadataAsString</span>)</span>;
+ window.localStorage.set<span class="hljs-constructor">Item(<span class="hljs-string">&quot;metadata&quot;</span>, <span class="hljs-params">metadataAsString</span>)</span>;
  <span class="hljs-comment">// and later, usually in a different session</span>
- <span class="hljs-keyword">let</span> metadataFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">"metadata"</span>)</span>;
- <span class="hljs-keyword">let</span> newMetadataStore = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">MetadataStore</span>.</span></span>import<span class="hljs-constructor">Metadata(<span class="hljs-params">metadataFromStorage</span>)</span>;</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> metadataFromStorage = window.localStorage.get<span class="hljs-constructor">Item(<span class="hljs-string">&quot;metadata&quot;</span>)</span>;
+ <span class="hljs-keyword">let</span> newMetadataStore = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">MetadataStore</span>.</span></span>import<span class="hljs-constructor">Metadata(<span class="hljs-params">metadataFromStorage</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1014,13 +1185,13 @@ em1.metadataStore.setProperties( {
 					<a name="maketypehash" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> make<wbr>Type<wbr>Hash</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">make<wbr>Type<wbr>Hash<span class="tsd-signature-symbol">(</span>shortName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ns<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+						<li class="tsd-signature tsd-kind-icon">make<wbr>Type<wbr>Hash<span class="tsd-signature-symbol">(</span>shortName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ns<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>namespace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>shortTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L643">entity-metadata.ts:643</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L705">src/entity-metadata.ts:705</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1037,8 +1208,17 @@ em1.metadataStore.setProperties( {
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> ns: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>namespace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>shortTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h4>
 							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>namespace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>short<wbr>Type<wbr>Name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>type<wbr>Name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -1047,13 +1227,13 @@ em1.metadataStore.setProperties( {
 					<a name="parsetypename" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Type<wbr>Name</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Type<wbr>Name<span class="tsd-signature-symbol">(</span>entityTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Type<wbr>Name<span class="tsd-signature-symbol">(</span>entityTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>namespace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>shortTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-metadata.ts#L614">entity-metadata.ts:614</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-metadata.ts#L676">src/entity-metadata.ts:676</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1067,8 +1247,17 @@ em1.metadataStore.setProperties( {
 									<h5>entityTypeName: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>namespace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>shortTypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h4>
 							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>namespace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>short<wbr>Type<wbr>Name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>type<wbr>Name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -1130,6 +1319,12 @@ em1.metadataStore.setProperties( {
 								<a href="metadatastore.html#fetchmetadata" class="tsd-kind-icon">fetch<wbr>Metadata</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="metadatastore.html#getascomplextype" class="tsd-kind-icon">get<wbr>AsComplex<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="metadatastore.html#getasentitytype" class="tsd-kind-icon">get<wbr>AsEntity<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="metadatastore.html#getdataservice" class="tsd-kind-icon">get<wbr>Data<wbr>Service</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -1143,6 +1338,9 @@ em1.metadataStore.setProperties( {
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="metadatastore.html#getincompletenavigationproperties" class="tsd-kind-icon">get<wbr>Incomplete<wbr>Navigation<wbr>Properties</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="metadatastore.html#getstructuraltype" class="tsd-kind-icon">get<wbr>Structural<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="metadatastore.html#hasmetadatafor" class="tsd-kind-icon">has<wbr>Metadata<wbr>For</a>
@@ -1187,66 +1385,13 @@ em1.metadataStore.setProperties( {
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

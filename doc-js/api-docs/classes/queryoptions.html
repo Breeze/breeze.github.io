@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>QueryOptions | breeze-client</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -123,7 +123,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L94">query-options.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L94">src/query-options.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -132,13 +132,15 @@
 									<blockquote>
 										<pre><code>var newQo = <span class="hljs-keyword">new</span> <span class="hljs-constructor">QueryOptions( { <span class="hljs-params">mergeStrategy</span>: MergeStrategy.OverwriteChanges })</span>;
 <span class="hljs-comment">// assume em1 is a preexisting EntityManager</span>
-em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">queryOptions</span>: <span class="hljs-params">newQo</span> })</span>;</code></pre><p>Any QueryOptions property that is not defined will be defaulted from any QueryOptions defined at a higher level in the breeze hierarchy, i.e.</p>
-										<ul>
-											<li>from query.queryOptions</li>
-											<li>to   entityManager.queryOptions</li>
-											<li>to   QueryOptions.defaultInstance;</li>
-										</ul>
+em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">queryOptions</span>: <span class="hljs-params">newQo</span> })</span>;
+</code></pre>
+										<p>Any QueryOptions property that is not defined will be defaulted from any QueryOptions defined at a higher level in the breeze hierarchy, i.e.</p>
 									</blockquote>
+									<ul>
+										<li> from query.queryOptions</li>
+										<li> to   entityManager.queryOptions</li>
+										<li> to   QueryOptions.defaultInstance;</li>
+									</ul>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -165,7 +167,7 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 					<div class="tsd-signature tsd-kind-icon">fetch<wbr>Strategy<span class="tsd-signature-symbol">:</span> <a href="fetchstrategy.html" class="tsd-signature-type">FetchStrategy</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L81">query-options.ts:81</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L81">src/query-options.ts:81</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -180,7 +182,7 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 					<div class="tsd-signature tsd-kind-icon">include<wbr>Deleted<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L85">query-options.ts:85</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L85">src/query-options.ts:85</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -195,7 +197,7 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 					<div class="tsd-signature tsd-kind-icon">merge<wbr>Strategy<span class="tsd-signature-symbol">:</span> <a href="mergestrategy.html" class="tsd-signature-type">MergeStrategy</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L83">query-options.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L83">src/query-options.ts:83</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -207,10 +209,10 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="defaultinstance" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Instance</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Instance<span class="tsd-signature-symbol">:</span> <a href="queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol"> =&nbsp;new QueryOptions({fetchStrategy: FetchStrategy.FromServer,mergeStrategy: MergeStrategy.PreserveChanges,includeDeleted: false})</span></div>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Instance<span class="tsd-signature-symbol">:</span> <a href="queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol"> = new QueryOptions({fetchStrategy: FetchStrategy.FromServer,mergeStrategy: MergeStrategy.PreserveChanges,includeDeleted: false})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L90">query-options.ts:90</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L90">src/query-options.ts:90</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -232,7 +234,7 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L153">query-options.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L153">src/query-options.ts:153</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -241,7 +243,9 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 									The current instance is returned unchanged.</p>
 									<blockquote>
 										<pre><code><span class="hljs-keyword">var</span> <span class="hljs-keyword">new</span><span class="hljs-type">Qo</span> = <span class="hljs-keyword">new</span> <span class="hljs-type">QueryOptions</span>( { mergeStrategy: <span class="hljs-type">MergeStrategy</span>.OverwriteChanges });
-<span class="hljs-keyword">new</span><span class="hljs-type">Qo</span>.setAsDefault();</code></pre></blockquote>
+<span class="hljs-keyword">new</span><span class="hljs-type">Qo</span>.setAsDefault();
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -258,7 +262,7 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L157">query-options.ts:157</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L157">src/query-options.ts:157</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
@@ -275,7 +279,7 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L136">query-options.ts:136</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L136">src/query-options.ts:136</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -284,20 +288,28 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 									<a href="fetchstrategy.html">FetchStrategy</a>, or &#39;includeDeleted&#39; option applied.</p>
 									<blockquote>
 										<pre><code><span class="hljs-comment">// Given an EntityManager instance, em</span>
-<span class="hljs-keyword">var</span> queryOptions = em.queryOptions.<span class="hljs-keyword">using</span>(MergeStrategy.PreserveChanges);</code></pre></blockquote>
+<span class="hljs-built_in">var</span> queryOptions = em.queryOptions.<span class="hljs-keyword">using</span>(MergeStrategy.PreserveChanges);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
-								<pre><code><span class="hljs-keyword">var</span> queryOptions = em.queryOptions.<span class="hljs-keyword">using</span>(FetchStrategy.FromLocalCache);</code></pre></blockquote>
+									<pre><code><span class="hljs-built_in">var</span> queryOptions = em.queryOptions.<span class="hljs-keyword">using</span>(FetchStrategy.FromLocalCache);
+</code></pre>
+								</blockquote>
 								<p>or</p>
 								<blockquote>
-								<pre><code><span class="hljs-keyword">var</span> queryOptions = em.queryOptions.<span class="hljs-keyword">using</span>({ mergeStrategy: MergeStrategy.OverwriteChanges });</code></pre></blockquote>
+									<pre><code><span class="hljs-built_in">var</span> queryOptions = em.queryOptions.<span class="hljs-keyword">using</span>({ mergeStrategy: MergeStrategy.OverwriteChanges });
+</code></pre>
+								</blockquote>
 								<p>or</p>
 								<blockquote>
-									<pre><code><span class="hljs-string">var</span> <span class="hljs-string">queryOptions</span> <span class="hljs-string">=</span> <span class="hljs-string">em.queryOptions.using({</span>
-<span class="hljs-attr">   includeDeleted:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
-<span class="hljs-attr">   fetchStrategy:</span>  <span class="hljs-string">FetchStrategy.FromLocalCache</span>
-<span class="hljs-string">});</span></code></pre></blockquote>
+									<pre><code><span class="hljs-built_in">var</span> queryOptions = em.queryOptions.<span class="hljs-keyword">using</span>({
+   includeDeleted: <span class="hljs-literal">true</span>,
+   fetchStrategy:  FetchStrategy.FromLocalCache
+});
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -320,7 +332,7 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L165">query-options.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L165">src/query-options.ts:165</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -343,7 +355,7 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/query-options.ts#L112">query-options.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/query-options.ts#L112">src/query-options.ts:112</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -416,66 +428,13 @@ em1.set<span class="hljs-constructor">Properties( { <span class="hljs-params">qu
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

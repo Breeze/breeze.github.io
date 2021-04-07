@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>EntityQuery | breeze-client</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -112,6 +112,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entityquery.html#selectclause" class="tsd-kind-icon">select<wbr>Clause</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entityquery.html#skipcount" class="tsd-kind-icon">skip<wbr>Count</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entityquery.html#takecount" class="tsd-kind-icon">take<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entityquery.html#usesnameonserver" class="tsd-kind-icon">uses<wbr>Name<wbr>OnServer</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="entityquery.html#wherepredicate" class="tsd-kind-icon">where<wbr>Predicate</a></li>
 							</ul>
 						</section>
@@ -157,7 +158,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L67">entity-query.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L67">src/entity-query.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -169,9 +170,11 @@
 								</div>
 								<p>Usually this constructor will be followed by calls to filtering, ordering or selection methods</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .where(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>)
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"Region"</span>)</span>;</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .where(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>)
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;Region&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -197,7 +200,7 @@
 					<div class="tsd-signature tsd-kind-icon">data<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="dataservice.html" class="tsd-signature-type">DataService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L62">entity-query.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L61">src/entity-query.ts:61</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -212,7 +215,7 @@
 					<div class="tsd-signature tsd-kind-icon">entity<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L64">entity-query.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L63">src/entity-query.ts:63</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -227,7 +230,7 @@
 					<div class="tsd-signature tsd-kind-icon">expand<wbr>Clause<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ExpandClause</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L45">entity-query.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L44">src/entity-query.ts:44</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -242,7 +245,7 @@
 					<div class="tsd-signature tsd-kind-icon">from<wbr>Entity<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="entitytype.html" class="tsd-signature-type">EntityType</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L39">entity-query.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L38">src/entity-query.ts:38</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -259,7 +262,7 @@
 					<div class="tsd-signature tsd-kind-icon">inline<wbr>Count<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L55">entity-query.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L54">src/entity-query.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -274,7 +277,7 @@
 					<div class="tsd-signature tsd-kind-icon">no<wbr>Tracking<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L57">entity-query.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L56">src/entity-query.ts:56</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -289,7 +292,7 @@
 					<div class="tsd-signature tsd-kind-icon">order<wbr>ByClause<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">OrderByClause</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L43">entity-query.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L42">src/entity-query.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -304,7 +307,7 @@
 					<div class="tsd-signature tsd-kind-icon">parameters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L53">entity-query.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L52">src/entity-query.ts:52</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -319,7 +322,7 @@
 					<div class="tsd-signature tsd-kind-icon">query<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="queryoptions.html" class="tsd-signature-type">QueryOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L60">entity-query.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L59">src/entity-query.ts:59</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -334,7 +337,7 @@
 					<div class="tsd-signature tsd-kind-icon">resource<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L35">entity-query.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L34">src/entity-query.ts:34</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -349,7 +352,7 @@
 					<div class="tsd-signature tsd-kind-icon">result<wbr>Entity<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="entitytype.html" class="tsd-signature-type">EntityType</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L67">entity-query.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L66">src/entity-query.ts:66</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -365,7 +368,7 @@
 					<div class="tsd-signature tsd-kind-icon">select<wbr>Clause<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SelectClause</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L47">entity-query.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L46">src/entity-query.ts:46</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -380,7 +383,7 @@
 					<div class="tsd-signature tsd-kind-icon">skip<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L49">entity-query.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L48">src/entity-query.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -395,7 +398,7 @@
 					<div class="tsd-signature tsd-kind-icon">take<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L51">entity-query.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L50">src/entity-query.ts:50</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -405,12 +408,22 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="wherepredicate" class="tsd-anchor"></a>
-					<h3>where<wbr>Predicate</h3>
-					<div class="tsd-signature tsd-kind-icon">where<wbr>Predicate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="usesnameonserver" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> uses<wbr>Name<wbr>OnServer</h3>
+					<div class="tsd-signature tsd-kind-icon">uses<wbr>Name<wbr>OnServer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L41">entity-query.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L67">src/entity-query.ts:67</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="wherepredicate" class="tsd-anchor"></a>
+					<h3>where<wbr>Predicate</h3>
+					<div class="tsd-signature tsd-kind-icon">where<wbr>Predicate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Predicate</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L40">src/entity-query.ts:40</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -432,7 +445,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L511">entity-query.ts:511</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L512">src/entity-query.ts:512</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -442,34 +455,40 @@
 								<p>This method can be called using a &#39;promises&#39; syntax ( recommended)</p>
 								<blockquote>
 									<pre><code> let em = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityManager</span>(serviceName);
- let query = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityQuery</span>(<span class="hljs-string">"Orders"</span>).<span class="hljs-keyword">using</span>(em);
+ let query = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityQuery</span>(<span class="hljs-string">&quot;Orders&quot;</span>).<span class="hljs-keyword">using</span>(em);
  query.execute().then( <span class="hljs-function"><span class="hljs-keyword">function</span></span>(data) {
      ... query results processed <span class="hljs-keyword">here</span>
  }).<span class="hljs-keyword">catch</span>( <span class="hljs-function"><span class="hljs-keyword">function</span></span>(err) {
      ... query failure processed <span class="hljs-keyword">here</span>
- });</code></pre></blockquote>
+ });
+</code></pre>
+								</blockquote>
 								<p>or with callbacks</p>
 								<blockquote>
-									<pre><code> let em = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityManager</span>(serviceName);
- let query = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityQuery</span>(<span class="hljs-string">"Orders"</span>).<span class="hljs-keyword">using</span>(em);
+									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>.using(em);
  query.execute(
-   <span class="hljs-function"><span class="hljs-keyword">function</span></span>(data) {
-               let orders = data.results;
-               ... query results processed <span class="hljs-keyword">here</span>
+   <span class="hljs-keyword">function</span>(data) {
+               <span class="hljs-keyword">let</span> orders = data.results;<span class="hljs-operator">
+               ... </span>query results processed here
            },
-   <span class="hljs-function"><span class="hljs-keyword">function</span></span>(err) {
-               ... query failure processed <span class="hljs-keyword">here</span>
-           });</code></pre></blockquote>
+   <span class="hljs-keyword">function</span>(err) {<span class="hljs-operator">
+               ... </span>query failure processed here
+           });
+</code></pre>
+								</blockquote>
 								<p>Either way this method is the same as calling the EntityManager &#39;execute&#39; method.</p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>;
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>;
  em.execute<span class="hljs-constructor">Query(<span class="hljs-params">query</span>)</span>.<span class="hljs-keyword">then</span>( <span class="hljs-keyword">function</span>(data) {
     <span class="hljs-keyword">let</span> orders = data.results;<span class="hljs-operator">
      ... </span>query results processed here
  }).catch( <span class="hljs-keyword">function</span>(err) {<span class="hljs-operator">
     ... </span>query failure processed here
- });</code></pre></blockquote>
+ });
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -501,7 +520,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L526">entity-query.ts:526</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L527">src/entity-query.ts:527</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -509,8 +528,10 @@
 									<p>Executes this query against the local cache.  This method requires that an EntityManager have been previously specified via the &quot;using&quot; method.</p>
 									<blockquote>
 										<pre><code> // assume em is an entityManager already<span class="hljs-built_in"> filled </span>with order entities;
- let query =<span class="hljs-built_in"> new </span>EntityQuery(<span class="hljs-string">"Orders"</span>).using(em);
- let orders = query.executeLocally();</code></pre></blockquote>
+ let query =<span class="hljs-built_in"> new </span>EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>).using(em);
+ let orders = query.executeLocally();
+</code></pre>
+									</blockquote>
 								</div>
 								<p>Note that calling this method is the same as calling <a href="entitymanager.html#executequerylocally">EntityManager.executeQueryLocally</a>.</p>
 							</div>
@@ -522,13 +543,13 @@
 					<a name="expand" class="tsd-anchor"></a>
 					<h3>expand</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">expand<span class="tsd-signature-symbol">(</span>propertyPaths<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
+						<li class="tsd-signature tsd-kind-icon">expand<span class="tsd-signature-symbol">(</span>propertyPaths<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L363">entity-query.ts:363</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L364">src/entity-query.ts:364</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -536,24 +557,30 @@
 									<p>Returns a new query that will return related entities nested within its results. The expand method allows you to identify related entities, via navigation property
 									names such that a graph of entities may be retrieved with a single request. Any filtering occurs before the results are &#39;expanded&#39;.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-   .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>)
-   .expand(<span class="hljs-string">"Orders"</span>);</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+   .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>)
+   .expand(<span class="hljs-string">&quot;Orders&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>will return the filtered customers each with its &quot;Orders&quot; properties fully resolved.
 								Multiple paths may be specified by separating the paths by a &#39;,&#39;</p>
 								<blockquote>
-									<pre><code><span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Orders"</span>)
-   .<span class="hljs-built_in">expand</span>(<span class="hljs-string">"Customer, Employee"</span>)</code></pre></blockquote>
+									<pre><code><span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)
+   .<span class="hljs-built_in">expand</span>(<span class="hljs-string">&quot;Customer, Employee&quot;</span>)
+</code></pre>
+								</blockquote>
 								<p>and nested property paths my be specified as well</p>
 								<blockquote>
-									<pre><code><span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Orders"</span>)
-   .<span class="hljs-built_in">expand</span>(<span class="hljs-string">"Customer, OrderDetails, OrderDetails.Product"</span>)</code></pre></blockquote>
+									<pre><code><span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)
+   .<span class="hljs-built_in">expand</span>(<span class="hljs-string">&quot;Customer, OrderDetails, OrderDetails.Product&quot;</span>)
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>propertyPaths: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> propertyPaths: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A comma-separated list of navigation property names or an array of navigation property names. Each Navigation Property name can be followed
 											by a &#39;.&#39; and another navigation property name to enable identifying a multi-level relationship.
@@ -575,7 +602,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L111">entity-query.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L111">src/entity-query.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -583,11 +610,15 @@
 									<p>Specifies the resource to query for this EntityQuery.</p>
 									<blockquote>
 										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery()
-   .<span class="hljs-keyword">from</span>(<span class="hljs-string">"Customers"</span>);</code></pre></blockquote>
+   .<span class="hljs-keyword">from</span>(<span class="hljs-string">&quot;Customers&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>is the same as</p>
 								<blockquote>
-								<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>;</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -612,7 +643,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L401">entity-query.ts:401</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L402">src/entity-query.ts:402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -621,10 +652,12 @@
 										will be returned with the query results that will contain the number of entities that would have been returned by this
 									query with only the &#39;where&#39;/&#39;filter&#39; clauses applied, i.e. without any &#39;skip&#39;/&#39;take&#39; operators applied. For local queries this clause is ignored.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
    .take(<span class="hljs-number">20</span>)
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"CompanyName"</span>)</span>
-   .inline<span class="hljs-constructor">Count(<span class="hljs-params">true</span>)</span>;</code></pre></blockquote>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;CompanyName&quot;</span>)</span>
+   .inline<span class="hljs-constructor">Count(<span class="hljs-params">true</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>will return the first 20 customers as well as a count of all of the customers in the remote store.</p>
 							</div>
@@ -651,7 +684,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L422">entity-query.ts:422</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L423">src/entity-query.ts:423</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -659,10 +692,12 @@
 									<p>Returns a query with the &#39;noTracking&#39; capability either enabled or disabled.  With &#39;noTracking&#39; enabled, the results of this query
 									will not be coerced into entities but will instead look like raw javascript projections. i.e. simple javascript objects.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
     .take(<span class="hljs-number">20</span>)
-    .order<span class="hljs-constructor">By(<span class="hljs-string">"CompanyName"</span>)</span>
-    .no<span class="hljs-constructor">Tracking(<span class="hljs-params">true</span>)</span>;</code></pre></blockquote>
+    .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;CompanyName&quot;</span>)</span>
+    .no<span class="hljs-constructor">Tracking(<span class="hljs-params">true</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -682,14 +717,14 @@
 					<a name="orderby" class="tsd-anchor"></a>
 					<h3>order<wbr>By</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">order<wbr>By<span class="tsd-signature-symbol">(</span>propertyPaths<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isDescending<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
+						<li class="tsd-signature tsd-kind-icon">order<wbr>By<span class="tsd-signature-symbol">(</span>propertyPaths<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, isDescending<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 						<li class="tsd-signature tsd-kind-icon">order<wbr>By<span class="tsd-signature-symbol">(</span>propertyPaths<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, isDescending<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L211">entity-query.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L212">src/entity-query.ts:212</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -697,30 +732,40 @@
 									<p>Returns a new query that orders the results of the query by property name.  By default sorting occurs is ascending order, but sorting in descending order is supported as well.
 									OrderBy clauses may be chained.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"CompanyName"</span>)</span>;</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;CompanyName&quot;</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or to sort across multiple properties</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"Region, CompanyName"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;Region, CompanyName&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>Nested property paths are also supported</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Products"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"Category.CategoryName"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>Sorting in descending order is supported via the addition of &#39; desc&#39; to the end of any property path.</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"CompanyName desc"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;CompanyName desc&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>or</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"Region desc, CompanyName desc"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;Region desc, CompanyName desc&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>propertyPaths: <span class="tsd-signature-type">string</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> propertyPaths: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>A comma-separated (&#39;,&#39;) string of property paths or an array of property paths.
@@ -742,7 +787,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L212">entity-query.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L213">src/entity-query.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -750,44 +795,43 @@
 									<p>Returns a new query that orders the results of the query by property name.  By default sorting occurs is ascending order, but sorting in descending order is supported as well.
 									OrderBy clauses may be chained.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"CompanyName"</span>)</span>;</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;CompanyName&quot;</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or to sort across multiple properties</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"Region, CompanyName"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;Region, CompanyName&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>Nested property paths are also supported</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Products"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"Category.CategoryName"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>Sorting in descending order is supported via the addition of &#39; desc&#39; to the end of any property path.</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"CompanyName desc"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;CompanyName desc&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>or</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"Region desc, CompanyName desc"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;Region desc, CompanyName desc&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>propertyPaths: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>A comma-separated (&#39;,&#39;) string of property paths or an array of property paths.
-											Each property path can optionally end with &quot; desc&quot; to force a descending sort order. If &#39;propertyPaths&#39; is either null or omitted then all ordering is removed.</p>
-										</div>
-									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> isDescending: <span class="tsd-signature-type">boolean</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>If specified, overrides all of the embedded &#39;desc&#39; tags in the previously specified property paths.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -805,24 +849,30 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L249">entity-query.ts:249</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L250">src/entity-query.ts:250</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns a new query that orders the results of the query by property name in descending order.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">"CompanyName"</span>)</span>;</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">&quot;CompanyName&quot;</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or to sort across multiple properties</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">"Region, CompanyName"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">&quot;Region, CompanyName&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>Nested property paths are also supported</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Products"</span>)</span>
-   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">"Category.CategoryName"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)</span>
+   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -841,35 +891,35 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L250">entity-query.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L251">src/entity-query.ts:251</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns a new query that orders the results of the query by property name in descending order.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">"CompanyName"</span>)</span>;</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">&quot;CompanyName&quot;</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or to sort across multiple properties</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">"Region, CompanyName"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">&quot;Region, CompanyName&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>Nested property paths are also supported</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Products"</span>)</span>
-   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">"Category.CategoryName"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)</span>
+   .order<span class="hljs-constructor">ByDesc(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>propertyPaths: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>A comma-separated (&#39;,&#39;) string of property paths or an array of property paths.
-											If &#39;propertyPaths&#39; is either null or omitted then all ordering is removed.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -880,13 +930,13 @@
 					<a name="select" class="tsd-anchor"></a>
 					<h3>select</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">select<span class="tsd-signature-symbol">(</span>propertyPaths<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
+						<li class="tsd-signature tsd-kind-icon">select<span class="tsd-signature-symbol">(</span>propertyPaths<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L301">entity-query.ts:301</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L302">src/entity-query.ts:302</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -899,31 +949,39 @@
 								</div>
 								<p>Simple data properties can be projected</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-    .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>)
-    .<span class="hljs-keyword">select</span>(<span class="hljs-string">"CompanyName"</span>);</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+    .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>)
+    .<span class="hljs-keyword">select</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>This will return an array of objects each with a single &quot;CompanyName&quot; property of type string.
 								A similar query could return a navigation property instead</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-   .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>)
-   .<span class="hljs-keyword">select</span>(<span class="hljs-string">"Orders"</span>);</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+   .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>)
+   .<span class="hljs-keyword">select</span>(<span class="hljs-string">&quot;Orders&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>where the result would be an array of objects each with a single &quot;Orders&quot; property that would itself be an array of &quot;Order&quot; entities.
 								Composite projections are also possible:</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-   .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>)
-   .<span class="hljs-keyword">select</span>(<span class="hljs-string">"CompanyName, Orders"</span>);</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+   .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>)
+   .<span class="hljs-keyword">select</span>(<span class="hljs-string">&quot;CompanyName, Orders&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>As well as projections involving nested property paths</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = EntityQuery(<span class="hljs-string">"Orders"</span>)
-   .<span class="hljs-keyword">where</span>(<span class="hljs-string">"Customer.CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>)
-   .<span class="hljs-keyword">select</span>(<span class="hljs-string">"Customer.CompanyName, Customer, OrderDate"</span>);</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)
+   .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Customer.CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>)
+   .<span class="hljs-keyword">select</span>(<span class="hljs-string">&quot;Customer.CompanyName, Customer, OrderDate&quot;</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>propertyPaths: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> propertyPaths: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A comma-separated (&#39;,&#39;) string of property paths or an array of property paths.
 										If &#39;propertyPaths&#39; is either null or omitted then any existing projection on the query is removed.</p>
@@ -944,7 +1002,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L314">entity-query.ts:314</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L315">src/entity-query.ts:315</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -952,9 +1010,11 @@
 									<p>Returns a new query that skips the specified number of entities when returning results.
 									Any existing &#39;skip&#39; can be cleared by calling &#39;skip&#39; with no arguments.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-  .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>)
-  .<span class="hljs-keyword">skip</span>(<span class="hljs-number">5</span>);</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+  .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>)
+  .<span class="hljs-keyword">skip</span>(<span class="hljs-number">5</span>);
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -980,7 +1040,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L339">entity-query.ts:339</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L340">src/entity-query.ts:340</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -988,8 +1048,10 @@
 									<p>Returns a new query that returns only the specified number of entities when returning results - Same as &#39;top&#39;.
 									Any existing take can be cleared by calling take with no arguments.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-   .<span class="hljs-keyword">take</span>(<span class="hljs-number">5</span>);</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+   .<span class="hljs-keyword">take</span>(<span class="hljs-number">5</span>);
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1016,7 +1078,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L533">entity-query.ts:533</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L534">src/entity-query.ts:534</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
@@ -1033,7 +1095,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L138">entity-query.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L138">src/entity-query.ts:138</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1041,8 +1103,10 @@
 									<p>Specifies the top level EntityType that this query will return.  Only needed when a query returns a json result that does not include type information.</p>
 									<blockquote>
 										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery()</span>
-   .from(<span class="hljs-string">"MyCustomMethod"</span>)
-   .<span class="hljs-keyword">to</span><span class="hljs-constructor">Type(<span class="hljs-string">"Customer"</span>)</span></code></pre></blockquote>
+   .from(<span class="hljs-string">&quot;MyCustomMethod&quot;</span>)
+   .<span class="hljs-keyword">to</span><span class="hljs-constructor">Type(<span class="hljs-string">&quot;Customer&quot;</span>)</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1069,7 +1133,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L327">entity-query.ts:327</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L328">src/entity-query.ts:328</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1077,8 +1141,10 @@
 									<p>Returns a new query that returns only the specified number of entities when returning results. - Same as &#39;take&#39;.
 									Any existing &#39;top&#39; can be cleared by calling &#39;top&#39; with no arguments.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>
-   .top(<span class="hljs-number">5</span>);</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>
+   .top(<span class="hljs-number">5</span>);
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1105,7 +1171,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L407">entity-query.ts:407</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L408">src/entity-query.ts:408</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1133,7 +1199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L428">entity-query.ts:428</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L429">src/entity-query.ts:429</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1141,21 +1207,27 @@
 									<p>Returns a copy of this EntityQuery with the specified <a href="entitymanager.html">EntityManager</a>, <a href="dataservice.html">DataService</a>,
 									<a href="jsonresultsadapter.html">JsonResultsAdapter</a>, <a href="mergestrategy.html">MergeStrategy</a> or <a href="fetchstrategy.html">FetchStrategy</a> applied.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// 'using' can be used to return a new query with a specified EntityManager.</span>
+										<pre><code> <span class="hljs-comment">// &#x27;using&#x27; can be used to return a new query with a specified EntityManager.</span>
  <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(em);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(em);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or with a specified <a href="mergestrategy.html">MergeStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(MergeStrategy.PreserveChanges);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(MergeStrategy.PreserveChanges);
+</code></pre>
+								</blockquote>
 								<p>or with a specified <a href="fetchstrategy.html">FetchStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(FetchStrategy.FromLocalCache);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(FetchStrategy.FromLocalCache);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1173,7 +1245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L429">entity-query.ts:429</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L430">src/entity-query.ts:430</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1181,31 +1253,32 @@
 									<p>Returns a copy of this EntityQuery with the specified <a href="entitymanager.html">EntityManager</a>, <a href="dataservice.html">DataService</a>,
 									<a href="jsonresultsadapter.html">JsonResultsAdapter</a>, <a href="mergestrategy.html">MergeStrategy</a> or <a href="fetchstrategy.html">FetchStrategy</a> applied.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// 'using' can be used to return a new query with a specified EntityManager.</span>
+										<pre><code> <span class="hljs-comment">// &#x27;using&#x27; can be used to return a new query with a specified EntityManager.</span>
  <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(em);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(em);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or with a specified <a href="mergestrategy.html">MergeStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(MergeStrategy.PreserveChanges);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(MergeStrategy.PreserveChanges);
+</code></pre>
+								</blockquote>
 								<p>or with a specified <a href="fetchstrategy.html">FetchStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(FetchStrategy.FromLocalCache);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(FetchStrategy.FromLocalCache);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>obj: <a href="dataservice.html" class="tsd-signature-type">DataService</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The object to update in creating a new EntityQuery from an existing one.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -1213,7 +1286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L430">entity-query.ts:430</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L431">src/entity-query.ts:431</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1221,31 +1294,32 @@
 									<p>Returns a copy of this EntityQuery with the specified <a href="entitymanager.html">EntityManager</a>, <a href="dataservice.html">DataService</a>,
 									<a href="jsonresultsadapter.html">JsonResultsAdapter</a>, <a href="mergestrategy.html">MergeStrategy</a> or <a href="fetchstrategy.html">FetchStrategy</a> applied.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// 'using' can be used to return a new query with a specified EntityManager.</span>
+										<pre><code> <span class="hljs-comment">// &#x27;using&#x27; can be used to return a new query with a specified EntityManager.</span>
  <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(em);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(em);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or with a specified <a href="mergestrategy.html">MergeStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(MergeStrategy.PreserveChanges);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(MergeStrategy.PreserveChanges);
+</code></pre>
+								</blockquote>
 								<p>or with a specified <a href="fetchstrategy.html">FetchStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(FetchStrategy.FromLocalCache);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(FetchStrategy.FromLocalCache);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>obj: <a href="jsonresultsadapter.html" class="tsd-signature-type">JsonResultsAdapter</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The object to update in creating a new EntityQuery from an existing one.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -1253,7 +1327,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L431">entity-query.ts:431</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L432">src/entity-query.ts:432</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1261,31 +1335,32 @@
 									<p>Returns a copy of this EntityQuery with the specified <a href="entitymanager.html">EntityManager</a>, <a href="dataservice.html">DataService</a>,
 									<a href="jsonresultsadapter.html">JsonResultsAdapter</a>, <a href="mergestrategy.html">MergeStrategy</a> or <a href="fetchstrategy.html">FetchStrategy</a> applied.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// 'using' can be used to return a new query with a specified EntityManager.</span>
+										<pre><code> <span class="hljs-comment">// &#x27;using&#x27; can be used to return a new query with a specified EntityManager.</span>
  <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(em);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(em);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or with a specified <a href="mergestrategy.html">MergeStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(MergeStrategy.PreserveChanges);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(MergeStrategy.PreserveChanges);
+</code></pre>
+								</blockquote>
 								<p>or with a specified <a href="fetchstrategy.html">FetchStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(FetchStrategy.FromLocalCache);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(FetchStrategy.FromLocalCache);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>obj: <a href="queryoptions.html" class="tsd-signature-type">QueryOptions</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The object to update in creating a new EntityQuery from an existing one.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -1293,7 +1368,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L432">entity-query.ts:432</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L433">src/entity-query.ts:433</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1301,31 +1376,32 @@
 									<p>Returns a copy of this EntityQuery with the specified <a href="entitymanager.html">EntityManager</a>, <a href="dataservice.html">DataService</a>,
 									<a href="jsonresultsadapter.html">JsonResultsAdapter</a>, <a href="mergestrategy.html">MergeStrategy</a> or <a href="fetchstrategy.html">FetchStrategy</a> applied.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// 'using' can be used to return a new query with a specified EntityManager.</span>
+										<pre><code> <span class="hljs-comment">// &#x27;using&#x27; can be used to return a new query with a specified EntityManager.</span>
  <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(em);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(em);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or with a specified <a href="mergestrategy.html">MergeStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(MergeStrategy.PreserveChanges);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(MergeStrategy.PreserveChanges);
+</code></pre>
+								</blockquote>
 								<p>or with a specified <a href="fetchstrategy.html">FetchStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(FetchStrategy.FromLocalCache);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(FetchStrategy.FromLocalCache);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>obj: <a href="mergestrategy.html" class="tsd-signature-type">MergeStrategy</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The object to update in creating a new EntityQuery from an existing one.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -1333,7 +1409,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L433">entity-query.ts:433</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L434">src/entity-query.ts:434</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1341,31 +1417,32 @@
 									<p>Returns a copy of this EntityQuery with the specified <a href="entitymanager.html">EntityManager</a>, <a href="dataservice.html">DataService</a>,
 									<a href="jsonresultsadapter.html">JsonResultsAdapter</a>, <a href="mergestrategy.html">MergeStrategy</a> or <a href="fetchstrategy.html">FetchStrategy</a> applied.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// 'using' can be used to return a new query with a specified EntityManager.</span>
+										<pre><code> <span class="hljs-comment">// &#x27;using&#x27; can be used to return a new query with a specified EntityManager.</span>
  <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(em);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(em);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or with a specified <a href="mergestrategy.html">MergeStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(MergeStrategy.PreserveChanges);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(MergeStrategy.PreserveChanges);
+</code></pre>
+								</blockquote>
 								<p>or with a specified <a href="fetchstrategy.html">FetchStrategy</a></p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> em = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityManager(<span class="hljs-params">serviceName</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Orders"</span>)</span>
-   .using(FetchStrategy.FromLocalCache);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Orders&quot;</span>)</span>
+   .using(FetchStrategy.FromLocalCache);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>obj: <a href="fetchstrategy.html" class="tsd-signature-type">FetchStrategy</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The object to update in creating a new EntityQuery from an existing one.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -1376,19 +1453,20 @@
 					<a name="where" class="tsd-anchor"></a>
 					<h3>where</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><a href="predicate.html" class="tsd-signature-type">Predicate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
+						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Predicate</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, operator<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, operator<span class="tsd-signature-symbol">: </span><a href="filterqueryop.html" class="tsd-signature-type">FilterQueryOp</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filterop<span class="tsd-signature-symbol">: </span><a href="filterqueryop.html" class="tsd-signature-type">FilterQueryOp</a>, property2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filterop2<span class="tsd-signature-symbol">: </span><a href="filterqueryop.html" class="tsd-signature-type">FilterQueryOp</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filterop<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, property2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filterop2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
-						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>anArray<span class="tsd-signature-symbol">: </span><a href="../interfaces/recursivearray.html" class="tsd-signature-type">RecursiveArray</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="filterqueryop.html" class="tsd-signature-type">FilterQueryOp</a><span class="tsd-signature-symbol"> | </span><a href="predicate.html" class="tsd-signature-type">Predicate</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
+						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filterop<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, property2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filterop2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, property3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filterop3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
+						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>anArray<span class="tsd-signature-symbol">: </span><a href="../interfaces/recursivearray.html" class="tsd-signature-type">RecursiveArray</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="filterqueryop.html" class="tsd-signature-type">FilterQueryOp</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Predicate</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L144">entity-query.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L144">src/entity-query.ts:144</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1396,39 +1474,53 @@
 									<p>Returns a new query with an added filter criteria; Can be called multiple times which means to &#39;and&#39; with any existing
 									Predicate or can be called with null to clear all predicates.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be expressed using an explicit <a href="filterqueryop.html">FilterQueryOp</a> as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or a preconstructed <a href="predicate.html">Predicate</a> may be used</p>
 								<blockquote>
-									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);
- <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>).where(<span class="hljs-built_in">pred</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).where(<span class="hljs-built_in">pred</span>);
+</code></pre>
+								</blockquote>
 								<p>Predicates are often useful when you want to combine multiple conditions in a single filter, such as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"C"</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
- <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(pred);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+ <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(pred);
+</code></pre>
+								</blockquote>
 								<p>More complicated queries can make use of nested property paths</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Products"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"Category.CategoryName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"S"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or OData functions - A list of valid OData functions can be found within the <a href="predicate.html">Predicate</a> documentation.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toLower(CompanyName)"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"c"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toLower(CompanyName)&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or to be even more baroque</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toUpper(substring(CompanyName, 1, 2))"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">"OM"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toUpper(substring(CompanyName, 1, 2))&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">&quot;OM&quot;</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>predicate: <a href="predicate.html" class="tsd-signature-type">Predicate</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> predicate: <span class="tsd-signature-type">Predicate</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Can be either</p>
@@ -1438,16 +1530,16 @@
 												<li><p>the parameters to create a &#39;simple&#39; Predicate</p>
 												</li>
 												<li><ul>
-														<li>a property name, a property path with &#39;.&#39; as path seperators or a property expression {String}</li>
+														<li> a property name, a property path with &#39;.&#39; as path seperators or a property expression {String}</li>
 													</ul>
 												</li>
 												<li><ul>
-														<li>an operator - <a href="filterqueryop.html">FilterQueryOp</a> or it&#39;s string representation. Case is ignored
+														<li> an operator - <a href="filterqueryop.html">FilterQueryOp</a> or it&#39;s string representation. Case is ignored
 														when if a string is provided and any string that matches one of the FilterQueryOp aliases will be accepted.</li>
 													</ul>
 												</li>
 												<li><ul>
-														<li>a value {Object} - This will be treated as either a property expression or a literal depending on context.
+														<li> a value {Object} - This will be treated as either a property expression or a literal depending on context.
 															In general, if the value can be interpreted as a property expression it will be, otherwise it will be treated as a literal.
 															In most cases this works well, but you can also force the interpretation by making the value argument itself an object
 															with a &#39;value&#39; property and an &#39;isLiteral&#39; property set to either true or false.
@@ -1467,7 +1559,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L145">entity-query.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L145">src/entity-query.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1475,70 +1567,53 @@
 									<p>Returns a new query with an added filter criteria; Can be called multiple times which means to &#39;and&#39; with any existing
 									Predicate or can be called with null to clear all predicates.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be expressed using an explicit <a href="filterqueryop.html">FilterQueryOp</a> as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or a preconstructed <a href="predicate.html">Predicate</a> may be used</p>
 								<blockquote>
-									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);
- <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>).where(<span class="hljs-built_in">pred</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).where(<span class="hljs-built_in">pred</span>);
+</code></pre>
+								</blockquote>
 								<p>Predicates are often useful when you want to combine multiple conditions in a single filter, such as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"C"</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
- <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(pred);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+ <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(pred);
+</code></pre>
+								</blockquote>
 								<p>More complicated queries can make use of nested property paths</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Products"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"Category.CategoryName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"S"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or OData functions - A list of valid OData functions can be found within the <a href="predicate.html">Predicate</a> documentation.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toLower(CompanyName)"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"c"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toLower(CompanyName)&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or to be even more baroque</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toUpper(substring(CompanyName, 1, 2))"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">"OM"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toUpper(substring(CompanyName, 1, 2))&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">&quot;OM&quot;</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>predicate: <span class="tsd-signature-type">Object</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Can be either</p>
-											<ul>
-												<li><p>a single <a href="predicate.html">Predicate</a></p>
-												</li>
-												<li><p>the parameters to create a &#39;simple&#39; Predicate</p>
-												</li>
-												<li><ul>
-														<li>a property name, a property path with &#39;.&#39; as path seperators or a property expression {String}</li>
-													</ul>
-												</li>
-												<li><ul>
-														<li>an operator - <a href="filterqueryop.html">FilterQueryOp</a> or it&#39;s string representation. Case is ignored
-														when if a string is provided and any string that matches one of the FilterQueryOp aliases will be accepted.</li>
-													</ul>
-												</li>
-												<li><ul>
-														<li>a value {Object} - This will be treated as either a property expression or a literal depending on context.
-															In general, if the value can be interpreted as a property expression it will be, otherwise it will be treated as a literal.
-															In most cases this works well, but you can also force the interpretation by making the value argument itself an object
-															with a &#39;value&#39; property and an &#39;isLiteral&#39; property set to either true or false.
-															Breeze also tries to infer the dataType of any literal based on context, if this fails you can force this inference by making the value argument
-														an object with a &#39;value&#39; property and a &#39;dataType&#39;property set to one of the DataType enumeration instances.</li>
-													</ul>
-												</li>
-												<li><p>a null or undefined ( this causes any existing where clause to be removed)</p>
-												</li>
-											</ul>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -1546,7 +1621,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L146">entity-query.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L146">src/entity-query.ts:146</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1554,34 +1629,48 @@
 									<p>Returns a new query with an added filter criteria; Can be called multiple times which means to &#39;and&#39; with any existing
 									Predicate or can be called with null to clear all predicates.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be expressed using an explicit <a href="filterqueryop.html">FilterQueryOp</a> as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or a preconstructed <a href="predicate.html">Predicate</a> may be used</p>
 								<blockquote>
-									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);
- <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>).where(<span class="hljs-built_in">pred</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).where(<span class="hljs-built_in">pred</span>);
+</code></pre>
+								</blockquote>
 								<p>Predicates are often useful when you want to combine multiple conditions in a single filter, such as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"C"</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
- <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(pred);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+ <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(pred);
+</code></pre>
+								</blockquote>
 								<p>More complicated queries can make use of nested property paths</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Products"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"Category.CategoryName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"S"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or OData functions - A list of valid OData functions can be found within the <a href="predicate.html">Predicate</a> documentation.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toLower(CompanyName)"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"c"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toLower(CompanyName)&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or to be even more baroque</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toUpper(substring(CompanyName, 1, 2))"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">"OM"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toUpper(substring(CompanyName, 1, 2))&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">&quot;OM&quot;</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1600,7 +1689,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L147">entity-query.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L147">src/entity-query.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1608,34 +1697,48 @@
 									<p>Returns a new query with an added filter criteria; Can be called multiple times which means to &#39;and&#39; with any existing
 									Predicate or can be called with null to clear all predicates.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be expressed using an explicit <a href="filterqueryop.html">FilterQueryOp</a> as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or a preconstructed <a href="predicate.html">Predicate</a> may be used</p>
 								<blockquote>
-									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);
- <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>).where(<span class="hljs-built_in">pred</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).where(<span class="hljs-built_in">pred</span>);
+</code></pre>
+								</blockquote>
 								<p>Predicates are often useful when you want to combine multiple conditions in a single filter, such as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"C"</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
- <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(pred);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+ <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(pred);
+</code></pre>
+								</blockquote>
 								<p>More complicated queries can make use of nested property paths</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Products"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"Category.CategoryName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"S"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or OData functions - A list of valid OData functions can be found within the <a href="predicate.html">Predicate</a> documentation.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toLower(CompanyName)"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"c"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toLower(CompanyName)&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or to be even more baroque</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toUpper(substring(CompanyName, 1, 2))"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">"OM"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toUpper(substring(CompanyName, 1, 2))&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">&quot;OM&quot;</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1654,7 +1757,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L148">entity-query.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L148">src/entity-query.ts:148</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1662,34 +1765,48 @@
 									<p>Returns a new query with an added filter criteria; Can be called multiple times which means to &#39;and&#39; with any existing
 									Predicate or can be called with null to clear all predicates.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be expressed using an explicit <a href="filterqueryop.html">FilterQueryOp</a> as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or a preconstructed <a href="predicate.html">Predicate</a> may be used</p>
 								<blockquote>
-									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);
- <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>).where(<span class="hljs-built_in">pred</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).where(<span class="hljs-built_in">pred</span>);
+</code></pre>
+								</blockquote>
 								<p>Predicates are often useful when you want to combine multiple conditions in a single filter, such as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"C"</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
- <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(pred);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+ <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(pred);
+</code></pre>
+								</blockquote>
 								<p>More complicated queries can make use of nested property paths</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Products"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"Category.CategoryName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"S"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or OData functions - A list of valid OData functions can be found within the <a href="predicate.html">Predicate</a> documentation.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toLower(CompanyName)"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"c"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toLower(CompanyName)&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or to be even more baroque</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toUpper(substring(CompanyName, 1, 2))"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">"OM"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toUpper(substring(CompanyName, 1, 2))&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">&quot;OM&quot;</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1714,7 +1831,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L149">entity-query.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L149">src/entity-query.ts:149</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1722,34 +1839,48 @@
 									<p>Returns a new query with an added filter criteria; Can be called multiple times which means to &#39;and&#39; with any existing
 									Predicate or can be called with null to clear all predicates.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be expressed using an explicit <a href="filterqueryop.html">FilterQueryOp</a> as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or a preconstructed <a href="predicate.html">Predicate</a> may be used</p>
 								<blockquote>
-									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);
- <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>).where(<span class="hljs-built_in">pred</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).where(<span class="hljs-built_in">pred</span>);
+</code></pre>
+								</blockquote>
 								<p>Predicates are often useful when you want to combine multiple conditions in a single filter, such as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"C"</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
- <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(pred);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+ <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(pred);
+</code></pre>
+								</blockquote>
 								<p>More complicated queries can make use of nested property paths</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Products"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"Category.CategoryName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"S"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or OData functions - A list of valid OData functions can be found within the <a href="predicate.html">Predicate</a> documentation.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toLower(CompanyName)"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"c"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toLower(CompanyName)&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or to be even more baroque</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toUpper(substring(CompanyName, 1, 2))"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">"OM"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toUpper(substring(CompanyName, 1, 2))&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">&quot;OM&quot;</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1774,7 +1905,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L150">entity-query.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L150">src/entity-query.ts:150</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1782,39 +1913,133 @@
 									<p>Returns a new query with an added filter criteria; Can be called multiple times which means to &#39;and&#39; with any existing
 									Predicate or can be called with null to clear all predicates.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be expressed using an explicit <a href="filterqueryop.html">FilterQueryOp</a> as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or a preconstructed <a href="predicate.html">Predicate</a> may be used</p>
 								<blockquote>
-									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">"CompanyName"</span>, FilterQueryOp.StartsWith, <span class="hljs-string">"C"</span>);
- <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>).where(<span class="hljs-built_in">pred</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).where(<span class="hljs-built_in">pred</span>);
+</code></pre>
+								</blockquote>
 								<p>Predicates are often useful when you want to combine multiple conditions in a single filter, such as</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"C"</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
- <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(pred);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+ <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(pred);
+</code></pre>
+								</blockquote>
 								<p>More complicated queries can make use of nested property paths</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Products"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"Category.CategoryName"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"S"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or OData functions - A list of valid OData functions can be found within the <a href="predicate.html">Predicate</a> documentation.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toLower(CompanyName)"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"c"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toLower(CompanyName)&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>or to be even more baroque</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>)
-     .<span class="hljs-keyword">where</span>(<span class="hljs-string">"toUpper(substring(CompanyName, 1, 2))"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">"OM"</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toUpper(substring(CompanyName, 1, 2))&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">&quot;OM&quot;</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>anArray: <a href="../interfaces/recursivearray.html" class="tsd-signature-type">RecursiveArray</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="filterqueryop.html" class="tsd-signature-type">FilterQueryOp</a><span class="tsd-signature-symbol"> | </span><a href="predicate.html" class="tsd-signature-type">Predicate</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>property: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>filterop: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>property2: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>filterop2: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>property3: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>filterop3: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L151">src/entity-query.ts:151</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a new query with an added filter criteria; Can be called multiple times which means to &#39;and&#39; with any existing
+									Predicate or can be called with null to clear all predicates.</p>
+									<blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+									</blockquote>
+								</div>
+								<p>This can also be expressed using an explicit <a href="filterqueryop.html">FilterQueryOp</a> as</p>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+</code></pre>
+								</blockquote>
+								<p>or a preconstructed <a href="predicate.html">Predicate</a> may be used</p>
+								<blockquote>
+									<pre><code> <span class="hljs-built_in">let</span> <span class="hljs-built_in">pred</span> = <span class="hljs-built_in">new</span> Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, FilterQueryOp.StartsWith, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-built_in">let</span> query = <span class="hljs-built_in">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).where(<span class="hljs-built_in">pred</span>);
+</code></pre>
+								</blockquote>
+								<p>Predicates are often useful when you want to combine multiple conditions in a single filter, such as</p>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> pred = Predicate.create(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>).<span class="hljs-literal">and</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+ <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(pred);
+</code></pre>
+								</blockquote>
+								<p>More complicated queries can make use of nested property paths</p>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Products&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;Category.CategoryName&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>);
+</code></pre>
+								</blockquote>
+								<p>or OData functions - A list of valid OData functions can be found within the <a href="predicate.html">Predicate</a> documentation.</p>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toLower(CompanyName)&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+</code></pre>
+								</blockquote>
+								<p>or to be even more baroque</p>
+								<blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)
+     .<span class="hljs-keyword">where</span>(<span class="hljs-string">&quot;toUpper(substring(CompanyName, 1, 2))&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-string">&quot;OM&quot;</span>);
+</code></pre>
+								</blockquote>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>anArray: <a href="../interfaces/recursivearray.html" class="tsd-signature-type">RecursiveArray</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="filterqueryop.html" class="tsd-signature-type">FilterQueryOp</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Predicate</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -1831,26 +2056,32 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L384">entity-query.ts:384</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L385">src/entity-query.ts:385</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns a new query that includes a collection of parameters to pass to the server.</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from(<span class="hljs-string">"EmployeesFilteredByCountryAndBirthdate"</span>)
-   .<span class="hljs-keyword">with</span><span class="hljs-constructor">Parameters({ BirthDate: <span class="hljs-string">"1/1/1960"</span>, Country: <span class="hljs-string">"USA"</span> })</span>;</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from(<span class="hljs-string">&quot;EmployeesFilteredByCountryAndBirthdate&quot;</span>)
+   .<span class="hljs-keyword">with</span><span class="hljs-constructor">Parameters({ BirthDate: <span class="hljs-string">&quot;1/1/1960&quot;</span>, Country: <span class="hljs-string">&quot;USA&quot;</span> })</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>will call the &#39;EmployeesFilteredByCountryAndBirthdate&#39; method on the server and pass in 2 parameters. This
 								query will be uri encoded as</p>
 								<blockquote>
-								<pre><code> {serviceApi}/EmployeesFilteredByCountryAndBirthdate?birthDate=<span class="hljs-number">1</span>%<span class="hljs-number">2</span>F1%<span class="hljs-number">2</span>F1960&amp;country=USA</code></pre></blockquote>
+									<pre><code> {serviceApi}/EmployeesFilteredByCountryAndBirthdate?birthDate<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-variable">%2</span>F<span class="hljs-number">1</span><span class="hljs-variable">%2</span>F<span class="hljs-number">1960</span>&amp;country<span class="hljs-operator">=</span>USA
+</code></pre>
+								</blockquote>
 								<p>Parameters may also be mixed in with other query criteria.</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from(<span class="hljs-string">"EmployeesFilteredByCountryAndBirthdate"</span>)
-   .<span class="hljs-keyword">with</span><span class="hljs-constructor">Parameters({ BirthDate: <span class="hljs-string">"1/1/1960"</span>, Country: <span class="hljs-string">"USA"</span> })</span>
-   .where(<span class="hljs-string">"LastName"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"S"</span>)
-   .order<span class="hljs-constructor">By(<span class="hljs-string">"BirthDate"</span>)</span>;</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from(<span class="hljs-string">&quot;EmployeesFilteredByCountryAndBirthdate&quot;</span>)
+   .<span class="hljs-keyword">with</span><span class="hljs-constructor">Parameters({ BirthDate: <span class="hljs-string">&quot;1/1/1960&quot;</span>, Country: <span class="hljs-string">&quot;USA&quot;</span> })</span>
+   .where(<span class="hljs-string">&quot;LastName&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;S&quot;</span>)
+   .order<span class="hljs-constructor">By(<span class="hljs-string">&quot;BirthDate&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1875,18 +2106,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L125">entity-query.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L125">src/entity-query.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>This is a static version of the &quot;from&quot; method and it creates a &#39;base&#39; entityQuery for the specified resource name.</p>
 									<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from(<span class="hljs-string">"Customers"</span>);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from(<span class="hljs-string">&quot;Customers&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>is the same as</p>
 								<blockquote>
-								<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>;</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1912,7 +2147,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L570">entity-query.ts:570</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L571">src/entity-query.ts:571</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1923,17 +2158,23 @@
 								<p>Works for a single entity or an array of entities of the SAME type.
 								Does not work for an array of entities of different types.</p>
 								<blockquote>
-									<pre><code> // assuming 'customers' is an<span class="hljs-built_in"> array </span>of 'Customer' entities retrieved earlier.
- let customersQuery = EntityQuery.fromEntities(customers);</code></pre></blockquote>
+									<pre><code> // assuming &#x27;customers&#x27; is an<span class="hljs-built_in"> array </span>of &#x27;Customer&#x27; entities retrieved earlier.
+ let customersQuery = EntityQuery.fromEntities(customers);
+</code></pre>
+								</blockquote>
 								<p>The resulting query can, of course, be extended</p>
 								<blockquote>
-									<pre><code> // assuming 'customers' is an<span class="hljs-built_in"> array </span>of 'Customer' entities retrieved earlier.
+									<pre><code> // assuming &#x27;customers&#x27; is an<span class="hljs-built_in"> array </span>of &#x27;Customer&#x27; entities retrieved earlier.
  let customersQuery = EntityQuery.fromEntities(customers)
-<span class="hljs-keyword">   .where</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.NotEquals, null);</code></pre></blockquote>
+<span class="hljs-keyword">   .where</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.NotEquals, null);
+</code></pre>
+								</blockquote>
 								<p>Single entities can requeried as well.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-comment">// assuming 'customer' is a 'Customer' entity retrieved earlier.</span>
- <span class="hljs-keyword">let</span> customerQuery = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">Entities(<span class="hljs-params">customer</span>)</span>;</code></pre></blockquote>
+									<pre><code> <span class="hljs-comment">// assuming &#x27;customer&#x27; is a &#x27;Customer&#x27; entity retrieved earlier.</span>
+ <span class="hljs-keyword">let</span> customerQuery = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">Entities(<span class="hljs-params">customer</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>will create a query that will return an array containing a single customer entity.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1947,7 +2188,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L571">entity-query.ts:571</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L572">src/entity-query.ts:572</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1958,28 +2199,29 @@
 								<p>Works for a single entity or an array of entities of the SAME type.
 								Does not work for an array of entities of different types.</p>
 								<blockquote>
-									<pre><code> // assuming 'customers' is an<span class="hljs-built_in"> array </span>of 'Customer' entities retrieved earlier.
- let customersQuery = EntityQuery.fromEntities(customers);</code></pre></blockquote>
+									<pre><code> // assuming &#x27;customers&#x27; is an<span class="hljs-built_in"> array </span>of &#x27;Customer&#x27; entities retrieved earlier.
+ let customersQuery = EntityQuery.fromEntities(customers);
+</code></pre>
+								</blockquote>
 								<p>The resulting query can, of course, be extended</p>
 								<blockquote>
-									<pre><code> // assuming 'customers' is an<span class="hljs-built_in"> array </span>of 'Customer' entities retrieved earlier.
+									<pre><code> // assuming &#x27;customers&#x27; is an<span class="hljs-built_in"> array </span>of &#x27;Customer&#x27; entities retrieved earlier.
  let customersQuery = EntityQuery.fromEntities(customers)
-<span class="hljs-keyword">   .where</span>(<span class="hljs-string">"Region"</span>, FilterQueryOp.NotEquals, null);</code></pre></blockquote>
+<span class="hljs-keyword">   .where</span>(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.NotEquals, null);
+</code></pre>
+								</blockquote>
 								<p>Single entities can requeried as well.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-comment">// assuming 'customer' is a 'Customer' entity retrieved earlier.</span>
- <span class="hljs-keyword">let</span> customerQuery = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">Entities(<span class="hljs-params">customer</span>)</span>;</code></pre></blockquote>
+									<pre><code> <span class="hljs-comment">// assuming &#x27;customer&#x27; is a &#x27;Customer&#x27; entity retrieved earlier.</span>
+ <span class="hljs-keyword">let</span> customerQuery = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">Entities(<span class="hljs-params">customer</span>)</span>;
+</code></pre>
+								</blockquote>
 								<p>will create a query that will return an array containing a single customer entity.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>entities: <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The entities for which we want to create an EntityQuery.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="entityquery.html" class="tsd-signature-type">EntityQuery</a></h4>
@@ -1996,22 +2238,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L630">entity-query.ts:630</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L631">src/entity-query.ts:631</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates an EntityQuery for the specified <a href="entitykey.html">EntityKey</a>.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> empType = metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Employee"</span>)</span>;
+										<pre><code> <span class="hljs-keyword">let</span> empType = metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">&quot;Employee&quot;</span>)</span>;
  <span class="hljs-keyword">let</span> entityKey = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityKey(<span class="hljs-params">empType</span>, 1)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">EntityKey(<span class="hljs-params">entityKey</span>)</span>;</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">EntityKey(<span class="hljs-params">entityKey</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
-									<pre><code> <span class="hljs-comment">// 'employee' is a previously queried employee</span>
+									<pre><code> <span class="hljs-comment">// &#x27;employee&#x27; is a previously queried employee</span>
  <span class="hljs-keyword">let</span> entityKey = employee.entityAspect.get<span class="hljs-constructor">Key()</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">EntityKey(<span class="hljs-params">entityKey</span>)</span>;</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">EntityKey(<span class="hljs-params">entityKey</span>)</span>;
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2036,16 +2282,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-query.ts#L648">entity-query.ts:648</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-query.ts#L649">src/entity-query.ts:649</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates an EntityQuery for the specified entity and <a href="navigationproperty.html">NavigationProperty</a>.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// 'employee' is a previously queried employee</span>
- <span class="hljs-keyword">let</span> ordersNavProp = employee.entityType.get<span class="hljs-constructor">Property(<span class="hljs-string">"Orders"</span>)</span>;
- <span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">EntityNavigation(<span class="hljs-params">employee</span>, <span class="hljs-params">ordersNavProp</span>)</span>;</code></pre></blockquote>
+										<pre><code> <span class="hljs-comment">// &#x27;employee&#x27; is a previously queried employee</span>
+ <span class="hljs-keyword">let</span> ordersNavProp = employee.entityType.get<span class="hljs-constructor">Property(<span class="hljs-string">&quot;Orders&quot;</span>)</span>;
+ <span class="hljs-keyword">let</span> query = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityQuery</span>.</span></span>from<span class="hljs-constructor">EntityNavigation(<span class="hljs-params">employee</span>, <span class="hljs-params">ordersNavProp</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>will return a query for the &quot;Orders&quot; of the specified &#39;employee&#39;.</p>
 							</div>
@@ -2135,6 +2383,9 @@
 								<a href="entityquery.html#takecount" class="tsd-kind-icon">take<wbr>Count</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="entityquery.html#usesnameonserver" class="tsd-kind-icon">uses<wbr>Name<wbr>OnServer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="entityquery.html#wherepredicate" class="tsd-kind-icon">where<wbr>Predicate</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -2216,66 +2467,13 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

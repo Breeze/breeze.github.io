@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>BreezeEvent | breeze-client</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -130,20 +130,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Breeze<wbr>Event<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, publisher<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, defaultErrorCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Breeze<wbr>Event<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, publisher<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, defaultErrorCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L53">event.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L53">src/event.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Constructor for an Event</p>
 									<blockquote>
-									<pre><code><span class="hljs-attr">salaryEvent</span> = new BreezeEvent(<span class="hljs-string">"salaryEvent"</span>, person)<span class="hljs-comment">;</span></code></pre></blockquote>
+										<pre><code><span class="hljs-attr">salaryEvent</span> = new BreezeEvent(<span class="hljs-string">&quot;salaryEvent&quot;</span>, person)<span class="hljs-comment">;</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -165,7 +167,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> defaultErrorCallback: <span class="tsd-signature-type">function</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> defaultErrorCallback: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Function to call when an error occurs during subscription execution.
@@ -173,16 +175,16 @@
 										</div>
 									</div>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>e: <span class="tsd-signature-type">Error</span></h5>
+															<h5>e: <a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -205,7 +207,7 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L46">event.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L46">src/event.ts:46</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -220,7 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">publisher<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L48">event.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L48">src/event.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -242,7 +244,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L185">event.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L185">src/event.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -258,30 +260,36 @@
 					<a name="publish" class="tsd-anchor"></a>
 					<h3>publish</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">publish<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, publishAsync<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, errorCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">publish<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, publishAsync<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, errorCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L95">event.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L95">src/event.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Publish data for this event.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// Assume 'salaryEvent' is previously constructed Event</span>
- salaryEvent.publish( { <span class="hljs-string">eventType:</span> <span class="hljs-string">"payRaise"</span>, <span class="hljs-string">amount:</span> <span class="hljs-number">100</span> });</code></pre></blockquote>
+										<pre><code> <span class="hljs-regexp">//</span> Assume <span class="hljs-string">&#x27;salaryEvent&#x27;</span> is previously constructed Event
+ salaryEvent.publish( { eventType: <span class="hljs-string">&quot;payRaise&quot;</span>, amount: <span class="hljs-number">100</span> });
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This event can also be published asychronously</p>
 								<blockquote>
-								<pre><code> <span class="hljs-selector-tag">salaryEvent</span><span class="hljs-selector-class">.publish</span>( { <span class="hljs-attribute">eventType</span>: <span class="hljs-string">"payRaise"</span>, amount: <span class="hljs-number">100</span> }, <span class="hljs-selector-tag">true</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-string">salaryEvent.publish(</span> { <span class="hljs-attr">eventType:</span> <span class="hljs-string">&quot;payRaise&quot;</span>, <span class="hljs-attr">amount:</span> <span class="hljs-number">100</span> }<span class="hljs-string">,</span> <span class="hljs-literal">true</span><span class="hljs-string">);</span>
+</code></pre>
+								</blockquote>
 								<p>And we can add a handler in case the subscriber &#39;mishandles&#39; the event.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-selector-tag">salaryEvent</span><span class="hljs-selector-class">.publish</span>( { <span class="hljs-attribute">eventType</span>: <span class="hljs-string">"payRaise"</span>, <span class="hljs-attribute">amount</span>: <span class="hljs-number">100</span> }, <span class="hljs-selector-tag">true</span>, <span class="hljs-selector-tag">function</span>(error) {
-     <span class="hljs-comment">// do something with the 'error' object</span>
- });</code></pre></blockquote>
+									<pre><code> salaryEvent.publish( { eventType: &quot;payRaise&quot;, amount: <span class="hljs-number">100</span> }, <span class="hljs-keyword">true</span>, <span class="hljs-keyword">function</span>(error) {
+     // <span class="hljs-keyword">do</span> something <span class="hljs-keyword">with</span> the <span class="hljs-string">&#x27;error&#x27;</span> <span class="hljs-keyword">object</span>
+ });
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -292,28 +300,28 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> publishAsync: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> publishAsync: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>(default=false) Whether to publish asynchonously or not.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorCallback: <span class="tsd-signature-type">function</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorCallback: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Function to be called for any errors that occur during publication. If omitted,
 										errors will be eaten.</p>
 									</div>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>e: <span class="tsd-signature-type">Error</span></h5>
+															<h5>e: <a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -332,53 +340,57 @@
 					<a name="publishasync" class="tsd-anchor"></a>
 					<h3>publish<wbr>Async</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">publish<wbr>Async<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, errorCallback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">publish<wbr>Async<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, errorCallback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L120">event.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L120">src/event.ts:120</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Publish data for this event asynchronously.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// Assume 'salaryEvent' is previously constructed Event</span>
- salaryEvent.publish<span class="hljs-constructor">Async( { <span class="hljs-params">eventType</span>: <span class="hljs-string">"payRaise"</span>, <span class="hljs-params">amount</span>: 100 })</span>;</code></pre></blockquote>
+										<pre><code> <span class="hljs-comment">// Assume &#x27;salaryEvent&#x27; is previously constructed Event</span>
+ salaryEvent.publish<span class="hljs-constructor">Async( { <span class="hljs-params">eventType</span>: <span class="hljs-string">&quot;payRaise&quot;</span>, <span class="hljs-params">amount</span>: 100 })</span>;
+</code></pre>
+									</blockquote>
 								</div>
 								<p>And we can add a handler in case the subscriber &#39;mishandles&#39; the event.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-selector-tag">salaryEvent</span><span class="hljs-selector-class">.publishAsync</span>( { <span class="hljs-attribute">eventType</span>: <span class="hljs-string">"payRaise"</span>, <span class="hljs-attribute">amount</span>: <span class="hljs-number">100</span> }, <span class="hljs-selector-tag">function</span>(error) {
-     <span class="hljs-comment">// do something with the 'error' object</span>
- });</code></pre></blockquote>
+									<pre><code> salaryEvent.publish<span class="hljs-constructor">Async( { <span class="hljs-params">eventType</span>: <span class="hljs-string">&quot;payRaise&quot;</span>, <span class="hljs-params">amount</span>: 100 }, <span class="hljs-params">function</span>(<span class="hljs-params">error</span>)</span> {
+     <span class="hljs-comment">// do something with the &#x27;error&#x27; object</span>
+ });
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <span class="tsd-signature-type">any</span></h5>
+									<h5>data: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Data to publish</p>
 									</div>
 								</li>
 								<li>
-									<h5>errorCallback: <span class="tsd-signature-type">function</span></h5>
+									<h5>errorCallback: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Function to be called for any errors that occur during publication. If omitted,
 										errors will be eaten.</p>
 									</div>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>e: <span class="tsd-signature-type">Error</span></h5>
+															<h5>e: <a href="../interfaces/servererror.html#error" class="tsd-signature-type">Error</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -396,50 +408,54 @@
 					<a name="subscribe" class="tsd-anchor"></a>
 					<h3>subscribe</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L144">event.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L144">src/event.ts:144</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Subscribe to this event.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// Assume 'salaryEvent' is previously constructed Event</span>
- salaryEvent.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(eventArgs)</span> </span>{
-     <span class="hljs-keyword">if</span> (eventArgs.eventType === <span class="hljs-string">"payRaise"</span>) {
-         <span class="hljs-comment">// do something</span>
+										<pre><code> <span class="hljs-regexp">//</span> Assume <span class="hljs-string">&#x27;salaryEvent&#x27;</span> is previously constructed Event
+ salaryEvent.subscribe(<span class="hljs-keyword">function</span> (eventArgs) {
+     <span class="hljs-keyword">if</span> (eventArgs.eventType === <span class="hljs-string">&quot;payRaise&quot;</span>) {
+         <span class="hljs-regexp">//</span> <span class="hljs-keyword">do</span> something
      }
- });</code></pre></blockquote>
+ });
+</code></pre>
+									</blockquote>
 								</div>
 								<p>There are several built in Breeze events, such as <a href="entityaspect.html#propertychanged">EntityAspect.propertyChanged</a>, <a href="entityaspect.html#validationerrorschanged">EntityAspect.validationErrorsChanged</a> as well.</p>
 								<blockquote>
-									<pre><code> <span class="hljs-comment">// Assume order is a preexisting 'order' entity</span>
- order.entityAspect.propertyChanged.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(pcEvent)</span> </span>{
-     <span class="hljs-keyword">if</span> ( pcEvent.propertyName === <span class="hljs-string">"OrderDate"</span>) {
-         <span class="hljs-comment">// do something</span>
+									<pre><code> <span class="hljs-regexp">//</span> Assume order is a preexisting <span class="hljs-string">&#x27;order&#x27;</span> entity
+ order.entityAspect.propertyChanged.subscribe(<span class="hljs-keyword">function</span> (pcEvent) {
+     <span class="hljs-keyword">if</span> ( pcEvent.propertyName === <span class="hljs-string">&quot;OrderDate&quot;</span>) {
+         <span class="hljs-regexp">//</span> <span class="hljs-keyword">do</span> something
      }
- });</code></pre></blockquote>
+ });
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<h5>callback: <span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>data: <span class="tsd-signature-type">any</span></h5>
+															<h5>data: <span class="tsd-signature-type">T</span></h5>
 															<div class="tsd-comment tsd-typography">
 																<p>{Object} Whatever &#39;data&#39; was published.  This should be documented on the specific event.</p>
 															</div>
@@ -467,19 +483,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L167">event.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L167">src/event.ts:167</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Unsubscribe from this event.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// Assume order is a preexisting 'order' entity</span>
- <span class="hljs-keyword">let</span> token = order.entityAspect.propertyChanged.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">pcEvent</span>) </span>{
-         <span class="hljs-comment">// do something</span>
+										<pre><code> <span class="hljs-regexp">//</span> Assume order is a preexisting <span class="hljs-string">&#x27;order&#x27;</span> entity
+ let token = order.entityAspect.propertyChanged.subscribe(<span class="hljs-keyword">function</span> (pcEvent) {
+         <span class="hljs-regexp">//</span> <span class="hljs-keyword">do</span> something
  });
- <span class="hljs-comment">// sometime later</span>
- order.entityAspect.propertyChanged.unsubscribe(token);</code></pre></blockquote>
+ <span class="hljs-regexp">//</span> sometime later
+ order.entityAspect.propertyChanged.unsubscribe(token);
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -503,13 +521,13 @@
 					<a name="bubbleevent" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> bubble<wbr>Event</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">bubble<wbr>Event<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, getParentFn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">bubble<wbr>Event<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, getParentFn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L192">event.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L192">src/event.ts:192</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -523,10 +541,10 @@
 									<h5>target: <span class="tsd-signature-type">any</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> getParentFn: <span class="tsd-signature-type">function</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> getParentFn: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -546,36 +564,46 @@
 					<a name="enable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> enable</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">enable<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, isEnabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">enable<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, isEnabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L222">event.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L223">src/event.ts:223</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Enables or disables the named event for an object and all of its children.</p>
 									<blockquote>
-									<pre><code> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BreezeEvent</span>.</span></span>enable(“propertyChanged”, myEntityManager, <span class="hljs-literal">false</span>)</code></pre></blockquote>
+										<pre><code> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BreezeEvent</span>.</span></span>enable(“propertyChanged”, myEntityManager, <span class="hljs-literal">false</span>)
+</code></pre>
+									</blockquote>
 								</div>
 								<p>will disable all EntityAspect.propertyChanged events within a EntityManager.</p>
 								<blockquote>
-								<pre><code> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BreezeEvent</span>.</span></span>enable(“propertyChanged”, myEntityManager, <span class="hljs-literal">true</span>)</code></pre></blockquote>
+									<pre><code> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BreezeEvent</span>.</span></span>enable(“propertyChanged”, myEntityManager, <span class="hljs-literal">true</span>)
+</code></pre>
+								</blockquote>
 								<p>will enable all EntityAspect.propertyChanged events within a EntityManager.</p>
 								<blockquote>
-								<pre><code> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BreezeEvent</span>.</span></span>enable(“propertyChanged”, myEntity.entityAspect, <span class="hljs-literal">false</span>)</code></pre></blockquote>
+									<pre><code> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BreezeEvent</span>.</span></span>enable(“propertyChanged”, myEntity.entityAspect, <span class="hljs-literal">false</span>)
+</code></pre>
+								</blockquote>
 								<p>will disable EntityAspect.propertyChanged events for a specific entity.</p>
 								<blockquote>
-								<pre><code> BreezeEvent.<span class="hljs-builtin-name">enable</span>(“propertyChanged”, myEntity.entityAspect, <span class="hljs-literal">null</span>)</code></pre></blockquote>
+									<pre><code> BreezeEvent.<span class="hljs-builtin-name">enable</span>(“propertyChanged”, myEntity.entityAspect, <span class="hljs-literal">null</span>)
+</code></pre>
+								</blockquote>
 								<p>will removes any enabling / disabling at the entity aspect level so now any &#39;Event.enable&#39; calls at the EntityManager level,
 								made either previously or in the future, will control notification.</p>
 								<blockquote>
 									<pre><code> BreezeEvent.enable(“validationErrorsChanged”, myEntityManager, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(em)</span> </span>{
      <span class="hljs-keyword">return</span> em.customTag === “blue”;
- })</code></pre></blockquote>
+ })
+</code></pre>
+								</blockquote>
 								<p>will either enable or disable myEntityManager based on the current value of a ‘customTag’ property on myEntityManager.
 								Note that this is dynamic, changing the customTag value will cause events to be enabled or disabled immediately.</p>
 							</div>
@@ -591,7 +619,7 @@
 									<h5>obj: <span class="tsd-signature-type">Object</span></h5>
 								</li>
 								<li>
-									<h5>isEnabled: <span class="tsd-signature-type">boolean</span></h5>
+									<h5>isEnabled: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A boolean, a null or a function that returns either a boolean or a null.</p>
 									</div>
@@ -605,20 +633,22 @@
 					<a name="isenabled" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> is<wbr>Enabled</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/event.ts#L241">event.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/event.ts#L242">src/event.ts:242</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns whether for a specific event and a specific object and its children, notification is enabled or disabled or not set.</p>
 									<blockquote>
-									<pre><code> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BreezeEvent</span>.</span></span>is<span class="hljs-constructor">Enabled(“<span class="hljs-params">propertyChanged</span>”, <span class="hljs-params">myEntityManager</span>)</span></code></pre></blockquote>
+										<pre><code> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BreezeEvent</span>.</span></span>is<span class="hljs-constructor">Enabled(“<span class="hljs-params">propertyChanged</span>”, <span class="hljs-params">myEntityManager</span>)</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -633,7 +663,7 @@
 									<h5>obj: <span class="tsd-signature-type">Object</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p>A null is returned if this value has not been set.</p>
 						</li>
 					</ul>
@@ -701,66 +731,13 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

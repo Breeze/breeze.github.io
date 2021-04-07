@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>EntityKey | breeze-client</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -122,7 +122,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L24">entity-key.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L24">src/entity-key.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -130,19 +130,25 @@
 									<p>Constructs a new EntityKey.  Each entity within an EntityManager will have a unique EntityKey.</p>
 									<blockquote>
 										<pre><code><span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
-<span class="hljs-keyword">var</span> empType = em1.metadataStore.getEntityType(<span class="hljs-string">"Employee"</span>);
-<span class="hljs-keyword">var</span> entityKey = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityKey</span>(empType, <span class="hljs-number">1</span>);</code></pre></blockquote>
+<span class="hljs-keyword">var</span> empType = em1.metadataStore.getEntityType(<span class="hljs-string">&quot;Employee&quot;</span>);
+<span class="hljs-keyword">var</span> entityKey = <span class="hljs-keyword">new</span> <span class="hljs-type">EntityKey</span>(empType, <span class="hljs-number">1</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>EntityKey&#39;s may also be found by calling EntityAspect.getKey()</p>
 								<blockquote>
 									<pre><code><span class="hljs-comment">// assume employee1 is an existing Employee entity</span>
-<span class="hljs-keyword">var</span> empKey = employee1.entityAspect.getKey();</code></pre></blockquote>
+<span class="hljs-keyword">var</span> empKey = employee1.entityAspect.getKey();
+</code></pre>
+								</blockquote>
 								<p>Multipart keys are created by passing an array as the &#39;keyValues&#39; parameter</p>
 								<blockquote>
-									<pre><code>var empTerrType = em1.metadataStore.getEntityType(<span class="hljs-string">"EmployeeTerritory"</span>);
+									<pre><code>var empTerrType = em1.metadataStore.getEntityType(<span class="hljs-string">&quot;EmployeeTerritory&quot;</span>);
 var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [ 1, 77]);
-// The order of the properties in the 'keyValues'<span class="hljs-built_in"> array </span>must be the same as that
-// returned by empTerrType.keyProperties</code></pre></blockquote>
+// The order of the properties in the &#x27;keyValues&#x27;<span class="hljs-built_in"> array </span>must be the same as that
+// returned by empTerrType.keyProperties
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -176,7 +182,7 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 					<div class="tsd-signature tsd-kind-icon">entity<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="entitytype.html" class="tsd-signature-type">EntityType</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L17">entity-key.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L17">src/entity-key.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -191,7 +197,7 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 					<div class="tsd-signature tsd-kind-icon">values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L20">entity-key.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L20">src/entity-key.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -214,7 +220,7 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L96">entity-key.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L96">src/entity-key.ts:96</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -224,13 +230,15 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 								</div>
 								<blockquote>
 									<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
- <span class="hljs-keyword">var</span> empType = em1.metadataStore.getEntityType(<span class="hljs-string">"Employee"</span>);
+ <span class="hljs-keyword">var</span> empType = em1.metadataStore.getEntityType(<span class="hljs-string">&quot;Employee&quot;</span>);
  <span class="hljs-keyword">var</span> empKey1 = <span class="hljs-keyword">new</span> EntityKey(empType, <span class="hljs-number">1</span>);
  <span class="hljs-comment">// assume employee1 is an existing Employee entity</span>
  <span class="hljs-keyword">var</span> empKey2 = employee1.entityAspect.getKey();
  <span class="hljs-keyword">if</span> (empKey1.<span class="hljs-keyword">equals</span>(empKey2)) {
      <span class="hljs-comment">// do something  ...</span>
- }</code></pre></blockquote>
+ }
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -246,17 +254,23 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 					<a name="tojson" class="tsd-anchor"></a>
 					<h3>toJSON</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>entityType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L71">entity-key.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L71">src/entity-key.ts:71</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>entityType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></h4>
 							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>entity<wbr>Type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -271,7 +285,7 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L105">entity-key.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L105">src/entity-key.ts:105</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -294,7 +308,7 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L134">entity-key.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L134">src/entity-key.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -322,7 +336,7 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L121">entity-key.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L121">src/entity-key.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -331,13 +345,15 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 									There is also an instance version of &#39;equals&#39; with the same functionality.</p>
 									<blockquote>
 										<pre><code> <span class="hljs-comment">// assume em1 is an EntityManager containing a number of existing entities.</span>
- var empType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">"Employee"</span>)</span>;
+ var empType = em1.metadataStore.get<span class="hljs-constructor">EntityType(<span class="hljs-string">&quot;Employee&quot;</span>)</span>;
  var empKey1 = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityKey(<span class="hljs-params">empType</span>, 1)</span>;
  <span class="hljs-comment">// assume employee1 is an existing Employee entity</span>
  var empKey2 = employee1.entityAspect.get<span class="hljs-constructor">Key()</span>;
  <span class="hljs-keyword">if</span> (<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EntityKey</span>.</span></span>equals(empKey1, empKey2)) {
      <span class="hljs-comment">// do something  ...</span>
- }</code></pre></blockquote>
+ }
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -363,7 +379,7 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-key.ts#L78">entity-key.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-key.ts#L78">src/entity-key.ts:78</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -436,66 +452,13 @@ var empTerrKey =<span class="hljs-built_in"> new </span>EntityKey(empTerrType, [
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

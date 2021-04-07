@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>EntityAspect | breeze-client</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -77,7 +77,9 @@
 					<blockquote>
 						<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
  <span class="hljs-keyword">var</span> <span class="hljs-keyword">aspect</span> = <span class="hljs-keyword">order</span>.entityAspect;
- <span class="hljs-keyword">var</span> currentState = <span class="hljs-keyword">aspect</span>.entityState;</code></pre></blockquote>
+ <span class="hljs-keyword">var</span> currentState = <span class="hljs-keyword">aspect</span>.entityState;
+</code></pre>
+					</blockquote>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -150,7 +152,7 @@
 					<div class="tsd-signature tsd-kind-icon">property<wbr>Changed<span class="tsd-signature-symbol">:</span> <a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/propertychangedeventargs.html" class="tsd-signature-type">PropertyChangedEventArgs</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L136">entity-aspect.ts:136</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L135">src/entity-aspect.ts:135</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -175,12 +177,14 @@
 									<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
  order.entityAspect.propertyChanged.subscribe(
  <span class="hljs-function"><span class="hljs-keyword">function</span> </span>(propertyChangedArgs) {
-     <span class="hljs-comment">// this code will be executed anytime a property value changes on the 'order' entity.</span>
+     <span class="hljs-comment">// this code will be executed anytime a property value changes on the &#x27;order&#x27; entity.</span>
      <span class="hljs-keyword">var</span> entity = propertyChangedArgs.entity; <span class="hljs-comment">// Note: entity === order</span>
      <span class="hljs-keyword">var</span> propertyNameChanged = propertyChangedArgs.propertyName;
      <span class="hljs-keyword">var</span> oldValue = propertyChangedArgs.oldValue;
      <span class="hljs-keyword">var</span> <span class="hljs-keyword">new</span><span class="hljs-type">Value</span> = propertyChangedArgs.<span class="hljs-keyword">new</span><span class="hljs-type">Value</span>;
- });</code></pre></blockquote>
+ });
+</code></pre>
+								</blockquote>
 							</dd>
 						</dl>
 					</div>
@@ -188,10 +192,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-external">
 					<a name="validationerrorschanged" class="tsd-anchor"></a>
 					<h3>validation<wbr>Errors<wbr>Changed</h3>
-					<div class="tsd-signature tsd-kind-icon">validation<wbr>Errors<wbr>Changed<span class="tsd-signature-symbol">:</span> <a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/validationerrorschangedeventargs.html" class="tsd-signature-type">ValidationErrorsChangedEventArgs</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">validation<wbr>Errors<wbr>Changed<span class="tsd-signature-symbol">:</span> <a href="breezeevent.html" class="tsd-signature-type">BreezeEvent</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValidationErrorsChangedEventArgs</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L111">entity-aspect.ts:111</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L110">src/entity-aspect.ts:110</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -212,11 +216,13 @@
 									<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
  order.entityAspect.validationErrorsChanged.subscribe(
  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(validationChangeArgs)</span> </span>{
-     <span class="hljs-comment">// this code will be executed anytime a property value changes on the 'order' entity.</span>
+     <span class="hljs-comment">// this code will be executed anytime a property value changes on the &#x27;order&#x27; entity.</span>
      <span class="hljs-keyword">var</span> entity == validationChangeArgs.entity; <span class="hljs-comment">// Note: entity === order</span>
      <span class="hljs-keyword">var</span> errorsAdded = validationChangeArgs.added;
      <span class="hljs-keyword">var</span> errorsCleared = validationChangeArgs.removed;
- });</code></pre></blockquote>
+ });
+</code></pre>
+								</blockquote>
 							</dd>
 						</dl>
 					</div>
@@ -230,7 +236,7 @@
 					<div class="tsd-signature tsd-kind-icon">entity<span class="tsd-signature-symbol">:</span> <a href="../interfaces/entity.html" class="tsd-signature-type">Entity</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L70">entity-aspect.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L69">src/entity-aspect.ts:69</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -245,7 +251,7 @@
 					<div class="tsd-signature tsd-kind-icon">entity<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="entitymanager.html" class="tsd-signature-type">EntityManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L72">entity-aspect.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L71">src/entity-aspect.ts:71</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -260,7 +266,7 @@
 					<div class="tsd-signature tsd-kind-icon">entity<wbr>State<span class="tsd-signature-symbol">:</span> <a href="entitystate.html" class="tsd-signature-type">EntityState</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L76">entity-aspect.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L75">src/entity-aspect.ts:75</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -275,7 +281,7 @@
 					<div class="tsd-signature tsd-kind-icon">extra<wbr>Metadata<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L91">entity-aspect.ts:91</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L90">src/entity-aspect.ts:90</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -292,7 +298,7 @@
 					<div class="tsd-signature tsd-kind-icon">has<wbr>Temp<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L85">entity-aspect.ts:85</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L84">src/entity-aspect.ts:84</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -307,7 +313,7 @@
 					<div class="tsd-signature tsd-kind-icon">has<wbr>Validation<wbr>Errors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L83">entity-aspect.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L82">src/entity-aspect.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -322,7 +328,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Being<wbr>Saved<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L78">entity-aspect.ts:78</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L77">src/entity-aspect.ts:77</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -334,10 +340,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="originalvalues" class="tsd-anchor"></a>
 					<h3>original<wbr>Values</h3>
-					<div class="tsd-signature tsd-kind-icon">original<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__type</span></div>
+					<div class="tsd-signature tsd-kind-icon">original<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L81">entity-aspect.ts:81</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L80">src/entity-aspect.ts:80</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -346,6 +352,11 @@
 							This is a map where the key is a property name and the value is the &#39;original value&#39; of the property.</p>
 						</div>
 					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="wasloaded" class="tsd-anchor"></a>
@@ -353,7 +364,7 @@
 					<div class="tsd-signature tsd-kind-icon">was<wbr>Loaded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L87">entity-aspect.ts:87</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L86">src/entity-aspect.ts:86</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -375,7 +386,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L265">entity-aspect.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L264">src/entity-aspect.ts:264</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -385,7 +396,9 @@
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-keyword">is</span> an <span class="hljs-keyword">order</span> entity attached <span class="hljs-keyword">to</span> an EntityManager.
  <span class="hljs-keyword">order</span>.entityAspect.acceptChanges();
- // The <span class="hljs-string">'order'</span> entity will now be <span class="hljs-keyword">in</span> an <span class="hljs-string">'Unchanged'</span> state <span class="hljs-keyword">with</span> <span class="hljs-keyword">any</span> changes <span class="hljs-keyword">committed</span>.</code></pre></blockquote>
+ // The <span class="hljs-string">&#x27;order&#x27;</span> entity will now be <span class="hljs-keyword">in</span> an <span class="hljs-string">&#x27;Unchanged&#x27;</span> state <span class="hljs-keyword">with</span> <span class="hljs-keyword">any</span> changes <span class="hljs-keyword">committed</span>.
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -402,7 +415,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L597">entity-aspect.ts:597</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L596">src/entity-aspect.ts:596</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -430,7 +443,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L622">entity-aspect.ts:622</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L621">src/entity-aspect.ts:621</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -452,7 +465,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L245">entity-aspect.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L244">src/entity-aspect.ts:244</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -460,13 +473,15 @@
 									<p>Returns the <a href="entitykey.html">EntityKey</a> for this Entity.</p>
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var entityKey = order.entityAspect.getKey();</code></pre></blockquote>
+ var entityKey = order.entityAspect.getKey();
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> forceRefresh: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> forceRefresh: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>(boolean=false) Forces the recalculation of the key.  This should normally be unnecessary.</p>
 									</div>
@@ -487,7 +502,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L642">entity-aspect.ts:642</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L641">src/entity-aspect.ts:641</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -521,7 +536,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L660">entity-aspect.ts:660</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L659">src/entity-aspect.ts:659</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -551,7 +566,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L560">entity-aspect.ts:560</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L559">src/entity-aspect.ts:559</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -561,16 +576,22 @@
 								<p>This method can return all of the errors for an Entity</p>
 								<blockquote>
 									<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var valErrors = order.entityAspect.getValidationErrors();</code></pre></blockquote>
+ var valErrors = order.entityAspect.getValidationErrors();
+</code></pre>
+								</blockquote>
 								<p>as well as those for just a specific property.</p>
 								<blockquote>
 									<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var orderDateErrors = order.entityAspect.getValidationErrors(<span class="hljs-string">"OrderDate"</span>);</code></pre></blockquote>
+ var orderDateErrors = order.entityAspect.getValidationErrors(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>which can also be expressed as</p>
 								<blockquote>
 									<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
- <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">"OrderDate"</span>);
- <span class="hljs-built_in">var</span> orderDateErrors = <span class="hljs-keyword">order</span>.entityAspect.getValidationErrors(orderDateProperty);</code></pre></blockquote>
+ <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+ <span class="hljs-built_in">var</span> orderDateErrors = <span class="hljs-keyword">order</span>.entityAspect.getValidationErrors(orderDateProperty);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="validationerror.html" class="tsd-signature-type">ValidationError</a><span class="tsd-signature-symbol">[]</span></h4>
 							<p>A array of validation errors.</p>
@@ -578,7 +599,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L561">entity-aspect.ts:561</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L560">src/entity-aspect.ts:560</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -588,27 +609,27 @@
 								<p>This method can return all of the errors for an Entity</p>
 								<blockquote>
 									<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var valErrors = order.entityAspect.getValidationErrors();</code></pre></blockquote>
+ var valErrors = order.entityAspect.getValidationErrors();
+</code></pre>
+								</blockquote>
 								<p>as well as those for just a specific property.</p>
 								<blockquote>
 									<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var orderDateErrors = order.entityAspect.getValidationErrors(<span class="hljs-string">"OrderDate"</span>);</code></pre></blockquote>
+ var orderDateErrors = order.entityAspect.getValidationErrors(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>which can also be expressed as</p>
 								<blockquote>
 									<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
- <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">"OrderDate"</span>);
- <span class="hljs-built_in">var</span> orderDateErrors = <span class="hljs-keyword">order</span>.entityAspect.getValidationErrors(orderDateProperty);</code></pre></blockquote>
+ <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+ <span class="hljs-built_in">var</span> orderDateErrors = <span class="hljs-keyword">order</span>.entityAspect.getValidationErrors(orderDateProperty);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>property: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The property for which validation errors should be retrieved.
-											If omitted, all of the validation errors for this entity will be returned.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="validationerror.html" class="tsd-signature-type">ValidationError</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -617,7 +638,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L562">entity-aspect.ts:562</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L561">src/entity-aspect.ts:561</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -627,27 +648,27 @@
 								<p>This method can return all of the errors for an Entity</p>
 								<blockquote>
 									<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var valErrors = order.entityAspect.getValidationErrors();</code></pre></blockquote>
+ var valErrors = order.entityAspect.getValidationErrors();
+</code></pre>
+								</blockquote>
 								<p>as well as those for just a specific property.</p>
 								<blockquote>
 									<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var orderDateErrors = order.entityAspect.getValidationErrors(<span class="hljs-string">"OrderDate"</span>);</code></pre></blockquote>
+ var orderDateErrors = order.entityAspect.getValidationErrors(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+</code></pre>
+								</blockquote>
 								<p>which can also be expressed as</p>
 								<blockquote>
 									<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
- <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">"OrderDate"</span>);
- <span class="hljs-built_in">var</span> orderDateErrors = <span class="hljs-keyword">order</span>.entityAspect.getValidationErrors(orderDateProperty);</code></pre></blockquote>
+ <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+ <span class="hljs-built_in">var</span> orderDateErrors = <span class="hljs-keyword">order</span>.entityAspect.getValidationErrors(orderDateProperty);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>property: <a href="../globals.html#entityproperty" class="tsd-signature-type">EntityProperty</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The property for which validation errors should be retrieved.
-											If omitted, all of the validation errors for this entity will be returned.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="validationerror.html" class="tsd-signature-type">ValidationError</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -666,7 +687,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L471">entity-aspect.ts:471</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L470">src/entity-aspect.ts:470</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -682,7 +703,9 @@
 									<li>The <a href="entityaspect.html#marknavigationpropertyasloaded">EntityAspect.markNavigationPropertyAsLoaded</a> was called.</li>
 								</ol>
 								<blockquote>
-								<pre><code><span class="hljs-attribute">var wasLoaded</span> = emp.entityAspect.isNavigationPropertyLoaded(<span class="hljs-string">"Orders"</span>);</code></pre></blockquote>
+									<pre><code>var wasLoaded = emp.entityAspect.isNavigationPropertyLoaded(<span class="hljs-string">&quot;Orders&quot;</span>)<span class="hljs-comment">;</span>
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -700,7 +723,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L472">entity-aspect.ts:472</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L471">src/entity-aspect.ts:471</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -716,17 +739,14 @@
 									<li>The <a href="entityaspect.html#marknavigationpropertyasloaded">EntityAspect.markNavigationPropertyAsLoaded</a> was called.</li>
 								</ol>
 								<blockquote>
-								<pre><code><span class="hljs-attribute">var wasLoaded</span> = emp.entityAspect.isNavigationPropertyLoaded(<span class="hljs-string">"Orders"</span>);</code></pre></blockquote>
+									<pre><code>var wasLoaded = emp.entityAspect.isNavigationPropertyLoaded(<span class="hljs-string">&quot;Orders&quot;</span>)<span class="hljs-comment">;</span>
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>navigationProperty: <a href="navigationproperty.html" class="tsd-signature-type">NavigationProperty</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The NavigationProperty or name of NavigationProperty to &#39;load&#39;.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -744,18 +764,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L425">entity-aspect.ts:425</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L424">src/entity-aspect.ts:424</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Performs a query for the value of a specified <a href="navigationproperty.html">NavigationProperty</a>. <strong>Async</strong></p>
 									<blockquote>
-										<pre><code> emp.entityAspect.loadNavigationProperty(<span class="hljs-string">"Orders"</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(data)</span> </span>{
+										<pre><code> emp.entityAspect.loadNavigationProperty(<span class="hljs-string">&quot;Orders&quot;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
      <span class="hljs-keyword">var</span> orders = data.results;
- }).<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(exception)</span> </span>{
+ }).<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"><span class="hljs-built_in">exception</span></span>) </span>{
      <span class="hljs-comment">// handle exception here;</span>
- });</code></pre></blockquote>
+ });
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -796,45 +818,32 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L426">entity-aspect.ts:426</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L425">src/entity-aspect.ts:425</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Performs a query for the value of a specified <a href="navigationproperty.html">NavigationProperty</a>. <strong>Async</strong></p>
 									<blockquote>
-										<pre><code> emp.entityAspect.loadNavigationProperty(<span class="hljs-string">"Orders"</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(data)</span> </span>{
+										<pre><code> emp.entityAspect.loadNavigationProperty(<span class="hljs-string">&quot;Orders&quot;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
      <span class="hljs-keyword">var</span> orders = data.results;
- }).<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(exception)</span> </span>{
+ }).<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"><span class="hljs-built_in">exception</span></span>) </span>{
      <span class="hljs-comment">// handle exception here;</span>
- });</code></pre></blockquote>
+ });
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>navigationProperty: <a href="navigationproperty.html" class="tsd-signature-type">NavigationProperty</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The NavigationProperty or the name of the NavigationProperty to &#39;load&#39;.</p>
-										</div>
-									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <a href="../interfaces/querysuccesscallback.html" class="tsd-signature-type">QuerySuccessCallback</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Function to call on success.</p>
-										</div>
-									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorCallback: <a href="../interfaces/queryerrorcallback.html" class="tsd-signature-type">QueryErrorCallback</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Function to call on failure.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/queryresult.html" class="tsd-signature-type">QueryResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -857,14 +866,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L465">entity-aspect.ts:465</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L464">src/entity-aspect.ts:464</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Marks this navigationProperty on this entity as already having been loaded.</p>
 									<blockquote>
-									<pre><code> emp.entityAspect.markNavigationPropertyAsLoaded(<span class="hljs-string">"Orders"</span>)<span class="hljs-comment">;</span></code></pre></blockquote>
+										<pre><code> emp.entityAspect.markNavigationPropertyAsLoaded(<span class="hljs-string">&quot;Orders&quot;</span>)<span class="hljs-comment">;</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -890,7 +901,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L284">entity-aspect.ts:284</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L283">src/entity-aspect.ts:283</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -900,7 +911,9 @@
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-keyword">is</span> an <span class="hljs-keyword">order</span> entity attached <span class="hljs-keyword">to</span> an EntityManager.
  <span class="hljs-keyword">order</span>.entityAspect.rejectChanges();
- // The <span class="hljs-string">'order'</span> entity will now be <span class="hljs-keyword">in</span> an <span class="hljs-string">'Unchanged'</span> state <span class="hljs-keyword">with</span> <span class="hljs-keyword">any</span> changes rejected.</code></pre></blockquote>
+ // The <span class="hljs-string">&#x27;order&#x27;</span> entity will now be <span class="hljs-keyword">in</span> an <span class="hljs-string">&#x27;Unchanged&#x27;</span> state <span class="hljs-keyword">with</span> <span class="hljs-keyword">any</span> changes rejected.
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -918,7 +931,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L604">entity-aspect.ts:604</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L603">src/entity-aspect.ts:603</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -937,7 +950,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L605">entity-aspect.ts:605</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L604">src/entity-aspect.ts:604</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -965,7 +978,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L323">entity-aspect.ts:323</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L322">src/entity-aspect.ts:322</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -975,9 +988,11 @@
 										unless you are certain that the entity being marked &#39;Added&#39; does not already exist in the database and does not have an autogenerated key.
 									The same operation can be performed by calling <a href="entityaspect.html#setentitystate">EntityAspect.setEntityState</a>.</p>
 									<blockquote>
-										<pre><code> // assume order is an order entity attached <span class="hljs-keyword">to</span> an EntityManager.
- order.entityAspect.<span class="hljs-built_in">set</span>Added();
- // The 'order' entity will now be <span class="hljs-keyword">in</span> an 'Added' <span class="hljs-keyword">state</span>.</code></pre></blockquote>
+										<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
+ <span class="hljs-attribute">order</span><span class="hljs-selector-class">.entityAspect</span><span class="hljs-selector-class">.setAdded</span>();
+ <span class="hljs-comment">// The &#x27;order&#x27; entity will now be in an &#x27;Added&#x27; state.</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -994,7 +1009,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L358">entity-aspect.ts:358</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L357">src/entity-aspect.ts:357</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1005,7 +1020,9 @@
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-keyword">is</span> an <span class="hljs-keyword">order</span> entity attached <span class="hljs-keyword">to</span> an EntityManager.
  <span class="hljs-keyword">order</span>.entityAspect.setDeleted();
- // The <span class="hljs-string">'order'</span> entity will now be <span class="hljs-keyword">in</span> a <span class="hljs-string">'Deleted'</span> state <span class="hljs-keyword">and</span> it will <span class="hljs-keyword">no</span> longer have <span class="hljs-keyword">any</span> <span class="hljs-string">'related'</span> entities.</code></pre></blockquote>
+ // The <span class="hljs-string">&#x27;order&#x27;</span> entity will now be <span class="hljs-keyword">in</span> a <span class="hljs-string">&#x27;Deleted&#x27;</span> state <span class="hljs-keyword">and</span> it will <span class="hljs-keyword">no</span> longer have <span class="hljs-keyword">any</span> <span class="hljs-string">&#x27;related&#x27;</span> entities.
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1022,7 +1039,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L369">entity-aspect.ts:369</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L368">src/entity-aspect.ts:368</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1032,7 +1049,9 @@
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-keyword">is</span> an <span class="hljs-keyword">order</span> entity attached <span class="hljs-keyword">to</span> an EntityManager.
  <span class="hljs-keyword">order</span>.entityAspect.setDetached();
- // The <span class="hljs-string">'order'</span> entity will now be <span class="hljs-keyword">in</span> a <span class="hljs-string">'Detached'</span> state <span class="hljs-keyword">and</span> it will <span class="hljs-keyword">no</span> longer have <span class="hljs-keyword">any</span> <span class="hljs-string">'related'</span> entities.</code></pre></blockquote>
+ // The <span class="hljs-string">&#x27;order&#x27;</span> entity will now be <span class="hljs-keyword">in</span> a <span class="hljs-string">&#x27;Detached&#x27;</span> state <span class="hljs-keyword">and</span> it will <span class="hljs-keyword">no</span> longer have <span class="hljs-keyword">any</span> <span class="hljs-string">&#x27;related&#x27;</span> entities.
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1049,16 +1068,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L379">entity-aspect.ts:379</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L378">src/entity-aspect.ts:378</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Sets the entity to the specified EntityState. See also &#39;setUnchanged&#39;, &#39;setModified&#39;, &#39;setDetached&#39;, etc.</p>
 									<blockquote>
-										<pre><code> // assume order is an order entity attached <span class="hljs-keyword">to</span> an EntityManager.
- order.entityAspect.<span class="hljs-built_in">set</span>EntityState(EntityState.Unchanged);
- // The 'order' entity will now be <span class="hljs-keyword">in</span> a 'Unchanged' <span class="hljs-keyword">state</span>.</code></pre></blockquote>
+										<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
+ <span class="hljs-attribute">order</span><span class="hljs-selector-class">.entityAspect</span><span class="hljs-selector-class">.setEntityState</span>(EntityState.Unchanged);
+ <span class="hljs-comment">// The &#x27;order&#x27; entity will now be in a &#x27;Unchanged&#x27; state.</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1081,7 +1102,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L346">entity-aspect.ts:346</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L345">src/entity-aspect.ts:345</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1089,9 +1110,11 @@
 									<p>Sets the entity to an EntityState of &#39;Modified&#39;.  This can also be achieved by changing the value of any property on an &#39;Unchanged&#39; entity.
 									The same operation can be performed by calling <a href="entityaspect.html#setentitystate">EntityAspect.setEntityState</a>.</p>
 									<blockquote>
-										<pre><code> // assume order is an order entity attached <span class="hljs-keyword">to</span> an EntityManager.
- order.entityAspect.<span class="hljs-built_in">set</span>Modified();
- // The 'order' entity will now be <span class="hljs-keyword">in</span> a 'Modified' <span class="hljs-keyword">state</span>.</code></pre></blockquote>
+										<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
+ <span class="hljs-attribute">order</span><span class="hljs-selector-class">.entityAspect</span><span class="hljs-selector-class">.setModified</span>();
+ <span class="hljs-comment">// The &#x27;order&#x27; entity will now be in a &#x27;Modified&#x27; state.</span>
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1108,7 +1131,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L334">entity-aspect.ts:334</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L333">src/entity-aspect.ts:333</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1118,7 +1141,9 @@
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-keyword">is</span> an <span class="hljs-keyword">order</span> entity attached <span class="hljs-keyword">to</span> an EntityManager.
  <span class="hljs-keyword">order</span>.entityAspect.setUnchanged();
- // The <span class="hljs-string">'order'</span> entity will now be <span class="hljs-keyword">in</span> an <span class="hljs-string">'Unchanged'</span> state <span class="hljs-keyword">with</span> <span class="hljs-keyword">any</span> changes <span class="hljs-keyword">committed</span>.</code></pre></blockquote>
+ // The <span class="hljs-string">&#x27;order&#x27;</span> entity will now be <span class="hljs-keyword">in</span> an <span class="hljs-string">&#x27;Unchanged&#x27;</span> state <span class="hljs-keyword">with</span> <span class="hljs-keyword">any</span> changes <span class="hljs-keyword">committed</span>.
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1135,7 +1160,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L515">entity-aspect.ts:515</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L514">src/entity-aspect.ts:514</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1146,10 +1171,12 @@
 									<blockquote>
 										<pre><code> <span class="hljs-comment">// assume order is an order entity attached to an EntityManager.</span>
  <span class="hljs-built_in">var</span> isOk = <span class="hljs-keyword">order</span>.entityAspect.validateEntity();
- <span class="hljs-comment">// isOk will be 'true' if there are no errors on the entity.</span>
+ <span class="hljs-comment">// isOk will be &#x27;true&#x27; if there are no errors on the entity.</span>
  <span class="hljs-keyword">if</span> (!isOk) {
      <span class="hljs-built_in">var</span> errors = <span class="hljs-keyword">order</span>.entityAspect.getValidationErrors();
- }</code></pre></blockquote>
+ }
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1169,7 +1196,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L523">entity-aspect.ts:523</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L522">src/entity-aspect.ts:522</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1180,12 +1207,16 @@
 									of an entity is changed.</p>
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var isOk = order.entityAspect.validateProperty(<span class="hljs-string">"Order"</span>);</code></pre></blockquote>
+ var isOk = order.entityAspect.validateProperty(<span class="hljs-string">&quot;Order&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
-									<pre><code><span class="hljs-attribute"> var orderDateProperty</span> = order.entityType.getProperty(<span class="hljs-string">"OrderDate"</span>);
-<span class="hljs-attribute"> var isOk</span> = order.entityAspect.validateProperty(OrderDateProperty);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+ <span class="hljs-built_in">var</span> isOk = <span class="hljs-keyword">order</span>.entityAspect.validateProperty(OrderDateProperty);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1213,7 +1244,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L524">entity-aspect.ts:524</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L523">src/entity-aspect.ts:523</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1224,31 +1255,24 @@
 									of an entity is changed.</p>
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var isOk = order.entityAspect.validateProperty(<span class="hljs-string">"Order"</span>);</code></pre></blockquote>
+ var isOk = order.entityAspect.validateProperty(<span class="hljs-string">&quot;Order&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
-									<pre><code><span class="hljs-attribute"> var orderDateProperty</span> = order.entityType.getProperty(<span class="hljs-string">"OrderDate"</span>);
-<span class="hljs-attribute"> var isOk</span> = order.entityAspect.validateProperty(OrderDateProperty);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+ <span class="hljs-built_in">var</span> isOk = <span class="hljs-keyword">order</span>.entityAspect.validateProperty(OrderDateProperty);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>property: <a href="dataproperty.html" class="tsd-signature-type">DataProperty</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The <a href="dataproperty.html">DataProperty</a> or <a href="navigationproperty.html">NavigationProperty</a> to validate or a string
-											with the name of the property or a property path with the path to a property of a complex object.</p>
-										</div>
-									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> context: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>A context object used to pass additional information to each <a href="validator.html">Validator</a>.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1257,7 +1281,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L525">entity-aspect.ts:525</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L524">src/entity-aspect.ts:524</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1268,31 +1292,24 @@
 									of an entity is changed.</p>
 									<blockquote>
 										<pre><code> // assume <span class="hljs-keyword">order</span> <span class="hljs-title">is</span> an <span class="hljs-keyword">order</span> <span class="hljs-title">entity</span> attached to an EntityManager.
- var isOk = order.entityAspect.validateProperty(<span class="hljs-string">"Order"</span>);</code></pre></blockquote>
+ var isOk = order.entityAspect.validateProperty(<span class="hljs-string">&quot;Order&quot;</span>);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
-									<pre><code><span class="hljs-attribute"> var orderDateProperty</span> = order.entityType.getProperty(<span class="hljs-string">"OrderDate"</span>);
-<span class="hljs-attribute"> var isOk</span> = order.entityAspect.validateProperty(OrderDateProperty);</code></pre></blockquote>
+									<pre><code> <span class="hljs-built_in">var</span> orderDateProperty = <span class="hljs-keyword">order</span>.entityType.getProperty(<span class="hljs-string">&quot;OrderDate&quot;</span>);
+ <span class="hljs-built_in">var</span> isOk = <span class="hljs-keyword">order</span>.entityAspect.validateProperty(OrderDateProperty);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>property: <a href="navigationproperty.html" class="tsd-signature-type">NavigationProperty</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The <a href="dataproperty.html">DataProperty</a> or <a href="navigationproperty.html">NavigationProperty</a> to validate or a string
-											with the name of the property or a property path with the path to a property of a complex object.</p>
-										</div>
-									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> context: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>A context object used to pass additional information to each <a href="validator.html">Validator</a>.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1310,7 +1327,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/entity-aspect.ts#L223">entity-aspect.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/entity-aspect.ts#L222">src/entity-aspect.ts:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1458,66 +1475,13 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

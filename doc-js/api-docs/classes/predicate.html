@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Predicate | breeze-client</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -57,7 +57,7 @@
 					<a href="predicate.html">Predicate</a>
 				</li>
 			</ul>
-			<h1>Class Predicate</h1>
+			<h1>Class Predicate&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -71,6 +71,14 @@
 						method that would modify a Predicate actually returns a new Predicate.</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
@@ -126,20 +134,24 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L61">predicate.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L61">src/predicate.ts:61</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Predicate constructor</p>
 									<blockquote>
-										<pre><code><span class="hljs-keyword">let</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Predicate(<span class="hljs-string">"CompanyName"</span>, <span class="hljs-string">"StartsWith"</span>, <span class="hljs-string">"B"</span>)</span>;
-<span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">"Customers"</span>)</span>.where(p1);</code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">let</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Predicate(<span class="hljs-string">&quot;CompanyName&quot;</span>, <span class="hljs-string">&quot;StartsWith&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>)</span>;
+<span class="hljs-keyword">let</span> query = <span class="hljs-keyword">new</span> <span class="hljs-constructor">EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>)</span>.where(p1);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
-									<pre><code><span class="hljs-keyword">let</span> p2 = <span class="hljs-literal">new</span> Predicate(<span class="hljs-string">"Region"</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
-<span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">"Customers"</span>).<span class="hljs-keyword">where</span>(p2);</code></pre></blockquote>
+									<pre><code><span class="hljs-keyword">let</span> p2 = <span class="hljs-literal">new</span> Predicate(<span class="hljs-string">&quot;Region&quot;</span>, FilterQueryOp.<span class="hljs-keyword">Equals</span>, <span class="hljs-built_in">null</span>);
+<span class="hljs-keyword">let</span> query = <span class="hljs-literal">new</span> EntityQuery(<span class="hljs-string">&quot;Customers&quot;</span>).<span class="hljs-keyword">where</span>(p2);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -160,7 +172,7 @@
 					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <a href="../interfaces/op.html" class="tsd-signature-type">Op</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L56">predicate.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L56">src/predicate.ts:56</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -170,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">visitor<wbr>Method<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L61">predicate.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L61">src/predicate.ts:61</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -187,7 +199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L240">predicate.ts:240</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L240">src/predicate.ts:240</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -195,19 +207,25 @@
 									<p>&#39;And&#39;s this Predicate with one or more other Predicates and returns a new &#39;composite&#39; Predicate</p>
 									<blockquote>
 										<pre><code> <span class="hljs-keyword">let</span> dt = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date(88, 9, 12)</span>;
- <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"OrderDate"</span>, <span class="hljs-string">"ne"</span>, dt);
- <span class="hljs-keyword">let</span> p2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"ShipCity"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);
- <span class="hljs-keyword">let</span> p3 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"&gt;"</span>, <span class="hljs-number">100</span>);
- <span class="hljs-keyword">let</span> newPred = p1.<span class="hljs-keyword">and</span>(p2, p3);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;OrderDate&quot;</span>, <span class="hljs-string">&quot;ne&quot;</span>, dt);
+ <span class="hljs-keyword">let</span> p2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;ShipCity&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-keyword">let</span> p3 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;&gt;&quot;</span>, <span class="hljs-number">100</span>);
+ <span class="hljs-keyword">let</span> newPred = p1.<span class="hljs-keyword">and</span>(p2, p3);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> <span class="hljs-attr">preds</span> = [p2, p3];
- <span class="hljs-keyword">let</span> <span class="hljs-attr">newPred</span> = p1.<span class="hljs-literal">and</span>(preds);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> <span class="hljs-attr">newPred</span> = p1.<span class="hljs-literal">and</span>(preds);
+</code></pre>
+								</blockquote>
 								<p>The &#39;and&#39; method is also used to write &quot;fluent&quot; expressions</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> p4 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"ShipCity"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"F"</span>)
-   .<span class="hljs-keyword">and</span>(<span class="hljs-string">"Size"</span>, <span class="hljs-string">"gt"</span>, <span class="hljs-number">2000</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> p4 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;ShipCity&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;F&quot;</span>)
+   .<span class="hljs-keyword">and</span>(<span class="hljs-string">&quot;Size&quot;</span>, <span class="hljs-string">&quot;gt&quot;</span>, <span class="hljs-number">2000</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -229,23 +247,29 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L278">predicate.ts:278</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L278">src/predicate.ts:278</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns the &#39;negated&#39; version of this Predicate</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> <span class="hljs-attr">p1</span> = Predicate.create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"gt"</span>, <span class="hljs-number">100</span>);
- <span class="hljs-keyword">let</span> <span class="hljs-attr">not_p1</span> = p1.not();</code></pre></blockquote>
+										<pre><code> <span class="hljs-attribute">let</span> p<span class="hljs-number">1</span> = Predicate.create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;gt&quot;</span>, <span class="hljs-number">100</span>);
+ <span class="hljs-attribute">let</span> not_p<span class="hljs-number">1</span> = p<span class="hljs-number">1</span>.not();
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be accomplished using the &#39;static&#39; version of the &#39;not&#39; method</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"gt"</span>, <span class="hljs-number">100</span>);
- <span class="hljs-keyword">let</span> not_p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>not(p1);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;gt&quot;</span>, <span class="hljs-number">100</span>);
+ <span class="hljs-keyword">let</span> not_p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>not(p1);
+</code></pre>
+								</blockquote>
 								<p>which would be the same as</p>
 								<blockquote>
-								<pre><code> <span class="hljs-keyword">let</span> not_p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"le"</span>, <span class="hljs-number">100</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> not_p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;le&quot;</span>, <span class="hljs-number">100</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">UnaryPredicate</span></h4>
 						</li>
@@ -261,7 +285,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L262">predicate.ts:262</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L262">src/predicate.ts:262</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -269,19 +293,25 @@
 									<p>&#39;Or&#39;s this Predicate with one or more other Predicates and returns a new &#39;composite&#39; Predicate</p>
 									<blockquote>
 										<pre><code> <span class="hljs-keyword">let</span> dt = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date(88, 9, 12)</span>;
- <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"OrderDate"</span>, <span class="hljs-string">"ne"</span>, dt);
- <span class="hljs-keyword">let</span> p2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"ShipCity"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);
- <span class="hljs-keyword">let</span> p3 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"&gt;"</span>, <span class="hljs-number">100</span>);
- <span class="hljs-keyword">let</span> newPred = p1.<span class="hljs-keyword">or</span>(p2, p3);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;OrderDate&quot;</span>, <span class="hljs-string">&quot;ne&quot;</span>, dt);
+ <span class="hljs-keyword">let</span> p2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;ShipCity&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-keyword">let</span> p3 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;&gt;&quot;</span>, <span class="hljs-number">100</span>);
+ <span class="hljs-keyword">let</span> newPred = p1.<span class="hljs-keyword">or</span>(p2, p3);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> <span class="hljs-attr">preds</span> = [p2, p3];
- <span class="hljs-keyword">let</span> <span class="hljs-attr">newPred</span> = p1.<span class="hljs-literal">or</span>(preds);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> <span class="hljs-attr">newPred</span> = p1.<span class="hljs-literal">or</span>(preds);
+</code></pre>
+								</blockquote>
 								<p>The &#39;or&#39; method is also used to write &quot;fluent&quot; expressions</p>
 								<blockquote>
-									<pre><code> <span class="hljs-keyword">let</span> p4 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"ShipCity"</span>, <span class="hljs-string">"startswith"</span>, <span class="hljs-string">"F"</span>)
-   .<span class="hljs-keyword">or</span>(<span class="hljs-string">"Size"</span>, <span class="hljs-string">"gt"</span>, <span class="hljs-number">2000</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> p4 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;ShipCity&quot;</span>, <span class="hljs-string">&quot;startswith&quot;</span>, <span class="hljs-string">&quot;F&quot;</span>)
+   .<span class="hljs-keyword">or</span>(<span class="hljs-string">&quot;Size&quot;</span>, <span class="hljs-string">&quot;gt&quot;</span>, <span class="hljs-number">2000</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -303,7 +333,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L283">predicate.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L283">src/predicate.ts:283</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -320,7 +350,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L305">predicate.ts:305</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L305">src/predicate.ts:305</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -337,7 +367,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L157">predicate.ts:157</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L157">src/predicate.ts:157</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -345,15 +375,19 @@
 									<p>Creates a &#39;composite&#39; Predicate by &#39;and&#39;ing a set of specified Predicates together.</p>
 									<blockquote>
 										<pre><code> <span class="hljs-keyword">let</span> dt = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date(88, 9, 12)</span>;
- <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"OrderDate"</span>, <span class="hljs-string">"ne"</span>, dt);
- <span class="hljs-keyword">let</span> p2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"ShipCity"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);
- <span class="hljs-keyword">let</span> p3 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"&gt;"</span>, <span class="hljs-number">100</span>);
- <span class="hljs-keyword">let</span> newPred = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span><span class="hljs-keyword">and</span>(p1, p2, p3);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;OrderDate&quot;</span>, <span class="hljs-string">&quot;ne&quot;</span>, dt);
+ <span class="hljs-keyword">let</span> p2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;ShipCity&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-keyword">let</span> p3 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;&gt;&quot;</span>, <span class="hljs-number">100</span>);
+ <span class="hljs-keyword">let</span> newPred = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span><span class="hljs-keyword">and</span>(p1, p2, p3);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> <span class="hljs-attr">preds</span> = [p1, p2, p3];
- <span class="hljs-keyword">let</span> <span class="hljs-attr">newPred</span> = Predicate.<span class="hljs-literal">and</span>(preds);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> <span class="hljs-attr">newPred</span> = Predicate.<span class="hljs-literal">and</span>(preds);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -369,13 +403,13 @@
 					<a name="create" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="predicate.html" class="tsd-signature-type">Predicate</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Predicate</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L104">predicate.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L104">src/predicate.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -385,7 +419,9 @@
 										<pre><code> <span class="hljs-comment">// so</span>
  <span class="hljs-keyword">let</span> p = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(a, b, c);
  <span class="hljs-comment">// is the same as</span>
- <span class="hljs-keyword">let</span> p = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Predicate(<span class="hljs-params">a</span>, <span class="hljs-params">b</span>, <span class="hljs-params">c</span>)</span>;</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> p = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Predicate(<span class="hljs-params">a</span>, <span class="hljs-params">b</span>, <span class="hljs-params">c</span>)</span>;
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -394,7 +430,7 @@
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="predicate.html" class="tsd-signature-type">Predicate</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Predicate</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -402,33 +438,39 @@
 					<a name="not-1" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> not</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">not<span class="tsd-signature-symbol">(</span>pred<span class="tsd-signature-symbol">: </span><a href="predicate.html" class="tsd-signature-type">Predicate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UnaryPredicate</span></li>
+						<li class="tsd-signature tsd-kind-icon">not<span class="tsd-signature-symbol">(</span>pred<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Predicate</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UnaryPredicate</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L196">predicate.ts:196</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L196">src/predicate.ts:196</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates a &#39;composite&#39; Predicate by &#39;negating&#39; a specified predicate.</p>
 									<blockquote>
-										<pre><code> <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"gt"</span>, <span class="hljs-number">100</span>);
- <span class="hljs-keyword">let</span> not_p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>not(p1);</code></pre></blockquote>
+										<pre><code> <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;gt&quot;</span>, <span class="hljs-number">100</span>);
+ <span class="hljs-keyword">let</span> not_p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>not(p1);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>This can also be accomplished using the &#39;instance&#39; version of the &#39;not&#39; method</p>
 								<blockquote>
-								<pre><code> <span class="hljs-keyword">let</span> not_p1 = p1.<span class="hljs-keyword">not</span>();</code></pre></blockquote>
+									<pre><code> <span class="hljs-attribute">let</span> not_p<span class="hljs-number">1</span> = p<span class="hljs-number">1</span>.not();
+</code></pre>
+								</blockquote>
 								<p>Both of which would be the same as</p>
 								<blockquote>
-								<pre><code> <span class="hljs-keyword">let</span> not_p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"le"</span>, <span class="hljs-number">100</span>);</code></pre></blockquote>
+									<pre><code> <span class="hljs-keyword">let</span> not_p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;le&quot;</span>, <span class="hljs-number">100</span>);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pred: <a href="predicate.html" class="tsd-signature-type">Predicate</a></h5>
+									<h5>pred: <span class="tsd-signature-type">Predicate</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">UnaryPredicate</span></h4>
@@ -445,7 +487,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/predicate.ts#L179">predicate.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/predicate.ts#L179">src/predicate.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -453,15 +495,19 @@
 									<p>Creates a &#39;composite&#39; Predicate by &#39;or&#39;ing a set of specified Predicates together.</p>
 									<blockquote>
 										<pre><code> <span class="hljs-keyword">let</span> dt = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date(88, 9, 12)</span>;
- <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"OrderDate"</span>, <span class="hljs-string">"ne"</span>, dt);
- <span class="hljs-keyword">let</span> p2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"ShipCity"</span>, <span class="hljs-string">"startsWith"</span>, <span class="hljs-string">"C"</span>);
- <span class="hljs-keyword">let</span> p3 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">"Freight"</span>, <span class="hljs-string">"&gt;"</span>, <span class="hljs-number">100</span>);
- <span class="hljs-keyword">let</span> newPred = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span><span class="hljs-keyword">or</span>(p1, p2, p3);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> p1 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;OrderDate&quot;</span>, <span class="hljs-string">&quot;ne&quot;</span>, dt);
+ <span class="hljs-keyword">let</span> p2 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;ShipCity&quot;</span>, <span class="hljs-string">&quot;startsWith&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-keyword">let</span> p3 = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span>create(<span class="hljs-string">&quot;Freight&quot;</span>, <span class="hljs-string">&quot;&gt;&quot;</span>, <span class="hljs-number">100</span>);
+ <span class="hljs-keyword">let</span> newPred = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Predicate</span>.</span></span><span class="hljs-keyword">or</span>(p1, p2, p3);
+</code></pre>
+									</blockquote>
 								</div>
 								<p>or</p>
 								<blockquote>
 									<pre><code> <span class="hljs-keyword">let</span> <span class="hljs-attr">preds</span> = [p1, p2, p3];
- <span class="hljs-keyword">let</span> <span class="hljs-attr">newPred</span> = Predicate.<span class="hljs-literal">or</span>(preds);</code></pre></blockquote>
+ <span class="hljs-keyword">let</span> <span class="hljs-attr">newPred</span> = Predicate.<span class="hljs-literal">or</span>(preds);
+</code></pre>
+								</blockquote>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -487,7 +533,7 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-is-external">
+					<li class="current tsd-kind-class tsd-has-type-parameter tsd-is-external">
 						<a href="predicate.html" class="tsd-kind-icon">Predicate</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
@@ -539,66 +585,13 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

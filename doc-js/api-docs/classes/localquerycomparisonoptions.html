@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>LocalQueryComparisonOptions | breeze-client</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -124,16 +124,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/local-query-comparison-options.ts#L36">local-query-comparison-options.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/local-query-comparison-options.ts#L36">src/local-query-comparison-options.ts:36</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>LocalQueryComparisonOptions constructor</p>
 									<blockquote>
-										<pre><code> <span class="hljs-comment">// create a 'caseSensitive - non SQL' instance.</span>
+										<pre><code> <span class="hljs-comment">// create a &#x27;caseSensitive - non SQL&#x27; instance.</span>
  <span class="hljs-keyword">var</span> lqco = <span class="hljs-keyword">new</span> LocalQueryComparisonOptions({
-         name: <span class="hljs-string">"caseSensitive-nonSQL"</span>
+         name: <span class="hljs-string">&quot;caseSensitive-nonSQL&quot;</span>
          isCaseSensitive: <span class="hljs-literal">true</span>;
          usesSql92CompliantStringComparison: <span class="hljs-literal">false</span>;
      });
@@ -141,7 +141,9 @@
  lqco.setAsDefault();
  <span class="hljs-comment">// or to a specific MetadataStore</span>
  <span class="hljs-keyword">var</span> ms = <span class="hljs-keyword">new</span> MetadataStore({ localQueryComparisonOptions: lqco });
- <span class="hljs-keyword">var</span> em = <span class="hljs-keyword">new</span> EntityManager( { metadataStore: ms });</code></pre></blockquote>
+ <span class="hljs-keyword">var</span> em = <span class="hljs-keyword">new</span> EntityManager( { metadataStore: ms });
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -163,7 +165,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Case<wbr>Sensitive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/local-query-comparison-options.ts#L32">local-query-comparison-options.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/local-query-comparison-options.ts#L32">src/local-query-comparison-options.ts:32</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -178,7 +180,7 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/local-query-comparison-options.ts#L30">local-query-comparison-options.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/local-query-comparison-options.ts#L30">src/local-query-comparison-options.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -193,17 +195,17 @@
 					<div class="tsd-signature tsd-kind-icon">uses<wbr>Sql92<wbr>Compliant<wbr>String<wbr>Comparison<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/local-query-comparison-options.ts#L36">local-query-comparison-options.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/local-query-comparison-options.ts#L36">src/local-query-comparison-options.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="caseinsensitivesql" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> case<wbr>InsensitiveSQL</h3>
-					<div class="tsd-signature tsd-kind-icon">case<wbr>InsensitiveSQL<span class="tsd-signature-symbol">:</span> <a href="localquerycomparisonoptions.html" class="tsd-signature-type">LocalQueryComparisonOptions</a><span class="tsd-signature-symbol"> =&nbsp;new LocalQueryComparisonOptions({name: &quot;caseInsensitiveSQL&quot;,isCaseSensitive: false,usesSql92CompliantStringComparison: true})</span></div>
+					<div class="tsd-signature tsd-kind-icon">case<wbr>InsensitiveSQL<span class="tsd-signature-symbol">:</span> <a href="localquerycomparisonoptions.html" class="tsd-signature-type">LocalQueryComparisonOptions</a><span class="tsd-signature-symbol"> = new LocalQueryComparisonOptions({name: &quot;caseInsensitiveSQL&quot;,isCaseSensitive: false,usesSql92CompliantStringComparison: true})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/local-query-comparison-options.ts#L68">local-query-comparison-options.ts:68</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/local-query-comparison-options.ts#L68">src/local-query-comparison-options.ts:68</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -215,10 +217,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="defaultinstance" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Instance</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Instance<span class="tsd-signature-symbol">:</span> <a href="localquerycomparisonoptions.html" class="tsd-signature-type">LocalQueryComparisonOptions</a><span class="tsd-signature-symbol"> =&nbsp;new LocalQueryComparisonOptions(LocalQueryComparisonOptions.caseInsensitiveSQL)</span></div>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Instance<span class="tsd-signature-symbol">:</span> <a href="localquerycomparisonoptions.html" class="tsd-signature-type">LocalQueryComparisonOptions</a><span class="tsd-signature-symbol"> = new LocalQueryComparisonOptions(LocalQueryComparisonOptions.caseInsensitiveSQL)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/local-query-comparison-options.ts#L77">local-query-comparison-options.ts:77</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/local-query-comparison-options.ts#L77">src/local-query-comparison-options.ts:77</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -240,7 +242,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/48ba04b/src/local-query-comparison-options.ts#L88">local-query-comparison-options.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/f1904b0/src/local-query-comparison-options.ts#L88">src/local-query-comparison-options.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -248,11 +250,13 @@
 									<p>Sets the &#39;defaultInstance&#39; by creating a copy of the current &#39;defaultInstance&#39; and then applying all of the properties of the current instance.
 									The current instance is returned unchanged.</p>
 									<blockquote>
-										<pre><code><span class="hljs-string">var</span> <span class="hljs-string">lqco</span> <span class="hljs-string">=</span> <span class="hljs-string">new</span> <span class="hljs-string">LocalQueryComparisonOptions({</span>
-<span class="hljs-attr">   isCaseSensitive:</span> <span class="hljs-literal">false</span><span class="hljs-string">;</span>
-<span class="hljs-attr">   usesSql92CompliantStringComparison:</span> <span class="hljs-literal">true</span><span class="hljs-string">;</span>
-<span class="hljs-string">});</span>
-<span class="hljs-string">lqco.setAsDefault();</span></code></pre></blockquote>
+										<pre><code><span class="hljs-keyword">var</span> lqco = <span class="hljs-keyword">new</span> LocalQueryComparisonOptions({
+   isCaseSensitive: <span class="hljs-literal">false</span>;
+   usesSql92CompliantStringComparison: <span class="hljs-literal">true</span>;
+});
+lqco.setAsDefault();
+</code></pre>
+									</blockquote>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -310,66 +314,13 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
