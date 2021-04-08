@@ -76,7 +76,7 @@ There are two ways to define metadata on the client:
 1. Import a *Breeze Metadata Format* object into a `MetadataStore` via its `importMetadata` method. This is the same format returned by the `MetadataStore.exportMetadata` method.
 
 
-We describe programming the `MetadataStore` elsewhere; you may wish to refer to the <a href="/doc-js/api-docs/classes/MetadataStore.html" target="_blank">MetadataStore API documentation</a> as well. This topic concentrates on the definition of *Breeze Metadata Format*.
+We describe programming the `MetadataStore` elsewhere; you may wish to refer to the <a href="/doc-js/api-docs/classes/metadatastore.html" target="_blank">MetadataStore API documentation</a> as well. This topic concentrates on the definition of *Breeze Metadata Format*.
 
 # Metadata classes
 
@@ -272,7 +272,7 @@ This example assumes you wrote `makeCustomTypeAnnotation` and `makeCustomPropAnn
 
 ### Generate Breeze Metadata Format from an export
 
-Remember that <a href="/doc-js/api-docs/classes/MetadataStore.html#method_exportMetadata" target="_blank">`MetadataStore.exportMetadata`</a> exports metadata as a string in the Breeze Metadata Format. You can capture that format to file and, presto, you have metadata in an easily portable form.
+Remember that <a href="/doc-js/api-docs/classes/metadatastore.html#exportmetadata" target="_blank">`MetadataStore.exportMetadata`</a> exports metadata as a string in the Breeze Metadata Format. You can capture that format to file and, presto, you have metadata in an easily portable form.
 
 Suppose
 

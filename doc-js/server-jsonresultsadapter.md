@@ -190,7 +190,7 @@ The *DataServiceAdapters* in the [breeze core](https://github.com/Breeze/breeze.
 
 ## JsonResultsAdapter interface
 
-Every *JsonResultsAdapter* is an instance of the [**breeze.JsonResultsAdapter**](/doc-js/api-docs/classes/JsonResultsAdapter.html#method_%3Cctor%3E%20JsonResultsAdapter "API Doc: JsonResultsAdapter").
+Every *JsonResultsAdapter* is an instance of the [**breeze.JsonResultsAdapter**](/doc-js/api-docs/classes/jsonresultsadapter.html "API Doc: JsonResultsAdapter").
 
     var myJsonResultsAdapter = new breeze.JsonResultsAdapter(config);
 
@@ -245,8 +245,8 @@ The `visitNode` method takes 3 parameters and returns a single object hash. Bree
 | 'root' 	|top-level, root node | *no properties*
 |'anonProp' |node returned by an anonymous node's scalar property. |**propertyName**: The name of the scalar property.
 |'anonPropItem' |node in the array returned by an anonymous node's array property. |**propertyName**: The name of the array property.
-|'navProp' | node returned by an entity node's scalar navigation property. |**navigationProperty**: The <a href="/doc-js/api-docs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</a>.
-| 'navPropItem' |node in the array returned by an entity node's navigation array property. | **navigationProperty**: The <code><a href="/doc-js/api-docs/classes/NavigationProperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.
+|'navProp' | node returned by an entity node's scalar navigation property. |**navigationProperty**: The <a href="/doc-js/api-docs/classes/navigationproperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</a>.
+| 'navPropItem' |node in the array returned by an entity node's navigation array property. | **navigationProperty**: The <code><a href="/doc-js/api-docs/classes/navigationproperty.html" target="_blank" title="API: NavigationProperty">NavigationProperty</code></a>.
 
    A node is a **top-level node** if it is *the* object returned by `extractResults` or an object in *the array* returned by `extractResults`.
 

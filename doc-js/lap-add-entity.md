@@ -54,7 +54,7 @@ But there are important Breeze lessons to learn from this long-form of entity cr
 
 Every entity instance has a type that you can access through its `entityType` property. The type of an entity is itself an object, an instance of the Breeze `EntityType`.
 
-The `EntityType` is a container for metadata that describe a Breeze entity type. It knows about the type's constructor, validation rules, and properties; the detail about properties is wide ranging (check out the <a href="/doc-js/api-docs/classes/DataProperty.html">`DataProperty`</a> metadata object in the Breeze API docs). 
+The `EntityType` is a container for metadata that describe a Breeze entity type. It knows about the type's constructor, validation rules, and properties; the detail about properties is wide ranging (check out the <a href="/doc-js/api-docs/classes/dataproperty.html">`DataProperty`</a> metadata object in the Breeze API docs). 
 
 Perhaps most importantly, the `EntityType` knows how to create new instances of an entity type. We used that feature a moment ago when we called its `createEntity` method. We got hold of an EntityType object for TodoItems from the EntityManager's *metadatastore* with this line.
 

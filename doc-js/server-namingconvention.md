@@ -57,9 +57,9 @@ When you search for a person whose first name is "Joe", Breeze must know if the 
 
 There are two built-in `NamingConvention` instances, both static properties of the `NamingConvention` class: 
 
-1. <a href="/doc-js/api-docs/classes/NamingConvention.html#property_defaultInstance" target="_blank">none</a> which preserves the names in both directions.
+1. <a href="/doc-js/api-docs/classes/namingconvention.html#defaultinstance" target="_blank">none</a> which preserves the names in both directions.
  
-1. <a href="/doc-js/api-docs/classes/NamingConvention.html#property_camelCase" target="_blank">camelCase</a> which performs the 'FirstName' / 'firstName' translation.
+1. <a href="/doc-js/api-docs/classes/namingconvention.html#camelcase" target="_blank">camelCase</a> which performs the 'FirstName' / 'firstName' translation.
 
 There is always a default `NamingConvention` instance. You can ask the `NamingConvention` for the current default.
 
@@ -77,7 +77,7 @@ Call the following line before creating any `MetadataStores` or `EntityManagers`
 
 #### The *MetadataStore* and the *NamingConvention*
 
-A Breeze <a href="/doc-js/api-docs/classes/MetadataStore.html" target="_blank"><code>MetadataStore</code></a> requires a `NamingConvention` to handle property name translation.
+A Breeze <a href="/doc-js/api-docs/classes/metadatastore.html" target="_blank"><code>MetadataStore</code></a> requires a `NamingConvention` to handle property name translation.
 
 When you create a new instance of a `MetadataStore` (explicitly or indirectly when you create a new `EntityManager`), you're also pinning it to a specific `NamingConvention` instance. It will be pinned to the default convention unless you say otherwise:
 
@@ -153,7 +153,7 @@ From the property definition you can learn a lot about the property whose name y
         propDef.isDataProperty;       // is it a Data prop or Nav prop?
     }
 
->See the <a href="/doc-js/api-docs/classes/DataProperty.html" title="API: DataProperty" target="_blank">DataProperty API</a> for details of likely property definition members. Remember that this parameter may be null or deficient so always be ready for missing information.
+>See the <a href="/doc-js/api-docs/classes/dataproperty.html" title="API: DataProperty" target="_blank">DataProperty API</a> for details of likely property definition members. Remember that this parameter may be null or deficient so always be ready for missing information.
 
 The following convention performs BOTH a camelCase translation AND prefixes `Boolean` properties with the word particle, 'is'.  If your `VendingMachine` server-side class has a `Boolean` property called '*Enabled*', this convention turns it into 'VendingMachine.*isEnabled*' on the client:
 

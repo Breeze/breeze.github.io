@@ -20,9 +20,9 @@ This topic covers the most important aspects of the Breeze validation system.
 
 Validation is a process of judging the current state of an entity with validation rules. Each rule assesses a fact about the validity of an entity or one of its properties. A rule judges but it does not change; the entity values are the same, before and after evaluation.
 
-Concretely, a validation rule is an instance of the Breeze <a href="/doc-js/api-docs/classes/Validator.html" target="_blank">`Validator` class</a>.
+Concretely, a validation rule is an instance of the Breeze <a href="/doc-js/api-docs/classes/validator.html" target="_blank">`Validator` class</a>.
 
-> Please read the Breeze API documentation for the **<a href="/doc-js/api-docs/classes/Validator.html" target="_blank">`Validator` class</a>**. It has a lot of good information about how validations work and how to write them.
+> Please read the Breeze API documentation for the **<a href="/doc-js/api-docs/classes/validator.html" target="_blank">`Validator` class</a>**. It has a lot of good information about how validations work and how to write them.
 
 Most Breeze validators evaluate property data. A length validator can detect if the *CompanyName* is too long; a required validator determines that the *CompanyName* has a value; a string data type validator ensures that the *CompanyName* is a string, not a number or a date.&nbsp; These rules combine to determine the overall validity of the *CompanyName* property.&nbsp;
 
@@ -142,7 +142,7 @@ Here's how you might add the "url" and "required" validators to a `Person` prope
 ### Regular Expression validators
 
 Many real world validations can be implemented with the `regularExpression` validator and a well crafted regular expression. The
-[`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Validator.html#method_makeRegExpValidator) static helper makes that a little easier and also encapsulates the regular expression within the validator it creates. For example, we can make a U.S. zipcode validator and apply it to one of the `Customer` properties.
+[`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/validator.html#makeregexpvalidator) static helper makes that a little easier and also encapsulates the regular expression within the validator it creates. For example, we can make a U.S. zipcode validator and apply it to one of the `Customer` properties.
 
     // Make a zipcode validator
     function zipValidator = breeze.Validator.makeRegExpValidator(
@@ -433,7 +433,7 @@ This event is fired whenever any entity within the EntityManager experiences any
 
 ## <a name="message-templates"></a>Customize the message templates
 
-Don't like the messages produced by the stock validators? Need to translate them to another language? No problem. The messages are based on templates that you can access and change. The <a href="/doc-js/api-docs/classes/Validator.html#property_messageTemplates" target="_blank">Validator.messageTemplates</a> class property returns the template collection, keyed by the validator name. Configure it to suit your needs. For example, we could make the `Validator.required` message a bit more emphatic:
+Don't like the messages produced by the stock validators? Need to translate them to another language? No problem. The messages are based on templates that you can access and change. The <a href="/doc-js/api-docs/classes/validator.html#messagetemplates" target="_blank">Validator.messageTemplates</a> class property returns the template collection, keyed by the validator name. Configure it to suit your needs. For example, we could make the `Validator.required` message a bit more emphatic:
 
     Validator.messageTemplates['required',
       'Dude! The '%displayName%' is really required ... seriously ... as in mandatory');

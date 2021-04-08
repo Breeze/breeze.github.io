@@ -23,7 +23,7 @@ When you eventually ask the *EntityManager* to save, it finds the changed entiti
 
 ## Key EntityManager capabilities
 
-The following is a summary of the methods available on the EntityManager arranged by task. For a complete list of methods, please see the <a href="/doc-js/api-docs/classes/EntityManager.html">EntityManager API documentation</a>.
+The following is a summary of the methods available on the EntityManager arranged by task. For a complete list of methods, please see the <a href="/doc-js/api-docs/classes/entitymanager.html">EntityManager API documentation</a>.
 
 ## Querying for entities
 

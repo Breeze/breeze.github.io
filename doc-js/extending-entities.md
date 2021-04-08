@@ -14,7 +14,7 @@ Breeze entities are created by calling the `EntityManager.createEntity` method o
 
     var cust = manager.createEntity('Customer');
 
-Internally that method first acquires an <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank">EntityType</a> information object from a <a href="/doc-js/api-docs/classes/MetadataStore.html" target="_blank">MetadataStore</a> and then calls the type's `createEntity` method [<a href="#Note01">1</a>], e.g.,
+Internally that method first acquires an <a href="/doc-js/api-docs/classes/entitytype.html" target="_blank">EntityType</a> information object from a <a href="/doc-js/api-docs/classes/metadatastore.html" target="_blank">MetadataStore</a> and then calls the type's `createEntity` method [<a href="#Note01">1</a>], e.g.,
 
     // assume that manager's metadata was previously fetched from the server
     var store = manager.metadataStore;
@@ -64,7 +64,7 @@ It isn't *just* a mess. It feels wrong. The `isBeingEdited` property should be p
 
 # Extend the Type
 
-We'll extend the `Customer` definition by adding information to the `Customer`'s <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank">*EntityType*</a> in the client-side `MetadataStore`.  We'll do this early in the application, before it makes a single call to the backend service.
+We'll extend the `Customer` definition by adding information to the `Customer`'s <a href="/doc-js/api-docs/classes/entitytype.html" target="_blank">*EntityType*</a> in the client-side `MetadataStore`.  We'll do this early in the application, before it makes a single call to the backend service.
 
 We can get a `MetadataStore` from an `EntityManager` instance [<a href="#Note02">2</a>] like so:
 

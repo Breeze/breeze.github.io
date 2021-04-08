@@ -222,7 +222,7 @@ For apps that use global JavaScript libraries, the UMD versions are still availa
 ### <a name="159"></a>1.5.9 <span class="doc-date">July 15, 2016</span>
 
 #### Breeze.Js Features
-- Now uses JsonResultsAdapter to extract entities and keyValues from save result, for adaptability when working with different servers.  See [API Doc](/doc-js/api-docs/classes/JsonResultsAdapter.html).
+- Now uses JsonResultsAdapter to extract entities and keyValues from save result, for adaptability when working with different servers.  See [API Doc](/doc-js/api-docs/classes/jsonresultsadapter.html).
 
 #### Breeze.Js Fixed Bugs
  - Add missing TypeScript definitions and API docs
@@ -235,7 +235,7 @@ For apps that use global JavaScript libraries, the UMD versions are still availa
 - Allow custom headers on OData requests; fixes issue [#154](https://github.com/Breeze/breeze.js/issues/154)
 
 #### Breeze.Js Fixed Bugs
-- Fix missing `displayName`, `nameOnServer`, `acceptChanges()` and change `module` to `namespace` in [breeze.d.ts](https://github.com/Breeze/breeze.js/blob/master/typescript/typescript/breeze.d.ts)
+- Fix missing `displayName`, `nameOnServer`, `acceptChanges()` and change `module` to `namespace` in [breeze.d.ts](https://github.com/Breeze/breeze.js/blob/master/typescript/breeze.source.d.ts)
 
 ### <a name="157"></a>1.5.7 <span class="doc-date">June 8, 2016</span>
 

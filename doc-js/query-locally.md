@@ -19,7 +19,7 @@ Your client app can retrieve entities from cache in a variety of ways as discuss
 
 The `EntityManager` offers several methods for retrieving entities from cache without visiting the server. All of them are synchronous and return their results immediately.
 
-With <a href="/doc-js/api-docs/classes/EntityManager.html#method_executeQueryLocally" target="_blank">`executeQueryLocally`</a>, you can take a previously defined query that would otherwise target the remote server and apply it to the cache
+With <a href="/doc-js/api-docs/classes/entitymanager.html#executequerylocally" target="_blank">`executeQueryLocally`</a>, you can take a previously defined query that would otherwise target the remote server and apply it to the cache
 
 
     // Customers whose names begin with 'c'
@@ -33,15 +33,15 @@ With <a href="/doc-js/api-docs/classes/EntityManager.html#method_executeQueryLoc
 
 Notice how you get the customers back immediately.
 
-The <a href="/doc-js/api-docs/classes/EntityQuery.html#method_executeLocally" target="_blank">`EntityQuery.executeLocally`</a> method does the same thing:
+The <a href="/doc-js/api-docs/classes/entityquery.html#executelocally" target="_blank">`EntityQuery.executeLocally`</a> method does the same thing:
 
     var customers = query.using(manager).executeLocally();
 
 The following methods aren't really queries. They just get entities from the cache directly. They all begin with the *get...* prefix.
 
-- <a href="/doc-js/api-docs/classes/EntityManager.html#method_getChanges" target="_blank">`getChanges([entityTypes])`</a>
-- <a href="/doc-js/api-docs/classes/EntityManager.html#method_getEntities" target="_blank">`getEntities([entityTypes],[entityState])`</a>
-- <a href="/doc-js/api-docs/classes/EntityManager.html#method_getEntityByKey" target="_blank">`getEntityByKey(entityKey)`</a>
+- <a href="/doc-js/api-docs/classes/entitymanager.html#getchanges" target="_blank">`getChanges([entityTypes])`</a>
+- <a href="/doc-js/api-docs/classes/entitymanager.html#getentities" target="_blank">`getEntities([entityTypes],[entityState])`</a>
+- <a href="/doc-js/api-docs/classes/entitymanager.html#getentitybykey" target="_blank">`getEntityByKey(entityKey)`</a>
 
 ### getChanges
 
@@ -61,7 +61,7 @@ You might be interested in pending changes to particular type(s);
 
 ### getEntities
 
-Get entities by <a href="/doc-js/api-docs/classes/EntityType.html" target="_blank">`EntityType`</a> and/or <a href="/doc-js/api-docs/classes/EntityState.html" target="_blank">`EntityState`</a>.
+Get entities by <a href="/doc-js/api-docs/classes/entitytype.html" target="_blank">`EntityType`</a> and/or <a href="/doc-js/api-docs/classes/entitystate.html" target="_blank">`EntityState`</a>.
 
 Here's how to extract all `Customer` entities in cache:
 
@@ -126,7 +126,7 @@ The service makes a decision to go remote or query the cache based on the curren
         return promise;
     }
 
-The method signature retains its asynchronous form even though the query will run synchronously and return immediately when the application is disconnected. Internally, when the app is disconnected, the developer <a href="/doc-js/api-docs/classes/EntityQuery.html#method_using" target="_blank">changes the query's `QueryOption`</a> to target the cache.
+The method signature retains its asynchronous form even though the query will run synchronously and return immediately when the application is disconnected. Internally, when the app is disconnected, the developer <a href="/doc-js/api-docs/classes/entityquery.html#using" target="_blank">changes the query's `QueryOption`</a> to target the cache.
 
 We can even toggle the `EntityManager` itself to run locally when the app loses the connection.
 
@@ -198,7 +198,7 @@ We could use a regular query:
                     employee(data.results[0]); // KO binding updates the screen
                 });
 
-Breeze offers a <a href="/doc-js/api-docs/classes/EntityManager.html#method_fetchEntityByKey" target="_blank">`fetchEntityByKey`</a> shortcut for this common case.
+Breeze offers a <a href="/doc-js/api-docs/classes/entitymanager.html#fetchentitybykey" target="_blank">`fetchEntityByKey`</a> shortcut for this common case.
 
     
     manager.fetchEntityByKey('Employee', employeeID)
@@ -269,10 +269,10 @@ In a related DocCode sample we demonstrate how an entity in cache with pending c
 - re-run the 'A' query against the cache
 - the query returns only Andrew, not the entity formerly-known-as-Anne
 
-Focus on what happens to the 'Anne' entity. The default <a href="/doc-js/api-docs/classes/MergeStrategy.html" target="_blank">`MergeStrategy.PreserveChanges`</a> prevents the remote query from overwriting the current name value of 'Charlene' with the database value which is still 'Anne'. Then the local query excludes the Anne entity from its results because her local current name is 'Charlene'.
+Focus on what happens to the 'Anne' entity. The default <a href="/doc-js/api-docs/classes/mergestrategy.html" target="_blank">`MergeStrategy.PreserveChanges`</a> prevents the remote query from overwriting the current name value of 'Charlene' with the database value which is still 'Anne'. Then the local query excludes the Anne entity from its results because her local current name is 'Charlene'.
 
 This behavior is exactly what we want most of the time. The user who is changing 'Alice' to 'Charlene' would be surprised, annoyed, or both if the re-query wiped out her changes. She'd be equally surprised if the list of 'A' employees displayed a person named 'Charlene'.
 
 We should be able to query the database repeatedly without having its data overwrite our pending changes. We want the latest information from the database but not at the expense of our unsaved work.
 
-If we really do want the database values to trump unsaved changes ... if we want the query to change 'Charlene' back to 'Alice' ..., we can specify the <a href="/doc-js/api-docs/classes/MergeStrategy.html" target="_blank">`MergeStrategy.OverwriteChanges`</a>.
+If we really do want the database values to trump unsaved changes ... if we want the query to change 'Charlene' back to 'Alice' ..., we can specify the <a href="/doc-js/api-docs/classes/mergestrategy.html" target="_blank">`MergeStrategy.OverwriteChanges`</a>.

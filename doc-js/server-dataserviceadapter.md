@@ -217,7 +217,7 @@ Much of the [**`MappingContext`**](https://github.com/Breeze/breeze.js/blob/mast
 - **getUrl**: a function that computes the URL for this query request based on the `query` data.
 - **mergeOptions**:
   - **noTracking**: If `true`, Breeze won't materialize query results into entities in cache. The remaining options are irrelevant. `false` by default.
-  - **mergeStrategy**: A [`MergeStrategy`](/doc-js/api-docs/classes/MergeStrategy.html "API Docs: MergeStrategy") telling Breeze what to do when a queried entity is already in cache.
+  - **mergeStrategy**: A [`MergeStrategy`](/doc-js/api-docs/classes/mergestrategy.html "API Docs: MergeStrategy") telling Breeze what to do when a queried entity is already in cache.
  - **includeDeleted**: If `true`, Breeze includes 'deleted' entities among the results returned to the caller. Assumed to be `false` if omitted.
  
 Most `executeQuery` implementations get the query URL by calling `mappingContext.getUrl()` which uses a *UriBuilder* to compute the URL from `EntityQuery`  data. The *UriBuilder* comes from the `dataService.uriBuilder` property if available or the default `uriBuilder` otherwise. Breeze currently supports two *UriBuilderAdapters*: an 'odata' adapter and a 'json' adapter.
@@ -241,7 +241,7 @@ Performs the actual save and returns a promise for a *saveResult*.
   - **processSavedEntities**(**saveResult**): The function that the `EntityManager` calls after this `saveChanges` method returns a successful *saveResult*. 
 - ***saveBundle***:
   - **entities**: An array of entities to be saved, either the entities specified in the `EntityManager.saveChanges` call or all cached entities with pending changes.
-  - **saveOptions**: an instance of [`SaveOptions`](/doc-js/api-docs/classes/SaveOptions.html "API Docs: SaveOptions"), either the one passed to the `EntityManager.saveChanges` or the ambient default instance.  
+  - **saveOptions**: an instance of [`SaveOptions`](/doc-js/api-docs/classes/saveoptions.html "API Docs: SaveOptions"), either the one passed to the `EntityManager.saveChanges` or the ambient default instance.  
 - **returns** a promise for a *saveResult*
   
 A typical implementation of `saveChanges` composes a payload from the contents of a `saveBundle` and POSTs it to the server.  This payload must be shaped such that the server can interpret it.

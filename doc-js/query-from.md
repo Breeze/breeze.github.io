@@ -7,7 +7,7 @@ redirect_from: "/old/documentation/query-from.html"
 
 Every Breeze query needs a target **resource** that identifies the destination of the query.
 
-You typically aim a Breeze query at a particular **resource** with a [`.from(resource)` clause](/doc-js/api-docs/classes/EntityQuery.html#method_from "API doc: EntityQuery.from") like this:
+You typically aim a Breeze query at a particular **resource** with a [`.from(resource)` clause](/doc-js/api-docs/classes/entityquery.html#from "API doc: EntityQuery.from") like this:
 
     var query = breeze.EntityQuery.from('Orders');
 
@@ -22,11 +22,11 @@ This topic covers how Breeze
 
 		manager.execute(query);
 
-Breeze turns that name into a URI by prefixing it with the [`dataService.serviceName`](/doc-js/api-docs/classes/DataService.html#property_serviceName "API Doc: DataService.serviceName") for this query. If the `serviceName` is "*breeze/Northwind/*", Breeze would compose this *relative URL*:
+Breeze turns that name into a URI by prefixing it with the [`dataService.serviceName`](/doc-js/api-docs/classes/dataservice.html#servicename "API Doc: DataService.serviceName") for this query. If the `serviceName` is "*breeze/Northwind/*", Breeze would compose this *relative URL*:
 
     breeze/Northwind/Orders
 
->The `EntityManager` that executes the query usually supplies the `DataService` but you can specify a different one for a particular query with a [`.using` clause](/doc-js/api-docs/classes/EntityQuery.html#method_using "API doc: EntityQuery.using").
+>The `EntityManager` that executes the query usually supplies the `DataService` but you can specify a different one for a particular query with a [`.using` clause](/doc-js/api-docs/classes/entityquery.html#using "API doc: EntityQuery.using").
 
 If your web page base address is "*http://localhost:58066/*", the *absolute URL* to which the query will be sent is likely to be this:
 
@@ -56,7 +56,7 @@ Breeze does not *have* to know the root `EntityType` targeted in a remote query.
     .from('OrderAndDetails') // returns Order and their OrderDetails
     .from('Foos')            // who knew?
 
-Breeze will wait for the query results to arrive and let the prevailing [`JsonResultsAdapter`](/doc-js/api-docs/classes/JsonResultsAdapter.html "API Docs: JsonResultsAdapter") translate the JSON payload into `Order` entities. 
+Breeze will wait for the query results to arrive and let the prevailing [`JsonResultsAdapter`](/doc-js/api-docs/classes/jsonresultsadapter.html "API Docs: JsonResultsAdapter") translate the JSON payload into `Order` entities. 
 
 >Perhaps some or all of the JSON objects aren't entities at all. That's OK too. Such data objects are returned to the caller in the query response "as is".
 
@@ -92,7 +92,7 @@ The server is expecting the comparison value to be a date. It could choose to re
 
 ### Cast with *.toType*
 
-The easy solution is to tell Breeze what type to expect with the [`toType` clause](/doc-js/api-docs/classes/EntityQuery.html#method_toType "API Docs: toType") as follows:
+The easy solution is to tell Breeze what type to expect with the [`toType` clause](/doc-js/api-docs/classes/entityquery.html#totype "API Docs: toType") as follows:
 
     breeze.EntityQuery.from('OrdersAndDetails')
       .where('OrderDate', '>=', 'January 1, 1998')
@@ -175,7 +175,7 @@ The error message explains the problem and suggests a resolution.
     the MetadataStore.setEntityTypeForResourceName method to register
     an entityType for this resourceName.
 
-Evidently, we can specify additional mappings between a resource name and an `EntityType` with the [`MetadataStore.setEntityTypeForResourceName` method](/doc-js/api-docs/classes/MetadataStore.html#method_setEntityTypeForResourceName "API Docs: setEntityTypeForResourceName"). Let's do that for the "Order" type name:
+Evidently, we can specify additional mappings between a resource name and an `EntityType` with the [`MetadataStore.setEntityTypeForResourceName` method](/doc-js/api-docs/classes/metadatastore.html#setentitytypeforresourcename "API Docs: setEntityTypeForResourceName"). Let's do that for the "Order" type name:
 
 	var meta = manager.metadataStore;
     meta.setEntityTypeForResourceName('Order', 'Order');
@@ -202,7 +202,7 @@ Notice that the **resource name is the first parameter**, the `EntityType` name 
 
 ## Finding the registered resources
 
-[`MetadataStore.getEntityTypeNameForResourceName`](/doc-js/api-docs/classes/MetadataStore.html#method_getEntityTypeNameForResourceName "API Docs: getEntityTypeNameForResourceName") can tell you the `EntityType` for  a resource name. 
+[`MetadataStore.getEntityTypeNameForResourceName`](/doc-js/api-docs/classes/metadatastore.html#getentitytypenameforresourcename "API Docs: getEntityTypeNameForResourceName") can tell you the `EntityType` for  a resource name. 
 
 After adding resource names as we did above, all of the following return the `Order` type:
 

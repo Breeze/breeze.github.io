@@ -17,7 +17,7 @@ Remember, though, that Breeze on the client serializes per ISO 8601 and there is
 
 ## New entity *DateTime* values
 
-The metadata determine how Breeze initializes the *DateTime* property of a newly-created entity. The property will be *null* if the property is nullable. If the property is not nullable (i.e., required), Breeze sets it to the constant value in <a href="/doc-js/api-docs/classes/DataType.html#property_DateTime" target="_blank">`breeze.DataType.DateTime.defaultValue`</a>. That default is "January 1, 1900". You can change this value for your application as long as you do so *before* fetching or setting metadata.
+The metadata determine how Breeze initializes the *DateTime* property of a newly-created entity. The property will be *null* if the property is nullable. If the property is not nullable (i.e., required), Breeze sets it to the constant value in <a href="/doc-js/api-docs/classes/datatype.html#datetime" target="_blank">`breeze.DataType.DateTime.defaultValue`</a>. That default is "January 1, 1900". You can change this value for your application as long as you do so *before* fetching or setting metadata.
 
 #### Custom initialization
 

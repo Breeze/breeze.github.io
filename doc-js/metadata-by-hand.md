@@ -18,7 +18,7 @@ We'll show you how authoring metadata with the Breeze Labs *Metadata-Helper* can
 
 ## Why use *Metadata-Helper*?
 
-Breeze has [a native API for defining an `EntityType`](/doc-js/api-docs/classes/EntityType.html) and [adding it to a `MetadataStore`](/doc-js/api-docs/classes/MetadataStore.html#method_addEntityType). This API affords great control over every detail of metadata definition. You should learn it.
+Breeze has [a native API for defining an `EntityType`](/doc-js/api-docs/classes/entitytype.html) and [adding it to a `MetadataStore`](/doc-js/api-docs/classes/metadatastore.html#addentitytype). This API affords great control over every detail of metadata definition. You should learn it.
 
 We recognize that it can seem a tad verbose and fussy. Sometimes you wish for something that was a bit friendlier and forgiving. That's why we offer the Breeze Labs <strong>Metadata-Helper</strong>.
 

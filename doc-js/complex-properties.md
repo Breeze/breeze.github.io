@@ -20,9 +20,9 @@ Complex types in Breeze are much like entity type's but with some key difference
 
 Every instance of a complex type object has two properties automatically added by Breeze:
 
-- A <a href="/doc-js/api-docs/classes/ComplexType.html" target="_blank">complexType </a>property - This is the type metadata for the specific complex type that describes this object. A `complexType` property is analogous to the `entityType` property on Breeze entities.
+- A <a href="/doc-js/api-docs/classes/complextype.html" target="_blank">complexType </a>property - This is the type metadata for the specific complex type that describes this object. A `complexType` property is analogous to the `entityType` property on Breeze entities.
 
-- A <a href="/doc-js/api-docs/classes/ComplexAspect.html" target="_blank">complexAspect </a>property - This contains information about the 'parentage' of this instance and any original values for change tracking purposes. The `complexAspect` is analogous to the `entityAspect` property on every Breeze entities.
+- A <a href="/doc-js/api-docs/classes/complexaspect.html" target="_blank">complexAspect </a>property - This contains information about the 'parentage' of this instance and any original values for change tracking purposes. The `complexAspect` is analogous to the `entityAspect` property on every Breeze entities.
 
 ## Interactions involving Complex types
 
