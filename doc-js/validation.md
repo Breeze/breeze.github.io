@@ -85,7 +85,7 @@ Validation on the client improves the user experience; some say that makes it op
 
 There are many ways to validate data on the server. Much depends on the technologies and practices that you are using.
 
-No matter what you do, you'll probably want to surface the validation errors on the client. The topic ["Server-side validation"](/doc-net/ef-serverside-validation) covers how to prepare errors and transmit them in JSON so that the Breeze client can include them in the entity's validation errors collection. 
+No matter what you do, you'll probably want to surface the validation errors on the client. The topic ["Server-side validation"](/doc-net/ef-serverside-validation-4x) covers how to prepare errors and transmit them in JSON so that the Breeze client can include them in the entity's validation errors collection. 
 
 >That topic also explains how validation errors detected by Entity Framework are automatically communicated to the client.
 

@@ -87,7 +87,7 @@ Let's try something more ambitious. We'll look at excerpts from three related en
 	}
 
 
-Some of the properties are decorated with validation attributes (*Required*, *MaxLength*). Entity Framework can use this information to validate changed entities before saving them. [So can Breeze](/doc-net/ef-serverside-validation).
+Some of the properties are decorated with validation attributes (*Required*, *MaxLength*). Entity Framework can use this information to validate changed entities before saving them. [So can Breeze](/doc-net/ef-serverside-validation-4x).
 
 
 Notice the *Orders* navigation property returns a collection of type Order. Customer has a one-to-many relationship with Order and this property implements that relationship in the server-side class model. Expect to see that same relationship implemented in the Order property of Customer entity in the Breeze JavaScript client-side model.
@@ -190,4 +190,4 @@ Imagine a model with 30, 50, 100, or 200 entities, each with an average of 10 pr
 
 You don't have to with Breeze. There's a .NET Breeze component that scoops up this information and packages it as a metadata document. Your persistence service can send this document to the Breeze client. The Breeze client interprets the metadata and builds a conforming JavaScript model with the same structure and constraints as the server-side model.
 
-We'll see how this works when we get to the client. Our next stop is the [Entity Framework *DbContext*](/doc-net/ef-dbcontext) which is the gateway to the database.
+We'll see how this works when we get to the client. Our next stop is the [Entity Framework *DbContext*](/doc-net/ef-dbcontext-4x) which is the gateway to the database.

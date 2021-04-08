@@ -166,7 +166,7 @@ The `PersistenceManager` is a abstract Breeze class that encapsulates three main
 
 The base Breeze `PersistenceManager` class is intended to be extended depending on the kind of backend services that you need to support. 
 
-Many .NET server developers turn to the Microsoft's [Entity Framework](https://docs.microsoft.com/en-us/ef/) for relational data modeling and relational data access. It's so popular that Breeze offers a special [`EFPersistenceManager` class](/doc-net/ef-efpersistencemanager) to facilitate development of .NET servers for Breeze clients.
+Many .NET server developers turn to the Microsoft's [Entity Framework](https://docs.microsoft.com/en-us/ef/) for relational data modeling and relational data access. It's so popular that Breeze offers a special [`EFPersistenceManager` class](/doc-net/ef-efpersistencemanager-core) to facilitate development of .NET servers for Breeze clients.
 
 The `EFPersistenceManager`, which derives from the Breeze `PersistenceManager`, wraps an Entity Framework DbContext to provide Breeze data management.
 
@@ -248,7 +248,7 @@ The Web API delivers the bundle to the controller’s `SaveChanges` method as a 
 
 Are alarm bells ringing when you read this code? We shouldn't blithely save everything the client tells us to save. We should inspect every request, making sure that the changes are valid and that the user is authorized to make them.
 
-Learn how to do that with [a custom EFPersistenceManager and save interception](/doc-net/ef-efpersistencemanager#SaveInterception).
+Learn how to do that with [a custom EFPersistenceManager and save interception](/doc-net/ef-efpersistencemanager-core#SaveInterception).
 
 # Configuring Serialization, Exceptions and Connection strings
 

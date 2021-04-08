@@ -12,7 +12,7 @@ This page will introduce you inner workings of the sample code 'teaching tests' 
 
 # QUnit
 
-Our tests are written in popular <a href="http://qunitjs.com/">QUnit</a> test automation tool, the same tool used by the jQuery family of projects. The <a href="http://qunitjs.com/">QUnit</a> web site and many other web sources are the best way to learn it (perhaps starting <a href="http://msdn.microsoft.com/en-us/magazine/gg749824.aspx">here</a> and <a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-test-your-javascript-code-with-qunit/">here</a>). We'll have to assume you know a bit about testing and a bit about QUnit so that we can move quickly to the particulars of testing Breeze.
+Our tests are written in popular <a href="http://qunitjs.com/">QUnit</a> test automation tool, the same tool used by the jQuery family of projects. The <a href="http://qunitjs.com/">QUnit</a> web site and many other web sources are the best way to learn it (perhaps starting <a href="http://msdn.microsoft.com/en-us/magazine/gg749824.aspx">here</a> and <a href="https://code.tutsplus.com/tutorials/how-to-test-your-javascript-code-with-qunit--net-9077">here</a>). We'll have to assume you know a bit about testing and a bit about QUnit so that we can move quickly to the particulars of testing Breeze.
 
 # The Teaching Test Suite
 

@@ -16,7 +16,7 @@ redirect_from: "/old/samples/todo-server.html"
 <p>The &quot;Breeze.MVC4WebApi&quot; NuGet package installs the <strong>ASP Web API</strong>, <strong>Entity Framework 5.x</strong>, the <strong>Breeze.NET</strong> components in support of EF and Web API, and the <strong>BreezeJS</strong> JavaScript files (Breeze and <strong>Q</strong>).</p>
 <h2>
 	SQL Server Database</h2>
-<p>The Todo data are stored in a <a href="http://www.microsoft.com/en-us/download/details.aspx?id=17876" target="_blank">SQL Server Compact Edition 4 (SQL Server CE)</a> database. We installed it and a companion EF driver via the &quot;<strong>EntityFramework.SqlServerCompact</strong>&quot; NuGet package.</p>
+<p>The Todo data are stored in a <a href="https://www.microsoft.com/en-us/download/details.aspx?id=30709" target="_blank">SQL Server Compact Edition 4 (SQL Server CE)</a> database. We installed it and a companion EF driver via the &quot;<strong>EntityFramework.SqlServerCompact</strong>&quot; NuGet package.</p>
 <p>We picked SQL Server CE because many developers don&#39;t or won&#39;t install any version of the SQL Server on their machines ... and CE deploys as a referenced DLL, not as a Microsoft product. To paraphrase Microsoft&#39;s description, &quot;SQL Server CE is a free, embedded database with a small footprint that supports private deployment of its binaries within the application folder.&quot;&nbsp;</p>
 <p>The Todo database itself is not included in the download. Rather the application (re)generates it from scratch, with mock data, every time the server starts. You&#39;ll find it as the hidden &quot;<strong>Todos.sdf</strong>&quot; file in the <strong>App_Data</strong> folder.</p>
 <h2>
@@ -179,7 +179,7 @@ public class TodosController : ApiController {
 <p>This provider wraps an instance of <em>TodoContext</em>, the application model&#39;s <em>DbContext </em>(described above). The provider&#39;s <em>Context </em>property exposes this <em>DbContext</em> directly to controller query methods such as <em>Todos</em>, making it easy to return a <em>DbContext</em>&#39;s <em>DbSet </em>property as the action result.</p>
 <p>Creating metadata for the Breeze client based on an Entity Framework model is no small task. The provider&#39;s <em>Metadata </em>method does the job.</p>
 <p>The provider&#39;s <em>SaveChanges </em>method can turn the incoming Json.NEt object representing an entity changeset into a database update via the Entity Framework.</p>
-<p>Read <a href="/doc-net/ef-efcontextprovider">more about the EFContextProvider here</a>.</p>
+<p>Read <a href="/doc-net/ef-efcontextprovider-4x">more about the EFContextProvider here</a>.</p>
 <h3>
 	Demo members</h3>
 <p>The rest of the controller - perhaps as much as half of the controller code - has nothing to do with the Todo application <em>per se</em>. You probably wouldn&#39;t include any of it in your applications.</p>

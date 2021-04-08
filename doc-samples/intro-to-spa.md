@@ -37,7 +37,7 @@ The .NET backend is an ASP.NET web application with Web API fronting the Entity 
 
 <p>But this course isn&#39;t about drag and drop. It gets behind &quot;Hot Towel&quot; to show you what those libraries do and how to make them work for you.</p>
 
-<p>We highly recommend the course ... and a Pluralsight subscription (check out their <a href="https://pluralsight.com/training/Subscribe/Step1?isTrial=True" target="_blank">free trial</a>).</p>
+<p>We highly recommend the course ... and a Pluralsight subscription (check out their <a href="https://pluralsight.com/" target="_blank">free trial</a>).</p>
 
 <h2>More Papa</h2>
 

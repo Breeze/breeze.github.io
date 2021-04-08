@@ -17,9 +17,9 @@ The package (or packages) you need depend on your development scenario.
 
 ## Are you new to Breeze?
 
-Breeze ships with out-of-the-box support for the ASP.NET Web API and Entity Framework. The easy route to a Breeze application is shown in the following repo: <a href="https://github.com/Breeze/northwind-core-ng-demo" target="_blank">Getting Started with Breeze</a>
+Breeze ships with out-of-the-box support for the ASP.NET Web API and Entity Framework. The easy route to a Breeze application is shown in the following repo: <a href="https://github.com/Breeze/northwind-demo" target="_blank">Getting Started with Breeze</a>
 
-See [Breeze Steps](https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS.md) for a step by step review on how to build a .NET Server. 
+See [Breeze Steps](https://github.com/Breeze/northwind-demo/blob/master/STEPS.md) for a step by step review on how to build a .NET Server. 
 
 The Breeze sample applications are applications with a Web API controller, a C# entity model, and the Entity Framework mediating between the model and a SQL Server database.
 

@@ -292,7 +292,7 @@ var parameters = {
 
 <p>The format of the JSON payload from the Edmunds service is proprietary and idiosyncratic.</p>
 
-<p>The author of this sample read the definitions for each service response (e.g, the <a href="http://developer.edmunds.com/api-documentation/vehicle/spec_make/v1/" target="_blank">&quot;Make_Repository&quot; response</a>) on the Edmunds website and translated that information into a <span class="codeword">JsonResultsAdapter</span>. That adapter guides Breeze as it &quot;materializes&quot; <span class="codeword">Make</span> and <span class="codeword">Model</span> entities from Edmunds JSON response data.</p>
+<p>The author of this sample read the definitions for each service response (e.g, the <a href="https://developer.edmunds.com/api-documentation/vehicle/spec_make/v3/" target="_blank">&quot;Make_Repository&quot; response</a>) on the Edmunds website and translated that information into a <span class="codeword">JsonResultsAdapter</span>. That adapter guides Breeze as it &quot;materializes&quot; <span class="codeword">Make</span> and <span class="codeword">Model</span> entities from Edmunds JSON response data.</p>
 
 <p>If this application were more complicated, involving a rich entity model and many different service calls, we&#39;d probably want to write more than one <span class="codeword">JsonResultsAdapter</span> ... perhaps one for each Edmunds service endpoint. But this app is very simple; we can get away with just one <span class="codeword">JsonResultsAdapter</span> for all entity types and service calls.</p>
 
@@ -352,7 +352,7 @@ return { entityType: &quot;Model&quot; };
 
 <p>Of course you&#39;ll need a good network connection to reach the Edmunds service. The Edmunds service is pretty reliable but occasionally fails to respond properly. You&#39;ll see a red error toast when that happens. The app is too simple to auto-recover; simply trying the operation again is usually sufficient.</p>
 
-<p>Edmunds throttles requests, limiting each API key to 4,000 requests daily. In the unlikely event that sample users exceed this threshold, you can <a href="http://edmunds.mashery.com/member/register/" title="Get your own Edmunds API key">get your own key from Edmunds</a> and replace the one baked into the sample in the <em>datacontext.js</em>.</p>
+<p>Edmunds throttles requests, limiting each API key to 4,000 requests daily. In the unlikely event that sample users exceed this threshold, you can <a href="https://developer.edmunds.com/" title="Get your own Edmunds API key">get your own key from Edmunds</a> and replace the one baked into the sample in the <em>datacontext.js</em>.</p>
 
 <h2>Wrap up</h2>
 

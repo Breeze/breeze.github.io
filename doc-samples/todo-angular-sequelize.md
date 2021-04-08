@@ -40,15 +40,15 @@ The entire app is organized in 3 folders that host server-side and client-side c
 
 ## Server
 
-<p><img alt="" src="/images/samples/Todo-AngularJS-SequelizeServerStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
+<p><img alt="" src="/images/samples/Todo-Angular-SequelizeServerStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
 
-<p>The server is written for <a href="http://http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a>, and can be run on a <a href="http://www.mysql.com/" target="_blank">MySql</a> or <a href="http://www.postgresql.org/" target="_blank">PostgreSQL</a> database.</p>
+<p>The server is written for <a href="http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a>, and can be run on a <a href="http://www.mysql.com/" target="_blank">MySql</a> or <a href="http://www.postgresql.org/" target="_blank">PostgreSQL</a> database.</p>
 
 <div style="clear:both; margin-bottom: 20px;"></div>
 
 ## Client
 
-<p><img alt="" src="/images/samples/Todo-AngularJS-SequelizeClientStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
+<p><img alt="" src="/images/samples/Todo-Angular-SequelizeClientStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
 
 <p>The <em>app</em> folder holds the client application JavaScript.</p>
 

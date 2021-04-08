@@ -31,7 +31,7 @@ Todo is the simplest full-CRUD app we could think of. The architecture is delibe
 
 ## Server
 
-<p><img alt="" src="/images/samples/Todo-AngularJS-HibernateServerStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
+<p><img alt="" src="/images/samples/Todo-Angular-HibernateServerStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
 
 <p>The server is written as a Java Servlet and uses a <a href="http://www.mysql.com/" target="_blank">MySql</a> database.</p>
 
@@ -39,7 +39,7 @@ Todo is the simplest full-CRUD app we could think of. The architecture is delibe
 
 ## Client
 
-<p><img alt="" src="/images/samples/Todo-AngularJS-HibernateClientStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
+<p><img alt="" src="/images/samples/Todo-Angular-HibernateClientStack.png" style="width: 250px; float:left; margin-right: 10px;" /></p>
 
 <p>The <em>App</em> folder holds the client application JavaScript.</p>
 

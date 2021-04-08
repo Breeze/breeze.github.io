@@ -25,7 +25,7 @@ If you do control the server you *may* be able to make adjustments on the server
 
 This is Microsoft's original OData implementation. It is the most compliant implementation and Breeze clients should have no trouble with the metadata it generates.
 
-However, Microsoft seem to have <a href="http://blogs.msdn.com/b/odatateam/archive/2014/03/27/future-direction-of-wcf-data-services.aspx" target="_blank" title="Mike Pizzo discusses MS OData roadmap">redirected their energies toward development of **ASP.NET Web API OData**</a> and away from **WCF Data Services**. The future of WCF Data Services is anyone's guess.
+However, Microsoft seem to have <a href="https://devblogs.microsoft.com/odata/discussion-future-direction-of-wcf-data-services/" target="_blank" title="Mike Pizzo discusses MS OData roadmap">redirected their energies toward development of **ASP.NET Web API OData**</a> and away from **WCF Data Services**. The future of WCF Data Services is anyone's guess.
 
 # ASP.NET Web API OData Service
 

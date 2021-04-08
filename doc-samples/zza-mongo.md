@@ -46,7 +46,7 @@ td.stack {
 
 **Zza!** is a single page application (SPA) for ordering pizzas, salads and drinks.
 
-It's **100% JavaScript**, written for <a href="http://http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a>, and uses a <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> database.
+It's **100% JavaScript**, written for <a href="http://nodejs.org/" target="_blank">Node.js</a> running <a href="http://expressjs.com/" target="_blank">Express</a>, and uses a <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> database.
 
 Zza! uses the **BMEAN** stack:
 
@@ -189,7 +189,7 @@ Otherwise, the same client-code runs in radically different environments.
 
 # Node and Express #
 
-The web application server is written in about 60 lines of JavaScript (*server.js*), using the <a href="http://expressjs.com/" target="_blank">Express framework</a> running on the <a href="http://http://nodejs.org/" target="_blank">node.js</a> platform.
+The web application server is written in about 60 lines of JavaScript (*server.js*), using the <a href="http://expressjs.com/" target="_blank">Express framework</a> running on the <a href="http://nodejs.org/" target="_blank">node.js</a> platform.
 
 This server is either **delivering static content** to the client such as HTML, CSS, image, and JavaScript files or **routing client data requests** to a data access module called *routes.js*.
 

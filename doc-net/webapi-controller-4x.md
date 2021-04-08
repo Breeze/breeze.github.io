@@ -20,7 +20,7 @@ The Breeze Controller is just one of many ways to serve a Breeze client with eit
 
 When targeting a Breeze client, it is usually preferable to write a Web API **controller per *service***. 
 
-The [Breeze Getting Started tutorial](https://github.com/Breeze/northwind-core-ng-demo) creates a selection of endpoints grouped into a single 'Controller' on a single entity model. This is our recommended pattern for Breeze services. Note that if you have more than one entity model, we recommend a seperate controller for each.
+The [Breeze Getting Started tutorial](https://github.com/Breeze/northwind-demo) creates a selection of endpoints grouped into a single 'Controller' on a single entity model. This is our recommended pattern for Breeze services. Note that if you have more than one entity model, we recommend a seperate controller for each.
 
 ### Controller-per-type
 
@@ -87,7 +87,7 @@ A Breeze Web API controller and an out-of-the-box Breeze client share a common u
 
 # Configuring Serialization, Exceptions and Connection strings
 
-Listed below is a code fragment from our [Creating a Breeze Server example.] (https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS-Server-Core3.md)
+Listed below is a code fragment from our [Creating a Breeze Server example.] (https://github.com/Breeze/northwind-demo/blob/master/server/STEPS-Server-Core3.md)
 
 In this fragment in the `ConfigureServices` method, we need to 
 1. Enable MVC, so our `BreezeController` class can be used to handle requests
@@ -174,7 +174,7 @@ You don't have to add the attribute to each controller method yourself ... unles
 
 # EFContextProvider
 
-Many .NET server developers turn to the Microsoft's [Entity Framework](http://msdn.microsoft.com/en-us/data/ef.aspx) for relational data modeling and relational data access. It's so popular that Breeze offers a special [`EFContextProvider` class](/doc-net/ef-efcontextprovider) to facilitate development of .NET servers for Breeze clients.
+Many .NET server developers turn to the Microsoft's [Entity Framework](http://msdn.microsoft.com/en-us/data/ef.aspx) for relational data modeling and relational data access. It's so popular that Breeze offers a special [`EFContextProvider` class](/doc-net/ef-efcontextprovider-4x) to facilitate development of .NET servers for Breeze clients.
 
 This provider encapsulates three main functions:
 
@@ -205,7 +205,7 @@ We don't do that in real world code. The approach you see here is fine for demos
 
 ### Alternatives to Entity Framework
 
-The `EFContextProvider` derives from the Breeze [`ContextProvider`](/doc-net/ef-efcontextprovider "ContextProvider") which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
+The `EFContextProvider` derives from the Breeze [`ContextProvider`](/doc-net/ef-efcontextprovider-4x "ContextProvider") which can be the base class for alternative providers that don't involve Entity Framework ... and don't store data in a relational database either. 
 
 Breeze ships [components for NHibernate](/doc-net/nh-details) developers.  The [in-memory "No DB" sample](/doc-samples/no-db) has a custom `ContextProvider` that doesn't write to a database. The source for any of these providers can guide you in writing your own provider.
 
@@ -325,4 +325,4 @@ The Web API delivers the bundle to the controller’s `SaveChanges` method as a 
 
 Are alarm bells ringing when you read this code? We shouldn't blithely save everything the client tells us to save. We should inspect every request, making sure that the changes are valid and that the user is authorized to make them.
 
-Learn how to do that with [a custom EFContextProvider and save interception](/doc-net/ef-efcontextprovider#SaveInterception).
+Learn how to do that with [a custom EFContextProvider and save interception](/doc-net/ef-efcontextprovider-4x#SaveInterception).

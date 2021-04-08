@@ -117,7 +117,7 @@ The [breeze-hibernate](https://github.com/Breeze/breeze.server.java) library imp
 - Parses breeze client EntityQuery instances encoded as JSON into [Criteria](http://docs.jboss.org/hibernate/core/3.6/javadocs/org/hibernate/Criteria.html) queries
 - Executes these queries using Hibernate Sessions
 - Expands graphs of related entites using lazy loading.
-- Serializes query results to [JSON](http://www.json.org/java/), using [$id/$ref syntax for handling references](https://blogs.oracle.com/sundararajan/entry/a_convention_for_circular_reference)
+- Serializes query results to [JSON](http://www.json.org/), using [$id/$ref syntax for handling references](https://blogs.oracle.com/sundararajan/entry/a_convention_for_circular_reference)
 - Handles saving Breeze payloads in Hibernate
 
 

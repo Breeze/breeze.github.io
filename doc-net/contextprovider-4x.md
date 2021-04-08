@@ -10,7 +10,7 @@ redirect_from: "/doc-net/contextprovider.html"
 
 The `ContextProvider` is a server-side component for managing data access and business validation with .NET technologies.
 
-`ContextProvider` is the base class for the [`EFContextProvider`](/doc-net/ef-efcontextprovider) and the `NHContextProvider` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.
+`ContextProvider` is the base class for the [`EFContextProvider`](/doc-net/ef-efcontextprovider-4x) and the `NHContextProvider` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.
 
 This topic covers the uses and capabilities of the `ContextProvider`. While often described in connection with the `EFContextProvider`, please remember that it is more general than that.
 

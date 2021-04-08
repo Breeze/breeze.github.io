@@ -8,7 +8,7 @@ layout: doc-net
 
 The `PersistenceManager` is a server-side component for managing data access and business validation with .NET technologies.
 
-`PersistenceManager` is the base class for the [`EFPersistenceManager`](/doc-net/ef-efpersistencemanager) and the `NHPersistenceManager` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.
+`PersistenceManager` is the base class for the [`EFPersistenceManager`](/doc-net/ef-efpersistencemanager-core) and the `NHPersistenceManager` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.
 
 This topic covers the uses and capabilities of the `PersistenceManager`. While often described in connection with the `EFPersistenceManager`, please remember that it is more general than that.
 

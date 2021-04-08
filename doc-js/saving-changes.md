@@ -186,4 +186,4 @@ Here we notice:
 - The `$id` and `$ref` properties are used to identify the relationships between the entities in *this payload only*.  The real entity relationship is established (on server and client) by the OrderID.
 - The temporary `OrderID` value has been replaced by the server-generated ID.  The `KeyMappings` property identifies the keys that were replaced on the server.  This tells the Breeze client how to update the entities in its cache.  It will find the Order entity with OrderID -1, and change its OrderID to 212008, and change the foreign key in all related entities.
 - The `DeletedKeys` property contains the EntityKey values for entities that were deleted on the server but not the client.  This tells the Breeze client to remove these entities from the cache.
-- Any errors (such as [server-side validation](/doc-net/ef-serverside-validation) errors) appear in the `Errors` property
+- Any errors (such as [server-side validation](/doc-net/ef-serverside-validation-4x) errors) appear in the `Errors` property

@@ -154,7 +154,7 @@ public EntityInfo CreateEntityInfo(Object entity, EntityState entityState = Enti
 		<li>Two new EntityType methods: <em>EntityType.isSubtypeOf</em> and <em>EntityType.getSelfAndSubtypes</em>.</li>
 	</ul>
 
-	<p>Documentation is on the way. Meanwhile you can explore a comprehensive collection of explanatory tests in the <em>inheritanceTests</em> file of <a href="/samples/doccode">the DocCode Sample</a>. There is a new companion &quot;Inheritance&quot; model in that sample project illustrating TPH, TPT, and TPC inheritance.</p>
+	<p>Documentation is on the way. Meanwhile you can explore a comprehensive collection of explanatory tests in the <em>inheritanceTests</em> file of <a href="/doc-samples/doccode">the DocCode Sample</a>. There is a new companion &quot;Inheritance&quot; model in that sample project illustrating TPH, TPT, and TPC inheritance.</p>
 	</li>
 	<li>
 	<p><strong>OData Write/Save Support</strong> - Calling <em>EntityManager.saveChanges</em> now performs the appropriate OData Multipart MIME POST, MERGE, and DELETE operations. (Previously, only OData read operations were supported).</p>
@@ -177,7 +177,7 @@ public EntityInfo CreateEntityInfo(Object entity, EntityState entityState = Enti
 	<br />
 	The&nbsp;<em>BreezeWebApiConfig.cs </em>in App_Start incorporates this change.<br />
 	<br />
-	After updating your breeze.webapi NuGet package, <strong>you may have to change the <a href="http://www.breezejs.com/sites/all/apidocs/classes/EntityManager.html" target="_blank">&quot;serviceName&quot; passed to your EntityManager constructor</a> from &#39;api/...&#39; to &#39;breeze/...&#39;</strong>. Alternatively, you can change the value in&nbsp;<em>BreezeWebApiConfig.cs </em> back to &#39;api/&#39; ... and future NuGet package updates will not touch this file again. We regret the inconvenience.</li>
+	After updating your breeze.webapi NuGet package, <strong>you may have to change the <a href="/doc-js/api-docs/classes/entitymanager.html" target="_blank">&quot;serviceName&quot; passed to your EntityManager constructor</a> from &#39;api/...&#39; to &#39;breeze/...&#39;</strong>. Alternatively, you can change the value in&nbsp;<em>BreezeWebApiConfig.cs </em> back to &#39;api/&#39; ... and future NuGet package updates will not touch this file again. We regret the inconvenience.</li>
 </ul>
 
 <h4>Bug fixes</h4>
@@ -193,7 +193,7 @@ public EntityInfo CreateEntityInfo(Object entity, EntityState entityState = Enti
 <h3><a name="130"></a>1.3.0 - Feature Release<span class="doc-date">Apr. 16, 2013</span></h3>
 
 <ul>
-	<li>Added a new AngularJS sample, &quot;<a href="/samples/edmunds" target="_blank">Edmunds</a>&quot;, showing <strong>how to consume a generic HTTP service with Breeze</strong>. It&#39;s a pure JavaScript client sample with no ASP.NET, Web API, EF, or SQL database dependencies. It demonstrates several features and changes of this release including the compact Metadata format and JSONP support.</li>
+	<li>Added a new AngularJS sample, &quot;<a href="/doc-samples/edmunds" target="_blank">Edmunds</a>&quot;, showing <strong>how to consume a generic HTTP service with Breeze</strong>. It&#39;s a pure JavaScript client sample with no ASP.NET, Web API, EF, or SQL database dependencies. It demonstrates several features and changes of this release including the compact Metadata format and JSONP support.</li>
 	<li>Added &quot;Named Saves&quot;. By default the <em>EntityManager.saveChanges</em> method sends a save request to an endpoint called &quot;SaveChanges&quot;. With &quot;Named Save&quot;, you can target a different server endpoint such as an arbitrarily named <em>action </em>method on another Web API controller. There are two new properties on the <em>SaveOptions</em> class. A <em>resourceName</em> (for the <em>action</em> method) and a <em>dataService</em> (for targeting a different controller). Assuming that you want to save all pending changes, you could write
 	<pre class="brush:jscript;" style="color: black; font-family: Consolas; margin-left: 80px;">
 var so = new SaveOptions({ resourceName: &quot;myCustomSave&quot; });
@@ -273,7 +273,7 @@ metadataStore.addEntityType({
 <ul>
 	<li>Breeze metadata changes:
 	<ul>
-		<li>Breeze&rsquo;s native metadata format is <a href="http://www.breezejs.com/documentation/metadata-schema">now documented</a> and JSON representations in this format can now be used:
+		<li>Breeze&rsquo;s native metadata format is <a href="/doc-js/metadata-schema">now documented</a> and JSON representations in this format can now be used:
 
 		<ul>
 			<li>as the result of any Web API Metadata service method call. This means that any server can produce metadata in this format and return it as a response to the Breeze Metadata web service call. If using&nbsp;.NET, you can return the JSON metadata object directly from the Metadata method on the <em>ApiController</em>. This provides a simple mechanism for supplying server-side metadata for services that are not backed by an EDMX representation.</li>
@@ -335,9 +335,9 @@ metadataStore.addEntityType({
 		<li>The [<em>JsonFormatter</em>] attribute has been renamed to [<em>BreezeJsonFormatter</em>]. (The old version has been marked obsolete and will be removed in 6 months.).&nbsp;Note that you can now apply just this attribute to your <em>ApiController </em>and then use the [<em>BreezeQueryable</em>] attribute or the [<em>Queryable</em>] attribute on each method that you want OData support for.&nbsp;The alternative is to use the [<em>BreezeController</em>] attribute and suppress specific OData capabilities on selected methods by applying the [<em>BreezeQueryable</em>] or [<em>Queryable</em>] attributes.&nbsp;So you can go with either an exclusionary or inclusionary policy for OData support.&nbsp;</li>
 	</ul>
 	</li>
-	<li>Support for the ability to provide custom extraction and parsing logic on the JSON results returned by any web service. This facility makes it possible for Breeze to <a href="http://www.breezejs.com/documentation/processing-results-any-web-service">talk to virtually any web service</a> and return objects that will be first class Breeze entities. The requirement to use a specific server side JSON serializer in no longer applicable. This is a <strong>BETA </strong>feature and may still undergo some changes.
+	<li>Support for the ability to provide custom extraction and parsing logic on the JSON results returned by any web service. This facility makes it possible for Breeze to <a href="/doc-js/server-dataserviceadapter">talk to virtually any web service</a> and return objects that will be first class Breeze entities. The requirement to use a specific server side JSON serializer in no longer applicable. This is a <strong>BETA </strong>feature and may still undergo some changes.
 	<ul>
-		<li>New <em><a href="http://www.breezejs.com/sites/all/apidocs/classes/JsonResultsAdapter.html" target="_blank">JsonResultsAdapter </a></em>class.</li>
+		<li>New <em><a href="/doc-js/api-docs/classes/jsonresultsadapter" target="_blank">JsonResultsAdapter </a></em>class.</li>
 		<li>The <strong>DataService </strong>ctor will now accept a <em>JsonResultsAdapter </em>in its configuration hash.</li>
 	</ul>
 	</li>
@@ -381,7 +381,7 @@ metadataStore.addEntityType({
 <h3>New Documentation<span class="doc-date">Feb. 25, 2013</span></h3>
 
 <ul>
-	<li>Updated documentation on <a href="http://www.breezejs.com/documentation/odata">Open Data (OData)</a>.</li>
+	<li>Updated documentation on <a href="/doc-net/odata">Open Data (OData)</a>.</li>
 </ul>
 
 <h3>New Documentation<span class="doc-date">Feb. 21, 2013</span></h3>
@@ -460,13 +460,13 @@ metadataStore.addEntityType({
 <h3>New Documentation<span class="doc-date">Jan. 24, 2013</span></h3>
 
 <ul>
-	<li><a href="http://www.breezejs.com/documentation/entitymanager-and-caching">EntityManager</a> documented.</li>
+	<li><a href="/doc-js/entitymanager-and-caching">EntityManager</a> documented.</li>
 </ul>
 
 <h3>New Documentation<span class="doc-date">Jan. 22, 2013</span></h3>
 
 <ul>
-	<li><a href="http://www.breezejs.com/samples/nodb">NoDB sample</a> documented. Shows Breeze working without&nbsp;a database.</li>
+	<li><a href="/doc-samples/nodb">NoDB sample</a> documented. Shows Breeze working without&nbsp;a database.</li>
 </ul>
 
 <h2><a id="0x" name="0x"></a>0.x</h2>
@@ -549,8 +549,8 @@ If you rely on NuGet package updates, you will need to remove any old Breeze pac
 <h3>New documentation<span class="doc-date">Jan. 07, 2013</span></h3>
 
 <ul>
-	<li>New <em>Getting started with Breeze using NuGet</em> <a href="http://www.breezejs.com/documentation/start-nuget">video</a>.</li>
-	<li>A lot of documentation added for Todo <a href="http://www.breezejs.com/samples/todo">sample</a>.</li>
+	<li>New <em>Getting started with Breeze using NuGet</em> <a href="/doc-net/start-nuget">video</a>.</li>
+	<li>A lot of documentation added for Todo <a href="/doc-samples/todo">sample</a>.</li>
 </ul>
 
 <h3>0.83.4<span class="doc-date">Jan. 07, 2013</span></h3>
@@ -607,12 +607,12 @@ If you rely on NuGet package updates, you will need to remove any old Breeze pac
 <ul>
 	<li>New and updated samples. Samples now include:
 	<ul>
-		<li><a href="http://www.breezejs.com/samples/breezy-devices">Breezy Devices</a></li>
-		<li><a href="http://www.breezejs.com/samples/car-bones">Car Bones</a></li>
-		<li><a href="http://www.breezejs.com/samples/doccode">DocCode</a></li>
-		<li><a href="http://www.breezejs.com/samples/todo">Todo-Knockout</a></li>
-		<li><a href="http://www.breezejs.com/samples/todo-angular">Todo-AngularJS</a></li>
-		<li><a href="http://www.breezejs.com/samples/todo-require">Todo-Require</a></li>
+		<li><a href="/doc-samples/breezy-devices">Breezy Devices</a></li>
+		<li><a href="/doc-samples/car-bones">Car Bones</a></li>
+		<li><a href="/doc-samples/doccode">DocCode</a></li>
+		<li><a href="/doc-samples/todo">Todo-Knockout</a></li>
+		<li><a href="/doc-samples/todo-angular">Todo-AngularJS</a></li>
+		<li><a href="/doc-samples/todo-require">Todo-Require</a></li>
 	</ul>
 	</li>
 </ul>
@@ -823,7 +823,7 @@ breeze.DataType.String.parse =
 <h3>New documentation<span class="doc-date">Dec. 3, 2012</span></h3>
 
 <ul>
-	<li>Query examples now shows how to <a href="http://www.breezejs.com/documentation/query-examples#queryByKey">Query by key</a>.</li>
+	<li>Query examples now shows how to <a href="/doc-js/query-examples.html#QueryByKey">Query by key</a>.</li>
 </ul>
 
 <h3>New sample<span class="doc-date">Dec. 1, 2012</span></h3>
@@ -851,9 +851,9 @@ breeze.DataType.String.parse =
 <ul>
 	<li>Added a new documentation section for patterns and practices called &#39;Cool Breezes&#39;. Three new articles there:
 	<ul>
-		<li><a href="http://www.breezejs.com/documentation/share-entitymanager">Share an EntityManager</a></li>
-		<li><a href="http://www.breezejs.com/documentation/multiple-managers">Multiple Managers</a></li>
-		<li><a href="http://www.breezejs.com/documentation/lookup-lists">Lookup Lists</a></li>
+		<li><a href="/doc-cool-breezes/share-an-entitymanager">Share an EntityManager</a></li>
+		<li><a href="/doc-cool-breezes/multiple-entitymanagers">Multiple Managers</a></li>
+		<li><a href="/doc-cool-breezes/lookup-lists">Lookup Lists</a></li>
 	</ul>
 	</li>
 </ul>
@@ -883,9 +883,9 @@ breeze.DataType.String.parse =
 <h3>New documentation<span class="doc-date">Nov. 19, 2012</span></h3>
 
 <ul>
-	<li><a href="http://www.breezejs.com/documentation/inside-entity">Inside the Entity</a></li>
-	<li><a href="http://www.breezejs.com/documentation/customizing-ajax">Customizing AJAX</a></li>
-	<li><a href="http://www.breezejs.com/documentation/projection-queries">Projection queries</a></li>
+	<li><a href="/doc-js/inside-entity">Inside the Entity</a></li>
+	<li><a href="/doc-js/customizing-ajax">Customizing AJAX</a></li>
+	<li><a href="/doc-js/projection-queries">Projection queries</a></li>
 </ul>
 
 <h3>0.72.1<span class="doc-date">Nov. 19, 2012</span></h3>
@@ -935,7 +935,7 @@ breeze.DataType.String.parse =
 <h3>New sample<span class="doc-date">Nov. 8, 2012</span></h3>
 
 <ul>
-	<li><a href="http://www.breezejs.com/samples/car-bones">Car Bones</a> - a new sample showing how to use Breeze with Backbone.</li>
+	<li><a href="/doc-samples/car-bones">Car Bones</a> - a new sample showing how to use Breeze with Backbone.</li>
 </ul>
 
 <h3>0.65.1<span class="doc-date">Nov. 6, 2012</span></h3>
@@ -986,8 +986,8 @@ breeze.DataType.String.parse =
 <h3>New documentation<span class="doc-date">Oct. 22, 2012</span></h3>
 
 <ul>
-	<li>Added the <a href="http://www.breezejs.com/documentation/start-nuget">Start with NuGet</a> topic which describes development of an ASP.NET MVC 4 Web API application with the Breeze NuGet packages.</li>
-	<li>Revised the <a href="/samples/doccode">DocCode </a>sample documentation to reflect the changes for this release. The sample videos have not been updated yet.</li>
+	<li>Added the <a href="/doc-net/nuget-packages">Start with NuGet</a> topic which describes development of an ASP.NET MVC 4 Web API application with the Breeze NuGet packages.</li>
+	<li>Revised the <a href="/doc-samples/doccode">DocCode </a>sample documentation to reflect the changes for this release. The sample videos have not been updated yet.</li>
 	<li>Simplified documentation in the <a href="/documentation/hosting-mvc-4">Breeze on the server</a> section in accord with the recommended NuGet development path.</li>
 </ul>
 
@@ -997,7 +997,7 @@ breeze.DataType.String.parse =
 	<li>Query and Save execution results returned via the WebApi provider now include the raw XHR response from the server as an additional property (see API docs).</li>
 	<li>Improved error messages when metadata retrieval fails.</li>
 	<li>Improved NuGet support for MVC4 Web projects (search for &quot;Breeze for MVC4&quot; on NuGet).</li>
-	<li>Revised the <a href="http://www.breezejs.com/documentation/start-nuget">Breeze NuGet packages</a>. You can now start from the smaller &ldquo;ASP.NET MVC4 Empty&rdquo; project template as well as the larger &ldquo;ASP.NET MVC4 Web API&rdquo; template.</li>
+	<li>Revised the <a href="/doc-net/nuget-packages">Breeze NuGet packages</a>. You can now start from the smaller &ldquo;ASP.NET MVC4 Empty&rdquo; project template as well as the larger &ldquo;ASP.NET MVC4 Web API&rdquo; template.</li>
 	<li>The BreezyDevices, Todo, and DocCode samples have been rewritten to be consistent with a development path that begins with the &ldquo;ASP.NET MVC4 Empty&rdquo; project template followed by the &ldquo;Breeze.MVC4WebApi&rdquo; NuGet package.</li>
 	<li>The DocCode sample no longer incorporates the Breeze Sample Todo; the Todo app stands on its own as a separate sample.</li>
 </ul>
@@ -1013,8 +1013,8 @@ breeze.DataType.String.parse =
 <h3>New documentation<span class="doc-date">Oct. 16, 2012</span></h3>
 
 <ul>
-	<li><a href="/documentation/extending-entities">Extending Entities</a>.</li>
-	<li><a href="/documentation/exportimport">Export/Import</a></li>
+	<li><a href="/doc-js/extending-entities">Extending Entities</a>.</li>
+	<li><a href="/doc-js/exportimport">Export/Import</a></li>
 </ul>
 
 <h3>0.63<span class="doc-date">Oct. 9, 2012</span></h3>
