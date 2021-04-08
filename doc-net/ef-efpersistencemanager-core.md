@@ -4,7 +4,7 @@ layout: doc-net
 # EFPersistenceManager
 
 > **NOTE: This page is for Breeze running on .NET Core**<br>
-> [Go here for .NET 4.x version](/doc-net/ef-contextprovider-4x)
+> [Go here for .NET 4.x version](/doc-net/ef-efcontextprovider-4x)
 
 Many application servers use an ASP.NET Web API controller to handle the client's HTTP requests. And they use the Entity Framework (EF) to model and access a SQL database. Breeze has an ***EFPersistenceManager** component to make controller interactions with EF a little easier. It's basically a wrapper around your application's *DbContext* that mediates between the Breeze controller and EF. It takes care of a lot of routine plumbing.
 

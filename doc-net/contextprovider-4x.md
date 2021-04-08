@@ -5,6 +5,9 @@ redirect_from: "/doc-net/contextprovider.html"
 ---
 # ContextProvider
 
+> **NOTE: This page is for Breeze running on .NET 4.x**<br>
+> [Go here for .NET Core version](/doc-net/persistencemanager-core)
+
 The `ContextProvider` is a server-side component for managing data access and business validation with .NET technologies.
 
 `ContextProvider` is the base class for the [`EFContextProvider`](/doc-net/ef-efcontextprovider) and the `NHContextProvider` classes which rely on an ORM (EntityFramework and NHibernate respectively) for relational database access and metadata generation.

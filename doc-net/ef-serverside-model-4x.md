@@ -5,7 +5,7 @@ redirect_from: "/old/documentation/server-side-model.html"
 # The server-side model
 
 > **NOTE: This page is for Breeze running on .NET 4.x**<br>
-> [Go here for .NET Core version](/doc-net/ef-serverside-validation-core)
+> [Go here for .NET Core version](/doc-net/ef-serverside-model-core)
 
 In the sample code we implement the persistence service as an ASP.NET Web API that queries and saves entities with the help of the Entity Framework. You can write the service a different way but this is a convenient approach for .NET developers and the one we'll discuss on this page and the ones that follow.
 
@@ -22,7 +22,7 @@ A Breeze client model maps easily to (almost) every structure supported by Entit
 
 The Breeze.js client does not support "many to many" relationships *without a join entity* at this time. You will have to expose the junction/mapping table as an entity.
 
-The Breeze.net server components support EF 6, EF 5.x, and EF 4.x (but no versions prior to v.4.2).  See the [NuGet Packages page](/doc-net/nuget-packages) for more info.
+The Breeze .Net server components support EF 6, EF 5.x, and EF 4.x (but no versions prior to v.4.2).  See the [NuGet Packages page](/doc-net/nuget-packages) for more info.
 
 ## Build your model
 
