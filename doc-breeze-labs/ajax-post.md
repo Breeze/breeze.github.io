@@ -5,7 +5,7 @@ redirect_from: "/old/documentation/breezeajaxpostjs.html"
 # Breeze queries using POST #
 This feature is for handling large object graphs as query parameters - object graphs so large that they won't fit in a URL.
 It updates the [Breeze AJAX adapter](/doc-js/server-ajaxadapter) to allow HTTP POST 
-for specially-constructed [.withParameters](/doc-js/api-docs/classes/EntityQuery.html#method_withParameters)
+for specially-constructed [.withParameters](/doc-js/api-docs/classes/entityquery.html#withparameters)
  queries.  
 
 It works by telling jQuery's AJAX implementation, or AngularJS's $http service, to use POST instead of GET.  

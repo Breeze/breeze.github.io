@@ -219,7 +219,7 @@ et.addProperty(new breeze.DataProperty({
     isPartOfKey: true
 }));
 </pre>
-<p>A <span class="codeword">DataProperty</span> describes a property of the entity type that returns a simple value. The constructor takes a hashmap of key/value settings. You must specify your settings in this constructor hashmap; you can read the properties of a <span class="codeword">DataProperty</span> later but you can&#39;t change them. Omitted settings receive default values. See the <a href="/doc-js/api-docs/classes/DataProperty.html#property_dataType" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">API documentation</a> for details.</p>
+<p>A <span class="codeword">DataProperty</span> describes a property of the entity type that returns a simple value. The constructor takes a hashmap of key/value settings. You must specify your settings in this constructor hashmap; you can read the properties of a <span class="codeword">DataProperty</span> later but you can&#39;t change them. Omitted settings receive default values. See the <a href="/doc-js/api-docs/classes/dataproperty.html#datatype" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">API documentation</a> for details.</p>
 <p>An entity typically has only one key property so the default is false and we had to set it true for this property. As the setting name implies (<span class="codeword">isPartOfKey</span>), Breeze supports composite keys.</p>
 <h4>
 	NamingConvention</h4>

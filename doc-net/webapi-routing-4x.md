@@ -93,11 +93,11 @@ Three problems remain:
 
 *#*3 isn't your concern but it is one that we worry about. We're trying to automate the Breeze installation process as much as possible without compromising an existing app. We don't want to overwrite *anything *in your application, including your custom route definitions in *WebApiConfig.cs*. Our automation shouldn't touch the *Global.asax* either ... assuming the project has one ... which it need not!
 
-The [Breeze "MVC4 Web Api" NuGet package](nuget-packages.html) solves all three problems. It doesn't touch any existing project files. It installs a new configuration file, *BreezeWebApiConfig*, in *App_Start*. The Microsoft <a href="http://blogs.msdn.com/b/davidebb/archive/2010/10/11/light-up-your-nupacks-with-startup-code-and-webactivator.aspx" target="_blank">WebActivator.PreApplicationStartMethod</a> assembly attribute puts the *BreezeWebApiConfig* startup method *at the front* of the server launch sequence where it can register the Breeze route before routes registered by a *Global.asax*. It uses the word "breeze" as the prefix so as not to conflict with the default prefix, "api". And finally, the use of Web Activator means that a Breeze Web API server doesn't have to have a *Global.asax* at all.
+The [Breeze "MVC4 Web Api" NuGet package](nuget-packages.html) solves all three problems. It doesn't touch any existing project files. It installs a new configuration file, *BreezeWebApiConfig*, in *App_Start*. The Microsoft <a href="https://docs.microsoft.com/en-us/dotnet/api/system.web.preapplicationstartmethodattribute?view=netframework-4.8" target="_blank">PreApplicationStartMethod</a> assembly attribute puts the *BreezeWebApiConfig* startup method *at the front* of the server launch sequence where it can register the Breeze route before routes registered by a *Global.asax*. It uses the word "breeze" as the prefix so as not to conflict with the default prefix, "api". And finally, the use of Web Activator means that a Breeze Web API server doesn't have to have a *Global.asax* at all.
 
 Here's the gist of the code:
 
-	[assembly: WebActivator.PreApplicationStartMethod(
+	[assembly: PreApplicationStartMethod(
 		typeof(BreezeWebApiConfig), "RegisterBreezePreStart")]
 	namespace Todo.App_Start {
 

@@ -27,7 +27,6 @@ You are free to store that string anywhere, such as:
 * browser local storage
 * browser global storage
 * cloud storage
-* <a href="http://brian.io/lawnchair/" target="_blank">lawnchair</a> - a popular mobile device storage library
 
 Let's store it in browser local storage:
 

@@ -35,7 +35,6 @@ For browser apps:
 - browser local storage
 - browser global storage
 - cloud storage
-- <a href="http://brian.io/lawnchair/" target="_blank">lawnchair</a> &ndash; a popular mobile device storage library
 
 Let's store it to a file under My Documents:
 

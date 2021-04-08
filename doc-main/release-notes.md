@@ -239,7 +239,7 @@ there should be no breaking changes). This JSON syntax ***complements*** the "fl
 #### Breaking changes
 - D2574 - Attention OData JsonResultsAdapter authors.  The `entityAspect.extraMetadata` is now preserved by `exportEntities`. While fixing, we changed the related property of the  `JsonResultsAdapter.visitNode` result from `result.extra` to `result.extraMetadata`. Correct your JsonResultsAdapter accordingly.
 
-- D2602 - "After save the `entityAspect.propertyChanged` event is no longer raised for a property that was changed on the server". Actually propertyChanged **is still raised** in that situation. But Breeze only **raises the event once**. The value of the `propertyChangedArgs.propertyName` is `null` which means "many properties changed". This behavior [**was described in the API documentation**](/doc-js/api-docs/classes/EntityAspect.html#event_propertyChanged).   Previously Breeze raised a separate event for *each changed property individually* for every merged entity ... which may have been convenient but was not correct . If you relied on the (incorrect) behavior, you will experience the proper behavior as a breaking change.
+- D2602 - "After save the `entityAspect.propertyChanged` event is no longer raised for a property that was changed on the server". Actually propertyChanged **is still raised** in that situation. But Breeze only **raises the event once**. The value of the `propertyChangedArgs.propertyName` is `null` which means "many properties changed". This behavior [**was described in the API documentation**](/doc-js/api-docs/classes/entityaspect.html#propertychanged).   Previously Breeze raised a separate event for *each changed property individually* for every merged entity ... which may have been convenient but was not correct . If you relied on the (incorrect) behavior, you will experience the proper behavior as a breaking change.
 
 ### <a name="1412"></a>1.4.12 <span class="doc-date">May 9, 2014</span>
 
@@ -670,15 +670,15 @@ must be replaced with
 
 #### Features
 
-+ The [EntityManager.importEntities](/doc-js/api-docs/classes/EntityManager.html#method_importEntities) instance method now returns an object containing the list of entities imported and any temporary key mappings that occurred as a result of the import. The static version of this method has not changed, it still creates and returns a new EntityManager containing the imported entities. 
-+ An additional 'parent' property was added to the arguments passed to the [EntityAspect.propertyChanged](/doc-js/api-docs/classes/EntityAspect.html#event_propertyChanged) event.  The value of this property will be different from that of the 'entity' property when the property in question is part of a nested complex type structure.
-+ The [MetadataStore.importMetadata](/doc-js/api-docs/classes/MetadataStore.html#method_importMetadata) method can now process 'Breeze' native metadata imports where base classes may not be defined before their subclasses. i.e. order no longer matters.
-+ The 'value' parameter in the [Predicate](/doc-js/api-docs/classes/Predicate.html) constructor is now overloaded to optionally support an object with 'value', 'isLiteral' and 'dataType' properties. This change was made to support queries where Breeze's inference engine does not have sufficient information to correctly infer the 'dataType' of a query clause. 
-+ The [Predicate.create](/doc-js/api-docs/classes/Predicate.html#method_create) method and the Predicate constructor have been extended so that both will now also accept a standard 'OData' query clause.  OData clauses may also be combined with any standard query clauses.  However, any EntityQuery containing an explicit OData clause will only be executable remotely, i.e. you cannot execute these queries locally.
++ The [EntityManager.importEntities](/doc-js/api-docs/classes/entitymanager.html#importentities) instance method now returns an object containing the list of entities imported and any temporary key mappings that occurred as a result of the import. The static version of this method has not changed, it still creates and returns a new EntityManager containing the imported entities. 
++ An additional 'parent' property was added to the arguments passed to the [EntityAspect.propertyChanged](/doc-js/api-docs/classes/entityaspect.html#propertychanged) event.  The value of this property will be different from that of the 'entity' property when the property in question is part of a nested complex type structure.
++ The [MetadataStore.importMetadata](/doc-js/api-docs/classes/metadatastore.html#importmetadata) method can now process 'Breeze' native metadata imports where base classes may not be defined before their subclasses. i.e. order no longer matters.
++ The 'value' parameter in the [Predicate](/doc-js/api-docs/classes/predicate.html) constructor is now overloaded to optionally support an object with 'value', 'isLiteral' and 'dataType' properties. This change was made to support queries where Breeze's inference engine does not have sufficient information to correctly infer the 'dataType' of a query clause. 
++ The [Predicate.create](/doc-js/api-docs/classes/predicate.html#create) method and the Predicate constructor have been extended so that both will now also accept a standard 'OData' query clause.  OData clauses may also be combined with any standard query clauses.  However, any EntityQuery containing an explicit OData clause will only be executable remotely, i.e. you cannot execute these queries locally.
 
         var query = breeze.EntityQuery.from("Employees")
             .where("EmployeeID add ReportsToEmployeeID gt 3");   
-+ The [Predicate.and](/doc-js/api-docs/classes/Predicate.html#method_and) and [Predicate.or](/doc-js/api-docs/classes/Predicate.html#method_or) methods have been extended so that any arrays or parameters passed into these methods are automatically filtered to exclude null or undefined 'predicates'.  This allow for simpler composition of complex query expressions.
++ The [Predicate.and](/doc-js/api-docs/classes/predicate.html#and) and [Predicate.or](/doc-js/api-docs/classes/predicate.html#or) methods have been extended so that any arrays or parameters passed into these methods are automatically filtered to exclude null or undefined 'predicates'.  This allow for simpler composition of complex query expressions.
 
         // works even if any or all of pred1, pred2 or pred3 is null or undefined. 
         var predicate = Predicate.and([pred1, pred2, pred3]);
@@ -707,7 +707,7 @@ Use them as you would the other stock validators. Here's an example:
     var websiteProperty = personType.getProperty("website"); //get the property definition to validate
     websiteProperty.validators.push(Validator.url()); // push a new validator instance onto that property's validators
 
-With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Validator.html#method_makeRegExpValidator) static helper, you can quickly mint new validators that encapsulate a regular expression. For example, we can create a U.S. zipcode validator and apply it to one of the `Customer` properties.
+With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/validator.html#makeregexpvalidator) static helper, you can quickly mint new validators that encapsulate a regular expression. For example, we can create a U.S. zipcode validator and apply it to one of the `Customer` properties.
 
     // Make a zipcode validator
     function zipValidator = breeze.Validator.makeRegExpValidator(
@@ -723,7 +723,7 @@ With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Valid
     var zipProperty = custType.getProperty("PostalCode");    //get the PostalCode property definition
     zipProperty.validators.push(zipValidator);    // get that property's validators and push on the zipValidator
 
-[See the API docs](/doc-js/api-docs/classes/Validator.html) for more information on how to use these new validators.
+[See the API docs](/doc-js/api-docs/classes/validator.html) for more information on how to use these new validators.
 
 >Many of these new validators correlate to <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx" target="_blank">.NET data annotations</a>. In a future release, the Breeze.NET `EFContextProvider`will be able to include these validations in the metadata automatically for you. For now, you'll have to add them to the properties on the client side as shown above.
 
@@ -752,15 +752,15 @@ With the [`breeze.Validator.makeRegExpValidator`](/doc-js/api-docs/classes/Valid
 
 #### Server side (.NET)
  
-+ New server-side interception point, [AfterSaveEntities](/doc-net/ef-efcontextprovider#AfterSaveEntities).
++ New server-side interception point, [AfterSaveEntities](/doc-net/ef-efcontextprovider-4x#AfterSaveEntities).
 	
-+ New options for server-side transaction control. `SaveChanges` now has an optional [TransactionSettings](/doc-net/ef-efcontextprovider#TransactionSettings) parameter, which controls the type of transaction that wraps the `BeforeSaveEntites`, `SaveChangesCore`, and `AfterSaveEntities` methods.  
++ New options for server-side transaction control. `SaveChanges` now has an optional [TransactionSettings](/doc-net/ef-efcontextprovider-4x#TransactionSettings) parameter, which controls the type of transaction that wraps the `BeforeSaveEntites`, `SaveChangesCore`, and `AfterSaveEntities` methods.  
 
-+ New methods on [ContextProvider](/doc-net/ef-efcontextprovider#ContextProvidermethods) for use in `BeforeSaveEntities` and `AfterSaveEntities`.  These methods help allow re-use of database connections, which reduces the need for distributed transactions.
++ New methods on [ContextProvider](/doc-net/ef-efcontextprovider-4x#ContextProvidermethods) for use in `BeforeSaveEntities` and `AfterSaveEntities`.  These methods help allow re-use of database connections, which reduces the need for distributed transactions.
 
-+ [Save validation](/doc-net/ef-serverside-validation) enhancements. (Communicate server side validation errors to the client.)  
++ [Save validation](/doc-net/ef-serverside-validation-4x) enhancements. (Communicate server side validation errors to the client.)  
 	
-+ [Server side validation errors](/doc-net/ef-serverside-validation) can be returned in using .NET Validation Attributes or by throwing an *EntityErrorsException* within the server side *BeforeSaveEntities* delegate or virtual method.
++ [Server side validation errors](/doc-net/ef-serverside-validation-4x) can be returned in using .NET Validation Attributes or by throwing an *EntityErrorsException* within the server side *BeforeSaveEntities* delegate or virtual method.
 	      
 ### Bugs
 

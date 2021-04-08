@@ -25,7 +25,7 @@ redirect_from: "/old/breeze-sharp-documentation/entitymanager-and-caching.html"
 
 <h2>Key EntityManager capabilities</h2>
 
-<p>The following is a summary of the methods available on the EntityManager arranged by task. For a complete list of methods, please see the <a href="/doc-js/api-docs/classes/EntityManager.html">EntityManager API documentation</a>.</p>
+<p>The following is a summary of the methods available on the EntityManager arranged by task. For a complete list of methods, please see the <a href="/doc-cs/api-docs/?topic=html/T_Breeze_Sharp_EntityManager.htm">EntityManager API documentation</a>.</p>
 
 <h2>Querying for entities</h2>
 

@@ -103,5 +103,5 @@ A *SequelizeSaveHandler* instance is needed for each HTTP POST call that represe
 These properties will all be available from within any implementation of the *beforeSaveEntity* or *beforeSaveEntities* functions that you provide as properties of the local 'this' within the function. i.e. 'this.saveOptions'
 
 - **sequelizeManager**: The *SequelizeManager* that was used to construct this *SequelizeSaveHandler*. 
-- **metadataStore**: The *MetadataStore* ([see breeze client side documentation](/doc-js/api-docs/classes/MetadataStore.html)) instance associated with this save. 
-- **saveOptions**: The *SaveOptions* ([see breeze client side documentation](/doc-js/api-docs/classes/SaveOptions.html)) instance associated with this save.
+- **metadataStore**: The *MetadataStore* ([see breeze client side documentation](/doc-js/api-docs/classes/metadatastore.html)) instance associated with this save. 
+- **saveOptions**: The *SaveOptions* ([see breeze client side documentation](/doc-js/api-docs/classes/saveoptions.html)) instance associated with this save.

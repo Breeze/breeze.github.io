@@ -51,7 +51,7 @@ Controller code to support the URL's above might look something like this:
 
 When targeting a Breeze client, it is usually preferable to write a Web API **controller per *service***. 
 
-The [Breeze Getting Started tutorial](https://github.com/Breeze/northwind-core-ng-demo) creates a selection of endpoints grouped into a single 'Controller' on a single entity model. This is our recommended pattern for Breeze services. Note that if you have more than one entity model, we recommend a seperate controller for each.
+The [Breeze Getting Started tutorial](https://github.com/Breeze/northwind-demo) creates a selection of endpoints grouped into a single 'Controller' on a single entity model. This is our recommended pattern for Breeze services. Note that if you have more than one entity model, we recommend a seperate controller for each.
 
 ### Controller-per-type
 
@@ -252,7 +252,7 @@ Learn how to do that with [a custom EFPersistenceManager and save interception](
 
 # Configuring Serialization, Exceptions and Connection strings
 
-Listed below is a code fragment from our [Creating a Breeze Server example](https://github.com/Breeze/northwind-core-ng-demo/blob/master/STEPS-Server-Core3.md).
+Listed below is a code fragment from our [Creating a Breeze Server example](https://github.com/Breeze/northwind-demo/blob/master/server/STEPS-Server-Core3.md).
 
 In this fragment in the `ConfigureServices` method, we need to 
 1. Enable MVC, so our `NorthwindController` class can be used to handle requests

@@ -230,7 +230,7 @@ You can limit the number of records returned with the *query.options* property. 
         query.execute(db, "Customers", processResults(res, next));
     };
 
-The client may not know that the "customerWithScalarResult" resource name returns a "Customer" entity. The *query.resultEntityType* property above tells the Breeze client to expect "Customer" entities.  Without that advice, the client might have to [map in metadata](/doc-js/api-docs/classes/MetadataStore.html#method_setEntityTypeForResourceName) this "customerWithScalarResult" endpoint - and every other unusually-named endpoint - to its corresponding entity type.
+The client may not know that the "customerWithScalarResult" resource name returns a "Customer" entity. The *query.resultEntityType* property above tells the Breeze client to expect "Customer" entities.  Without that advice, the client might have to [map in metadata](/doc-js/api-docs/classes/metadatastore.html#setentitytypeforresourcename) this "customerWithScalarResult" endpoint - and every other unusually-named endpoint - to its corresponding entity type.
 
 Each of the MongoQuery properties mentioned above 'filter', 'select', 'options' corresponds directly to the parameters of the MongoDB *collection.find* method. 
  

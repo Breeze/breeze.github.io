@@ -219,7 +219,7 @@ The `dataservice` illustrates the "Revealing Module" module pattern by listing i
 
 Now for a few comments about these methods.
 
-The controller considers issuing a save whenever a property changes. It attaches a handler to the **`addPropertyChangeHandler`**. That  method invokes the handler whenever there is a change to any entity property of *any entity*.  You don't have to listen to every entity or every property individually. Breeze offers a "one stop shop" via the [`EntityManager.entityChanged` event](/doc-js/api-docs/classes/EntityManager.html#event_entityChanged).
+The controller considers issuing a save whenever a property changes. It attaches a handler to the **`addPropertyChangeHandler`**. That  method invokes the handler whenever there is a change to any entity property of *any entity*.  You don't have to listen to every entity or every property individually. Breeze offers a "one stop shop" via the [`EntityManager.entityChanged` event](/doc-js/api-docs/classes/entitymanager.html#entitychanged).
 
 **`createTodo`** creates a new instance of a `TodoItem` initialized as requested. This item is new in the cache but not yet saved to the database. By design, the command to save it comes from the controller. Note that we did not define the `TodoItem` in JavaScript; Breeze figured that out from metadata.
 
