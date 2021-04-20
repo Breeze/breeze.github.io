@@ -5,7 +5,38 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
-> **Please note that all further Breeze Server development will be on the .NET Core platform.  .Net 4.x Breeze Server development has been frozen **
+### <a name="Core314"></a>3.1.4 <span class="doc-date">April 20, 2021</span>
+
+Release for .NET 3.1
+
+ - Add DataAnnotationsValidator to Breeze.Persistence
+ - Fix processing of queryable result when returning error
+ - Fix duplicate properties in inheritance metadata ([#100](https://github.com/Breeze/breeze.server.net/issues/100))
+ - Add `Custom` property to DataProperty metadata, for sending custom metadata to client
+ - Add `Custom` property to EntityError, for sending custom error data to client
+ - Fix bug in overriding BreezeConfig ([#70](https://github.com/Breeze/breeze.server.net/issues/70))
+ - Update NHibernate version to 5.3.8
+ - Add EnumTypes to metadata ([#101](https://github.com/Breeze/breeze.server.net/issues/101))
+
+### <a name="Core504"></a>5.0.4 <span class="doc-date">April 19, 2021</span>
+
+Release for .NET 5
+
+ - Add DataAnnotationsValidator to Breeze.Persistence
+ - Fix processing of queryable result when returning error
+ - Fix duplicate properties in inheritance metadata ([#100](https://github.com/Breeze/breeze.server.net/issues/100))
+
+### <a name="Core503"></a>5.0.3 <span class="doc-date">March 30, 2021</span>
+
+Release for .NET 5
+
+ - Add `Custom` property to DataProperty metadata, for sending custom metadata to client
+ - Add `Custom` property to EntityError, for sending custom error data to client
+ - Fix bug in overriding BreezeConfig ([#70](https://github.com/Breeze/breeze.server.net/issues/70))
+ - Add NHibernate support to .NET 5
+ - Add EnumTypes to metadata ([#101](https://github.com/Breeze/breeze.server.net/issues/101))
+
+> Please note that all further Breeze Server development will be on the .NET Core / .NET 5+ platform.  .Net 4.x Breeze Server development has been frozen, except for essential bug fixes.
 
 ### <a name="Core102"></a>1.0.3 <span class="doc-date">December 12, 2019</span>
  - Initial release of .NET Core 3 libraries
