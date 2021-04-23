@@ -73,7 +73,7 @@ For this reason, `subscribe` returns a token that you can use to `unsubscribe` l
 
     var handle = order.entityAspect.propertyChanged.subscribe(...);
     // ... later, when you know it is the right time to dispose of the listener ...
-    order.entityAspect.propertyChanged.unsubcribe(handle);
+    order.entityAspect.propertyChanged.unsubscribe(handle);
 
 ### Too many listeners?
 
