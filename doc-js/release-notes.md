@@ -7,6 +7,24 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="2.1.0"></a>2.1.0 <span class="doc-date">April 23, 2021</span>
+
+ - Fix combining of 'or' clauses under an 'and' predicate ([#46](https://github.com/Breeze/breeze-client/issues/46))
+ - Add `extendFuncMap` to Predicate ([#37](https://github.com/Breeze/breeze-client/issues/37))
+ - Fix parsing of collections in CSDL metadata ([#36](https://github.com/Breeze/breeze-client/issues/36))
+ - Fix type information for AJAX adapters ([#48](https://github.com/Breeze/breeze-client/issues/48))
+ - Fix type information for Validators ([#220](https://github.com/Breeze/breeze.js/issues/220))
+ - Add console warning (instead of error) when serializing Predicate with unknown entity ([#48](https://github.com/Breeze/breeze-client/issues/48))
+ - Add console warning (instead of error) when defaultValue is undefined for non-nullable property in metadata ([#7](https://github.com/Breeze/breeze-client/issues/7)) and ([#218](https://github.com/Breeze/breeze.js/issues/218))
+
+### <a name="2011"></a>2.0.11 <span class="doc-date">April 8, 2021</span>
+ 
+ - Downlevel .d.ts files for compatibility with TypeScript 3.4 / Angular 7 ([#45](https://github.com/Breeze/breeze-client/issues/45))
+
+### <a name="2010"></a>2.0.10 <span class="doc-date">April 7, 2021</span>
+
+ - Update README ([#25](https://github.com/Breeze/breeze-client/issues/25))
+
 ### <a name="209"></a>2.0.9 <span class="doc-date">April 4, 2021</span>
 
  - Updated default property interceptor to handle detached object ([#30](https://github.com/Breeze/breeze-client/issues/30))
