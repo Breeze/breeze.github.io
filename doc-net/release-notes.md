@@ -5,9 +5,19 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core505"></a>5.0.5 <span class="doc-date">May 3, 2021</span>
+
+Release for .NET 5
+
+ - Add async support to PersistenceManager ([#46](https://github.com/Breeze/breeze.server.net/issues/46))
+ - Add Metadata support for foreign keys that relate to a property other than a PK
+ - NH: Fix "Not an association" error on set of strings ([#48](https://github.com/Breeze/breeze.server.net/issues/48))
+ - Update EntityFramework dependencies to version 5.0.5
+ - Update NHibernate dependencies to version 5.3.8
+
 ### <a name="Core314"></a>3.1.4 <span class="doc-date">April 20, 2021</span>
 
-Release for .NET 3.1
+Release for .NET Core 3.1
 
  - Add DataAnnotationsValidator to Breeze.Persistence
  - Fix processing of queryable result when returning error
