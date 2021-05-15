@@ -7,6 +7,11 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="2.1.2"></a>2.1.2 <span class="doc-date">May 14, 2021</span>
+
+ - Export `QueuedSaveFailedError` from mixin-save-queuing ([#53](https://github.com/Breeze/breeze-client/issues/53))
+ - Fix type information for `ValidationMessageContext`
+
 ### <a name="2.1.1"></a>2.1.1 <span class="doc-date">April 29, 2021</span>
 
  - Fix noisy console logging about null default values ([#50](https://github.com/Breeze/breeze-client/issues/50))
