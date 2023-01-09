@@ -7,6 +7,12 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="2.1.4"></a>2.1.4 <span class="doc-date">Jan 1, 2023</span>
+
+ - Release **2.1.4-mjs** version on npm, with ES 2020 .mjs modules.  Version 2.1.4 with ES5 and legacy bundles is still available.
+ - Fix `null === undefined` comparison in property interceptor ([#69](https://github.com/Breeze/breeze-client/pull/69))
+ - Fix regex issue in IE 11 ([#56](https://github.com/Breeze/breeze-client/issues/56))
+
 ### <a name="2.1.2"></a>2.1.2 <span class="doc-date">May 14, 2021</span>
 
  - Export `QueuedSaveFailedError` from mixin-save-queuing ([#53](https://github.com/Breeze/breeze-client/issues/53))

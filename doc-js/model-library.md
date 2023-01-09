@@ -4,11 +4,11 @@ layout: doc-js
 # Model Library
 Breeze JS applications typically rely on some 3rd party library to display entity values in HTML and update entity values from user input entered through HTML controls. Breeze refers to these as "**model libraries**".
 
-Popular model libraries include [AngularJS](https://angular.io/), [Aurelia](http://aurelia.io/), [Backbone](http://backbonejs.org/), [Ember](http://emberjs.com/), [Knockout](http://knockoutjs.com/), and [React](https://facebook.github.io/react/). 
+Popular model libraries include [Angular](https://angular.io/), [Aurelia](http://aurelia.io/), [Backbone](http://backbonejs.org/), [Ember](http://emberjs.com/), [Knockout](http://knockoutjs.com/), and [React](https://facebook.github.io/react/). 
 
 Each library has its own approach to constructing the HTML and wiring that HTML to the model objects that Breeze calls "entities" such that data can flow to and from the HTML without the developer's direct intervention.
 
-Each library expects to get and set model values in its own way. Some libraries (AngularJS, Aurelia, React) get and set values through the model object's own properties. Other libraries (Backbone, Ember, Knockout) get and set values through special "property accessor and mutator" functions.
+Each library expects to get and set model values in its own way. Some libraries (Angular, Aurelia, React) get and set values through the model object's own properties. Other libraries (Backbone, Ember, Knockout) get and set values through special "property accessor and mutator" functions.
 
 These differences mean that there is no universal way for Breeze to create an entity. When Breeze creates an entity, as it does when you call `createEntity` or when materializing query results, it has to adapt each entity instance to the requirements of the model library you've chosen for your application.
 
