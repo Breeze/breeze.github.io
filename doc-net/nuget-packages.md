@@ -33,30 +33,30 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
 
 > Note: Version 7.x of each package is for .NET 7,  whereas Version 6.x is for .NET Core 6, Version 5.x is for .NET Core 5, Version 3.x is for .NET Core 3 and Version 1.x is for .NET Core 2.  Please note that only the Version 3 and later packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
 
-    - [Breeze.AspNetCore.NetCore](https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/)
-    - [Breeze.Core](https://www.nuget.org/packages/Breeze.Core/)
-    - [Breeze.Persistence](https://www.nuget.org/packages/Breeze.Persistence/)
-    - [Breeze.Persistence.EFCore (support for EF Core)](https://www.nuget.org/packages/Breeze.Persistence.EFCore/)
-    - [Breeze.Persistence.NH (support for NHibernate)](https://www.nuget.org/packages/Breeze.Persistence.NH/)
+- [Breeze.AspNetCore.NetCore](https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/)
+- [Breeze.Core](https://www.nuget.org/packages/Breeze.Core/)
+- [Breeze.Persistence](https://www.nuget.org/packages/Breeze.Persistence/)
+- [Breeze.Persistence.EFCore (support for EF Core)](https://www.nuget.org/packages/Breeze.Persistence.EFCore/)
+- [Breeze.Persistence.NH (support for NHibernate)](https://www.nuget.org/packages/Breeze.Persistence.NH/)
 
 <br>
 - For .NET Framework 4.7.x  and Entity Framework 6 
 
-      These packages are no longer being maintained. Please migrate to .NET Core versions.
+> These packages are no longer being maintained. Please migrate to .NET Core versions.
 
-    - [Breeze.WebApi2.EF6  ( composite package for EF6 - includes next 3)](https://www.nuget.org/packages/Breeze.WebApi2.EF6)
-    - [Breeze.Server.WebApi2](https://www.nuget.org/packages/Breeze.Server.WebApi2/)
-    - [Breeze.Server.ContextProvider](https://www.nuget.org/packages/Breeze.Server.ContextProvider/)
-    - [Breeze.Server.ContextProvider.EF6  ( support for EF6)](https://www.nuget.org/packages/Breeze.Server.ContextProvider.EF6/)
-    - [Breeze.Server.ContextProvider.NH ( support for NHibernate)](https://www.nuget.org/packages/Breeze.Server.ContextProvider.NH/)
+  - [Breeze.WebApi2.EF6  ( composite package for EF6 - includes next 3)](https://www.nuget.org/packages/Breeze.WebApi2.EF6)
+  - [Breeze.Server.WebApi2](https://www.nuget.org/packages/Breeze.Server.WebApi2/)
+  - [Breeze.Server.ContextProvider](https://www.nuget.org/packages/Breeze.Server.ContextProvider/)
+  - [Breeze.Server.ContextProvider.EF6  ( support for EF6)](https://www.nuget.org/packages/Breeze.Server.ContextProvider.EF6/)
+  - [Breeze.Server.ContextProvider.NH ( support for NHibernate)](https://www.nuget.org/packages/Breeze.Server.ContextProvider.NH/)
     
 <br>    
   
 - For .NET Framework 4.x and Entity Framework 5   
 
-      These packages are no longer being maintained. Please migrate to .NET Core versions.
+> These packages are no longer being maintained. Please migrate to .NET Core versions.
 
-     - Breeze.WebApi
-     - Breeze.Server.WebApi.Core
-     - Breeze.Server.WebApi.EF
+  - Breeze.WebApi
+  - Breeze.Server.WebApi.Core
+  - Breeze.Server.WebApi.EF
 
