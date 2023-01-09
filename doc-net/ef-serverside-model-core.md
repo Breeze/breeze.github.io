@@ -7,7 +7,7 @@ layout: doc-net
 > [Go here for .NET 4.x version](/doc-net/ef-serverside-model-4x)
 
 
-<a href="http://msdn.microsoft.com/en-us/data/ef.aspx">Entity Framework</a> (EF) is a .NET data access technology with an Object Relational Mapper (ORM). The ORM maps a domain-specific object model to the schema of a relational database. It uses that map to move data between entity model objects (instances of .NET classes) and the tables and columns of a relational database.
+<a href="https://learn.microsoft.com/en-us/ef/core/">Entity Framework</a> (EF) is a .NET data access technology with an Object Relational Mapper (ORM). The ORM maps a domain-specific object model to the schema of a relational database. It uses that map to move data between entity model objects (instances of .NET classes) and the tables and columns of a relational database.
 
 A Breeze client model maps easily to (almost) every structure supported by Entity Framework Core. 
 

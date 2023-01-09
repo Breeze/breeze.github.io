@@ -29,11 +29,9 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
 
 ## Breeze NuGet Packages
 
-- For .NET Core ( versions 2 and 3) and Entity Framework Core ( 2 and 3)
+- For .NET Core (versions 2 through 7) and Entity Framework Core (2 through 7)
 
-         Version 3.x of the packages below is for .NET Core 3, whereas Version 1.x is for .NET Core 2.
-         If you are running ASP.NET Core 2/.NET Core 2 or EF Core 2 you will need to use the 1.x version of these packages.
-         Please note that only the Version 3.x packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
+> Note: Version 7.x of each package is for .NET 7,  whereas Version 6.x is for .NET Core 6, Version 5.x is for .NET Core 5, Version 3.x is for .NET Core 3 and Version 1.x is for .NET Core 2.  Please note that only the Version 3 and later packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
 
     - [Breeze.AspNetCore.NetCore](https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/)
     - [Breeze.Core](https://www.nuget.org/packages/Breeze.Core/)
@@ -44,7 +42,7 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
 <br>
 - For .NET Framework 4.7.x  and Entity Framework 6 
 
-      These packages are no longer being maintained. Please migrate to .NET Core 3 versions.
+      These packages are no longer being maintained. Please migrate to .NET Core versions.
 
     - [Breeze.WebApi2.EF6  ( composite package for EF6 - includes next 3)](https://www.nuget.org/packages/Breeze.WebApi2.EF6)
     - [Breeze.Server.WebApi2](https://www.nuget.org/packages/Breeze.Server.WebApi2/)
@@ -56,7 +54,7 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
   
 - For .NET Framework 4.x and Entity Framework 5   
 
-      These packages are no longer being maintained. Please migrate to .NET Core 3 versions.
+      These packages are no longer being maintained. Please migrate to .NET Core versions.
 
      - Breeze.WebApi
      - Breeze.Server.WebApi.Core

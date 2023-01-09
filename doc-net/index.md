@@ -12,7 +12,7 @@ Within the .NET community, ASP.NET and ASP.NET Core web applications are typical
 
 Breeze offers support for both legacy .NET 4.x ASP.NET applications as well as the new ASP.NET Core applications.
 
-[ASP.NET Core and ASP.NET info](https://docs.microsoft.com/en-us/aspnet/?view=aspnetcore-3.1#pivot=core)
+[ASP.NET Core and ASP.NET info](https://learn.microsoft.com/en-us/aspnet/core/)
 
 The following sections also describe how to build these applications with a variety of ORM technologies such as Entity Framework, Entity Framework Core and NHibernate.
 

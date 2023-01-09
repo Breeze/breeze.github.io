@@ -16,8 +16,8 @@ redirect_from: "/old/documentation/download.html"
   <a href="/doc-net/nuget-packages.html">Start with NuGet</a>
   This is the easiest way to build a Breeze application if you are using Visual Studio.
 
-  
-## Get the Nuget Packages for .NET core 2 and 3
+
+## Get the Nuget Packages for .NET core (2 through 7)
 
   <a href="https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/"
     target="_blank">Breeze.AspNetCore.NetCore</a><br />
@@ -50,6 +50,7 @@ redirect_from: "/old/documentation/download.html"
   <a href="https://github.com/Breeze/breeze.server.net" target="_blank">The entire source repo for all Breeze Server implementations</a><br>
 
 ## Implementations by .NET version
+  <a href="https://github.com/Breeze/breeze.server.net/tree/master/DotNet" target="_blank">.NET 5 and up</a><br>
   <a href="https://github.com/Breeze/breeze.server.net/tree/master/AspNetCore-v3" target="_blank">.NET Core 3/ASP.NET Core 3</a><br>
   <a href="https://github.com/Breeze/breeze.server.net/tree/master/AspNetCore" target="_blank">.NET Core 2/ASP.NET Core 2</a><br>
   <a href="https://github.com/Breeze/breeze.server.net/tree/master/AspNet" target="_blank">.NET Framework 4.7.x</a><br>

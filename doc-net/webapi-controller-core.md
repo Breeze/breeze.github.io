@@ -14,7 +14,7 @@ The Breeze Controller is just one of many ways to serve a Breeze client with eit
 
 ###	Breeze Web API route
 
-ASP.NET Core has a rich set of rules that allow you to determine which method in a controller is called for any specific HTTP request. We recommend an ASP.NET Core mechanism know as [Attribute Routing](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-3.1#attribute-routing) to accomplish this
+ASP.NET Core has a rich set of rules that allow you to determine which method in a controller is called for any specific HTTP request. We recommend an ASP.NET Core mechanism know as [Attribute Routing](https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing) to accomplish this
 
 Typical Breeze requests look like:
 

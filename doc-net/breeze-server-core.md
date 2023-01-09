@@ -12,7 +12,7 @@ For detailed documentation:
 
 We have also provided a sample Breeze Server application along with instructions on how it can be built below:
 
-* [For .NET 5](https://github.com/Breeze/northwind-demo/blob/master/server/STEPS-Server-NET5.md)
+* [For .NET 5+](https://github.com/Breeze/northwind-demo/blob/master/server/STEPS-Server-NET5.md)
 * [For .NET Core 3](https://github.com/Breeze/northwind-demo/blob/master/server/STEPS-Server-Core2.md)
 * [For .NET Core 2](https://github.com/Breeze/northwind-demo/blob/master/server/STEPS-Server-Core2.md)
 

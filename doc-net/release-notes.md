@@ -5,6 +5,28 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core701"></a>7.0.1 <span class="doc-date">Jan 4, 2023</span>
+
+Release for .NET 7
+
+### <a name="Core602"></a>6.0.2 <span class="doc-date">Mar 30, 2022</span>
+
+Release for .NET 6
+
+ - Fix issue with 'in' clause for non-String types [#127](https://github.com/Breeze/breeze.server.net/pull/127)
+
+### <a name="Core506"></a>5.0.6 <span class="doc-date">Mar 30, 2022</span>
+
+Release for .NET 5
+
+ - Fix issue with 'in' clause for non-String types [#127](https://github.com/Breeze/breeze.server.net/pull/127)
+
+### <a name="Core601"></a>6.0.1 <span class="doc-date">Jan 12, 2022</span>
+
+Release for .NET 6
+
+ - Update EntityFramework dependencies to version 6.0.1
+
 ### <a name="Core505"></a>5.0.5 <span class="doc-date">May 3, 2021</span>
 
 Release for .NET 5
