@@ -5,6 +5,18 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core702"></a>7.0.2 <span class="doc-date">Jan 27, 2023</span>
+
+Release for .NET 7
+ - Add support for `DateOnly` and `TimeOnly` data types
+ - Add `ApplyBreezeQuery` and `ApplyBreezeWhere` extension methods to QueryFns.  These apply filtering conditions from the client/url before aggregation or other transformations
+
+### <a name="Core604"></a>6.0.4 <span class="doc-date">Jan 27, 2023</span>
+
+Release for .NET 6
+ - Add support for `DateOnly` and `TimeOnly` data types
+ - Add `ApplyBreezeQuery` and `ApplyBreezeWhere` extension methods to QueryFns.  These apply filtering conditions from the client/url before aggregation or other transformations
+
 ### <a name="Core701"></a>7.0.1 <span class="doc-date">Jan 4, 2023</span>
 
 Release for .NET 7
