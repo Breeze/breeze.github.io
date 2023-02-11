@@ -6,6 +6,11 @@ redirect_from: "/old/breeze-sharp-documentation/release-notes.html"
 # Release notes
 These **Breeze Sharp Release Notes** summarize the key changes. Please read the documentation for more details.
 
+## <a name="0810"></a>0.8.1.0 <span class="doc-date">February 10, 2023</span>
++ Fix problem with reloading expanded modified entity, [#41](https://github.com/Breeze/breeze.sharp/issues/41) and [#49](https://github.com/Breeze/breeze.sharp/issues/49)
++ Increase JsonSerializer.MaxDepth to 128 (defaults to 64 as of Json.Net v13) [#51](https://github.com/Breeze/breeze.sharp/issues/51)
++ Fix problem of duplicate foreign keys when adding metadata
+
 ## <a name="0800"></a>0.8.0.0 <span class="doc-date">April 18, 2020</span>
 
 #### Features

@@ -92,8 +92,11 @@ Release for .NET 5
 
 > **Please update to 1.6.5 or later**.  All previous breeze.server.net releases have a security vulnerability in JSON deserialization.
 
-### <a name="166"></a>1.6.6 <span class="doc-date">February 2, 2018</span>
+### <a name="203"></a>2.0.3 <span class="doc-date">February 10, 2023</span>
+ - Release for .NET Framework 4.8
 
+### <a name="166"></a>1.6.6 <span class="doc-date">February 2, 2018</span>
+ 
 #### Breeze.Server.NET Fixed Bugs
 - EFContextProvider: Fixed bug causing Enum properties to have their EF `OriginalValues` set incorrectly.
 - EFContextProvider: Fixed bug causing EF `OriginalValues` to be set incorrectly for some properties when  OriginalValues were null for other properties.
