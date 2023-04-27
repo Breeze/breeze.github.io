@@ -31,7 +31,7 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
 
 ### For .NET Core (versions 2 through 7) and Entity Framework Core (2 through 7)
 
-> Note: Version 7.x of each package is for .NET 7,  whereas Version 6.x is for .NET Core 6, Version 5.x is for .NET Core 5, Version 3.x is for .NET Core 3 and Version 1.x is for .NET Core 2.  Please note that only the Version 3 and later packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
+> Note: Version 7.1+ of each package is for .NET 5, 6, and 7, whereas Version 3.x is for .NET Core 3.1 and Version 1.x is for .NET Core 2.  Please note that only the Version 3 and later packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
 
 - [Breeze.AspNetCore.NetCore](https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/)
 - [Breeze.Core](https://www.nuget.org/packages/Breeze.Core/)
@@ -41,7 +41,7 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
 
 <br>
 
-### For .NET Framework 4.7.x  and Entity Framework 6 
+### For .NET Framework 4.7.x / 4.8  and Entity Framework 6 
 
 > These packages are no longer being maintained. Please migrate to .NET Core versions.
 

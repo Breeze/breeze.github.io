@@ -5,6 +5,12 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core710"></a>7.1.0 <span class="doc-date">April 26, 2023</span>
+
+Release for .NET 5, 6, and 7
+ - Create multi-target Nuget package for .NET 5, 6, and 7
+ - Fix "same key" error in MetadataBuilder when same ComplexType is used twice in an entity - issue [#186](https://github.com/Breeze/breeze.server.net/issues/186)
+
 ### <a name="Core702"></a>7.0.2 <span class="doc-date">Jan 27, 2023</span>
 
 Release for .NET 7
