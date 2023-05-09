@@ -7,6 +7,12 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="2.1.5"></a>2.1.5 <span class="doc-date">May 8, 2023</span>
+
+ - Fix definition of `ComplexObject` interface to make `setProperty` and `getProperty` optional methods
+ - Add test for entity modification when changing property on a complex type
+ - Add `cjs` npm tag to version with CommonJS bundles
+
 ### <a name="2.1.4"></a>2.1.4 <span class="doc-date">Jan 1, 2023</span>
 
  - Release **2.1.4-mjs** version on npm, with ES 2020 .mjs modules.  Version 2.1.4 with ES5 and legacy bundles is still available.
