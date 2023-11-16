@@ -29,9 +29,9 @@ We also recommend that you look at Brian Noyes "<a href="http://www.pluralsight.
 
 ## Breeze NuGet Packages
 
-### For .NET Core (versions 2 through 7) and Entity Framework Core (2 through 7)
+### For .NET Core (versions 2 through 8) and Entity Framework Core (2 through 8)
 
-> Note: Version 7.1+ of each package is for .NET 5, 6, and 7, whereas Version 3.x is for .NET Core 3.1 and Version 1.x is for .NET Core 2.  Please note that only the Version 3 and later packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
+> Note: Version 7.1+ of each package is for .NET 5, 6, 7, and 8, whereas Version 3.x is for .NET Core 3.1 and Version 1.x is for .NET Core 2.  Please note that only the Version 3 and later packages will be upgraded in the future. No further support for the .NET Core 2 packages will occur.
 
 - [Breeze.AspNetCore.NetCore](https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/)
 - [Breeze.Core](https://www.nuget.org/packages/Breeze.Core/)

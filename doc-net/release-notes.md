@@ -5,6 +5,13 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core720"></a>7.2.0 <span class="doc-date">November 16, 2023</span>
+
+Release for .NET 5, 6, 7, and 8
+ - Add support for .NET 8 and EFCore 8
+ - Make BreezeQueryFilterAttribute implement IAsyncActionFilter and async query execution with CancellationToken - issue [#189](https://github.com/Breeze/breeze.server.net/issues/189) and PR [#191](https://github.com/Breeze/breeze.server.net/pull/191) - thanks @biegehydra
+ - Make Enum properties use Int32 datatype (instead of string) in metadata generation.
+
 ### <a name="Core710"></a>7.1.0 <span class="doc-date">April 26, 2023</span>
 
 Release for .NET 5, 6, and 7
