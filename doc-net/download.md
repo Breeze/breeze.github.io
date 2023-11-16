@@ -17,7 +17,7 @@ redirect_from: "/old/documentation/download.html"
   This is the easiest way to build a Breeze application if you are using Visual Studio.
 
 
-## Get the Nuget Packages for .NET core (2 through 7)
+## Get the Nuget Packages for .NET core (2 through 8)
 
   <a href="https://www.nuget.org/packages/Breeze.AspNetCore.NetCore/"
     target="_blank">Breeze.AspNetCore.NetCore</a><br />
@@ -28,7 +28,7 @@ redirect_from: "/old/documentation/download.html"
   <a href="https://www.nuget.org/packages/Breeze.Persistence.NH/" target="_blank">Breeze.Persistence.NH</a>
 
 
-## Get the Nuget Packages for .NET Framework 4.7.x
+## Get the Nuget Packages for .NET Framework 4.7.x and 4.8
 
   <a href="https://www.nuget.org/packages/Breeze.Server.WebApi2/" target="_blank">Breeze.Server.WebApi2</a><br />
   <a href="https://www.nuget.org/packages/Breeze.Server.ContextProvider/"
@@ -53,7 +53,7 @@ redirect_from: "/old/documentation/download.html"
   <a href="https://github.com/Breeze/breeze.server.net/tree/master/DotNet" target="_blank">.NET 5 and up</a><br>
   <a href="https://github.com/Breeze/breeze.server.net/tree/master/AspNetCore-v3" target="_blank">.NET Core 3/ASP.NET Core 3</a><br>
   <a href="https://github.com/Breeze/breeze.server.net/tree/master/AspNetCore" target="_blank">.NET Core 2/ASP.NET Core 2</a><br>
-  <a href="https://github.com/Breeze/breeze.server.net/tree/master/AspNet" target="_blank">.NET Framework 4.7.x</a><br>
+  <a href="https://github.com/Breeze/breeze.server.net/tree/master/AspNet" target="_blank">.NET Framework 4.7 and 4.8</a><br>
 
 # Prerequisites
 Many of the demos and samples were built with ASP.NET WebAPI, but can be converted to other server technologies.
