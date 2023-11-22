@@ -5,6 +5,11 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core720"></a>7.2.1 <span class="doc-date">November 22, 2023</span>
+
+Release for .NET 5, 6, 7, and 8
+ - Fix bug in query handling for Enums.  Now a where clause from the client can specify enums as strings or numbers, and the server will handle them correctly.
+
 ### <a name="Core720"></a>7.2.0 <span class="doc-date">November 16, 2023</span>
 
 Release for .NET 5, 6, 7, and 8
