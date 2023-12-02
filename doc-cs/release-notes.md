@@ -6,6 +6,14 @@ redirect_from: "/old/breeze-sharp-documentation/release-notes.html"
 # Release notes
 These **Breeze Sharp Release Notes** summarize the key changes. Please read the documentation for more details.
 
+## <a name="0820"></a>0.8.2.0 <span class="doc-date">December 1, 2023</span>
++ Add support for .NET 7 and .NET 8
++ Add support for Contains, StartsWith, and EndsWith in JSON query adapter, PR [#68](https://github.com/Breeze/breeze.sharp/issues/68)
++ Add support for Guid constants in JSON query adapter, PR [#68](https://github.com/Breeze/breeze.sharp/issues/68)
++ Fix support for OrderBy with related property, PR [#68](https://github.com/Breeze/breeze.sharp/issues/68)
+
+Many thanks to [@NLabyK](https://github.com/NLabyK), [@Kapn](https://github.com/Kapn), [@KravetsO](https://github.com/Kravets) for PR [#68](https://github.com/Breeze/breeze.sharp/issues/68)
+
 ## <a name="0810"></a>0.8.1.0 <span class="doc-date">February 10, 2023</span>
 + Fix problem with reloading expanded modified entity, [#41](https://github.com/Breeze/breeze.sharp/issues/41) and [#49](https://github.com/Breeze/breeze.sharp/issues/49)
 + Increase JsonSerializer.MaxDepth to 128 (defaults to 64 as of Json.Net v13) [#51](https://github.com/Breeze/breeze.sharp/issues/51)

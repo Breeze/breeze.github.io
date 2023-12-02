@@ -5,12 +5,22 @@ redirect_from: "/old/breeze-sharp-documentation/start-nuget.html"
 # Breeze NuGet packages
 Breeze offers several <a href="http://nuget.org/" target="_blank">NuGet</a> packages for the .NET developer. 
 
-## Visual Studio 2013/2015 and .NET 4.5
+## Visual Studio and .NET 4.5 - .NET 8.0
 
 ### *Client side*
 - *Breeze.Sharp* - The Breeze.Sharp portable class library and its immediate dependencies. 
 
-### *Server side* 
+### *Server side - .NET Core* 
+
+- *Breeze.AspNetCore.NetCore* - Base support for ASP.NET
+
+- *Breeze.Persistence.EFCore* - If you manage data access with Entity Framework.
+
+- *Breeze.Persistence.NH* - If you manage data access with NHibernate.
+
+- *Breeze.Persistence* - If you manage data access by some means other than Entity Framework or NHibernate. The EF and NH packages depend upon this one.
+
+### *Server side - .NET Framework* 
 - *Breeze.Server.WebApi2* - Base support for Web API 2 (aka v.5)
 
 - *Breeze.Server.ContextProvider.EF6* - If you manage data access with Entity Framework 6.
