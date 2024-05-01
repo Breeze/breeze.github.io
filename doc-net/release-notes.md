@@ -5,7 +5,12 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
-### <a name="Core720"></a>7.2.1 <span class="doc-date">November 22, 2023</span>
+### <a name="Core722"></a>7.2.2 <span class="doc-date">April 30, 2024</span>
+
+Release for .NET 5, 6, 7, and 8
+ - Make QueryFilter inherit from ActionFilterAttribute so that OnActionExecutionAsyc method will be overridable.  For issue [#195](https://github.com/Breeze/breeze.server.net/issues/195)
+
+### <a name="Core721"></a>7.2.1 <span class="doc-date">November 22, 2023</span>
 
 Release for .NET 5, 6, 7, and 8
  - Fix bug in query handling for Enums.  Now a where clause from the client can specify enums as strings or numbers, and the server will handle them correctly.
