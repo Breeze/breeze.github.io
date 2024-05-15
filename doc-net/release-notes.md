@@ -5,6 +5,14 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core730"></a>7.3.0 <span class="doc-date">May 15, 2024</span>
+
+Release for .NET 5, 6, 7, and 8
+- Make separate BreezeQueryFilter and BreezeAsyncQueryFilter with cancellationToken handling.  For issue [#195](https://github.com/Breeze/breeze.server.net/issues/195)
+- Handle string or int enums via BreezeConfig.Instance.UseIntEnums flag - affects metadata generation and JSON serialization.  For issue [#196](https://github.com/Breeze/breeze.server.net/issues/196)
+- Add params to JsonSerializationFns.UpdateWithDefaults to toggle camelCasing and useIntEnums
+- Add NoAnonSerializationBinder for optionally removing names from anonymous type serialization
+
 ### <a name="Core722"></a>7.2.2 <span class="doc-date">April 30, 2024</span>
 
 Release for .NET 5, 6, 7, and 8
