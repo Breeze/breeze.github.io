@@ -5,6 +5,13 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core731"></a>7.3.1 <span class="doc-date">February 13, 2025</span>
+
+Release for .NET 5, 6, 7, and 8
+ - Correctly handle "in" predicates on nullable properties.  Fixes [#198](https://github.com/Breeze/breeze.server.net/issues/198)
+ - Correctly handle "in" predicates on enum properties.  Fixes [#199](https://github.com/Breeze/breeze.server.net/issues/199)
+ - Change hash algorithm from SHA1 to SHA256 in DynamicTypeInfo.CalcStringHash, for FIPS compliance.  Fixes [#131](https://github.com/Breeze/breeze.server.net/issues/131)
+
 ### <a name="Core730"></a>7.3.0 <span class="doc-date">May 15, 2024</span>
 
 Release for .NET 5, 6, 7, and 8
