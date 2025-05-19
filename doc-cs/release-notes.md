@@ -6,6 +6,23 @@ redirect_from: "/old/breeze-sharp-documentation/release-notes.html"
 # Release notes
 These **Breeze Sharp Release Notes** summarize the key changes. Please read the documentation for more details.
 
+## <a name="0900"></a>0.9.0.0 <span class="doc-date">May 19, 2025</span>
++ Increase MaxDepth to 128 in JSON parsing, issue [#70](https://github.com/Breeze/breeze.sharp/issues/70)
++ Support for TimeOnly and DateOnly data types under .NET 6 and later
++ Additional error message info upon DataService exceptions
++ Support for specifying ServiceName as part of URLs in DataService
++ Better handling of multipart keys
++ Semaphore around query results parsing to handle concurrency
++ Handle query options and `WithParameters` in JSON queries
++ Support `any` and `all` in JSON queries
+
+Includes PR [#33](https://github.com/Breeze/breeze.sharp/pull/33), [#44](https://github.com/Breeze/breeze.sharp/pull/44)
+[#71](https://github.com/Breeze/breeze.sharp/pull/71)
+
+Many thanks to [@GioviQ](https://github.com/GioviQ), [@dwarry](https://github.com/dwarry), [@pusparag]() 
+
+
+
 ## <a name="0820"></a>0.8.2.0 <span class="doc-date">December 1, 2023</span>
 + Add support for .NET 7 and .NET 8
 + Add support for Contains, StartsWith, and EndsWith in JSON query adapter, PR [#68](https://github.com/Breeze/breeze.sharp/issues/68)
