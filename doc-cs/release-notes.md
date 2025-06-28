@@ -6,6 +6,14 @@ redirect_from: "/old/breeze-sharp-documentation/release-notes.html"
 # Release notes
 These **Breeze Sharp Release Notes** summarize the key changes. Please read the documentation for more details.
 
+## <a name="0910"></a>0.9.1.0 <span class="doc-date">June 27, 2025</span>
++ Fix handling deep property paths in JSON queries, issue [#74](https://github.com/Breeze/breeze.sharp/issues/74)
++ Fix combining `where` clauses in JSON queries, issue [#76](https://github.com/Breeze/breeze.sharp/issues/76)
++ Fix parsing of errors returned from the server, issue [#3](https://github.com/Breeze/breeze.sharp/issues/3)
+
+Includes PR [#75](https://github.com/Breeze/breeze.sharp/pull/75), [#77](https://github.com/Breeze/breeze.sharp/pull/77)
+Many thanks to [@anarangarch](https://github.com/anarangarch)
+
 ## <a name="0900"></a>0.9.0.0 <span class="doc-date">May 19, 2025</span>
 + Increase MaxDepth to 128 in JSON parsing, issue [#70](https://github.com/Breeze/breeze.sharp/issues/70)
 + Support for TimeOnly and DateOnly data types under .NET 6 and later
