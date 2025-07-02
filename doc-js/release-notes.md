@@ -7,6 +7,16 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="2.1.6"></a>2.1.6 <span class="doc-date">July 1, 2025</span>
+
+ - Fix processing of query results to handle deleted entities correctly
+ - Fix guid-matching regex to fix false positives ([#79](https://github.com/Breeze/breeze-client/issues/79))
+ - Add `hour` function to Predicate ([#80](https://github.com/Breeze/breeze-client/issues/80))
+ - Improve typings with `getProperty` and `setProperty` on entity ([#81](https://github.com/Breeze/breeze-client/issues/81))
+ - Add `isDeletedOrDetached()` and `isAddedOrModified()` on EntityState
+ - Use `declare` on base class properties to prevent Babel from adding props where they don't belong
+ - Add support for `DateOnly` data type
+
 ### <a name="2.1.5"></a>2.1.5 <span class="doc-date">May 8, 2023</span>
 
  - Fix definition of `ComplexObject` interface to make `setProperty` and `getProperty` optional methods
