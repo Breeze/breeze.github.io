@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>EntityQueryJsonContext | breeze-client</title>
+	<title>CtorRecord | breeze-client</title>
 	<meta name="description" content="Documentation for breeze-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,21 +54,28 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="entityqueryjsoncontext.html">EntityQueryJsonContext</a>
+					<a href="ctorrecord.html">CtorRecord</a>
 				</li>
 			</ul>
-			<h1>Interface EntityQueryJsonContext</h1>
+			<h1>Interface CtorRecord</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Keep track of constructors and initializers for StructuralTypes</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">EntityQueryJsonContext</span>
+						<span class="target">CtorRecord</span>
 					</li>
 				</ul>
 			</section>
@@ -79,9 +86,9 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="entityqueryjsoncontext.html#entitytype" class="tsd-kind-icon">entity<wbr>Type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="entityqueryjsoncontext.html#propertypathfn" class="tsd-kind-icon">property<wbr>Path<wbr>Fn</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="entityqueryjsoncontext.html#tonameonserver" class="tsd-kind-icon">to<wbr>Name<wbr>OnServer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ctorrecord.html#ctor" class="tsd-kind-icon">ctor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ctorrecord.html#initfn" class="tsd-kind-icon">init<wbr>Fn</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ctorrecord.html#notrackingfn" class="tsd-kind-icon">no<wbr>Tracking<wbr>Fn</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,32 +97,53 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="entitytype" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> entity<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">entity<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../classes/entitytype.html" class="tsd-signature-type">EntityType</a></div>
+					<a name="ctor" class="tsd-anchor"></a>
+					<h3>ctor</h3>
+					<div class="tsd-signature tsd-kind-icon">ctor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>constructor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/fdee569/src/entity-query.ts#L18">src/entity-query.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/fdee569/src/entity-metadata.ts#L25">src/entity-metadata.ts:25</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>constructor<span class="tsd-signature-symbol">: </span>function</h5>
+								<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-type-literal tsd-is-external">
+									<li class="tsd-signature tsd-kind-icon">new __type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#structuralobject" class="tsd-signature-type">StructuralObject</a></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/fdee569/src/entity-metadata.ts#L25">src/entity-metadata.ts:25</a></li>
+											</ul>
+										</aside>
+										<h4 class="tsd-returns-title">Returns <a href="../globals.html#structuralobject" class="tsd-signature-type">StructuralObject</a></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="initfn" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> init<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">init<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/fdee569/src/entity-metadata.ts#L26">src/entity-metadata.ts:26</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="propertypathfn" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> property<wbr>Path<wbr>Fn</h3>
-					<div class="tsd-signature tsd-kind-icon">property<wbr>Path<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
+					<a name="notrackingfn" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> no<wbr>Tracking<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">no<wbr>Tracking<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/fdee569/src/entity-query.ts#L19">src/entity-query.ts:19</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="tonameonserver" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> to<wbr>Name<wbr>OnServer</h3>
-					<div class="tsd-signature tsd-kind-icon">to<wbr>Name<wbr>OnServer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/fdee569/src/entity-query.ts#L20">src/entity-query.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/Breeze/breeze-client/blob/fdee569/src/entity-metadata.ts#L27">src/entity-metadata.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -134,16 +162,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-is-external">
-						<a href="entityqueryjsoncontext.html" class="tsd-kind-icon">Entity<wbr>Query<wbr>Json<wbr>Context</a>
+						<a href="ctorrecord.html" class="tsd-kind-icon">Ctor<wbr>Record</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="entityqueryjsoncontext.html#entitytype" class="tsd-kind-icon">entity<wbr>Type</a>
+								<a href="ctorrecord.html#ctor" class="tsd-kind-icon">ctor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="entityqueryjsoncontext.html#propertypathfn" class="tsd-kind-icon">property<wbr>Path<wbr>Fn</a>
+								<a href="ctorrecord.html#initfn" class="tsd-kind-icon">init<wbr>Fn</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="entityqueryjsoncontext.html#tonameonserver" class="tsd-kind-icon">to<wbr>Name<wbr>OnServer</a>
+								<a href="ctorrecord.html#notrackingfn" class="tsd-kind-icon">no<wbr>Tracking<wbr>Fn</a>
 							</li>
 						</ul>
 					</li>

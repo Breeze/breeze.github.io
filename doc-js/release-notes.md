@@ -7,6 +7,15 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="2.2.0"></a>2.2.0 <span class="doc-date">July 17, 2025</span>
+
+ - Update version number to 2.2.0 to reflect addtional functionality (query POST feature mentioned below in 2.1.7)
+ - Change npm package versioning: 
+    - versions tagged `latest` now use the `mjs` package and module structure (fesm2022 modules)
+    - versions tagged `cjs` use the older CommonJS module structure and include UMD bundles.
+    
+    If you need backward compatibility with older JavaScript (ES5 or ES2015) or UMD bundles, you should install `breeze-client@cjs`; otherwise just install `breeze-client`.
+
 ### <a name="2.1.7"></a>2.1.7 <span class="doc-date">July 16, 2025</span>
 
  - Enable sending queries using POST with the query expression as JSON in the request body.  Use `query = query.usePost()` to enable this behavior.  Breeze.AspNetCore 7.4.0 or later supports POST queries.
