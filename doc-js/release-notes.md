@@ -7,6 +7,10 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="2.1.7"></a>2.1.7 <span class="doc-date">July 16, 2025</span>
+
+ - Enable sending queries using POST with the query expression as JSON in the request body.  Use `query = query.usePost()` to enable this behavior.  Breeze.AspNetCore 7.4.0 or later supports POST queries.
+
 ### <a name="2.1.6"></a>2.1.6 <span class="doc-date">July 1, 2025</span>
 
  - Fix processing of query results to handle deleted entities correctly

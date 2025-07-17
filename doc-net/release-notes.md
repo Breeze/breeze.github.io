@@ -5,6 +5,12 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core740"></a>7.4.0 <span class="doc-date">July 16, 2025</span>
+
+Release for .NET 5, 6, 7, and 8
+ - Add support for POST queries, in which the query expression is a JSON payload in the request body; breeze-client 2.1.7 or later supports POST queries.
+ - Add `UsePost` flag to query filters: `[BreezeQueryFilter(UsePost = true)]` or `[BreezeAsyncQueryFilter(UsePost = true)]` to enable POST body processing for queries.
+
 ### <a name="Core731"></a>7.3.1 <span class="doc-date">February 13, 2025</span>
 
 Release for .NET 5, 6, 7, and 8
