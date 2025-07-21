@@ -7,6 +7,10 @@ These are the release notes for the current releases of breeze.js (breeze-client
 
 Prior [release notes](/doc-main/release-notes) (incorporating the Breeze server packages) are also available.
 
+### <a name="2.2.2"></a>2.2.1 / 2.2.2 <span class="doc-date">July 20, 2025</span>
+
+ - Fix missing `declare` statements in class definitions, which caused undefined `_$typeName` properties to override those in prototype and cause errors.
+
 ### <a name="2.2.0"></a>2.2.0 <span class="doc-date">July 17, 2025</span>
 
  - Update version number to 2.2.0 to reflect addtional functionality (query POST feature mentioned below in 2.1.7)
