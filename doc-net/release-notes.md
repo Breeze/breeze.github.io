@@ -5,6 +5,18 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core742"></a>7.4.2 <span class="doc-date">September 12, 2025</span>
+
+ - Add support for .NET 9 and .NET 10 Preview [#208](https://github.com/Breeze/breeze.server.net/issues/208)
+
+Release for .NET 5, 6, 7, 8, 9, 10
+
+### <a name="Core741"></a>7.4.1 <span class="doc-date">July 22, 2025</span>
+
+ - Fix DataType conversion on lists of Guids. Fixes [#207](https://github.com/Breeze/breeze.server.net/issues/207)
+
+Release for .NET 5, 6, 7, and 8
+
 ### <a name="Core740"></a>7.4.0 <span class="doc-date">July 16, 2025</span>
 
 Release for .NET 5, 6, 7, and 8
