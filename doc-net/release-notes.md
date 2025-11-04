@@ -5,6 +5,15 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core750"></a>7.5.0 <span class="doc-date">November 3, 2025</span>
+
+ - Add `MaxDepth` parameter to limit depth of `select` and `expand` in queries
+ - Add `MaxTake` parameter to limit number of rows in queries
+ - Add `SkipBreezeQuery` flag so Breeze filter can be skipped conditionally
+ - Add `BreezeConfig.QueryParamName` to allow specifying the query string parameter containing Breeze query JSON
+ - Change PackageReference in Breeze.Persistence.EFCore to use ranges, to avoid version conflicts
+ - Add unit tests
+
 ### <a name="Core742"></a>7.4.2 <span class="doc-date">September 12, 2025</span>
 
  - Add support for .NET 9 and .NET 10 Preview [#208](https://github.com/Breeze/breeze.server.net/issues/208)
