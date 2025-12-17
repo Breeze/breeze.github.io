@@ -5,6 +5,11 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core751"></a>7.5.1 <span class="doc-date">December 17, 2025</span>
+
+ - Add support for .NET 10 release
+ - Set Newtonsoft range to [13.0.1,14) due to vulnerability
+
 ### <a name="Core750"></a>7.5.0 <span class="doc-date">November 3, 2025</span>
 
  - Add `MaxDepth` parameter to limit depth of `select` and `expand` in queries
