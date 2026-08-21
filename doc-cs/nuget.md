@@ -5,7 +5,7 @@ redirect_from: "/old/breeze-sharp-documentation/start-nuget.html"
 # Breeze NuGet packages
 Breeze offers several <a href="http://nuget.org/" target="_blank">NuGet</a> packages for the .NET developer. 
 
-## Visual Studio and .NET 4.5 - .NET 8.0
+## Visual Studio and .NET 4.5 - .NET 10.0
 
 ### *Client side*
 - *Breeze.Sharp* - The Breeze.Sharp portable class library and its immediate dependencies. 

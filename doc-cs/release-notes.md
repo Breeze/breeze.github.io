@@ -6,6 +6,11 @@ redirect_from: "/old/breeze-sharp-documentation/release-notes.html"
 # Release notes
 These **Breeze Sharp Release Notes** summarize the key changes. Please read the documentation for more details.
 
+## <a name="0920"></a>0.9.2.0 <span class="doc-date">August 20, 2026</span>
++ Fix OrderBy handling in JSON queries
++ Fix binary expressions in JSON queries
++ Add support for .NET Framework 4.8 and .NET 10
+
 ## <a name="0910"></a>0.9.1.0 <span class="doc-date">June 27, 2025</span>
 + Fix handling deep property paths in JSON queries, issue [#74](https://github.com/Breeze/breeze.sharp/issues/74)
 + Fix combining `where` clauses in JSON queries, issue [#76](https://github.com/Breeze/breeze.sharp/issues/76)
