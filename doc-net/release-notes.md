@@ -5,6 +5,10 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core751"></a>7.5.1 <span class="doc-date">September 3, 2026</span>
+
+ - Release **Breeze.Persistence.NH** with support for NHibernate 5.7 in .NET 5, 6, 7, 8, 9, 10
+
 ### <a name="Core751"></a>7.5.1 <span class="doc-date">December 17, 2025</span>
 
  - Add support for .NET 10 release
