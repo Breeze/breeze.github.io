@@ -5,6 +5,10 @@ layout: doc-net
 
 ## .NET Core Release Notes
 
+### <a name="Core752"></a>7.5.2 <span class="doc-date">September 8, 2026</span>
+
+ - Fix TransactionScope handling in `PersistenceManager.SaveChangesAsync`; issue [#217](https://github.com/Breeze/breeze.server.net/issues/217) and PR [#218](https://github.com/Breeze/breeze.server.net/pull/218) - thanks @devbased
+
 ### <a name="Core751"></a>7.5.1 <span class="doc-date">September 3, 2026</span>
 
  - Release **Breeze.Persistence.NH** with support for NHibernate 5.7 in .NET 5, 6, 7, 8, 9, 10
