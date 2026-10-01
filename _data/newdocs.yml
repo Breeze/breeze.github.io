@@ -1,0 +1,81 @@
+# Pages superseded by the Breeze 3 client docs and the Breeze .NET Server 8 docs.
+#
+# `redirect` maps a page's source path to the page that replaces it. Those pages jump straight
+# there; a reader who opens one with ?v2 stays on these docs, and keeps staying until they click
+# "Always go to the new docs" in the banner (see _includes/newdocs-redirect.html).
+#
+# Every page in a `banner` section (or listed there by path) shows the "there are new docs" banner, redirected or not.
+
+client: /breeze-client-v3/
+server: /breeze-server-v3/
+
+banner:
+  doc-js:   client
+  doc-net:  server
+  doc-main/index.md: client
+
+redirect:
+  # BreezeJS (breeze-client 2.x) -> breeze-client 3
+  doc-js/index.md:                              /breeze-client-v3/
+  doc-js/features.md:                           /breeze-client-v3/guide/what-is-breeze
+  doc-js/download.html:                         /breeze-client-v3/guide/getting-started
+  doc-js/prerequisites.html:                    /breeze-client-v3/guide/getting-started
+  doc-js/lap-around-breeze.md:                  /breeze-client-v3/guide/getting-started
+  doc-js/lap-first-query.md:                    /breeze-client-v3/guide/getting-started
+  doc-js/lap-query-filter.md:                   /breeze-client-v3/guide/getting-started
+  doc-js/lap-add-entity.md:                     /breeze-client-v3/guide/getting-started
+  doc-js/lap-changetracking.md:                 /breeze-client-v3/guide/change-tracking
+  doc-js/lap-savechanges.md:                    /breeze-client-v3/guide/saving-changes
+  doc-js/lap-knockout.md:                       /breeze-client-v3/guide/migrating-from-2x
+  doc-js/breeze-angular.md:                     /breeze-client-v3/guide/angular
+  doc-js/complex-properties.md:                 /breeze-client-v3/guide/complex-properties
+  doc-js/creating-entities.md:                  /breeze-client-v3/guide/creating-entities
+  doc-js/date-and-time.md:                      /breeze-client-v3/guide/date-and-time
+  doc-js/entitymanager-and-caching.md:          /breeze-client-v3/guide/entitymanager-and-caching
+  doc-js/export-import.md:                      /breeze-client-v3/guide/export-import
+  doc-js/entity-serialization.md:               /breeze-client-v3/guide/export-import
+  doc-js/extending-entities.md:                 /breeze-client-v3/guide/extending-entities
+  doc-js/inside-entity.md:                      /breeze-client-v3/guide/inside-the-entity
+  doc-js/navigation-properties.md:              /breeze-client-v3/guide/navigation-properties
+  doc-js/model-library.md:                      /breeze-client-v3/guide/typed-entities
+  doc-js/saving-changes.md:                     /breeze-client-v3/guide/saving-changes
+  doc-js/testing.md:                            /breeze-client-v3/guide/testing
+  doc-js/validation.md:                         /breeze-client-v3/guide/validation
+  doc-js/metadata.md:                           /breeze-client-v3/metadata/
+  doc-js/metadata-by-hand.md:                   /breeze-client-v3/metadata/by-hand
+  doc-js/metadata-by-hand-details.md:           /breeze-client-v3/metadata/by-hand
+  doc-js/metadata-custom.md:                    /breeze-client-v3/metadata/custom
+  doc-js/metadata-details.md:                   /breeze-client-v3/metadata/details
+  doc-js/metadata-schema.md:                    /breeze-client-v3/metadata/details
+  doc-js/metadata-load-from-script.md:          /breeze-client-v3/metadata/
+  doc-js/metadata-with-ef.md:                   /breeze-client-v3/metadata/
+  doc-js/query.md:                              /breeze-client-v3/query/
+  doc-js/query-from.md:                         /breeze-client-v3/query/
+  doc-js/query-in-depth.md:                     /breeze-client-v3/query/
+  doc-js/query-using-json.md:                   /breeze-client-v3/query/
+  doc-js/query-examples.md:                     /breeze-client-v3/query/examples
+  doc-js/query-locally.md:                      /breeze-client-v3/query/locally
+  doc-js/query-projections.md:                  /breeze-client-v3/query/projections
+  doc-js/query-debugging.md:                    /breeze-client-v3/query/debugging
+  doc-js/server.md:                             /breeze-client-v3/server/
+  doc-js/server-dataserviceadapter.md:          /breeze-client-v3/server/dataserviceadapter
+  doc-js/server-abstractdataserviceadapter.md:  /breeze-client-v3/server/dataserviceadapter
+  doc-js/server-ajaxadapter.md:                 /breeze-client-v3/server/transport
+  doc-js/server-jsonresultsadapter.md:          /breeze-client-v3/server/jsonresultsadapter
+  doc-js/server-namingconvention.md:            /breeze-client-v3/server/namingconvention
+  doc-js/server-odata.md:                       /breeze-client-v3/guide/migrating-from-2x
+  doc-js/coding-conventions.md:                 /breeze-client-v3/
+
+  # Breeze .NET server, ASP.NET Core pages (7.x) -> Breeze .NET Server 8.
+  # The ASP.NET 4.x and OData pages have no successor, so they only get the banner.
+  doc-net/index.md:                             /breeze-server-v3/
+  doc-net/download.md:                          /breeze-server-v3/guide/getting-started.html
+  doc-net/nuget-packages.md:                    /breeze-server-v3/guide/getting-started.html
+  doc-net/breeze-server-core.md:                /breeze-server-v3/guide/getting-started.html
+  doc-net/webapi-controller-core.md:            /breeze-server-v3/guide/querying.html
+  doc-net/persistencemanager-core.md:           /breeze-server-v3/guide/persistence-manager.html
+  doc-net/ef-efpersistencemanager-core.md:      /breeze-server-v3/guide/persistence-manager.html
+  doc-net/ef-serverside-model-core.md:          /breeze-server-v3/guide/metadata.html
+  doc-net/ef-serverside-validation-core.md:     /breeze-server-v3/guide/saving.html
+  doc-net/nh.md:                                /breeze-server-v3/guide/getting-started.html
+  doc-net/nh-details.md:                        /breeze-server-v3/guide/metadata.html

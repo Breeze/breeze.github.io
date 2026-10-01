@@ -1,0 +1,33 @@
+{% comment %}
+  "There are new docs" banner for the sections listed under `banner` in _data/newdocs.yml.
+  Links to the page's own replacement when it has one, otherwise to the new site's home.
+{% endcomment %}
+{% assign newdocs_section = page.path | split: '/' | first %}
+{% assign newdocs_kind = site.data.newdocs.banner[page.path] | default: site.data.newdocs.banner[newdocs_section] %}
+{% if newdocs_kind %}
+{%   assign newdocs_target = site.data.newdocs.redirect[page.path] | default: site.data.newdocs[newdocs_kind] %}
+<div id="newdocs-banner" style="border: 2px solid #2e7bbf; border-radius: 6px; background: #eef6fc; color: #1d3c55; padding: 12px 16px; margin: 0 0 20px;">
+{%   if newdocs_kind == 'server' %}
+  <strong>Breeze .NET Server 8 is released.</strong>
+  These pages document Breeze .NET Server 7.x and earlier.
+  <a href="{{ newdocs_target }}"><strong>Read the Breeze .NET Server 8 docs &rarr;</strong></a>
+{%   elsif newdocs_section == 'doc-main' %}
+  <strong>Breeze 3 and Breeze .NET Server 8 are released.</strong>
+  The BreezeJS and .NET pages on this site document the earlier versions.
+  <a href="{{ site.data.newdocs.client }}"><strong>Breeze 3 docs &rarr;</strong></a>
+  &nbsp;
+  <a href="{{ site.data.newdocs.server }}"><strong>Breeze .NET Server 8 docs &rarr;</strong></a>
+{%   else %}
+  <strong>Breeze 3 is released.</strong>
+  These pages document breeze-client 2.x.
+  <a href="{{ newdocs_target }}"><strong>Read the Breeze 3 docs &rarr;</strong></a>
+{%   endif %}
+{%   if site.data.newdocs.redirect[page.path] %}
+  <a id="newdocs-always" href="{{ newdocs_target }}" style="display: none; margin-left: 12px; font-size: 90%;"
+     onclick="try { localStorage.removeItem('breeze-docs-v2'); } catch (e) {}">Always go to the new docs</a>
+  <script>
+    try { if (localStorage.getItem('breeze-docs-v2')) document.getElementById('newdocs-always').style.display = 'inline'; } catch (e) {}
+  </script>
+{%   endif %}
+</div>
+{% endif %}

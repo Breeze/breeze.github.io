@@ -1,0 +1,19 @@
+{% comment %}
+  Sends a page that _data/newdocs.yml says is superseded to its replacement, before anything renders.
+  ?v2 opts out, and the choice is remembered (localStorage is shared with the new docs, which are
+  on this origin too) until the banner's "Always go to the new docs" link clears it.
+{% endcomment %}
+{% assign newdocs_target = site.data.newdocs.redirect[page.path] %}
+{% if newdocs_target %}
+    <script>
+      (function () {
+        var KEY = 'breeze-docs-v2';
+        var optOut = /[?&]v2(=|&|$)/.test(location.search);
+        try {
+          if (optOut) localStorage.setItem(KEY, '1');
+          else if (localStorage.getItem(KEY)) return;
+        } catch (e) { /* storage blocked: honour ?v2 for this page only */ }
+        if (!optOut) location.replace('{{ newdocs_target }}');
+      })();
+    </script>
+{% endif %}
