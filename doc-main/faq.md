@@ -32,7 +32,7 @@ redirect_from: "/old/documentation/faq.html"
 
 <p>Just because Breeze is free and open source doesn&#39;t mean that you&#39;re on your own. We sell <a href="http://www.breezejs.com/support">support packages</a> to ensure you have the help to succeed.</p>
 
-<p>If you want to build your app really fast, contact our <a href="http://www.ideablade.com/professional-services/professional-services.aspx" target="_blank">Professional Services team</a>.</p>
+<p>If you want to build your app really fast, or upgrade an older Breeze application, contact our <a href="https://www.ideablade.com/modernization/#breeze" target="_blank">Professional Services team</a>.</p>
 
 <p>&nbsp;</p>
 
